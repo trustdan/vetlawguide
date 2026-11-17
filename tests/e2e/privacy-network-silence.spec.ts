@@ -1,22 +1,42 @@
 import { expect, test } from "@playwright/test";
 
+const ALLOWED_PUBLIC_GTM_HOSTS = new Set([
+  "www.googletagmanager.com",
+  "www.google-analytics.com",
+  "analytics.google.com",
+  "region1.google-analytics.com",
+]);
+
 test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () => {
-  test("home page makes zero external third-party network requests and keeps URL query strings clean", async ({
+  test("home page mounts Google Tag (GTM-W9T68MCQ) with zero unexpected third-party requests and clean URL query strings", async ({
     page,
   }) => {
-    const externalRequests: string[] = [];
+    const unexpectedExternalRequests: string[] = [];
 
     page.on("request", (req) => {
       const raw = req.url();
       if (raw.startsWith("blob:") || raw.startsWith("data:")) return;
       const url = new URL(raw);
-      if (url.hostname !== "127.0.0.1" && url.hostname !== "localhost") {
-        externalRequests.push(raw);
+      if (
+        url.hostname !== "127.0.0.1" &&
+        url.hostname !== "localhost" &&
+        !ALLOWED_PUBLIC_GTM_HOSTS.has(url.hostname)
+      ) {
+        unexpectedExternalRequests.push(raw);
       }
     });
 
+    // Block live Google Tag egress inside test runner so offline CI never hangs while verifying DOM injection
+    await page.route("https://www.googletagmanager.com/**", (route) =>
+      route.fulfill({ status: 200, contentType: "application/javascript", body: "" }),
+    );
+
     await page.goto("/");
-    expect(externalRequests).toEqual([]);
+    await expect(page.locator("script#vlg-gtm-script")).toHaveAttribute(
+      "src",
+      /googletagmanager\.com\/gtm\.js\?id=GTM-W9T68MCQ/,
+    );
+    expect(unexpectedExternalRequests).toEqual([]);
     expect(new URL(page.url()).search).toBe("");
   });
 
@@ -109,7 +129,8 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
       /Pre-Filing C-File Audit & Bitemporal Gate Packet/i,
     );
 
-    // 6. Verify strict zero external network, zero runtime XHR/fetch/beacon, zero URL leak, and zero storage leak
+    // 6. Verify strict zero external network, zero GTM script injection, zero runtime XHR/fetch/beacon, zero URL leak, and zero storage leak
+    await expect(page.locator('script[src*="googletagmanager.com"]')).toHaveCount(0);
     expect(externalRequests).toEqual([]);
     expect(postLoadRuntimeRequests).toEqual([]);
     expect(new URL(page.url()).search).toBe("");

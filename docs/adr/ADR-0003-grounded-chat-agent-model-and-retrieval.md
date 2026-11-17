@@ -1,14 +1,14 @@
 # ADR-0003: Grounded Corpus Chat Agent — Model Economics (`gpt-5-nano`), Local Hybrid Retrieval & Client PII Firewall
 
-- **Status:** Approved (`2026-11-16`)
-- **Governs:** `EPIC 7` (`app/api/chat/route.ts`, `lib/chat/`, `components/chrome/chat-widget.tsx`)
-- **Reference Implementation:** Adapted from `C:\Users\Dan\WK-private-demo` (`app/api/chat/route.ts`, `lib/chat/system-prompt.ts`, `components/shared/chat-widget.tsx`)
+- **Status:** Approved (`2026-11-16`; updated `2026-11-17` for full `111`-module corpus, `WK-private-demo` widget parity, PII-redacted Supabase `chat_conversations` logging & consent-gated GA4)
+- **Governs:** `EPIC 8` & `E9-S5` (`app/api/chat/route.ts`, `lib/chat/`, `supabase/migrations/`, `lib/consent.ts`, `lib/analytics/`, `components/chrome/chat-widget.tsx`, `components/providers/consent-provider.tsx`)
+- **Reference Implementation:** Adapted directly from `C:\Users\Dan\WK-private-demo` (`app/api/chat/route.ts`, `lib/chat/system-prompt.ts`, `lib/chat/log-conversation.ts`, `lib/consent.ts`, `lib/analytics/measurement-protocol.ts`, `components/shared/chat-widget.tsx`, `components/shared/consent-provider.tsx`)
 
 ---
 
 ## 1. Context & Problem Statement
 
-We want a site-wide grounded research chat assistant (modeled on `WK-private-demo`'s floating streaming widget) using the **lowest-cost commercial LLM across OpenAI, Anthropic, and Google Gemini** and the **most efficient corpus-grounding mechanism** as `vetlawguide` scales from `Wave 1` (`10` modules) to `Wave 5` (`125+` modules).
+We want a site-wide grounded research chat assistant modeled directly on `WK-private-demo`'s floating bottom-right pill + expandable streaming panel (`Maximize2` / `Minimize2` toggle + custom event launcher), using the **lowest-cost commercial zero-training LLM across OpenAI, Anthropic, and Google Gemini** and a **`$0.00` zero-database build-time retrieval index** across `vetlawguide`'s full `111`-module primary-source corpus (`174` CFR snapshots, `437` judicial/`VAOPGCPREC` authorities, `72+` statutory crosswalks, `40` lexicon items, and SHA-256-locked Veteran overlays).
 
 ---
 
@@ -31,7 +31,16 @@ We reject fine-tuning (bakes stale rules into weights without citations), extern
    - Deterministically resolves exact Diagnostic Codes (`5313 -> 5301-5323`), `38 C.F.R.` / `U.S.C.` citations, `decisionDate` snapshots (`resolveCfrAtDate`), and top BM25 sections, injecting only the top `3–5` authoritative chunks + canonical site links into each turn.
    - Automatically stays 100% synchronized every time `pnpm corpus:sync` advances `corpus/ingestion-ledger.json` (`W1 -> W5`).
 
-### Decision 3: Privacy, Rate-Limit & `/investigate` Isolation Guardrails
-- **Zero Auto-Network:** `<ChatWidget />` makes **zero** network calls until a user opens the panel and submits a question.
-- **Zero `/investigate` Leakage:** On `/investigate`, private `Yes / No / Unknown` screening state is **never** auto-injected or transmitted to `/api/chat`.
-- **Client + Server PII Firewall:** Reuses our SSN and VA-file-number regex guards client-side (blocking accidental PII before `fetch`) and server-side, with stateless streaming (zero database logging of user prompts by default), `botid` / per-IP rate limiting (`10 msgs / 5 min`), and graceful fallback if the API key is unset.
+### Decision 3: `WK-private-demo` UI/Streaming Pattern + VetLawGuide Privacy & `/investigate` Isolation Guardrails
+1. **UI & Streaming Pattern (Adapted from `WK-private-demo`):**
+   - **Floating Bottom-Right Pill Launcher (`<ChatWidget />`):** Compact rounded pill button (`fixed bottom-4 right-4 sm:bottom-6 sm:right-6`) with VetLawGuide's archival emblem + `"Chat"` label, plus `<OpenChatLink />` (`vlg:open-chat` custom window event) so nav/footer/help links can open the chat panel without page navigation.
+   - **Compact <-> Expanded Streaming Reader:** Matches `WK-private-demo`'s `h-[70vh] w-[90vw] max-h-150 max-w-95` panel with a header `Maximize2` / `Minimize2` toggle (`fixed inset-4 sm:inset-8`), plain-text `ReadableStream` (`fetch("/api/chat")` with `cancel()` stream abort), and chat-scaled `react-markdown` components (`h1`–`h3` rendered at bold body scale; internal `/cfr/*`, `/vasrd/*`, `/playbooks/*`, `/cases` links routed via Next.js `<Link>`).
+2. **Privacy, Rate-Limit, Supabase Conversation Logging & `/investigate` Isolation Guardrails:**
+   - **Zero Auto-Network:** `<ChatWidget />` makes **zero** network calls until a user opens the panel and submits a question.
+   - **Hard `/investigate` Blackout:** Private `Yes / No / Unknown` screening answers in `/investigate` are **never** auto-injected or transmitted to `/api/chat`, and third-party analytics (`gtag.js` / GA4) are unconditionally suppressed on `/investigate` even when site analytics consent is granted (`Rule 05`).
+   - **Client + Server PII Firewall & Auto-Redaction:** Blocks obvious SSNs / VA claim numbers client-side before `fetch`, and runs a deterministic server-side `redactPii()` scrubber (`SSN`, `VA file #`, email, phone -> `[REDACTED-*]`) before model invocation and before database persistence, paired with `botid` (`checkBotId()`) + per-IP sliding-window rate limiting (`MAX_MESSAGES = 20`, `MAX_MESSAGE_LENGTH = 2000`, `10 msgs / 5 min`).
+   - **Supabase `chat_conversations` Analytics Store (`lib/chat/log-conversation.ts`, adapted from `WK-private-demo`):**
+     - Scheduled via Next.js `after(() => logConversation(...).catch(() => {}))` so database writes never block or break streaming responses on Vercel, and gracefully no-ops when `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` are unset in local/CI builds.
+     - Upserts `(conversation_id, session_id, audience_mode, active_decision_date, messages, updated_at)` on `onConflict: "conversation_id"` into a Row-Level-Security-locked (`ENABLE ROW LEVEL SECURITY`, zero `anon` read/write policies) `public.chat_conversations` table using PII-scrubbed messages so we can analyze visitor questions, Diagnostic Codes, and topic gaps safely.
+     - Persists `vlg_chat_session` cookie (and fires GA4 Measurement Protocol `chat_message` event via `after()`) **only** when `hasPerformanceConsent` (`vlg_consent`) is `true`; otherwise uses only the ephemeral per-tab `conversationId`.
+     - **Transparent Disclosure:** `<ChatWidget />` displays a clear notice above the input (*"Questions may be logged (with SSNs/claim IDs auto-redacted) to help us improve our guides — never enter private medical or identifying details. See Privacy."*) and `lib/chat/system-prompt.ts` instructs the assistant to answer honestly if asked whether chat questions are logged.

@@ -2,7 +2,7 @@
 
 > **Calm Research Desk Meets Modern Craft:** Connecting specific VA rating and Board decisions, the exact point-in-time historical and modern law governing them, and the concrete records needed to investigate what happened—backed by inspectable primary sources rather than black-box claims.
 
-`[.........ᗧ······] 55% (28/51 Slices Complete: E5-S3 Live; EPIC 10 & EPIC 11 UI/UX Simplification Queued Next)`
+`[........ᗧ·······] 49% (28/57 Slices Complete: E5-S3 Live; EPIC 10, EPIC 12 Octocat & EPIC 11 UI/UX Queued Next)`
 
 ---
 
@@ -50,7 +50,7 @@ Every Markdown document in this repository is indexed below (`scripts/historian_
 - [AGENTS.md](AGENTS.md) — Master Multi-Agent Constitution, 13-agent roster, and Executable Hard-Veto Matrix.
 - [CLAUDE.md](CLAUDE.md) — Claude Code entrypoint and anti-drift verification contract.
 - [GEMINI.md](GEMINI.md) — Google Antigravity & Gemini CLI host profile (`PYTHONNOUSERSITE=1`, `pnpm`).
-- [BACKLOG.md](BACKLOG.md) — Pragmatic 3-Horizon Rolling-Wave Epic & Slice Backlog (`Epics 0–11`).
+- [BACKLOG.md](BACKLOG.md) — Pragmatic 3-Horizon Rolling-Wave Epic & Slice Backlog (`Epics 0–12`).
 - [PLAN.md](PLAN.md) — High-level Epic & Slice milestone checklist locked 1:1 with `BACKLOG.md`.
 - [.codex/README.md](.codex/README.md) — OpenAI Codex harness notes and concurrent-audit launcher.
 

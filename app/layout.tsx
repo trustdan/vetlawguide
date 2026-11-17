@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GitHubCorner } from "@/components/chrome/github-corner";
+import { GoogleTagManager } from "@/components/chrome/google-tag-manager";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { ResearchProvider } from "@/components/providers/research-context";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -40,6 +41,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: ZERO_FLASH_MODE_SCRIPT }} />
       </head>
       <body className="flex min-h-screen flex-col bg-background text-foreground antialiased">
+        <GoogleTagManager />
         <ThemeProvider>
           <ResearchProvider>
             <GitHubCorner />
