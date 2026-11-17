@@ -1,0 +1,31 @@
+{
+  "upstream_id": "playbook-15-gulf-war-mucmi-burn-pits-pact-tera",
+  "upstream_path": "playbooks/15-gulf-war-mucmi-burn-pits-pact-tera.md",
+  "upstream_sha256": "6c4f5c3b62564f2b0d42a69ddebb33b5c5d74a72730fc5f6b5a91826d90d613e",
+  "linked_version_ids": [
+    "38-cfr-3.317-1995-2022-gulf-war-mucmi",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact",
+    "38-cfr-3.33-2024-pact-dic"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Gulf War Undiagnosed/Multisymptom Illnesses, PACT Act Burn Pit Presumptions & Toxic Exposure (TERA) Exams",
+  "what_this_means": "Veterans who served in Southwest Asia or expanded post-9/11 theaters—and Veterans from any era exposed to occupational or environmental hazards—have three distinct paths to service connection that VA examiners sometimes confuse: (1) Gulf War presumptions under 38 U.S.C. § 1117 and 38 C.F.R. § 3.317 for undiagnosed illnesses and Medically Unexplained Chronic Multisymptom Illnesses (chronic fatigue syndrome, fibromyalgia, and functional gastrointestinal disorders like irritable bowel syndrome), which require NO medical nexus opinion; (2) PACT Act airborne-hazard and burn-pit presumptions (38 U.S.C. § 1120 and 38 C.F.R. §§ 3.320–3.320b) covering more than two dozen respiratory conditions and cancers; and (3) direct Toxic Exposure Risk Activity (TERA) medical nexus exams under 38 U.S.C. § 1168 for non-presumptive conditions linked to jet fuel, PFAS firefighting foam, solvents, radiation, or burn pits.",
+  "record_clues": [
+    "A DD-214, deployment travel voucher, flight log, or Individual Longitudinal Exposure Record (ILER) showing service on or after August 2, 1990 in Southwest Asia/Somalia, or on or after September 11, 2001 in Afghanistan, Djibouti, Syria, Jordan, Egypt, Lebanon, Yemen, or Uzbekistan (K2).",
+    "A VA exam denying fibromyalgia, chronic fatigue syndrome, irritable bowel syndrome, or chronic unexplained joint/muscle pain because 'there is no medical nexus linking the condition to Gulf War service.'",
+    "A pre-August 10, 2022 denial of asthma, rhinitis, or sinusitis because symptoms started more than 10 years after discharge or were rated below 10%.",
+    "A diagnosis of urinary bladder or ureter cancer (§ 3.320a, effective January 2, 2025) or leukemia, multiple myeloma, MGUS, myelodysplastic syndrome, or myelofibrosis (§ 3.320b, effective January 10, 2025), or a negative TERA medical opinion that ignored military occupational specialty chemical exposures."
+  ],
+  "important_cautions": [
+    "Different effective-date rules apply to living Veterans vs. Survivors: unlike Vietnam Nehmer claims, PACT Act burn-pit presumptions for living Veterans generally cannot take effect earlier than August 10, 2022 (or January 2025 for newly added §§ 3.320a–3.320b cancers) under 38 C.F.R. § 3.114(a), whereas previously denied Dependency and Indemnity Compensation (DIC) survivor claims re-evaluated under 38 U.S.C. § 1305 and 38 C.F.R. § 3.33 can reach back to the original DIC claim date.",
+    "Statutory text overrides lagging print regulations: the PACT Act (August 10, 2022) statutorily removed the Dec. 31, 2026 Gulf War deadline and added Afghanistan, Israel, Egypt, Turkey, Syria, and Jordan to 38 U.S.C. § 1117, even while VA's October 1, 2024 conforming regulation (89 FR 79815) remains a proposed rule that is not finalized. Similarly, RIN 2900-AQ72 (sleep apnea) remains an unfinalized proposed rule.",
+    "Conditions with a known or partially explained pathology (such as diabetes, multiple sclerosis, or obstructive sleep apnea) do not qualify as unexplained illnesses under 38 C.F.R. § 3.317(a), so representatives typically pursue them through a § 1168 TERA nexus opinion or § 3.310 secondary connection.",
+    "Failures to order a TERA exam or search ILER records are duty-to-assist errors addressed through open review lanes (Higher-Level Review, Supplemental Claim, or Board appeal), not Clear and Unmistakable Error (CUE) motions (Cook v. Principi; 38 C.F.R. § 20.1409(c))."
+  ],
+  "questions_for_representative": [
+    "Does my diagnosed condition already qualify as a presumptive Gulf War multisymptom illness (§ 3.317) or PACT Act burn-pit respiratory/cancer condition (§§ 3.320–3.320b) where no medical nexus opinion is needed?",
+    "Have we requested my Individual Longitudinal Exposure Record (ILER) and military occupational exposure history before attending a 38 U.S.C. § 1168 TERA medical exam?",
+    "If VA denied my PACT Act or Gulf War condition before August 10, 2022 (or before January 2025 for newly added blood and bladder cancers), should we file a Supplemental Claim and check the liberalizing effective-date rules?",
+    "If I am a surviving spouse whose DIC claim was previously denied, am I eligible for retroactive re-evaluation back to my original DIC filing date under 38 U.S.C. § 1305 and 38 C.F.R. § 3.33?"
+  ]
+}

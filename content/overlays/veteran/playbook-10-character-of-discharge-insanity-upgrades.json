@@ -1,0 +1,35 @@
+{
+  "upstream_id": "playbook-10-character-of-discharge-insanity-upgrades",
+  "upstream_path": "playbooks/10-character-of-discharge-insanity-upgrades.md",
+  "upstream_sha256": "007889891b11099dda2bf43c35dfc4a3baff054b7729c7b8f60fdc1d3421fc21",
+  "linked_version_ids": [
+    "38-cfr-3.12-1963-pre2022-cod",
+    "38-cfr-3.12-pre2024-cod",
+    "38-cfr-3.12-2024-cod",
+    "38-cfr-3.13-1961-conditional-discharge",
+    "38-cfr-3.13-2022-current",
+    "38-cfr-3.354-insanity",
+    "38-cfr-3.400g-1962-military-records"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Less-Than-Honorable Discharges (OTH & BCD): Prior Honorable Enlistments (§ 3.13), June 2024 Compelling Circumstances (§ 3.12), Mental Health 'Insanity' (§ 3.354) & Military Upgrades",
+  "what_this_means": "Having an Other Than Honorable (OTH), Undesirable, Bad Conduct (BCD), or Uncharacterized separation on your DD-214 does NOT automatically lock you out of VA disability compensation or health care. First, if you completed an earlier enlistment honorably and immediately reenlisted without a break in service, 38 C.F.R. § 3.13 protects benefits earned during that earlier period regardless of how your final enlistment ended! Second, effective June 25, 2024 (89 FR 32361), VA overhauled 38 C.F.R. § 3.12—expanding the 'compelling circumstances' exception (§ 3.12(e), weighing combat hardship, PTSD/TBI/MST, age, and length of service) to cover prolonged AWOL and regulatory misconduct bars. Third, under 38 U.S.C. § 5303(b) and 38 C.F.R. § 3.354(b), VA uses a broad, non-criminal medical definition of 'insanity' due to disease (such as severe PTSD, bipolar disorder, psychosis, or TBI) that lifts even General Court-Martial bars—and Chapter 17 mental health care (§§ 1720D MST, 1720I OTH mental health) can be available immediately.",
+  "record_clues": [
+    "DD-214 Block 18 ('Remarks') noting 'Immediate Reenlistment' or 'Continuous Honorable Active Service From [Date]'—showing you completed an earlier enlistment before the enlistment that ended in an OTH or BCD (§ 3.13).",
+    "DD-214 Block 24 showing an OTH or a Special Court-Martial (SPCM) Bad Conduct Discharge—often misread as a General Court-Martial bar—or an AWOL count near 180 days that mistakenly counted confinement or authorized leave.",
+    "Service medical records, stockade/brig notes, Article 15 packets, or post-service psychiatric records showing untreated PTSD, TBI, Military Sexual Trauma (MST), depression, bipolar disorder, or psychosis when the in-service misconduct occurred.",
+    "A Discharge Review Board (DRB, DD Form 293) or Board for Correction of Military/Naval Records (BCMR/BCNR, DD Form 149) upgrade decision."
+  ],
+  "important_cautions": [
+    "June 25, 2024 Effective-Date Floor (89 FR 32361): VA published the revised Character of Discharge rule on April 26, 2024, taking effect June 25, 2024 (note: VA rejected and never enacted an earlier July 10, 2020 proposed standalone moral-turpitude definition at 85 FR 41471). Reopening an old denial solely under the liberalized 2024 rule cannot carry a compensation effective date earlier than June 25, 2024 (§ 3.114(a)), nor can the 2024 rule prove CUE in a pre-June 25, 2024 final decision.",
+    "Bars Where 'Compelling Circumstances' (§ 3.12(e)) Does Not Apply: Section 3.12(e) applies to prolonged AWOL (180+ continuous days) and moral-turpitude / willful-and-persistent misconduct bars, NOT to a General Court-Martial sentence (§ 3.12(c)(2)) or an OTH discharge accepted in lieu of a General Court-Martial (§ 3.12(d)(1)(i))—those require § 3.13 prior-enlistment protection, § 3.354(b) insanity, or a 10 U.S.C. § 1552 BCMR/BCNR correction.",
+    "DRB vs. BCMR/BCNR Upgrade Power After 1977: Under Pub. L. 95-126 and § 3.12(f)–(h), a post-October 8, 1977 Discharge Review Board (DRB) upgrade does not automatically override a statutory § 3.12(c) bar (like 180+ days continuous AWOL), whereas a full BCMR/BCNR correction under 10 U.S.C. § 1552 does.",
+    "Insanity Exclusion for Pure Personality Disorders / Voluntary Intoxication: Under § 3.354(a) and VAOPGCPREC 20-97, VA's insanity exception requires behavior caused by an actual disease or injury—not a standalone personality disorder or simple voluntary intoxication unconnected to an underlying mental disease."
+  ],
+  "questions_for_representative": [
+    "Does my Official Military Personnel File (OMPF) or DD-214 Block 18 show an earlier completed enlistment before an immediate reenlistment that already qualifies me as a Veteran under 38 C.F.R. § 3.13?",
+    "Can I file a Supplemental Claim (VA Form 20-0995) to have my OTH or Special Court-Martial discharge reviewed under the June 25, 2024 'compelling circumstances' factors in 38 C.F.R. § 3.12(e)?",
+    "If my discharge involved a General Court-Martial or OTH in lieu of General Court-Martial, do my psychiatric or TBI records support the 38 C.F.R. § 3.354(b) insanity exception or a parallel BCMR/BCNR petition (DD Form 149)?",
+    "While we work on compensation eligibility, can I enroll right now for VA MST counseling (§ 1720D), OTH mental/behavioral health care (§ 1720I), or Chapter 17 health care (§ 3.360)?"
+  ]
+}

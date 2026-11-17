@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-21-overpayment-waivers-incompetency-and-wartime-pension",
+  "upstream_path": "playbooks/21-overpayment-waivers-incompetency-and-wartime-pension.md",
+  "upstream_sha256": "c162082caa497b10a08534e5d1b78dd6e41ade7e804f497223acef64dce10dfc",
+  "linked_version_ids": [
+    "38-cfr-3.274-3.275-pre2018-corpus",
+    "38-cfr-3.274-3.278-2018-csra-lookback",
+    "38-cfr-1.963b2-pre2026-180day-waiver",
+    "38-cfr-1.963b-2026-1yr-waiver",
+    "38-cfr-3.105i-1992-predetermination"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Defending Against VA Overpayment Debts, Proposed Incompetency & Wartime Aid & Attendance Denials",
+  "what_this_means": "Few letters from VA cause more distress than a Debt Management Center (DMC) overpayment demand, a proposal to declare a Veteran 'incompetent' to manage their own finances, or a denial of Wartime / Survivors Pension when assisted-living or memory-care bills are piling up. This playbook walks through the two-track defense against VA overpayments (challenging whether the debt was lawfully created at all AND requesting an 'equity and good conscience' waiver), protecting your right to manage your own funds under 38 C.F.R. § 3.353, and qualifying for Chapter 15 Wartime or Survivors Pension with Aid and Attendance by deducting unreimbursed care expenses under 38 C.F.R. §§ 3.272(g) and 3.278.",
+  "record_clues": [
+    "A VA Debt Management Center First Demand Letter—where responding within 30 days pauses benefit recoupment under 38 C.F.R. § 1.912a(c), and filing VA Form 5655 within 1 year preserves a waiver under 38 U.S.C. § 5302(a) and 38 C.F.R. § 1.963(b).",
+    "A waiver dismissal issued between December 29, 2022 and January 26, 2026 rejecting a waiver filed 181–365 days after the debt letter based on outdated 180-day regulatory text.",
+    "A C&P exam checking 'No' to financial competency or a VA letter proposing incompetency under 38 C.F.R. §§ 3.105(h) and 3.353(e) (or evidence a VA-appointed fiduciary misused funds, triggering mandatory VA reissuance under 38 U.S.C. § 6107).",
+    "An assisted-living, memory-care, nursing-home, or in-home care contract (reported on VA Form 21P-8416 alongside VA Form 21-2680) where high annual care costs reduce countable income for Wartime Pension or Aid and Attendance—even for a wartime Veteran currently receiving a modest 10%–50% compensation check (greater-benefit rule under 38 C.F.R. § 3.701)."
+  ],
+  "important_cautions": [
+    "Never ask for a waiver alone without also checking debt validity: asking for a waiver concedes a debt exists and asks VA to forgive it, whereas challenging debt validity—such as an unlawful reduction lacking 60-day notice (38 C.F.R. § 3.105(e)) or an erroneous award caused SOLELY by VA administrative error (38 U.S.C. § 5112(b)(10))—wipes out the debt as unlawful and has no 1-year waiver deadline.",
+    "Protect the 30-day stay and 1-year waiver clocks: disputing or requesting a waiver within 30 days of the DMC First Demand Letter stops VA from withholding monthly benefits while your case is decided, and the statutory waiver deadline is 1 year from notice of indebtedness for notices on/after December 29, 2022 (180 days before December 29, 2022), barred completely if there was fraud, misrepresentation, or bad faith.",
+    "Pension asset-transfer trap (October 18, 2018): gifting or transferring excess assets for less than fair market value within 36 months BEFORE applying for VA Pension on or after October 18, 2018 triggers up to a 5-year penalty period under 38 C.F.R. § 3.276 (whereas pre-October 18, 2018 transfers are exempt). Also note that age-65+ Housebound Special Monthly Pension still requires a single permanent 100% disability plus 60% additional or permanent housebound status (Chandler v. Shinseki).",
+    "Representation fee rules: nobody can charge a fee to prepare an initial VA Pension application before an initial VA decision (38 U.S.C. § 5904(c)(1)), and attorneys cannot charge a 20% direct-pay fee on uncollected debt balances (Gumpenberger v. Wilkie)."
+  ],
+  "questions_for_representative": [
+    "On my VA overpayment letter, are we still within the 30-day window to freeze monthly benefit withholding—and should we challenge the legal validity of the debt (such as sole VA administrative error under 38 U.S.C. § 5112(b)(10)) alongside a 1-year equitable waiver request?",
+    "If VA proposed to find me financially incompetent, how do we request a predetermination hearing within 30 days and gather statements from my doctor and family showing I manage my finances (38 C.F.R. § 3.353)?",
+    "Would Wartime Pension with Aid and Attendance pay more each month than my current 10%–50% disability compensation once my assisted-living or in-home care expenses are deducted under 38 C.F.R. §§ 3.278 and 3.701?",
+    "Before moving any savings or property prior to a VA Pension claim, how does VA's bright-line net-worth cap and 36-month transfer penalty under 38 C.F.R. §§ 3.274–3.276 work?"
+  ]
+}

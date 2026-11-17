@@ -1,0 +1,35 @@
+{
+  "upstream_id": "checklist-survivor-post-mortem-triage-gate",
+  "upstream_path": "checklists/survivor-post-mortem-triage-gate.md",
+  "upstream_sha256": "265c00e5e8d22142478b2d84a1e5f1bc15e07e60386983c1e4a6cdd21fcc406e",
+  "linked_version_ids": [
+    "38-cfr-3.22-2012-current",
+    "38-cfr-3.33-2024-pact-dic",
+    "38-cfr-3.55-2022-age55",
+    "38-cfr-3.312-1989-cause-of-death",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-3.1000-2015-uncapped",
+    "38-cfr-3.1010-2014-substitution"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Step-by-Step Survivor Checklist After a Veteran Passes Away (Protecting Deadlines, Substitution & Monthly DIC)",
+  "what_this_means": "In the grief and paperwork following a Veteran's passing, critical VA deadlines can quietly slip by—especially the strict 1-year deadline from the date of death to lock in date-of-death DIC effective dates, open-record Substitution (§ 5121A), and unpaid Accrued Benefits (§ 5121). This step-by-step checklist walks surviving spouses, children, dependent parents, and accredited representatives through the exact records and time-sensitive protections to check: signing a fresh survivor representative appointment, preserving any pending VA or court appeal, checking both service-connected cause of death (§ 1310) and 10-year total-disability DIC (§ 1318), screening for PACT Act or Nehmer Agent Orange retroactivity, and verifying DFAS Survivor Benefit Plan (SBP) and burial allowances.",
+  "record_clues": [
+    "The certified death certificate (checking whether contributing service-connected illnesses were omitted), final hospital/hospice discharge summaries, and autopsy reports if performed.",
+    "Any VA Rating Decision, Higher-Level Review, Supplemental Claim, Board appeal, or CAVC appeal that was pending—or still within its 1-year / 120-day appeal window—when the Veteran died.",
+    "Marriage certificates, prior divorce/death decrees, birth certificates of minor, school-age (18–23), or pre-age-18 permanently disabled ('helpless') children, and funeral/burial receipts.",
+    "A Board of Veterans' Appeals decision dated on or after the Veteran's date of death (which must be vacated so the survivor can substitute into the live appeal)."
+  ],
+  "important_cautions": [
+    "1-Year Post-Death Deadline Is Strict: Filing VA Form 21P-534EZ and VA Form 21P-0847 within 1 year of death locks in the month-of-death DIC effective date (38 U.S.C. § 5110(d)) AND preserves statutory Substitution and Accrued rights (§§ 5121(c), 5121A). Missing the 1-year mark permanently forfeits non-Nehmer accrued/substitution back pay.",
+    "New Representative Form Required: Any VSO or attorney Power of Attorney signed by the Veteran ended at death; the survivor must sign a new VA Form 21-22 or 21-22a.",
+    "Dual Filing Required When a Court Appeal Was Pending: If an appeal was at the CAVC or Federal Circuit (or inside the 120-day CAVC appeal window), counsel must protect BOTH court substitution and a formal VA agency substitution/accrued filing within 1 year of death (Merritt v. Wilkie).",
+    "Do Not Confuse Post-Mortem CUE With Accrued Pay: A brand-new CUE motion filed for the first time after death cannot pay § 5121 accrued benefits (Haines v. West), though it CAN establish 10-year § 1318 DIC under 38 C.F.R. § 3.22(b)(1)."
+  ],
+  "questions_for_representative": [
+    "What is the exact 1-year anniversary of the Veteran's passing, and have we submitted both VA Form 21P-534EZ and VA Form 21P-0847 with a fresh survivor VA Form 21-22 / 21-22a?",
+    "Did my loved one have any open claim, appeal, unadjudicated issue, or void post-death Board decision into which I can substitute under 38 U.S.C. § 5121A?",
+    "Do the final hospital records support contributory service-connected death (§ 3.312(c)), PACT Act DIC re-evaluation (§ 3.33), or 10-year total-disability DIC (§ 3.22)?",
+    "Have we also checked non-taxable VA service-connected vs. non-service-connected burial allowances, CHAMPVA health care, Chapter 35 DEA education benefits, and full post-2023 SBP payments?"
+  ]
+}

@@ -83,7 +83,7 @@ function TermPopoverChip({ token }: { token: string }) {
           <span className="mt-1 block text-muted-foreground">{entry.plainEnglish}</span>
           <span
             data-persona="practitioner-only"
-            className="mt-1.5 block border-t border-border pt-1.5 font-mono text-[11px] text-muted-foreground"
+            className="mt-1.5 block border-t border-border pt-1.5 font-mono text-xs text-muted-foreground"
           >
             {entry.practitionerNote}
           </span>

@@ -1,0 +1,34 @@
+{
+  "upstream_id": "auth-38-cfr-4-124a-tbi-peripheral-nerves-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.124a-tbi-and-peripheral-nerves-evolution.md",
+  "upstream_sha256": "f5213469476e892ca13e29f11efb168c4730d604d7f68dfe20864f18870f141f",
+  "linked_version_ids": [
+    "38-cfr-4.124a-8045-1946-pre1996-tbi",
+    "38-cfr-4.124a-8045-pre2008-tbi",
+    "38-cfr-4.124a-8045-2008-tbi-facets",
+    "38-cfr-4.124a-8045-2014-dsm5-tbi",
+    "38-cfr-4.124a-8017-1946-pre2012-als",
+    "38-cfr-4.124a-8017-2012-als-100"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Neurological Rating Snapshots: Traumatic Brain Injury (2008 Facets), ALS & Peripheral Nerves",
+  "what_this_means": "This module preserves the exact historical and current regulations under 38 C.F.R. §§ 4.120–4.124a governing Traumatic Brain Injury (TBI, Diagnostic Code 8045), Amyotrophic Lateral Sclerosis (ALS, Diagnostic Code 8017), migraines (Diagnostic Code 8100), cranial nerves, peripheral nerve radiculopathy/neuropathy (Diagnostic Codes 8510–8730), and epilepsies. Before October 23, 2008, VA capped purely subjective post-concussion complaints (like headaches or dizziness without objective neurological signs) at 10% under Diagnostic Code 8045. Effective October 23, 2008 (published September 23, 2008 at 73 FR 54693), VA created the 10-facet TBI cognitive/residual table—where the SINGLE highest facet level sets the TBI rating (Level 1 = 10%, Level 2 = 40%, Level 3 = 70%, Total = 100%)—while requiring separate ratings for distinct physical and neurological conditions. Separately, effective January 19, 2012 (76 FR 78823), VA raised the minimum rating for ALS (Diagnostic Code 8017) from 30% to 100%.",
+  "record_clues": [
+    "A post-October 23, 2008 TBI examination (DBQ) checking Level 2 (40%) or Level 3 (70%) on any one of the 10 TBI facets while the VA Rating Code Sheet assigned 10% or averaged the facets.",
+    "A TBI rating that lumped migraines (Diagnostic Code 8100), vertigo (Diagnostic Code 6204), tinnitus (Diagnostic Code 6260), or cranial/extremity nerve palsies into a single TBI or mental-health code instead of rating physical residuals separately.",
+    "An ALS (Diagnostic Code 8017) decision on or after January 19, 2012 failing to award at least 100% or failing to evaluate progressive limb, speech/swallowing, and breathing residuals for Special Monthly Compensation (SMC).",
+    "Spine or diabetes exams documenting shooting leg or arm pain, numbness, or weakness (sciatic Diagnostic Code 8520, femoral Diagnostic Code 8526, or upper-extremity radicular/nerve codes) missing from the Rating Code Sheet or mislabeled between the dominant (Major) and non-dominant (Minor) arm."
+  ],
+  "important_cautions": [
+    "Proposed rule quarantine: VA's November 12, 2024 notice proposing to overhaul neurological and peripheral nerve ratings (89 FR 88917, RIN 2900-AQ73) is an unfinalized proposed rule—it is NOT enacted law.",
+    "Exact TBI and ALS effective-date floors: the 10-facet TBI table took effect October 23, 2008 (and cannot establish Clear and Unmistakable Error in final pre-October 23, 2008 decisions or pay increased facet awards earlier than October 23, 2008), while the automatic 100% ALS minimum took effect January 19, 2012.",
+    "Wholly sensory nerve limit: under 38 C.F.R. § 4.124a, when peripheral nerve involvement is purely sensory (numbness or tingling with normal muscle strength, reflexes, and muscle bulk), incomplete-paralysis ratings are capped at mild or, at most, moderate.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "On my TBI Disability Benefits Questionnaire (DBQ), what was the single highest severity level checked across all 10 facets, and did VA assign the percentage matching that highest facet?",
+    "Did VA separately evaluate my physical TBI residuals—such as migraines (Diagnostic Code 8100), dizziness/vertigo, vision changes, or tinnitus—rather than folding them into my TBI or PTSD rating?",
+    "For my neck or back radiculopathy, did VA evaluate both the sciatic nerve (Diagnostic Code 8520) and femoral nerve (Diagnostic Code 8526) if both nerve distributions are affected, and apply Major-arm percentages to my dominant hand?",
+    "If I or my loved one has ALS (Diagnostic Code 8017) or severe TBI requiring regular Aid and Attendance, has VA evaluated entitlement to higher tiers of Special Monthly Compensation (including SMC(l)–(o), SMC(r), or TBI SMC(t))?"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "upstream_id": "auth-38-cfr-4-114-digestive-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.114-digestive-pre-and-post-2024.md",
+  "upstream_sha256": "8334cea53200ad9811efbbf03f4c065de2d72db98f89db387caaa7639e67bbbe",
+  "linked_version_ids": [
+    "38-cfr-4.114-pre2024-digestive",
+    "38-cfr-4.114-2024-digestive",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Digestive System Regulations (38 C.F.R. §§ 4.110–4.114): Comparing Pre- and Post-May 19, 2024 Rules",
+  "what_this_means": "Effective May 19, 2024 (published March 20, 2024 at 89 FR 19735), VA enacted its largest digestive rating schedule overhaul in decades (38 C.F.R. §§ 4.110–4.114). Before May 19, 2024, Gastroesophageal Reflux Disease (GERD) was rated by analogy to Hiatal Hernia (Diagnostic Code 7346: 10%/30%/60% based on heartburn, regurgitation, and arm/shoulder pain), while Irritable Bowel Syndrome (Diagnostic Code 7319) paid 0%, 10%, or 30%. Starting May 19, 2024, VA created a dedicated GERD code (Diagnostic Code 7206: 10% for daily prescribed medication, with 30%/50%/80% tied to esophageal stricture and dilatation), expanded IBS (Diagnostic Code 7319) to 10%, 20%, and 30% Rome IV symptom tiers, consolidated Crohn's disease and ulcerative colitis under Diagnostic Code 7326 (10%/30%/60%/100% including biologic/immunosuppressant therapy), added MELD scores to Cirrhosis (Diagnostic Code 7312), and added dedicated codes for Celiac Disease (Diagnostic Code 7355), GI Dysmotility (Diagnostic Code 7356), and Post-Pancreatectomy Syndrome (Diagnostic Code 7357).",
+  "record_clues": [
+    "An existing pre-May 19, 2024 10%, 30%, or 60% GERD rating (coded as 7399-7346) reduced on or after May 19, 2024 solely because you do not have an esophageal stricture under new Diagnostic Code 7206—violating 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a).",
+    "A claim for GERD, hiatal hernia, IBS, Crohn's/ulcerative colitis, hemorrhoids, or liver disease that was pending across May 19, 2024 where VA failed to compare both pre- and post-May 19, 2024 rules to grant the higher evaluation.",
+    "A Rating Code Sheet improperly refusing to combine codes that sit OUTSIDE 38 C.F.R. § 4.114's non-combination list—such as Esophageal Stricture / GERD / Barrett's Esophagus (Diagnostic Codes 7203, 7206, 7207) or Sphincter Control / Hemorrhoids / Hernia (Diagnostic Codes 7332, 7336, 7338) alongside IBS (Diagnostic Code 7319).",
+    "A digestive cancer (Diagnostic Code 7343, a PACT Act presumptive gastrointestinal cancer) discontinued from 100% after treatment without a mandatory 6-month VA exam and 60 days' advance notice under 38 C.F.R. § 3.105(e)."
+  ],
+  "important_cautions": [
+    "Publication date vs. effective date: VA published the digestive final rule on March 20, 2024 (89 FR 19735), but it took effect May 19, 2024. Post-May 19, 2024 codes (such as the 20% IBS tier, 60% biologic IBD tier, or Celiac Diagnostic Code 7355) cannot establish Clear and Unmistakable Error (CUE) in final decisions issued before May 19, 2024.",
+    "Understand the § 4.114 non-combination list accurately: Diagnostic Codes 7301–7329, 7331, 7342, 7345–7350, 7352, and 7355–7357 cannot be combined with each other (for example, IBS + Peptic Ulcer + Celiac + Liver Disease receive a single predominant rating with potential elevation), whereas 7200-series esophageal codes (including Diagnostic Code 7206 GERD) and anorectal codes like Diagnostic Code 7332 or 7336 sit outside that list.",
+    "Medication rules differ by code and era: Diagnostic Code 7319 (IBS) and pre-May 19, 2024 Diagnostic Code 7346 say nothing about medication—so VA cannot discount baseline symptoms masked by medication (Jones v. Shinseki; Ingram v. Collins)—whereas post-May 19, 2024 Diagnostic Code 7206 explicitly incorporates daily prescribed medication into its 10% tier.",
+    "VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law. Also remember 38 C.F.R. § 20.1409(c) allows only one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "If my GERD, IBS, IBD, or liver claim was pending across May 19, 2024, did VA evaluate my symptoms under both the pre-May 19, 2024 and post-May 19, 2024 schedules?",
+    "If I hold a pre-May 19, 2024 30% or 60% GERD rating under Diagnostic Code 7399-7346, is my existing percentage protected by 38 C.F.R. § 3.951(a)?",
+    "Can my upper-esophageal GERD (Diagnostic Code 7206) or hemorrhoids/sphincter impairment (Diagnostic Codes 7336/7332) be rated separately from my Irritable Bowel Syndrome (Diagnostic Code 7319) under the plain text of 38 C.F.R. § 4.114?",
+    "If I take biologic or immunosuppressant infusions/injections for Crohn's disease or ulcerative colitis (Diagnostic Code 7326), do my treatment records support a 60% or 100% evaluation?"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "upstream_id": "playbook-vre-chapter-31-retroactive-induction-and-rudisill",
+  "upstream_path": "playbooks/23-vre-chapter-31-retroactive-induction-and-rudisill.md",
+  "upstream_sha256": "24bae0250e9c206558fe5cf84350adee0a4b7a8151581d8db4bb3fa525b2b163",
+  "linked_version_ids": [
+    "38-cfr-4.16a-2014-current",
+    "38-cfr-14.636-2019-ama-attorney-fees",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Chapter 31 VR&E ('Forever VR&E' & Retroactive Induction), Independent Living & Rudisill 48-Month GI Bill Rules",
+  "what_this_means": "Chapter 31 Veteran Readiness and Employment (VR&E, 38 U.S.C. §§ 3100–3122) is one of VA's most powerful benefits—covering full tuition, books, equipment, subsistence stipends, or Independent Living home/assistive services for Veterans with a 20%+ disability rating and an Employment Handicap (or a 10% rating and a Serious Employment Handicap). Even better: (1) Congress abolished the old 12-year VR&E deadline for Veterans discharged on or after January 1, 2013 ('Forever VR&E,' 38 U.S.C. § 3103(g)), (2) Retroactive Induction (38 C.F.R. § 21.282) can restore Post-9/11 GI Bill months or reimburse prior out-of-pocket/student-loan tuition paid while a retroactive VA rating was pending, and (3) under the U.S. Supreme Court's 2024 decision in Rudisill v. McDonough, Veterans with multiple separate periods of qualifying service who earned both the Montgomery GI Bill (Chapter 30) and Post-9/11 GI Bill (Chapter 33) can access up to the combined 48-month cap rather than 36 months.",
+  "record_clues": [
+    "A VA Form 28-1900 Chapter 31 denial citing '12-year eligibility period expired' (either for a post-January 1, 2013 discharge where no 12-year bar exists, or for an earlier discharge without properly evaluating a Serious Employment Handicap extension).",
+    "A Veteran currently in an open Chapter 31 VR&E program who previously used Post-9/11 GI Bill months or took out student loans for coursework matching their approved VR&E vocational goal during a period covered by a retroactive VA disability rating (38 C.F.R. § 21.282).",
+    "A VR&E counselor's written determination (VA Form 28-1902b) that employment is 'not currently reasonably feasible' due to service-connected disabilities—potent evidence supporting both Independent Living services (38 U.S.C. § 3120) and TDIU (38 C.F.R. § 4.16).",
+    "Multiple DD-214s (or DD-214 Block 18 'Immediate Reenlistment' remarks / Guard-Reserve Title 10 activations) showing two or more qualifying periods of active service for up to 48 total GI Bill months under Rudisill v. McDonough, 601 U.S. 294 (2024)."
+  ],
+  "important_cautions": [
+    "Sequence matters—use Chapter 31 VR&E BEFORE Chapter 33 GI Bill whenever possible: under VA's April 1, 2021 policy on 38 U.S.C. § 3695, months used in Chapter 31 VR&E FIRST do not deduct from your Post-9/11 GI Bill, whereas using Chapter 33 FIRST counts against initial Chapter 31 entitlement unless restored via Retroactive Induction (§ 21.282) or extended for a Serious Employment Handicap (§ 3105(c)).",
+    "Request Retroactive Induction BEFORE your VR&E case closes: VA's VR&E manual requires an open, active Chapter 31 case to process a § 21.282 Retroactive Induction request, and retroactive induction cannot precede the effective date of your qualifying Chapter 11 disability rating.",
+    "Rudisill requires TWO OR MORE qualifying periods of service: Veterans with only ONE single unbroken period of active service who relinquish Chapter 30 for Chapter 33 remain capped at 36 total months under 38 U.S.C. § 3327(d)(2). Also, pursue Rudisill restoration by filing VA Form 22-1995 for a Rudisill review—not a Clear and Unmistakable Error (CUE) motion (barred for judicial reinterpretations under George v. McDonough and 38 C.F.R. § 20.1403(e)).",
+    "Do not let a VR&E counselor cite outdated 12-year text still printed in 38 C.F.R. §§ 21.41–21.44 if your last discharge or release from active service was on or after January 1, 2013—federal statute 38 U.S.C. § 3103(g) controls."
+  ],
+  "questions_for_representative": [
+    "Since I was discharged on or after January 1, 2013 (or have a Serious Employment Handicap if discharged earlier), did VA wrongly deny my VA Form 28-1900 Chapter 31 application under the old 12-year rule?",
+    "While my Chapter 31 VR&E case is still open, do my past college courses align with my approved Individualized Written Rehabilitation Plan (IWRP) so I can request Retroactive Induction under 38 C.F.R. § 21.282 to restore GI Bill months or reimburse tuition?",
+    "If my VR&E counselor found that working is not currently reasonably feasible due to my service-connected disabilities, have we requested Independent Living services (38 C.F.R. § 21.160) AND submitted that letter in support of TDIU (38 C.F.R. § 4.16)?",
+    "Do my DD-214s or reenlistment contracts document at least two separate periods of qualifying service eligible for up to 48 months of combined GI Bill benefits under Rudisill v. McDonough?"
+  ]
+}

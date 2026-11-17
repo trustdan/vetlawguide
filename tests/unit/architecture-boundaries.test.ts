@@ -94,6 +94,7 @@ describe("Repository Architecture, Lifecycle Hooks & Live Corpus Integrity", () 
     expect(bundle.coverageManifest.activeBookmarkWave).toBe("W5");
     expect(bundle.coverageManifest.totals.upstreamModules).toBe(111);
     expect(bundle.coverageManifest.totals.heldAtGateModules).toBe(0);
+    expect(bundle.coverageManifest.totals.veteranOverlaysAuthored).toBe(111);
     expect(bundle.coverageManifest.vasrdSystems).toHaveLength(16);
     expect(bundle.coverageManifest.practiceDomains).toHaveLength(13);
 
@@ -102,7 +103,7 @@ describe("Repository Architecture, Lifecycle Hooks & Live Corpus Integrity", () 
         sys.moduleIds.length,
         `VASRD system ${sys.systemId} should have >=1 unlocked module`,
       ).toBeGreaterThan(0);
-      expect(sys.coverageState).not.toBe("CORPUS_GAP_OR_QUEUED_WAVE");
+      expect(sys.coverageState).toBe("VERBATIM_VERIFIED");
     }
 
     for (const dom of bundle.coverageManifest.practiceDomains) {
@@ -110,7 +111,7 @@ describe("Repository Architecture, Lifecycle Hooks & Live Corpus Integrity", () 
         dom.moduleIds.length,
         `Practice domain ${dom.domainId} should have >=1 unlocked module`,
       ).toBeGreaterThan(0);
-      expect(dom.coverageState).not.toBe("CORPUS_GAP_OR_QUEUED_WAVE");
+      expect(dom.coverageState).toBe("VERBATIM_VERIFIED");
     }
 
     const seenPermalinks = new Set<string>();

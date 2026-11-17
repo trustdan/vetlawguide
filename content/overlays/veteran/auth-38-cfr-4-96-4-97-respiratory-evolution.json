@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-4-96-4-97-respiratory-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.96-4.97-respiratory-evolution.md",
+  "upstream_sha256": "b94cc91fa0d3aa3f442356c9635488466ae078b89bb7e24dc602f4f117304c51",
+  "linked_version_ids": [
+    "38-cfr-4.96-4.97-1946-pre1996-respiratory",
+    "38-cfr-4.96-4.97-1996-respiratory",
+    "38-cfr-4.96-4.97-2006-may-tech",
+    "38-cfr-4.96-4.97-2006-pft-exceptions"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Respiratory System Regulations (38 C.F.R. §§ 4.96–4.97): Breathing Tests, Sinusitis/Rhinitis, Asthma & Sleep Apnea",
+  "what_this_means": "Effective October 7, 1996 (61 FR 46720), VA modernized its respiratory rating schedule (38 C.F.R. §§ 4.96–4.97) around objective Pulmonary Function Test (PFT) numbers (FEV-1, FEV-1/FVC, FVC, and DLCO diffusing capacity), inhaler/steroid medication tiers for Asthma (Diagnostic Code 6602), dedicated formulas for Sinusitis (Diagnostic Codes 6510–6514) and Rhinitis (Diagnostic Code 6522), and Sleep Apnea Syndromes (Diagnostic Code 6847, awarding 50% when a CPAP or breathing assistance device is medically required)—followed on October 6, 2006 (71 FR 52457) by § 4.96(d)'s rules on when PFTs can be excused and which PFT score governs. Crucially, § 4.96(a) prevents combining multiple LOWER-respiratory codes (Diagnostic Codes 6600–6817 and 6822–6847), while leaving UPPER-respiratory nose and sinus codes (Diagnostic Codes 6502–6524) completely separate to combine!",
+  "record_clues": [
+    "A Rating Code Sheet that improperly folded upper-respiratory Chronic Sinusitis (Diagnostic Codes 6510–6514) or Allergic Rhinitis (Diagnostic Code 6522) into a lower-respiratory Asthma or Sleep Apnea rating—violating the plain numeric boundaries of 38 C.F.R. § 4.96(a).",
+    "Coexisting service-connected Asthma (Diagnostic Code 6602) and Obstructive Sleep Apnea (Diagnostic Code 6847) rated flatly at 50% without evaluating whether combined lower-respiratory severity warrants elevation to the next higher tier (60% or 100%) under § 4.96(a).",
+    "Asthma (Diagnostic Code 6602) rated at 10% despite daily use of an inhaled anti-inflammatory corticosteroid or daily bronchodilator (which meets the 30% tier), or rated at 30% despite three or more courses per year of oral/injectable systemic steroids (which meets the 60% tier).",
+    "A respiratory cancer (Diagnostic Code 6819, a PACT Act presumptive condition) reduced from 100% after treatment without a mandatory VA examination 6 months after treatment ended and 60 days' advance notice under 38 C.F.R. § 3.105(e)."
+  ],
+  "important_cautions": [
+    "Lower-respiratory non-combination rule (§ 4.96(a)): VA cannot assign separate stacked percentages for two lower-respiratory conditions within Diagnostic Codes 6600–6817 and 6822–6847 (for example, Asthma + COPD + Sleep Apnea); instead, VA assigns one rating under the predominant code with potential elevation to the next higher tier.",
+    "October 7, 1996 and October 6, 2006 date gates: Diagnostic Code 6847 (50% CPAP Sleep Apnea) and modern FEV-1/DLCO tables took effect October 7, 1996 (published September 5, 1996 at 61 FR 46720), while § 4.96(d) PFT rules (including § 4.96(d)(7), barring compensable ratings from FEV-1/FVC ratio alone when both FEV-1 and FVC exceed 100% predicted) took effect October 6, 2006—neither can establish Clear and Unmistakable Error (CUE) before its effective date.",
+    "Sleep apnea CPAP rules have NOT changed: VA's February 15, 2022 proposed rule and September 12, 2024 supplemental notice (RIN 2900-AQ72, 87 FR 8474 & 89 FR 74162) remain proposed and unfinalized (not enacted law); the 50% CPAP rule under Diagnostic Code 6847 remains binding law.",
+    "Remember 38 C.F.R. § 20.1409(c): once the Board of Veterans' Appeals issues a final merits decision on a CUE motion on a specific Board issue, no further CUE motions are permitted on that issue."
+  ],
+  "questions_for_representative": [
+    "Did VA keep my upper-respiratory Sinusitis (Diagnostic Codes 6510–6514) and Rhinitis (Diagnostic Code 6522—30% with nasal polyps, 10% without polyps with >50% obstruction) separate from my lower-respiratory Asthma or Sleep Apnea rating?",
+    "On my Pulmonary Function Test report, if FEV-1%, FEV-1/FVC, and DLCO (SB) pointed to different rating levels, did the examiner explain which test best reflects my disability under 38 C.F.R. § 4.96(d)(6)?",
+    "Do my pharmacy records show daily inhaled corticosteroids/bronchodilators (30%) or three or more annual systemic steroid courses (60%) under Diagnostic Code 6602?",
+    "If I have both Sleep Apnea and Asthma/COPD, did VA evaluate elevation to the next higher percentage tier under 38 C.F.R. § 4.96(a)?"
+  ]
+}

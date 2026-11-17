@@ -1,0 +1,33 @@
+{
+  "upstream_id": "authority-38-cfr-4-71a-spine-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.71a-spine-evolution.md",
+  "upstream_sha256": "2aa17115bf6cb30523e76fce878602eaa95b00b20ac76b6315c5ad727d380661",
+  "linked_version_ids": [
+    "38-cfr-4.71a-1946-pre2002-spine",
+    "38-cfr-4.71a-2002-ivds",
+    "38-cfr-4.71a-2003-spine",
+    "38-cfr-4.71a-joints-pre2021",
+    "38-cfr-4.71a-2021-musculoskeletal"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Neck & Back Ratings Across Three Eras: Pre-2002 Qualitative Rules, 2002 Disc Rule & Modern Degree Cutoffs",
+  "what_this_means": "How VA rates neck (cervical) and back (thoracolumbar) disabilities under 38 C.F.R. § 4.71a changed dramatically in 2002 and 2003. Before September 23, 2002, VA used Diagnostic Codes 5285–5295 with descriptive labels ('slight', 'moderate', 'severe' limitation of motion, recurring disc attacks, or lumbosacral muscle spasm on extreme bending). On September 23, 2002, VA revised Intervertebral Disc Syndrome (former Diagnostic Code 5293) around physician-prescribed bed rest ('incapacitating episodes'). Then, effective September 26, 2003 (68 FR 51454), VA enacted today's General Rating Formula for Diseases and Injuries of the Spine (Diagnostic Codes 5235–5243; Diagnostic Code 5244 added February 7, 2021), using exact goniometer degree measurements (such as forward back flexion of 30 degrees or less = 40%) PLUS Note (1) requiring separate ratings for objective nerve radiculopathy, bladder, or bowel complications.",
+  "record_clues": [
+    "A post-September 26, 2003 back exam recording thoracolumbar forward flexion of 30 degrees or less (40%), or 35–60 degrees (20%), or muscle spasm causing abnormal gait/spinal contour (20%), where VA assigned a lower percentage.",
+    "A post-September 26, 2003 neck or back exam noting radiating nerve pain, numbness, or weakness in the arms or legs (radiculopathy) or neurogenic bladder/bowel symptoms omitted from the Rating Code Sheet despite Note (1).",
+    "An older Rating Code Sheet dated before September 26, 2003 showing Diagnostic Codes 5285–5295 (such as Diagnostic Code 5285 for a healed vertebral fracture, which carried an extra 10% for demonstrable deformity).",
+    "Confusion on a modern code sheet between legacy Diagnostic Code 5285 (vertebral fracture, retired in 2003) and the brief November 2020–February 2021 Federal Register typo that temporarily printed 5285 before correcting Plantar Fasciitis to Diagnostic Code 5269."
+  ],
+  "important_cautions": [
+    "Never mix pre-2003 and post-2003 spine rules: goniometer degree cutoffs (such as <=30 degrees = 40% or <=60 degrees = 20%) took effect September 26, 2003 (published August 27, 2003 at 68 FR 51454) and cannot establish Clear and Unmistakable Error (CUE) in final decisions issued before September 26, 2003.",
+    "Notice the one-year interim disc window: Intervertebral Disc Syndrome bed-rest rules took effect September 23, 2002 (67 FR 54345), one year before the broader September 26, 2003 spine overhaul.",
+    "Under Chavis v. McDonough, 'ankylosis' (50%/40%/30%/100% frozen-spine tiers) involves functional or bony fixation of a spinal segment, though later judicial interpretations cannot establish CUE in older final decisions under George v. McDonough and 38 C.F.R. § 20.1403(e).",
+    "Remember 38 C.F.R. § 20.1409(c): once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific Board issue, no second CUE motion is allowed on that issue."
+  ],
+  "questions_for_representative": [
+    "Which spine rating era governed on the date of my VA decision—pre-September 23, 2002 (Diagnostic Codes 5285–5295), the 2002–2003 disc transition, or the post-September 26, 2003 General Rating Formula (Diagnostic Codes 5235–5244)?",
+    "Did my spine examiner test and estimate additional range-of-motion loss during painful flare-ups and repeated weight-bearing movement under DeLuca v. Brown and Correia v. McDonald?",
+    "Did VA assign separate peripheral nerve ratings under Note (1) for every affected nerve in my arms or legs, plus any bladder or bowel nerve involvement?",
+    "If I have Intervertebral Disc Syndrome, would rating under physician-prescribed bed-rest incapacitating episodes or under the General Rating Formula + nerve radiculopathy yield a higher combined evaluation?"
+  ]
+}

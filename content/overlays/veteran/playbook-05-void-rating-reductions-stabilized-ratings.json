@@ -1,0 +1,36 @@
+{
+  "upstream_id": "playbook-05-void-rating-reductions-stabilized-ratings",
+  "upstream_path": "playbooks/05-void-rating-reductions-stabilized-ratings.md",
+  "upstream_sha256": "938d8069e626aedb98024d5be78930cc348491f8d3a934f8113b1b9b5c3e8dcc",
+  "linked_version_ids": [
+    "38-cfr-3.105i-1992-predetermination",
+    "38-cfr-3.344-1961-stabilization",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.951-1969-preservation",
+    "38-cfr-3.951-1992-preservation",
+    "38-cfr-3.953-1961-savings",
+    "38-cfr-3.953-1961-dec-savings",
+    "38-cfr-3.957-1968-ten-year"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "When VA Reduced a Long-Standing Disability Rating or Cut Off Service Connection Without Required Safeguards",
+  "what_this_means": "VA law places strict guardrails around lowering an existing disability rating or severing service connection—and those protections grow stronger the longer a rating has been in place. Under 38 C.F.R. § 3.344, once a disability rating has remained at the same percentage for 5 years or more, VA cannot lower it based on a single routine examination; VA must review the entire medical history and show sustained improvement under the ordinary conditions of daily life and work. At 10 years, service connection itself is protected against severance absent fraud or lack of qualifying military service (§ 3.957), and at 20 years, a continuous evaluation cannot be reduced below its lowest level over those two decades absent fraud (§ 3.951(b)). When VA reduces monthly pay without following mandatory notice or medical-improvement rules, courts treat the unlawful reduction as legally void from the start—meaning the earlier rating can be restored without having to meet the steep standard for Clear and Unmistakable Error (CUE).",
+  "record_clues": [
+    "A VA Rating Code Sheet showing an existing percentage lowered (for example, 70% down to 30%, or discontinuance of Total Disability Based on Individual Unemployability [TDIU]) after a single short Compensation and Pension (C&P) exam.",
+    "A rating that had been in effect at the same level for 5 or more years before the effective date of the reduction, or a rating continuously in force at or above a certain percentage for 20 or more years.",
+    "A reduction that lowered your actual monthly compensation check without VA first sending a 60-day proposed reduction letter under 38 C.F.R. § 3.105(e) (and, from January 21, 1992 onward, notice of your 30-day predetermination hearing right under § 3.105(i)).",
+    "A letter severing (cutting off) service connection after 10 or more years from the original effective date, or lowering an existing rating solely because VA updated the Rating Schedule criteria (§ 3.951(a))."
+  ],
+  "important_cautions": [
+    "Staged Ratings vs. Reductions: When VA grants a claim for the first time and assigns higher and lower 'staged' percentages across past years in the same initial award, the 5-year stabilization rules of § 3.344 generally do not apply unless a rating actually remained in effect for 5 years.",
+    "Combined Payment Exception to Advance Notice: If VA lowered one individual disability percentage but your total combined monthly compensation payment stayed the exact same, VA was not required to send a 60-day advance notice under § 3.105(e)—though § 3.344's medical-improvement rules still apply if that specific rating was stabilized for 5+ years.",
+    "Historical Effective Dates Matter: Predetermination hearing rights under 38 C.F.R. § 3.105(i) took effect on January 21, 1992 (published December 19, 1991 at 56 FR 65846), so pre-1992 reductions must be checked against the procedural rules in force on that date.",
+    "Board CUE Caution (38 C.F.R. § 20.1409(c)): Void-reduction restoration is a distinct legal pathway from a Board CUE motion; never rush into a Board CUE filing without counsel because the Board allows only one final merits CUE decision per prior Board decision issue (excluding without-prejudice pleading dismissals under § 20.1404)."
+  ],
+  "questions_for_representative": [
+    "How many years and months had my disability rating been in effect between its original effective date and the effective date when VA actually lowered my payment?",
+    "Did VA send a 60-day proposed reduction notice under 38 C.F.R. § 3.105(e) before cutting my monthly check, or did VA skip required notice or ignore a timely hearing request?",
+    "Does the C&P examination VA relied on review my entire longitudinal medical history and show sustained improvement under ordinary life and work conditions as required by 38 C.F.R. § 3.344?",
+    "Can we seek restoration of the prior rating as a void reduction (Brown v. Brown / Kitchens / Stern) rather than framing the request as a CUE motion?"
+  ]
+}

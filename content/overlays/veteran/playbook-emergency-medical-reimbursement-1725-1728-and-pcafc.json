@@ -1,0 +1,32 @@
+{
+  "upstream_id": "playbook-emergency-medical-reimbursement-1725-1728-and-pcafc",
+  "upstream_path": "playbooks/22-emergency-medical-reimbursement-1725-1728-and-pcafc.md",
+  "upstream_sha256": "51fe49d46ebbdb987c21b04f9c1d32bd8e73d813b666266f9930d04d86fa3bf8",
+  "linked_version_ids": [
+    "38-cfr-17.1002-17.1005-2018-staab-emergency",
+    "38-cfr-17.1005-2023-wolfe-coinsurance",
+    "38-cfr-part-71-2020-pcafc-and-17.4020c",
+    "38-cfr-part-71-2025-pcafc-and-17.4020c"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Non-VA Emergency Hospital & Ambulance Bills (§§ 1728 vs. 1725 / Wolfe) & Family Caregiver (PCAFC) Appeals",
+  "what_this_means": "When a medical crisis sends a Veteran to the nearest civilian emergency room or air ambulance, VA Health Administration (VHA) billing denials often cite confusing rules about 'Other Health Insurance,' '72-hour notification,' or 'no VA visit within 24 months.' This playbook explains how to check the much stronger reimbursement statute FIRST—38 U.S.C. § 1728 (covering service-connected emergencies, 100% Permanent & Total Veterans for ANY emergency, and active Chapter 31 VR&E participants)—before turning to 38 U.S.C. § 1725 (which covers non-service-connected emergencies, including percentage-based Medicare/insurance coinsurance after Staab v. McDonald and Wolfe v. McDonough) or COMPACT Act acute suicidal crisis care (38 U.S.C. § 1720J). It also explains how Veterans and family caregivers can appeal PCAFC Caregiver Support denials, stipend tiers, or reassessments to the Board of Veterans' Appeals and CAVC after Beaudette v. McDonough (2024).",
+  "record_clues": [
+    "A VHA Office of Integrated Veteran Care / Community Care denial letter citing 'Other Health Insurance (OHI),' '72-hour notification missed,' 'not an active VA user within 24 months,' or 'timely filing exceeded.'",
+    "Hospital (UB-04) or ground/air ambulance bills paired with a Medicare or private insurance Explanation of Benefits (EOB) showing unpaid 20% coinsurance.",
+    "A retroactive VA rating decision granting service connection or 100% Permanent & Total status effective BEFORE the date of an earlier denied civilian emergency room visit (unlocking 38 U.S.C. § 1728).",
+    "A VA Form 10-10CG Family Caregiver (PCAFC) denial, Tier 1 (62.5%) vs. Tier 2 (100% stipend) placement, or reassessment discharge notice under 38 C.F.R. Part 71."
+  ],
+  "important_cautions": [
+    "Always screen 38 U.S.C. § 1728 before § 1725: if the emergency was for a service-connected condition (or an adjunct condition aggravating it), OR you were rated 100% Permanent & Total, OR you were in active Chapter 31 VR&E, § 1728 has a 2-year filing window (38 C.F.R. § 17.126), NO 24-month prior-VA-visit requirement, and reimburses deductibles, copayments, AND coinsurance. By contrast, under § 1725 (non-service-connected emergencies), VA reimburses percentage-based coinsurance (Wolfe; 88 FR 10835), while fixed copayments and deductibles remain barred by 38 U.S.C. § 1725(c)(4)(D).",
+    "Three different emergency clocks: do not let VA confuse the 72-hour notification rule for authorized Community Care network payment (38 C.F.R. § 17.4020(c)) with standalone reimbursement claims under § 1725 (90 days under 38 C.F.R. § 17.1004(d)) or § 1728 (2 years under 38 C.F.R. § 17.126).",
+    "PCAFC Caregiver rules & quarantined proposals: PCAFC regulations live in 38 C.F.R. Part 71 (NOT Community Care §§ 17.4000–17.4040), Legacy Cohort caregiver protections were extended through September 30, 2028 (90 FR 46477), and VA's December 6, 2024 PCAFC notice (89 FR 97404, RIN 2900-AR96) is a proposed, unfinalized rule—not enacted law. Likewise, VA's non-contracted ambulance fee cap rule (88 FR 10032) has been delayed until February 16, 2029 (89 FR 88888) and is not yet in effect.",
+    "Under George v. McDonough and 38 C.F.R. § 20.1403(e), later court rulings like Staab, Wolfe, Veteran Warriors, or Beaudette cannot be used to claim Clear and Unmistakable Error (CUE) against final decisions issued before those rulings."
+  ],
+  "questions_for_representative": [
+    "Does my emergency hospital or ambulance bill qualify under 38 U.S.C. § 1728 (service-connected condition, 100% P&T status, or active Chapter 31 VR&E) rather than the stricter rules of 38 U.S.C. § 1725?",
+    "If my non-service-connected emergency bill falls under 38 U.S.C. § 1725, does my Explanation of Benefits show unpaid percentage-based coinsurance (reimbursable under Wolfe v. McDonough and 38 C.F.R. § 17.1005) rather than a flat copayment or deductible?",
+    "Did VA wrongly deny my emergency claim for missing the 72-hour Community Care notice (38 C.F.R. § 17.4020(c)) when I filed timely under § 1728 or § 1725?",
+    "For our VA Form 10-10CG Family Caregiver (PCAFC) denial or stipend-tier dispute under 38 C.F.R. Part 71, should we file a Supplemental Claim with functional ADL/supervision evidence, a Higher-Level Review, or a Board appeal under Beaudette v. McDonough?"
+  ]
+}

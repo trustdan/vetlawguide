@@ -1,0 +1,35 @@
+{
+  "upstream_id": "cfr-diff-06-cardiovascular-system-4-100-4-104",
+  "upstream_path": "cfr-diffs/vasrd/06-cardiovascular-system-4.100-4.104.md",
+  "upstream_sha256": "5eb41bbe604db5e17c2a9db1a27686c39d8d1f1c96fa230f8ce0d97639feb5d6",
+  "linked_version_ids": [
+    "38-cfr-4.100-4.104-1946-pre1998-cardio",
+    "38-cfr-4.100-4.104-1998-cardio-lvef",
+    "38-cfr-4.100-4.104-2006-mets-4100",
+    "38-cfr-4.100-4.104-2021-cardio-mets",
+    "38-cfr-4.104-7122-1998-cold-injury",
+    "38-cfr-4.104-7122-2021-notes",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Cardiovascular System Guide: Heart METs vs. Ejection Fraction, Hypertension vs. Heart Hypertrophy & Vascular Rules",
+  "what_this_means": "Cardiovascular claims combine complex medical metrics—METs exercise capacity, Left Ventricular Ejection Fraction (LVEF), blood pressure readings, and ankle/toe vascular pressures—with high-stakes effective-date rules for Agent Orange Ischemic Heart Disease (Nehmer, 38 C.F.R. § 3.816) and PACT Act Hypertension (38 U.S.C. § 1116). This comparison explains the three eras of heart ratings (pre-January 12, 1998; the 1998–2021 LVEF + METs era; and the post-November 14, 2021 METs-centered General Heart Formula), when 0% or 10% Hypertension (Diagnostic Code 7101) must step up to 30%+ Hypertensive Heart Disease (Diagnostic Code 7007), and how implanted defibrillators, arrhythmias, peripheral arterial disease, and cold injuries are rated.",
+  "record_clues": [
+    "A pre-November 14, 2021 Ischemic Heart Disease (Diagnostic Code 7005) or Hypertensive Heart Disease (Diagnostic Code 7007) rating assigning 10% based on >7–10 METs while ignoring an echocardiogram showing LVEF of 30%–50% (60%) or <30% (100%), or LVH/hypertrophy (30%).",
+    "A running pre-November 14, 2021 60% or 100% LVEF-based heart rating unlawfully reduced after November 14, 2021 without actual medical improvement (void under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a)).",
+    "Service-connected Hypertension (Diagnostic Code 7101) rated at 0% or 10% when an echocardiogram or cardiac MRI shows left ventricular hypertrophy or dilatation—warranting evaluation as Hypertensive Heart Disease (Diagnostic Code 7007 at 30% or higher)—or secondary kidney/eye complications.",
+    "Sustained ventricular arrhythmia (Diagnostic Code 7011) rated below 100% while an Automatic Implantable Cardioverter-Defibrillator (AICD) is in place, or diabetic Peripheral Arterial Disease (Diagnostic Code 7114) rated on calcified ABI without toe pressure / TcPO2 testing."
+  ],
+  "important_cautions": [
+    "Ischemic Heart Disease vs. Hypertension under Nehmer: Ischemic Heart Disease (Diagnostic Code 7005) IS a covered Nehmer condition eligible for pre-2010 retroactive effective dates under 38 C.F.R. § 3.816, whereas PACT Act § 404 Hypertension (Diagnostic Code 7101) is excluded from Nehmer class retroactivity (though previously denied survivor DIC claims can be re-evaluated retroactively under 38 U.S.C. § 1305).",
+    "Blood-pressure medication rule in Diagnostic Code 7101: the Veterans Court held en banc in McCarroll v. McDonald that Diagnostic Code 7101 contemplates controlled blood pressure on continuous medication at 10%, so higher 20%/40%/60% hypertension tiers require actual diastolic/systolic readings rather than speculative unmedicated estimates (also note Note (1)'s '3 different days' confirmation rule applies to initial diagnosis, not increased-rating exams).",
+    "Do not cite standalone LVEF for claims filed on or after November 14, 2021, or cite 1998 LVEF/METs rules for Clear and Unmistakable Error (CUE) before January 12, 1998, and remember 38 C.F.R. § 20.1409(c) permits only one final merits CUE decision per prior Board issue.",
+    "VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law."
+  ],
+  "questions_for_representative": [
+    "If I have service-connected Hypertension (Diagnostic Code 7101), does an echocardiogram or cardiac MRI show left ventricular hypertrophy (LVH) supporting a 30% or higher rating under Diagnostic Code 7007—or secondary kidney or retinal damage?",
+    "Did VA check both my METs workload and—for any claim period between January 12, 1998 and November 13, 2021—my Left Ventricular Ejection Fraction (LVEF)?",
+    "If I have an implanted AICD defibrillator (Diagnostic Code 7011) or cold injury residuals in multiple extremities (Diagnostic Code 7122), are all separate ratings and Special Monthly Compensation rules applied?",
+    "If I am a Vietnam or Blue Water Navy Veteran (or survivor) with Ischemic Heart Disease, have we audited earlier claims and medical diagnoses for a Nehmer effective date under 38 C.F.R. § 3.816?"
+  ]
+}

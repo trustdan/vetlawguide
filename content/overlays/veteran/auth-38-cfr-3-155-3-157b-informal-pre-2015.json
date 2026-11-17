@@ -1,0 +1,29 @@
+{
+  "upstream_id": "auth-38-cfr-3-155-3-157b-informal-pre-2015",
+  "upstream_path": "authorities/part-3/38-cfr-3.155-3.157b-informal-claims-pre-2015.md",
+  "upstream_sha256": "400be44dfa061e7f90e5afebe65b020b986a9dc6dd231d56d366063c8c0229a9",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.155-3.157b-2015-repeal",
+    "38-cfr-3.400o2-1975-pre2015-informal",
+    "38-cfr-3.400o2-2015-2019-itf"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Pre-March 24, 2015 Informal Claims & VA Medical Reports as Automatic Claims for Increase (Former 38 C.F.R. §§ 3.155 & 3.157(b))",
+  "what_this_means": "For more than half a century before March 24, 2015, Veterans did not always need an official standardized form to start a claim or lock in an effective date. Under former 38 C.F.R. § 3.155(a), any written communication from a Veteran or accredited representative showing an intent to seek benefits and identifying the benefit sought could serve as an informal claim. Even more powerfully, under former 38 C.F.R. § 3.157(b), once a disability was already service-connected (even at 0%), a VA outpatient examination report or VA/military hospital admission report showing that condition worsened automatically counted as an informal claim for an increased rating. Although VA repealed these rules for new filings starting March 24, 2015, they still govern historical records created before that date.",
+  "record_clues": [
+    "VA Medical Center (VAMC) outpatient clinic notes or hospital discharge summaries dated before March 24, 2015 documenting worsening of a disability that was already service-connected at the time.",
+    "Handwritten letters, VA Form 21-4138 statements, or representative correspondence received by VA before March 24, 2015 mentioning symptoms or pointing to VA treatment records (Shea v. Wilkie).",
+    "A multi-year gap between a pre-2015 VA hospitalization for a service-connected condition and a later formal claim where VA only paid back to the later formal form."
+  ],
+  "important_cautions": [
+    "Strict March 24, 2015 Cutoff (79 FR 57660): Published September 25, 2014 and effective March 24, 2015, VA replaced informal claims with the Intent to File (VA Form 21-0966) and standardized applications (such as VA Form 21-526EZ). Letters or VA medical notes dated on or after March 24, 2015 do not initiate a claim on their own.",
+    "Already Service-Connected Requirement for § 3.157(b): Former § 3.157(b) treated a VA medical report as an automatic claim only when the condition was already service-connected (unless a formal claim for initial service connection was filed within 1 year of the VA exam or hospitalization).",
+    "Check for Subsequent Decisions: Even if a pre-2015 VAMC report triggered an informal claim for increase, an accredited representative must check whether a later pre-2019 VA rating decision addressed that disability and started the 1-year appeal clock."
+  ],
+  "questions_for_representative": [
+    "Was my condition already service-connected (at 0% or higher) when I was treated or hospitalized at a VA Medical Center prior to March 24, 2015?",
+    "Did I submit any pre-March 24, 2015 written statement on VA Form 21-4138 or letter referencing symptoms treated in my medical records (Shea v. Wilkie)?",
+    "If a pre-2015 informal claim for increase was triggered under former § 3.157(b), did VA ever adjudicate that period, or can it support an earlier effective date today?"
+  ]
+}

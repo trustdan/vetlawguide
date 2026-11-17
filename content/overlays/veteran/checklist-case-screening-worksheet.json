@@ -1,0 +1,30 @@
+{
+  "upstream_id": "checklist-case-screening-worksheet",
+  "upstream_path": "checklists/case-screening-worksheet.md",
+  "upstream_sha256": "a832d9711a7a274c814be4c2e9cbf3ee766bc5924fb7911b3fc009a5bc0bec86",
+  "linked_version_ids": [
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Printable Preparation Worksheet for Your First Meeting With a VSO or Accredited Attorney",
+  "what_this_means": "Walking into an appointment with a Veterans Service Officer (VSO), accredited claims agent, or VA disability attorney can feel overwhelming when your medical and claims history spans years or decades. This blank offline intake worksheet shows the exact dates and document facts an advocate needs to organize your history: your service branches and deployments, every past VA claim and rating decision date, your 4-digit Diagnostic Codes, whether any ratings were ever reduced, whether military records arrived late, and whether you also receive military retired pay, severance pay, or Combat-Related Special Compensation (CRSC).",
+  "record_clues": [
+    "Your DD-214s (or NGB-22 / Reserve orders), award citations, and any Record Correction or Discharge Upgrade decisions.",
+    "Dates and outcomes of your earliest VA claims, Rating Code Sheets, Statement of the Case (SOC) packets, and any Board of Veterans' Appeals decisions.",
+    "Dates when you stopped working due to service-connected conditions, or dates of VA hospitalizations and surgeries lasting more than 21 days or requiring convalescence."
+  ],
+  "important_cautions": [
+    "Protect Your Personal Privacy: Never post or upload worksheets containing your Social Security number, VA claim number, date of birth, or unredacted medical letters onto public forums or shared online folders. Keep completed copies securely in your private offline records or share them directly with your accredited representative.",
+    "It Is Okay to Mark 'Unknown': If you do not yet have your complete VA Claims File (C-file) or internal Rating Code Sheets, mark those items 'Unknown' so your representative knows to file a Privacy Act / FOIA request or inspect VBMS first.",
+    "Never Pay Unaccredited 'Claim Sharks': Under federal law (38 U.S.C. § 5904), VSOs assist free of charge, and only VA-accredited attorneys or claims agents may charge regulated fees after an initial VA decision has been issued."
+  ],
+  "questions_for_representative": [
+    "Can you verify your VA Office of General Counsel (OGC) accreditation and pull my electronic VBMS eFolder so we can fill in the missing Rating Code Sheet dates together?",
+    "Based on the service eras, decision dates, and conditions on my worksheet, which missing records (such as NPRC inpatient files or Social Security records) should we request first?",
+    "Are there any active 1-year AMA or 120-day CAVC deadlines running right now on my recent decisions that we need to protect first?"
+  ]
+}

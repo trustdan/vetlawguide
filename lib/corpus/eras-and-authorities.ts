@@ -1599,3 +1599,46 @@ export function filterAuthoritiesForSelectedEra(params: {
     preVjraIssuanceEmptyNote: null,
   };
 }
+
+export interface PaginatedSlice<T> {
+  items: T[];
+  totalItems: number;
+  pageSize: number;
+  currentPage: number;
+  totalPages: number;
+  startIndex: number;
+  endIndex: number;
+}
+
+export function paginateAuthorities<T>(
+  items: ReadonlyArray<T>,
+  requestedPage: number,
+  pageSize = 25,
+): PaginatedSlice<T> {
+  const safeSize = Math.max(1, Math.floor(pageSize));
+  const totalItems = items.length;
+  if (totalItems === 0) {
+    return {
+      items: [],
+      totalItems: 0,
+      pageSize: safeSize,
+      currentPage: 1,
+      totalPages: 1,
+      startIndex: 0,
+      endIndex: 0,
+    };
+  }
+  const totalPages = Math.max(1, Math.ceil(totalItems / safeSize));
+  const currentPage = Math.min(totalPages, Math.max(1, Math.floor(requestedPage)));
+  const offset = (currentPage - 1) * safeSize;
+  const pageItems = items.slice(offset, offset + safeSize);
+  return {
+    items: pageItems,
+    totalItems,
+    pageSize: safeSize,
+    currentPage,
+    totalPages,
+    startIndex: offset + 1,
+    endIndex: offset + pageItems.length,
+  };
+}

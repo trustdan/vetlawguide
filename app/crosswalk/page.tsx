@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
@@ -23,45 +24,57 @@ export default function CrosswalkPage() {
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
-      <header className="space-y-2 border-b border-border pb-6">
-        <h1
-          data-persona="veteran-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Old vs. Modern VA Law Number Translator (1933 ↔ 1958 ↔ 1991)
-        </h1>
-        <h1
-          data-persona="practitioner-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Three-Era Title 38 Statutory Crosswalk ({crosswalk.length} Mappings)
-        </h1>
-        <p
-          data-persona="veteran-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Look up old law numbers from WWII, Korea, Vietnam, or Gulf War VA decision
-          letters—such as <code className="font-mono text-xs">Vet. Reg. No. 1(a)</code>{" "}
-          or <code className="font-mono text-xs">38 U.S.C. § 310 / § 3010</code>—and see
-          their modern equivalents without mistaking a renumbering for a change in rights.
-        </p>
-        <p
-          data-persona="practitioner-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Map pre-1959 Veterans&apos; Regulations, 1959–1991{" "}
-          <code className="font-mono text-xs">Pub. L. 85-857</code> sections, and May/Aug.
-          1991 <code className="font-mono text-xs">Pub. L. 102-40 / 102-83</code>{" "}
-          renumberings so CUE motions cite the exact statutory designation in force on{" "}
-          <code className="font-mono text-xs">T₀</code>.
-        </p>
+      <header className="flex items-start gap-4 border-b border-border pb-6">
+        <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
+          <Image
+            src="/illustrations/crosswalk.webp"
+            alt=""
+            width={72}
+            height={72}
+            unoptimized
+            className="h-18 w-18 object-cover"
+          />
+        </div>
+        <div className="min-w-0 space-y-2">
+          <h1
+            data-persona="veteran-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Old vs. Modern VA Law Number Translator (1933 ↔ 1958 ↔ 1991)
+          </h1>
+          <h1
+            data-persona="practitioner-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Three-Era Title 38 Statutory Crosswalk ({crosswalk.length} Mappings)
+          </h1>
+          <p
+            data-persona="veteran-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Look up old law numbers from WWII, Korea, Vietnam, or Gulf War VA decision
+            letters—such as <code className="font-mono text-xs">Vet. Reg. No. 1(a)</code>{" "}
+            or <code className="font-mono text-xs">38 U.S.C. § 310 / § 3010</code>—and see
+            their modern equivalents without mistaking a renumbering for a change in rights.
+          </p>
+          <p
+            data-persona="practitioner-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Map pre-1959 Veterans&apos; Regulations, 1959–1991{" "}
+            <code className="font-mono text-xs">Pub. L. 85-857</code> sections, and May/Aug.
+            1991 <code className="font-mono text-xs">Pub. L. 102-40 / 102-83</code>{" "}
+            renumberings so CUE motions cite the exact statutory designation in force on{" "}
+            <code className="font-mono text-xs">T₀</code>.
+          </p>
+        </div>
       </header>
 
       <CoverageBanner
         state="VERBATIM_VERIFIED"
         checkedAsOf={manifest.checkedAsOf}
         corpusReleaseId={manifest.corpusReleaseId}
-        detail="Compiled deterministically from Wave 1 statutory crosswalk tables with SHA-256-locked Veteran companion."
+        detail="Compiled deterministically from primary statutory crosswalk tables with SHA-256-locked Veteran companion."
         officialEcfrUrl="https://uscode.house.gov/browse/prelim@title38&edition=prelim"
         officialGovInfoUrl="https://www.govinfo.gov/app/collection/uscode"
       />
@@ -92,7 +105,7 @@ export default function CrosswalkPage() {
                 href="/docs/title-38-statutory-crosswalk"
                 className="inline-flex min-h-6 items-center gap-1 font-semibold text-primary hover:underline"
               >
-                <span>Open Full 3-Column Statutory Crosswalk Treatise</span>
+                <span>Read the statutory crosswalk treatise</span>
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
               </Link>
             </div>

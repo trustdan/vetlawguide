@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-09-gynecological-and-breast-4-116",
+  "upstream_path": "cfr-diffs/vasrd/09-gynecological-and-breast-4.116.md",
+  "upstream_sha256": "affa343e7eec0727dd6e89e80af53615ca0e2cf189e4b6cb7194e68ced6d8de6",
+  "linked_version_ids": [
+    "38-cfr-4.116-1995-2002-gyn-breast",
+    "38-cfr-4.116-2018-gyn-breast",
+    "38-cfr-3.350a7-2000-pre2002-mastectomy",
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-4.115a-4.115b-2021-gu"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Gynecological & Breast Conditions: Comparing Historical Rules, Endometriosis, Prolapse & Dual SMC(k)",
+  "what_this_means": "VA's May 13, 2018 update to 38 C.F.R. § 4.116 (published April 9, 2018 at 83 FR 15068) reshaped how gynecological disorders, pelvic floor conditions, sexual health residuals, and breast surgeries or cancers are rated. Many Veterans and adjudicators overlook inferred Special Monthly Compensation (SMC(k)) after hysterectomy, ovary removal, breast radiation, lumpectomy removing at least 25% of breast tissue, or secondary Female Sexual Arousal Disorder (Diagnostic Code 7632) caused by psychiatric medications, Military Sexual Trauma, pelvic trauma, or diabetes—as well as separate post-mastectomy ratings for arm swelling (lymphedema), chest-wall scars, and nerve or muscle damage.",
+  "record_clues": [
+    "A VA Rating Code Sheet granting Diagnostic Codes 7617–7620 (uterus or ovary removal/atrophy) or Diagnostic Code 7632 (Female Sexual Arousal Disorder) with no SMC(k) payment, or denying SMC(k) because of an earlier voluntary tubal ligation.",
+    "Operative or radiation summaries for breast cancer or breast surgery (Diagnostic Codes 7626 or 7630) showing mastectomy, 25%+ tissue removal, or breast radiation on or after December 6, 2002, alongside post-surgical lymphedema or nerve pain.",
+    "Gynecology or pelvic-floor physical therapy notes documenting pelvic organ prolapse (Diagnostic Code 7621) accompanied by stress urinary incontinence (absorbent pads) or bowel symptoms that were not rated separately.",
+    "Antidepressant (SSRI/SNRI) prescriptions for service-connected PTSD or depression, or PACT Act deployment histories paired with reproductive or breast cancers under 38 U.S.C. § 1120(b)(2)(H)."
+  ],
+  "important_cautions": [
+    "Proposed rule alert: VA's October 1, 2025 proposal to eliminate the laparoscopy requirement for endometriosis under Diagnostic Code 7629 (90 FR 47266, RIN 2900-AS39) is still a proposed, unfinalized rule and is NOT enacted law.",
+    "Understand the one-versus-two SMC(k) distinction: multiple reproductive conditions (for example, hysterectomy plus ovary removal plus Diagnostic Code 7632) yield a single creative-organ SMC(k) under 38 C.F.R. § 3.350(a)(1), whereas adding qualifying breast tissue loss (25%+ on or after December 6, 2002) or breast radiation unlocks a separate, second SMC(k) award.",
+    "Do not cite the rescinded February 17, 2026 medication Interim Final Rule (91 FR 7118, rescinded February 27, 2026 at 91 FR 9712) as active law, and check exact pre-2000, 2000–2002, and post-2018 effective dates before considering any Clear and Unmistakable Error (CUE) theory.",
+    "Never rush into a Board of Veterans' Appeals CUE motion: under 38 C.F.R. § 20.1409(c), once the Board issues a final decision on the merits of a CUE motion on a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Can we audit my Rating Code Sheet to verify whether VA overlooked statutory SMC(k)—or a second SMC(k) when both creative-organ loss and breast radiation or 25%+ tissue loss are present?",
+    "Did VA improperly deny SMC(k) after a service-connected hysterectomy or oophorectomy based on a prior elective tubal ligation, contrary to binding VA General Counsel precedent (VAOPGCPREC 5-89)?",
+    "Under post-May 13, 2018 Diagnostic Code 7621, did VA separately evaluate and combine my urinary leakage (under 38 C.F.R. § 4.115a) and digestive symptoms on top of the 10% prolapse rating?",
+    "If my breast cancer rating under Diagnostic Code 7630 stepped down after treatment, did VA separately evaluate post-mastectomy lymphedema, nerve injury, muscle-flap donor sites, and painful or deep scars?"
+  ]
+}

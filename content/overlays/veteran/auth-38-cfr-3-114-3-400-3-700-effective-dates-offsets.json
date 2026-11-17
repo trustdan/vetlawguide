@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-3-114-3-400-3-700-effective-dates-offsets",
+  "upstream_path": "authorities/part-3/38-cfr-3.114-3.400-3.700-effective-dates-offsets.md",
+  "upstream_sha256": "808a3e0048c9bafdb270ea64371dc67401902483c92159da9e7101f74ba7ce7b",
+  "linked_version_ids": [
+    "38-cfr-3.400o2-1975-pre2015-informal",
+    "38-cfr-3.400o2-2019-ama-intro",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-3.700a-2002-after-tax-recoupment",
+    "38-cfr-3.700a3-2009-combat-severance"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Effective Dates, 1-Year Lookbacks, Continuous Pursuit & Severance Pay Offset Snapshots",
+  "what_this_means": "This module provides the exact regulations that determine BOTH the start date of VA disability back pay and whether VA can withhold money from that award: liberalizing law lookbacks (38 C.F.R. § 3.114), general and 1-year increased-rating effective dates (38 C.F.R. § 3.400, especially § 3.400(o)(2)), AMA continuous pursuit across 1-year review steps (38 C.F.R. § 3.2500), Reserve drill-pay and felony-incarceration adjustments (38 C.F.R. §§ 3.654 and 3.665), and recoupment of military disability severance pay or separation pay (38 C.F.R. § 3.700).",
+  "record_clues": [
+    "Medical records showing a service-connected disability clearly worsened within the 12 months BEFORE VA received an increased-rating claim or Intent to File (38 C.F.R. § 3.400(o)(2)), where VA mistakenly used the later C&P exam date instead.",
+    "A chain of AMA Supplemental Claims, Higher-Level Reviews, Board appeals, or timely Court appeals filed within 1 year of each prior decision notice (38 C.F.R. § 3.2500(c) and (h)).",
+    "A DD-214 or VA Award Letter showing recoupment of Chapter 61 Disability Severance Pay, Separation Pay, or Special Separation Benefits—especially if separation occurred after September 30, 1996 (after-tax cap) or on/after January 28, 2008 for a combat-zone or combat-related injury (zero recoupment allowed).",
+    "VA Form 21-8951 (Reserve/National Guard drill-pay waiver) calculating day-for-day training offsets instead of forfeiting an entire year's VA compensation."
+  ],
+  "important_cautions": [
+    "Liberalizing law floor (38 C.F.R. § 3.114(a)): when a new statute or VA regulation creates presumptive entitlement (such as the PACT Act), the effective date under § 3.114(a) can never be earlier than the effective date of that new law, and is capped at up to 1 year before the claim if filed more than 1 year after enactment (unless special Nehmer § 3.816 or PACT DIC § 3.33 rules apply).",
+    "March 24, 2015 informal-claim shift: since March 24, 2015 (79 FR 57660), VA treatment records alone no longer count as an automatic claim for increase—you must file a complete claim or Intent to File within 1 year of the medically documented worsening to capture the 1-year § 3.400(o)(2) lookback.",
+    "Post-court continuous pursuit trap: after an adverse CAVC decision on an AMA appeal, you must file a Supplemental Claim (or Intent to File, per Military-Veterans Advocacy v. Secretary of Veterans Affairs) within 1 year of the CAVC decision if you want to keep your original effective-date chain alive.",
+    "Severance pay date cutoffs: VA's complete ban on recouping combat-zone / combat-related Chapter 61 disability severance pay applies strictly to military separations on or after January 28, 2008 (Pub. L. 110-181, § 1646), while the net after-tax recoupment cap applies to separation/severance payments made after September 30, 1996."
+  ],
+  "questions_for_representative": [
+    "Did VA mistakenly set my effective date on the date of my C&P examination instead of my Intent to File date, claim date, or up to 1 year earlier under 38 C.F.R. § 3.400(o)(2) for an increased rating?",
+    "Have all of my AMA reviews and appeals been filed within 1 year of each decision (or 120 days to the CAVC) to preserve my earliest effective date under 38 C.F.R. § 3.2500?",
+    "If VA is withholding separation or disability severance pay from my compensation under 38 C.F.R. § 3.700, did VA cap the recoupment at the net after-tax amount (post-September 30, 1996) or exempt combat-related Chapter 61 severance pay (separated on/after January 28, 2008)?",
+    "If I drill in the National Guard or Reserve, did VA properly limit my 38 C.F.R. § 3.654 drill-pay adjustment strictly to the exact number of training days?"
+  ]
+}

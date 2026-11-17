@@ -1,0 +1,30 @@
+{
+  "upstream_id": "doctrine-vaopgcprec-master-index",
+  "upstream_path": "docs/vaopgcprec-index.md",
+  "upstream_sha256": "274de47ac60e1ed97f09f8c92e292fa1ceb61f97a52edf659173fd98e745b24c",
+  "linked_version_ids": [
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-3.304b-2005-wagner-soundness",
+    "38-cfr-3.310b-2006-secondary-aggravation",
+    "38-cfr-3.354-insanity"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Binding VA General Counsel Legal Opinions (VAOPGCPREC) & Why Some Older Opinions Were Withdrawn",
+  "what_this_means": "When a tricky legal question arises inside VA, VA's top lawyer—the General Counsel—can issue a formal Precedent Opinion (abbreviated 'VAOPGCPREC'). Under federal statute (38 U.S.C. § 7104(c)), active VA General Counsel Precedent Opinions are legally binding on every VA Regional Office rater AND on every Veterans Law Judge at the Board of Veterans' Appeals. Many landmark Veteran protections come directly from active VAOPGCPREC opinions: allowing separate knee ratings for instability and limited motion (VAOPGCPREC 23-97 & 9-98), protecting progressive hereditary diseases from being dismissed as 'congenital defects' (VAOPGCPREC 82-90), and recognizing obesity as an intermediate link in secondary claims (VAOPGCPREC 1-2017). At the same time, courts later struck down several older restrictive General Counsel opinions, forcing VA to formally withdraw them.",
+  "record_clues": [
+    "A knee rating decision refusing to grant separate percentages for lateral knee instability (DC 5257) alongside painful or limited flexion (DC 5260) and extension (DC 5261).",
+    "A denial calling a progressive genetic or familial disease (such as retinitis pigmentosa, hereditary neuropathy, or hypertrophic cardiomyopathy) a non-compensable 'congenital defect' under 38 C.F.R. § 3.303(c).",
+    "A secondary claim for sleep apnea, hypertension, or diabetes denied without evaluating whether service-connected pain, immobility, or medication caused weight gain/obesity as an intermediate step (VAOPGCPREC 1-2017).",
+    "An older 1990s or 2000s denial citing a VAOPGCPREC number (such as VAOPGCPREC 6-99 on TDIU/SMC(s) or VAOPGCPREC 7-99 on secondary substance use) that courts later invalidated."
+  ],
+  "important_cautions": [
+    "Never Rely on a Withdrawn Opinion: Several older VAOPGCPREC opinions (including 6-99, 7-99, 4-99, 13-94, 2-2007, and 2-2008) were formally withdrawn or invalidated by federal courts and are no longer valid law.",
+    "Why George v. McDonough Matters for Old Opinions: Under 38 C.F.R. § 20.1403(e) and George v. McDonough, 596 U.S. 740 (2022), if an older final VA decision faithfully applied a restrictive VAOPGCPREC opinion that was still active at that time before a court struck it down, you generally cannot overturn that old decision via Clear and Unmistakable Error (CUE)—though you can file an AMA Supplemental Claim or check for pending claims or § 3.156(c) service records.",
+    "Pre-July 21, 1992 VAMC Record Rule: Under VAOPGCPREC 12-95, constructive possession of VA medical records under Bell v. Derwinski applies to CUE motions only for decisions issued on or after July 21, 1992."
+  ],
+  "questions_for_representative": [
+    "Does an active binding VA General Counsel Precedent Opinion (such as VAOPGCPREC 23-97, 82-90, 20-97, or 1-2017) directly require VA and the Board to recognize my legal theory?",
+    "If my older VA denial relied on a VAOPGCPREC opinion that a federal court later struck down, should we pursue a Supplemental Claim or pending/service-record audit rather than a CUE motion?",
+    "Did VA overlook a binding General Counsel opinion that was already active and in force on the exact date of my rating decision?"
+  ]
+}

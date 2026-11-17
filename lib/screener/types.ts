@@ -13,6 +13,12 @@ export type IssueFocus =
   | "penetrating-scar-muscle"
   | "service-records-reconsideration"
   | "finality-nod-informal-notice"
+  | "stabilized-reduction-or-severance"
+  | "tdiu-or-smc"
+  | "nehmer-herbicide"
+  | "survivor-dic-accrued"
+  | "cod-or-insanity"
+  | "severance-recoupment"
   | "general-collateral-review";
 
 export type RetireeProfile = "none" | "military-retiree-or-ch61" | "unknown";
@@ -20,7 +26,13 @@ export type RetireeProfile = "none" | "military-retiree-or-ch61" | "unknown";
 export type FactQuestionGroup =
   | "service-records"
   | "pending-finality"
+  | "void-reduction"
   | "scar-vs-muscle"
+  | "tdiu-and-smc"
+  | "nehmer-herbicide"
+  | "survivor-dic-accrued"
+  | "cod-discharge"
+  | "severance-recoupment"
   | "cue-record-and-math";
 
 export interface MissingRecordDefinition {

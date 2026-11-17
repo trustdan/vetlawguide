@@ -328,7 +328,7 @@ export function CfrRedlineViewer({
         <div className="min-w-0">
           <label
             htmlFor="redline-before-select"
-            className="block text-[11px] font-semibold text-muted-foreground"
+            className="block text-xs font-semibold text-muted-foreground"
           >
             Prior Era Snapshot (Baseline A)
           </label>
@@ -349,7 +349,7 @@ export function CfrRedlineViewer({
         <div className="min-w-0">
           <label
             htmlFor="redline-after-select"
-            className="block text-[11px] font-semibold text-muted-foreground"
+            className="block text-xs font-semibold text-muted-foreground"
           >
             Subsequent Era Snapshot (Comparison B)
           </label>
@@ -368,7 +368,7 @@ export function CfrRedlineViewer({
         </div>
 
         <div className="min-w-0">
-          <span className="block text-[11px] font-semibold text-muted-foreground">
+          <span className="block text-xs font-semibold text-muted-foreground">
             Comparison Layout
           </span>
           <div
@@ -486,7 +486,7 @@ export function CfrRedlineViewer({
                             color: "var(--diff-removed-fg)",
                             borderColor: "var(--diff-removed-border)",
                           }}
-                          className="inline-block rounded border px-1.5 py-0.5 font-mono text-[10px] font-semibold line-through"
+                          className="inline-block rounded border px-1.5 py-0.5 font-mono text-xs font-semibold line-through"
                         >
                           Prior Table ({beforeSnap.effective_from})
                         </span>
@@ -508,7 +508,7 @@ export function CfrRedlineViewer({
                               color: "var(--diff-added-fg)",
                               borderColor: "var(--diff-added-border)",
                             }}
-                            className="inline-block rounded border px-1.5 py-0.5 font-mono text-[10px] font-semibold underline"
+                            className="inline-block rounded border px-1.5 py-0.5 font-mono text-xs font-semibold underline"
                           >
                             Added / Amended Table ({afterSnap.effective_from})
                           </span>
@@ -554,7 +554,7 @@ export function CfrRedlineViewer({
                   key={row.rowIndex}
                   className="rounded-md border border-border bg-background p-3"
                 >
-                  <div className="mb-2 flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-1.5 font-mono text-[11px]">
+                  <div className="mb-2 flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-1.5 font-mono text-xs">
                     <span className="text-muted-foreground">Clause #{row.rowIndex + 1}</span>
                     <span className="font-semibold text-foreground uppercase">
                       {row.changeKind}
@@ -562,7 +562,7 @@ export function CfrRedlineViewer({
                   </div>
                   <div className="grid gap-3 md:grid-cols-2">
                     <div className="min-w-0 overflow-x-auto rounded border border-border/70 bg-surface/50 p-3">
-                      <div className="mb-1 [overflow-wrap:anywhere] font-mono text-[11px] font-semibold text-muted-foreground">
+                      <div className="mb-1 [overflow-wrap:anywhere] font-mono text-xs font-semibold text-muted-foreground">
                         Baseline A ({beforeSnap.cfr_section} · Eff. {beforeSnap.effective_from})
                       </div>
                       {row.beforeParagraph ? (
@@ -585,7 +585,7 @@ export function CfrRedlineViewer({
                     </div>
 
                     <div className="min-w-0 overflow-x-auto rounded border border-border/70 bg-surface/50 p-3">
-                      <div className="mb-1 [overflow-wrap:anywhere] font-mono text-[11px] font-semibold text-muted-foreground">
+                      <div className="mb-1 [overflow-wrap:anywhere] font-mono text-xs font-semibold text-muted-foreground">
                         Comparison B ({afterSnap.cfr_section} · Eff. {afterSnap.effective_from})
                       </div>
                       {row.afterParagraph ? (

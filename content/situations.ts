@@ -14,7 +14,7 @@ export const CORE_SITUATION_CARDS: ReadonlyArray<SituationEntryCard> = [
     veteranSummary:
       "Check what rules applied on an earlier VA decision date and which missing service or hospital records are worth asking an accredited representative about.",
     practitionerSummary:
-      "Screen RO and Board decisions across T₀ historical 38 C.F.R. text, notice/mailing regularity, § 3.156(c) service records, and George / § 20.1403(e) collateral CUE limits.",
+      "Screen RO and Board decisions across historical 38 C.F.R. text, notice/mailing regularity, § 3.156(c) service records, and George / § 20.1403(e) collateral CUE limits.",
     href: "/investigate",
     exampleQueries: ["0% scar shrapnel wound", "missing hospital records", "VA Form 10-7131"],
   },
@@ -25,7 +25,7 @@ export const CORE_SITUATION_CARDS: ReadonlyArray<SituationEntryCard> = [
       "Understand how VA evaluates conditions across all 15 body systems, including separate ratings for scars, muscles, and nerves.",
     practitionerSummary:
       "Inspect 38 C.F.R. Part 4 Diagnostic Codes (DC 5000–9918), § 4.14 Esteban anti-pyramiding, § 4.26(d) bilateral exclusion math, and SMC multipliers.",
-    href: "/cfr",
+    href: "/vasrd",
     exampleQueries: ["DC 5313", "DC 7804", "DC 8045", "SMC(t)"],
   },
   {
@@ -55,7 +55,7 @@ export const CORE_SITUATION_CARDS: ReadonlyArray<SituationEntryCard> = [
       "Plain-English guides for surviving spouses and families navigating DIC, pending claims at death, remarriage rules, and Nehmer benefits.",
     practitionerSummary:
       "Audit § 1310 direct DIC, § 1318 / § 3.22(b) hypothetical CUE/3.156(c) reconstruction, § 5121A substitution vs. § 5121 Haines bar, and § 3.816(f) estate payouts.",
-    href: "/playbooks",
+    href: "/explore#survivor-benefits",
     exampleQueries: ["38 U.S.C. § 1318", "5121A substitution", "Nehmer estate"],
   },
 ];

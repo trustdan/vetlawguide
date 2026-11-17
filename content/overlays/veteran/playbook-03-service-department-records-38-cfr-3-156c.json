@@ -1,0 +1,29 @@
+{
+  "upstream_id": "playbook-03-service-department-records-38-cfr-3-156c",
+  "upstream_path": "playbooks/03-service-department-records-38-cfr-3-156c.md",
+  "upstream_sha256": "523a7cb58c9e02357ebfd70fedb8017d8ed422cf12bdf86c5f79475a968ce336",
+  "linked_version_ids": [
+    "38-cfr-3.156c-1962-pre2006",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Missing Military, Hospital & Unit Records Found Years Later (38 C.F.R. § 3.156(c) Retroactive Reconsideration)",
+  "what_this_means": "Many Veterans were denied service connection decades ago—for combat injuries, in-service surgeries, PTSD stressors, or toxic exposures—simply because key official military records were sitting in a separate archive, misfiled, classified, or thought lost in the 1973 St. Louis National Personnel Records Center (NPRC) fire. Under 38 C.F.R. § 3.156(c), if VA later receives relevant official service department records that existed when VA previously denied the claim, VA must reconsider that earlier claim. Even if your condition was already granted years later on a reopened or Supplemental Claim, newly associated service records that help prove the original claim can push your effective date all the way back to the original claim date (or when the disability arose, if later)—without needing to prove Clear and Unmistakable Error (CUE).",
+  "record_clues": [
+    "An early VA denial stating 'Service medical records are negative for treatment' or 'No in-service stressor corroborated,' followed years later by VA granting the exact same condition.",
+    "An NPRC NA Form 13055 or 1973 St. Louis fire notice in your Claims File (C-file), later supplemented by reconstructed morning reports, hospital admission indices, pay records, or personnel files.",
+    "Military inpatient clinical packets (stored separately from outpatient health jackets), Navy deck logs, Air Force unit histories, DA Form 20 personnel files, DD-215 corrections, or Joint Services Records Research Center (JSRRC) / Defense Department combat verifications added to your C-file after the first denial.",
+    "A Supplemental Claim (VA Form 20-0995) award that set your effective date on the date you reapplied, even though newly obtained service records were part of the evidence."
+  ],
+  "important_cautions": [
+    "Why the Original Denial Reason Matters (Blubaugh & Kisor): Section 3.156(c) applies when the newly associated service records are 'relevant'—meaning they relate to a disputed reason why the earlier claim was denied (such as proving an in-service event or injury). If VA already conceded the in-service event in the original decision and denied solely because you had no current medical diagnosis at that time, newly found service event records generally will not change that earlier effective date.",
+    "Official Service Records Only: Post-service private doctor notes, lay buddy statements, Social Security records, and post-discharge VA Medical Center (VAMC) treatment notes are valuable evidence, but they are not 'official service department records' under § 3.156(c).",
+    "2005 Proposal vs. October 6, 2006 Final Rule: VA proposed clarifying § 3.156(c) on June 20, 2005 (70 FR 35388) and finalized it effective October 6, 2006 (published September 6, 2006 at 71 FR 52455), consolidating former § 3.400(q)(2) effective-date rules."
+  ],
+  "questions_for_representative": [
+    "Can we compare the exact 'Evidence' list on my earliest VA denial against every military hospital packet, deck log, personnel record, or unit log now in my VBMS eFolder?",
+    "Even though I am already service-connected today, did VA grant my condition later under a new law (like the PACT Act or relaxed PTSD rules) before checking whether newly associated service records corroborate my original denied claim (Emerson v. McDonald)?",
+    "What exact reason did VA give for my original denial—missing proof of an in-service event/injury, or lack of a current diagnosis—and how do the newly associated service records address that gap?",
+    "If VA granted service connection based on newly associated service records, do we have medical or lay evidence across the past decades so VA can assign accurate staged ratings back to the original claim?"
+  ]
+}

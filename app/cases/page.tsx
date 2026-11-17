@@ -31,13 +31,13 @@ export default function CasesDirectoryPage() {
         </h1>
         <p
           data-persona="veteran-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          className="editorial-prose text-muted-foreground"
         >
-          <LexiconText text="Explore the Supreme Court, Federal Circuit, CAVC, and VA General Counsel rulings that govern VA disability and survivor decisions—and click any Era in the sticky top bar to see which rulings apply to a decision from that decade." />
+          <LexiconText text="Explore the Supreme Court, Federal Circuit, CAVC, and VA General Counsel rulings that govern VA disability and survivor decisions—and select an Era in the top bar to see which rulings apply to a decision from that decade." />
         </p>
         <p
           data-persona="practitioner-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          className="editorial-prose text-muted-foreground"
         >
           Controlling SCOTUS, Federal Circuit, CAVC precedential opinions,{" "}
           <Link
@@ -46,8 +46,7 @@ export default function CasesDirectoryPage() {
           >
             binding &amp; quarantined VAOPGCPREC digests
           </Link>
-          , and CAVC Rule 30(a) nonprecedential guardrails across{" "}
-          <strong>Bookmark {manifest.activeBookmarkWave}</strong> ({precedents.length}{" "}
+          , and CAVC Rule 30(a) nonprecedential guardrails ({precedents.length}{" "}
           deduplicated authorities;{" "}
           <Link
             href="/docs/authority-verification-log"

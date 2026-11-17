@@ -228,7 +228,7 @@ export function CfrSectionWorkspace({
             </h2>
 
             {quickDates.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs">
                 <span className="inline-flex items-center gap-1 font-medium text-muted-foreground">
                   <Calendar className="h-3 w-3" aria-hidden="true" />
                   <span>Test Decision Date:</span>
@@ -274,7 +274,7 @@ export function CfrSectionWorkspace({
                   )}
                 >
                   <div className="space-y-1">
-                    <div className="flex items-center justify-between gap-1 font-mono text-[11px]">
+                    <div className="flex items-center justify-between gap-1 font-mono text-xs">
                       <span className="font-semibold text-primary">
                         Eff. {ver.effective_from}
                       </span>
@@ -289,7 +289,7 @@ export function CfrSectionWorkspace({
                       {ver.heading ?? ver.cfr_section}
                     </p>
                   </div>
-                  <p className="mt-2 border-t border-border/60 pt-1.5 font-mono text-[10px] text-muted-foreground">
+                  <p className="mt-2 border-t border-border/60 pt-1.5 font-mono text-xs text-muted-foreground">
                     Pub: {ver.publication_date ?? "Baseline"} · Ends:{" "}
                     {ver.effective_to ?? "present"}
                   </p>
@@ -484,7 +484,7 @@ export function CfrSectionWorkspace({
                           <div className="pt-1">
                             <Link
                               href={`/vasrd/${section.vasrdSystem}`}
-                              className="font-mono text-[11px] font-semibold text-primary underline underline-offset-2"
+                              className="font-mono text-xs font-semibold text-primary underline underline-offset-2"
                             >
                               Open VASRD Hub: {getVasrdSystemLabel(section.vasrdSystem)} →
                             </Link>
@@ -498,19 +498,19 @@ export function CfrSectionWorkspace({
                         <h3 className="font-semibold text-foreground">
                           Governing Judicial Authorities Cited in Snapshot
                         </h3>
-                        <ul className="mt-1.5 list-disc space-y-1.5 pl-4 font-mono text-[11px] text-muted-foreground">
+                        <ul className="mt-1.5 list-disc space-y-1.5 pl-4 font-mono text-xs text-muted-foreground">
                           {section.keyPrecedents.map((cite) => {
                             const nonprec = classifyPrecedentNonprecedential(cite);
                             return (
                               <li key={cite}>
                                 <span>{cite}</span>
                                 {nonprec.isRule30a && (
-                                  <span className="ml-2 inline-block rounded border border-accent/60 bg-accent/10 px-1.5 py-0.5 text-[10px] font-semibold text-accent">
+                                  <span className="ml-2 inline-block rounded border border-accent/60 bg-accent/10 px-1.5 py-0.5 text-xs font-semibold text-accent">
                                     Nonprecedential — CAVC Rule 30(a)
                                   </span>
                                 )}
                                 {nonprec.isFedCirNonprecedential && (
-                                  <span className="ml-2 inline-block rounded border border-accent/60 bg-accent/10 px-1.5 py-0.5 text-[10px] font-semibold text-accent">
+                                  <span className="ml-2 inline-block rounded border border-accent/60 bg-accent/10 px-1.5 py-0.5 text-xs font-semibold text-accent">
                                     Nonprecedential — Fed. Cir. R. 32.1
                                   </span>
                                 )}

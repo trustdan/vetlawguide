@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-08-genitourinary-system-4-115-4-115b",
+  "upstream_path": "cfr-diffs/vasrd/08-genitourinary-system-4.115-4.115b.md",
+  "upstream_sha256": "439bfeb7b49d7aa098402fec708fc5fcd742e0ecb812236a7ab5ee677effe984",
+  "linked_version_ids": [
+    "38-cfr-4.115a-4.115b-1994-feb-gu",
+    "38-cfr-4.115a-4.115b-1994-gu",
+    "38-cfr-4.115a-4.115b-2021-gu",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Kidney, Bladder & Prostate Ratings: Comparing 1994 and 2021 Rules, Cancer Protections & SMC(k)",
+  "what_this_means": "When VA evaluates prostate, bladder, or kidney conditions under 38 C.F.R. §§ 4.115a and 4.115b, most long-term ratings turn on functional categories—renal (kidney) lab function, voiding dysfunction (pad leakage, frequency, or obstruction), or chronic urinary tract infections—rather than the name of the diagnosis alone. Understanding the November 14, 2021 overhaul (published September 30, 2021 at 86 FR 54081) is especially important for Agent Orange (Nehmer), Camp Lejeune, and PACT Act Veterans with prostate, bladder, or kidney cancer (Diagnostic Code 7528), as well as Veterans developing diabetic or hypertensive kidney disease.",
+  "record_clues": [
+    "Post-prostatectomy or radiation oncology records documenting urinary incontinence requiring absorbent pads (2–4 pad changes/day = 40%; more than 4 pad changes/day = 60%) alongside a Rating Code Sheet paying only 10% or 20% for daytime/nighttime frequency.",
+    "Active prostate, bladder, kidney, or ureter cancer (including Gulf War / post-9/11 urinary bladder and ureter cancer presumptions added January 2, 2025 under 38 C.F.R. § 3.320a, or Agent Orange prostate and bladder cancers under 38 C.F.R. § 3.816) reduced from 100% without a post-6-month VA exam and 60-day notice.",
+    "Urology prescriptions such as tamsulosin (Flomax), finasteride, oxybutynin, or mirabegron masking baseline urinary frequency or urgency on an exam.",
+    "Loss of one service-connected kidney (Diagnostic Code 7500) followed years later by non-service-connected disease in the remaining kidney, which triggers paired-organ protection under 38 U.S.C. § 1160(a)(2) and 38 C.F.R. § 3.383(a)(2)."
+  ],
+  "important_cautions": [
+    "Only the highest voiding category pays for the same condition: under 38 C.F.R. § 4.115a, VA cannot stack separate ratings for urinary frequency, obstructed voiding, and absorbent-pad leakage from the same prostate or bladder disorder—instead, VA must assign whichever dysfunction category provides the highest percentage.",
+    "Check the November 14, 2021 cutoff carefully: on claims filed on or after November 14, 2021, Diagnostic Code 7522 (erectile dysfunction) carries a 0% schedular evaluation (plus statutory SMC(k)) and Diagnostic Code 7508 (kidney stones) no longer pays 30% for diet or drug therapy alone, whereas pre-November 14, 2021 running ratings remain protected under 38 U.S.C. § 1155.",
+    "Post-treatment cancer reductions follow 38 C.F.R. § 3.105(e) notice rules rather than 5-year stabilization hurdles (Foster v. McDonough), meaning VA must wait 6 months after completing treatment, hold a VA exam, and give 60 days to submit evidence plus 60 days before lowering pay.",
+    "Do not cite the rescinded February 17, 2026 medication Interim Final Rule (91 FR 7118, withdrawn February 27, 2026 at 91 FR 9712) as active law, and remember that later court interpretations cannot be used to claim Clear and Unmistakable Error (CUE) against final decisions issued before those precedents (George v. McDonough; 38 C.F.R. § 20.1403(e))."
+  ],
+  "questions_for_representative": [
+    "Do my urology notes or lay statements show daily absorbent pad changes that support a 40% or 60% voiding rating under 38 C.F.R. § 4.115a rather than a lower urinary-frequency rating?",
+    "Did VA check whether I qualify for Special Monthly Compensation (SMC(k))—and for retroactive Agent Orange Nehmer effective dates if I served in Vietnam or Blue Water Navy waters—for prostate or bladder cancer?",
+    "If I take daily bladder or prostate medication (like tamsulosin or oxybutynin), did the examiner document my unmedicated baseline symptoms where the diagnostic criteria are silent on medication?",
+    "If VA reduced my 100% Diagnostic Code 7528 cancer rating after surgery, radiation, or hormone therapy, did VA follow every timing, examination, and 60-day notice step required by Diagnostic Code 7528 and 38 C.F.R. § 3.105(e)?"
+  ]
+}

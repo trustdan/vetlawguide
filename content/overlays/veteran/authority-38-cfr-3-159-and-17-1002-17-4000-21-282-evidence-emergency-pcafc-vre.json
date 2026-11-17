@@ -1,0 +1,33 @@
+{
+  "upstream_id": "authority-38-cfr-3-159-and-17-1002-17-4000-21-282-evidence-emergency-pcafc-vre",
+  "upstream_path": "authorities/part-3/38-cfr-3.159-17.1002-17.4000-21.282-evidence-emergency-pcafc-vre.md",
+  "upstream_sha256": "3cb43d300da13ea52dae10a9188f66f561aef23ae4f957ac57652c877b116c35",
+  "linked_version_ids": [
+    "38-cfr-3.159-2001-vcaa-duty-to-assist",
+    "38-cfr-3.159-2022-ama-duty-to-assist",
+    "38-cfr-17.1002-17.1005-2018-staab-emergency",
+    "38-cfr-17.1005-2023-wolfe-coinsurance",
+    "38-cfr-part-71-2025-pcafc-and-17.4020c"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Duty to Assist, Non-VA Emergency ER Bills, Family Caregiver (PCAFC) & Chapter 31 VR&E Snapshots",
+  "what_this_means": "This module brings together four crucial sets of VA regulations outside the rating schedule: (1) VA's Duty to Assist in gathering records and providing medical nexus exams (38 C.F.R. § 3.159), (2) VA payment/reimbursement for emergency care at non-VA hospitals or ambulances under 38 U.S.C. §§ 1728, 1725, and 1703 (38 C.F.R. §§ 17.120, 17.1002–17.1005, and 17.4020(c)), (3) the Program of Comprehensive Assistance for Family Caregivers (PCAFC, codified in 38 C.F.R. Part 71—including full Board and CAVC appeal rights recognized in Beaudette v. McDonough and legacy protections extended through September 30, 2028), and (4) Chapter 31 Veteran Readiness and Employment (VR&E) eligibility and Retroactive Induction to restore GI Bill months or reimburse prior tuition (38 C.F.R. §§ 21.40–21.282).",
+  "record_clues": [
+    "A VA denial stating 'no medical nexus opinion in the record' without VA ever scheduling a C&P exam despite a current diagnosis, in-service event, and indication of a link (38 C.F.R. § 3.159(c)(4)(i); McLendon v. Nicholson).",
+    "A non-VA emergency room or ambulance bill denied because Medicare or private insurance paid part of the bill leaving 20% coinsurance (reimbursable after Wolfe v. McDonough and the April 24, 2023 rule at 88 FR 10835), or because a 72-hour portal notice was missed.",
+    "A VA Form 10-10CG Family Caregiver denial, Tier 1 (62.5%) vs. Tier 2 (100% stipend) decision, or discharge/revocation letter under 38 C.F.R. Part 71.",
+    "A Chapter 31 VR&E denial citing an expired '12-year eligibility window' for a Veteran discharged on or after January 1, 2013, or GI Bill / out-of-pocket college expenses paid during a period later covered by a retroactive disability rating (38 C.F.R. § 21.282)."
+  ],
+  "important_cautions": [
+    "Duty-to-assist errors are NOT Clear and Unmistakable Error (CUE): under Cook v. Principi and 38 C.F.R. § 20.1403(d)(2), VA's failure to get records or failure to provide an adequate C&P exam can win a Higher-Level Review return, Supplemental Claim, or Board/CAVC remand on an open appeal—but can never win a CUE motion against a final decision.",
+    "Emergency care deadlines and coinsurance vs. copays: do not confuse the 72-hour Community Care notification rule (38 C.F.R. § 17.4020(c)) with the 90-day filing rule under § 1725 (38 C.F.R. § 17.1004(d)) or the 2-year rule for service-connected / 100% P&T emergencies under § 1728 (38 C.F.R. § 17.126). Also note that under § 1725, VA reimburses percentage-based coinsurance (Wolfe), whereas fixed copayments and deductibles remain excluded under § 1725 (though covered under § 1728).",
+    "Outdated 12-year VR&E text in eCFR: Congress abolished the 12-year Chapter 31 VR&E cutoff for Veterans discharged on or after January 1, 2013 (38 U.S.C. § 3103(g)), overriding older 12-year language still printed in 38 C.F.R. § 21.41(a).",
+    "Quarantined Caregiver proposal: VA's December 6, 2024 PCAFC notice (89 FR 97404, RIN 2900-AR96) is a proposed, unfinalized rule and is NOT enacted law."
+  ],
+  "questions_for_representative": [
+    "Did my claim meet the low three-part threshold in 38 C.F.R. § 3.159(c)(4)(i) requiring VA to provide a medical nexus opinion before denying my claim?",
+    "For my non-VA emergency hospital or ambulance bill, do I qualify first under 38 U.S.C. § 1728 (service-connected condition, 100% P&T status, or active Chapter 31 VR&E) or for coinsurance reimbursement under 38 U.S.C. § 1725?",
+    "Can we appeal my PCAFC Family Caregiver denial or stipend tier under 38 C.F.R. Part 71 to the Board of Veterans' Appeals under Beaudette v. McDonough?",
+    "If I am approved for Chapter 31 VR&E before closing my case, can I request Retroactive Induction under 38 C.F.R. § 21.282 to restore Post-9/11 GI Bill months or reimburse prior tuition?"
+  ]
+}

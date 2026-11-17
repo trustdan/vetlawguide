@@ -1,0 +1,32 @@
+{
+  "upstream_id": "checklist-pathway-decision-matrix",
+  "upstream_path": "checklists/pathway-decision-matrix.md",
+  "upstream_sha256": "bd0ba4e34dbddca004ee285a633b8fef8afc7c47506860bf5efcfa56bb026ec9",
+  "linked_version_ids": [
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-3.105i-1992-predetermination",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Comparing Ways to Seek an Earlier Effective Date (Why CUE Is Usually the Last Resort)",
+  "what_this_means": "Many Veterans hear the phrase 'Clear and Unmistakable Error (CUE)' and assume it is the only way to fix an old VA decision or recover past-due benefits. In reality, Veterans Law provides multiple distinct legal pathways to look back at an older decision—and almost every other pathway gives the Veteran far friendlier evidence rules (including the 'benefit of the doubt') than CUE. This comparison guide helps you and your accredited representative see side-by-side how newly associated service records (§ 3.156(c)), open or pending claims, wrong-address notice challenges, void rating reductions (§§ 3.105(e)/3.344), Nehmer Agent Orange rules (§ 3.816), AMA continuous pursuit (§ 3.2500), and Regional Office vs. Board CUE motions actually work.",
+  "record_clues": [
+    "You are still within 1 year of a VA Rating Decision (or within 120 days of a Board of Veterans' Appeals decision), meaning direct appeal or continuous-pursuit lanes are still open!",
+    "Official military hospital, personnel, or unit records were added to your C-file after an older denial (§ 3.156(c)), or you served in the Republic of Vietnam / Blue Water Navy with a covered Agent Orange condition (§ 3.816).",
+    "VA lowered a long-standing rating without 60-day notice or proof of sustained life/work improvement, or left a claimed issue completely unaddressed in a post-February 19, 2019 AMA decision.",
+    "An older decision became final with all records already in the file, and VA flatly misapplied a mandatory rating percentage or combined-math table in force on that date."
+  ],
+  "important_cautions": [
+    "Preserve Active Appeal Clocks First: If a decision was issued within the past year (or a Board decision within the past 120 days), timely direct review preserves full benefit-of-the-doubt rights—never let an active appeal deadline expire assuming you can 'just file CUE later.'",
+    "Why CUE Is the Narrowest Needle: Under 38 C.F.R. § 20.1403(d)–(e) and George v. McDonough, CUE requires an undebatable error based solely on the record and law at the time; VA's failure to get records, an inadequate C&P exam, a close medical judgment call, or a later court reinterpretation cannot win as CUE.",
+    "Board CUE Res Judicata Trap (38 C.F.R. § 20.1409(c)): Unlike Regional Office CUE motions under 38 C.F.R. § 3.105(a), once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific Board issue, no second Board CUE motion is allowed on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Am I still inside a 1-year AMA review window or a 120-day CAVC judicial appeal window where we can keep my claim open directly?",
+    "Before we even consider CUE, do my records fit 38 C.F.R. § 3.156(c) newly associated service records, a void rating reduction, Nehmer (§ 3.816), wrong-address notice, or an unadjudicated AMA issue?",
+    "If CUE is the only remaining option, are we challenging a Regional Office rating decision (§ 3.105(a)) or a Board decision (§ 7111), and has a Board CUE motion ever been filed on that issue before?"
+  ]
+}

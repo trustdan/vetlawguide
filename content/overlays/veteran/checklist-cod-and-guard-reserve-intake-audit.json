@@ -1,0 +1,33 @@
+{
+  "upstream_id": "checklist-cod-and-guard-reserve-intake-audit",
+  "upstream_path": "checklists/cod-and-guard-reserve-intake-audit.md",
+  "upstream_sha256": "964c3d162002870657b71651959293569b0558f4f961f4f299477f2831a2406f",
+  "linked_version_ids": [
+    "38-cfr-3.12-pre2024-cod",
+    "38-cfr-3.12-2024-cod",
+    "38-cfr-3.13-2022-current",
+    "38-cfr-3.354-insanity",
+    "38-cfr-3.400g-1962-military-records",
+    "38-cfr-3.6-2022-duty-periods",
+    "38-cfr-3.301d-2006-allen-substance-abuse"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Preparation Checklist for Less-Than-Honorable Discharges & Guard/Reserve Eligibility Reviews",
+  "what_this_means": "When VA says 'You are not eligible as a Veteran'—either because of an Other Than Honorable (OTH), Bad Conduct (BCD), or Uncharacterized discharge, OR because your service was in the National Guard or Reserves—one missing piece of military paperwork often changes the entire outcome. This intake checklist helps you and an accredited representative gather the exact service contracts, reenlistment remarks, court-martial vs. administrative separation codes, mental health/trauma markers, Title 10/32 orders, and Line of Duty (LOD) forms needed before filing.",
+  "record_clues": [
+    "Every DD Form 214, DD Form 215, NGB Form 22, enlistment/reenlistment contract, and Official Military Personnel File (OMPF) separation packet—especially DD-214 Block 18 ('Immediate Reenlistment' remarks) and Blocks 24–28.",
+    "Any court-martial order showing whether a Bad Conduct Discharge came from a Special Court-Martial (potential regulatory review) rather than a General Court-Martial (statutory bar).",
+    "Unit orders showing exact statutory authority (Title 10 vs. Title 32 U.S.C. §§ 316, 502–505 vs. State Active Duty), retirement point statements, drill schedules, and Line of Duty forms (DA Form 2173 / AF Form 348 / DD Form 261).",
+    "In-service sick-call notes, stockade/brig evaluations, MST markers, or post-service psychiatric records documenting mental health conditions at the time of separation."
+  ],
+  "important_cautions": [
+    "Always Check Prior Enlistments First (§ 3.13): Never spend years fighting a final OTH discharge before checking whether you completed an earlier enlistment and immediately reenlisted—because 38 C.F.R. § 3.13(c) insulates disabilities from the earlier honorable period right away.",
+    "Match the Exception to the Exact Bar: The June 25, 2024 'compelling circumstances' rule (§ 3.12(e), 89 FR 32361) helps overcome prolonged AWOL and regulatory misconduct bars (with effective dates no earlier than June 25, 2024 if granted solely under the new rule), whereas General Court-Martial or OTH-in-lieu-of-GCM bars require § 3.13 prior service, § 3.354(b) insanity, or a § 1552 BCMR correction.",
+    "Guard/Reserve Proof Gate: An NGB Form 22 by itself shows separation from state Guard status—always pair it with federal Title 10/32 orders, ADT/IADT documentation, and Line of Duty findings to prove qualifying active service under 38 C.F.R. § 3.6."
+  ],
+  "questions_for_representative": [
+    "Looking at Block 18 and my enlistment contracts, did I complete an earlier honorable obligation before reenlisting under 38 U.S.C. § 101(18)(B) and 38 C.F.R. § 3.13?",
+    "Which specific pathway—June 2024 § 3.12(e) compelling circumstances, § 3.354(b) insanity, DRB (DD Form 293), or BCMR/BCNR (DD Form 149)—fits the exact separation authority on my DD-214?",
+    "For my National Guard or Reserve injury, have we pulled my federal Title 10/32 orders and Line of Duty packet so VA evaluates § 3.6 active service (and § 3.156(c) effective dates if those service records were missing earlier)?"
+  ]
+}

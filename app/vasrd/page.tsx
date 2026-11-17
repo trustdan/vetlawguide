@@ -62,7 +62,7 @@ export default function VasrdHubPage() {
         state="PLAIN_ENGLISH_IN_PROGRESS"
         checkedAsOf={manifest.checkedAsOf}
         corpusReleaseId={manifest.corpusReleaseId}
-        detail={`All 16 Part 4 VASRD hubs (Subpart A + Body Systems 01–15) are populated from the pinned corpus (${manifest.totals.upstreamModules} modules). Plain-English Veteran companion cards are live on Wave 1 scar/muscle modules and rolling out progressively across remaining body systems.`}
+        detail={`All 16 Part 4 VASRD hubs (Subpart A + Body Systems 01–15) are populated from the pinned corpus (${manifest.totals.upstreamModules} modules). Plain-English Veteran companion cards are live on scar and muscle modules and rolling out progressively across remaining body systems.`}
         officialEcfrUrl="https://www.ecfr.gov/current/title-38/chapter-I/part-4"
         officialGovInfoUrl="https://www.govinfo.gov/app/collection/cfr"
       />
@@ -84,7 +84,7 @@ export default function VasrdHubPage() {
                     <Layers className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{sys.diagnosticCodeRange}</span>
                   </span>
-                  <span className="rounded border border-border bg-surface px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                  <span className="rounded border border-border bg-surface px-1.5 py-0.5 text-xs text-muted-foreground">
                     {sys.moduleIds.length} module{sys.moduleIds.length === 1 ? "" : "s"}
                   </span>
                 </div>

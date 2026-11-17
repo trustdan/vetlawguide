@@ -70,14 +70,14 @@ export function ErasGuideClient({
                   href="/cases"
                   className="font-semibold text-primary underline underline-offset-2"
                 >
-                  Judicial &amp; VAOPGCPREC Authorities (/cases)
+                  Judicial &amp; VAOPGCPREC Authorities
                 </Link>{" "}
                 and point-in-time{" "}
                 <Link
                   href="/cfr"
                   className="font-semibold text-primary underline underline-offset-2"
                 >
-                  38 C.F.R. Regulations (/cfr)
+                  38 C.F.R. Regulations
                 </Link>
                 .
               </p>
@@ -150,7 +150,7 @@ export function ErasGuideClient({
         <div className="max-w-full overflow-x-auto rounded-lg border border-border bg-surface-elevated">
           <table className="w-full min-w-[760px] border-collapse text-left text-xs">
             <thead>
-              <tr className="border-b border-border bg-surface text-[11px] font-semibold text-foreground">
+              <tr className="border-b border-border bg-surface text-xs font-semibold text-foreground">
                 <th scope="col" className="p-3">
                   Era &amp; Exact Dates
                 </th>
@@ -188,14 +188,14 @@ export function ErasGuideClient({
                         onClick={() => selectEra(era.eraId)}
                         className="text-left hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
                       >
-                        <span className="block font-mono text-[11px] text-primary">
+                        <span className="block font-mono text-xs text-primary">
                           {era.windowLabel}
                         </span>
                         <span className="block font-serif text-sm font-bold">
                           Era {era.eraNumber}: {era.shortLabel}
                         </span>
                       </button>
-                      <span className="mt-1 block font-mono text-[10px] font-normal text-muted-foreground">
+                      <span className="mt-1 block font-mono text-xs font-normal text-muted-foreground">
                         {era.startDate} → {era.endDate ?? "Present"}
                       </span>
                     </th>
@@ -306,7 +306,7 @@ export function ErasGuideClient({
                       href={era.eraLensRoute}
                       className="inline-flex items-center gap-1 rounded-md border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-primary hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"
                     >
-                      <span>Full 3-Column Treatise</span>
+                      <span>Read era treatise</span>
                       <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </Link>
                   </div>
@@ -406,7 +406,7 @@ export function ErasGuideClient({
                         </div>
 
                         {doc && doc.statutes.length > 0 && (
-                          <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+                          <div className="flex flex-wrap items-center gap-1.5 text-xs">
                             <span className="font-semibold text-foreground">
                               Governing Statutes:
                             </span>
@@ -436,7 +436,7 @@ export function ErasGuideClient({
                         <div className="font-mono font-semibold text-primary">
                           {f.code}
                         </div>
-                        <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
+                        <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
                           <LexiconText text={f.meaning} />
                         </p>
                       </div>
@@ -497,12 +497,12 @@ export function ErasGuideClient({
               >
                 <div className="space-y-2">
                   <div className="flex flex-wrap items-center justify-between gap-1.5">
-                    <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-primary">
+                    <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-primary">
                       <Scale className="h-3 w-3" aria-hidden="true" />
                       <span>{item.eraWindow}</span>
                     </span>
                     {matchesActiveEra && (
-                      <span className="rounded bg-primary px-1.5 py-0.5 font-mono text-[10px] font-semibold text-primary-foreground">
+                      <span className="rounded bg-primary px-1.5 py-0.5 font-mono text-xs font-semibold text-primary-foreground">
                         Applies to Selected Era
                       </span>
                     )}
@@ -535,7 +535,7 @@ export function ErasGuideClient({
                           type="button"
                           onClick={() => selectEra(eId)}
                           className={cn(
-                            "rounded border px-1.5 py-0.5 font-mono text-[10px] font-medium focus-visible:outline-2 focus-visible:outline-primary",
+                            "rounded border px-1.5 py-0.5 font-mono text-xs font-medium focus-visible:outline-2 focus-visible:outline-primary",
                             activeEraId === eId
                               ? "border-primary bg-primary text-primary-foreground"
                               : "border-border bg-surface text-muted-foreground hover:text-foreground",

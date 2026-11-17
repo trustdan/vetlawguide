@@ -1,0 +1,32 @@
+{
+  "upstream_id": "playbook-07-statutory-presumptions-chronic-tropical-pow-als",
+  "upstream_path": "playbooks/07-statutory-presumptions-chronic-tropical-pow-als.md",
+  "upstream_sha256": "6315f84094998b672ed7e4113e5273f62776473ae54338cb6925374b98100923",
+  "linked_version_ids": [
+    "38-cfr-4.124a-8017-1946-pre2012-als",
+    "38-cfr-4.124a-8017-2012-als-100",
+    "38-cfr-4.88a-4.88b-1996-infectious",
+    "38-cfr-4.88a-4.88b-2019-infectious-cfs"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Overlooked Presumptions for Post-Discharge Chronic Illnesses, Tropical Diseases, ALS & Former POWs",
+  "what_this_means": "Even when military medical records do not mention an illness during active duty, federal law (38 U.S.C. § 1112 and 38 C.F.R. §§ 3.307, 3.309, and 3.318) presumes certain conditions are service-connected if they appear to a compensable degree within specific timeframes—or at any time after service for conditions like Amyotrophic Lateral Sclerosis (ALS) and many Former Prisoner of War (FPOW) disabilities. In older decisions, raters sometimes denied claims simply because Service Treatment Records were silent, overlooking that post-service records within the statutory window satisfied the presumption.",
+  "record_clues": [
+    "An older VA denial letter stating 'not shown in service treatment records' or 'no medical nexus to service' when private or VA medical records within 1 year of discharge (or up to 3 or 7 years for specific illnesses like multiple sclerosis or tuberculosis) showed a listed 38 C.F.R. § 3.309(a) chronic disease at a 10% or higher severity.",
+    "A diagnosis of Amyotrophic Lateral Sclerosis (ALS / Lou Gehrig's disease) at any time after separation following at least 90 days of continuous active military, naval, air, or space service (38 C.F.R. § 3.318).",
+    "Military records confirming Former Prisoner of War captivity alongside a denied claim for anxiety, dysthymic disorder, heart disease, stroke, peripheral neuropathy, irritable bowel syndrome, peptic ulcer, cirrhosis, osteoporosis, or nutritional deficiency (38 C.F.R. § 3.309(c)).",
+    "Service in a tropical theater followed by malaria, bacillary dysentery, amebiasis, leishmaniasis, schistosomiasis, or unexplained recurrent fevers (38 C.F.R. § 3.309(b))."
+  ],
+  "important_cautions": [
+    "Minimum active-service and severity gates apply: the 1-year chronic and tropical presumptions under 38 C.F.R. § 3.307(a) require at least 90 days of continuous active service (pure Active Duty for Training or weekend drills alone do not qualify) and require the condition to manifest to at least a 10% compensable level—not 0%—within the presumptive window.",
+    "Under the Federal Circuit's decision in Walker v. Shinseki, the 'chronicity' and 'continuity of symptomatology' shortcuts in 38 C.F.R. § 3.303(b) apply only to the specific chronic diseases listed in 38 C.F.R. § 3.309(a); unlisted conditions require medical nexus evidence under 38 C.F.R. § 3.303(a) or (d).",
+    "Exact rating dates matter for ALS: VA raised the minimum evaluation under Diagnostic Code 8017 from 30% to 100% effective January 19, 2012 (published December 20, 2011 at 76 FR 78823), while also directing raters to evaluate Special Monthly Compensation for progressive limb, speech, swallowing, and breathing complications.",
+    "Before considering any Clear and Unmistakable Error (CUE) filing, remember that 38 C.F.R. § 20.1409(c) allows only one final merits CUE decision per prior Board of Veterans' Appeals decision on an issue, and later shifts in court interpretation cannot establish CUE under George v. McDonough and 38 C.F.R. § 20.1403(e)."
+  ],
+  "questions_for_representative": [
+    "Is my diagnosed condition—or an underlying nerve, vascular, arthritic, or psychotic disorder—on the official list of chronic diseases in 38 C.F.R. § 3.309(a)?",
+    "Do my private doctor records, hospital charts, or lay statements from the first 12 months after discharge show symptoms severe enough to meet at least a 10% rating under the rating schedule in effect at that time?",
+    "If ALS (Diagnostic Code 8017) is service-connected, has VA evaluated all progressive extremity, speech/swallowing, respiratory, and Aid and Attendance needs for Special Monthly Compensation?",
+    "If I am a Former POW or served in a tropical theater, should we review earlier denials against the expanded presumptive lists in 38 C.F.R. § 3.309(b) and (c)?"
+  ]
+}

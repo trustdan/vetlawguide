@@ -1,0 +1,31 @@
+{
+  "upstream_id": "cfr-diff-survivor-marriage-dependency-evolution",
+  "upstream_path": "cfr-diffs/part-3/survivor-marriage-dependency-evolution.md",
+  "upstream_sha256": "00f2386a107ba5c079dbc67d84179fe8ca8156f3811790f1167a60ae16e89797",
+  "linked_version_ids": [
+    "38-cfr-3.55-2006-age57",
+    "38-cfr-3.55-2021-statutory-age55",
+    "38-cfr-3.55-2022-age55",
+    "38-cfr-3.22-2012-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Surviving Spouse Marriage Rules, Age-55 vs. Age-57 Remarriage Protections (§ 3.55) & Adult 'Helpless Child' Benefits (§ 3.356)",
+  "what_this_means": "Before VA even looks at a Veteran's cause of death, VA checks family relationship rules that have changed repeatedly across decades. This guide explains: (1) how a surviving spouse satisfies marriage-validity, 'deemed valid' marriage (§ 3.52), 'continuous cohabitation' separation exceptions (§ 3.53), and marriage-length rules (§ 3.54); (2) how surviving spouses who remarry at age 57+ (for remarriages from January 1, 2004 through January 4, 2021) or age 55+ (for remarriages on or after January 5, 2021) keep their monthly DIC checks under 38 C.F.R. § 3.55; and (3) how an unmarried adult son or daughter who became permanently incapable of self-support BEFORE turning age 18 ('helpless child' under 38 C.F.R. § 3.356) can qualify for lifetime dependency or survivor DIC benefits.",
+  "record_clues": [
+    "A survivor denial stating you were 'living apart at the time of death' even though the separation was due to the Veteran's PTSD/misconduct, medical care, or mutual agreement without fault on your part (§ 3.53).",
+    "A surviving spouse who remarried at age 57 or older on/after January 1, 2004, OR remarried at age 55 or older on/after January 5, 2021 (including during the 2021–2022 statutory lag window before VA updated § 3.55 on November 15, 2022), or whose earlier remarriage ended by death, divorce, or annulment.",
+    "A marriage lasting slightly under 1 year before the Veteran's death where a child was born to the couple before OR during the marriage (§ 3.54(d)), or where a same-sex couple was legally barred from marrying earlier prior to Obergefell.",
+    "School IEPs, pediatric/adolescent medical charts, autism/intellectual disability evaluations, or early psychiatric records showing a Veteran's adult child became permanently unable to support themselves before their 18th birthday (§ 3.356)."
+  ],
+  "important_cautions": [
+    "Exact Remarriage Date Cutoff (Age 57 vs. Age 55): Congress lowered the DIC retention remarriage age from 57 to 55 in Pub. L. 116-315, § 2009 effective strictly for remarriages occurring ON OR AFTER January 5, 2021 (codified in CFR November 15, 2022 at 87 FR 68360). Remarriages between January 1, 2004 and January 4, 2021 remain governed by age 57, and Chapter 35 DEA / VA home loan retention under § 3.55(a)(10) remains at age 57.",
+    "Marriage Length Difference (§ 1310 vs. § 1318): While direct service-connected death DIC (§ 1304) allows a marriage within 15 years after service even if under 1 year long, 10-year total-disability DIC (§ 1318(c)) requires EITHER 1 full year of marriage OR a child born of the marriage.",
+    "Critical Chapter 35 DEA Bar for Disabled Young Adults (38 U.S.C. § 3562): If an 18-to-23-year-old disabled child cashes a Chapter 35 DEA education check BEFORE establishing § 3.356 helpless-child status, electing DEA permanently bars standard schoolchild DIC/dependency payments if § 3.356 is denied—and marriage of a helpless child after October 31, 1990 generally ends child status unless void or annulled."
+  ],
+  "questions_for_representative": [
+    "Based on the exact date of my remarriage and my age on that wedding date, do I retain DIC under the age-57 (2004+) or age-55 (January 5, 2021+) rule—or qualify for reinstatement because an earlier remarriage ended?",
+    "If my spouse and I lived apart before death, does the record show separation without marital fault on my part under 38 C.F.R. § 3.53?",
+    "If we were Same-Sex partners prevented by state law from marrying long enough to meet the 1-year or 8-year DIC marriage requirements, can we request consideration under VA Secretary Instruction 01-22?",
+    "Before my disabled 18-year-old child applies for or cashes Chapter 35 DEA education benefits, should we adjudicate lifetime § 3.356 helpless-child status first to avoid the 38 U.S.C. § 3562 election trap?"
+  ]
+}

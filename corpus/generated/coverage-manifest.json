@@ -9,7 +9,7 @@
     "heldAtGateModules": 0,
     "cfrVersionRecords": 174,
     "cfrSectionsIndexed": 75,
-    "veteranOverlaysAuthored": 15,
+    "veteranOverlaysAuthored": 111,
     "lexiconEntries": 59,
     "statutoryCrosswalkEntries": 73,
     "precedentsIndexed": 437,
@@ -20,7 +20,7 @@
       "systemId": "part-4-general-policy",
       "label": "Part 4 Subpart A — General Rating Policy (§§ 4.1–4.31)",
       "diagnosticCodeRange": "§§ 4.1–4.31",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "playbook-19-extraschedular-analogous-and-temp-total",
         "cfr-diff-part-4-subpart-a-general-rating-policy",
@@ -28,7 +28,7 @@
         "auth-38-cfr-4-1-4-31-general-policy-snapshots",
         "auth-38-cfr-4-16-tdiu-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 5,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-A"
     },
@@ -36,7 +36,7 @@
       "systemId": "01-musculoskeletal",
       "label": "01. Musculoskeletal System (Joints, Spine & Muscle Groups)",
       "diagnosticCodeRange": "DC 5000–5331",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "playbook-01-penetrating-wounds-scars-vs-muscles",
         "cfr-diff-01-musculoskeletal-joints-arthritis-implants-4-71a",
@@ -46,7 +46,7 @@
         "auth-38-cfr-4-71a-joints-arthritis-pre-post-2021",
         "authority-38-cfr-4-71a-spine-evolution"
       ],
-      "plainEnglishCount": 3,
+      "plainEnglishCount": 7,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRd3005f7d828ea7b"
     },
@@ -54,12 +54,12 @@
       "systemId": "02-eye-vision",
       "label": "02. Organs of Special Sense — Eye & Vision",
       "diagnosticCodeRange": "DC 6000–6091",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-02-eye-and-vision-4-75-4-79",
         "auth-38-cfr-4-75-4-79-eye-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR2dd591a51640425"
     },
@@ -67,12 +67,12 @@
       "systemId": "03-auditory",
       "label": "03. Impairment of Auditory Acuity & Tinnitus",
       "diagnosticCodeRange": "DC 6100–6260",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-03-auditory-hearing-tinnitus-4-85-4-87",
         "auth-38-cfr-4-85-4-87-auditory-tinnitus-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR3fb8261be1e899f"
     },
@@ -80,12 +80,12 @@
       "systemId": "04-infectious-immune",
       "label": "04. Infectious Diseases, Immune Disorders & Nutritional Deficiencies",
       "diagnosticCodeRange": "DC 6300–6354",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-04-infectious-immune-nutritional-4-88b",
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRc88f57fafb24f86"
     },
@@ -93,12 +93,12 @@
       "systemId": "05-respiratory",
       "label": "05. Respiratory System",
       "diagnosticCodeRange": "DC 6502–6847",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-05-respiratory-system-4-96-4-97",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR14fb86bcc86c2cb"
     },
@@ -106,12 +106,12 @@
       "systemId": "06-cardiovascular",
       "label": "06. Cardiovascular System",
       "diagnosticCodeRange": "DC 7000–7124",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-06-cardiovascular-system-4-100-4-104",
         "auth-38-cfr-4-100-4-104-cardiovascular-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRc80f576885c6b42"
     },
@@ -119,12 +119,12 @@
       "systemId": "07-digestive",
       "label": "07. Digestive System",
       "diagnosticCodeRange": "DC 7200–7357",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-07-digestive-system-4-110-4-114",
         "auth-38-cfr-4-114-digestive-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRae933be23f9c63f"
     },
@@ -132,12 +132,12 @@
       "systemId": "08-genitourinary",
       "label": "08. Genitourinary System",
       "diagnosticCodeRange": "DC 7500–7545",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-08-genitourinary-system-4-115-4-115b",
         "auth-38-cfr-4-115a-4-115b-genitourinary-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR8198d98a7a48906"
     },
@@ -145,12 +145,12 @@
       "systemId": "09-gynecological-breast",
       "label": "09. Gynecological Conditions & Disorders of the Breast",
       "diagnosticCodeRange": "DC 7610–7632",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-09-gynecological-and-breast-4-116",
         "auth-38-cfr-4-116-gynecological-breast-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRf5fe31f49d4f511"
     },
@@ -158,12 +158,12 @@
       "systemId": "10-hemic-lymphatic",
       "label": "10. Hemic & Lymphatic Systems",
       "diagnosticCodeRange": "DC 7702–7725",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-10-hemic-and-lymphatic-4-117",
         "auth-38-cfr-4-117-hemic-lymphatic-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR6f0b30fb421b9d7"
     },
@@ -171,14 +171,14 @@
       "systemId": "11-skin",
       "label": "11. The Skin & Scars (DC 7800–7833)",
       "diagnosticCodeRange": "DC 7800–7833",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-11-skin-dermatitis-psoriasis-biologics-4-118",
         "cfr-diff-scars-dc-7800-7805",
         "authority-38-cfr-4-118-scars-evolution",
         "auth-38-cfr-4-118-skin-general-formula-evolution"
       ],
-      "plainEnglishCount": 2,
+      "plainEnglishCount": 4,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRf6c763e9e4b1967"
     },
@@ -186,12 +186,12 @@
       "systemId": "12-endocrine",
       "label": "12. Endocrine System",
       "diagnosticCodeRange": "DC 7900–7919",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-12-endocrine-system-4-119",
         "auth-38-cfr-4-119-endocrine-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR2c78858c0e52f1b"
     },
@@ -199,13 +199,13 @@
       "systemId": "13-neurological",
       "label": "13. Neurological Conditions, TBI & Peripheral Nerves",
       "diagnosticCodeRange": "DC 8000–8914",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "playbook-18-tbi-facets-radiculopathy-and-nerve-stacking",
         "cfr-diff-13-neurological-tbi-nerves-4-120-4-124a",
         "auth-38-cfr-4-124a-tbi-peripheral-nerves-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 3,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRab3ca55f4548afe"
     },
@@ -213,7 +213,7 @@
       "systemId": "14-mental-disorders",
       "label": "14. Mental Disorders",
       "diagnosticCodeRange": "DC 9201–9521",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "playbook-16-ptsd-stressors-and-mst-corroboration",
         "cfr-diff-14-mental-disorders-4-125-4-130",
@@ -221,7 +221,7 @@
         "auth-38-cfr-3-304f-ptsd-evolution",
         "auth-38-cfr-4-132-mental-pre-1996"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 5,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFRfa64377db09ae97"
     },
@@ -229,12 +229,12 @@
       "systemId": "15-dental-oral",
       "label": "15. Dental & Oral Conditions",
       "diagnosticCodeRange": "DC 9900–9918",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "cfr-diff-15-dental-and-oral-4-150",
         "auth-38-cfr-4-150-dental-tmj-evolution"
       ],
-      "plainEnglishCount": 0,
+      "plainEnglishCount": 2,
       "upstreamPlannedWave": null,
       "officialEcfrUrl": "https://www.ecfr.gov/current/title-38/chapter-I/part-4/subpart-B/subject-group-ECFR2420d6b1fb63bc2"
     }
@@ -243,7 +243,7 @@
     {
       "domainId": "finality-and-cue",
       "label": "Piercing Finality, Pending Claims & CUE",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -356,13 +356,13 @@
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 15,
+      "plainEnglishCount": 110,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "disability-compensation",
       "label": "Service Connection & Secondary Aggravation",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -466,13 +466,13 @@
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 14,
+      "plainEnglishCount": 101,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "character-of-discharge",
       "label": "Character of Discharge, Insanity & Guard/Reserve",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-title-38-statutory-crosswalk",
         "doctrine-vaopgcprec-master-index",
@@ -485,13 +485,13 @@
         "checklist-cod-and-guard-reserve-intake-audit",
         "auth-38-cfr-3-12-3-13-3-354-cod-insanity-service"
       ],
-      "plainEnglishCount": 2,
+      "plainEnglishCount": 10,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "toxic-exposure",
       "label": "Agent Orange / Nehmer, Burn Pits, PACT & TERA",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-effective-dates-and-staged-ratings-treatise",
         "doctrine-evidence-medical-exams-and-lay-credibility",
@@ -537,13 +537,13 @@
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 4,
+      "plainEnglishCount": 43,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "vasrd-rating-schedule",
       "label": "VASRD Rating Criteria & Anti-Pyramiding",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-authority-verification-log",
         "doctrine-evidence-medical-exams-and-lay-credibility",
@@ -608,13 +608,13 @@
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 12,
+      "plainEnglishCount": 62,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "tdiu-unemployability",
       "label": "TDIU & Extraschedular Unemployability",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-effective-dates-and-staged-ratings-treatise",
@@ -661,13 +661,13 @@
         "auth-38-cfr-4-132-mental-pre-1996",
         "auth-38-cfr-4-16-tdiu-evolution"
       ],
-      "plainEnglishCount": 2,
+      "plainEnglishCount": 44,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "smc-ancillary",
       "label": "Special Monthly Compensation (SMC k–t) & Ancillaries",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-forms-and-codesheet-lexicon",
@@ -724,13 +724,13 @@
         "auth-38-cfr-4-85-4-87-auditory-tinnitus-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 3,
+      "plainEnglishCount": 54,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "survivors-dic-accrued",
       "label": "Survivor DIC (§ 1310 / § 1318), Accrued & Substitution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -768,13 +768,13 @@
         "auth-38-cfr-3-22-3-312-dic-evolution",
         "auth-38-cfr-3-274-3-279-3-353-1-965-pension-competency-waivers"
       ],
-      "plainEnglishCount": 1,
+      "plainEnglishCount": 35,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "effective-dates-offsets",
       "label": "Effective Dates, CRDP/CRSC & Severance Offsets",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -875,13 +875,13 @@
         "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
         "auth-38-cfr-4-96-4-97-respiratory-evolution"
       ],
-      "plainEnglishCount": 10,
+      "plainEnglishCount": 98,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "pension-fiduciary-debt",
       "label": "Wartime Pension, Overpayment Waivers & Competency",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-attorney-fees-5904-and-eaja-practice",
         "doctrine-effective-dates-and-staged-ratings-treatise",
@@ -895,13 +895,13 @@
         "checklist-cavc-appeal-eaja-and-fee-compliance-gate",
         "auth-38-cfr-3-274-3-279-3-353-1-965-pension-competency-waivers"
       ],
-      "plainEnglishCount": 1,
+      "plainEnglishCount": 11,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "appeals-cavc-litigation",
       "label": "AMA Lanes, Board Litigation & CAVC / Fed. Cir. Appeals",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -971,13 +971,13 @@
         "auth-38-cfr-3-655-examinations-evolution",
         "auth-38-cfr-4-1-4-31-general-policy-snapshots"
       ],
-      "plainEnglishCount": 5,
+      "plainEnglishCount": 67,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "vre-medical-reimbursement",
       "label": "Ch. 31 VR&E & §§ 1725/1728 Emergency Medical Reimbursement",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -995,13 +995,13 @@
         "authority-38-cfr-3-159-and-17-1002-17-4000-21-282-evidence-emergency-pcafc-vre",
         "auth-38-cfr-4-150-dental-tmj-evolution"
       ],
-      "plainEnglishCount": 1,
+      "plainEnglishCount": 15,
       "upstreamPlannedEpic": null
     },
     {
       "domainId": "fees-eaja",
       "label": "§ 5904 Representation Fees & EAJA Litigation",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
+      "coverageState": "VERBATIM_VERIFIED",
       "moduleIds": [
         "doctrine-ama-lanes-and-bva-litigation-manual",
         "doctrine-attorney-fees-5904-and-eaja-practice",
@@ -1039,7 +1039,7 @@
         "checklist-survivor-post-mortem-triage-gate",
         "authority-38-cfr-part-20-ama-evid-windows-and-part-14-fees"
       ],
-      "plainEnglishCount": 3,
+      "plainEnglishCount": 35,
       "upstreamPlannedEpic": null
     }
   ],
@@ -1050,8 +1050,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/ama-lanes-and-bva-litigation-manual.md",
       "canonicalRoute": "/docs/ama-lanes-and-bva-litigation-manual",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "appeals-cavc-litigation",
@@ -1090,8 +1090,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/attorney-fees-5904-and-eaja-practice.md",
       "canonicalRoute": "/docs/attorney-fees-5904-and-eaja-practice",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "fees-eaja",
@@ -1130,8 +1130,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/authority-verification-log.md",
       "canonicalRoute": "/docs/authority-verification-log",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -1168,8 +1168,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/cavc-federal-circuit-writs-and-class-actions.md",
       "canonicalRoute": "/docs/cavc-federal-circuit-writs-and-class-actions",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "appeals-cavc-litigation",
@@ -1222,8 +1222,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/effective-dates-and-staged-ratings-treatise.md",
       "canonicalRoute": "/docs/effective-dates-and-staged-ratings-treatise",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "effective-dates-offsets",
@@ -1277,8 +1277,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/evidence-medical-exams-and-lay-credibility.md",
       "canonicalRoute": "/docs/evidence-medical-exams-and-lay-credibility",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "open-claim-only-george-restricted",
       "practiceDomains": [
         "disability-compensation",
@@ -1351,8 +1351,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/master-chronological-matrix.md",
       "canonicalRoute": "/docs/master-chronological-matrix",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -1431,8 +1431,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/service-connection-direct-soundness-aggravation.md",
       "canonicalRoute": "/docs/service-connection-direct-soundness-aggravation",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -1478,8 +1478,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/smc-complete-treatise-and-step-math.md",
       "canonicalRoute": "/docs/smc-complete-treatise-and-step-math",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -1595,8 +1595,8 @@
       "category": "doctrine",
       "upstreamPath": "docs/vaopgcprec-index.md",
       "canonicalRoute": "/docs/vaopgcprec-index",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -1909,8 +1909,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/02-wrong-address-defective-notice-cp-exams.md",
       "canonicalRoute": "/playbooks/02-wrong-address-defective-notice-cp-exams",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -1938,8 +1938,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/03-service-department-records-38-cfr-3-156c.md",
       "canonicalRoute": "/playbooks/03-service-department-records-38-cfr-3-156c",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -1964,8 +1964,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/04-unadjudicated-tdiu-informal-claims-smc.md",
       "canonicalRoute": "/playbooks/04-unadjudicated-tdiu-informal-claims-smc",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -1999,8 +1999,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/05-void-rating-reductions-stabilized-ratings.md",
       "canonicalRoute": "/playbooks/05-void-rating-reductions-stabilized-ratings",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -2035,8 +2035,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/06-nehmer-herbicide-presumptions-crsc.md",
       "canonicalRoute": "/playbooks/06-nehmer-herbicide-presumptions-crsc",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "toxic-exposure",
@@ -2070,8 +2070,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/07-statutory-presumptions-chronic-tropical-pow-als.md",
       "canonicalRoute": "/playbooks/07-statutory-presumptions-chronic-tropical-pow-als",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "disability-compensation",
@@ -2101,8 +2101,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/08-survivor-dic-direct-and-1318-hypothetical.md",
       "canonicalRoute": "/playbooks/08-survivor-dic-direct-and-1318-hypothetical",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -2148,8 +2148,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/09-accrued-benefits-substitution-nehmer-estates.md",
       "canonicalRoute": "/playbooks/09-accrued-benefits-substitution-nehmer-estates",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -2189,8 +2189,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/10-character-of-discharge-insanity-upgrades.md",
       "canonicalRoute": "/playbooks/10-character-of-discharge-insanity-upgrades",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "character-of-discharge",
@@ -2244,8 +2244,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/11-guard-reserve-adt-iadt-and-line-of-duty.md",
       "canonicalRoute": "/playbooks/11-guard-reserve-adt-iadt-and-line-of-duty",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "character-of-discharge",
@@ -2300,8 +2300,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/12-aid-and-attendance-smc-l-r1-r2-and-smc-t.md",
       "canonicalRoute": "/playbooks/12-aid-and-attendance-smc-l-r1-r2-and-smc-t",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -2348,8 +2348,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/13-ancillary-grants-sah-auto-clothing-dea-spina-bifida.md",
       "canonicalRoute": "/playbooks/13-ancillary-grants-sah-auto-clothing-dea-spina-bifida",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -2408,8 +2408,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/14-secondary-service-connection-aggravation-obesity.md",
       "canonicalRoute": "/playbooks/14-secondary-service-connection-aggravation-obesity",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -2474,8 +2474,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/15-gulf-war-mucmi-burn-pits-pact-tera.md",
       "canonicalRoute": "/playbooks/15-gulf-war-mucmi-burn-pits-pact-tera",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "toxic-exposure",
@@ -2535,8 +2535,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/16-ptsd-stressors-and-mst-corroboration.md",
       "canonicalRoute": "/playbooks/16-ptsd-stressors-and-mst-corroboration",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -2599,8 +2599,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/17-section-1151-va-malpractice-and-ftca-interplay.md",
       "canonicalRoute": "/playbooks/17-section-1151-va-malpractice-and-ftca-interplay",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -2644,8 +2644,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/18-tbi-facets-radiculopathy-and-nerve-stacking.md",
       "canonicalRoute": "/playbooks/18-tbi-facets-radiculopathy-and-nerve-stacking",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -2720,8 +2720,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/19-extraschedular-3.321b1-analogous-4.20-and-temp-total.md",
       "canonicalRoute": "/playbooks/19-extraschedular-3.321b1-analogous-4.20-and-temp-total",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -2780,8 +2780,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/20-backpay-offsets-crdp-crsc-severance-recoupment.md",
       "canonicalRoute": "/playbooks/20-backpay-offsets-crdp-crsc-severance-recoupment",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "effective-dates-offsets",
@@ -2825,8 +2825,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/21-overpayment-waivers-incompetency-and-wartime-pension.md",
       "canonicalRoute": "/playbooks/21-overpayment-waivers-incompetency-and-wartime-pension",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "pension-fiduciary-debt",
@@ -2883,8 +2883,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/22-emergency-medical-reimbursement-1725-1728-and-pcafc.md",
       "canonicalRoute": "/playbooks/22-emergency-medical-reimbursement-1725-1728-and-pcafc",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vre-medical-reimbursement",
@@ -2928,8 +2928,8 @@
       "category": "playbook",
       "upstreamPath": "playbooks/23-vre-chapter-31-retroactive-induction-and-rudisill.md",
       "canonicalRoute": "/playbooks/23-vre-chapter-31-retroactive-induction-and-rudisill",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vre-medical-reimbursement",
@@ -2971,8 +2971,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-20/ama-part-19-20-and-part-14-fee-evolution.md",
       "canonicalRoute": "/cfr/modules/ama-part-19-20-and-part-14-fee-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "appeals-cavc-litigation",
@@ -3012,8 +3012,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-3/character-of-discharge-3.12-evolution.md",
       "canonicalRoute": "/cfr/modules/character-of-discharge-3.12-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "character-of-discharge",
@@ -3067,8 +3067,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-3/pension-net-worth-and-effective-date-diffs.md",
       "canonicalRoute": "/cfr/modules/pension-net-worth-and-effective-date-diffs",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "effective-dates-offsets",
@@ -3114,8 +3114,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-3/smc-statutory-and-regulatory-evolution.md",
       "canonicalRoute": "/cfr/modules/smc-statutory-and-regulatory-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -3162,8 +3162,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-3/survivor-marriage-dependency-evolution.md",
       "canonicalRoute": "/cfr/modules/survivor-marriage-dependency-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -3220,8 +3220,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-3/toxic-gulf-pact-1151-evolution.md",
       "canonicalRoute": "/cfr/modules/toxic-gulf-pact-1151-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "toxic-exposure",
@@ -3283,8 +3283,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-4-policy/subpart-a-general-rating-policy-4.1-4.31.md",
       "canonicalRoute": "/cfr/modules/subpart-a-general-rating-policy-4.1-4.31",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3346,8 +3346,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/part-4-policy/tdiu-digestive-respiratory-diffs.md",
       "canonicalRoute": "/cfr/modules/tdiu-digestive-respiratory-diffs",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -3390,8 +3390,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/01-musculoskeletal-joints-arthritis-implants-4.71a.md",
       "canonicalRoute": "/cfr/modules/01-musculoskeletal-joints-arthritis-implants-4.71a",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3489,8 +3489,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/02-eye-and-vision-4.75-4.79.md",
       "canonicalRoute": "/cfr/modules/02-eye-and-vision-4.75-4.79",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3567,8 +3567,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/03-auditory-hearing-tinnitus-4.85-4.87.md",
       "canonicalRoute": "/cfr/modules/03-auditory-hearing-tinnitus-4.85-4.87",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3638,8 +3638,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/04-infectious-immune-nutritional-4.88b.md",
       "canonicalRoute": "/cfr/modules/04-infectious-immune-nutritional-4.88b",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3707,8 +3707,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/05-respiratory-system-4.96-4.97.md",
       "canonicalRoute": "/cfr/modules/05-respiratory-system-4.96-4.97",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3783,8 +3783,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/06-cardiovascular-system-4.100-4.104.md",
       "canonicalRoute": "/cfr/modules/06-cardiovascular-system-4.100-4.104",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3856,8 +3856,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/07-digestive-system-4.110-4.114.md",
       "canonicalRoute": "/cfr/modules/07-digestive-system-4.110-4.114",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -3956,8 +3956,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/08-genitourinary-system-4.115-4.115b.md",
       "canonicalRoute": "/cfr/modules/08-genitourinary-system-4.115-4.115b",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4046,8 +4046,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/09-gynecological-and-breast-4.116.md",
       "canonicalRoute": "/cfr/modules/09-gynecological-and-breast-4.116",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4118,8 +4118,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/10-hemic-and-lymphatic-4.117.md",
       "canonicalRoute": "/cfr/modules/10-hemic-and-lymphatic-4.117",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4194,8 +4194,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/11-skin-dermatitis-psoriasis-biologics-4.118.md",
       "canonicalRoute": "/cfr/modules/11-skin-dermatitis-psoriasis-biologics-4.118",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4268,8 +4268,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/12-endocrine-system-4.119.md",
       "canonicalRoute": "/cfr/modules/12-endocrine-system-4.119",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4341,8 +4341,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/13-neurological-tbi-nerves-4.120-4.124a.md",
       "canonicalRoute": "/cfr/modules/13-neurological-tbi-nerves-4.120-4.124a",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4419,8 +4419,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/14-mental-disorders-4.125-4.130.md",
       "canonicalRoute": "/cfr/modules/14-mental-disorders-4.125-4.130",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4489,8 +4489,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/15-dental-and-oral-4.150.md",
       "canonicalRoute": "/cfr/modules/15-dental-and-oral-4.150",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4561,8 +4561,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/mental-health-dc-9400-9411.md",
       "canonicalRoute": "/cfr/modules/mental-health-dc-9400-9411",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4623,8 +4623,8 @@
       "category": "cfr-diff",
       "upstreamPath": "cfr-diffs/vasrd/orthopedic-spine-joints.md",
       "canonicalRoute": "/cfr/modules/orthopedic-spine-joints",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -4687,8 +4687,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/award-letter-and-withholding-audit-checklist.md",
       "canonicalRoute": "/checklists/award-letter-and-withholding-audit-checklist",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "effective-dates-offsets",
@@ -4769,8 +4769,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/c-file-audit-protocol.md",
       "canonicalRoute": "/checklists/c-file-audit-protocol",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -4809,8 +4809,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/case-screening-worksheet.md",
       "canonicalRoute": "/checklists/case-screening-worksheet",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -4847,8 +4847,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/cavc-appeal-eaja-and-fee-compliance-gate.md",
       "canonicalRoute": "/checklists/cavc-appeal-eaja-and-fee-compliance-gate",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "appeals-cavc-litigation",
@@ -4885,8 +4885,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/cod-and-guard-reserve-intake-audit.md",
       "canonicalRoute": "/checklists/cod-and-guard-reserve-intake-audit",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "character-of-discharge",
@@ -4951,8 +4951,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/pathway-decision-matrix.md",
       "canonicalRoute": "/checklists/pathway-decision-matrix",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "finality-and-cue",
@@ -4989,8 +4989,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/smc-and-ancillary-audit-worksheet.md",
       "canonicalRoute": "/checklists/smc-and-ancillary-audit-worksheet",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -5043,8 +5043,8 @@
       "category": "checklist",
       "upstreamPath": "checklists/survivor-post-mortem-triage-gate.md",
       "canonicalRoute": "/checklists/survivor-post-mortem-triage-gate",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -5099,8 +5099,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-20/38-cfr-part-20-ama-evid-windows-and-part-14-fees.md",
       "canonicalRoute": "/cfr/modules/38-cfr-part-20-ama-evid-windows-and-part-14-fees",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "appeals-cavc-litigation",
@@ -5158,8 +5158,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.1000-3.1010-accrued-substitution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.1000-3.1010-accrued-substitution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -5191,8 +5191,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.105e-3.344-3.951-3.957-reductions.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.105e-3.344-3.951-3.957-reductions",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -5228,8 +5228,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.114-3.400-3.700-effective-dates-offsets.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.114-3.400-3.700-effective-dates-offsets",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "effective-dates-offsets",
@@ -5275,8 +5275,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.12-3.13-3.354-cod-insanity.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.12-3.13-3.354-cod-insanity",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "character-of-discharge",
@@ -5323,8 +5323,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.155-3.157b-informal-claims-pre-2015.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.155-3.157b-informal-claims-pre-2015",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -5375,8 +5375,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.159-17.1002-17.4000-21.282-evidence-emergency-pcafc-vre.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.159-17.1002-17.4000-21.282-evidence-emergency-pcafc-vre",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -5438,8 +5438,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.22-dic-hypothetical-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.22-dic-hypothetical-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "survivors-dic-accrued",
@@ -5475,8 +5475,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.274-3.279-3.353-1.965-pension-competency-waivers.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.274-3.279-3.353-1.965-pension-competency-waivers",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "pension-fiduciary-debt",
@@ -5521,8 +5521,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.304f-ptsd-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.304f-ptsd-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -5565,8 +5565,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.310-secondary-aggravation-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.310-secondary-aggravation-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "disability-compensation",
@@ -5610,8 +5610,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.350-3.352-smc-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.350-3.352-smc-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "smc-ancillary",
@@ -5658,8 +5658,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-3/38-cfr-3.655-examinations-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-3.655-examinations-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "finality-and-cue",
@@ -5687,8 +5687,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.1-4.31-general-policy-snapshots.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.1-4.31-general-policy-snapshots",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -5736,8 +5736,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.100-4.104-cardiovascular-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.100-4.104-cardiovascular-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -5790,8 +5790,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.114-digestive-pre-and-post-2024.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.114-digestive-pre-and-post-2024",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -5853,8 +5853,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.115a-4.115b-genitourinary-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.115a-4.115b-genitourinary-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -5909,8 +5909,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.116-gynecological-breast-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.116-gynecological-breast-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -5968,8 +5968,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.117-hemic-lymphatic-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.117-hemic-lymphatic-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6047,8 +6047,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.118-skin-general-formula-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.118-skin-general-formula-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6101,8 +6101,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.119-endocrine-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.119-endocrine-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6152,8 +6152,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.124a-tbi-and-peripheral-nerves-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.124a-tbi-and-peripheral-nerves-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6207,8 +6207,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.132-mental-disorders-pre-1996.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.132-mental-disorders-pre-1996",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6253,8 +6253,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.150-dental-tmj-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.150-dental-tmj-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6309,8 +6309,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.16-tdiu-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.16-tdiu-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "tdiu-unemployability",
@@ -6369,8 +6369,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.71a-joints-arthritis-pre-and-post-2021.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.71a-joints-arthritis-pre-and-post-2021",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6426,8 +6426,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.71a-spine-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.71a-spine-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "cue-and-open-claim",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6453,8 +6453,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.75-4.79-eye-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.75-4.79-eye-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6512,8 +6512,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.85-4.87-auditory-tinnitus-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.85-4.87-auditory-tinnitus-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6565,8 +6565,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.88a-4.88b-infectious-cfs-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.88a-4.88b-infectious-cfs-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",
@@ -6608,8 +6608,8 @@
       "category": "authority-snapshot",
       "upstreamPath": "authorities/part-4/38-cfr-4.96-4.97-respiratory-evolution.md",
       "canonicalRoute": "/cfr/modules/38-cfr-4.96-4.97-respiratory-evolution",
-      "coverageState": "PLAIN_ENGLISH_IN_PROGRESS",
-      "hasVeteranOverlay": false,
+      "coverageState": "VERBATIM_VERIFIED",
+      "hasVeteranOverlay": true,
       "bitemporalScope": "mixed-see-text",
       "practiceDomains": [
         "vasrd-rating-schedule",

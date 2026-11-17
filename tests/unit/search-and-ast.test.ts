@@ -2,7 +2,12 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { compileCorpusFromDisk } from "@/lib/corpus/compiler";
 import { executeExplainableSearch } from "@/lib/corpus/search-engine";
-import { buildKnowledgeTree } from "@/lib/corpus/knowledge-tree";
+import {
+  buildKnowledgeTree,
+  extractBrowseCatalog,
+  flattenKnowledgeTree,
+} from "@/lib/corpus/knowledge-tree";
+import { getCoverageManifest } from "@/lib/corpus/loader";
 
 const REPO_ROOT = resolve(__dirname, "..", "..");
 
@@ -87,14 +92,15 @@ describe("3-Column Markdown AST Compiler, 10/10 Wave 1 Overlays & Structural Era
     expect(cueChecklist?.blocks.some((b) => b.kind === "checklist")).toBe(true);
     expect(cueChecklist?.blocks.some((b) => b.kind === "alert")).toBe(true);
 
-    // Unlocked Wave 3 modules compile full AST blocks with honest PLAIN_ENGLISH_IN_PROGRESS status
+    // Unlocked Wave 3–5 modules compile full AST blocks with SHA-256-locked VERBATIM_VERIFIED Veteran overlays (111/111 parity in E5-S4/E5-S5)
     const livePlaybook10 = bundle.compiledDocuments.find((d) =>
       d.route.endsWith("/playbooks/10-character-of-discharge-insanity-upgrades"),
     );
     expect(livePlaybook10).toBeDefined();
     expect(livePlaybook10?.status).toBe("LIVE_VERIFIED");
     expect(livePlaybook10?.waveId).toBe("W3");
-    expect(livePlaybook10?.coverageState).toBe("PLAIN_ENGLISH_IN_PROGRESS");
+    expect(livePlaybook10?.coverageState).toBe("VERBATIM_VERIFIED");
+    expect(livePlaybook10?.veteranOverlay).not.toBeNull();
     expect(livePlaybook10?.blocks.length).toBeGreaterThan(5);
 
     // Verify zero unrewritten relative links, zero raw .md link labels, and zero /cfr hub title collisions
@@ -123,22 +129,33 @@ describe("3-Column Markdown AST Compiler, 10/10 Wave 1 Overlays & Structural Era
     }
   });
 
-  it("changes top-level Depth-1 Knowledge Tree branches substantially when toggling between Eras", () => {
-    const korea1954 = buildKnowledgeTree("practitioner", "1954-06-15");
-    const closed1974 = buildKnowledgeTree("practitioner", "1974-08-12");
-    const vjra1994 = buildKnowledgeTree("practitioner", "1994-05-10");
-    const modern2024 = buildKnowledgeTree("practitioner", "2024-07-01");
+  it("keeps top-level 5 visitor-need folders stable while updating date-sensitive rule nodes across Eras", () => {
+    const catalog = extractBrowseCatalog(getCoverageManifest());
+    const korea1954 = buildKnowledgeTree("practitioner", "1954-06-15", catalog);
+    const closed1974 = buildKnowledgeTree("practitioner", "1974-08-12", catalog);
+    const vjra1994 = buildKnowledgeTree("practitioner", "1994-05-10", catalog);
+    const modern2024 = buildKnowledgeTree("practitioner", "2024-07-01", catalog);
 
-    const topLabels = (root: ReturnType<typeof buildKnowledgeTree>) =>
-      (root.children ?? []).map((c) => `${c.label} [${c.badge ?? ""}]`).join(" | ");
+    const topIds = (root: ReturnType<typeof buildKnowledgeTree>) =>
+      (root.children ?? []).map((c) => c.id);
+    expect(topIds(korea1954)).toEqual(topIds(modern2024));
 
-    expect(topLabels(korea1954)).not.toBe(topLabels(closed1974));
-    expect(topLabels(closed1974)).not.toBe(topLabels(vjra1994));
-    expect(topLabels(vjra1994)).not.toBe(topLabels(modern2024));
+    const eraSignature = (root: ReturnType<typeof buildKnowledgeTree>) =>
+      flattenKnowledgeTree(root)
+        .filter((n) =>
+          ["law-statute-era", "law-bell-scope", "law-3157b", "law-cfr-3156c", "law-cfr-456", "law-cfr-4118"].includes(
+            n.id,
+          ),
+        )
+        .map((n) => `${n.id}:${n.label}[${n.badge ?? ""}]`)
+        .join(" | ");
 
-    // Verify Veteran top-level tree also visibly reshapes across Eras
-    const vet1974 = buildKnowledgeTree("veteran", "1974-08-12");
-    const vet2024 = buildKnowledgeTree("veteran", "2024-07-01");
-    expect(topLabels(vet1974)).not.toBe(topLabels(vet2024));
+    expect(eraSignature(korea1954)).not.toBe(eraSignature(closed1974));
+    expect(eraSignature(closed1974)).not.toBe(eraSignature(vjra1994));
+    expect(eraSignature(vjra1994)).not.toBe(eraSignature(modern2024));
+
+    const vet1974 = buildKnowledgeTree("veteran", "1974-08-12", catalog);
+    const vet2024 = buildKnowledgeTree("veteran", "2024-07-01", catalog);
+    expect(eraSignature(vet1974)).not.toBe(eraSignature(vet2024));
   });
 });

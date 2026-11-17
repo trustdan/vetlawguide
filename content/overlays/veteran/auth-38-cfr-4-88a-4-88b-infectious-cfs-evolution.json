@@ -1,0 +1,31 @@
+{
+  "upstream_id": "auth-38-cfr-4-88a-4-88b-infectious-cfs-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.88a-4.88b-infectious-cfs-evolution.md",
+  "upstream_sha256": "2f3d9820ab0849aac0952caecf21fc953f0408e985fc98b425e7f00b61aa9dbc",
+  "linked_version_ids": [
+    "38-cfr-4.88a-4.88b-1996-infectious",
+    "38-cfr-4.88a-4.88b-2019-infectious-cfs",
+    "38-cfr-3.317-1995-2022-gulf-war-mucmi"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Infectious Diseases, Chronic Fatigue Syndrome, Lupus & HIV Regulations (38 C.F.R. §§ 4.88a & 4.88b)",
+  "what_this_means": "Sections 4.88a and 4.88b of Title 38 govern Chronic Fatigue Syndrome (Diagnostic Code 6354), tropical and Southwest Asia/Afghanistan infectious diseases (malaria, Lyme disease, Q fever, brucellosis, West Nile), Systemic Lupus Erythematosus (Diagnostic Code 6350), HIV-related illness (Diagnostic Code 6351), and Former Prisoner of War nutritional deficiencies (Diagnostic Codes 6313–6315). Effective August 11, 2019 (84 FR 28227), VA enacted a General Rating Formula for Infectious Diseases (100% during active infection, stepping to 0% once resolved while requiring separate ratings for any lasting organ, joint, nerve, or heart residuals), made the 10% criteria for HIV-related illness disjunctive (including continuous approved antiretroviral medication), and preserved Chronic Fatigue Syndrome without enacting proposed restrictions.",
+  "record_clues": [
+    "A Chronic Fatigue Syndrome (Diagnostic Code 6354) decision denying 40% or 60% solely because no doctor prescribed bed rest—overlooking the alternative 'or' pathway for nearly constant debilitating fatigue and cognitive/physical symptoms that restrict routine daily activities to 50–75% (40%) or less than 50% (60%) of pre-illness levels.",
+    "A post-August 11, 2019 rating for Lyme disease (Diagnostic Code 6319), malaria (Diagnostic Code 6304), Q fever (Diagnostic Code 6331), or rheumatic fever (Diagnostic Code 6309) dropped to 0% after acute treatment without separately rating chronic arthritis, Bell's palsy, nerve radiculopathy, heart, or fatigue residuals.",
+    "Systemic Lupus Erythematosus (Diagnostic Code 6350) rated at 10% or 60% on flare frequency alone when separately combining kidney, joint, skin, lung, heart, or blood residuals would produce a higher rating under the Note.",
+    "An HIV-related illness claim (Diagnostic Code 6351) adjudicated on or after August 11, 2019 assigned 0% despite daily prescribed antiretroviral medication (which satisfies the post-2019 10% tier)."
+  ],
+  "important_cautions": [
+    "Two distinct prongs in Chronic Fatigue Syndrome (Diagnostic Code 6354): if relying on the waxing-and-waning 'periods of incapacitation' prong, the Note requires both bed rest AND treatment prescribed by a licensed physician; if relying on the 'nearly constant' daily-activity-restriction prong, prescribed bed rest is NOT required.",
+    "Anti-pyramiding rule in Lupus (Diagnostic Code 6350): VA cannot combine a Diagnostic Code 6350 flare rating WITH discoid lupus (Diagnostic Code 7809) or separate lupus organ residuals—instead, VA must calculate both methods and award whichever yields the higher overall evaluation.",
+    "Withdrawn proposal vs. enacted date: VA expressly withdrew its February 5, 2019 proposal (84 FR 1678) to tighten Chronic Fatigue Syndrome rules when issuing the June 18, 2019 Final Rule (84 FR 28227, effective August 11, 2019). Post-August 11, 2019 codes cannot prove Clear and Unmistakable Error (CUE) in pre-August 11, 2019 final decisions, and 38 C.F.R. § 20.1409(c) allows only one final merits CUE decision per prior Board issue.",
+    "Former POW nutritional rules: Beriberi (Diagnostic Code 6314, including beriberi heart disease and dry beriberi peripheral neuropathy), Pellagra (Diagnostic Code 6315), and Avitaminosis (Diagnostic Code 6313) carry specific presumptive rules under 38 C.F.R. § 3.309(c)."
+  ],
+  "questions_for_representative": [
+    "For Chronic Fatigue Syndrome under Diagnostic Code 6354, do my medical and lay records show 'nearly constant' restriction of routine daily activities (<50% for 60%, or 50–75% for 40%) even without prescribed bed rest?",
+    "After an infectious disease like Lyme disease, Q fever, West Nile, or malaria resolved to 0%, did VA separately evaluate every lasting joint, nerve, cardiac, or post-infectious fatigue residual?",
+    "If I have Systemic Lupus Erythematosus (Diagnostic Code 6350), would rating my affected body systems separately yield a higher combined percentage than the 10% or 60% flare-count tier?",
+    "Do Gulf War / Southwest Asia / Afghanistan presumptions under 38 C.F.R. § 3.317(a) or (c) apply to my condition?"
+  ]
+}

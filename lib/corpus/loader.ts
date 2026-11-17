@@ -2,7 +2,12 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { loadVeteranOverlays } from "./compiler";
 import { buildSearchableCatalog, type SearchEngineCatalog } from "./search-engine";
+import {
+  parseMasterChronologicalMatrix,
+  type CompiledTimelineBundle,
+} from "./timeline";
 import type {
+  CfrVersionRecord,
   CompiledCfrSection,
   CompiledCfrVersion,
   CompiledDocument,
@@ -135,4 +140,30 @@ export function getVeteranOverlaysById(): Record<string, VeteranOverlay> {
 
 export function buildGlobalSearchItems(): SearchableItem[] {
   return buildSearchableCatalog(getSearchEngineCatalog());
+}
+
+export function getCompiledTimelineBundle(
+  repoRoot: string = process.cwd(),
+): CompiledTimelineBundle {
+  const matrixMd = readFileSync(
+    resolve(repoRoot, "corpus", "upstream", "docs", "master-chronological-matrix.md"),
+    "utf8",
+  );
+  const cfrJson = JSON.parse(
+    readFileSync(
+      resolve(repoRoot, "corpus", "upstream", "knowledge", "cfr-amendments.json"),
+      "utf8",
+    ),
+  ) as { versions: CfrVersionRecord[] };
+  const manifest = JSON.parse(
+    readFileSync(
+      resolve(repoRoot, "corpus", "generated", "coverage-manifest.json"),
+      "utf8",
+    ),
+  ) as { checkedAsOf?: string };
+  return parseMasterChronologicalMatrix(
+    matrixMd,
+    cfrJson.versions,
+    manifest.checkedAsOf ?? "2026-11-17",
+  );
 }

@@ -31,7 +31,7 @@ export function CfrIndexLiveResolver({
             </strong>
           </span>
         </div>
-        <span className="text-[11px] text-muted-foreground">
+        <span className="text-xs text-muted-foreground">
           Change <strong>Decision Date</strong> in the top bar to test historical transitions
         </span>
       </div>
@@ -51,12 +51,12 @@ export function CfrIndexLiveResolver({
               <div>
                 <div className="font-semibold text-foreground">{sec.cfrSection}</div>
                 {res.governingVersion ? (
-                  <p className="mt-1 font-mono text-[11px] text-muted-foreground">
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">
                     Eff. {res.governingVersion.effective_from} →{" "}
                     {res.governingVersion.effective_to ?? "present"}
                   </p>
                 ) : (
-                  <p className="mt-1 font-mono text-[11px] text-accent">
+                  <p className="mt-1 font-mono text-xs text-accent">
                     Outside indexed baseline — Do Not Rely
                   </p>
                 )}
@@ -64,7 +64,7 @@ export function CfrIndexLiveResolver({
               <div className="mt-2 pt-1.5 border-t border-border/60">
                 <Link
                   href={res.governingVersion?.permalink ?? `/cfr/${sec.sectionSlug}`}
-                  className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-primary underline underline-offset-2"
+                  className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-primary underline underline-offset-2"
                 >
                   <span>
                     {res.governingVersion?.permalink ?? `/cfr/${sec.sectionSlug}`}

@@ -104,6 +104,15 @@ function main(): void {
     }
   }
 
+  // 5. Prevent stale Wave 1 quickstart or pre-ADR-0007 ~84px header budget drift in active governance docs (AUD-CL-001)
+  if (/Wave 1 Live vs\. Waves 2-5 Placeholders/i.test(readmeMd)) {
+    errors.push('README.md contains stale "Wave 1 Live vs. Waves 2-5 Placeholders" quickstart comment.');
+  }
+  const agentsMd = readFileSync(resolve(REPO_ROOT, "AGENTS.md"), "utf8");
+  if (/~84px/i.test(agentsMd)) {
+    errors.push('AGENTS.md contains stale "~84px" header budget claim superseded by ADR-0006 & ADR-0007.');
+  }
+
   if (errors.length > 0) {
     console.error(`[qa:historian] FAIL (${errors.length} issue(s)):\n- ${errors.join("\n- ")}`);
     process.exit(1);

@@ -72,6 +72,18 @@ const BANNED_HEAVY_PACKAGES = [
   "@react-three/fiber",
 ];
 
+const BANNED_PUBLIC_BUILD_JARGON: ReadonlyArray<{ label: string; pattern: RegExp }> = [
+  { label: "Active Bookmark / Bookmark W#", pattern: /\bActive\s+Bookmark\b|\bBookmark\s*:?\s*(?:W\d|\{)/i },
+  { label: "Held as Placeholders / Held at Ingestion Gate", pattern: /\bHeld\s+(?:as\s+Placeholders|at\s+Ingestion\s+Gate)\b/i },
+  { label: "Queued for Later Wave", pattern: /\bQueued\s+for\s+Later\s+Wave\b/i },
+  { label: "Tracer Bullet", pattern: /\bTracer\s+Bullet\b/i },
+  { label: "3-Column build label", pattern: /\b3-Column\b/i },
+  { label: "Morph Tree jargon", pattern: /\bMorph\s+Tree\b/i },
+  { label: "Public Wave / Ingestion Wave roadmap jargon", pattern: /\b(?:Wave\s+(?:[1-9]|W\d|\$\{)|Waves\s+W\d|Ingestion\s+Wave|editorial\s+wave)\b/i },
+  { label: "Raw (/route) inside visible link/heading label", pattern: /\(\/[a-z0-9/_-]+\)\s*(?:→|&rarr;|<)/i },
+  { label: "Sub-13px arbitrary micro-typography (text-[9..12px])", pattern: /\btext-\[(?:[1-9]|1[0-2])px\]/ },
+];
+
 function walkUiFiles(dir: string): string[] {
   if (!existsSync(dir)) return [];
   const out: string[] = [];
@@ -152,13 +164,30 @@ function main(): void {
       if ((dirName === "app" || dirName === "components") && /\bE\d+-S\d+\b/.test(content)) {
         errors.push(`${rel}: Leaks internal backlog story identifier (E#-S#) in UI source.`);
       }
+      if (dirName === "app" || dirName === "components") {
+        // Strip single-line and block comments plus import lines before checking visible UI copy
+        const withoutCommentsOrImports = content
+          .replace(/\/\*[\s\S]*?\*\//g, "")
+          .replace(/^\s*\/\/.*$/gm, "")
+          .replace(/^\s*import\s+[\s\S]*?from\s+["'][^"']+["'];?\s*$/gm, "");
+        for (const rule of BANNED_PUBLIC_BUILD_JARGON) {
+          if (rule.pattern.test(withoutCommentsOrImports)) {
+            errors.push(`${rel}: Leaks public build jargon or micro-type (${rule.label}).`);
+          }
+        }
+        if (/\bd3-hierarchy\b/i.test(withoutCommentsOrImports)) {
+          errors.push(`${rel}: Leaks "d3-hierarchy" library name in UI source outside imports.`);
+        }
+      }
       for (const rawEnum of BANNED_RAW_SCHEMA_ENUMS) {
         // Allow TypeScript type/comparison checks in server/client TSX when quoted as code property comparisons ONLY if not rendered;
         // check JSX/string copy excluding `doc.category === "..."` style AST discriminators.
-        const strippedDiscriminators = content.replace(
-          /\b(?:category|regulatory_status|bitemporal_scope|verbatim_text_status)\s*[!=]==?\s*["'][a-z0-9.-]+["']/g,
-          "",
-        );
+        const strippedDiscriminators = content
+          .replace(
+            /\b(?:category|regulatory_status|bitemporal_scope|verbatim_text_status)\s*[!=]==?\s*["'][a-z0-9.-]+["']/g,
+            "",
+          )
+          .replace(/["']\/(?:playbooks|docs|checklists|cfr|eras|vasrd)\/[^"']*["']/g, "");
         if (strippedDiscriminators.includes(rawEnum)) {
           errors.push(`${rel}: Leaks raw internal schema token or repo path "${rawEnum}".`);
         }
@@ -239,9 +268,11 @@ function main(): void {
     "/docs",
     "/eras",
     "/explore",
+    "/explore/piercing-finality",
     "/investigate",
     "/playbooks",
     "/reference/forms-and-codes",
+    "/timeline",
     "/vasrd",
   ]);
 
@@ -318,8 +349,8 @@ function main(): void {
     }
   }
 
-  // 4b. Verify every hardcoded internal route literal (`href="/..."` or `href: "/..."`) in app/, components/, and content/ resolves to an existing SSG route
-  for (const dirName of ["app", "components", "content"]) {
+  // 4b. Verify every hardcoded internal route literal (`href="/..."` or `href: "/..."`) in app/, components/, content/, and lib/ resolves to an existing SSG route
+  for (const dirName of ["app", "components", "content", "lib"]) {
     for (const file of walkUiFiles(resolve(REPO_ROOT, dirName))) {
       const rel = relative(REPO_ROOT, file).replace(/\\/g, "/");
       if (rel === "content/taxonomy-skeleton.ts") continue;

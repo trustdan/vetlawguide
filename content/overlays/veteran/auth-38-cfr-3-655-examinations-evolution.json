@@ -1,0 +1,30 @@
+{
+  "upstream_id": "auth-38-cfr-3-655-examinations-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.655-examinations-evolution.md",
+  "upstream_sha256": "0623cba0cc60d8c83295e41af06fcf3958c41248051a784dc3a772ee589ebd55",
+  "linked_version_ids": [
+    "38-cfr-3.655-1961-pre1991",
+    "38-cfr-3.655-1990-legacy",
+    "38-cfr-3.655-2019-ama"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "What VA Must Do When a Scheduled C&P Exam Is Missed Across Different Eras (38 C.F.R. § 3.655)",
+  "what_this_means": "Veterans miss Compensation and Pension (C&P) examinations for many understandable reasons—never receiving the notice letter after moving, hospitalization, lack of transportation, or severe symptoms. Under 38 C.F.R. § 3.655, what VA is legally permitted to do after a missed exam depends heavily on TWO things: (1) whether you had 'good cause' (including defective or wrong-address notice), and (2) what kind of claim or award was at stake. Since December 31, 1990, if a Veteran misses an exam without good cause on an original disability compensation claim, VA cannot simply deny the claim as 'abandoned'—VA must rate the claim based on the medical and service evidence already in the file. By contrast, claims for a rating increase or supplemental/reopened claims face stricter denial rules, while ongoing monthly benefits cannot be reduced or stopped without advance 60-day notice.",
+  "record_clues": [
+    "An older rating decision on a first-time (original) disability claim stating 'Denied—failed to report for scheduled VA examination' with zero evaluation of your service medical records.",
+    "A pre-December 31, 1990 denial citing 38 C.F.R. § 3.655 on an initial claim (before December 31, 1990, § 3.655 applied only to Veterans already receiving running awards!).",
+    "A sudden reduction or stoppage of ongoing monthly disability payments after a missed reexamination where VA never sent a 60-day advance pre-termination notice under § 3.655(c).",
+    "Phone logs, VA Form 21-4138 statements, or returned mail showing you never got the exam notice or called to reschedule for illness or family emergency ('good cause' under § 3.655(a))."
+  ],
+  "important_cautions": [
+    "Exact Federal Register Date Caution: VA overhauled § 3.655 on November 29, 1990 (55 FR 49521), effective December 31, 1990 (not to be confused with 55 FR 31579 in August/September 1990, which amended § 4.16 TDIU). Before December 31, 1990, § 3.655 did not authorize denying initial claims at all (Wamhoff v. Brown).",
+    "Increase & Supplemental Claims Differ From Original Claims: Under sentence two of § 3.655(b), if a Veteran misses a necessary exam without good cause on a claim for an increased rating or a supplemental/reopened claim, the regulation directs VA to deny that increase or supplemental claim—making proof of good cause or bad address notice critical.",
+    "AMA Conforming Update: On February 19, 2019 (84 FR 138, 171), VA updated 'reopened claim' to 'supplemental claim' in § 3.655(b) while keeping the core original-claim and running-award protections intact."
+  ],
+  "questions_for_representative": [
+    "Was the claim VA denied for a missed C&P exam my very first (original) claim for that condition, or was it a later claim for increase or supplemental claim?",
+    "If my denial occurred before December 31, 1990, did VA improperly apply the pre-1991 version of 38 C.F.R. § 3.655 to an initial claim?",
+    "Does my C-file show good cause—such as an exam letter sent to an outdated address, contractor scheduling error, or medical inability to travel—under § 3.655(a)?",
+    "If VA reduced or stopped an existing monthly award after a missed reexamination, did VA first issue the mandatory 60-day advance notice required by § 3.655(c)?"
+  ]
+}

@@ -94,18 +94,18 @@ export function PacketExportPanel({
           >
             Generated in local client memory with zero telemetry or URL serialization,
             stamped with corpus release{" "}
-            <code className="font-mono text-[11px] text-foreground">
+            <code className="font-mono text-xs text-foreground">
               {stamp.corpusReleaseId}
             </code>{" "}
             (checked as of{" "}
-            <code className="font-mono text-[11px] text-foreground">
+            <code className="font-mono text-xs text-foreground">
               {stamp.checkedAsOf}
             </code>
             ).
           </p>
         </div>
 
-        <div className="inline-flex items-center gap-1.5 rounded border border-border bg-surface px-2.5 py-1 font-mono text-[11px] text-primary">
+        <div className="inline-flex items-center gap-1.5 rounded border border-border bg-surface px-2.5 py-1 font-mono text-xs text-primary">
           <ShieldCheck className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           <span>{stamp.corpusReleaseId}</span>
         </div>
@@ -186,7 +186,7 @@ export function PacketExportPanel({
             tabIndex={0}
             role="region"
             aria-label="Exported Markdown packet preview"
-            className="max-h-96 max-w-full overflow-x-auto overflow-y-auto font-mono text-[11px] leading-relaxed whitespace-pre-wrap break-words text-foreground focus-visible:outline-2 focus-visible:outline-primary"
+            className="max-h-96 max-w-full overflow-x-auto overflow-y-auto font-mono text-xs leading-relaxed whitespace-pre-wrap break-words text-foreground focus-visible:outline-2 focus-visible:outline-primary"
           >
             {activeMarkdown}
           </pre>

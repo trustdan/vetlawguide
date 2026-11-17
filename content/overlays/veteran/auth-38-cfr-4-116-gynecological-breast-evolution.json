@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-4-116-gynecological-breast-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.116-gynecological-breast-evolution.md",
+  "upstream_sha256": "3a755aa600c3bfc135fc7158e4f22dbe5d02f5ae7cf16a81542baf7a58b4fbcf",
+  "linked_version_ids": [
+    "38-cfr-4.116-1995-2002-gyn-breast",
+    "38-cfr-4.116-2018-gyn-breast",
+    "38-cfr-3.350a7-2000-pre2002-mastectomy",
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Gynecological & Breast Rating Snapshots: 1995 vs. 2018 Schedule & Breast SMC(k) Dates",
+  "what_this_means": "This module tracks the exact text of 38 C.F.R. § 4.116 governing gynecological conditions and breast disorders across the May 22, 1995 schedule (60 FR 19851), the early-2000s Special Monthly Compensation (SMC(k)) breast amendments, and the May 13, 2018 overhaul (published April 9, 2018 at 83 FR 15068). On May 13, 2018, VA added Female Sexual Arousal Disorder (Diagnostic Code 7632 at 0% with statutory SMC(k)), split breast cancer and benign breast conditions into dedicated Diagnostic Codes 7630 and 7631, directed menstrual-cycle ovarian conditions to Diagnostic Code 7615, and replaced older 30%/50% uterine prolapse ratings with a 10% pelvic organ prolapse baseline (Diagnostic Code 7621) combined separately with urinary, bowel, and skin residuals.",
+  "record_clues": [
+    "Surgical pathology, oncology, or radiation records showing mastectomy, lumpectomy removing 25% or more breast tissue (from one breast or both combined), or breast radiation therapy under Diagnostic Codes 7626 or 7630 without SMC(k) on the Rating Code Sheet.",
+    "Records of service-connected hysterectomy, ovary removal or atrophy (Diagnostic Codes 7617–7620), or Female Sexual Arousal Disorder (Diagnostic Code 7632) missing statutory SMC(k) for loss or loss of use of a creative organ.",
+    "A pre-May 13, 2018 30% or 50% uterine prolapse or cystocele/rectocele award (former Diagnostic Codes 7621 or 7623) lowered to 10% after May 13, 2018 without actual medical improvement.",
+    "Gynecological or breast cancer (Diagnostic Codes 7627 or 7630, including PACT Act reproductive cancers) reduced from 100% without a mandatory 6-month post-treatment VA exam and 60-day advance notice."
+  ],
+  "important_cautions": [
+    "Endometriosis laparoscopy rule caution: VA's October 1, 2025 notice (90 FR 47266, RIN 2900-AS39) proposing to remove the laparoscopy requirement under Diagnostic Code 7629 is an unfinalized proposed rule—it is NOT enacted law.",
+    "Exact statutory dates govern breast SMC(k): Congress first authorized breast SMC(k) for complete mastectomy effective November 1, 2000 (Pub. L. 106-419, codified March 18, 2002), and expanded it to 25%+ breast tissue loss or breast radiation treatment effective December 6, 2002 (Pub. L. 107-330, codified September 26, 2003 at 68 FR 55467).",
+    "Do not cite post-May 13, 2018 additions (such as Diagnostic Code 7632) to allege Clear and Unmistakable Error (CUE) in a final decision issued before May 13, 2018, and never treat the rescinded February 17, 2026 medication rule (91 FR 7118, withdrawn February 27, 2026 at 91 FR 9712) as active law.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific prior Board issue, no second CUE motion is allowed on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Did VA award Special Monthly Compensation (SMC(k))—including a potential second SMC(k) award if I have both creative-organ loss/loss of use and qualifying breast tissue loss or breast radiation?",
+    "If I had a running 30% or 50% prolapse evaluation before May 13, 2018, is that evaluation protected by 38 U.S.C. § 1155, or do separate bladder-pad and bowel ratings under post-2018 Diagnostic Code 7621 produce a higher combined rating?",
+    "If my endometriosis was diagnosed clinically without laparoscopy, can we evaluate chronic pelvic or menstrual symptoms under Diagnostic Codes 7610–7615 or by analogy while RIN 2900-AS39 remains an unfinalized proposed rule?",
+    "After breast or gynecological cancer treatment ended, did VA wait 6 months, hold a mandatory exam, and evaluate every surgical, scar, nerve, and lymphedema residual before reducing my 100% rating?"
+  ]
+}

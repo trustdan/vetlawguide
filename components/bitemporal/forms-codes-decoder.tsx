@@ -134,7 +134,7 @@ export function FormsCodesDecoder({ entries }: { entries: LexiconEntry[] }) {
                 key={preset}
                 type="button"
                 onClick={() => setAnalogousInput(preset)}
-                className="inline-flex min-h-6 items-center rounded border border-border bg-surface-elevated px-2.5 py-1 font-mono text-[11px] text-foreground hover:bg-muted"
+                className="inline-flex min-h-6 items-center rounded border border-border bg-surface-elevated px-2.5 py-1 font-mono text-xs text-foreground hover:bg-muted"
               >
                 {preset}
               </button>
@@ -171,7 +171,7 @@ export function FormsCodesDecoder({ entries }: { entries: LexiconEntry[] }) {
             href="/docs/forms-and-codesheet-lexicon"
             className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
           >
-            <span>Open Full 3-Column Forms &amp; Code-Sheet Treatise</span>
+            <span>Read the forms &amp; code-sheet treatise</span>
             <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
         </section>
@@ -263,7 +263,7 @@ export function FormsCodesDecoder({ entries }: { entries: LexiconEntry[] }) {
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-semibold text-foreground">{term.label}</span>
-                  <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-[10px] uppercase text-muted-foreground">
+                  <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-xs uppercase text-muted-foreground">
                     {term.kind}
                   </span>
                 </div>
@@ -278,13 +278,13 @@ export function FormsCodesDecoder({ entries }: { entries: LexiconEntry[] }) {
                 <summary className="cursor-pointer py-0.5 font-semibold text-primary hover:underline">
                   Inspect exact legal citation &amp; code-sheet note
                 </summary>
-                <p className="mt-1.5 font-mono text-[11px] text-muted-foreground">
+                <p className="mt-1.5 font-mono text-xs text-muted-foreground">
                   {term.practitionerNote}
                 </p>
               </details>
               <p
                 data-persona="practitioner-only"
-                className="mt-2.5 border-t border-border/70 pt-2 font-mono text-[11px] text-muted-foreground"
+                className="mt-2.5 border-t border-border/70 pt-2 font-mono text-xs text-muted-foreground"
               >
                 {term.practitionerNote}
               </p>

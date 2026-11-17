@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-4-115a-4-115b-genitourinary-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.115a-4.115b-genitourinary-evolution.md",
+  "upstream_sha256": "e72e8508ce3fdbe856b1cb3156b3e3e0c5fc2c44a36b8b627a4e9478639172f1",
+  "linked_version_ids": [
+    "38-cfr-4.115a-4.115b-1994-feb-gu",
+    "38-cfr-4.115a-4.115b-1994-gu",
+    "38-cfr-4.115a-4.115b-2021-gu",
+    "38-cfr-3.105i-1992-predetermination",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Genitourinary Rating Snapshots: Kidney Lab Thresholds, Bladder Leakage & 1994 vs. 2021 Rules",
+  "what_this_means": "This module preserves the exact historical and current regulations for kidney, bladder, prostate, and male reproductive disabilities under 38 C.F.R. §§ 4.115, 4.115a, and 4.115b. From February 17, 1994 through November 13, 2021, VA rated kidney dysfunction using blood urea nitrogen (BUN), creatinine, protein leakage, edema, or secondary high blood pressure, paid 30% for kidney stones treated with diet or medication (Diagnostic Code 7508), and paid 20% for erectile loss with penile deformity (Diagnostic Code 7522). Effective November 14, 2021 (published September 30, 2021 at 86 FR 54081), VA switched kidney grading to sustained estimated glomerular filtration rate (eGFR) and urinary albumin-to-creatinine ratio (ACR) lab values over at least 3 consecutive months, removed diet/drug therapy from the 30% kidney-stone tier, and set Diagnostic Code 7522 at 0% while keeping Special Monthly Compensation (SMC(k)) intact.",
+  "record_clues": [
+    "Metabolic lab panels over 3 or more consecutive months showing reduced eGFR (below 60 mL/min/1.73 m²) or elevated urine albumin-to-creatinine ratios in Veterans with service-connected diabetes or hypertension.",
+    "Urology or primary-care notes documenting daytime urination intervals, nighttime awakenings (nocturia), or daily absorbent pad changes (2 to 4 pads per day for 40%; more than 4 pads per day for 60%).",
+    "Pre-November 14, 2021 Rating Code Sheets listing Diagnostic Code 7508 (kidney stones on diet/drug therapy) or Diagnostic Code 7522 (penile deformity with loss of erectile power).",
+    "Post-treatment prostate or bladder cancer decisions (Diagnostic Code 7528) lowering a 100% evaluation or omitting Special Monthly Compensation (SMC(k)) for loss of use of a creative organ."
+  ],
+  "important_cautions": [
+    "Match the regulation to the exact claim and decision date: VA's eGFR kidney thresholds and revised Diagnostic Codes 7508 and 7522 took effect November 14, 2021 (published September 30, 2021 at 86 FR 54081). Pre-November 14, 2021 final decisions cannot be challenged for Clear and Unmistakable Error (CUE) using post-2021 eGFR rules, while pre-existing running 20% Diagnostic Code 7522 or 30% Diagnostic Code 7508 ratings are protected against schedule-only reduction under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a).",
+    "Watch out for heart-and-kidney combination rules: under 38 C.F.R. § 4.115, VA restricts combining separate hypertension or heart disease ratings with nephritis unless the sole renal disability is absence of a kidney or chronic renal disease requires regular dialysis.",
+    "Quarantined medication rule caution: VA's February 17, 2026 Interim Final Rule on medication (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not enacted law.",
+    "Under George v. McDonough and 38 C.F.R. § 20.1403(e), later judicial interpretations cannot establish CUE in an older final decision, and under 38 C.F.R. § 20.1409(c), once the Board issues a final merits decision on a CUE motion for a prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Do my VA or private lab results over at least 3 consecutive months meet the eGFR kidney dysfunction tiers under 38 C.F.R. § 4.115a, or did my claim span November 14, 2021 so both eras apply?",
+    "Did VA rate my bladder or post-prostatectomy symptoms under the 10% or 20% urinary frequency rules when my records actually show absorbent pad changes supporting 40% or 60%?",
+    "Did VA consider inferred Special Monthly Compensation (SMC(k)) under 38 U.S.C. § 1114(k) and 38 C.F.R. § 3.350(a) when granting service connection for prostate cancer treatment residuals or erectile dysfunction?",
+    "Before lowering my 100% prostate or bladder cancer evaluation under Diagnostic Code 7528, did VA wait 6 months after treatment ended, hold a mandatory exam, and provide 60-day advance notice under 38 C.F.R. § 3.105(e)?"
+  ]
+}

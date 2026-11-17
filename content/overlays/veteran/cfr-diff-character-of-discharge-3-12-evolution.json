@@ -1,0 +1,31 @@
+{
+  "upstream_id": "cfr-diff-character-of-discharge-3-12-evolution",
+  "upstream_path": "cfr-diffs/part-3/character-of-discharge-3.12-evolution.md",
+  "upstream_sha256": "6342c7722d766628e029a225c94fd123c7574b046b7d849080c9af760c3657c4",
+  "linked_version_ids": [
+    "38-cfr-3.12-1963-pre2022-cod",
+    "38-cfr-3.12-pre2024-cod",
+    "38-cfr-3.12-2024-cod",
+    "38-cfr-3.13-2022-current",
+    "38-cfr-3.354-insanity",
+    "38-cfr-3.400g-1962-military-records"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "What Changed on June 25, 2024 in VA's Character of Discharge Rules (Before-and-After Guide to 38 C.F.R. § 3.12)",
+  "what_this_means": "For sixty years before June 25, 2024, VA's Character of Discharge regulation (38 C.F.R. § 3.12) gave raters broad, subjective power to bar Veterans with Other Than Honorable (OTH) discharges for 'willful and persistent misconduct' or 'moral turpitude'—and allowed 'compelling circumstances' consideration ONLY for continuous AWOL of 180 days or more. Effective June 25, 2024 (89 FR 32361), VA dramatically modernized § 3.12: it repealed the obsolete homosexual-acts bar entirely, set an objective 2-year / 5-year spacing and Manual for Courts-Martial severity test for 'willful and persistent misconduct,' and created a new § 3.12(e) 'compelling circumstances' exception weighing physical/mental health (PTSD, TBI, MST), combat hardship, age, and length of service for BOTH prolonged AWOL and regulatory misconduct bars.",
+  "record_clues": [
+    "A pre-June 25, 2024 VA denial finding your OTH discharge 'dishonorable for VA purposes' due to 'willful and persistent misconduct' based on minor or widely spaced Article 15s, or due to 'moral turpitude.'",
+    "Service or post-service records showing behavioral changes after combat, head trauma, Military Sexual Trauma, or family crisis that were never weighed as 'compelling circumstances' under the old rule.",
+    "A separation under old 'homosexual policy' or aggravated acts provisions (repealed from § 3.12(d)), or a back-to-back reenlistment overlooked under § 3.13."
+  ],
+  "important_cautions": [
+    "Why Reopening vs. CUE Matters Here: Because the June 25, 2024 overhaul (published April 26, 2024 at 89 FR 32361) is a prospective liberalizing rule, previously denied Veterans can file a new Supplemental Claim (VA Form 20-0995) right away—but the 2024 rule cannot be used to claim Clear and Unmistakable Error (CUE) on a pre-June 25, 2024 decision, and compensation granted solely under the 2024 change cannot take effect earlier than June 25, 2024 (§ 3.114(a)).",
+    "Unfinalized 2020 Proposal Was Rejected: In its July 10, 2020 proposed rule (85 FR 41471), VA floated a new standalone regulatory text defining 'moral turpitude,' which VA expressly declined to adopt in the 2024 final rule—leaving VAOPGCPREC 6-87 governing moral turpitude.",
+    "Statutory & Non-Mitigable Bars Remain Excluded From § 3.12(e): General Court-Martial sentences (§ 3.12(c)(2)), OTH discharges in lieu of General Court-Martial (§ 3.12(d)(1)(i)), mutiny/spying, desertion, conscientious objector bars, and officer resignations for the good of the service are NOT eligible for § 3.12(e) compelling circumstances (check § 3.13 prior enlistments, § 3.354(b) insanity, or § 1552 BCMR relief instead)."
+  ],
+  "questions_for_representative": [
+    "Was my pre-June 25, 2024 Character of Discharge denial based on a category—like 'willful and persistent misconduct' or 'moral turpitude'—that is now eligible for 'compelling circumstances' review under new 38 C.F.R. § 3.12(e)?",
+    "Looking at the dates and maximum punishments of my minor UCMJ offenses, would they even count as 'persistent' misconduct under the new objective 2-year / 5-year rules in § 3.12(d)(2)(ii)?",
+    "Alongside a post-June 25, 2024 Supplemental Claim, do I also have an earlier honorable enlistment under § 3.13 or newly associated service records under § 3.156(c) that could support an even earlier effective date?"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "upstream_id": "cfr-diff-13-neurological-tbi-nerves-4-120-4-124a",
+  "upstream_path": "cfr-diffs/vasrd/13-neurological-tbi-nerves-4.120-4.124a.md",
+  "upstream_sha256": "1cf91ac161e0e5ca11eb9ee362ec50d085bb56d1fe5772217c31d30957a65c62",
+  "linked_version_ids": [
+    "38-cfr-4.124a-8045-pre2008-tbi",
+    "38-cfr-4.124a-8045-2008-tbi-facets",
+    "38-cfr-4.124a-8045-2014-dsm5-tbi",
+    "38-cfr-4.124a-8017-1946-pre2012-als",
+    "38-cfr-4.124a-8017-2012-als-100",
+    "38-cfr-3.350j-3.352b-2018-smct"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "TBI, Migraines, Parkinson's, ALS & Nerve Radiculopathy: Historical Rules & Rating Pitfalls",
+  "what_this_means": "Neurological disabilities under 38 C.F.R. §§ 4.120–4.124a span Traumatic Brain Injury (Diagnostic Code 8045), migraine headaches (Diagnostic Code 8100), Parkinson's disease (Diagnostic Code 8004), ALS (Diagnostic Code 8017), cranial nerve neuralgias, peripheral nerve injuries/radiculopathy (Diagnostic Codes 8510–8730), and seizure disorders. Because neurological conditions affect movement, sensation, speech, cognition, and daily safety across multiple body parts, VA rating sheets frequently under-rate them—by averaging TBI facets instead of taking the highest facet, dropping the 30% Parkinson's baseline when residual symptoms remain uncompensated, discounting migraines because medication dulls some attacks, or overlooking Special Monthly Compensation (SMC(k) for loss of use or SMC(t) for TBI Aid and Attendance).",
+  "record_clues": [
+    "Headache logs, work leave slips, or neurology notes showing 'very frequent completely prostrating and prolonged attacks productive of severe economic inadaptability' for migraines (Diagnostic Code 8100, 50%) discounted because abortive/preventive drugs (triptans, CGRP blockers) helped some attacks or because the Veteran still held a job.",
+    "Agent Orange, Camp Lejeune, or post-TBI Parkinson's disease (Diagnostic Code 8004) where VA rated individual tremor, speech, or bladder residuals but deleted the 30% Diagnostic Code 8004 baseline despite remaining uncompensated Parkinsonian symptoms (such as masked facies, stooped posture, or bradykinesia).",
+    "Fifth cranial nerve trigeminal neuralgia / tic douloureux (Diagnostic Code 8405) capped at 10% despite 38 C.F.R. § 4.124's explicit exception allowing up to 50% for severe fifth-nerve neuralgia.",
+    "Traumatic Brain Injury requiring regular in-home supervision or Aid and Attendance to avoid institutionalization (SMC(t) under 38 U.S.C. § 1114(t), effective October 1, 2011) denied earlier because care was provided by a spouse or family member rather than a licensed medical professional (invalidated in Laska v. McDonough)."
+  ],
+  "important_cautions": [
+    "Unfinalized and rescinded rules caution: VA's November 12, 2024 neurological rulemaking (89 FR 88917, RIN 2900-AQ73) is a proposed, unfinalized rule and is NOT enacted law. Likewise, VA's February 17, 2026 medication Interim Final Rule (91 FR 7118) was rescinded on February 27, 2026 (91 FR 9712).",
+    "Later court reinterpretations cannot support CUE on older final decisions: under George v. McDonough and 38 C.F.R. § 20.1403(e), precedents like Duran v. McDonough (2023 on Parkinson's DC 8004), Johnson v. Wilkie (2018 on migraines DC 8100), and Laska v. McDonough (2024 on TBI SMC(t)) apply to open claims, timely appeals, Supplemental Claims, or § 3.156(c) service-record reconsiderations—not Clear and Unmistakable Error (CUE) against final pre-precedent decisions.",
+    "Check exact statutory and regulatory dates: the 10-facet TBI table took effect October 23, 2008; statutory SMC(t) for TBI took effect October 1, 2011; and the 100% minimum ALS rating took effect January 19, 2012.",
+    "Upper-extremity multi-nerve rule: when cervical radiculopathy affects multiple major nerves (radial, median, ulnar) in the same arm, VA's Combined Nerve Injuries Note requires rating them together under a Radicular Group code (Diagnostic Codes 8510–8513) rather than stacking separate single-nerve codes on the same arm."
+  ],
+  "questions_for_representative": [
+    "Did VA discount my migraine rating under Diagnostic Code 8100 because I take prescription migraine medication or because I have not yet lost my job?",
+    "If I have service-connected Parkinson's disease (Diagnostic Code 8004), do I have ascertainable Parkinsonian manifestations not covered by separate extremity/organ codes that preserve the 30% Diagnostic Code 8004 rating?",
+    "If I need regular daily supervision, cueing, or physical help due to a service-connected Traumatic Brain Injury, should we file a Supplemental Claim or appeal for SMC(t) under Laska v. McDonough?",
+    "On my spine or nerve claim, did VA properly check upper-extremity Radicular Group codes (Diagnostic Codes 8510–8513), dominant-hand Major ratings (38 C.F.R. § 4.69), and SMC(k) if I have complete foot drop or hand loss of use?"
+  ]
+}

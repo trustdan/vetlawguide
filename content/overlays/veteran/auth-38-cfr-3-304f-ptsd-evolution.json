@@ -1,0 +1,35 @@
+{
+  "upstream_id": "auth-38-cfr-3-304f-ptsd-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.304f-ptsd-evolution.md",
+  "upstream_sha256": "c9b2fdf1713d2c9a90410a5c7ffb2b9e26ae0db55fcf96b27144f775275baf1e",
+  "linked_version_ids": [
+    "38-cfr-3.304b-1961-pre2005-soundness",
+    "38-cfr-3.304b-2005-wagner-soundness",
+    "38-cfr-3.304f-1993-ptsd-base",
+    "38-cfr-3.304f-1999-cohen-combat-pow",
+    "38-cfr-3.304f-2002-mst-assault",
+    "38-cfr-3.304f-2008-inservice-dx",
+    "38-cfr-3.304f3-2010-fear-hostile"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Historical Regulation Guide: Direct Service Connection, Soundness, Aggravation & PTSD Stressor Amendments",
+  "what_this_means": "This authority guide brings together the exact point-in-time versions of VA's foundational service-connection regulations—38 C.F.R. §§ 3.303, 3.304(b), 3.304(f), and 3.306—so Veterans and representatives can see what rule governed on any past decision date. It traces both the May 4, 2005 presumption-of-soundness amendment (requiring VA to disprove in-service aggravation as well as preexistence) and the five-step evolution of VA's PTSD stressor regulation (§ 3.304(f)) from May 19, 1993 through June 18, 1999 (combat/POW reorganization), March 7, 2002 (personal assault / MST markers), October 29, 2008 (in-service PTSD diagnosis), and July 13, 2010 (fear of hostile military or terrorist activity).",
+  "record_clues": [
+    "A clean military entrance physical (SF 88 or DD Form 2808) followed by a denial claiming an injury or illness 'existed prior to service' without clear and unmistakable medical proof of both preexistence and non-aggravation.",
+    "A progressive genetic or hereditary condition (such as retinitis pigmentosa or hereditary neuropathy) denied as a 'congenital defect' under 38 C.F.R. § 3.303(c).",
+    "An older PTSD denial issued before March 7, 2002 (personal assault/MST rule), October 29, 2008 (in-service PTSD diagnosis rule), or July 13, 2010 (fear of hostile activity rule) where a modern Supplemental Claim or newly associated service record may change the outcome.",
+    "A non-PTSD mental health condition (depression, anxiety, or panic disorder) mistakenly denied using § 3.304(f) PTSD stressor corroboration standards instead of § 3.303(a) direct service connection."
+  ],
+  "important_cautions": [
+    "Exact dates govern historical challenges: under George v. McDonough (2022) and 38 C.F.R. § 20.1403(e), Wagner v. Principi's 2004 invalidation of pre-2005 § 3.304(b) cannot support a Clear and Unmistakable Error (CUE) motion against a final pre-June 1, 2004 decision.",
+    "Similarly, the July 13, 2010 fear-of-hostile-activity rule in § 3.304(f)(3) (75 FR 39843, corrected at 75 FR 41092) is a prospective liberalizing amendment under 38 C.F.R. § 3.114(a)—it cannot establish CUE in pre-July 13, 2010 denials or pay liberalizing benefits before July 13, 2010.",
+    "Under Walker v. Shinseki, § 3.303(b) chronicity and continuity of symptomatology apply only to chronic diseases listed in 38 C.F.R. § 3.309(a), and temporary symptom flare-ups without lasting worsening do not establish § 3.306 aggravation.",
+    "VA's February 15, 2022 mental disorders notice (RIN 2900-AQ82, 87 FR 8498) remains a proposed, unfinalized rule and is not enacted law. Also remember 38 C.F.R. § 20.1409(c) bars a second Board CUE motion on the same Board issue after a final merits CUE decision."
+  ],
+  "questions_for_representative": [
+    "Which exact paragraph of 38 C.F.R. § 3.304(f) or § 3.304(b) was in effect on the date of my prior VA decision?",
+    "If my pre-2004 or pre-2010 denial cannot be challenged via CUE because of George v. McDonough or liberalizing-rule dates, what new and relevant evidence—or 38 C.F.R. § 3.156(c) service department records—can we submit in a Supplemental Claim?",
+    "Did VA mistakenly apply § 3.304(f) PTSD stressor rules to a claim involving depression or anxiety?",
+    "Does my entrance physical actually record a clinical defect, or am I entitled to the full two-part presumption of soundness under 38 U.S.C. § 1111?"
+  ]
+}

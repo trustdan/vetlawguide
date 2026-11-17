@@ -92,7 +92,29 @@ export function buildSearchableCatalog(catalog: SearchEngineCatalog): Searchable
     });
   }
 
-  // Dedicated Crosswalk, Era Lenses & Forms/Codes reference hubs
+  // Dedicated Timeline, Piercing-Finality Flowchart, Crosswalk, Era Lenses & Forms/Codes hubs
+  items.push({
+    id: "hub-timeline",
+    title: "Multi-Track Interactive Law Timeline & Quarantined Rulemaking Watchlist (1945–2026)",
+    subtitle:
+      "Statutes · Part 3 Adjudication · Part 4 VASRD · Landmark Precedents + proposed/unfinalized/rescinded watchlist",
+    href: "/timeline",
+    group: "Lexicon, Crosswalk & Era Lenses",
+    keywords:
+      "timeline chronology 4-track statutes part 3 vasrd precedents proposed unfinalized rescinded not enacted quarantined watchlist 2900-AQ72 2900-AQ73 2900-AQ82 2900-AR96 2900-AS39 90 FR 46542 91 FR 7118",
+  });
+
+  items.push({
+    id: "hub-piercing-finality-flowchart",
+    title: "Interactive Piercing-Finality Decision Flowchart & 1:1 Accessible Outline",
+    subtitle:
+      "6-gate visual sequence: Void Reduction -> § 3.156(c) -> Pending/Beraud/Lang/Hamill -> Nehmer -> RO CUE -> Board CUE",
+    href: "/explore/piercing-finality",
+    group: "Playbooks, Treatises & Checklists",
+    keywords:
+      "piercing finality flowchart diagram outline void reduction 3.344 3.156c beraud lang hamill nehmer ro cue board cue 20.1409c",
+  });
+
   items.push({
     id: "hub-eras",
     title: "Five Historical Veterans Law Era Lenses (1945–2026)",

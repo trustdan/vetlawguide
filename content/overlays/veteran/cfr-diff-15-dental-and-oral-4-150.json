@@ -1,0 +1,32 @@
+{
+  "upstream_id": "cfr-diff-15-dental-and-oral-4-150",
+  "upstream_path": "cfr-diffs/vasrd/15-dental-and-oral-4.150.md",
+  "upstream_sha256": "d38e3c2041024e705230912996ca8b248fdf24163c404866db063630cef204a9",
+  "linked_version_ids": [
+    "38-cfr-4.149-4.150-1994-dental",
+    "38-cfr-4.150-2017-dental-tmd",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Jaw Disorders (TMJ/TMD), Bruxism, Oral Cancer & VA Dental Care Classes: Historical Guide",
+  "what_this_means": "Access to comprehensive VA dental care is strictly limited unless a Veteran is rated 100% disabled/TDIU, is a former Prisoner of War, or holds a compensable (10% or higher) service-connected dental or jaw disability (Class I under 38 C.F.R. § 17.161). Many Veterans with service-connected PTSD, anxiety, depression, Traumatic Brain Injury, or SSRI medication side effects experience severe jaw clenching and teeth grinding (bruxism) that causes Temporomandibular Disorder (TMD, Diagnostic Code 9905)—which not only pays 10% to 50% monthly compensation under 38 C.F.R. § 4.150, but also unlocks full VA outpatient dental care.",
+  "record_clues": [
+    "Dental notes mentioning 'bruxism,' 'wear facets,' 'nightguard / occlusal splint,' jaw clicking/locking, or masseter muscle tenderness in a Veteran service-connected for PTSD, depression, anxiety, or chronic pain.",
+    "A TMD (Diagnostic Code 9905) exam where muscle relaxants, anti-inflammatories, an occlusal splint, or Botox injections masked baseline jaw restriction (Diagnostic Code 9905 is silent on medication under Ingram v. Collins).",
+    "A VA denial of a dental compensation claim that stayed completely silent on whether the Veteran qualified for noncompensable VA outpatient dental treatment under 38 C.F.R. §§ 3.381 and 17.161 (Mays v. Brown).",
+    "Post-treatment oral, tongue, salivary-gland, or jaw squamous cell carcinoma (Diagnostic Code 9918—a PACT Act presumptive head and neck cancer) omitting separate ratings under § 4.150 Note (2) for radiation bone necrosis (Diagnostic Code 9900), difficulty speaking, loss of taste or smell, cranial nerve palsies, or facial scars."
+  ],
+  "important_cautions": [
+    "Bruxism is an intermediate symptom, not a standalone Diagnostic Code: VA does not have a 4-digit code for 'bruxism' alone; instead, bruxism is claimed and evaluated as the causal link or symptom establishing secondary Temporomandibular Disorder (Diagnostic Code 9905) or aggravating another ratable condition.",
+    "Simple tooth decay and gum disease do not pay monthly compensation: cavities, periodontal disease, and missing teeth replaceable by bridge/denture/implant without jawbone-body loss are noncompensable under 38 C.F.R. § 3.381(b), though they may qualify for specific VA dental treatment classes.",
+    "Do not stack vertical opening and lateral excursion inside Diagnostic Code 9905, and remember that post-September 10, 2017 dietary elevation requires physician-recorded or physician-verified mechanically altered diet restrictions.",
+    "Never cite VA's rescinded February 17, 2026 medication Interim Final Rule (91 FR 7118, rescinded February 27, 2026 at 91 FR 9712) as active law."
+  ],
+  "questions_for_representative": [
+    "Do my dental records show jaw clenching/bruxism caused by my service-connected PTSD, depression, or medications that has led to ratable Temporomandibular Disorder (Diagnostic Code 9905)?",
+    "Did the C&P examiner test both unassisted jaw opening and objective painful motion (38 C.F.R. § 4.59), and account for whether muscle relaxants, splints, or injections temporarily masked my jaw stiffness?",
+    "When VA denied monthly compensation on my dental claim, did VA separately adjudicate my eligibility for outpatient VA dental care under 38 C.F.R. §§ 3.381 and 17.161?",
+    "After oral or head-and-neck cancer treatment under Diagnostic Code 9918, did VA separately evaluate every speech, swallowing, jawbone (Diagnostic Code 9900), nerve, taste/smell, and facial-scar residual under § 4.150 Note (2)?"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-12-aid-and-attendance-smc-l-r1-r2-and-smc-t",
+  "upstream_path": "playbooks/12-aid-and-attendance-smc-l-r1-r2-and-smc-t.md",
+  "upstream_sha256": "51a5aab55f5e8fb0422428ab58aebdee604a0f59353b6ac6ed13e22465f4d66b",
+  "linked_version_ids": [
+    "38-cfr-3.350f-1961-barry-steps",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.350j-3.352b-2018-smct",
+    "38-cfr-4.124a-8045-2014-dsm5-tbi"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Aid & Attendance (SMC(l)), Higher-Level Care (SMC(r)(1)/(2)) & Traumatic Brain Injury Caregiver Compensation (SMC(t))",
+  "what_this_means": "Special Monthly Compensation (SMC) pays substantially higher monthly rates above 100% when service-connected disabilities leave a Veteran needing regular daily help from another person ('Aid and Attendance' under 38 C.F.R. § 3.352(a)—such as help bathing, dressing, toileting, taking medications, adjusting prosthetics, or staying safe from physical or cognitive hazards). Basic Aid & Attendance starts at SMC(l), steps up through intermediate rates when combined with separate 50%+ or 100% disabilities (Barry v. McDonough), and reaches higher-level care under SMC(r)(1) and SMC(r)(2). Crucially, for Veterans with service-connected Traumatic Brain Injury (TBI), Congress created SMC(t) (paid at the top SMC(r)(2) dollar rate)—and in Laska v. McDonough (September 6, 2024), the Veterans Court struck down VA's extra rule demanding 'licensed health-care professional' skilled nursing, confirming that regular family/lay Aid & Attendance preventing institutionalization satisfies SMC(t).",
+  "record_clues": [
+    "A VA Form 21-2680 physician exam, DBQ, or VAMC record documenting need for help with dressing, bathing, toileting, feeding, prosthetics, fall prevention, or supervision against everyday hazards.",
+    "Enrollment in VA's Family Caregiver Program (PCAFC), Home-Based Primary Care (HBPC), or VA Homemaker/Home Health Aide services in your medical chart while your Rating Code Sheet still pays only standard 100% or SMC(s).",
+    "A service-connected Traumatic Brain Injury (DC 8045) where VA denied SMC(t) (or paid lower SMC(l)) because your spouse or family member provides daily cognitive/supervisory care rather than a licensed nurse (Laska v. McDonough).",
+    "A Veteran receiving SMC(l) for Aid & Attendance who ALSO has multiple independent 50%+ or 100% service-connected disabilities that step the award up toward SMC(o) / maximum SMC(p)—unlocking SMC(r)(1) under Barry v. McDonough.",
+    "A reduction of Aid & Attendance during a VA hospital stay applied too early (before the first day of the second calendar month following admission) or never restored on discharge (§ 3.552)."
+  ],
+  "important_cautions": [
+    "October 1, 2011 Statutory Floor for TBI SMC(t): Congress set the effective date of 38 U.S.C. § 1114(t) at October 1, 2011 (Pub. L. 111-275, § 601(c)); no SMC(t) payment can take effect prior to October 1, 2011.",
+    "Judicial Reinterpretation CUE Bar (George v. McDonough): Under 38 C.F.R. § 20.1403(e), the 2024 court rulings in Barry v. McDonough (multi-step § 3.350(f) bumps) and Laska v. McDonough (TBI SMC(t) family-care standard) apply to open claims, timely appeals, Supplemental Claims, and § 3.156(c) service-record reconsiderations—not as Clear and Unmistakable Error (CUE) against older final decisions.",
+    "No Double-Counting the Same Disability (Amberman & Breniser): A disability already used to establish your base SMC(l) award cannot be counted a second time to trigger an extra § 3.350(f) step bump or a second SMC(l) rate.",
+    "Service-Connected Requirement & VA Hospitalization Rule (§ 3.552): Compensation Aid & Attendance (SMC(l)) must be needed due to service-connected disabilities alone (not non-service-connected aging), and prolonged VA/government hospitalization triggers special discontinuance rules starting the second calendar month after admission (§ 3.552(b))."
+  ],
+  "questions_for_representative": [
+    "Do my VAMC caregiver (PCAFC), Home-Based Primary Care, or VA Form 21-2680 records show regular need for Aid & Attendance or supervision due to my service-connected conditions?",
+    "If I have a service-connected Traumatic Brain Injury and need regular family/caregiver help to remain safely at home instead of in a facility, should we pursue SMC(t) under Laska v. McDonough?",
+    "If I already receive SMC(l), do I have additional completely separate 50%+ or 100% service-connected disabilities that warrant multiple step increases (and potential SMC(r)(1) eligibility) under Barry v. McDonough?",
+    "If VA reduced my Aid & Attendance during an inpatient hospital stay, did VA follow the exact calendar-month timing and discharge-restoration rules in 38 C.F.R. § 3.552?"
+  ]
+}

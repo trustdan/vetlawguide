@@ -1,0 +1,32 @@
+{
+  "upstream_id": "cfr-diff-smc-statutory-and-regulatory-evolution",
+  "upstream_path": "cfr-diffs/part-3/smc-statutory-and-regulatory-evolution.md",
+  "upstream_sha256": "5b870745ec170aefd1acd3ca3a2fbb6b31731afb6fe5aa5b0557b15ebbd7f52b",
+  "linked_version_ids": [
+    "38-cfr-3.350a7-2000-statutory-mastectomy",
+    "38-cfr-3.350a7-2000-pre2002-mastectomy",
+    "38-cfr-3.350a7-2002-statutory-25pct",
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.350f-1961-barry-steps",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.350j-3.352b-2018-smct"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How Special Monthly Compensation (SMC(k) Through SMC(t)) Evolved From 1933 to 2026",
+  "what_this_means": "Because VA's duty to consider Special Monthly Compensation (SMC) whenever the medical record reasonably raises it goes back decades (Akles v. Derwinski), auditing an older Rating Code Sheet requires knowing exactly when Congress created or expanded each SMC tier. This historical guide traces every statutory milestone from 1933 Veterans' Regulation No. 1(a) and 1958 former 38 U.S.C. § 314 through modern 38 U.S.C. § 1114: the September 1, 1960 birth of Housebound SMC(s), the 1958/1978 creation of SMC(r)(1) and SMC(r)(2) Aid & Attendance, the 1981 three-extremity bump, the 2000/2002 breast SMC(k) rules, the 2007 deaf-blind liberalization, the October 1, 2011 enactment of TBI SMC(t), and the 2024 court breakthroughs in Barry v. McDonough and Laska v. McDonough.",
+  "record_clues": [
+    "Older WWII, Korean, or Vietnam Rating Code Sheets citing 'Vet. Reg. No. 1(a), Part I, par. II' or '38 U.S.C. § 314' (renumbered to § 1114 on August 6, 1991).",
+    "A 1999–2010 rating decision denying Housebound SMC(s) on single-disability TDIU based on withdrawn VAOPGCPREC 6-99 (overturned by Bradley v. Peake in 2008).",
+    "A 2011–2024 Traumatic Brain Injury rating denying SMC(t) under VA's June 7, 2018 rule (83 FR 20735) for lack of skilled professional care, or a catastrophic SMC(l)–(n) rating capped at one § 3.350(f) step bump."
+  ],
+  "important_cautions": [
+    "Match Historical Statutory Citations on Old Decisions: Before January 1, 1959, SMC sat in Veterans' Regulation No. 1(a); from 1959 through August 5, 1991, it was numbered 38 U.S.C. § 314; and SMC(s) did not exist prior to September 1, 1960 (Pub. L. 86-663), while SMC(t) did not exist prior to October 1, 2011 (Pub. L. 111-275).",
+    "Open Claims vs. Final Decisions After Court Invalidations: Under George v. McDonough, 596 U.S. 740 (2022) and 38 C.F.R. § 20.1403(e), judicial decisions overturning VA's prior regulatory/GC interpretations—such as Bradley (2008), Barry (May 16, 2024), and Laska (September 6, 2024)—apply retroactively inside open, pending, timely appealed, or § 3.156(c) claims, but cannot prove Clear and Unmistakable Error (CUE) against older final decisions that applied then-standing rules.",
+    "Never Double-Count Overlapping Impairments: Under Amberman v. Shinseki and Breniser v. Shinseki, the same underlying disability cannot be counted twice to build both base SMC and additional step bumps."
+  ],
+  "questions_for_representative": [
+    "Was the specific SMC tier we are investigating already enacted by Congress on the date of my historical VA rating decision?",
+    "Did an earlier VA decision stay completely silent on reasonably raised SMC—leaving an unadjudicated/open issue where modern court precedents like Bradley, Barry, or Laska can apply without hitting the George v. McDonough CUE bar?",
+    "If my case involves an older pre-1991 decision, have we cross-referenced the exact former 38 U.S.C. § 314 text in force on that date?"
+  ]
+}

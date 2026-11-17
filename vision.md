@@ -20,17 +20,18 @@ Veterans Law online is currently split into two flawed extremes:
 
 ---
 
-## 2. Global Chrome: Compact Two-Tier Header + Octocat Tear-Away Corner
+## 2. Global Chrome: Compact Responsive Three-Tier Header + Octocat Corner Ribbon (`ADR-0006`, `ADR-0007`)
 
-To protect vertical reading real estate on laptops, tablets, and high-zoom screens (avoiding a heavy 3-tier header), persistent global chrome stays compact (~84px) while keeping all three top-level requirements unmistakable:
+To protect vertical reading real estate on laptops, phones, and high-zoom screens (`<= 144px` desktop, `<= 120px` at `390px` mobile, and `>= 50%` usable viewport height at `320×640` `400%` zoom), persistent global chrome stays compact while keeping disclaimer, audience, navigation, and temporal context unmistakable:
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────────────╲   🐙 ┐
-│ ⚠️ Educational Reference Only — Nothing on VetLawGuide constitutes legal advice      ╲ Issue│
-│    or creates an attorney-client relationship. [Scope & CUE/Deadline Cautions]        ╲  ↗  │
-├────────────────────────────────────────────────────────────────────────────────────────╲────┤
-│ 🏛️ VetLawGuide   [ 🛡️ VETERANS | ⚖️ PRACTITIONERS ]   📅 Date: [Today ▾]   Explore  CFR  ⌘K │
-└─────────────────────────────────────────────────────────────────────────────────────────────┘
+│ Educational reference only. Not legal advice.        [Scope & CUE/Deadline Cautions] ╲ Issue│
+├───────────────────────────────────────────────────────────────────────────────────────╲────┤
+│ 📖 VetLawGuide  [ Veterans | Practitioners ]  Browse Ratings Investigate Law Guides Ref ⌘K │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 📅 Law as of: Today ▾  (5-Era 1945–2026 inline ribbon on desktop temporal views; mobile chip)│
+└────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### A. Top-Right Animated GitHub Octocat Tear-Away Corner (`<GitHubCorner />`)
@@ -77,16 +78,16 @@ Instead, selecting a **Decision Date** activates a structured **Two-Pane Bitempo
 
 ## 4. Core User Journeys & Views (Situation-Led Architecture)
 
-### 1. Situation-Led Home Page (`/`) + Unified Search (`⌘K`)
-Rather than forcing visitors to guess internal site components first, the homepage leads with **what visitors came to accomplish**, paired with a prominent unified search box:
-* **Unified Deterministic + Full-Text Search:** Accepts natural questions (*"0% scar rating shrapnel wound"*), 4-digit Diagnostic Codes (`5313`, `7804`, `8045`), `38 C.F.R.` / `U.S.C.` citations (`3.156(c)`, `5109A`), case names (*Hamill*, *Barry*, *Soto*), and historical VA/military forms (`8-526`, `10-7131`, `DD 1380`). Results explain *why* they matched and separate **Verbatim Authority**, **Editorial Explanation / Playbooks**, and **Checklists**.
-* **Five Core Situation Entry Cards:**
-  1. *Investigate an Older Rating or Denial*
-  2. *Research a Disability Rating or Diagnostic Code (`VASRD`)*
-  3. *Compare Historical vs. Current `38 C.F.R.` Regulations*
-  4. *Explore Ways Past Finality (`§ 3.156(c)`, Pending Claims, CUE, Void Reductions)*
-  5. *Explore Survivor (`DIC` / `§ 1318`), Accrued & Substitution Rules*
-* **Interactive Timeline Rail Preview:** Mounts the `WK-private-demo`-inspired fluid fisheye timeline rail right on the homepage hero/overview as an inviting gateway into `/timeline`.
+### 1. Focused Gateway Home Page (`/`) + Unified Search (`⌘K`) (`ADR-0007`)
+Rather than stacking product demos or internal build status above the fold, the homepage stays calm and concise (`<= 250` words per persona across five focused elements):
+* **Headline & One-Sentence Dual-Mode Lead:** Plain-English framing in `Veterans` mode and citation-precise scope in `Practitioners` mode.
+* **Prominent Unified Deterministic + Full-Text Search:** Accepts natural questions (*"0% scar rating shrapnel wound"*), 4-digit Diagnostic Codes (`5313`, `7804`, `8045`), `38 C.F.R.` / `U.S.C.` citations (`3.156(c)`, `5109A`), case names (*Hamill*, *Barry*, *Soto*), and historical VA/military forms (`8-526`, `10-7131`, `DD 1380`). Results explain *why* they matched.
+* **Four Cut-Paper Illustrated Gateways:**
+  1. **Browse topics** (`/explore`)
+  2. **Disability ratings** (`/vasrd`)
+  3. **Investigate a decision** (`/investigate`, with an upfront scope note)
+  4. **Law and cases** (`/cfr`, with a secondary link to `/cases`)
+* **Direct-Link Row & Quiet Provenance Footer:** One-click links to *Survivor benefits*, *Missing records*, and *Rating reductions*, followed by a plain-language educational notice and source count in the footer (while the fisheye timeline rail lives on `/eras` and `/timeline`).
 
 ### 2. Flagship: Point-in-Time `38 C.F.R.` Reader & Statutory Crosswalk (`/cfr`)
 * **Verbatim Multi-Era Reader & Visual Redline Diffs:** Compare any two indexed versions of a regulation side-by-side or inline (e.g., `Pre-2002` vs. `2002–2008` vs. `2008–2018` vs. `Post-2018` `DC 7800–7805` Scars, or `Pre-1997` vs. `Post-1997` `§ 4.56` Muscle Injuries).

@@ -1,0 +1,35 @@
+{
+  "upstream_id": "cfr-diff-part-4-subpart-a-general-rating-policy",
+  "upstream_path": "cfr-diffs/part-4-policy/subpart-a-general-rating-policy-4.1-4.31.md",
+  "upstream_sha256": "6eb02bf58b827af232321bd6f88935c128507b6f0e3eccfb6aa0d7b939514b55",
+  "linked_version_ids": [
+    "38-cfr-part-4-vasrd-1946-base",
+    "38-cfr-4.26d-2023-bilateral",
+    "38-cfr-4.29-4.30-1989-temp-total",
+    "38-cfr-4.29-4.30-2014-temp-total",
+    "38-cfr-3.321b1-1996-pre2014-collective",
+    "38-cfr-3.321b1-2018-single-disability",
+    "38-cfr-4.10-2026-rescinded-ifr"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How VA's Whole-Person Math, Anti-Pyramiding, Medication & Bilateral Rules Work Across Eras",
+  "what_this_means": "VA disability percentages do not add up by simple addition; instead, 38 C.F.R. § 4.25 uses 'whole-person remaining efficiency' math, enhanced by a 10% bilateral factor when compensable disabilities affect paired arms or paired legs (§ 4.26). This comparison guide explains how Subpart A's core doctrines operate and how they changed over time—including why distinct symptoms of the same injury can earn separate ratings without 'pyramiding' (§ 4.14; Esteban v. Brown), why VA cannot penalize Veterans for taking symptom-controlling medication when the Diagnostic Code does not mention medication (§ 4.10; Ingram v. Collins), how analogous codes work (§ 4.20; Webb v. McDonough), and how April 2023's § 4.26(d) rule fixed a rare rounding quirk at 94%.",
+  "record_clues": [
+    "A Rating Code Sheet omitting the 10% bilateral factor on compensable left-and-right arm or leg conditions (§ 4.26(a)–(c)), or rounding a combined raw 94% down to 90% on or after April 16, 2023 when excluding a bilateral condition reaches 95% -> 100% (§ 4.26(d)).",
+    "A VA denial refusing to assign separate percentages for distinct, non-overlapping effects of a single injury—such as knee instability plus limited bending, or a painful scar plus muscle or nerve damage—by broadly citing 'pyramiding' (§ 4.14).",
+    "A VA exam or decision lowering a rating because daily medication masks pain, reflux, voiding frequency, or migraines under a Diagnostic Code that says nothing about medication—especially any decision issued during the February 17–27, 2026 window before 91 FR 7118 was rescinded.",
+    "A temporary 100% hospital (§ 4.29) or surgical convalescent (§ 4.30) period where separate permanent service-connected disabilities combined to 60% or more, yet VA omitted statutory Special Monthly Compensation at the housebound rate (SMC(s) under Bradley v. Peake)."
+  ],
+  "important_cautions": [
+    "Higher-of-two-ratings (§ 4.7) vs. cumulative criteria: when a Diagnostic Code uses 'and' or builds successively on lower tiers (such as the 40% tier of Diagnostic Code 7913 Diabetes Mellitus requiring insulin, restricted diet, AND regulation of activities under Middleton v. Shinseki), § 4.7 cannot skip a missing mandatory element.",
+    "Do not rely on unfinalized or rescinded proposals: VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712), while proposed changes to sleep apnea/tinnitus (RIN 2900-AQ72), mental disorders (RIN 2900-AQ82), and painful scars (90 FR 46542) remain proposed and unfinalized (not enacted law).",
+    "Diagnostic code re-labeling under 38 C.F.R. § 4.13 when a condition's medical name evolves is different from severing 10-year protected service connection under 38 C.F.R. § 3.957 (Read v. Shinseki).",
+    "Under George v. McDonough and 38 C.F.R. §§ 20.1403(e) and 20.1409(c), later judicial reinterpretations such as Webb (2023) or Ingram (2025) apply to open claims and appeals rather than Clear and Unmistakable Error (CUE) motions against older final decisions, and only one final merits CUE decision is permitted per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Are all distinct, non-overlapping symptoms of my service-connected injuries—such as orthopedic limitation, joint instability, scars, and nerve pain—separately accounted for under 38 C.F.R. § 4.14?",
+    "Does the April 16, 2023 bilateral exclusion rule in 38 C.F.R. § 4.26(d) affect my combined rating if my raw score sits near 94%?",
+    "If I received a temporary 100% hospitalization (§ 4.29) or surgical convalescent (§ 4.30) rating while holding other 60%+ disabilities, did VA pay statutory SMC(s) during those months?",
+    "Should we challenge an unfavorable analogous '-99' code or medication-discounted exam through a Supplemental Claim, Higher-Level Review, or Board appeal?"
+  ]
+}

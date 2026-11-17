@@ -1,0 +1,34 @@
+{
+  "upstream_id": "playbook-19-extraschedular-analogous-and-temp-total",
+  "upstream_path": "playbooks/19-extraschedular-3.321b1-analogous-4.20-and-temp-total.md",
+  "upstream_sha256": "f9d4255137ce67d6d766be0f91eedd0f9ea18ec5943dc0d728069d882f2639a9",
+  "linked_version_ids": [
+    "38-cfr-3.321b1-1961-pre1996-collective",
+    "38-cfr-3.321b1-1996-pre2014-collective",
+    "38-cfr-3.321b1-2014-pre2018-collective",
+    "38-cfr-3.321b1-2018-single-disability",
+    "38-cfr-4.29-4.30-1989-temp-total",
+    "38-cfr-4.29-4.30-2014-temp-total"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Unusual Disability Impacts (Extraschedular Referrals), Analogous Ratings & Temporary 100% Hospital/Surgical Pay",
+  "what_this_means": "Sometimes VA's standard rating tables do not fit a Veteran's real-world condition—either because an exceptional single disability causes work interference like frequent falls, wheelchair reliance, or repeated flare hospitalizations not captured by standard range-of-motion numbers (extraschedular referral under 38 C.F.R. § 3.321(b)(1)), or because the condition has no exact Diagnostic Code and must be rated 'by analogy' to a closely related code (38 C.F.R. § 4.20). Separately, §§ 4.29 and 4.30 ('Paragraph 29' and 'Paragraph 30') provide temporary 100% compensation when a service-connected disability requires more than 21 days in the hospital, surgery needing at least 1 month of convalescence or leaving severe postoperative residuals, or non-surgical cast immobilization of at least one major joint.",
+  "record_clues": [
+    "Medical or lay evidence showing reliance on a wheelchair, walker, cane, or braces, frequent falls, or work absences that the standard Diagnostic Code criteria do not measure (Thun v. Peake; Spellers v. Wilkie).",
+    "A hyphenated '-99' analogous code on your Rating Code Sheet where VA denied a higher percentage solely because your unlisted condition lacked a literal anatomical feature of the borrowed code (rejected in Webb v. McDonough).",
+    "Hospital discharge summaries showing 22 or more continuous inpatient days for a service-connected disability without a temporary 100% award under 38 C.F.R. § 4.29.",
+    "Surgical operative reports or orthopedic clinic notes documenting service-connected surgery (with >=1 month recovery) or major-joint cast immobilization without a temporary 100% award under 38 C.F.R. § 4.30—or a post-surgery rating dropped below your pre-surgery percentage without 60 days' advance notice under 38 C.F.R. § 3.105(e)."
+  ],
+  "important_cautions": [
+    "January 8, 2018 change to § 3.321(b)(1): before January 8, 2018, § 3.321(b)(1) allowed collective extraschedular referrals across multiple disabilities (Johnson v. McDonald). Effective January 8, 2018 (82 FR 57830, upheld in Thurlow v. Wilkie and NOVA v. Secretary), § 3.321(b)(1) applies strictly to a single disability, while combined multi-disability unemployability goes through 38 C.F.R. § 4.16(b) extraschedular TDIU.",
+    "Post-March 24, 2015 filing window for temporary 100% claims: after VA repealed former 38 C.F.R. § 3.157(b) effective March 24, 2015, VA surgical or hospital reports no longer act as automatic informal claims—so a complete claim or Intent to File must generally be received within 1 year of the hospitalization or surgery under 38 C.F.R. § 3.400(o)(2) to lock in full retroactive convalescent pay.",
+    "Non-referral for § 3.321(b)(1) extraschedular review involves fact-specific weighing rather than Clear and Unmistakable Error (CUE), and under George v. McDonough and 38 C.F.R. §§ 20.1403(e) and 20.1409(c), Webb v. McDonough (2023) cannot establish CUE in final pre-2023 decisions (and only one final merits CUE decision is allowed per prior Board issue).",
+    "VA's February 17, 2026 § 4.10 medication Interim Final Rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law."
+  ],
+  "questions_for_representative": [
+    "Does my condition cause exceptional work interference—like assistive-device use, falls, or flare-related absences—that warrants referral to the Director of Compensation Service under 38 C.F.R. § 3.321(b)(1) (or § 4.16(b) if multiple disabilities combine to prevent work)?",
+    "If my condition is rated under a hyphenated '-99' analogous code, is there a closer Diagnostic Code based on function, anatomical location, and symptoms under 38 C.F.R. § 4.20 and Webb v. McDonough?",
+    "Have we filed an Intent to File or claim within 1 year of my service-connected surgery, joint cast immobilization, or 22+ day hospital stay to secure temporary 100% benefits under §§ 4.29–4.30?",
+    "During any months I received a temporary 100% convalescent or hospital rating, did my other permanent service-connected disabilities combine to 60% or more to trigger statutory SMC(s) under Bradley v. Peake?"
+  ]
+}

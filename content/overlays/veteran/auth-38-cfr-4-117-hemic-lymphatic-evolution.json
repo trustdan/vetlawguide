@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-4-117-hemic-lymphatic-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.117-hemic-lymphatic-evolution.md",
+  "upstream_sha256": "0b4452068320d6273c9491ebd2b5283be199ff957f3062e7958dcc2e5eca7227",
+  "linked_version_ids": [
+    "38-cfr-4.117-1995-hemic-lymphatic",
+    "38-cfr-4.117-2014-pre2018-hemic",
+    "38-cfr-4.117-2018-hemic-lymphatic",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Blood & Lymphatic Rating Snapshots: Leukemia, Lymphoma, Myeloma & 2018 Schedule Changes",
+  "what_this_means": "This module compares the exact historical and modern versions of 38 C.F.R. § 4.117 governing blood and lymphatic disorders (Diagnostic Codes 7702–7725). Before December 9, 2018, VA rated all active leukemia—including asymptomatic early-stage Chronic Lymphocytic Leukemia (CLL)—at 100% under Diagnostic Code 7703, and maintained Non-Hodgkin's Lymphoma (Diagnostic Code 7715) at 100% for 6 months after treatment ended. Effective December 9, 2018 (published October 29, 2018 at 83 FR 54250, with a retroactive text correction for Diagnostic Code 7718 published October 11, 2022 at 87 FR 61248), VA rated asymptomatic Rai Stage 0 CLL at 0% on new claims, extended Non-Hodgkin's Lymphoma's post-treatment 100% period to 2 full years, created a 5-year 100% evaluation for symptomatic Multiple Myeloma (Diagnostic Code 7712), and added dedicated codes for Chronic Myelogenous Leukemia (Diagnostic Code 7719) and Myelodysplastic Syndromes (Diagnostic Code 7725).",
+  "record_clues": [
+    "Hematology/oncology staging notes distinguishing asymptomatic Rai Stage 0 CLL from Stage I–IV CLL (Diagnostic Code 7703), or distinguishing MGUS / smoldering myeloma (0% plus secondary residuals) from active symptomatic Multiple Myeloma (Diagnostic Code 7712, 100% for 5 years).",
+    "Oral targeted-therapy prescriptions such as imatinib, dasatinib, or nilotinib (tyrosine kinase inhibitors) maintaining Chronic Myelogenous Leukemia in apparent remission (minimum 30% under post-2018 Diagnostic Code 7719).",
+    "A Non-Hodgkin's Lymphoma (Diagnostic Code 7715) rating reduced earlier than 2 years after completing treatment under the post-December 9, 2018 rule, or reduced without a mandatory VA exam and 60-day notice.",
+    "Diagnosis of AL Amyloidosis (Diagnostic Code 7717, added March 9, 2012 at 77 FR 6467), which carries a 100% evaluation."
+  ],
+  "important_cautions": [
+    "December 9, 2018 date boundary: on new claims filed on or after December 9, 2018, asymptomatic Rai Stage 0 CLL and asymptomatic MGUS or smoldering myeloma carry 0% schedular ratings (with any secondary nerve, kidney, or bone complications rated separately). However, pre-December 9, 2018 running 100% CLL ratings cannot be reduced solely due to the schedule change under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a), and Nehmer or pending claims spanning December 9, 2018 must use the pre-2018 100% rule for pre-December 9, 2018 periods.",
+    "Secondary iron-deficiency anemia rule: under the Note to Diagnostic Code 7720, iron-deficiency anemia caused by ongoing blood loss (such as a bleeding ulcer, colitis, or hemorrhoids) is evaluated as part of the condition causing the blood loss rather than as a separate Diagnostic Code 7720 rating.",
+    "Check the October 11, 2022 Federal Register correction (87 FR 61248) if Essential Thrombocythemia or Primary Myelofibrosis (Diagnostic Code 7718) was decided between December 9, 2018 and October 11, 2022, as VA retroactively restored omitted interferon and 100%-tier treatment wording back to December 9, 2018.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a Clear and Unmistakable Error (CUE) motion on a prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Did my leukemia, lymphoma, or myeloma claim span December 9, 2018 (including under Agent Orange Nehmer rules), requiring VA to apply the pre-December 9, 2018 100% criteria to the earlier years?",
+    "If I am rated at 0% for MGUS or Rai Stage 0 CLL, have we checked my records for separately ratable secondary peripheral neuropathy, kidney involvement, or treatment residuals?",
+    "For Non-Hodgkin's Lymphoma (Diagnostic Code 7715) or symptomatic Multiple Myeloma (Diagnostic Code 7712), did VA respect the full 2-year or 5-year 100% period, conduct the mandatory reexamination, and apply 38 C.F.R. §§ 3.105(e) and 3.344 protections?",
+    "If I served in a Gulf War or post-9/11 theater, does the January 10, 2025 hematologic cancer rule (38 C.F.R. § 3.320b, 90 FR 1894) cover my previously denied leukemia, myeloma, MGUS, or myelodysplastic condition?"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-4-119-endocrine-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.119-endocrine-evolution.md",
+  "upstream_sha256": "a105581cdbf334db9b1369b2d93a120fe232a5673106ea2af7ea780bc1daec99",
+  "linked_version_ids": [
+    "38-cfr-4.119-pre2017-endocrine",
+    "38-cfr-4.119-2017-endocrine",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Endocrine Rating Snapshots: Diabetes Mellitus, Thyroid Disorders & 1996 vs. 2017 Rules",
+  "what_this_means": "This module provides the exact historical and current regulatory text of 38 C.F.R. § 4.119 for endocrine conditions (Diagnostic Codes 7900–7919), including Type 2 Diabetes Mellitus (Diagnostic Code 7913) and Hypothyroidism / Hyperthyroidism (Diagnostic Codes 7903 and 7900). From June 6, 1996 through December 9, 2017, hypothyroidism had ongoing 10%, 30%, 60%, and 100% tiers (including 10% for continuous daily thyroid medication). Effective December 10, 2017 (published November 2, 2017 at 82 FR 50802), VA changed newly claimed thyroid disorders to a 30% evaluation for 6 months after initial diagnosis, followed by 0% under the thyroid code PLUS mandatory separate ratings for every chronic residual across affected body systems (heart, digestive, mental health, eyes, or nerves).",
+  "record_clues": [
+    "Agent Orange / Blue Water Navy (Nehmer) or pre-December 10, 2017 claims for hypothyroidism (Diagnostic Code 7903) where the Veteran took daily levothyroxine (Synthroid) or had fatigue, constipation, mental sluggishness, or weight gain.",
+    "Post-December 10, 2017 thyroid decisions assigning 0% without evaluating documented chronic thyroid residuals such as depression, constipation, slow heart rate (bradycardia), carpal tunnel syndrome, or Graves' eye disease.",
+    "Diabetes Mellitus (Diagnostic Code 7913) records showing daily insulin injections, restricted diet, AND a doctor's instruction to avoid strenuous work and recreational activities (40%), OR compensable diabetic complications (neuropathy, retinopathy, kidney disease, cardiovascular disease, or erectile dysfunction).",
+    "A running pre-December 10, 2017 10% or 30% hypothyroidism rating reduced to 0% after December 10, 2017 solely because the schedule changed."
+  ],
+  "important_cautions": [
+    "All three elements are required for a 40% diabetes rating: under Federal Circuit precedent (Middleton v. Shinseki) and Diagnostic Code 7913, the 40% tier is cumulative—it requires one or more daily insulin injections, restricted diet, AND medical regulation of strenuous occupational and recreational activities.",
+    "Check the December 10, 2017 thyroid boundary: for initial claims filed on or after December 10, 2017 where diagnosis was more than 6 months ago, there is no standalone 10% 'continuous medication' thyroid rating—instead, compensation comes from rating chronic organ-system residuals separately. Pre-December 10, 2017 running 10% ratings remain protected under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a).",
+    "Judicial-interpretation CUE caution: under George v. McDonough and 38 C.F.R. § 20.1403(e), you cannot base a Clear and Unmistakable Error (CUE) motion against a final pre-September 2009 thyroid decision solely on the Court's later interpretation in Tatum v. Shinseki.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a CUE motion on a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "If my hypothyroidism claim (including an Agent Orange Nehmer claim) covers dates before December 10, 2017, did VA apply the pre-2017 10%/30%/60% schedule to those earlier periods?",
+    "For periods on or after December 10, 2017 where my thyroid condition is rated 0%, did VA separately evaluate every chronic mental, digestive, cardiac, eye, or nerve residual?",
+    "Under Note (1) to Diagnostic Code 7913 (Diabetes Mellitus), has VA separately evaluated and combined all of my compensable diabetic complications—such as peripheral neuropathy in each extremity, eye retinopathy, kidney eGFR decline, heart/arterial disease, and SMC(k)?",
+    "Does my physician's clinical note explicitly document that avoiding strenuous occupational and recreational activities is medically necessary to prevent hypoglycemic episodes along with my daily insulin and diet?"
+  ]
+}

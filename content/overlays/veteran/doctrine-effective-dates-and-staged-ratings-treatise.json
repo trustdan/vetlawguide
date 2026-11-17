@@ -1,0 +1,34 @@
+{
+  "upstream_id": "doctrine-effective-dates-and-staged-ratings-treatise",
+  "upstream_path": "docs/effective-dates-and-staged-ratings-treatise.md",
+  "upstream_sha256": "23dcef818e3e2d790a9d25f4c96ccbda1c15f62d39d25aa498bde35b27327f6e",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.155-3.157b-2015-repeal",
+    "38-cfr-3.400o2-1975-pre2015-informal",
+    "38-cfr-3.400o2-2019-ama-intro",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How VA Effective Dates & Staged Ratings Work: Avoiding the 'Date of C&P Exam' Mistake",
+  "what_this_means": "When VA grants service connection or a higher disability percentage after years of claims or appeals, two questions control your retroactive back pay: (1) What is the lawful effective date (38 U.S.C. § 5110; 38 C.F.R. § 3.400)? and (2) Did your symptoms fluctuate or worsen across different periods so VA must assign 'staged ratings' (separate percentages for distinct time slices under Fenderson v. West and Hart v. Mansfield)? A classic VA error is setting your effective date on the day a C&P examiner saw you—confusing the date a doctor wrote down your symptoms with the earlier date your claim/Intent to File was received or the date your disability actually arose or worsened.",
+  "record_clues": [
+    "A VA Rating Decision or Award Letter setting the effective date on the exact date of a VA C&P examination or private DBQ rather than the claim date, Intent to File date, or day after military discharge (if filed within 1 year of separation).",
+    "An increased-rating or TDIU grant ignoring VA or private medical notes showing the disability clearly worsened within the 12 months BEFORE the claim or Intent to File was received (1-year lookback under 38 U.S.C. § 5110(b)(3) and 38 C.F.R. § 3.400(o)(2); Dalton v. Nicholson).",
+    "A PACT Act grant omitting the August 10, 2022 effective-date backstop on a claim or Intent to File submitted on or before August 14, 2023—or omitting up to 1 year of pre-claim lookback under 38 C.F.R. § 3.114(a)(3) on post-August 14, 2023 PACT filings where diagnosis predated the claim.",
+    "A multi-year appeal assigning one low percentage for the entire early period and stepping up only on the date of a recent exam without evaluating earlier medical and lay evidence for staged ratings."
+  ],
+  "important_cautions": [
+    "Strict 1-year post-discharge rule (Arellano v. McDonough): in 2023, the U.S. Supreme Court held that the 1-year window after military separation to get an effective date back to the day after discharge (38 U.S.C. § 5110(b)(1)) is strictly fixed and CANNOT be extended through equitable tolling.",
+    "No 'double' 2-year lookback & no duplicate Intent to File: on an increased-rating claim, the 1-year lookback under 38 C.F.R. § 3.400(o)(2) reaches at most 1 year prior to your complete claim OR active Intent to File (never 1 year before an Intent to File plus another year), and filing a second VA Form 21-0966 Intent to File for the same general benefit while an earlier one is still open has no effect (38 C.F.R. § 3.155(b)(6)).",
+    "Court decisions are NOT 'liberalizing laws': under Spencer v. Brown and Routen v. West, a new court decision reinterpreting an existing statute or regulation does NOT qualify as a 'liberalizing law or VA issue' under 38 C.F.R. § 3.114(a), and under George v. McDonough and 38 C.F.R. § 20.1403(e), cannot establish Clear and Unmistakable Error (CUE) against an older final decision.",
+    "Retrospective staged step-downs inside a single retroactive grant do not trigger 5-year stabilization notice rules (Singleton v. Shinseki), though VA must still back any staged step-down with solid medical evidence and clear reasons."
+  ],
+  "questions_for_representative": [
+    "Why did VA pick the date of my C&P examination as my effective date instead of my Intent to File date, claim date, or the earlier date my medical records and lay statements show the condition existed or worsened (Swain v. McDonald)?",
+    "For my increased-rating or TDIU claim, do my VA or private clinical notes show ascertainable worsening during the 12 months BEFORE my claim or Intent to File under 38 C.F.R. § 3.400(o)(2)?",
+    "If my appeal spanned several years, should we request Fenderson / Hart staged ratings for each distinct time period supported by my treatment records?",
+    "Did newly associated official military or unit records play a role in granting my claim, which could unlock an effective date all the way back to an earlier denied claim under 38 C.F.R. § 3.156(c)?"
+  ]
+}

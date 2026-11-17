@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-01-musculoskeletal-joints-arthritis-implants-4-71a",
+  "upstream_path": "cfr-diffs/vasrd/01-musculoskeletal-joints-arthritis-implants-4.71a.md",
+  "upstream_sha256": "551e6af09a1e4f648c8c21da3b967bd2b9fe1821baded6e879965c84cd8e5e76",
+  "linked_version_ids": [
+    "38-cfr-4.71a-joints-pre2021",
+    "38-cfr-4.71a-5055-2015-total-prosthesis",
+    "38-cfr-4.71a-2021-musculoskeletal",
+    "38-cfr-4.26d-2023-bilateral",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Musculoskeletal System Guide: Painful Motion, Multi-Code Knee Stacking, Implants, Amputations & Foot Rules",
+  "what_this_means": "Orthopedic claims are among the most common—and most frequently misrated—conditions in VA compensation. Beyond basic goniometer degree tables in 38 C.F.R. § 4.71a, VA raters must account for painful motion warranting at least the minimum compensable rating (§ 4.59), additional functional loss from pain, weakness, fatigue, and flare-ups (§§ 4.40 and 4.45), dominant ('Major') vs. non-dominant ('Minor') upper-extremity rules (§ 4.69), separate knee ratings when instability and limited motion coexist, prosthetic joint replacement minimums and convalescence (Diagnostic Codes 5051–5056), and post-February 7, 2021 foot codes like Plantar Fasciitis (Diagnostic Code 5269).",
+  "record_clues": [
+    "A 0% joint rating when the VA examination noted objective painful motion—violating 38 C.F.R. § 4.59's rule requiring at least the minimum compensable percentage (10% for most joints; 20% for either shoulder under Diagnostic Code 5201 when arm elevation stops at shoulder level / 90 degrees).",
+    "A knee injury with documented giving-way/instability AND limited bending (flexion) or straightening (extension) folded into a single knee code instead of separate ratings under Diagnostic Codes 5257, 5260, and 5261 (VAOPGCPREC 23-97, 9-98, and Lyles v. Shulkin).",
+    "An upper-extremity injury where VA switched your naturally dominant injured hand to 'Minor' after you learned to compensate with your other hand (contrary to 38 C.F.R. § 4.69).",
+    "A lower-limb amputation (at/above one knee or both ankles) missing Special Monthly Compensation, multiple annual clothing allowances (§ 3.810), or automatic secondary service connection for later heart disease under 38 C.F.R. § 3.310(c)."
+  ],
+  "important_cautions": [
+    "Anti-stacking limits to keep in mind: while knee instability and knee motion can stack, a single shoulder cannot receive two separate Diagnostic Code 5201 ratings for flexion and abduction (Cullen v. Shinseki); non-painful X-ray-only arthritis across multiple joints under Diagnostic Code 5003 combines into a single 10% or 20% rating; and distal limb ratings cannot exceed the elective amputation ceiling in 38 C.F.R. § 4.68.",
+    "Bilateral foot ratings: when a single bilateral foot rating (such as 50% bilateral flatfoot under Diagnostic Code 5276 or 30% bilateral plantar fasciitis under Diagnostic Code 5269) is the ONLY compensable lower-extremity disability, it does not receive an extra standalone 10% bilateral factor unless another compensable lower-extremity condition exists.",
+    "Date gates and exam errors: the July 16, 2015 total-prosthesis rule (80 FR 42040; Hudgens v. McDonald) and February 7, 2021 musculoskeletal overhaul (85 FR 76453 / 86 FR 8142) depend on exact claim/decision dates, while existing ratings are protected under 38 C.F.R. § 3.951(a). Incomplete joint exam testing (Correia / Sharp) is a duty-to-assist issue for open claims/appeals—not Clear and Unmistakable Error (CUE) under Cook v. Principi—and George v. McDonough / 38 C.F.R. §§ 20.1403(e) and 20.1409(c) limit CUE motions.",
+    "VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law."
+  ],
+  "questions_for_representative": [
+    "Did my VA joint examination test passive, active, weight-bearing, and opposite-joint motion (Correia v. McDonald) and estimate additional degree loss during flare-ups (DeLuca / Sharp)?",
+    "On my knee Rating Code Sheet, can instability (Diagnostic Code 5257), limited flexion (Diagnostic Code 5260), limited extension (Diagnostic Code 5261), or meniscal locking (Diagnostic Codes 5258/5259) be rated separately?",
+    "Did VA properly rate my naturally dominant arm under the 'Major' column in 38 C.F.R. § 4.69?",
+    "If I wear orthopedic braces, crutches, a walker, or prosthetics, have we checked eligibility for multiple annual clothing allowances (§ 3.810), Specially Adapted Housing (§ 3.809), or Special Monthly Compensation?"
+  ]
+}

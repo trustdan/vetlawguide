@@ -1,0 +1,29 @@
+{
+  "upstream_id": "playbook-17-section-1151-va-malpractice-and-ftca-interplay",
+  "upstream_path": "playbooks/17-section-1151-va-malpractice-and-ftca-interplay.md",
+  "upstream_sha256": "bf1835e8a9da46ab0a63eeb1116ddc0bba2e7ba2d5a0abbc754e6d18c6a2e1f1",
+  "linked_version_ids": [
+    "38-cfr-3.361-3.363-2004-section-1151"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Additional Disability or Death from VA Medical Care (38 U.S.C. § 1151) & Federal Tort Claims Act Offsets",
+  "what_this_means": "When VA hospital care, medical or surgical treatment, a VA examination, Veteran Readiness and Employment (Chapter 31) training, or Compensated Work Therapy causes an additional disability or death, 38 U.S.C. § 1151 pays monthly VA disability compensation or Dependency and Indemnity Compensation (DIC) 'as if' the injury were service-connected. For medical claims filed on or after October 1, 1997 (38 C.F.R. § 3.361), the claimant must show the additional harm resulted either from VA carelessness, negligence, lack of proper skill, error in judgment, or lack of informed consent—OR from an 'event not reasonably foreseeable' (including equipment/facility accidents during care under Viegas v. Shinseki). Unlike a Federal Tort Claims Act (FTCA) claim, § 1151 has no filing deadline, though any FTCA tort settlement triggers mandatory dollar-for-dollar monthly withholding offsets under 38 C.F.R. § 3.362.",
+  "record_clues": [
+    "VA medical center surgical notes, delayed cancer/imaging follow-ups, medication errors, post-operative nerve or infection complications, or a formal VA 'Institutional Disclosure of Adverse Event' in your medical chart.",
+    "A missing, unsigned, or incomplete VA informed-consent form (38 C.F.R. § 17.32) prior to an invasive VA procedure (Hatfield v. McDonough).",
+    "An injury caused by a malfunctioning VA wheelchair lift, exam table, or hospital fixture while receiving VA care (Viegas v. Shinseki), or an injury/aggravation during Chapter 31 VR&E training or Compensated Work Therapy (where no VA negligence is required).",
+    "A Standard Form 95 (SF-95) Federal Tort Claims Act administrative claim or settlement agreement alongside a § 1151 compensation or survivor DIC award."
+  ],
+  "important_cautions": [
+    "Community Care exclusion and state deadlines: under 38 C.F.R. § 3.361(f), harm caused by a non-VA private doctor or hospital under a MISSION Act / Community Care referral (38 U.S.C. § 1703) or contract nursing home generally is NOT covered by § 1151 (unless a VA employee's own negligence or referral delay caused the harm), and private state-law malpractice claims have strict state statutes of limitations—just as federal FTCA claims have a strict 2-year deadline on Standard Form 95 (28 U.S.C. § 2401(b)).",
+    "'As if' service connection does not unlock every ancillary benefit: even a 100% Permanent and Total § 1151 award does NOT establish eligibility for Chapter 35 Dependents' Educational Assistance (DEA), CHAMPVA family health coverage, VA Service-Disabled Veterans Insurance / VALife, or the § 2307 service-connected burial allowance (though Special Monthly Compensation, Specially Adapted Housing, and Chapter 39 Automobile grants CAN apply).",
+    "FTCA gross-offset trap: under 38 C.F.R. § 3.362(b), VA withholds monthly § 1151 compensation against the ENTIRE gross FTCA judgment or settlement—including the portion paid in tort attorney fees—unless survivor damages are properly structured among non-DIC family members under § 3.362(c).",
+    "Pre-October 1, 1997 claims: reopening a finally denied pre-Oct. 1, 1997 § 1151 claim forfeits the older Brown v. Gardner no-fault standard under 38 C.F.R. § 3.361(a), so representatives check pending-claim status before reopening, while remembering 38 C.F.R. § 20.1409(c)'s single final merits CUE rule per Board issue."
+  ],
+  "questions_for_representative": [
+    "Was the provider or facility that caused the injury a VA-operated facility/employee covered by 38 U.S.C. § 1151, or a private Community Care provider where state malpractice deadlines may be running?",
+    "Have we requested my complete VA medical center chart, iMedConsent informed-consent records, and any Adverse Event or Root Cause Analysis disclosures?",
+    "If we are considering both a Standard Form 95 FTCA tort claim (2-year deadline) and a 38 U.S.C. § 1151 claim, how would the 38 C.F.R. § 3.362 gross-settlement offset affect my long-term monthly VA checks?",
+    "Could the injury also qualify for actual Secondary Service Connection under 38 C.F.R. § 3.310 (for example, surgery performed to treat an already service-connected disability), which DOES unlock Chapter 35 DEA and CHAMPVA?"
+  ]
+}

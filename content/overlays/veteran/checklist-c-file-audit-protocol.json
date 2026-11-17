@@ -1,0 +1,31 @@
+{
+  "upstream_id": "checklist-c-file-audit-protocol",
+  "upstream_path": "checklists/c-file-audit-protocol.md",
+  "upstream_sha256": "0cf2d01b87eb8dd2e2020dccb12af7142b629ed4a6effb83e13497f3f888de62",
+  "linked_version_ids": [
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How Accredited Representatives Review a Complete VA Claims File (C-File) From Oldest to Newest",
+  "what_this_means": "A Veteran's VA Claims File (C-file, stored digitally in VA's VBMS eFolder) can run from a few hundred pages to more than 15,000 pages—and digital scans are often uploaded out of chronological order. Reading only your most recent VA decision letter misses half the story. This protocol shows how experienced advocates sort a C-file from your military entrance exam forward: matching every DD-214 and inpatient service record against every historical internal VA Rating Code Sheet, spotting unanswered Notices of Disagreement or pre-2015 informal claims, checking returned-mail envelopes, and identifying whether an earlier effective date can be pursued without resorting to a high-hurdle Clear and Unmistakable Error (CUE) motion.",
+  "record_clues": [
+    "You only have VA's summary notification letters at home and have never seen your internal VA Rating Code Sheets (which list exact 4-digit Diagnostic Codes, effective dates, and combined-rating math).",
+    "Your DD-214, Purple Heart / combat awards, or military hospital records list injuries or deployments that never appeared on your earliest VA rating decisions.",
+    "You remember filing an old claim, statement, or appeal years ago that seemed to disappear without a formal Statement of the Case (SOC) or explicit decision."
+  ],
+  "important_cautions": [
+    "Request the Full C-File First: Notification letters sent in the mail frequently omit Diagnostic Codes, bilateral-factor math, and the exact inventory of service records VA actually reviewed.",
+    "Check Open-Claim & Service-Record Routes Before CUE: Under George v. McDonough and 38 C.F.R. § 20.1403(e), CUE carries the strictest legal burden in Veterans Law and excludes duty-to-assist errors and later court reinterpretations—whereas 38 C.F.R. § 3.156(c) newly associated service records, void reductions, Nehmer herbicide rules, and pending claims allow full weighing of the evidence.",
+    "Protect Board CUE Finality (38 C.F.R. § 20.1409(c)): Never file an unreviewed Board CUE motion before completing a full C-file audit, because the Board allows only one final merits CUE decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Have you downloaded and reviewed my complete VBMS eFolder—including every historical Rating Code Sheet from my very first claim forward?",
+    "Can we build a simple timeline comparing every claim or appeal I filed against every decision VA mailed, checking for unanswered filings or wrong-address mailings?",
+    "Were any military inpatient packets, unit logs, or personnel records added to my C-file after an earlier denial (38 C.F.R. § 3.156(c))?",
+    "Before considering any CUE motion, have we ruled out lower-burden pathways like § 3.156(c), void rating reductions, Nehmer, or an open AMA issue?"
+  ]
+}

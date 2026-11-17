@@ -14,11 +14,32 @@ export const metadata: Metadata = {
     "Private, browser-memory-only Yes / No / I'm Not Sure VA decision investigation desk with missing-records checklists, point-in-time 38 C.F.R. snapshots, and printable discussion packets.",
 };
 
+const SCREENED_CFR_SECTION_ORDER: ReadonlyArray<string> = [
+  "38-cfr-3.156c",
+  "38-cfr-3.344",
+  "38-cfr-3.951",
+  "38-cfr-3.957",
+  "38-cfr-4.16a-b",
+  "38-cfr-3.350f3-5",
+  "38-cfr-3.816",
+  "38-cfr-3.22",
+  "38-cfr-3.1010",
+  "38-cfr-3.12a-l",
+  "38-cfr-3.354a-b",
+  "38-cfr-3.700a3-5",
+  "38-cfr-4.56",
+  "38-cfr-4.118",
+  "38-cfr-20.1400-20.1411",
+];
+
 export default function InvestigatePage() {
   const manifest = getCoverageManifest();
-  const wave1CfrSections = getCompiledCfrSections().filter(
-    (s) => s.bookmarkStatus === "WAVE_1_LIVE_VERBATIM",
+  const sectionBySlug = new Map(
+    getCompiledCfrSections().map((s) => [s.sectionSlug, s]),
   );
+  const screenedCfrSections = SCREENED_CFR_SECTION_ORDER.map((slug) =>
+    sectionBySlug.get(slug),
+  ).filter((s): s is NonNullable<typeof s> => Boolean(s));
   const cfrVersions = getCompiledCfrVersions();
 
   const shortHash = manifest.upstreamCommitSha
@@ -66,7 +87,7 @@ export default function InvestigatePage() {
       </header>
 
       <InvestigationWorkspace
-        cfrSections={wave1CfrSections}
+        cfrSections={screenedCfrSections}
         cfrVersions={cfrVersions}
         activeBookmarkWave={manifest.activeBookmarkWave}
         stamp={{

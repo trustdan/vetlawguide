@@ -1,0 +1,31 @@
+{
+  "upstream_id": "auth-38-cfr-4-75-4-79-eye-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.75-4.79-eye-evolution.md",
+  "upstream_sha256": "4c93f726d300c80534b8a4fbf1b10545608a384265f842f218c84bd9571ceba9",
+  "linked_version_ids": [
+    "38-cfr-4.75-4.79-2008-eye",
+    "38-cfr-4.75-4.79-2018-eye",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Eye & Vision Regulations (38 C.F.R. §§ 4.75–4.79): Comparing the 2008 & May 13, 2018 Rating Schedules",
+  "what_this_means": "VA's eye and vision schedule (38 C.F.R. §§ 4.75–4.79) evaluates vision loss across three dimensions—central visual acuity, visual fields (peripheral vision), and eye muscle function (double vision / diplopia)—plus active eye diseases. VA overhauled these regulations twice: first effective December 10, 2008 (73 FR 66543, standardizing Goldmann/Humphrey visual field charts and rating flare-ups by prescribed bed-rest duration), and again effective May 13, 2018 (83 FR 15316, redefining 'incapacitating episodes' around clinic visits specifically for active treatment—such as eye injections or laser therapy—rather than bed rest, and adding dedicated codes like Diagnostic Code 6040 Diabetic Retinopathy and Diagnostic Code 6042 Retinal Dystrophy).",
+  "record_clues": [
+    "A post-May 13, 2018 eye rating of 0% or 10% based on reading an eye chart when ophthalmology records show repeated clinic visits for active treatment (such as anti-VEGF eye injections, laser procedures, or biologics: 1–2 visits = 10%, 3–4 = 20%, 5–6 = 40%, 7+ = 60% in 12 months).",
+    "A unilateral service-connected eye rating where the non-service-connected eye was NOT assigned the standard 20/40 baseline (§ 4.75(c))—or where severe vision loss in the non-service-connected eye (<=20/200 acuity or <=20 degrees peripheral field) should have triggered full bilateral 'paired-organ' compensation under 38 U.S.C. § 1160(a)(1) and 38 C.F.R. § 3.383(a)(1).",
+    "An optometry refraction showing more than 3.0 diopters difference in lens strength between the two eyes (acquired anisometropia) where VA rated the poorer eye on corrected rather than uncorrected vision (§ 4.76(b)(1)).",
+    "Blindness of one eye (light perception only or anatomical loss) or concentric field contraction to 5 degrees or less adjudicated without Special Monthly Compensation (SMC(k) or SMC(l)–(o))."
+  ],
+  "important_cautions": [
+    "Strict effective dates govern historical eye reviews: the clinic-treatment-visit formula took effect May 13, 2018 (published April 10, 2018 at 83 FR 15316), and the modernized acuity/field reorganization took effect December 10, 2008 (published November 10, 2008 at 73 FR 66543). Neither rule can prove Clear and Unmistakable Error (CUE) in final decisions issued before its effective date.",
+    "Post-cataract lens implants vs. true aphakia: when an intraocular lens implant (pseudophakia) is placed during cataract surgery, the condition is rated under Diagnostic Code 6027 rather than the 30% minimum aphakia rule of Diagnostic Code 6029 (which applies when the natural lens is absent without replacement).",
+    "Routine monitoring or eyeglass refraction checkups where no active treatment is rendered or prescribed do not count as 'incapacitating episodes' under § 4.79 Note (1).",
+    "VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law. Also remember 38 C.F.R. § 20.1409(c) allows only one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Over the past 12 months, how many ophthalmology clinic visits specifically provided active treatment (such as injections, laser therapy, or prescribed acute flare treatment) under the post-May 13, 2018 General Rating Formula?",
+    "If I have vision loss in one service-connected eye and severe non-service-connected vision loss in my other eye, do I qualify for paired-organ bilateral compensation under 38 U.S.C. § 1160(a)(1) and 38 C.F.R. § 3.383(a)(1)?",
+    "Does my eyeglass prescription show more than a 3.0-diopter difference between my eyes requiring uncorrected acuity rating under 38 C.F.R. § 4.76(b)(1)?",
+    "Have we checked Special Monthly Compensation (SMC(k) or SMC(l)–(o)) and Specially Adapted Housing / Automobile grants for severe visual acuity or visual-field loss?"
+  ]
+}

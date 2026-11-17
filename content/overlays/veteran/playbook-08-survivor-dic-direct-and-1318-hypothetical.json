@@ -1,0 +1,36 @@
+{
+  "upstream_id": "playbook-08-survivor-dic-direct-and-1318-hypothetical",
+  "upstream_path": "playbooks/08-survivor-dic-direct-and-1318-hypothetical.md",
+  "upstream_sha256": "f30f97d368ec8bbe91e0008f08029213288c94a30863cb1f460cafc3d2425986",
+  "linked_version_ids": [
+    "38-cfr-3.22-1979-pre2000",
+    "38-cfr-3.22-1989-pre2000",
+    "38-cfr-3.22-2000-interpretive",
+    "38-cfr-3.22-2005-2012-current",
+    "38-cfr-3.22-2012-current",
+    "38-cfr-3.33-2024-pact-dic",
+    "38-cfr-3.312-1961-cause-of-death",
+    "38-cfr-3.312-1989-cause-of-death"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Survivor DIC Monthly Benefits: Service-Connected Cause of Death (§ 1310), the 10-Year Total-Disability Rule (§ 1318) & PACT Act Re-Evaluations",
+  "what_this_means": "Dependency and Indemnity Compensation (DIC) is a tax-free monthly benefit paid to eligible surviving spouses, dependent children, and low-income parents. Importantly, there are TWO completely separate paths to qualify—and VA denials often check only part of the picture: (1) Direct or Contributory Death (38 U.S.C. § 1310; 38 C.F.R. § 3.312), where a service-connected condition (including PACT Act or Agent Orange presumptions) was either the primary cause of death OR contributed substantially and materially to death—even if left off the death certificate; and (2) Total-Disability DIC (38 U.S.C. § 1318; 38 C.F.R. § 3.22), paid regardless of the cause of death when the Veteran held (or was legally entitled to receive) a 100% or TDIU rating for at least 10 continuous years before death (5 years from military discharge, or 1 year for Former POWs). In addition, under PACT Act § 204 (38 U.S.C. § 1305; 38 C.F.R. § 3.33), survivors whose earlier DIC claims were denied before a post-August 10, 2022 presumption (such as hypertension or burn-pit cancers) can re-elect DIC with retroactive effective dates back to the original denied DIC claim.",
+  "record_clues": [
+    "A DIC denial letter (VA Form 21P-534EZ) relying solely on the one-page death certificate without reviewing final hospital/ICU records showing how service-connected heart, lung, kidney, diabetes, or mental health conditions hastened death (§ 3.312(c)).",
+    "A Veteran who died of a non-service-connected cause at 70%–90% (or with fewer than 10 years at 100%/TDIU), where correcting a Clear and Unmistakable Error (CUE) in a lifetime decision (§ 3.22(b)(1)) or adding missing military records (§ 3.22(b)(2) / § 3.156(c)) pushes 100% or TDIU past the 10-year mark.",
+    "A previously denied DIC claim where the Veteran died of complications from hypertension, MGUS, expanded Agent Orange service (Thailand, Laos, Cambodia, Guam, Blue Water Navy), or Gulf War / post-9/11 burn-pit illnesses (38 C.F.R. § 3.33).",
+    "A granted DIC award missing the extra monthly 8-year 'kicker' (§ 1311(a)(2)), surviving spouse Aid & Attendance / Housebound add-ons (§ 1311(c)–(d)), the 2-year transitional benefit for minor children (§ 1311(f)), or full military Survivor Benefit Plan (SBP) restoration after Congress repealed the SBP-DIC offset effective January 1, 2023."
+  ],
+  "important_cautions": [
+    "How Post-2000 'Hypothetical' § 1318 DIC Works (38 C.F.R. § 3.22(b)): Since VA amended § 3.22 on January 21, 2000 (65 FR 3388, upheld in Rodriguez and Tarver), if the Veteran did not already hold a 10-year 100%/TDIU rating at death, a survivor cannot argue open-ended 'hypothetical' entitlement from scratch—entitlement under § 3.22(b) requires showing a prior lifetime VA claim plus either CUE in a final lifetime decision (§ 3.22(b)(1)), newly associated official service department records (§ 3.22(b)(2)), or a specified military retired-pay/withholding nonpayment rule.",
+    "Judicial Reinterpretation CUE Limit (George v. McDonough): When using § 3.22(b)(1) CUE to challenge a deceased Veteran's final lifetime decision, later judicial reinterpretations cannot establish CUE under 38 C.F.R. § 20.1403(e), and pre-July 21, 1992 lifetime decisions are evaluated on the physical C-file record at that time (Damrel v. Brown).",
+    "8-Year DIC Kicker Marriage Requirement: To receive the extra monthly § 1311(a)(2) 8-year allowance, the Veteran must have been rated totally disabled (100% or TDIU) for 8 continuous years immediately preceding death AND married to the surviving spouse for those exact same 8 continuous years.",
+    "Wrongful-Death Settlement Offset Difference (§ 1318 vs. § 1310): If a survivor received a civil wrongful-death or Federal Tort Claims Act (FTCA) recovery, 38 U.S.C. § 1318(d) requires offsetting non-service-connected § 1318 DIC, whereas proving direct/contributory service-connected death under § 1310 avoids the § 1318(d) non-FTCA private-tort offset (VAOPGCPREC 3-97)."
+  ],
+  "questions_for_representative": [
+    "Did VA obtain the final hospitalization, ICU, or autopsy records to evaluate whether a service-connected condition (especially one affecting a vital organ at 100% under § 3.312(c)(3)) contributed substantially and materially to death?",
+    "If my spouse's DIC claim was previously denied before August 10, 2022, does a PACT Act presumption (such as hypertension or burn-pit cancer) qualify me for retroactive re-evaluation back to my original DIC claim date under 38 U.S.C. § 1305 and 38 C.F.R. § 3.33?",
+    "If my spouse had fewer than 10 years at 100%/TDIU on paper at death, was there a void rating reduction, newly associated service record (§ 3.22(b)(2)), or lifetime CUE (§ 3.22(b)(1)) that would establish 10 continuous years of total disability?",
+    "Did my DIC award letter properly include all applicable § 1311 add-ons (8-year kicker, spouse Aid & Attendance/Housebound, minor-child transitional benefit), and was my claim filed within 1 year of death for a date-of-death effective date (§ 5110(d))?"
+  ]
+}

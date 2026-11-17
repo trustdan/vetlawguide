@@ -80,7 +80,7 @@ export default async function VasrdSystemDetailPage({
         <h1 className="font-serif text-3xl font-bold tracking-tight">{sys.label}</h1>
 
         {allDiagnosticCodes.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-1 font-mono text-[11px] text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-1.5 pt-1 font-mono text-xs text-muted-foreground">
             <span className="font-semibold text-foreground">Indexed Diagnostic Codes:</span>
             {allDiagnosticCodes.slice(0, 18).map((dc) => (
               <span
@@ -189,13 +189,13 @@ export default async function VasrdSystemDetailPage({
                 className="flex flex-col justify-between rounded-lg border border-border bg-surface p-4 text-xs hover:border-primary"
               >
                 <div className="space-y-1">
-                  <div className="font-mono text-[11px] font-semibold text-primary">
+                  <div className="font-mono text-xs font-semibold text-primary">
                     {sec.cfrSection} ({sec.versions.length} snapshot
                     {sec.versions.length === 1 ? "" : "s"})
                   </div>
                   <div className="font-medium text-foreground">{sec.title}</div>
                 </div>
-                <span className="mt-3 font-mono text-[11px] font-semibold text-primary">
+                <span className="mt-3 font-mono text-xs font-semibold text-primary">
                   /cfr/{sec.sectionSlug} →
                 </span>
               </Link>

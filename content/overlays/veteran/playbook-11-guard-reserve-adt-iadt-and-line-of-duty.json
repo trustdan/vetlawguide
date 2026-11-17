@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-11-guard-reserve-adt-iadt-and-line-of-duty",
+  "upstream_path": "playbooks/11-guard-reserve-adt-iadt-and-line-of-duty.md",
+  "upstream_sha256": "0c2e3642fb170f4d01cac679e73492f133f17cd4359ee0b97c271beeccb4a90f",
+  "linked_version_ids": [
+    "38-cfr-3.6-duty-periods",
+    "38-cfr-3.6-2022-duty-periods",
+    "38-cfr-3.301d-2006-allen-substance-abuse",
+    "38-cfr-3.304b-2005-wagner-soundness",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "National Guard & Reserve Claims: Active Duty vs. Training (ADT & Drill/IADT), Title 32 Orders & Line of Duty Investigations",
+  "what_this_means": "National Guard and Reserve members are frequently denied VA benefits with a boilerplate letter saying 'No qualifying active military service'—often because VA looked only at a state NGB Form 22 and never obtained federal activation orders, training orders, or military Line of Duty (LOD) determinations. Under 38 U.S.C. § 101(24) and 38 C.F.R. § 3.6, you do NOT need a Title 10 overseas deployment to earn VA disability compensation if you were disabled by: (1) any injury or disease incurred or aggravated during Active Duty for Training (ADT, such as basic training, AIT, annual 2-week training, or federally funded Title 32 U.S.C. §§ 316, 502–505 duty, including § 502(f) operational missions); OR (2) an injury—or an acute heart attack, cardiac arrest, or stroke (§ 106(d))—during weekend drills (Inactive Duty Training / IADT) or authorized direct portal-to-portal travel to and from training.",
+  "record_clues": [
+    "A VA denial stating 'Not a Veteran' or 'No active service' when your C-file contained only an NGB Form 22 without your Title 10 / Title 32 orders, drill attendance/retirement point sheets, or training clinic records.",
+    "A favorable military Line of Duty (LOD) report—such as Army DA Form 2173, Air Force AF Form 348, or DD Form 261—confirming an injury or illness happened 'In Line of Duty' during training or drill (binding or highly probative evidence that also triggers 38 C.F.R. § 3.156(c) if added to your C-file later!).",
+    "Federally authorized Title 32 U.S.C. § 502(f) National Guard orders (such as post-9/11 airport security, border missions, hurricane response, or federal COVID-19 response) mislabeled by VA as pure state duty.",
+    "A heart attack, cardiac arrest, stroke, orthopedic trauma, acoustic trauma, or toxic exposure injury during weekend drill (IADT) or authorized direct travel to/from ADT or IADT (§ 3.6(d)–(e))."
+  ],
+  "important_cautions": [
+    "Pure Governor State Active Duty (SAD) vs. Title 32 Duty: Pure state-funded, Governor-controlled State Active Duty (with no federal Title 10 or Title 32 U.S.C. §§ 316, 502–505 authority) is covered by state workers' compensation rather than federal VA compensation—so checking the exact statutory authority printed on your orders is essential.",
+    "Disease vs. Injury on Weekend Drills (IADT): Unlike Active Duty for Training (ADT), routine weekend drills (IADT) cover physical 'injuries' (including toxic/acoustic injury mechanisms) PLUS acute myocardial infarction, cardiac arrest, and stroke (retroactively effective November 1, 2000 under Pub. L. 106-419), but do not cover ordinary chronic diseases manifesting during a drill weekend.",
+    "How Aggravation Works on ADT (Smith & Donnellan): On pure ADT claims where Veteran status has not yet been established, the § 1111 presumption of soundness does not apply—meaning the claimant must show with medical or lay evidence that a pre-existing condition actually worsened during ADT under § 3.306.",
+    "Secondary Alcohol/Substance Conditions After 1990 (Allen v. Principi): While primary alcohol/drug abuse claims filed after October 31, 1990 are barred (§ 3.301(d)), alcohol/substance disorders or organ damage caused or aggravated by a service-connected condition ARE compensable under § 3.310—though under George v. McDonough (§ 20.1403(e)), Allen cannot be used to file CUE against a final 1999–2001 decision that applied pre-Allen agency precedent."
+  ],
+  "questions_for_representative": [
+    "Do my unit orders show Title 10 active duty, Title 32 U.S.C. § 502(f) full-time Guard duty, Active Duty for Training (ADT), or Inactive Duty Training (IADT) on the dates I was injured or became ill?",
+    "Have we requested my complete unit personnel packet and all Line of Duty (LOD) investigations (DA Form 2173 / AF Form 348 / DD Form 261), and would newly obtained LOD records reopen my original claim effective date under 38 C.F.R. § 3.156(c)?",
+    "If my injury or cardiac/stroke emergency happened while driving directly to or from authorized training or drill, does 38 U.S.C. § 106(d) and 38 C.F.R. § 3.6(e) cover portal-to-portal travel?",
+    "Do my Title 10, ADT, or qualifying IADT toxic exposures also trigger PACT Act toxic exposure examination rights (38 U.S.C. § 1168)?"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-4-71a-joints-arthritis-pre-post-2021",
+  "upstream_path": "authorities/part-4/38-cfr-4.71a-joints-arthritis-pre-and-post-2021.md",
+  "upstream_sha256": "4aa71daf8cdc9a79c9ef1981f58259deedaa5c1fb728b0b1b3e99f9d39bbb261",
+  "linked_version_ids": [
+    "38-cfr-4.71a-joints-pre2021",
+    "38-cfr-4.71a-5055-2015-total-prosthesis",
+    "38-cfr-4.71a-2021-musculoskeletal",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Joints, Arthritis, Joint Replacements & Foot Ratings: Comparing Pre- and Post-February 7, 2021 Rules",
+  "what_this_means": "Effective February 7, 2021 (published November 30, 2020 at 85 FR 76453 and corrected February 4, 2021 at 86 FR 8142), VA overhauled its musculoskeletal rating schedule (38 C.F.R. § 4.71a). Among the biggest changes: VA shortened temporary 100% post-surgical recovery for total hip (Diagnostic Code 5054) and total knee (Diagnostic Code 5055) replacements from 1 year down to 4 months, restructured knee instability (Diagnostic Code 5257) around prescribed braces/assistive devices and patellar surgery, created a dedicated code for Plantar Fasciitis (corrected from 5285 to Diagnostic Code 5269 three days before enactment), and updated multi-joint arthritis (Diagnostic Code 5002). Throughout every era, 38 C.F.R. §§ 4.40, 4.45, and 4.59 protect Veterans who experience painful motion or functional loss on repeated use and flare-ups.",
+  "record_clues": [
+    "A total hip (Diagnostic Code 5054) or total knee (Diagnostic Code 5055) replacement performed or claimed BEFORE February 7, 2021 that was awarded only 4 months—rather than 1 full year—of temporary 100% convalescence (or a partial knee replacement claimed before July 16, 2015 denied Diagnostic Code 5055 benefits under Hudgens v. McDonald).",
+    "A joint exam recording objective painful motion where VA assigned 0% instead of the minimum compensable percentage required by 38 C.F.R. § 4.59 (such as 20% for a shoulder under Diagnostic Code 5201 or 10% for a knee, hip, ankle, or wrist).",
+    "A shoulder exam showing arm elevation limited to 90 degrees ('at shoulder level') on either the dominant or non-dominant arm rated at 10% instead of the mandatory 20% floor under Diagnostic Code 5201.",
+    "A knee Rating Code Sheet collapsing lateral instability (Diagnostic Code 5257) and limited bending/straightening (Diagnostic Codes 5260/5261) into a single rating, or plantar fasciitis unresponsive to both non-surgical and surgical care (or where surgery is not medically advisable under Diagnostic Code 5269 Note (2)) rated below 20% or 30%."
+  ],
+  "important_cautions": [
+    "Publication vs. effective date and code-number correction: VA published the musculoskeletal revision on November 30, 2020 (85 FR 76453), corrected Plantar Fasciitis from Diagnostic Code 5285 to Diagnostic Code 5269 on February 4, 2021 (86 FR 8142) to avoid colliding with the retired vertebral-fracture code 5285, and made the rule effective February 7, 2021.",
+    "Existing pre-February 7, 2021 joint and arthritis ratings are protected against reduction due solely to the schedule change under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a), while claims pending across February 7, 2021 receive whichever version is more favorable for each period.",
+    "Under 38 C.F.R. § 4.68 (the Amputation Rule), combined musculoskeletal and nerve ratings in the same limb below an elective amputation site cannot exceed the percentage assigned if that part of the limb were amputated.",
+    "New post-February 7, 2021 codes cannot prove Clear and Unmistakable Error (CUE) in final pre-2021 decisions, later judicial interpretations are subject to George v. McDonough and 38 C.F.R. § 20.1403(e), and 38 C.F.R. § 20.1409(c) permits only one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "If my joint or knee claim was pending across February 7, 2021 (or my joint replacement occurred before February 7, 2021 / July 16, 2015), did VA apply the more favorable historical rule?",
+    "Did my joint exam record painful motion under 38 C.F.R. § 4.59 or functional flare-up loss under §§ 4.40 and 4.45 (DeLuca v. Brown) that should raise a 0% or low rating?",
+    "Can my knee condition receive separate ratings for instability (Diagnostic Code 5257), flexion (Diagnostic Code 5260), and extension (Diagnostic Code 5261)?",
+    "For severe plantar fasciitis under Diagnostic Code 5269, do my podiatry records document lack of relief from treatment and whether I am a surgical candidate under Note (2)?"
+  ]
+}

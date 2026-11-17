@@ -15,6 +15,7 @@
  */
 
 import {
+  assignCanonicalSectionSlugs,
   buildBitemporalTwoPaneContext,
   normalizeCfrSlug,
   resolveCfrAtDate,
@@ -205,11 +206,89 @@ const RECORD_COMBINED_MATH_AND_CONTEMPORANEOUS_RECORD: MissingRecordDefinition =
   priorityOrder: 6,
 };
 
+const RECORD_REDUCTION_NOTICE_AND_STABILIZATION: MissingRecordDefinition = {
+  recordId: "reduction-notice-and-stabilized-code-sheets",
+  documentName:
+    "Pre-Reduction 60-Day Proposal Letter, Reduction Rating Code Sheets & Longitudinal C&P Exams",
+  whyItMatters:
+    "Reveals how many years the prior evaluation or service connection was in effect (5-year § 3.344 stabilization, 10-year § 3.957 severance shield, 20-year § 3.951(b) protection, or § 3.951(a) rating-schedule readjustment shield) and whether VA gave mandatory 60-day advance notice (§ 3.105(e)) and proved sustained improvement under the ordinary conditions of life.",
+  howToRequest:
+    "Request your complete C-file via VA Form 20-10206 and compare the original grant Rating Code Sheet date, any pre-reduction proposal notice, and the exam relied on to reduce.",
+  practitionerAuditNote:
+    "Measure exact effective-to-effective duration (§§ 3.105(e), 3.344(c), 3.951, 3.957), verify 60-day proposal + 30-day § 3.105(i) predetermination hearing notice (Stern), and audit longitudinal medical history (Brown v. Brown, 5 Vet. App. 413 (1993)).",
+  priorityOrder: 2,
+};
+
+const RECORD_UNEMPLOYABILITY_AND_SMC_FUNCTIONAL: MissingRecordDefinition = {
+  recordId: "tdiu-employment-and-smc-functional-records",
+  documentName:
+    "SSA Earnings / Disability File, VA Form 21-8940 / VAMC Work Notes & ADL / Loss-of-Use Exams",
+  whyItMatters:
+    "Documents whether service-connected disabilities prevented substantially gainful employment (inferred TDIU under § 4.16 and Roberson) or caused loss of use of extremities/organs, housebound confinement, or need for daily Aid and Attendance (mandatory statutory SMC under 38 U.S.C. § 1114(k)–(t)).",
+  howToRequest:
+    "Gather Social Security Administration (SSA) disability/earnings records, VAMC vocational/clinical notes, and VA Form 21-2680 Aid and Attendance or C&P functional assessments.",
+  practitionerAuditNote:
+    "Audit pre-2015 informal/inferred TDIU triggers (Roberson; Rice), SMC(s) TDIU+60% predicates (Buie; Bradley), § 3.350(f)(3)–(4) multi-step bumps (Barry), and SMC(t) TBI care needs (Laska).",
+  priorityOrder: 4,
+};
+
+const RECORD_HERBICIDE_DECK_LOGS_AND_NEHMER: MissingRecordDefinition = {
+  recordId: "herbicide-exposure-deck-logs-and-prior-code-sheets",
+  documentName:
+    "DD-214, Deck Logs / Unit Histories (Vietnam, Blue Water, DMZ, Thailand/PACT) & Post-1985 Rating Code Sheets",
+  whyItMatters:
+    "Under the Nehmer court orders (38 C.F.R. § 3.816), if a prior claim—or even an uncompensated diagnostic code or medical mention in a prior VA decision on or after Sept. 25, 1985—involved a covered herbicide disease, retroactive benefits reach back to that original claim date for the Veteran, survivors, or estate.",
+  howToRequest:
+    "Request all post-Sept. 25, 1985 Rating Code Sheets in your C-file (VA Form 20-10206) alongside DD-214, ship deck logs, or unit deployment records.",
+  practitionerAuditNote:
+    "Audit every post-Sept. 25, 1985 claim and Rating Code Sheet for diagnostic codes or clinical diagnoses of covered § 3.309(e) / PACT herbicide conditions under § 3.816(c)(2) and post-Dec. 2, 2021 § 3.816(f) uncapped payee rules (86 FR 68409).",
+  priorityOrder: 3,
+};
+
+const RECORD_SURVIVOR_DEATH_CERT_AND_PENDING_DOCKET: MissingRecordDefinition = {
+  recordId: "survivor-death-certificate-and-pending-docket",
+  documentName:
+    "Death Certificate / Autopsy Summary, Veteran's Historical Rating Code Sheets & Pending Appeal Docket",
+  whyItMatters:
+    "Establishes whether a service-connected or PACT/herbicide condition caused or contributed to death (§ 3.312 / § 3.33), whether the Veteran held (or should have held via § 3.22(b) service records or lifetime CUE) a 10-year 100%/TDIU rating (§ 1318), and whether a claim was pending at death for 1-year substitution (§ 5121A, VA Form 21P-0847).",
+  howToRequest:
+    "Obtain the long-form death certificate, discharge summary, and FOIA copy of the Veteran's C-file Rating Code Sheets and VBMS/VACOLS pending-claim status immediately (watching the 1-year post-death substitution and accrued deadlines).",
+  practitionerAuditNote:
+    "Triage § 1310/§ 3.312 direct/contributory death, § 1305/§ 3.33 PACT DIC re-evaluation, § 1318/§ 3.22(b)(1)–(2) 10-year total rating, § 3.55 age-55/57 remarriage dates, and 1-year § 5121A substitution (21P-0847) vs. § 3.816(f) Nehmer estate awards.",
+  priorityOrder: 2,
+};
+
+const RECORD_DD214_OMPF_AND_DISCHARGE_MENTAL_HEALTH: MissingRecordDefinition = {
+  recordId: "ompf-separation-packet-and-insanity-records",
+  documentName:
+    "Complete Official Military Personnel File (OMPF), Separation Packet, All Enlistment Contracts & Mental Health Records",
+  whyItMatters:
+    "Checks whether an earlier honorable enlistment establishes unconditional veteran status (§ 3.13(c)), whether service-related mental illness, TBI, or trauma triggers the § 3.354(b) insanity exception or the June 25, 2024 § 3.12(e) compelling-circumstances factors, and how BCMR/DRB upgrades (§ 3.400(g)) affect effective dates.",
+  howToRequest:
+    "Submit SF 180 to NPRC requesting the complete OMPF (including enlistment/reenlistment contracts, court-martial or administrative separation boards, and STRs) plus Vet Center or VAMC mental health records.",
+  practitionerAuditNote:
+    "Screen 38 U.S.C. § 101(18)(B) / § 3.13(c) chartable prior enlistments, § 5303(b) / § 3.354(b) insanity (Zang; Gardner), June 25, 2024 § 3.12(d)(2) & (e) compelling circumstances (89 FR 32361), and 10 U.S.C. §§ 1552/1553 upgrade dates.",
+  priorityOrder: 3,
+};
+
+const RECORD_DFAS_SEVERANCE_W2_AND_AWARD_WITHHOLDING: MissingRecordDefinition = {
+  recordId: "dfas-severance-orders-and-va-withholding-audit",
+  documentName:
+    "DD-214 Block 18/24–28, Chapter 61 PEB Combat-Related Orders, DFAS Severance Tax Stub & VA Award Withholding Ledger",
+  whyItMatters:
+    "Verifies whether VA unlawfully recouped disability severance pay barred by 10 U.S.C. § 1212(d)(2) (post-Jan. 28, 2008 combat-zone / combat-operations Chapter 61 separations), recouped pre-tax gross instead of after-tax net severance (post-Sept. 30, 1996), or withheld compensation belonging to independent non-severance disabilities (§ 3.700(a)(3)).",
+  howToRequest:
+    "Pull your DD-214, Physical Evaluation Board (PEB) findings (DA Form 199 / branch equivalent), separation-year W-2/DFAS tax withholding statement, and VA audit/withholding accounting via VA Form 20-10206.",
+  practitionerAuditNote:
+    "Audit 10 U.S.C. § 1212(d)(2) & 38 C.F.R. § 3.700(a)(3) combat-zone / combat-operations non-recoupment (>= Jan. 28, 2008), post-Sept. 30, 1996 net after-tax cap (Pub. L. 104-201, § 653), and monthly severance-disability compensation cap.",
+  priorityOrder: 5,
+};
+
 // ---------------------------------------------------------------------------
-// Wave 1 Three-Valued Screening Fact Questions
+// Full-Corpus Three-Valued Screening Fact Questions
 // ---------------------------------------------------------------------------
 
-export const WAVE1_SCREENING_QUESTIONS: ReadonlyArray<ScreeningFactQuestion> = [
+export const SCREENING_QUESTIONS: ReadonlyArray<ScreeningFactQuestion> = [
   {
     factId: "official_service_or_surgical_records_missing_at_t0",
     group: "service-records",
@@ -263,6 +342,32 @@ export const WAVE1_SCREENING_QUESTIONS: ReadonlyArray<ScreeningFactQuestion> = [
     missingRecord: RECORD_PENDING_APPEAL_NOD_VAMC_AUDIT,
   },
   {
+    factId: "running_rating_reduced_or_severed",
+    group: "void-reduction",
+    veteranQuestion:
+      "Did VA lower an existing monthly disability rating percentage (or sever service connection) after you were already receiving that rating?",
+    veteranHelp:
+      "When VA reduces an active running award without following strict medical-improvement and advance-notice rules, the reduction can be legally void from the start without proving CUE.",
+    practitionerQuestion:
+      "Did VA reduce a running compensation evaluation or sever an existing grant of service connection (as opposed to assigning initial retrospective staged ratings)?",
+    practitionerAuthorityNote:
+      "38 C.F.R. §§ 3.105(d)–(e), 3.343(a), 3.344, 3.951, 3.957; Brown v. Brown, 5 Vet. App. 413 (1993).",
+    missingRecord: RECORD_REDUCTION_NOTICE_AND_STABILIZATION,
+  },
+  {
+    factId: "stabilized_5_10_20yr_or_missing_60day_notice_clue",
+    group: "void-reduction",
+    veteranQuestion:
+      "Had that rating been in place for 5+ years (or 10+ / 20+ years), OR did VA reduce it after a single exam, after a rating-schedule change, or without 60-day advance notice?",
+    veteranHelp:
+      "Ratings in effect 5+ years (§ 3.344) cannot be lowered off a single snapshot exam without sustained improvement in daily life and work; 20+ year ratings (§ 3.951(b)) and 10+ year service connection (§ 3.957) carry statutory shields.",
+    practitionerQuestion:
+      "Did the reduction/severance violate § 3.344 (>=5-yr stabilization / single exam), § 3.951(a) (VASRD readjustment), § 3.951(b) (>=20-yr protection), § 3.957 (>=10-yr SC), or § 3.105(e)/(i) 60-day notice / hearing freeze?",
+    practitionerAuthorityNote:
+      "38 U.S.C. §§ 110, 1155, 1159; Kitchens v. Brown, 7 Vet. App. 320 (1995); Stern v. McDonough, 34 Vet. App. 51 (2021).",
+    missingRecord: RECORD_REDUCTION_NOTICE_AND_STABILIZATION,
+  },
+  {
     factId: "penetrating_wound_rated_only_as_scar",
     group: "scar-vs-muscle",
     veteranQuestion:
@@ -287,6 +392,136 @@ export const WAVE1_SCREENING_QUESTIONS: ReadonlyArray<ScreeningFactQuestion> = [
     practitionerAuthorityNote:
       "38 C.F.R. § 4.56 (checking pre-July 3, 1997 vs. post-July 3, 1997 effective text; 62 FR 30235); Tropf v. Nicholson, 20 Vet. App. 317 (2006).",
     missingRecord: RECORD_SEPARATION_EXAM_AND_OPERATIVE_NOTES,
+  },
+  {
+    factId: "unemployability_or_smc_loss_of_use_housebound_clue",
+    group: "tdiu-and-smc",
+    veteranQuestion:
+      "Do VA or medical records show service-connected conditions prevented full-time work (TDIU), OR show loss of use of a hand/foot/organ, housebound status, or need for daily Aid and Attendance (SMC)?",
+    veteranHelp:
+      "Special Monthly Compensation (SMC) and Total Disability based on Individual Unemployability (TDIU) can apply even when nobody knew which VA form or letter code to request.",
+    practitionerQuestion:
+      "Did the record reasonably raise unemployability (§ 4.16 TDIU; Roberson/Rice) OR satisfy statutory SMC criteria (38 U.S.C. § 1114(k)–(t): loss of use, 100%+60% SMC(s), A&A, § 3.350(f) steps, or TBI SMC(t))?",
+    practitionerAuthorityNote:
+      "38 U.S.C. § 1114(k)–(t); 38 C.F.R. §§ 3.350, 3.352, 4.16; Roberson (2001); Buie (2011); Bradley (2008); Barry (2024); Laska (2024).",
+    missingRecord: RECORD_UNEMPLOYABILITY_AND_SMC_FUNCTIONAL,
+  },
+  {
+    factId: "va_omitted_inferred_tdiu_or_mandatory_smc",
+    group: "tdiu-and-smc",
+    veteranQuestion:
+      "Did VA assign only standard disability percentages while leaving out TDIU or Special Monthly Compensation (or cap multiple independent 50%/100% SMC steps at a single increase)?",
+    veteranHelp:
+      "Check historical Rating Code Sheets for SMC codes at the bottom and check whether VA ever adjudicated TDIU when work loss was mentioned.",
+    practitionerQuestion:
+      "Did VA fail to adjudicate reasonably raised TDIU, omit mandatory statutory SMC on the Code Sheet, or cap § 3.350(f)(3)–(4) intermediate/next-higher steps at a single bump?",
+    practitionerAuthorityNote:
+      "Akles v. Derwinski, 1 Vet. App. 118 (1991); Buie v. Shinseki, 24 Vet. App. 242 (2011); Barry v. McDonough, 101 F.4th 1348 (Fed. Cir. 2024).",
+    missingRecord: RECORD_CFILE_CODE_SHEET_AND_NARRATIVE,
+  },
+  {
+    factId: "herbicide_exposure_and_presumptive_condition",
+    group: "nehmer-herbicide",
+    veteranQuestion:
+      "Did the Veteran serve in a qualifying Agent Orange / herbicide location (Vietnam, Blue Water Navy, Korean DMZ, Thailand, or PACT herbicide sites) and have a presumptive herbicide illness?",
+    veteranHelp:
+      "Includes ischemic heart disease, Parkinson's, prostate/respiratory/bladder cancer, diabetes, hypothyroidism, hypertension, MGUS, and other § 3.309(e) herbicide diseases.",
+    practitionerQuestion:
+      "Does the Veteran establish qualifying herbicide exposure (38 U.S.C. §§ 1116, 1116A; 38 C.F.R. § 3.307(a)(6)) and a covered presumptive herbicide condition (§ 3.309(e) / PACT)?",
+    practitionerAuthorityNote:
+      "38 C.F.R. §§ 3.307(a)(6), 3.309(e), 3.816; Pub. L. 116-23 (Blue Water Navy); Pub. L. 117-168 (PACT Act §§ 403–404).",
+    missingRecord: RECORD_HERBICIDE_DECK_LOGS_AND_NEHMER,
+  },
+  {
+    factId: "prior_claim_or_coding_mention_since_1985",
+    group: "nehmer-herbicide",
+    veteranQuestion:
+      "Was an earlier claim filed or denied—or was the condition listed on a VA Rating Code Sheet—on or after September 25, 1985 before VA later granted benefits (or before the Veteran passed away)?",
+    veteranHelp:
+      "Under Nehmer (38 C.F.R. § 3.816), even an old denial or noncompensable code entry since Sept. 25, 1985 can unlock retroactive back pay for the Veteran, surviving family, or estate.",
+    practitionerQuestion:
+      "Was a claim involving the covered herbicide disease filed or denied on/after Sept. 25, 1985 (including Footnote 1 diagnostic-coding mentions under § 3.816(c)(2) or unpaid § 3.816(f) survivor/estate arrears)?",
+    practitionerAuthorityNote:
+      "38 C.F.R. § 3.816(c)–(f) (including Dec. 2, 2021 86 FR 68409 removal of the § 3.816(f)(3) prior-payee bar); Nehmer v. U.S. Veterans' Admin.",
+    missingRecord: RECORD_HERBICIDE_DECK_LOGS_AND_NEHMER,
+  },
+  {
+    factId: "survivor_or_post_mortem_claim_context",
+    group: "survivor-dic-accrued",
+    veteranQuestion:
+      "Are you reviewing options for a surviving spouse, dependent child, parent, or estate after a Veteran's death (DIC monthly survivor benefits, substitution, or unpaid back pay)?",
+    veteranHelp:
+      "Select \"Yes\" if the Veteran is deceased; select \"No\" if the Veteran is living.",
+    practitionerQuestion:
+      "Does this matter involve post-mortem survivor or estate entitlement (Chapter 13 DIC under §§ 1310/1318/1305, § 5121A substitution, § 5121 accrued benefits, or § 3.816(f) Nehmer)?",
+    practitionerAuthorityNote:
+      "38 U.S.C. §§ 1305, 1310, 1318, 5121, 5121A; 38 C.F.R. §§ 3.22, 3.33, 3.55, 3.312, 3.1000, 3.1010.",
+    missingRecord: RECORD_SURVIVOR_DEATH_CERT_AND_PENDING_DOCKET,
+  },
+  {
+    factId: "ten_yr_total_service_death_or_pending_at_death_clue",
+    group: "survivor-dic-accrued",
+    veteranQuestion:
+      "Did a service-connected or PACT/toxic condition contribute to death, OR was the Veteran at (or owed) 100% / TDIU for 10+ years, OR was a VA claim/appeal still pending when the Veteran died?",
+    veteranHelp:
+      "Also covers previously denied DIC claims eligible for PACT Act re-evaluation (§ 3.33) and surviving spouses who remarried at age 55+ (on/after Jan. 5, 2021) or age 57+ (since Jan. 1, 2004).",
+    practitionerQuestion:
+      "Is there evidence of § 3.312 principal/contributory SC death, § 3.33 PACT DIC re-evaluation, 10-yr § 1318 / § 3.22(b)(1)–(2) total disability, or a claim pending at death (§ 5121A / § 3.1000)?",
+    practitionerAuthorityNote:
+      "38 C.F.R. §§ 3.22(a)–(b), 3.33(d)(1) (88 FR 82261, eff. Jan. 23, 2024), 3.55(a)(9)–(11), 3.312, 3.1000, 3.1010.",
+    missingRecord: RECORD_SURVIVOR_DEATH_CERT_AND_PENDING_DOCKET,
+  },
+  {
+    factId: "oth_or_discharge_bar_blocked_benefits",
+    group: "cod-discharge",
+    veteranQuestion:
+      "Did VA deny benefits or health care because of an Other-Than-Honorable (OTH), Bad Conduct (BCD), or Character of Discharge (COD) determination?",
+    veteranHelp:
+      "Select \"No\" if all periods of service were Honorable or General Under Honorable Conditions without a discharge bar.",
+    practitionerQuestion:
+      "Was benefit eligibility denied or questioned under statutory (38 U.S.C. § 5303(a)) or regulatory (38 C.F.R. § 3.12) Character of Discharge bars?",
+    practitionerAuthorityNote:
+      "38 U.S.C. §§ 101(2), 101(18)(B), 5303(a)–(b); 38 C.F.R. §§ 3.12 (89 FR 32361, eff. June 25, 2024), 3.13, 3.354(b).",
+    missingRecord: RECORD_DD214_OMPF_AND_DISCHARGE_MENTAL_HEALTH,
+  },
+  {
+    factId: "prior_good_enlistment_insanity_or_compelling_circumstances",
+    group: "cod-discharge",
+    veteranQuestion:
+      "Did the Veteran complete an earlier honorable enlistment before reenlisting, experience severe mental health / TBI / MST / combat trauma tied to the discharge conduct, or receive a discharge upgrade?",
+    veteranHelp:
+      "An earlier completed enlistment (§ 3.13(c)), VA's broad mental-illness insanity rule (§ 3.354(b)), or VA's June 25, 2024 compelling-circumstances rule (§ 3.12(e)) can unlock VA eligibility.",
+    practitionerQuestion:
+      "Does the OMPF/medical record support § 3.13(c) conditional discharge, § 3.354(b) insanity at the time of the offense, June 25, 2024 § 3.12(d)(2)/(e) compelling circumstances, or a BCMR/DRB upgrade (§ 3.400(g))?",
+    practitionerAuthorityNote:
+      "VAOPGCPREC 10-96 (§ 3.13(c)); Zang / Gardner (§ 3.354(b)); 38 C.F.R. § 3.12(d)(2),(e) (eff. June 25, 2024); 38 C.F.R. § 3.400(g).",
+    missingRecord: RECORD_DD214_OMPF_AND_DISCHARGE_MENTAL_HEALTH,
+  },
+  {
+    factId: "va_recouped_disability_severance_or_separation_pay",
+    group: "severance-recoupment",
+    veteranQuestion:
+      "Did VA withhold monthly VA disability compensation to pay back military disability severance pay, separation pay (SSB/VSI), or readjustment pay?",
+    veteranHelp:
+      "Check old VA award letters for a monthly withholding line recouping lump-sum military severance or separation pay.",
+    practitionerQuestion:
+      "Did VA recoup military disability severance, separation, or readjustment pay from Title 38 compensation under 38 C.F.R. § 3.700(a)(2), (3), or (5)?",
+    practitionerAuthorityNote:
+      "10 U.S.C. § 1212(d)(2); 38 C.F.R. § 3.700(a)(2)–(5) (67 FR 60868; 74 FR 26956).",
+    missingRecord: RECORD_DFAS_SEVERANCE_W2_AND_AWARD_WITHHOLDING,
+  },
+  {
+    factId: "combat_zone_post2008_pretax_gross_or_excess_withholding",
+    group: "severance-recoupment",
+    veteranQuestion:
+      "Was the medical separation on or after Jan. 28, 2008 for a combat-zone / combat-operations injury, OR did VA recoup pre-tax gross pay (post-Sept. 1996) or take money from unrelated VA ratings?",
+    veteranHelp:
+      "Combat-zone / combat-operations severance since Jan. 28, 2008 is 100% exempt from VA recoupment, and post-Sept. 30, 1996 recoupment is capped at the after-tax net amount.",
+    practitionerQuestion:
+      "Did VA violate 10 U.S.C. § 1212(d)(2) (post-Jan. 28, 2008 combat-zone / combat-operations non-recoupment), recoup pre-tax gross pay post-Sept. 30, 1996, or exceed the severance disability's monthly compensation rate (§ 3.700(a)(3))?",
+    practitionerAuthorityNote:
+      "Pub. L. 110-181, § 1646 (10 U.S.C. § 1212(d)(2), eff. Jan. 28, 2008); Pub. L. 104-201, § 653 (eff. Oct. 1, 1996); 38 C.F.R. § 3.700(a)(3).",
+    missingRecord: RECORD_DFAS_SEVERANCE_W2_AND_AWARD_WITHHOLDING,
   },
   {
     factId: "undebatable_extant_error_in_record_then",
@@ -316,11 +551,21 @@ export const WAVE1_SCREENING_QUESTIONS: ReadonlyArray<ScreeningFactQuestion> = [
   },
 ];
 
+export const WAVE1_SCREENING_QUESTIONS = SCREENING_QUESTIONS;
+
+function createAllNoAnswers(overrides: Record<string, TriValue>): Record<string, TriValue> {
+  const out: Record<string, TriValue> = {};
+  for (const q of SCREENING_QUESTIONS) {
+    out[q.factId] = "no";
+  }
+  return { ...out, ...overrides };
+}
+
 export function createDefaultInvestigationState(
   decisionDate = "1974-08-12",
 ): InvestigationIntakeState {
   const answers: Record<string, TriValue> = {};
-  for (const q of WAVE1_SCREENING_QUESTIONS) {
+  for (const q of SCREENING_QUESTIONS) {
     answers[q.factId] = "unknown";
   }
   return {
@@ -357,7 +602,7 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
         bvaMeritsSubsumed: "no",
         priorBvaCueDecidedOnMerits: "no",
         retireeStatus: "none",
-        answers: {
+        answers: createAllNoAnswers({
           official_service_or_surgical_records_missing_at_t0: "yes",
           newly_associated_records_speak_to_disputed_element: "yes",
           open_stream_or_unanswered_filing_clue: "unknown",
@@ -366,7 +611,7 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
           deep_fascia_or_muscle_pathology_documented: "yes",
           undebatable_extant_error_in_record_then: "unknown",
           manifestly_changed_combined_payment_4_25: "yes",
-        },
+        }),
       },
     },
     {
@@ -382,16 +627,12 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
         bvaMeritsSubsumed: "no",
         priorBvaCueDecidedOnMerits: "no",
         retireeStatus: "none",
-        answers: {
-          official_service_or_surgical_records_missing_at_t0: "no",
-          newly_associated_records_speak_to_disputed_element: "no",
-          open_stream_or_unanswered_filing_clue: "no",
-          not_subsequently_finally_adjudicated: "no",
+        answers: createAllNoAnswers({
           penetrating_wound_rated_only_as_scar: "yes",
           deep_fascia_or_muscle_pathology_documented: "yes",
           undebatable_extant_error_in_record_then: "yes",
           manifestly_changed_combined_payment_4_25: "yes",
-        },
+        }),
       },
     },
     {
@@ -407,16 +648,14 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
         bvaMeritsSubsumed: "yes",
         priorBvaCueDecidedOnMerits: "unknown",
         retireeStatus: "unknown",
-        answers: {
+        answers: createAllNoAnswers({
           official_service_or_surgical_records_missing_at_t0: "unknown",
           newly_associated_records_speak_to_disputed_element: "unknown",
-          open_stream_or_unanswered_filing_clue: "no",
-          not_subsequently_finally_adjudicated: "no",
           penetrating_wound_rated_only_as_scar: "yes",
           deep_fascia_or_muscle_pathology_documented: "unknown",
           undebatable_extant_error_in_record_then: "yes",
           manifestly_changed_combined_payment_4_25: "yes",
-        },
+        }),
       },
     },
     {
@@ -432,16 +671,72 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
         bvaMeritsSubsumed: "no",
         priorBvaCueDecidedOnMerits: "no",
         retireeStatus: "military-retiree-or-ch61",
-        answers: {
-          official_service_or_surgical_records_missing_at_t0: "no",
-          newly_associated_records_speak_to_disputed_element: "no",
+        answers: createAllNoAnswers({
           open_stream_or_unanswered_filing_clue: "yes",
           not_subsequently_finally_adjudicated: "yes",
-          penetrating_wound_rated_only_as_scar: "no",
-          deep_fascia_or_muscle_pathology_documented: "no",
-          undebatable_extant_error_in_record_then: "no",
           manifestly_changed_combined_payment_4_25: "unknown",
-        },
+        }),
+      },
+    },
+    {
+      presetId: "preset-1995-void-stabilized-reduction",
+      veteranLabel: "1995 Lowered 5-Year Rating (§ 3.344 Void Reduction)",
+      practitionerLabel: "1995-04-10 Brown Void Stabilized Rating Reduction (§§ 3.105(e), 3.344)",
+      shortDescription:
+        "Stabilized >=5-year evaluation reduced after a single exam—restorable ab initio under Brown v. Brown without proving CUE.",
+      state: {
+        decisionDate: "1995-04-10",
+        decisionAgency: "AOJ-RO",
+        issueFocus: "stabilized-reduction-or-severance",
+        bvaMeritsSubsumed: "no",
+        priorBvaCueDecidedOnMerits: "no",
+        retireeStatus: "none",
+        answers: createAllNoAnswers({
+          running_rating_reduced_or_severed: "yes",
+          stabilized_5_10_20yr_or_missing_60day_notice_clue: "yes",
+        }),
+      },
+    },
+    {
+      presetId: "preset-2016-survivor-1318-dic-substitution",
+      veteranLabel: "2016 Survivor DIC (§ 1318) & Pending Appeal",
+      practitionerLabel: "2016-09-01 Survivor § 1318 / § 3.22(b) + § 5121A Substitution + Nehmer",
+      shortDescription:
+        "Screens surviving spouse DIC (§ 1310 / § 1318 / § 3.33 PACT), 1-year § 5121A substitution, and § 3.816(f) Nehmer estate rules.",
+      state: {
+        decisionDate: "2016-09-01",
+        decisionAgency: "AOJ-RO",
+        issueFocus: "survivor-dic-accrued",
+        bvaMeritsSubsumed: "no",
+        priorBvaCueDecidedOnMerits: "no",
+        retireeStatus: "none",
+        answers: createAllNoAnswers({
+          survivor_or_post_mortem_claim_context: "yes",
+          ten_yr_total_service_death_or_pending_at_death_clue: "yes",
+          herbicide_exposure_and_presumptive_condition: "unknown",
+          prior_claim_or_coding_mention_since_1985: "unknown",
+        }),
+      },
+    },
+    {
+      presetId: "preset-2024-cod-pub-gap-and-combat-severance",
+      veteranLabel: "May 2024 OTH Discharge Rule Gap & Combat Severance",
+      practitionerLabel: "2024-05-15 § 3.12 COD FR Gap Trap (89 FR 32361) + § 3.354(b) & § 1212(d)(2)",
+      shortDescription:
+        "Decision between Apr. 26, 2024 FR publication and June 25, 2024 effective date of § 3.12 + § 3.354(b) insanity & combat severance check.",
+      state: {
+        decisionDate: "2024-05-15",
+        decisionAgency: "AOJ-RO",
+        issueFocus: "cod-or-insanity",
+        bvaMeritsSubsumed: "no",
+        priorBvaCueDecidedOnMerits: "no",
+        retireeStatus: "none",
+        answers: createAllNoAnswers({
+          oth_or_discharge_bar_blocked_benefits: "yes",
+          prior_good_enlistment_insanity_or_compelling_circumstances: "yes",
+          va_recouped_disability_severance_or_separation_pay: "yes",
+          combat_zone_post2008_pretax_gross_or_excess_withholding: "yes",
+        }),
       },
     },
   ];
@@ -455,11 +750,13 @@ function resolvePointInTimeLink(
   sectionSlug: string,
   cfrLabel: string,
   decisionDate: string,
+  canonicalSlugById?: ReadonlyMap<string, string>,
 ): PointInTimeAuthorityLink {
   const resolved = resolveCfrAtDate(versions, sectionSlug, decisionDate);
   const matchingSectionVersions = versions.filter(
     (v) =>
       (v as Partial<CompiledCfrVersion>).sectionSlug === sectionSlug ||
+      canonicalSlugById?.get(v.version_id) === sectionSlug ||
       normalizeCfrSlug(v.cfr_section) === sectionSlug,
   );
   const twoPaneForSec = buildBitemporalTwoPaneContext(
@@ -548,13 +845,112 @@ export function evaluateInvestigationSession(
     ? intake.decisionDate
     : "1974-08-12";
 
-  const wave1Slugs = new Set(["38-cfr-3.156c", "38-cfr-4.56", "38-cfr-4.118"]);
-  const wave1VersionsOnly = cfrVersions.filter((v) =>
-    wave1Slugs.has(normalizeCfrSlug(v.cfr_section)),
-  );
+  const canonicalSlugById = assignCanonicalSectionSlugs(cfrVersions);
+  const ans = (factId: string): TriValue => intake.answers[factId] ?? "unknown";
+
+  const contextSlugs = new Set<string>(["38-cfr-3.156c"]);
+  switch (intake.issueFocus) {
+    case "penetrating-scar-muscle":
+    case "general-collateral-review":
+      contextSlugs.add("38-cfr-4.56");
+      contextSlugs.add("38-cfr-4.118");
+      break;
+    case "finality-nod-informal-notice":
+      contextSlugs.add("38-cfr-3.157b");
+      break;
+    case "stabilized-reduction-or-severance":
+      contextSlugs.add("38-cfr-3.344");
+      contextSlugs.add("38-cfr-3.951");
+      contextSlugs.add("38-cfr-3.957");
+      contextSlugs.add("38-cfr-3.105e-i");
+      break;
+    case "tdiu-or-smc":
+      contextSlugs.add("38-cfr-4.16a-b");
+      contextSlugs.add("38-cfr-3.350f3-5");
+      contextSlugs.add("38-cfr-3.350j-3.352b-3.552b2");
+      break;
+    case "nehmer-herbicide":
+      contextSlugs.add("38-cfr-3.816");
+      break;
+    case "survivor-dic-accrued":
+      contextSlugs.add("38-cfr-3.22");
+      contextSlugs.add("38-cfr-3.33");
+      contextSlugs.add("38-cfr-3.312");
+      contextSlugs.add("38-cfr-3.1000");
+      contextSlugs.add("38-cfr-3.1010");
+      break;
+    case "cod-or-insanity":
+      contextSlugs.add("38-cfr-3.12a-l");
+      contextSlugs.add("38-cfr-3.13");
+      contextSlugs.add("38-cfr-3.354a-b");
+      break;
+    case "severance-recoupment":
+      contextSlugs.add("38-cfr-3.700a3-5");
+      break;
+  }
+  if (
+    ans("penetrating_wound_rated_only_as_scar") === "yes" ||
+    ans("deep_fascia_or_muscle_pathology_documented") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-4.56");
+    contextSlugs.add("38-cfr-4.118");
+  }
+  if (
+    ans("running_rating_reduced_or_severed") === "yes" ||
+    ans("stabilized_5_10_20yr_or_missing_60day_notice_clue") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-3.344");
+    contextSlugs.add("38-cfr-3.951");
+    contextSlugs.add("38-cfr-3.957");
+    contextSlugs.add("38-cfr-3.105e-i");
+  }
+  if (
+    ans("unemployability_or_smc_loss_of_use_housebound_clue") === "yes" ||
+    ans("va_omitted_inferred_tdiu_or_mandatory_smc") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-4.16a-b");
+    contextSlugs.add("38-cfr-3.350f3-5");
+  }
+  if (
+    ans("herbicide_exposure_and_presumptive_condition") === "yes" ||
+    ans("prior_claim_or_coding_mention_since_1985") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-3.816");
+  }
+  if (
+    ans("survivor_or_post_mortem_claim_context") === "yes" ||
+    ans("ten_yr_total_service_death_or_pending_at_death_clue") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-3.22");
+    contextSlugs.add("38-cfr-3.312");
+    contextSlugs.add("38-cfr-3.1000");
+    contextSlugs.add("38-cfr-3.1010");
+  }
+  if (
+    ans("oth_or_discharge_bar_blocked_benefits") === "yes" ||
+    ans("prior_good_enlistment_insanity_or_compelling_circumstances") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-3.12a-l");
+    contextSlugs.add("38-cfr-3.13");
+    contextSlugs.add("38-cfr-3.354a-b");
+  }
+  if (
+    ans("va_recouped_disability_severance_or_separation_pay") === "yes" ||
+    ans("combat_zone_post2008_pretax_gross_or_excess_withholding") === "yes"
+  ) {
+    contextSlugs.add("38-cfr-3.700a3-5");
+  }
+
+  const scopedContextVersions = cfrVersions.filter((v) => {
+    const slug =
+      (v as Partial<CompiledCfrVersion>).sectionSlug ??
+      canonicalSlugById.get(v.version_id) ??
+      normalizeCfrSlug(v.cfr_section);
+    return contextSlugs.has(slug);
+  });
   const twoPaneContext = buildBitemporalTwoPaneContext(
     safeDate,
-    wave1VersionsOnly.length > 0 ? wave1VersionsOnly : cfrVersions,
+    scopedContextVersions.length > 0 ? scopedContextVersions : cfrVersions,
   );
 
   const link3156c = resolvePointInTimeLink(
@@ -562,25 +958,145 @@ export function evaluateInvestigationSession(
     "38-cfr-3.156c",
     "38 C.F.R. § 3.156(c)",
     safeDate,
+    canonicalSlugById,
   );
   const link456 = resolvePointInTimeLink(
     cfrVersions,
     "38-cfr-4.56",
     "38 C.F.R. § 4.56",
     safeDate,
+    canonicalSlugById,
   );
   const link4118 = resolvePointInTimeLink(
     cfrVersions,
     "38-cfr-4.118",
     "38 C.F.R. § 4.118",
     safeDate,
+    canonicalSlugById,
+  );
+  const link3344 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.344",
+    "38 C.F.R. § 3.344",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3951 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.951",
+    "38 C.F.R. § 3.951",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3957 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.957",
+    "38 C.F.R. § 3.957",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3105ei = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.105e-i",
+    "38 C.F.R. § 3.105(e) & (i)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link416 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-4.16a-b",
+    "38 C.F.R. § 4.16(a)–(b)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3350f = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.350f3-5",
+    "38 C.F.R. § 3.350(f)(3)–(5)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3350j = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.350j-3.352b-3.552b2",
+    "38 C.F.R. §§ 3.350(j) & 3.352(b)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3816 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.816",
+    "38 C.F.R. § 3.816",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link322 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.22",
+    "38 C.F.R. § 3.22",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3312 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.312",
+    "38 C.F.R. § 3.312",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link31000 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.1000",
+    "38 C.F.R. § 3.1000",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link31010 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.1010",
+    "38 C.F.R. § 3.1010",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link312 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.12a-l",
+    "38 C.F.R. § 3.12",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link313 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.13",
+    "38 C.F.R. § 3.13",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3354 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.354a-b",
+    "38 C.F.R. § 3.354(a)–(b)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const link3700 = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-3.700a3-5",
+    "38 C.F.R. § 3.700(a)(3) & (5)",
+    safeDate,
+    canonicalSlugById,
+  );
+  const linkSubpartO = resolvePointInTimeLink(
+    cfrVersions,
+    "38-cfr-20.1400-20.1411",
+    "38 C.F.R. §§ 20.1400–20.1411",
+    safeDate,
+    canonicalSlugById,
   );
 
   const qById = new Map<string, ScreeningFactQuestion>(
-    WAVE1_SCREENING_QUESTIONS.map((q) => [q.factId, q]),
+    SCREENING_QUESTIONS.map((q) => [q.factId, q]),
   );
-
-  const ans = (factId: string): TriValue => intake.answers[factId] ?? "unknown";
 
   const isPre1992Bell = safeDate < "1992-07-21";
   const isPre2015Informal = safeDate < "2015-03-24";
@@ -704,6 +1220,132 @@ export function evaluateInvestigationSession(
       veteranDiscussionQuestions: [
         "Can we compare the 'Evidence' list on my original VA rating decision against an NPRC request (SF 180) for my inpatient military surgical/clinical hospital records?",
         "If official military or inpatient hospital records were missing back then, can we request reconsideration under 38 C.F.R. § 3.156(c) instead of filing a strict CUE motion?",
+      ],
+    });
+  }
+
+  // -------------------------------------------------------------------------
+  // PATHWAY 2: Brown Void Rating Reduction / Protected Evaluation Restoration (§§ 3.105(e), 3.344, 3.951, 3.957)
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fReduced = ans("running_rating_reduced_or_severed");
+    if (fReduced === "yes") {
+      triggeredVet.push(
+        "VA lowered an active running monthly disability rating or severed an existing grant of service connection.",
+      );
+      triggeredPrac.push(
+        "Challenged decision reduced an active running compensation evaluation or severed existing service connection.",
+      );
+    } else if (fReduced === "unknown") {
+      missing.push(RECORD_REDUCTION_NOTICE_AND_STABILIZATION);
+    } else {
+      blockingVet.push(
+        "You indicated VA did not lower an existing running disability rating or sever existing service connection.",
+      );
+      blockingPrac.push(
+        "Decision did not reduce an active running evaluation or sever existing service connection.",
+      );
+    }
+
+    const fProt = ans("stabilized_5_10_20yr_or_missing_60day_notice_clue");
+    if (fProt === "yes") {
+      triggeredVet.push(
+        "The rating had been in place 5+ years (or 10+ / 20+ years), or VA reduced it after a single exam, after a rating-schedule change, or without 60-day advance notice.",
+      );
+      triggeredPrac.push(
+        "Evidence of >=5-year stabilization (§ 3.344), >=10-year SC (§ 3.957), >=20-year protection (§ 3.951(b)), VASRD readjustment (§ 3.951(a)), or defective § 3.105(e)/(i) 60-day notice / predetermination freeze.",
+      );
+    } else if (fProt === "unknown") {
+      missing.push(RECORD_REDUCTION_NOTICE_AND_STABILIZATION);
+    } else {
+      blockingVet.push(
+        "You indicated the reduction followed full 60-day advance notice and complete medical proof on an unstabilized rating.",
+      );
+      blockingPrac.push(
+        "No § 3.344 / § 3.951 / § 3.957 protection or § 3.105(e)/(i) procedural notice defect identified.",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    const reductionLinks = [
+      link3344,
+      link3951,
+      ...(safeDate >= "1962-01-01" ? [link3957] : []),
+      ...(safeDate >= "1992-01-21" ? [link3105ei] : []),
+    ];
+
+    pathways.push({
+      pathwayId: "unlawful-reduction-3-344-3-951-3-957",
+      rankOrder: 2,
+      priorityBadgeVeteran:
+        "Priority 2 · Void Rating Reduction Check (Restores Rating Without Strict CUE)",
+      priorityBadgePractitioner:
+        "Tier 1A · Void Ab Initio Reduction / Severance Restoration (Brown v. Brown)",
+      veteranTitle:
+        "Restore an Unlawfully Lowered or Severed Existing Rating (38 C.F.R. §§ 3.105(e), 3.344, 3.951, 3.957)",
+      practitionerTitle:
+        "Void Rating Reduction & Statutory Protection Audit: 38 C.F.R. §§ 3.105(d)–(i), 3.343(a), 3.344, 3.951 & 3.957 (Brown v. Brown)",
+      veteranSummary:
+        "When VA lowers an active disability rating that has been in place 5+ years (§ 3.344) off a single exam without proving sustained improvement in daily life and work—or cuts a 20-year rating (§ 3.951(b)), severs 10-year service connection (§ 3.957), reduces solely because VA rewrote the rating schedule (§ 3.951(a)), or skips 60-day advance notice (§ 3.105(e))—courts treat the reduction as legally void from the beginning.",
+      practitionerSummary:
+        "Under Brown v. Brown, 5 Vet. App. 413 (1993), Kitchens v. Brown, 7 Vet. App. 320 (1995), and Stern v. McDonough, 34 Vet. App. 51 (2021), VA bears the affirmative burden to justify reducing a running compensation evaluation. Any reduction violating §§ 3.105(e)/(i), 3.343(a), 3.344(a)–(c), 3.951(a)–(b), or 3.957 is void ab initio—mandating full reinstatement back to the reduction effective date without pleading CUE.",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Void Reduction Restoration — VA Must Prove Lawful Notice & Sustained Real-Life Improvement",
+      doctrinalScopeBadge:
+        "Void Ab Initio Restoration (Brown / Kitchens / Stern) — Burden on VA Outside Collateral CUE",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "38 U.S.C. §§ 110, 1155, 1159",
+        "38 C.F.R. §§ 3.105(d)–(i), 3.343(a), 3.344, 3.951, 3.957",
+        "Brown v. Brown, 5 Vet. App. 413 (1993)",
+        "Kitchens v. Brown, 7 Vet. App. 320 (1995)",
+        "Stern v. McDonough, 34 Vet. App. 51 (2021)",
+      ],
+      bitemporalNoteVeteran:
+        safeDate < "1992-01-21"
+          ? `On ${safeDate}, 5-year stabilized rating rules (§ 3.344), 10-year severance rules (§ 3.957, eff. 1962/1968), and 20-year protection (§ 3.951(b)) governed running awards; VA added § 3.105(i) 30-day predetermination hearing rights effective January 21, 1992.`
+          : `On ${safeDate}, both substantive stabilization protections (§§ 3.344, 3.951, 3.957) and procedural 60-day notice + 30-day predetermination hearing protections (§ 3.105(e) & (i)) governed running awards.`,
+      bitemporalNotePractitioner: `Measure duration from the original rating effective date to the effective date of the reduced evaluation (§ 3.105(e) 60-day post-final-notice buffer counts toward 5-year § 3.344(c), 10-year § 3.957, and 20-year § 3.951(b) thresholds). ${safeDate < "1993-10-18" ? "Note: pre-Oct. 18, 1993 § 3.344 is Summary Only—verify 26 FR 1586 print text if needed." : "Verbatim post-Oct. 18, 1993 § 3.344 text resolved."}`,
+      pointInTimeLinks: reductionLinks,
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 05: Void Rating Reductions & Stabilized Ratings",
+          href: "/playbooks/05-void-rating-reductions-stabilized-ratings",
+        },
+        { label: "38 C.F.R. § 3.344 Stabilization Reader", href: "/cfr/38-cfr-3.344" },
+        { label: "38 C.F.R. § 3.951 Preservation Reader", href: "/cfr/38-cfr-3.951" },
+      ],
+      killSwitchesVeteran: [
+        "Stabilized reduction rules (§ 3.344) protect active running monthly ratings—not step-up/step-down 'staged ratings' assigned all at once inside a single multi-year appeal decision.",
+        "Temporary 100% surgical or hospital convalescent ratings (§§ 4.29 / 4.30) end on their scheduled date unless VA also lowered your underlying baseline rating.",
+      ],
+      killSwitchesToVerify: [
+        "Reizenstein v. Shinseki, 583 F.3d 1331 (Fed. Cir. 2009) & Singleton v. Shinseki, 659 F.3d 1332 (Fed. Cir. 2011): §§ 3.343(a) and 3.344 do NOT apply to retrospective staged evaluations assigned within a single multi-year initial/appellate grant.",
+        "38 C.F.R. §§ 4.29 & 4.30 Exemption: Expiration of fixed-duration hospital/surgical temporary 100% convalescence does not require § 3.105(e) notice unless the pre-existing baseline evaluation is reduced.",
+      ],
+      veteranDiscussionQuestions: [
+        "How many years was my higher rating in effect from its start date to the date my monthly payment actually dropped—did it cross the 5-year (§ 3.344), 10-year (§ 3.957), or 20-year (§ 3.951(b)) mark?",
+        "Did VA send a 60-day advance proposal notice (§ 3.105(e)) and compare my entire medical history rather than relying on a single C&P exam?",
       ],
     });
   }
@@ -853,6 +1495,510 @@ export function evaluateInvestigationSession(
   }
 
   // -------------------------------------------------------------------------
+  // PATHWAY 4: Nehmer Herbicide Class-Action Retroactive Award & Estate Payee Audit (§ 3.816)
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fHerb = ans("herbicide_exposure_and_presumptive_condition");
+    if (fHerb === "yes") {
+      triggeredVet.push(
+        "Qualifying Agent Orange / herbicide service (Vietnam, Blue Water Navy, Korean DMZ, Thailand, or PACT herbicide locations) and a presumptive herbicide condition were identified.",
+      );
+      triggeredPrac.push(
+        "Qualifying herbicide exposure (38 U.S.C. §§ 1116/1116A; § 3.307(a)(6)) and covered § 3.309(e) / PACT herbicide disease identified.",
+      );
+    } else if (fHerb === "unknown") {
+      missing.push(RECORD_HERBICIDE_DECK_LOGS_AND_NEHMER);
+    } else {
+      blockingVet.push(
+        "You indicated no qualifying Agent Orange / herbicide service or presumptive herbicide condition applies.",
+      );
+      blockingPrac.push(
+        "No qualifying herbicide exposure or covered § 3.309(e) / PACT herbicide condition identified.",
+      );
+    }
+
+    const f1985 = ans("prior_claim_or_coding_mention_since_1985");
+    if (f1985 === "yes") {
+      triggeredVet.push(
+        "An earlier VA claim, denial, or Rating Code Sheet entry on or after September 25, 1985 involved that herbicide condition.",
+      );
+      triggeredPrac.push(
+        "Prior claim, denial, or § 3.816(c)(2) diagnostic-coding entry on/after Sept. 25, 1985 (or unpaid § 3.816(f) survivor/estate arrears) identified.",
+      );
+    } else if (f1985 === "unknown") {
+      missing.push(RECORD_HERBICIDE_DECK_LOGS_AND_NEHMER);
+    } else {
+      blockingVet.push(
+        "You indicated there was no prior claim or Rating Code Sheet entry on or after September 25, 1985 for that condition.",
+      );
+      blockingPrac.push(
+        "No prior claim or § 3.816(c)(2) coding mention between Sept. 25, 1985 and the date the disease was added to § 3.309(e).",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    pathways.push({
+      pathwayId: "nehmer-herbicide-retroactive-3-816",
+      rankOrder: 4,
+      priorityBadgeVeteran:
+        "Priority 4 · Agent Orange / Nehmer Retroactive Class Protection (38 C.F.R. § 3.816)",
+      priorityBadgePractitioner:
+        "Tier 1C · Nehmer Consent-Decree Retroactive Effective Date & Estate Payment (§ 3.816)",
+      veteranTitle:
+        "Agent Orange / Herbicide Retroactive Effective Dates & Survivor/Estate Payments (38 C.F.R. § 3.816)",
+      practitionerTitle:
+        "Nehmer Class-Action Effective-Date & Uncapped Estate/Payee Audit (38 C.F.R. § 3.816(c)–(f))",
+      veteranSummary:
+        "Under the federal Nehmer court orders (38 C.F.R. § 3.816), if a Veteran with qualifying herbicide exposure filed a claim—or had the condition listed on a VA Rating Code Sheet—on or after September 25, 1985 before VA recognized the illness as presumptive, VA must pay retroactive benefits back to that earlier claim (or when the illness began), including full uncapped back pay to eligible survivors or estates.",
+      practitionerSummary:
+        "Displaces 38 U.S.C. § 5110(g) and 38 C.F.R. § 3.114(a) for covered herbicide presumptions (including Blue Water Navy § 1116A and PACT Act herbicide additions such as hypertension and MGUS). Under 86 FR 68409 (effective December 2, 2021), VA removed the final sentence of § 3.816(f)(3), mandating full retroactive payment to newly identified § 3.816(f)(1) payees or the Veteran's estate with zero 1-year accrued-benefits filing bar.",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Mandatory Retroactive Class Rule — Reaches Back to Post-Sept. 25, 1985 Claims & Pays Survivors or Estates Without a 1-Year Filing Bar",
+      doctrinalScopeBadge:
+        "Displaces § 5110(g) / § 3.114(a) & § 5121 Time Bars — Includes Post-Dec. 2, 2021 Uncapped § 3.816(f) Payee Rule",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "38 U.S.C. §§ 1116, 1116A",
+        "38 C.F.R. §§ 3.307(a)(6), 3.309(e), 3.816(c)–(f)",
+        "86 FR 68409 (Dec. 2, 2021)",
+        "Pub. L. 117-168, §§ 403–404 (PACT Act)",
+      ],
+      bitemporalNoteVeteran:
+        "Even if the earlier denial happened in the 1980s or 1990s before § 3.816 was printed in 2003, modern Nehmer rules reach back to claims filed or pending on or after September 25, 1985—and since December 2, 2021, prior payments to another relative no longer block newly identified eligible family members or estates.",
+      bitemporalNotePractitioner:
+        safeDate >= "2003-09-24"
+          ? `T₀ § 3.816 snapshot resolved (${link3816.effectiveIntervalLabel}); apply current post-December 2, 2021 § 3.816(f) uncapped payee rule (86 FR 68409) and audit Footnote 1 diagnostic-code mentions on all post-Sept. 25, 1985 Code Sheets.`
+          : `Although ${safeDate} precedes the Sept. 24, 2003 codification of 38 C.F.R. § 3.816, Nehmer operates today as a binding retroactive vehicle reaching claims filed on/after Sept. 25, 1985 (or pending May 3, 1989) alongside post-December 2, 2021 (86 FR 68409) uncapped § 3.816(f) estate rules.`,
+      pointInTimeLinks: safeDate >= "2003-09-24" ? [link3816] : [],
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 06: Nehmer Herbicide Presumptions & CRSC",
+          href: "/playbooks/06-nehmer-herbicide-presumptions-crsc",
+        },
+        { label: "38 C.F.R. § 3.816 Nehmer Reader & Redline", href: "/cfr/38-cfr-3.816" },
+      ],
+      killSwitchesVeteran: [
+        "Nehmer (§ 3.816) covers tactical herbicide / Agent Orange diseases—non-herbicide PACT Act burn-pit conditions follow different effective-date rules (typically August 10, 2022 or 1-year lookback, unless survivor DIC re-evaluation under § 3.33 applies).",
+        "Retroactive compensation cannot start earlier than the date medical evidence shows the herbicide illness first manifested.",
+      ],
+      killSwitchesToVerify: [
+        "Herbicide Scope Distinction: 38 C.F.R. § 3.816 governs herbicide-exposed class conditions—do not conflate with non-herbicide 38 U.S.C. § 1120 / 38 C.F.R. § 3.320 PACT burn-pit presumptions (which remain subject to § 3.114(a) / Aug. 10, 2022 floors except under 38 U.S.C. § 1305 / 38 C.F.R. § 3.33 DIC re-evaluation).",
+        "Manifestation Floor (§ 3.816(c)(1)–(2)): Retroactive effective date is the later of the prior claim receipt date or the date the covered disease first manifested to a compensable degree.",
+      ],
+      veteranDiscussionQuestions: [
+        "Do any VA Rating Code Sheets or medical notes in my C-file since September 25, 1985 list or mention my herbicide condition before VA finally granted it?",
+        "If I am a survivor or estate representative, has VA audited unpaid Nehmer benefits under the post-December 2, 2021 § 3.816(f) rules?",
+      ],
+    });
+  }
+
+  // -------------------------------------------------------------------------
+  // PATHWAY 5: Inferred TDIU (§ 4.16; Roberson) & Mandatory Statutory SMC (38 U.S.C. § 1114(k)–(t))
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fClue = ans("unemployability_or_smc_loss_of_use_housebound_clue");
+    if (fClue === "yes") {
+      triggeredVet.push(
+        "Records indicate service-connected disabilities prevented full-time work (TDIU) or involved loss of use, 100% + 60% housebound ratings, or daily Aid and Attendance / TBI care needs (SMC).",
+      );
+      triggeredPrac.push(
+        "Record contains unemployability evidence (§ 4.16; Roberson/Rice) or statutory 38 U.S.C. § 1114(k)–(t) predicates (loss of use, SMC(s) 100%+60%, A&A, § 3.350(f) steps, or TBI SMC(t)).",
+      );
+    } else if (fClue === "unknown") {
+      missing.push(RECORD_UNEMPLOYABILITY_AND_SMC_FUNCTIONAL);
+    } else {
+      blockingVet.push(
+        "You indicated no unemployability (TDIU), loss-of-use, housebound, or Aid and Attendance (SMC) clues apply.",
+      );
+      blockingPrac.push(
+        "No unemployability (§ 4.16) or statutory SMC (§ 1114(k)–(t)) factual predicates indicated.",
+      );
+    }
+
+    const fOmitted = ans("va_omitted_inferred_tdiu_or_mandatory_smc");
+    if (fOmitted === "yes") {
+      triggeredVet.push(
+        "VA assigned only standard disability percentages while skipping TDIU or Special Monthly Compensation (or capped multi-step SMC increases).",
+      );
+      triggeredPrac.push(
+        "VA failed to adjudicate reasonably raised TDIU, omitted mandatory statutory SMC, or capped § 3.350(f)(3)–(4) steps at a single bump.",
+      );
+    } else if (fOmitted === "unknown") {
+      missing.push(RECORD_CFILE_CODE_SHEET_AND_NARRATIVE);
+    } else {
+      blockingVet.push(
+        "You indicated VA already fully addressed and paid all applicable TDIU and SMC benefits.",
+      );
+      blockingPrac.push(
+        "TDIU and all applicable statutory SMC levels were already explicitly adjudicated and awarded.",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    const tdiuSmcLinks = [
+      link416,
+      link3350f,
+      ...(safeDate >= "2018-06-07" ? [link3350j] : []),
+    ];
+
+    pathways.push({
+      pathwayId: "inferred-tdiu-and-statutory-smc",
+      rankOrder: 5,
+      priorityBadgeVeteran:
+        "Priority 5 · Unaddressed Unemployability (TDIU) & Special Monthly Compensation (SMC)",
+      priorityBadgePractitioner:
+        "Tier 2A · Inferred § 4.16 TDIU (Roberson) & Mandatory Statutory SMC (§ 1114(k)–(t))",
+      veteranTitle:
+        "Check for Unaddressed Unemployability (TDIU) or Mandatory Special Monthly Compensation (SMC k–t)",
+      practitionerTitle:
+        "Inferred TDIU (38 C.F.R. § 4.16; Roberson/Rice) & Mandatory Statutory SMC Audit (38 U.S.C. § 1114(k)–(t); Buie / Bradley / Barry / Laska)",
+      veteranSummary:
+        "Veterans do not have to know Special Monthly Compensation (SMC) letter codes—VA must award SMC automatically whenever medical facts show loss of use of a hand/foot/organ, a single 100% rating (including TDIU) plus additional 60%+ ratings (SMC(s)), or need for daily Aid and Attendance. Likewise, before March 24, 2015 (and in omitted AMA issues), evidence that service-connected conditions prevented work could raise an inferred TDIU claim automatically.",
+      practitionerSummary:
+        "Combines two high-yield doctrines: (1) reasonably raised TDIU as part and parcel of an increased-rating stream (Roberson v. Principi, 251 F.3d 1378 (Fed. Cir. 2001); Rice v. Shinseki, 22 Vet. App. 447 (2009); pre-Mar. 24, 2015 informal claims or post-Feb. 19, 2019 AMA § 5104(b) omissions), and (2) mandatory statutory SMC entitlement whenever Code Sheet / exam predicates are met (Akles; Buie; Bradley TDIU+60% SMC(s); Barry uncapped § 3.350(f)(3)–(4) steps; Laska TBI SMC(t)).",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Mandatory Benefit Check — Pairs With Open Pending Claims, § 3.156(c) Records, or Current Supplemental Claims",
+      doctrinalScopeBadge:
+        "Hybrid Open-Stream (Roberson) & Statutory SMC Audit — Observe George (§ 20.1403(e)) Bar on Later Judicial Reinterpretations",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "38 U.S.C. § 1114(k)–(t)",
+        "38 C.F.R. §§ 3.350, 3.352, 4.16",
+        "Roberson v. Principi, 251 F.3d 1378 (Fed. Cir. 2001)",
+        "Buie v. Shinseki, 24 Vet. App. 242 (2011)",
+        "Barry v. McDonough, 101 F.4th 1348 (Fed. Cir. 2024)",
+        "Laska v. McDonough, 37 Vet. App. 460 (2024)",
+      ],
+      bitemporalNoteVeteran: link416.publicationGapTrapAlert
+        ? `Important Date Alert (${safeDate}): VA's 1990 TDIU poverty-threshold update (55 FR 31579) was published August 3, 1990 but did not take effect until September 4, 1990—so the earlier 1975 edition of § 4.16 governed on ${safeDate}. Also note TBI SMC(t) took effect October 1, 2011.`
+        : `On ${safeDate}, check whether unemployability was raised before VA's March 24, 2015 standardized-form rule (VA Form 21-8940) and whether later SMC rulings like Barry (2024) or Laska (2024) require an open claim or Supplemental Claim rather than CUE.`,
+      bitemporalNotePractitioner: `${link416.publicationGapTrapAlert ? `${link416.publicationGapTrapAlert} ` : ""}Audit pre-March 24, 2015 informal/inferred TDIU (VA Form 21-8940 standardized eff. Mar. 24, 2015 at 79 FR 57660; former § 4.16(c) 70% mental rule in force Mar. 1, 1989 – Nov. 6, 1996) and SMC statutory floors (SMC(t) floor Oct. 1, 2011 under Pub. L. 111-275; breast SMC(k) Nov. 1, 2000 / Dec. 6, 2002).`,
+      pointInTimeLinks: tdiuSmcLinks,
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 04: Unadjudicated TDIU, Informal Claims & SMC",
+          href: "/playbooks/04-unadjudicated-tdiu-informal-claims-smc",
+        },
+        {
+          label: "Playbook 12: Aid & Attendance, SMC(l)–(r) & TBI SMC(t)",
+          href: "/playbooks/12-aid-and-attendance-smc-l-r1-r2-and-smc-t",
+        },
+        {
+          label: "SMC Complete Treatise & Step Math",
+          href: "/docs/smc-complete-treatise-and-step-math",
+        },
+      ],
+      killSwitchesVeteran: [
+        "Since March 24, 2015, starting a new TDIU claim generally requires submitting VA Form 21-8940.",
+        "Under George v. McDonough (2022), recent court rulings like Barry (2024 multi-step SMC) and Laska (2024 TBI SMC(t)) apply to open claims, appeals, and Supplemental Claims—not strict CUE motions against older final decisions.",
+      ],
+      killSwitchesToVerify: [
+        "George v. McDonough, 596 U.S. 740 (2022) & 38 C.F.R. § 20.1403(e): Never plead later judicial reinterpretations—such as Barry v. McDonough (May 16, 2024), Laska v. McDonough (Sept. 6, 2024), or Bradley v. Peake (2008)—as CUE against final decisions predating those holdings; pursue open streams, § 3.156(c), or § 5108 Supplemental Claims.",
+        "Post-March 24, 2015 Form Gate (79 FR 57660) & SMC(t) Floor: Formal VA Form 21-8940 applies post-Mar. 24, 2015; 38 U.S.C. § 1114(t) carries an absolute statutory effective-date floor of October 1, 2011.",
+      ],
+      veteranDiscussionQuestions: [
+        "Did my VAMC notes, C&P exams, or Social Security disability records before March 24, 2015 show my service-connected conditions kept me from working without VA deciding TDIU?",
+        "Looking at my Rating Code Sheet percentages and functional limits, do I qualify for SMC(k), housebound SMC(s), Aid and Attendance SMC(l), or multi-step increases under § 3.350(f)?",
+      ],
+    });
+  }
+
+  // -------------------------------------------------------------------------
+  // PATHWAY 6: Survivor DIC (§ 1310 / § 1318 / § 3.22(b) / § 3.33 PACT) & Substitution (§ 5121A)
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fSurv = ans("survivor_or_post_mortem_claim_context");
+    if (fSurv === "yes") {
+      triggeredVet.push(
+        "You are checking survivor or post-mortem benefits (monthly DIC, substitution in a pending claim, or unpaid accrued benefits) after a Veteran's death.",
+      );
+      triggeredPrac.push(
+        "Post-mortem survivor or estate posture confirmed (Chapter 13 DIC, § 5121A substitution, § 5121 accrued, or § 3.816(f) Nehmer).",
+      );
+    } else if (fSurv === "unknown") {
+      missing.push(RECORD_SURVIVOR_DEATH_CERT_AND_PENDING_DOCKET);
+    } else {
+      blockingVet.push(
+        "You indicated this review is for a living Veteran rather than a survivor or estate claim.",
+      );
+      blockingPrac.push(
+        "Veteran is living—post-mortem Chapter 13 DIC and §§ 5121/5121A survivor/accrued vehicles are inapplicable.",
+      );
+    }
+
+    const fDeath = ans("ten_yr_total_service_death_or_pending_at_death_clue");
+    if (fDeath === "yes") {
+      triggeredVet.push(
+        "A service-connected or PACT/toxic condition caused or contributed to death, OR the Veteran had (or was owed) 10+ years at 100%/TDIU, OR a claim was pending at death.",
+      );
+      triggeredPrac.push(
+        "Evidence of § 3.312 direct/contributory SC death, § 3.33 PACT DIC re-evaluation, 10-year § 1318 / § 3.22(b)(1)–(2) total disability, or pending claim at death (§ 5121A / § 3.1000).",
+      );
+    } else if (fDeath === "unknown") {
+      missing.push(RECORD_SURVIVOR_DEATH_CERT_AND_PENDING_DOCKET);
+    } else {
+      blockingVet.push(
+        "You indicated death was unrelated to service/presumptions, total disability lasted under 10 years, and no claim was pending at death.",
+      );
+      blockingPrac.push(
+        "No § 3.312 causal/contributory nexus, § 3.33 PACT presumption, § 1318 10-year total rating predicate, or pending claim at death identified.",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    const survivorLinks = [
+      link3312,
+      ...(safeDate >= "1978-10-01" ? [link322] : []),
+      link31000,
+      ...(safeDate >= "2014-10-06" ? [link31010] : []),
+    ];
+
+    pathways.push({
+      pathwayId: "survivor-dic-1318-and-substitution-5121a",
+      rankOrder: 6,
+      priorityBadgeVeteran:
+        "Priority 6 · Survivor DIC (§ 1310 / § 1318 / PACT § 3.33) & Pending-Claim Substitution",
+      priorityBadgePractitioner:
+        "Tier 2B · Chapter 13 DIC (§§ 1310, 1318, 1305/§ 3.33) & §§ 5121 / 5121A Substitution",
+      veteranTitle:
+        "Survivor Monthly DIC (§ 1310 / 10-Year § 1318 / PACT § 3.33), Pending-Claim Substitution & Accrued Back Pay",
+      practitionerTitle:
+        "Post-Mortem Triage: Direct/Contributory DIC (§ 3.312), § 1318 / § 3.22(b), PACT § 3.33 Re-Evaluation & § 5121A Substitution",
+      veteranSummary:
+        "Surviving spouses, dependent children, and eligible parents can qualify for monthly Dependency and Indemnity Compensation (DIC) if a service-connected or PACT Act illness caused or contributed to death (§ 3.312)—and if VA previously denied DIC before a post-August 10, 2022 presumption, 38 C.F.R. § 3.33 allows retroactive re-evaluation back to the original DIC claim. Even when death was unrelated to service, DIC applies if the Veteran held (or was owed via missing military records or lifetime-claim CUE under § 3.22(b)) 100% or TDIU for 10 continuous years (§ 1318). If a claim was pending at death, filing VA Form 21P-0847 within 1 year lets an eligible survivor step in to finish it.",
+      practitionerSummary:
+        "Coordinates four distinct survivor tracks: (1) § 1310 / § 3.312 principal or contributory death (plus 38 U.S.C. § 1305 / 38 C.F.R. § 3.33, eff. Jan. 23, 2024, assigning original-DIC-claim effective dates 'notwithstanding section 5110' on re-evaluated PACT claims); (2) § 1318 / § 3.22(b)(1)–(2) posthumous 10-year total-disability satisfaction via lifetime CUE or § 3.156(c) service records; (3) 1-year § 5121A substitution (VA Form 21P-0847, eff. Oct. 10, 2008 / § 3.1010 eff. Oct. 6, 2014) preserving open record development vs. closed-record § 5121 / § 3.1000 accrued benefits (uncapped post-Dec. 16, 2003); and (4) § 3.55 remarriage retention (age 57 on/after Jan. 1, 2004; age 55 on/after Jan. 5, 2021).",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Time-Sensitive Survivor Protections — Watch the 1-Year Death Filing Window for Substitution (21P-0847) & DIC",
+      doctrinalScopeBadge:
+        "Multi-Track Survivor & Estate Gate — Contrast 1-Yr § 5121A / § 5121 Deadlines With Uncapped § 3.816(f) & § 3.33(d)(1)",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "38 U.S.C. §§ 1305, 1310, 1318, 5121, 5121A",
+        "38 C.F.R. §§ 3.22, 3.33, 3.55(a)(9)–(11), 3.312, 3.1000, 3.1010",
+        "Rodriguez v. Peake, 511 F.3d 1147 (Fed. Cir. 2008)",
+        "Nat'l Org. of Veterans' Advocates v. Sec'y, 809 F.3d 1359 (Fed. Cir. 2016)",
+      ],
+      bitemporalNoteVeteran:
+        "Key Survivor Dates: Substitution (21P-0847) and non-Nehmer accrued claims must be filed within 1 year of the Veteran's death; filing DIC within 1 year of death pays back to the month of death; PACT DIC re-evaluation (§ 3.33) took effect January 23, 2024; and DIC remarriage retention dropped from age 57 to age 55 for remarriages on or after January 5, 2021.",
+      bitemporalNotePractitioner: `Check post-Jan. 21, 2000 § 3.22(b) restriction (NOVA II / Rodriguez / Tarver abrogated open-ended Green v. Brown hypothetical § 1318 claims, confining posthumous 10-year proof to § 3.22(b)(1) lifetime CUE or § 3.22(b)(2) missing service records), 38 C.F.R. § 3.33(d)(1) PACT DIC re-evaluation (88 FR 82261, eff. Jan. 23, 2024), Dec. 16, 2003 repeal of the 2-year § 3.1000(a) accrued cap, Oct. 10, 2008 § 5121A statutory substitution floor, and Jan. 5, 2021 age-55 § 3.55 remarriage cutoff.`,
+      pointInTimeLinks: survivorLinks,
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 08: Survivor DIC (§ 1310, § 1318 & PACT § 3.33)",
+          href: "/playbooks/08-survivor-dic-direct-and-1318-hypothetical",
+        },
+        {
+          label: "Playbook 09: Accrued Benefits, Substitution & Nehmer Estates",
+          href: "/playbooks/09-accrued-benefits-substitution-nehmer-estates",
+        },
+        {
+          label: "Survivor Post-Mortem Triage Checklist",
+          href: "/checklists/survivor-post-mortem-triage-gate",
+        },
+      ],
+      killSwitchesVeteran: [
+        "Strict 1-Year Clock: Substitution (VA Form 21P-0847) and standard accrued-benefits claims must be filed within 1 year of the Veteran's death (only Agent Orange Nehmer § 3.816(f) back pay has no 1-year filing bar).",
+        "Since January 21, 2000, proving 10-year 100%/TDIU after death under § 1318 requires either missing military records (§ 3.22(b)(2)) or CUE in a decision on a claim the Veteran filed during life (§ 3.22(b)(1))—not a brand-new hypothetical claim.",
+      ],
+      killSwitchesToVerify: [
+        "1-Year Jurisdictional Filing Bar (38 U.S.C. §§ 5121(c), 5121A(a)(1); 38 C.F.R. §§ 3.1000(c), 3.1010(b)): Accrued and substitution requests must be filed within 1 year of death (contrast § 3.816(f) Nehmer awards).",
+        "Post-Jan. 21, 2000 § 3.22(b) Hypothetical Bar (Rodriguez v. Peake; Tarver v. Shinseki): Green v. Brown hypothetical § 1318 claims are barred unless predicated on § 3.22(b)(1) lifetime-claim CUE or § 3.22(b)(2) newly associated official service department records.",
+        "Remarriage Age Split (38 C.F.R. § 3.55(a)(9)–(11)): Age 55 applies to remarriages on/after Jan. 5, 2021 for DIC (Pub. L. 116-315, § 2009), whereas Jan. 1, 2004 – Jan. 4, 2021 remarriages (and DEA Ch. 35 / Ch. 37 home loans) require age 57.",
+      ],
+      veteranDiscussionQuestions: [
+        "Was any VA claim or appeal pending when my loved one passed away so we should file VA Form 21P-0847 (Substitution) and VA Form 21P-534EZ within 1 year of death?",
+        "Was DIC previously denied for a condition later added by the PACT Act (eligible for retroactive re-evaluation under 38 C.F.R. § 3.33), or can missing military records establish 10-year 100%/TDIU under § 3.22(b)(2)?",
+      ],
+    });
+  }
+
+  // -------------------------------------------------------------------------
+  // PATHWAY 7: Character of Discharge (2024 § 3.12 Overhaul), § 3.13(c) & § 3.354(b) Insanity
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fCod = ans("oth_or_discharge_bar_blocked_benefits");
+    if (fCod === "yes") {
+      triggeredVet.push(
+        "VA denied benefits or eligibility based on an Other-Than-Honorable (OTH), Bad Conduct (BCD), or Character of Discharge bar.",
+      );
+      triggeredPrac.push(
+        "Threshold veteran-status eligibility barred or challenged under 38 U.S.C. § 5303(a) or 38 C.F.R. § 3.12.",
+      );
+    } else if (fCod === "unknown") {
+      missing.push(RECORD_DD214_OMPF_AND_DISCHARGE_MENTAL_HEALTH);
+    } else {
+      blockingVet.push(
+        "You indicated discharge character was already honorable / eligible with no Character of Discharge bar.",
+      );
+      blockingPrac.push(
+        "No statutory (§ 5303) or regulatory (§ 3.12) Character of Discharge bar at issue.",
+      );
+    }
+
+    const fExc = ans("prior_good_enlistment_insanity_or_compelling_circumstances");
+    if (fExc === "yes") {
+      triggeredVet.push(
+        "Records point to an earlier completed honorable enlistment (§ 3.13(c)), severe mental health / TBI / trauma at the time of the conduct (§ 3.354(b) insanity or 2024 § 3.12(e) compelling circumstances), or a discharge upgrade.",
+      );
+      triggeredPrac.push(
+        "OMPF/clinical clues support § 3.13(c) conditional discharge, § 3.354(b) insanity, June 25, 2024 § 3.12(d)(2)/(e) compelling circumstances, or a BCMR/DRB upgrade (§ 3.400(g)).",
+      );
+    } else if (fExc === "unknown") {
+      missing.push(RECORD_DD214_OMPF_AND_DISCHARGE_MENTAL_HEALTH);
+    } else {
+      blockingVet.push(
+        "You indicated no prior honorable enlistment, mental-health/trauma circumstances, or military discharge upgrade applies.",
+      );
+      blockingPrac.push(
+        "No § 3.13(c) prior unconditional period, § 3.354(b) insanity predicate, § 3.12(e) compelling circumstances, or § 3.400(g) upgrade identified.",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    const codLinks = [link312, link313, link3354];
+
+    pathways.push({
+      pathwayId: "cod-insanity-and-2024-3-12-gateway",
+      rankOrder: 7,
+      priorityBadgeVeteran:
+        "Priority 7 · OTH / Discharge Bar Exceptions (2024 § 3.12, Insanity & Prior Enlistments)",
+      priorityBadgePractitioner:
+        "Tier 2C · Character of Discharge Gateway: 2024 § 3.12(e), § 3.13(c) & § 3.354(b) Insanity",
+      veteranTitle:
+        "Overcome an OTH or Discharge Bar: Earlier Enlistments (§ 3.13), Insanity (§ 3.354(b)) & June 2024 Compelling Circumstances (§ 3.12)",
+      practitionerTitle:
+        "Character of Discharge & Statutory Bar Audit: 38 C.F.R. §§ 3.12 (June 25, 2024 Overhaul), 3.13(c), 3.354(b) & 3.400(g)",
+      veteranSummary:
+        "An Other-Than-Honorable (OTH) discharge does not automatically block VA benefits forever: (1) if you completed an earlier honorable enlistment and immediately reenlisted without a break, benefits from that earlier period remain protected (§ 3.13(c)); (2) VA's non-criminal 'insanity' rule (§ 3.354(b)) removes discharge bars when severe service-related mental illness, PTSD, or TBI drove the misconduct; and (3) effective June 25, 2024, VA expanded § 3.12(e) 'compelling circumstances' review for older COD denials via a Supplemental Claim (20-0995).",
+      practitionerSummary:
+        "Triages four independent gateways: (1) 38 U.S.C. § 101(18)(B) / 38 C.F.R. § 3.13(c) unconditional prior enlistment preservation (VAOPGCPREC 10-96); (2) 38 U.S.C. § 5303(b) / 38 C.F.R. § 3.354(b) disease-induced insanity lifting even statutory GCM bars (Zang; Gardner; VAOPGCPREC 20-97); (3) VA's June 25, 2024 § 3.12 overhaul (89 FR 32361, published Apr. 26, 2024, effective June 25, 2024) narrowing willful/persistent misconduct (§ 3.12(d)(2)(ii)) and extending § 3.12(e) compelling circumstances; and (4) 10 U.S.C. §§ 1552/1553 BCMR/DRB upgrades under 38 C.F.R. § 3.400(g).",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Eligibility Gateway — § 3.13(c) & § 3.354(b) Apply Across Eras; June 25, 2024 § 3.12 Rules Open New Supplemental Claims Today",
+      doctrinalScopeBadge:
+        "Bitemporal Split: § 3.13(c) & § 3.354(b) Extant Since 1961/1978; 2024 § 3.12(d)(2)/(e) Prospective Floor June 25, 2024 (§ 3.114(a))",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "38 U.S.C. §§ 101(18)(B), 5110(i), 5303(a)–(b)",
+        "38 C.F.R. §§ 3.12(a)–(l) (89 FR 32361, eff. June 25, 2024), 3.13(c), 3.354(a)–(b), 3.400(g)",
+        "Zang v. Brown, 8 Vet. App. 246 (1995)",
+        "Gardner v. Shinseki, 22 Vet. App. 415 (2009)",
+        "VAOPGCPREC 10-96 & VAOPGCPREC 20-97",
+      ],
+      bitemporalNoteVeteran: link312.publicationGapTrapAlert
+        ? `Important Date Alert (${safeDate}): VA published its updated Character of Discharge rule on April 26, 2024 (89 FR 32361), but it did not take effect until June 25, 2024—so the pre-June 25, 2024 text governed on ${safeDate}, while you can file a Supplemental Claim (20-0995) under the June 25, 2024 rule today.`
+        : safeDate < "2024-06-25"
+          ? `While the expanded § 3.12(e) compelling-circumstances rule cannot pay benefits earlier than June 25, 2024, both the earlier-enlistment rule (§ 3.13(c)) and VA's mental-health insanity exception (§ 3.354(b)) already existed on ${safeDate}.`
+          : `On ${safeDate}, the overhauled post-June 25, 2024 edition of 38 C.F.R. § 3.12(d)(2) & (e) governed alongside § 3.13(c) and § 3.354(b).`,
+      bitemporalNotePractitioner: `${link312.publicationGapTrapAlert ? `${link312.publicationGapTrapAlert} ` : ""}Explicit 89 FR 32361 Applicability Gate: Revised § 3.12(d)–(e) applies to claims pending on or received on/after June 25, 2024 with a § 3.114(a) effective-date floor of June 25, 2024 (never cite 2024 § 3.12 to plead CUE on pre-June 25, 2024 final denials—use § 3.13(c), § 3.354(b), or § 3.156(c) OMPF records for pre-2024 retroactivity).`,
+      pointInTimeLinks: codLinks,
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 10: Character of Discharge, Insanity & Upgrades",
+          href: "/playbooks/10-character-of-discharge-insanity-upgrades",
+        },
+        {
+          label: "COD & Guard/Reserve Intake Checklist",
+          href: "/checklists/cod-and-guard-reserve-intake-audit",
+        },
+        { label: "38 C.F.R. § 3.12 Point-in-Time Reader & Redline", href: "/cfr/38-cfr-3.12a-l" },
+      ],
+      killSwitchesVeteran: [
+        "Regulatory 'compelling circumstances' (§ 3.12(e)) cannot waive a General Court-Martial sentence or a discharge in lieu of General Court-Martial—though VA's § 3.354(b) insanity exception and § 3.13(c) prior-enlistment protection still can.",
+        "Grants based solely on VA's June 25, 2024 § 3.12 rule change cannot have an effective date earlier than June 25, 2024.",
+      ],
+      killSwitchesToVerify: [
+        "Statutory § 5303(a) & § 3.12(d)(1) Non-Mitigable Bars: § 3.12(e) compelling circumstances applies to § 3.12(c)(6) prolonged AWOL and § 3.12(d)(2) moral-turpitude / willful-and-persistent misconduct—NOT statutory General Court-Martial bars or § 3.12(d)(1)(i) discharge in lieu of GCM (screen § 3.354(b) insanity or § 3.13(c) prior enlistment instead).",
+        "Pub. L. 95-126 Special Upgrade Bar (§ 3.12(h)) & § 3.114(a) Floor: Verify whether a DRB upgrade was under a 1977 special program, and enforce the June 25, 2024 effective-date floor on liberalizing § 3.12 re-filings.",
+      ],
+      veteranDiscussionQuestions: [
+        "Does my OMPF show I completed an earlier enlistment and immediately reenlisted so my first period of service is unconditionally protected under 38 C.F.R. § 3.13(c)?",
+        "Should we file a Supplemental Claim (20-0995) requesting both a June 25, 2024 § 3.12(e) compelling-circumstances review and a 38 C.F.R. § 3.354(b) mental-health insanity determination?",
+      ],
+    });
+  }
+
+  // -------------------------------------------------------------------------
   // PATHWAY 3: § 4.56 Muscle Group vs. § 4.118 Scar Multi-Manifestation Audit
   // -------------------------------------------------------------------------
   {
@@ -913,7 +2059,7 @@ export function evaluateInvestigationSession(
     const isPre1997Muscle = safeDate < "1997-07-03";
     const scarsSummaryOnlyCaution =
       link4118.coverageState === "SUMMARY_ONLY"
-        ? " Note: Post-Oct. 23, 2008 § 4.118 scar criteria are Summary Only in Wave 1—pull the official print 38 C.F.R. § 4.118 edition before pleading scar CUE."
+        ? " Note: Post-Oct. 23, 2008 § 4.118 scar criteria are Summary Only—pull the official print 38 C.F.R. § 4.118 edition before pleading scar CUE."
         : "";
 
     pathways.push({
@@ -988,6 +2134,190 @@ export function evaluateInvestigationSession(
       ],
     });
   }
+
+  // -------------------------------------------------------------------------
+  // PATHWAY 9: Combat-Zone & After-Tax Disability Severance Recoupment Audit (10 U.S.C. § 1212(d)(2); 38 C.F.R. § 3.700(a)(3))
+  // -------------------------------------------------------------------------
+  {
+    const triggeredVet: string[] = [];
+    const triggeredPrac: string[] = [];
+    const blockingVet: string[] = [];
+    const blockingPrac: string[] = [];
+    const missing: MissingRecordDefinition[] = [];
+
+    const fRecoup = ans("va_recouped_disability_severance_or_separation_pay");
+    if (fRecoup === "yes") {
+      triggeredVet.push(
+        "VA withheld monthly disability compensation to recoup military disability severance, separation, or readjustment pay.",
+      );
+      triggeredPrac.push(
+        "VA recouped military disability severance, separation, or readjustment pay from Title 38 compensation (§ 3.700(a)(2)–(5)).",
+      );
+    } else if (fRecoup === "unknown") {
+      missing.push(RECORD_DFAS_SEVERANCE_W2_AND_AWARD_WITHHOLDING);
+    } else {
+      blockingVet.push(
+        "You indicated VA never recouped military disability severance, separation, or readjustment pay.",
+      );
+      blockingPrac.push(
+        "No military severance, separation, or readjustment recoupment withholding at issue.",
+      );
+    }
+
+    const fCombatTax = ans("combat_zone_post2008_pretax_gross_or_excess_withholding");
+    if (fCombatTax === "yes") {
+      triggeredVet.push(
+        "The Chapter 61 medical separation was on/after Jan. 28, 2008 for a combat-zone or combat-operations injury, OR VA recouped pre-tax gross pay (post-Sept. 1996) or withheld compensation from unrelated VA ratings.",
+      );
+      triggeredPrac.push(
+        "Potential violation of 10 U.S.C. § 1212(d)(2) (post-Jan. 28, 2008 combat-zone / combat-operations non-recoupment), post-Sept. 30, 1996 net after-tax cap, or § 3.700(a)(3) monthly severance-rating cap.",
+      );
+    } else if (fCombatTax === "unknown") {
+      missing.push(RECORD_DFAS_SEVERANCE_W2_AND_AWARD_WITHHOLDING);
+    } else {
+      blockingVet.push(
+        "You indicated the recoupment stayed within the after-tax net cap on a non-combat separation and touched only the severance condition's monthly rate.",
+      );
+      blockingPrac.push(
+        "Recoupment complied with non-combat net after-tax and § 3.700(a)(3) monthly severance-disability caps.",
+      );
+    }
+
+    const disp: PathwayDisposition =
+      blockingPrac.length > 0
+        ? "barred-or-inapplicable"
+        : missing.length > 0
+          ? "unresolved-records-needed"
+          : "supported-to-investigate";
+    const labels = dispositionLabels(disp);
+
+    pathways.push({
+      pathwayId: "combat-and-after-tax-severance-recoupment-3-700a3",
+      rankOrder: 9,
+      priorityBadgeVeteran:
+        "Priority 9 · Military Severance Recoupment & Refund Check (10 U.S.C. § 1212(d)(2))",
+      priorityBadgePractitioner:
+        "Tier 2D · Severance Non-Recoupment & After-Tax Withholding Audit (§ 1212(d)(2); § 3.700(a)(3))",
+      veteranTitle:
+        "Audit VA Recoupment of Military Disability Severance or Separation Pay (Combat Exemption & After-Tax Cap)",
+      practitionerTitle:
+        "Disability Severance & Separation Pay Recoupment Audit: 10 U.S.C. § 1212(d)(2) & 38 C.F.R. § 3.700(a)(2)–(5)",
+      veteranSummary:
+        "Three federal rules protect Veterans against over-recoupment of military disability severance pay: (1) if you were medically separated (Chapter 61) on or after January 28, 2008 for an injury incurred in a combat zone or combat-related operations, VA is barred from recouping a single dollar (10 U.S.C. § 1212(d)(2)); (2) for severance/separation payments after September 30, 1996, VA can recoup at most the after-tax net amount—never Federal income taxes withheld; and (3) VA cannot take compensation paid for separate, non-severance disabilities.",
+      practitionerSummary:
+        "Audits VA fiscal withholding ledgers across three bright-line statutory/regulatory caps: (1) 10 U.S.C. § 1212(d)(2) (Pub. L. 110-181, § 1646, eff. Jan. 28, 2008; codified in § 3.700(a)(3) on June 5, 2009 at 74 FR 26956) barring all VA recoupment for post-Jan. 28, 2008 combat-zone / combat-operations Chapter 61 separations; (2) Pub. L. 104-201, § 653 (eff. Oct. 1, 1996; 67 FR 60868) capping recoupment at after-tax net pay; and (3) § 3.700(a)(3)'s monthly withholding ceiling protecting independent non-severance evaluations.",
+      disposition: disp,
+      dispositionLabelVeteran: labels.veteran,
+      dispositionLabelPractitioner: labels.practitioner,
+      doctrinalScopeBadgeVeteran:
+        "Award Withholding & Refund Audit — Check Chapter 61 Separation Date, Combat Orders & W-2 Tax Withholding",
+      doctrinalScopeBadge:
+        "Bright-Line Statutory & Accounting Audit — Includes Jan. 28, 2008 – June 4, 2009 Statutory Lag Window",
+      triggeredByAnswersVeteran: triggeredVet,
+      triggeredByAnswers: triggeredPrac,
+      blockingReasonsVeteran: blockingVet,
+      blockingReasons: blockingPrac,
+      recordsToLocate: deduplicateSimpleRecords(missing),
+      authorityCitations: [
+        "10 U.S.C. § 1212(d)(2) (Pub. L. 110-181, § 1646)",
+        "Pub. L. 104-201, § 653 (110 Stat. 2583)",
+        "38 C.F.R. § 3.700(a)(2), (3) & (5) (67 FR 60868; 74 FR 26956)",
+      ],
+      bitemporalNoteVeteran:
+        safeDate >= "2008-01-28"
+          ? `On ${safeDate}, Congress's January 28, 2008 combat-zone / combat-operations severance non-recoupment law (10 U.S.C. § 1212(d)(2)) was in effect—even before VA updated its printed regulation on June 5, 2009.`
+          : safeDate >= "1996-10-01"
+            ? `On ${safeDate}, post-September 30, 1996 after-tax net recoupment and monthly severance-disability caps applied (note that 10 U.S.C. § 1212(d)(2) full combat non-recoupment requires a Chapter 61 separation on or after January 28, 2008).`
+            : `For pre-October 1, 1996 payments, pre-tax gross recoupment applied, though § 3.700(a)(3) still barred withholding monthly compensation payable for separate non-severance disabilities.`,
+      bitemporalNotePractitioner:
+        safeDate >= "2008-01-28" && safeDate < "2009-06-05"
+          ? `Statutory Lag Window Active (${safeDate}): Pub. L. 110-181, § 1646 (10 U.S.C. § 1212(d)(2)) barred combat-zone / combat-operations severance recoupment for Chapter 61 separations on/after January 28, 2008, superseding the lagging CFR text prior to 74 FR 26956 (June 5, 2009).`
+          : `Verify Chapter 61 separation date (not VA rating date) against the Jan. 28, 2008 floor of 10 U.S.C. § 1212(d)(2), Oct. 1, 1996 after-tax net recoupment floor (Pub. L. 104-201, § 653), and § 3.700(a)(3) independent-disability monthly withholding cap.`,
+      pointInTimeLinks: [link3700],
+      relatedSiteRoutes: [
+        {
+          label: "Playbook 20: Back-Pay Offsets, CRDP/CRSC & Severance Recoupment",
+          href: "/playbooks/20-backpay-offsets-crdp-crsc-severance-recoupment",
+        },
+        {
+          label: "Award Letter & Withholding Audit Checklist",
+          href: "/checklists/award-letter-and-withholding-audit-checklist",
+        },
+        { label: "38 C.F.R. § 3.700(a)(3) Reader", href: "/cfr/38-cfr-3.700a3-5" },
+      ],
+      killSwitchesVeteran: [
+        "Full combat-zone / combat-operations non-recoupment (10 U.S.C. § 1212(d)(2)) applies only when your military Chapter 61 medical separation occurred on or after January 28, 2008.",
+        "Note that Combat-Related Special Compensation (CRSC) and Voluntary Separation Incentive (VSI) follow separate DoD/DFAS coordination rules.",
+      ],
+      killSwitchesToVerify: [
+        "January 28, 2008 Separation-Date Floor (Pub. L. 110-181, § 1646(c)): Full combat non-recoupment under 10 U.S.C. § 1212(d)(2) is keyed to Armed Forces separations on or after Jan. 28, 2008—not the date of a later VA rating decision.",
+        "October 1, 1996 After-Tax Floor (Pub. L. 104-201, § 653): Net after-tax recoupment applies to severance/separation/SSB payments made after Sept. 30, 1996 (SSB flat-rate tax rules apply back to Dec. 5, 1991 under § 3.700(a)(5)).",
+      ],
+      veteranDiscussionQuestions: [
+        "Can we compare my DD-214, Physical Evaluation Board (PEB) combat-related findings, and separation W-2 against VA's recoupment ledger to check whether VA over-withheld taxes or recouped exempt post-Jan. 28, 2008 combat severance?",
+        "Did VA withhold compensation from my separate, non-severance disabilities in violation of 38 C.F.R. § 3.700(a)(3)?",
+      ],
+    });
+  }
+
+  // Shared focus-aware T0 authority links for RO CUE, Board CUE, and Gate 1
+  const scarPathwaySoFar = pathways.find(
+    (p) => p.pathwayId === "penetrating-wound-muscle-vs-scar",
+  );
+  const scarMuscleActiveForCueAndGate =
+    intake.issueFocus === "penetrating-scar-muscle" ||
+    scarPathwaySoFar?.disposition === "supported-to-investigate" ||
+    (intake.issueFocus === "general-collateral-review" &&
+      scarPathwaySoFar?.disposition !== "barred-or-inapplicable");
+
+  const focusSlugLinks: PointInTimeAuthorityLink[] = (() => {
+    switch (intake.issueFocus) {
+      case "penetrating-scar-muscle":
+        return [link456, link4118];
+      case "stabilized-reduction-or-severance":
+        return [
+          link3344,
+          link3951,
+          ...(safeDate >= "1962-01-01" ? [link3957] : []),
+        ];
+      case "tdiu-or-smc":
+        return [link416, link3350f];
+      case "nehmer-herbicide":
+        return safeDate >= "2003-09-24" ? [link3816] : [];
+      case "survivor-dic-accrued":
+        return [
+          link3312,
+          ...(safeDate >= "1978-10-01" ? [link322] : []),
+          link31000,
+        ];
+      case "cod-or-insanity":
+        return [link312, link313, link3354];
+      case "severance-recoupment":
+        return [link3700];
+      default:
+        return scarMuscleActiveForCueAndGate ? [link456, link4118] : [];
+    }
+  })();
+
+  const cueSubstantiveLinks: PointInTimeAuthorityLink[] = (() => {
+    const seen = new Set<string>();
+    const out: PointInTimeAuthorityLink[] = [];
+    const supportedSoFar = pathways
+      .filter((p) => p.disposition === "supported-to-investigate")
+      .flatMap((p) => p.pointInTimeLinks);
+    for (const l of [
+      ...focusSlugLinks,
+      ...(scarMuscleActiveForCueAndGate ? [link456, link4118] : []),
+      ...supportedSoFar,
+      link3156c,
+    ]) {
+      if (!seen.has(l.sectionSlug)) {
+        seen.add(l.sectionSlug);
+        out.push(l);
+      }
+    }
+    return out;
+  })();
 
   // -------------------------------------------------------------------------
   // PATHWAY 4: Regional Office / AOJ CUE (38 U.S.C. § 5109A; 38 C.F.R. § 3.105(a))
@@ -1105,10 +2435,7 @@ export function evaluateInvestigationSession(
         ? `Record Rule on ${safeDate} (Before July 21, 1992): For pre-July 21, 1992 decisions, RO CUE generally looks only at papers physically inside your C-file on that date—so check § 3.156(c) first if military hospital charts arrived later.`
         : `Record Rule on ${safeDate} (On or After July 21, 1992): VAMC treatment records that already existed on ${safeDate} count as part of the record VA had to check.`,
       bitemporalNotePractitioner: `${twoPaneContext.statutoryEraLabel}. ${twoPaneContext.recordScopeRuleThen}`,
-      pointInTimeLinks:
-        intake.issueFocus === "penetrating-scar-muscle"
-          ? [link456, link4118]
-          : [link456],
+      pointInTimeLinks: cueSubstantiveLinks,
       relatedSiteRoutes: [
         { label: "Title 38 Statutory Crosswalk (1933–1991)", href: "/crosswalk" },
         {
@@ -1265,7 +2592,10 @@ export function evaluateInvestigationSession(
       bitemporalNoteVeteran:
         "Before anyone files a BVA CUE motion, confirm (1) whether missing military records allow § 3.156(c) reconsideration instead, (2) the exact official print regulation wording in force on the day BVA signed its decision, and (3) that no prior BVA CUE motion was already decided on the merits on that issue.",
       bitemporalNotePractitioner: `Complete all 5 gates in /checklists/board-cue-pre-filing-gate: pull verbatim T₀ print CFR text for ${safeDate}, verify ${isPre1992Bell ? "pre-July 21, 1992 physical C-file presence (Damrel)" : "post-July 21, 1992 Bell constructive possession"}, confirm zero § 20.1400(b)(1) CAVC merits affirmance, and audit § 4.25 math.`,
-      pointInTimeLinks: [link456, link4118, link3156c],
+      pointInTimeLinks: [
+        ...(safeDate >= "1999-02-12" ? [linkSubpartO] : []),
+        ...cueSubstantiveLinks,
+      ],
       relatedSiteRoutes: [
         {
           label: "Board CUE Pre-Filing Gate Checklist (5 Gates)",
@@ -1354,6 +2684,16 @@ export function evaluateInvestigationSession(
     });
   }
 
+  // Normalize contiguous rankOrder (1..12) and priority badge numbering in non-CUE-first doctrinal order
+  pathways.forEach((p, idx) => {
+    const rank = idx + 1;
+    p.rankOrder = rank;
+    p.priorityBadgeVeteran = p.priorityBadgeVeteran.replace(
+      /^Priority\s+\d+/,
+      `Priority ${rank}`,
+    );
+  });
+
   // -------------------------------------------------------------------------
   // Deduplicate & Prioritize "Records to Locate & Why" Across Active Pathways
   // -------------------------------------------------------------------------
@@ -1363,7 +2703,7 @@ export function evaluateInvestigationSession(
     if (p.disposition === "barred-or-inapplicable") continue;
     for (const rec of p.recordsToLocate) {
       const existing = recordMap.get(rec.recordId);
-      const matchingFactIds = WAVE1_SCREENING_QUESTIONS.filter(
+      const matchingFactIds = SCREENING_QUESTIONS.filter(
         (q) =>
           q.missingRecord.recordId === rec.recordId &&
           (intake.answers[q.factId] ?? "unknown") === "unknown",
@@ -1419,13 +2759,30 @@ export function evaluateInvestigationSession(
     }
   }
 
-  // Gate 1: Evaluate ALL Wave 1 point-in-time links for FR pub-gaps, pre-baseline gaps, and SUMMARY_ONLY coverage!
-  const allWave1Links = [link456, link4118, link3156c];
-  const pubGapAlerts = allWave1Links
+  // Gate 1: Evaluate baseline + active/supported point-in-time links for FR pub-gaps, pre-baseline gaps, and SUMMARY_ONLY coverage!
+  const supportedPathwayLinks = pathways
+    .filter((p) => p.disposition === "supported-to-investigate")
+    .flatMap((p) => p.pointInTimeLinks);
+
+  const seenGateSlugs = new Set<string>();
+  const allGateLinks: PointInTimeAuthorityLink[] = [];
+  for (const l of [
+    link3156c,
+    ...(scarMuscleActiveForCueAndGate ? [link456, link4118] : []),
+    ...focusSlugLinks,
+    ...supportedPathwayLinks,
+  ]) {
+    if (!seenGateSlugs.has(l.sectionSlug)) {
+      seenGateSlugs.add(l.sectionSlug);
+      allGateLinks.push(l);
+    }
+  }
+
+  const pubGapAlerts = allGateLinks
     .map((l) => l.publicationGapTrapAlert)
     .filter((a): a is string => Boolean(a));
-  const gapLinks = allWave1Links.filter((l) => l.doNotRely);
-  const summaryOnlyLinks = allWave1Links.filter(
+  const gapLinks = allGateLinks.filter((l) => l.doNotRely);
+  const summaryOnlyLinks = allGateLinks.filter(
     (l) => !l.doNotRely && l.coverageState === "SUMMARY_ONLY",
   );
 
@@ -1440,7 +2797,7 @@ export function evaluateInvestigationSession(
   } else if (summaryOnlyLinks.length > 0) {
     gate1Detail = `Summary-Only Coverage on ${safeDate} (${summaryOnlyLinks.map((s) => s.cfrSection).join(", ")}): Pull the contemporaneous official print 38 C.F.R. edition on GovInfo before pleading CUE (and confirm zero reliance on proposed/unfinalized 90 FR 46542).`;
   } else {
-    gate1Detail = `Verbatim Wave 1 snapshots resolved for ${safeDate} (§ 4.56, § 4.118, § 3.156(c)) with zero FR publication-vs-effective gap traps; confirm zero reliance on proposed/unfinalized rules (e.g., 90 FR 46542).`;
+    gate1Detail = `Verbatim primary-source snapshots resolved for ${safeDate} with zero FR publication-vs-effective gap traps; confirm zero reliance on proposed/unfinalized rules (e.g., 90 FR 46542, RIN 2900-AQ72/AQ73/AQ82/AR96/AS39) or rescinded 91 FR 7118.`;
   }
 
   const agencySubsumptionConflict =
@@ -1455,12 +2812,13 @@ export function evaluateInvestigationSession(
     },
     {
       gateId: "gate-non-cue-exhaustion",
-      title: "2. Non-CUE Open-Record Vehicle Exhaustion (§ 3.156(c) & Pending Streams)",
+      title: "2. Non-CUE Open-Record & Statutory Vehicle Exhaustion",
       detail:
-        "Exhaust 38 C.F.R. § 3.156(c) service/surgical record reconsideration (overrides Board finality under § 20.1411(b)) and non-final pending streams (Tablazon, Beraud/Lang § 3.156(b), pre-2015 § 3.157(b), AMA § 5104(b) Hamill) before expending Subpart O Board CUE.",
+        "Exhaust § 3.156(c) service records (§ 20.1411(b)), Brown void reductions (§§ 3.105(e), 3.344, 3.951, 3.957), pending streams (Tablazon, Beraud/Lang § 3.156(b), pre-2015 § 3.157(b), Roberson TDIU, AMA § 5104(b) Hamill), and § 3.816 Nehmer before expending Subpart O Board CUE.",
       status:
         ans("official_service_or_surgical_records_missing_at_t0") === "unknown" ||
-        ans("open_stream_or_unanswered_filing_clue") === "unknown"
+        ans("open_stream_or_unanswered_filing_clue") === "unknown" ||
+        ans("running_rating_reduced_or_severed") === "unknown"
           ? "action-required"
           : "verified",
     },

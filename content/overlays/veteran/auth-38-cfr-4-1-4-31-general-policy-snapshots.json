@@ -1,0 +1,34 @@
+{
+  "upstream_id": "auth-38-cfr-4-1-4-31-general-policy-snapshots",
+  "upstream_path": "authorities/part-4/38-cfr-4.1-4.31-general-policy-snapshots.md",
+  "upstream_sha256": "66ec2fbfb035b97d7ce27c1c9ecd9ce0dc7a17e88f99637eb5624ed9400d3d40",
+  "linked_version_ids": [
+    "38-cfr-part-4-vasrd-1946-base",
+    "38-cfr-4.26d-2023-bilateral",
+    "38-cfr-4.29-4.30-1989-temp-total",
+    "38-cfr-4.29-4.30-2014-temp-total",
+    "38-cfr-3.321b1-1996-pre2014-collective",
+    "38-cfr-3.321b1-2018-single-disability"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "General VA Rating Rules (38 C.F.R. §§ 4.1–4.31): Combined Math, Bilateral Factor, Analogous Codes & Convalescence",
+  "what_this_means": "Before looking at any individual body-system Diagnostic Code, Subpart A of Part 4 (38 C.F.R. §§ 4.1–4.31) sets the universal ground rules for every VA disability evaluation: resolving reasonable doubt in the Veteran's favor (§ 4.3), choosing the higher of two rating tiers when symptoms more nearly approximate the higher level (§ 4.7), evaluating functional impairment without improperly discounting symptoms masked by medication when a code is silent on medication (§ 4.10; Ingram v. Collins), avoiding double-counting the exact same symptom while separately rating distinct manifestations (§ 4.14), rating unlisted conditions by analogy (§ 4.20), combining ratings using VA's Combined Ratings Table and the 10% paired-limb bilateral factor (§§ 4.25–4.26), and awarding temporary 100% ratings for 22+ days of inpatient care (§ 4.29) or qualifying surgery/cast convalescence (§ 4.30). It also tracks how extraschedular referrals (§ 3.321(b)(1)) changed on January 8, 2018.",
+  "record_clues": [
+    "A VA Rating Code Sheet where paired arm or leg disabilities combine to 94% (rounding down to 90%) when excluding one bilateral condition under the post-April 16, 2023 rule in 38 C.F.R. § 4.26(d) would reach 95% (rounding up to 100%).",
+    "A hyphenated two-part Diagnostic Code (ending in '-99', such as '7399-7346') under §§ 4.20 and 4.27 where VA picked an unfavorable comparison code that ignored how the condition actually affects body function and work.",
+    "Hospital discharge summaries or surgical reports showing more than 21 days of VA/approved inpatient treatment for a service-connected condition (§ 4.29), or surgery requiring at least 1 month of recovery or major-joint cast immobilization (§ 4.30), with no temporary 100% convalescent payment.",
+    "A rating decision issued between February 17 and February 27, 2026 that lowered or limited a rating based on VA's short-lived, formally rescinded § 4.10 medication rule (91 FR 7118, rescinded at 91 FR 9712)."
+  ],
+  "important_cautions": [
+    "Key effective-date cutoffs in Subpart A and § 3.321(b)(1): VA restricted § 3.321(b)(1) extraschedular ratings to single disabilities effective January 8, 2018 (82 FR 57830, channeling combined unemployability to § 4.16(b) TDIU); enacted the § 4.26(d) bilateral-factor exclusion exception effective April 16, 2023 (88 FR 22914); and extended § 4.30 surgical convalescence to outpatient surgery effective March 1, 1989 (54 FR 4281).",
+    "VA's February 17, 2026 Interim Final Rule on medication under 38 C.F.R. § 4.10 (91 FR 7118) was formally rescinded 10 days later on February 27, 2026 (91 FR 9712) and is NOT active law.",
+    "Prospective amendments like the April 16, 2023 bilateral exclusion rule (§ 4.26(d)) cannot prove Clear and Unmistakable Error (CUE) in final decisions issued before April 16, 2023.",
+    "Under 38 C.F.R. §§ 20.1403(d)–(e) and 20.1409(c), disagreements over how VA weighed evidence under § 4.7 or later judicial reinterpretations (George v. McDonough) cannot establish CUE, and only one final merits CUE decision is allowed per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Can we check the exact combined-percentage math and bilateral factor calculation on my VA Rating Code Sheet under 38 C.F.R. §§ 4.25 and 4.26(a)–(d)?",
+    "If my disability is rated 'by analogy' with a hyphenated '-99' code under 38 C.F.R. § 4.20, does another Diagnostic Code more closely match my functional impairment and symptoms (Webb v. McDonough)?",
+    "Did I have a qualifying 22+ day hospitalization (§ 4.29) or service-connected surgery / major-joint cast immobilization (§ 4.30) where I should have received a temporary 100% evaluation?",
+    "Did an examiner discount my symptoms because of prescription medication even though my Diagnostic Code does not mention medication (Ingram v. Collins)?"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-4-132-mental-pre-1996",
+  "upstream_path": "authorities/part-4/38-cfr-4.132-mental-disorders-pre-1996.md",
+  "upstream_sha256": "dc3e696fc09c7b599f282f9e4a5ac9d050348f79fede1f23875bdb83e228a221",
+  "linked_version_ids": [
+    "38-cfr-4.132-1988-psychoneurotic",
+    "38-cfr-4.16c-1989-mental",
+    "38-cfr-4.130-1996-dsm4",
+    "38-cfr-4.130-2014-dsm5"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Mental Health Rating Snapshots: Pre-1996 § 4.132, the 1989–1996 70% Rule & Modern § 4.130",
+  "what_this_means": "This module preserves the exact historical and current regulations for mental health conditions across four major eras: the pre-February 3, 1988 psychoneurotic schedule (which jumped directly from 50% to 100% with no 70% tier), the February 3, 1988 addition of a 70% tier under former 38 C.F.R. § 4.132 (53 FR 21), the March 1, 1989 through November 6, 1996 mandatory 100% schedular rule under former 38 C.F.R. § 4.16(c) (when a Veteran's sole compensable disability was a 70% mental disorder preventing substantially gainful employment), and the November 7, 1996 overhaul (61 FR 52695) that enacted today's unified General Rating Formula for Mental Disorders under 38 C.F.R. § 4.130, the mandatory 50% post-discharge floor for traumatic mental separations under 38 C.F.R. § 4.129, and the separate Rating Formula for Eating Disorders (Diagnostic Codes 9520–9521).",
+  "record_clues": [
+    "A VA Rating Code Sheet dated before November 7, 1996 citing former 38 C.F.R. § 4.132 for PTSD (Diagnostic Code 9411), anxiety, or depressive neurosis.",
+    "A decision issued between March 1, 1989 and November 6, 1996 rating a Veteran's only compensable disability at 70% for a mental disorder while medical or employment records showed inability to work (triggering former 38 C.F.R. § 4.16(c)).",
+    "A post-November 7, 1996 medical discharge (MEB/PEB) for PTSD or another mental disorder caused by an in-service traumatic stressor rated below 50% during the first 6 months after separation, or reduced without a mandatory § 4.129 VA exam.",
+    "Service-connected anorexia nervosa (Diagnostic Code 9520) or bulimia nervosa (Diagnostic Code 9521) mistakenly evaluated under the general psychiatric formula instead of the dedicated Eating Disorders criteria."
+  ],
+  "important_cautions": [
+    "Match the exact regulation to the decision date: before February 3, 1988, no 70% tier existed for psychoneurotic disorders (including PTSD) under former § 4.132, and specific symptom examples like suicidal ideation in the 70% tier did not enter the regulation until November 7, 1996 (61 FR 52695). Never cite post-November 7, 1996 § 4.130 criteria to allege Clear and Unmistakable Error (CUE) in a pre-November 7, 1996 decision.",
+    "Quarantined proposed and rescinded rules: VA's February 15, 2022 proposed 5-domain mental health schedule (87 FR 8498, RIN 2900-AQ82) remains an unfinalized proposed rule and is NOT enacted law. Likewise, VA's February 17, 2026 medication Interim Final Rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712).",
+    "Personality or developmental disorder rule: under 38 C.F.R. § 4.127, intellectual developmental disorders and personality disorders are not diseases or injuries for direct compensation purposes unless a service-connected mental disorder is superimposed upon or aggravates them.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final decision on the merits of a CUE motion on a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Was my mental health decision issued between March 1, 1989 and November 6, 1996 while my 70% mental condition was my only compensable disability and kept me from working under former 38 C.F.R. § 4.16(c)?",
+    "If I was separated from active duty on or after November 7, 1996 due to a mental disorder caused by a highly stressful in-service event, did VA apply the mandatory 50% minimum rating and 6-month reexamination rule under 38 C.F.R. § 4.129?",
+    "When auditing an older pre-November 7, 1996 PTSD or anxiety decision, how did the social and industrial adaptability language of former 38 C.F.R. § 4.132 apply on that exact date?",
+    "Do my mental health treatment records show unmedicated symptom severity or medication side effects (such as weight gain leading to sleep apnea, bruxism/TMJ, or sexual dysfunction) that warrant evaluation?"
+  ]
+}

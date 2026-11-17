@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
@@ -23,43 +24,55 @@ export default function FormsAndCodesPage() {
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
-      <header className="space-y-2 border-b border-border pb-6">
-        <h1
-          data-persona="veteran-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Plain-English Decoder: Old VA Forms, Military Records &amp; Rating Code Sheets
-        </h1>
-        <h1
-          data-persona="practitioner-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Historical VA Forms, Military Clinical Records &amp; Code-Sheet Lexicon ({lexicon.length} Entries)
-        </h1>
-        <p
-          data-persona="veteran-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Translate unfamiliar form numbers (<code className="font-mono text-xs">8-526</code>,{" "}
-          <code className="font-mono text-xs">10-7131</code>,{" "}
-          <code className="font-mono text-xs">DD 1380</code>), VA acronyms, and
-          hyphenated Rating Code Sheet numbers into clear plain English.
-        </p>
-        <p
-          data-persona="practitioner-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Decode pre-2015 informal claim triggers, NARA/STR surgical tags,{" "}
-          <code className="font-mono text-xs">38 C.F.R. §§ 4.20 / 4.27</code> hyphenated
-          analogous codes, and Rating Code Sheet protection notations.
-        </p>
+      <header className="flex items-start gap-4 border-b border-border pb-6">
+        <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
+          <Image
+            src="/illustrations/forms-decoder.webp"
+            alt=""
+            width={72}
+            height={72}
+            unoptimized
+            className="h-18 w-18 object-cover"
+          />
+        </div>
+        <div className="min-w-0 space-y-2">
+          <h1
+            data-persona="veteran-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Plain-English Decoder: Old VA Forms, Military Records &amp; Rating Code Sheets
+          </h1>
+          <h1
+            data-persona="practitioner-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Historical VA Forms, Military Clinical Records &amp; Code-Sheet Lexicon ({lexicon.length} Entries)
+          </h1>
+          <p
+            data-persona="veteran-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Translate unfamiliar form numbers (<code className="font-mono text-xs">8-526</code>,{" "}
+            <code className="font-mono text-xs">10-7131</code>,{" "}
+            <code className="font-mono text-xs">DD 1380</code>), VA acronyms, and
+            hyphenated Rating Code Sheet numbers into clear plain English.
+          </p>
+          <p
+            data-persona="practitioner-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Decode pre-2015 informal claim triggers, NARA/STR surgical tags,{" "}
+            <code className="font-mono text-xs">38 C.F.R. §§ 4.20 / 4.27</code> hyphenated
+            analogous codes, and Rating Code Sheet protection notations.
+          </p>
+        </div>
       </header>
 
       <CoverageBanner
         state="VERBATIM_VERIFIED"
         checkedAsOf={manifest.checkedAsOf}
         corpusReleaseId={manifest.corpusReleaseId}
-        detail="Compiled from Wave 1 forms-and-codesheet lexicon + SHA-256-locked Veteran companion."
+        detail="Compiled from historical VA forms and rating code-sheet lexicon with SHA-256-locked Veteran companion."
         officialEcfrUrl="https://www.ecfr.gov/current/title-38/chapter-I/part-4/section-4.27"
         officialGovInfoUrl="https://www.govinfo.gov/app/collection/cfr"
       />
@@ -88,7 +101,7 @@ export default function FormsAndCodesPage() {
                 href="/docs/forms-and-codesheet-lexicon"
                 className="inline-flex min-h-6 items-center gap-1 font-semibold text-primary hover:underline"
               >
-                <span>Open Full 3-Column Forms &amp; Code-Sheet Treatise</span>
+                <span>Read the forms &amp; code-sheet treatise</span>
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
               </Link>
             </div>

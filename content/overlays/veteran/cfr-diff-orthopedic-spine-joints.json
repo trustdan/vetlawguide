@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-orthopedic-spine-joints",
+  "upstream_path": "cfr-diffs/vasrd/orthopedic-spine-joints.md",
+  "upstream_sha256": "a0ee94c940e352389aebe8a95ec14adc05d8298c53bbfb362c4ed83f4fdf0620",
+  "linked_version_ids": [
+    "38-cfr-4.71a-1946-pre2002-spine",
+    "38-cfr-4.71a-2002-ivds",
+    "38-cfr-4.71a-2003-spine",
+    "38-cfr-4.71a-joints-pre2021",
+    "38-cfr-4.71a-2021-musculoskeletal"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Quick Comparison: Spine Degree Rules (2003), Joint Painful Motion & Multi-Code Knee Evaluations",
+  "what_this_means": "This focused orthopedic comparison highlights the four most common rating transitions across back, neck, and joint claims under 38 C.F.R. §§ 4.40, 4.45, 4.59, and 4.71a: (1) the September 26, 2003 shift from descriptive spine codes (5285–5295) to goniometer degree cutoffs (5235–5243) plus mandatory separate nerve ratings under Note (1); (2) the rule in § 4.59 awarding at least the minimum compensable percentage whenever a joint has objective painful motion; (3) functional loss during flare-ups and repeated weight-bearing movement; and (4) separate knee ratings for instability plus limited flexion and extension.",
+  "record_clues": [
+    "A post-September 26, 2003 back examination recording forward flexion of 30 degrees or less (which triggers 40% for the thoracolumbar spine) or ankylosis while the Rating Code Sheet assigned 10% or 20%.",
+    "A post-September 26, 2003 neck or back exam noting radiating nerve pain, numbness, or tingling in the arms or legs (radiculopathy) with no separate peripheral nerve code on the Rating Code Sheet.",
+    "A joint exam documenting painful motion where VA assigned a 0% noncompensable evaluation despite 38 C.F.R. § 4.59.",
+    "A knee Rating Code Sheet assigning only one code despite documented joint instability (Diagnostic Code 5257) alongside compensable loss of flexion (Diagnostic Code 5260) or extension (Diagnostic Code 5261)."
+  ],
+  "important_cautions": [
+    "Do not apply modern spine degree cutoffs before their effective date: the General Rating Formula for Diseases and Injuries of the Spine took effect September 26, 2003 (68 FR 51454) and cannot establish Clear and Unmistakable Error (CUE) in final pre-September 26, 2003 spine decisions.",
+    "Incomplete examination testing vs. CUE: if a VA examiner failed to test weight-bearing/passive/opposite-joint motion (Correia v. McDonald) or failed to estimate flare-up degree loss (Sharp v. Shulkin), that exam defect is a duty-to-assist error addressed in open claims, Supplemental Claims, or appeals—not CUE against a final decision (Cook v. Principi).",
+    "Existing ratings in force before the February 7, 2021 musculoskeletal update (85 FR 76453 / 86 FR 8142) cannot be lowered solely due to the revised schedule under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a).",
+    "Under George v. McDonough and 38 C.F.R. §§ 20.1403(e) and 20.1409(c), later judicial interpretations cannot establish CUE in older final decisions, and only one final merits CUE decision is permitted per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Does my post-September 26, 2003 spine DBQ show flexion degrees or abnormal spinal contour that meet a higher rating tier on their face?",
+    "Did VA overlook separate Note (1) peripheral nerve ratings for sciatic, femoral, or cervical radiculopathy recorded on my spine exam?",
+    "If VA assigned 0% for an arthritic or injured joint despite documented painful motion, how does 38 C.F.R. § 4.59 apply to my claim?",
+    "Should we seek a new orthopedic examination or private medical opinion in a Supplemental Claim if my prior VA exam omitted flare-up or weight-bearing range-of-motion estimates?"
+  ]
+}

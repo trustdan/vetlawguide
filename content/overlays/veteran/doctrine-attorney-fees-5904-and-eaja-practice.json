@@ -1,0 +1,31 @@
+{
+  "upstream_id": "doctrine-attorney-fees-5904-and-eaja-practice",
+  "upstream_path": "docs/attorney-fees-5904-and-eaja-practice.md",
+  "upstream_sha256": "43bdf8ceb5c426b5401eddfa06529e138480b02c5efeb489c3465a41861e5d00",
+  "linked_version_ids": [
+    "38-cfr-14.636-2008-post-nod-attorney-fees",
+    "38-cfr-14.636-2019-ama-attorney-fees",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Understanding Accredited Representative Fees (38 U.S.C. § 5904) & Court-Paid EAJA Refunds",
+  "what_this_means": "Federal law strictly regulates who can assist you with a VA benefits claim and when fees can be charged. Veterans Service Organizations (VSOs) never charge fees. VA-accredited claims agents and attorneys are strictly prohibited from charging fees to prepare or file an initial claim—they may charge fees ONLY after VA issues an initial decision on the claim (38 U.S.C. § 5904(c)(1)). When an accredited attorney or agent represents you on contingency, fees of 20% or less of past-due benefits are presumed reasonable and eligible for direct VA withholding (while fees above 33.33% are presumed unreasonable). Even better: if an attorney appeals a Board denial to the U.S. Court of Appeals for Veterans Claims (CAVC) and wins a remand based on VA error, the Equal Access to Justice Act (EAJA, 28 U.S.C. § 2412(d)) requires the government—not the Veteran—to pay court attorney fees, and if VA later awards back pay for that same work, the attorney MUST refund the smaller of the two fees dollar-for-dollar to the Veteran.",
+  "record_clues": [
+    "VA Form 21-22 (appointing an accredited VSO at $0 cost) or VA Form 21-22a (appointing an individual VA-accredited attorney or claims agent) paired with a written fee agreement.",
+    "A VA fee-withholding letter under 38 C.F.R. § 14.636(h) withholding up to 20% of retroactive past-due benefits—or dividing that 20% pool among current and prior attorneys based on actual contribution (Scates quantum meruit).",
+    "A CAVC remand order or Joint Motion for Partial Remand (JMPR) followed within 30 days of mandate by an EAJA fee application.",
+    "A post-remand VA back-pay award where the attorney previously received EAJA fees for the court appeal, triggering a mandatory client refund of the smaller fee under Pub. L. 102-572, § 506(c)."
+  ],
+  "important_cautions": [
+    "Watch out for unaccredited 'claim sharks': under 38 U.S.C. §§ 5901 and 5904(c)(1), anyone who is not accredited by VA's Office of the General Counsel—or anyone demanding fees or future-increase percentages to prepare an INITIAL claim before VA issues an initial decision—is violating federal law.",
+    "Strict 30-day fee-filing and EAJA deadlines for representatives: direct-pay fee agreements must be filed with the VA Regional Office / Intake Center within 30 days of execution (38 C.F.R. § 14.636(g)(3); Ravin v. Wilkie), and CAVC EAJA applications must be filed within 30 days after final nonappealable judgment/mandate—note that consent JMPR orders often issue an immediate mandate under CAVC Rule 41(b), starting the 30-day EAJA clock immediately rather than after 60 days!",
+    "Mandatory lesser-fee refund protection: an attorney can NEVER keep both a CAVC EAJA fee and a 38 U.S.C. § 5904 contingency fee for the exact same representation work—federal statute (Pub. L. 102-572, § 506(c)) and Carpenter v. Principi require refunding the smaller fee dollar-for-dollar to you.",
+    "Supplemental Claim & CUE fee clarification: in Military-Veterans Advocacy v. Secretary of Veterans Affairs (2021), the Federal Circuit invalidated VA's regulatory ban on charging fees for Supplemental Claims or CUE motions filed more than 1 year after an initial decision, though George v. McDonough and 38 C.F.R. § 20.1403(e) bar CUE against final pre-2021 fee decisions."
+  ],
+  "questions_for_representative": [
+    "Can we verify your active accreditation number on VA's Office of the General Counsel Accreditation Search before signing VA Form 21-22a?",
+    "Is your contingency fee capped at 20% of net past-due benefits only (never ongoing future monthly checks), and does our contract state whether case expenses (like private medical opinions) are separate?",
+    "If a prior representative worked on my appeal before I switched, does my total attorney fee stay within a single 20% withholding pool allocated fairly under 38 C.F.R. § 14.636(h)–(i)?",
+    "If you take my Board denial to the CAVC and recover EAJA fees from the government, how will the mandatory dollar-for-dollar EAJA offset/refund reduce any contingency fee if we later win back pay at VA?"
+  ]
+}

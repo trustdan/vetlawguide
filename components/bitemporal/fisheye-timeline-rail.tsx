@@ -166,13 +166,13 @@ export function FisheyeTimelineRail() {
             <span>Interactive Veterans Law Chronology Rail (1946–2026)</span>
           </h2>
           <p className="text-xs text-muted-foreground">
-            Select any watershed milestone to set the active{" "}
-            <strong>Decision Date</strong> and reshape the Knowledge Tree below.
+            Select any watershed milestone to lock the active{" "}
+            <strong>Decision Date</strong> across all tracks and point-in-time regulations.
           </p>
         </div>
 
         <div className="flex items-center gap-2 text-xs">
-          <span className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-2.5 py-1 font-mono text-[11px] text-foreground">
+          <span className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-2.5 py-1 font-mono text-xs text-foreground">
             <Calendar className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
             <span>{decisionDate ?? "Current Law"}</span>
           </span>
@@ -180,7 +180,7 @@ export function FisheyeTimelineRail() {
             <button
               type="button"
               onClick={() => setDecisionDate(null)}
-              className="rounded border border-border bg-surface-elevated px-2 py-1 text-[11px] font-semibold text-primary hover:bg-muted"
+              className="rounded border border-border bg-surface-elevated px-2 py-1 text-xs font-semibold text-primary hover:bg-muted"
             >
               Reset to Current
             </button>
@@ -241,7 +241,7 @@ export function FisheyeTimelineRail() {
                   <span className="font-mono text-xs font-bold">{ms.year}</span>
                   <span
                     className={cn(
-                      "mt-0.5 line-clamp-1 text-[10px] font-medium",
+                      "mt-0.5 line-clamp-1 text-xs font-medium",
                       isSelected ? "text-primary-foreground" : "text-muted-foreground",
                     )}
                   >
@@ -258,7 +258,7 @@ export function FisheyeTimelineRail() {
       <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-border bg-surface-elevated p-3.5 text-xs leading-relaxed">
         <div className="max-w-3xl space-y-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded bg-surface px-2 py-0.5 font-mono text-[11px] font-bold text-primary">
+            <span className="rounded bg-surface px-2 py-0.5 font-mono text-xs font-bold text-primary">
               {selectedMilestone.year} · {selectedMilestone.track}
             </span>
             <span className="font-semibold text-foreground">

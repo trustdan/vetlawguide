@@ -1,0 +1,30 @@
+{
+  "upstream_id": "playbook-02-wrong-address-defective-notice-cp-exams",
+  "upstream_path": "playbooks/02-wrong-address-defective-notice-cp-exams.md",
+  "upstream_sha256": "815d2df2e7204335f73eedccb821e6f7fd5cf1fed0f506c67ecbc557ed65a6a0",
+  "linked_version_ids": [
+    "38-cfr-3.655-1961-pre1991",
+    "38-cfr-3.655-1990-legacy",
+    "38-cfr-3.655-2019-ama"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Mail Sent to the Wrong Address, Returned VA Letters & Missed C&P Exam Denials",
+  "what_this_means": "Normally, if you do not appeal a VA decision within 1 year, that decision becomes final because courts presume VA properly mailed it to your latest address of record. However, if your VA Claims File (C-file) shows VA mailed a Rating Decision, Statement of the Case (SOC), or Compensation and Pension (C&P) exam scheduling notice to an outdated, mistyped, or incomplete address—especially when another part of VA (such as your VA Medical Center) already had your current address—the 1-year appeal clock may never have legally started. In addition, under 38 C.F.R. § 3.655(b), when a Veteran misses an exam on an original compensation claim, VA is prohibited from denying the claim automatically just for missing the appointment and must instead evaluate the claim on the evidence already in the file.",
+  "record_clues": [
+    "Scanned envelopes or mail-room sheets in your C-file stamped 'RETURN TO SENDER,' 'UNDELIVERABLE,' 'MOVED LEFT NO ADDRESS,' or 'UNCLAIMED.'",
+    "A street number, apartment unit, or ZIP code typo on a VA decision cover letter compared to the address you wrote on your claim form, VA Form 21-4138, or VA Medical Center registration.",
+    "An older rating decision denying your initial disability claim solely because you 'failed to report for a scheduled VA examination' or calling the claim 'abandoned' without evaluating your service medical records.",
+    "A gap in your C-file where you filed a timely Notice of Disagreement (NOD), or never received the decision letter, and VA closed the file without mailing notice to all required addresses."
+  ],
+  "important_cautions": [
+    "More Than 'I Never Got It' Is Required: Courts presume official government mail was sent properly unless concrete evidence—such as a wrong address in the C-file, returned-mail stamps, or missing mailing records—rebuts that presumption (Mindenhall v. Brown; compare nonprecedential CAVC Rule 30(a) single-judge discussions such as Marion v. Collins, No. 24-6964 (Vet. App. Dec. 23, 2025) (mem. dec.)).",
+    "Check Whether a Later Decision Closed the Claim: Under pre-February 19, 2019 Legacy rules, a later rating decision that validly notified you at your correct address and decided the exact same disability issue could start the finality clock from that later date—whereas post-February 19, 2019 AMA decisions require explicit issue notice under 38 U.S.C. § 5104(b) (Hamill v. Collins).",
+    "Original Claims vs. Increase/Supplemental Claims (§ 3.655): Effective December 31, 1990 (published November 29, 1990 at 55 FR 49521), § 3.655(b) requires VA to decide an original compensation claim on the existing record after an unexcused missed exam, whereas claims for increase or supplemental/reopened claims may be denied if an exam was missed without good cause."
+  ],
+  "questions_for_representative": [
+    "Can we compare the mailing address on the old VA decision letter and exam scheduling notice against every address listed in my VAMC medical records and claim forms on that date?",
+    "Are there any scanned returned-mail envelopes in my VBMS eFolder showing VA knew the notice was undeliverable?",
+    "Was my claim an original compensation claim that VA denied outright for missing a C&P exam without rating the service records already in the file under 38 C.F.R. § 3.655(b)?",
+    "Did any later properly mailed VA decision explicitly adjudicate that same condition, or could the original claim still be legally pending?"
+  ]
+}

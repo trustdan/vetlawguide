@@ -154,12 +154,12 @@ describe("Wave 1 Point-in-Time CFR Decomposition, Quarantine & Two-Pane Resoluti
     const sept2006 = resolveCfrAtDate(bundle.cfrVersions, "38-cfr-3.156c", "2006-09-20");
     expect(sept2006.governingVersion?.version_id).toBe("38-cfr-3.156c-1962-pre2006");
 
-    // 4. § 4.16 TDIU (unlocked in E5-S3: 1975 base stays SUMMARY_ONLY, 1990 marginal-employment rule is VERBATIM_VERIFIED) + § 3.317 stays SUMMARY_ONLY across both cfrSections and cfrVersions
+    // 4. § 4.16 TDIU (unlocked in E5-S3 & overlay-verified in E5-S5: 1975 base stays SUMMARY_ONLY, 1990 marginal-employment rule is VERBATIM_VERIFIED) + § 3.317 stays SUMMARY_ONLY across both cfrSections and cfrVersions
     const sec416 = bySlug.get("38-cfr-4.16a-b");
     expect(sec416).toBeDefined();
     expect(sec416?.bookmarkStatus).toBe("WAVE_1_LIVE_VERBATIM");
     expect(sec416?.heldWaveId).toBeNull();
-    expect(sec416?.coverageState).toBe("PLAIN_ENGLISH_IN_PROGRESS");
+    expect(sec416?.coverageState).toBe("VERBATIM_VERIFIED");
     expect(
       (sec416?.companionModules ?? []).some((m) =>
         m.route.includes("38-cfr-4.16-tdiu-evolution"),

@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-3-274-3-279-3-353-1-965-pension-competency-waivers",
+  "upstream_path": "authorities/part-3/38-cfr-3.274-3.279-3.353-1.965-pension-competency-waivers.md",
+  "upstream_sha256": "e706c77c8e73a3d57d88caaa93f5b4038170bb97663f38c6a2429cfe038b3a0a",
+  "linked_version_ids": [
+    "38-cfr-3.274-3.275-pre2018-corpus",
+    "38-cfr-3.274-3.278-2018-csra-lookback",
+    "38-cfr-1.963b2-pre2026-180day-waiver",
+    "38-cfr-1.963b-2026-1yr-waiver",
+    "38-cfr-3.105i-1992-predetermination"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Wartime Pension Net Worth, Financial Competency Due Process & Overpayment Waiver Snapshots",
+  "what_this_means": "This module compiles the exact regulations governing three critical protections for wartime Veterans and Survivors: (1) VA Pension net-worth limits, deductible assisted-living/medical expenses, and the 36-month asset-transfer lookback enacted October 18, 2018 (38 C.F.R. §§ 3.272(g) and 3.274–3.279, published September 18, 2018 at 83 FR 47246), (2) strict due-process protections before VA can declare a beneficiary unable to manage their own VA funds and appoint a fiduciary (38 C.F.R. §§ 3.353 and 3.105(h)–(i)), and (3) requesting an 'equity and good conscience' waiver of a VA benefit overpayment within the 1-year deadline (38 C.F.R. §§ 1.963 and 1.965).",
+  "record_clues": [
+    "VA Form 21P-527EZ (Veterans Pension), VA Form 21P-534EZ (Survivors Pension), or VA Form 21P-8416 (Medical Expense Report) showing nursing-home, assisted-living, memory-care, or in-home care expenses offsetting countable income.",
+    "A VA Pension denial penalizing an asset gift or transfer made BEFORE October 18, 2018, or penalizing a transfer when total net worth never exceeded VA's bright-line limit.",
+    "A proposed financial incompetency letter or C&P mental health checkbox stating the Veteran cannot manage financial affairs (triggering 60-day response and predetermination hearing rights under 38 C.F.R. §§ 3.353 and 3.105(h)–(i)).",
+    "A Debt Management Center (DMC) Notice of Indebtedness and VA Form 5655 (Financial Status Report)—especially if VA rejected a waiver request filed between Day 181 and Day 365 on a post-December 29, 2022 debt letter."
+  ],
+  "important_cautions": [
+    "October 18, 2018 Pension transfer cutoff: VA's 36-month lookback penalty (38 C.F.R. § 3.276) applies ONLY to uncompensated transfers of 'covered assets' (assets above the net-worth cap) made ON OR AFTER October 18, 2018—transfers completed before October 18, 2018 must be disregarded under § 3.276(b), and primary residences up to a 2-acre marketable lot remain excluded under § 3.275.",
+    "Expanded 1-year debt waiver deadline: Congress expanded the statutory overpayment waiver deadline from 180 days to 1 full year effective December 29, 2022 (Pub. L. 117-328, Div. U, § 254; 38 U.S.C. § 5302(a)), even though VA did not update 38 C.F.R. § 1.963(b) until January 26, 2026 (published November 26, 2025 at 90 FR 54234). Note also that requesting a waiver or dispute within 30 days of the First Demand Letter freezes monthly benefit withholding while VA reviews the request.",
+    "Fraud, misrepresentation, or bad faith is an absolute bar to an equitable waiver under 38 U.S.C. § 5302(c) and 38 C.F.R. § 1.965(b), and contesting whether the debt is legally valid at all is separate from asking for a waiver.",
+    "Competency benefit-of-the-doubt rule: under 38 C.F.R. § 3.353(c)–(e), VA cannot finalize an incompetency finding without advance notice, an opportunity for a hearing, and resolving any reasonable doubt in favor of competency."
+  ],
+  "questions_for_representative": [
+    "In calculating my VA Pension or Aid and Attendance eligibility, did VA deduct all qualifying unreimbursed assisted-living, memory-care, or in-home care expenses exceeding 5% of the base pension rate under 38 C.F.R. §§ 3.272(g) and 3.278?",
+    "If I received a Debt Management Center overpayment notice, can we both contest the validity of the underlying debt (for example, sole VA administrative error under 38 U.S.C. § 5112(b)(10)) AND file a protective waiver request within 30 days (to pause withholding) and within the 1-year deadline?",
+    "Was my waiver request wrongly dismissed as 'untimely' between December 29, 2022 and January 26, 2026 because VA staff applied the outdated 180-day regulation instead of the 1-year statute?",
+    "If VA proposed to rate me incompetent to handle my VA funds, how do we request a predetermination hearing within 30 days and submit lay or medical evidence showing I manage my bills (or with assistance)?"
+  ]
+}

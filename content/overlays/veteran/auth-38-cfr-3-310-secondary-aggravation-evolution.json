@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-3-310-secondary-aggravation-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.310-secondary-aggravation-evolution.md",
+  "upstream_sha256": "18af36e7732b9cc89385eb8746bdda75ae88ea62a4ba9fad801d1dfbb1a3aa32",
+  "linked_version_ids": [
+    "38-cfr-3.310-1979-era1a",
+    "38-cfr-3.310-2001-era1b",
+    "38-cfr-3.310b-2006-secondary-aggravation",
+    "38-cfr-3.310d-2014-tbi-secondary",
+    "38-cfr-3.301d-2006-allen-substance-abuse"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How VA's Secondary Service Connection & Aggravation Regulation (38 C.F.R. § 3.310) Evolved Over Time",
+  "what_this_means": "This reference tracks the exact wording of 38 C.F.R. § 3.310 from 1979 to today. Originally focused on conditions proximately caused by a service-connected disability (plus heart disease after certain lower-limb amputations), the regulation expanded over four eras: adding tobacco cross-references in May 2001, formally codifying secondary aggravation and baseline-deduction rules in October 2006 following Allen v. Brown and Allen v. Principi, and adding five presumptive secondary illnesses linked to Traumatic Brain Injury (TBI) effective January 16, 2014.",
+  "record_clues": [
+    "A secondary claim denial issued before or after October 10, 2006 that considered only whether a service-connected disability 'caused' a non-service-connected condition without evaluating whether it 'aggravated' that condition.",
+    "A denial of liver, gastrointestinal, nerve, or heart complications resulting from alcohol or substance use that began as self-medication for service-connected PTSD, depression, or chronic pain (governed by Allen v. Principi and 38 C.F.R. §§ 3.301(d) and 3.310(a)–(b)).",
+    "A service-connected Traumatic Brain Injury accompanied by Parkinsonism, unprovoked seizures, certain dementias, depression, or pituitary hormone deficiency diagnosed on or after January 16, 2014 (§ 3.310(d)).",
+    "A service-connected amputation at or above one knee—or at or above both ankles—accompanied by ischemic heart disease or hypertension (§ 3.310(c))."
+  ],
+  "important_cautions": [
+    "Exact amendment dates govern historical reviews: VA codified § 3.310(b) secondary aggravation effective October 10, 2006 (published September 7, 2006 at 71 FR 52744) and added § 3.310(d) TBI secondary presumptions effective January 16, 2014 (published December 17, 2013 at 78 FR 76196).",
+    "Missing a time window or severity threshold in § 3.310(d)(1) for a post-TBI condition does NOT bar a Veteran from establishing direct secondary causation or aggravation with a medical nexus opinion under § 3.310(a), (b), and (d)(2).",
+    "Tobacco limits apply differently depending on how smoking started: 38 U.S.C. § 1103 and 38 C.F.R. § 3.300(c) bar claims based on nicotine dependence starting in service, whereas secondary claims remain permitted when an already service-connected condition proximately caused post-service tobacco dependence and resulting disease.",
+    "Do not treat unfinalized or rescinded rules as active law: RIN 2900-AQ72 (sleep apnea) remains a proposed rule that is not enacted, and the February 17, 2026 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712). Also remember 38 C.F.R. § 20.1409(c)'s limit of one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Which version of 38 C.F.R. § 3.310 was in force on the date of my prior rating decision, and did VA evaluate both causation (§ 3.310(a)) and aggravation (§ 3.310(b))?",
+    "If my secondary condition involves substance use or weight gain triggered by a service-connected mental or orthopedic condition, how do Allen v. Principi and VAOPGCPREC 1-2017 apply to an open or Supplemental Claim?",
+    "If I have a service-connected TBI and developed depression, seizures, Parkinsonism, hormone changes, or cognitive decline outside the § 3.310(d)(1) presumptive time windows, can we still submit a medical nexus opinion under § 3.310(d)(2)?",
+    "How does VA establish my pre-aggravation baseline under § 3.310(b) so that only the pre-existing degree is deducted?"
+  ]
+}

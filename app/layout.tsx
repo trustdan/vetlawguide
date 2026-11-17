@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { GitHubCorner } from "@/components/chrome/github-corner";
 import { GoogleTagManager } from "@/components/chrome/google-tag-manager";
@@ -6,6 +9,23 @@ import { SiteHeader } from "@/components/chrome/site-header";
 import { ResearchProvider } from "@/components/providers/research-context";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { getCoverageManifest, getSearchEngineCatalog } from "@/lib/corpus/loader";
+
+const newsreader = localFont({
+  src: [
+    {
+      path: "../node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2",
+      style: "normal",
+      weight: "200 800",
+    },
+    {
+      path: "../node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2",
+      style: "italic",
+      weight: "200 800",
+    },
+  ],
+  variable: "--font-newsreader",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -36,7 +56,12 @@ export default function RootLayout({
   const manifest = getCoverageManifest();
 
   return (
-    <html lang="en" data-mode="veteran" suppressHydrationWarning>
+    <html
+      lang="en"
+      data-mode="veteran"
+      suppressHydrationWarning
+      className={`${newsreader.variable} ${GeistSans.variable} ${GeistMono.variable}`}
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: ZERO_FLASH_MODE_SCRIPT }} />
       </head>
@@ -53,13 +78,12 @@ export default function RootLayout({
                   <strong className="font-semibold text-foreground">
                     VetLawGuide
                   </strong>{" "}
-                  · Educational Reference Only (Not Legal Advice)
+                  · Educational reference only. Not legal advice.
                 </div>
-                <div className="font-mono text-[11px]">
-                  Pinned Release: {manifest.corpusReleaseId} · Bookmark:{" "}
-                  {manifest.activeBookmarkWave} ({manifest.totals.upstreamModules}{" "}
-                  verified modules live · {manifest.vasrdSystems.length} VASRD hubs) ·
-                  Checked {manifest.checkedAsOf}
+                <div className="font-mono text-xs">
+                  {manifest.totals.upstreamModules} primary-source modules ·{" "}
+                  {manifest.vasrdSystems.length} rating-schedule hubs · checked{" "}
+                  {manifest.checkedAsOf}
                 </div>
               </div>
             </footer>

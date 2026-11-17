@@ -111,7 +111,7 @@ export default function ChecklistsIndexPage() {
                   href={doc.route}
                   className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
                 >
-                  <span>Open Interactive 3-Column Checklist</span>
+                  <span>Open checklist</span>
                   <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
               </div>
@@ -123,7 +123,7 @@ export default function ChecklistsIndexPage() {
       {heldChecklists.length > 0 && (
         <section aria-labelledby="staged-checklists-heading" className="space-y-3">
           <h2 id="staged-checklists-heading" className="font-serif text-lg font-semibold">
-            Checklists Held at Ingestion Gate (Waves W2–W5)
+            Additional Checklists
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {heldChecklists.map((doc) => (
@@ -133,9 +133,6 @@ export default function ChecklistsIndexPage() {
                 className="flex items-center justify-between gap-2 rounded-lg border border-dashed border-border bg-surface/60 p-3.5 text-xs hover:border-primary"
               >
                 <span className="font-medium text-foreground">{doc.title}</span>
-                <span className="shrink-0 rounded border border-border bg-surface-elevated px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
-                  {doc.waveId}
-                </span>
               </Link>
             ))}
           </div>

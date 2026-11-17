@@ -1,0 +1,30 @@
+{
+  "upstream_id": "doctrine-master-chronological-matrix",
+  "upstream_path": "docs/master-chronological-matrix.md",
+  "upstream_sha256": "9652d81603c85c630abe47f414f78feb5d62cea42cee00a3660e5520ef5ba539",
+  "linked_version_ids": [
+    "38-cfr-part-4-vasrd-1946-base",
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.155-3.157b-2015-repeal",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Year-by-Year Timeline of Major VA Disability Law Turning Points (1945–2026)",
+  "what_this_means": "VA disability law has changed dramatically over the past eighty years—from the April 1, 1946 Rating Schedule baseline and the 1958 codification of Title 38, to the creation of judicial review in 1988 (VJRA), the duty-to-assist reforms of 2000 (VCAA), the end of informal claims on March 24, 2015, the three-lane Appeals Modernization Act (AMA) on February 19, 2019, and the 2022 PACT Act. Because an older VA decision must be judged against the exact procedural and medical-rating rules that existed when it was issued—while modern review options govern how you reopen or challenge it today—this chronological guide maps which rules were active in each era.",
+  "record_clues": [
+    "Any VA Rating Decision or Board of Veterans' Appeals decision dated between 1945 and 2026 where you need to know what laws, forms, and appeal rights existed that year.",
+    "Decisions issued right around major transition dates—such as July 21, 1992 (constructive possession of VA medical records under Bell v. Derwinski), November 7, 1996 (mental health schedule overhaul), March 24, 2015 (end of informal claims), or February 19, 2019 (AMA launch).",
+    "Older Rating Code Sheets citing pre-1991 Title 38 section numbers (such as § 310 or § 314) or post-WWII Veterans' Regulations."
+  ],
+  "important_cautions": [
+    "Never Mix Eras on Record Scope (Bell v. Derwinski): For Clear and Unmistakable Error (CUE) reviews, VA Medical Center treatment records that were not physically inside the claims folder are treated as 'constructively in the record' only for decisions issued on or after July 21, 1992 (VAOPGCPREC 12-95).",
+    "Don't Project Modern Rating Criteria Backward: Major updates to spine (2003), scars (2002/2008/2018), TBI (2008), joints (2021), heart/kidney (2021), and digestive (2024) criteria apply from their effective dates forward and cannot be cited to prove CUE in an earlier era's final decision.",
+    "Check Appeal Deadlines Today: For modern Board decisions, a Notice of Appeal to the U.S. Court of Appeals for Veterans Claims (CAVC) has a 120-day filing window (38 U.S.C. § 7266(a)), while AMA administrative continuous-pursuit lanes generally run on a 1-year window (§ 3.2500)."
+  ],
+  "questions_for_representative": [
+    "Looking at the date on my old VA decision, which major statutory and Rating Schedule era governed my claim at that time?",
+    "Did my claim span across a regulatory transition date while pending—entitling me to whichever old or new rating rule was more favorable for each time period?",
+    "Given my decision date, which modern review vehicle—Supplemental Claim, 38 C.F.R. § 3.156(c) service records, pending-claim audit, or CUE—best fits the rules of that era?"
+  ]
+}

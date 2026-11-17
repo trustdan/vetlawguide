@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-3-22-3-312-dic-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.22-dic-hypothetical-evolution.md",
+  "upstream_sha256": "fa98bcf55dffb19e445b92a3c6a5578af3ae3e4113d0bcd30866b9ef04be9dd2",
+  "linked_version_ids": [
+    "38-cfr-3.22-1979-pre2000",
+    "38-cfr-3.22-1989-pre2000",
+    "38-cfr-3.22-2000-interpretive",
+    "38-cfr-3.22-2005-2012-current",
+    "38-cfr-3.22-2012-current",
+    "38-cfr-3.312-1961-cause-of-death",
+    "38-cfr-3.312-1989-cause-of-death"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Exact Legal Rules for Total-Disability DIC (38 C.F.R. § 3.22) & Service-Connected Cause of Death (§ 3.312)",
+  "what_this_means": "This reference module provides the historical and current regulation text for both paths to Dependency and Indemnity Compensation (DIC). First, 38 C.F.R. § 3.312 explains when a service-connected disability counts as a 'principal' cause of death or a 'contributory' cause that weakened vital organs or accelerated death. Second, 38 C.F.R. § 3.22 tracks the dramatic regulatory history of 10-year total-disability DIC (38 U.S.C. § 1318): from the pre-January 21, 2000 era when survivors could prove open-ended 'hypothetical' 10-year total disability after death, to VA's January 21, 2000 rule restricting posthumous § 1318 claims to lifetime-claim Clear and Unmistakable Error (CUE, § 3.22(b)(1)), followed by the December 2, 2005 addition of newly associated military service records (§ 3.22(b)(2)) and the July 10, 2012 removal of the September 30, 1999 date limit for Former Prisoners of War.",
+  "record_clues": [
+    "A Veteran rated 100% schedular or TDIU (§ 4.16) for 10+ continuous years before death, 5+ continuous years from military discharge, or 1+ continuous year before death as a Former Prisoner of War (§ 3.22(a)(2)).",
+    "A service-connected active disease affecting a vital organ (heart, lungs, kidneys, liver, brain) rated 100% disabling at death, triggering § 3.312(c)(3)'s debilitation analysis.",
+    "Newly located military hospital or unit records associated after death that prove a Veteran's lifetime claim should have been rated 100% or TDIU for at least 10 years prior to death (§ 3.22(b)(2))."
+  ],
+  "important_cautions": [
+    "Why January 21, 2000 Changed § 3.22 Claims: Effective January 21, 2000 (65 FR 3388), VA eliminated open-ended Green v. Brown hypothetical DIC—even for claims already pending on that date (Rodriguez v. Peake). Today, posthumous § 3.22(b) entitlement requires a prior lifetime claim plus CUE (§ 3.22(b)(1)), newly associated service records (§ 3.22(b)(2), added December 2, 2005 at 70 FR 72211), or a listed withholding/nonpayment status.",
+    "Static Orthopedic Conditions vs. Vital Organs (§ 3.312(c)(2)): A stable, non-progressive amputation or orthopedic condition—even rated 100%—does not establish contributory cause of death under § 3.312(c) unless medical evidence shows it actually caused secondary cardiovascular/systemic decline or hastened death.",
+    "Gross Tort Offset Rule (§ 3.22(e)–(g)): When § 1318 DIC is offset by a third-party wrongful-death judgment or settlement, § 3.22(g) calculates the offset before deducting attorney fees or court costs."
+  ],
+  "questions_for_representative": [
+    "Does my late spouse's record show an active service-connected vital-organ condition where 38 C.F.R. § 3.312(c)(1) and (c)(3) support contributory service-connected death?",
+    "If my spouse was a Former Prisoner of War rated totally disabled for at least 1 year before death, have we checked the expanded post-2011/2012 rule in § 3.22(a)(2)(iii)?",
+    "For a posthumous 10-year total-disability DIC review, do we have newly associated service department records under § 3.22(b)(2) or a clear lifetime rating error under § 3.22(b)(1)?"
+  ]
+}

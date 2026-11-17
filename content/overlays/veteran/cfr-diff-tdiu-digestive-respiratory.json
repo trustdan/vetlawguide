@@ -1,0 +1,35 @@
+{
+  "upstream_id": "cfr-diff-tdiu-digestive-respiratory",
+  "upstream_path": "cfr-diffs/part-4-policy/tdiu-digestive-respiratory-diffs.md",
+  "upstream_sha256": "746871d624cb238b8a4aae99c9e0b4421ad81eef610d5af19e7876e76562fc1d",
+  "linked_version_ids": [
+    "38-cfr-4.16-1975-base",
+    "38-cfr-4.16c-1989-mental",
+    "38-cfr-4.16a-1990-marginal",
+    "38-cfr-4.16a-2014-current",
+    "38-cfr-4.26d-2023-bilateral",
+    "38-cfr-4.114-pre2024-digestive",
+    "38-cfr-4.114-2024-digestive"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Total Unemployability (TDIU), the May 2024 Digestive Overhaul & Unfinalized Rating Proposals",
+  "what_this_means": "This comparison module connects three major Part 4 rating transitions: (1) how Total Disability Based on Individual Unemployability (TDIU, 38 C.F.R. § 4.16) evolved from 1975 through the March 1, 1989–November 6, 1996 70%-mental-disorder rule (former § 4.16(c)) and the September 4, 1990 poverty-threshold / protected-workplace rule (§ 4.16(a)); (2) how VA's May 19, 2024 digestive overhaul (38 C.F.R. § 4.114) reshaped acid reflux (GERD, Diagnostic Code 7206) and Irritable Bowel Syndrome (Diagnostic Code 7319); and (3) how to separate enacted VASRD rules from unfinalized Federal Register proposals.",
+  "record_clues": [
+    "A Rating Code Sheet showing a single disability rated 60% or higher—or multiple disabilities combining to 70% or higher with at least one at 40% (including grouped conditions sharing a common cause or body system under § 4.16(a)(1)–(5))—alongside medical or vocational records showing you could not hold substantially gainful work.",
+    "A TDIU denial because you earned wages below the U.S. Census Bureau poverty threshold for one person, or worked in a family business or sheltered/heavily accommodated job ('protected employment' under § 4.16(a) and Cantrell v. Shulkin).",
+    "A GERD or Irritable Bowel Syndrome claim pending across May 19, 2024 where VA applied only one set of criteria instead of checking both pre- and post-May 19, 2024 rules, or reduced an existing pre-2024 GERD rating without actual medical improvement.",
+    "Confusion over online rumors claiming VA eliminated standalone tinnitus or 50% CPAP sleep apnea ratings—when those proposals remain unfinalized."
+  ],
+  "important_cautions": [
+    "Only service-connected disabilities can establish unemployability under 38 C.F.R. § 4.16(a)–(b); VA cannot count non-service-connected health conditions toward TDIU.",
+    "Historical TDIU dates matter: the Census poverty-threshold definition of marginal employment took effect September 4, 1990 (published August 3, 1990 at 55 FR 31579), while former § 4.16(c) (mandating a 100% schedular rating when a 70% mental disorder was the sole compensable disability causing unemployability) was in force only from March 1, 1989 through November 6, 1996.",
+    "Existing pre-May 19, 2024 digestive ratings (such as 30% or 60% GERD under former Diagnostic Code 7399-7346) are protected against reduction due to schedule changes under 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a).",
+    "Watch out for unfinalized or rescinded rules: proposed changes to Sleep Apnea and Tinnitus (RIN 2900-AQ72), Mental Disorders (RIN 2900-AQ82), and Painful Scars (90 FR 46542) remain proposed and unfinalized (not enacted law), and VA's February 17, 2026 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712)."
+  ],
+  "questions_for_representative": [
+    "Do multiple service-connected disabilities in my file share a common etiology or single body system under 38 C.F.R. § 4.16(a)(1)–(5) so they count as one disability toward the 60% or 40% schedular TDIU threshold?",
+    "Did an earlier increase claim alongside evidence of job loss reasonably raise TDIU under Roberson v. Principi and Rice v. Shinseki?",
+    "If my GERD or IBS claim was pending across May 19, 2024, did VA evaluate both the pre-May 19, 2024 and post-May 19, 2024 criteria to award the more favorable rating?",
+    "If I work part-time below the poverty threshold or receive special accommodations from a family/sympathetic employer, what documentation helps show marginal or protected employment under § 4.16(a)?"
+  ]
+}

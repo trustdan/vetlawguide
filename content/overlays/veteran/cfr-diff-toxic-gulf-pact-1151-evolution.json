@@ -1,0 +1,31 @@
+{
+  "upstream_id": "cfr-diff-toxic-gulf-pact-1151-evolution",
+  "upstream_path": "cfr-diffs/part-3/toxic-gulf-pact-1151-evolution.md",
+  "upstream_sha256": "c6702d2b3cdbf7a69e0c989fb1c2f09abb3a903677a54a2bb728b2940512e116",
+  "linked_version_ids": [
+    "38-cfr-3.317-1995-2022-gulf-war-mucmi",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact",
+    "38-cfr-3.361-3.363-2004-section-1151"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Date-by-Date Rule Changes for Gulf War Illness, Burn Pit Presumptions & VA Medical Injury Claims",
+  "what_this_means": "When reviewing older denials involving Gulf War illnesses (38 C.F.R. § 3.317), airborne particulate and PACT Act presumptions (38 C.F.R. §§ 3.320–3.320b), or injuries caused by VA medical care (38 U.S.C. § 1151; 38 C.F.R. §§ 3.358 and 3.361–3.363), the exact year of the claim or decision changes which legal standard applied. For example, diagnosed multisymptom illnesses like fibromyalgia and irritable bowel syndrome were added to § 3.317 effective March 1, 2002; Afghanistan joined § 3.317(a) multisymptom coverage on August 10, 2022; and VA medical injury claims shifted from a 'no-fault' standard to a negligence/unforeseen-event standard for claims received on or after October 1, 1997.",
+  "record_clues": [
+    "A 1995–2002 Gulf War denial rejecting chronic fatigue syndrome, fibromyalgia, or irritable bowel syndrome because it was a 'diagnosed' illness before Congress expanded 38 U.S.C. § 1117 effective March 1, 2002.",
+    "An August 5, 2021 through August 9, 2022 denial of asthma, rhinitis, or sinusitis under 38 C.F.R. § 3.320 because symptoms first appeared more than 10 years after military separation.",
+    "A post-2024 claim involving urinary bladder/ureter cancer (§ 3.320a, effective January 2, 2025) or leukemias, multiple myeloma, or myelodysplastic syndromes (§ 3.320b, effective January 10, 2025).",
+    "An older 38 U.S.C. § 1151 (or former § 351) VA hospital injury claim filed before October 1, 1997 that may still have remained pending—preserving the pre-1997 no-fault standard under Brown v. Gardner and 38 C.F.R. § 3.358."
+  ],
+  "important_cautions": [
+    "Watch Federal Register publication dates versus effective dates: functional gastrointestinal disorder rules published July 15, 2011 (76 FR 41696) took effect August 15, 2011, and VA's post-1997 § 1151 regulations published August 3, 2004 (69 FR 46426) took effect September 2, 2004 (implementing the October 1, 1997 statutory cutoff).",
+    "Reopening a finally denied pre-October 1, 1997 § 1151 medical-injury claim on or after October 1, 1997 triggers the modern fault/unforeseen-event standard under 38 C.F.R. § 3.361(a)—so representatives check first whether the pre-1997 claim actually remained pending before filing to reopen.",
+    "VA's October 1, 2024 notice updating §§ 3.317 and 3.320 (89 FR 79815) remains a proposed rule that is not finalized, though the PACT Act's statutory text in 38 U.S.C. §§ 1117, 1119, and 1120 is already binding law.",
+    "Prospective statutory or regulatory expansions cannot prove Clear and Unmistakable Error (CUE) in final decisions issued before those rules took effect, and 38 C.F.R. § 20.1409(c) permits only one final merits CUE decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Was my earlier Gulf War or burn-pit denial based on an old geographic, 10-year manifestation, or 10% severity rule that Congress or VA later removed?",
+    "If I had a VA medical-injury claim before October 1, 1997, did any unaddressed submission or post-decision medical record under former 38 C.F.R. § 3.156(b) keep that claim pending under the pre-1997 no-fault rule?",
+    "How do the effective-date limits in 38 C.F.R. § 3.114(a) compare with submitting newly obtained official service records under 38 C.F.R. § 3.156(c)?",
+    "If I am pursuing a PACT Act cancer claim, how do both the statutory presumption in 38 U.S.C. § 1120 and a direct 38 U.S.C. § 1168 TERA nexus opinion work together?"
+  ]
+}

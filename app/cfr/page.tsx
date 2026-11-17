@@ -262,13 +262,13 @@ export default function CfrIndexPage() {
                       href={ver.permalink}
                       className="rounded border border-border bg-background p-2.5 text-xs hover:bg-surface"
                     >
-                      <div className="font-mono text-[11px] font-semibold text-primary">
+                      <div className="font-mono text-xs font-semibold text-primary">
                         {ver.permalink}
                       </div>
                       <div className="mt-0.5 line-clamp-1 font-medium text-foreground">
                         {ver.heading}
                       </div>
-                      <div className="mt-1 font-mono text-[10px] text-muted-foreground">
+                      <div className="mt-1 font-mono text-xs text-muted-foreground">
                         Pub: {ver.publication_date ?? "Baseline"} · Eff:{" "}
                         {ver.effective_from} → {ver.effective_to ?? "present"}
                       </div>
@@ -309,7 +309,7 @@ export default function CfrIndexPage() {
                   className="flex flex-col justify-between rounded-lg border border-border bg-surface-elevated p-4 text-xs hover:border-primary"
                 >
                   <div className="space-y-1.5">
-                    <div className="flex items-center justify-between gap-2 font-mono text-[10px]">
+                    <div className="flex items-center justify-between gap-2 font-mono text-xs">
                       <span className="rounded border border-primary/40 bg-primary/10 px-1.5 py-0.5 font-semibold text-primary">
                         Verbatim Primary Text
                       </span>
@@ -320,7 +320,7 @@ export default function CfrIndexPage() {
                     <h3 className="font-semibold text-foreground">{sec.cfrSection}</h3>
                     <p className="line-clamp-2 text-muted-foreground">{sec.title}</p>
                   </div>
-                  <span className="mt-3 font-mono text-[11px] font-semibold text-primary">
+                  <span className="mt-3 font-mono text-xs font-semibold text-primary">
                     /cfr/{sec.sectionSlug} →
                   </span>
                 </Link>
@@ -354,20 +354,20 @@ export default function CfrIndexPage() {
             >
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-1.5 py-0.5 font-mono text-[10px] font-semibold text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-1.5 py-0.5 font-mono text-xs font-semibold text-muted-foreground">
                     <Bookmark className="h-3 w-3 text-primary" aria-hidden="true" />
                     {(sec.companionModules ?? []).length > 0
                       ? `${(sec.companionModules ?? []).length} Companion Guide(s)`
                       : "Transition Summary"}
                   </span>
-                  <span className="font-mono text-[10px] text-muted-foreground">
+                  <span className="font-mono text-xs text-muted-foreground">
                     {sec.versions.length} snapshot{sec.versions.length === 1 ? "" : "s"}
                   </span>
                 </div>
                 <h3 className="font-semibold text-foreground">{sec.cfrSection}</h3>
                 <p className="line-clamp-2 text-muted-foreground">{sec.title}</p>
               </div>
-              <span className="mt-3 font-mono text-[11px] font-semibold text-primary">
+              <span className="mt-3 font-mono text-xs font-semibold text-primary">
                 /cfr/{sec.sectionSlug} →
               </span>
             </Link>
@@ -396,13 +396,13 @@ export default function CfrIndexPage() {
               className="flex flex-col justify-between rounded-lg border border-border bg-surface-elevated p-4 text-xs hover:border-primary"
             >
               <div className="space-y-1">
-                <span className="font-mono text-[10px] font-semibold text-primary">
-                  {DOCUMENT_CATEGORY_LABELS[mod.category]} · {mod.waveId}
+                <span className="font-mono text-xs font-medium text-muted-foreground">
+                  {DOCUMENT_CATEGORY_LABELS[mod.category]}
                 </span>
                 <h3 className="font-semibold text-foreground">{mod.title}</h3>
               </div>
-              <span className="mt-3 font-mono text-[11px] font-semibold text-primary">
-                Open 3-Column Reader →
+              <span className="mt-3 font-mono text-xs font-semibold text-primary">
+                Read guide →
               </span>
             </Link>
           ))}

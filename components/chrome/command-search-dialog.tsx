@@ -67,7 +67,7 @@ export function CommandSearchDialog({
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="rounded px-1.5 py-0.5 font-mono text-[11px] text-muted-foreground hover:bg-muted hover:text-foreground"
+              className="rounded px-1.5 py-0.5 font-mono text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
             >
               Clear
             </button>
@@ -82,7 +82,7 @@ export function CommandSearchDialog({
           </button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-1.5 border-b border-border/70 bg-surface px-3.5 py-1.5 text-[11px]">
+        <div className="flex flex-wrap items-center gap-1.5 border-b border-border/70 bg-surface px-3.5 py-1.5 text-xs">
           <span className="font-semibold text-muted-foreground">Try lookup:</span>
           {[
             "5313",
@@ -152,7 +152,7 @@ export function CommandSearchDialog({
                         <div className="truncate text-xs text-muted-foreground">
                           {item.subtitle}
                         </div>
-                        <div className="inline-flex items-center gap-1 font-mono text-[11px] text-primary">
+                        <div className="inline-flex items-center gap-1 font-mono text-xs text-primary">
                           {matchKind !== "keyword" && (
                             <Sparkles className="h-3 w-3 shrink-0" aria-hidden="true" />
                           )}

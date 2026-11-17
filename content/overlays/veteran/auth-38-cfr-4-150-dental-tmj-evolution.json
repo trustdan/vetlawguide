@@ -1,0 +1,32 @@
+{
+  "upstream_id": "auth-38-cfr-4-150-dental-tmj-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.150-dental-tmj-evolution.md",
+  "upstream_sha256": "08db2b39173ba18977840fb5cac220e9efb1298d5aef65cb03fa32ab23ed83ad",
+  "linked_version_ids": [
+    "38-cfr-4.149-4.150-1994-dental",
+    "38-cfr-4.150-2017-dental-tmd",
+    "38-cfr-3.105i-1992-predetermination",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Dental & Jaw (TMJ/TMD) Rating Snapshots: 1994 Millimeter Rules vs. 2017 Diet Matrix",
+  "what_this_means": "This module preserves the exact historical and current text of 38 C.F.R. § 4.150 governing dental, jaw, and oral conditions (Diagnostic Codes 9900–9918), especially Temporomandibular Disorder (TMJ/TMD, Diagnostic Code 9905). From February 17, 1994 through September 9, 2017 (59 FR 2530), VA rated Diagnostic Code 9905 solely on millimeter measurements of vertical mouth opening (31–40 mm = 10%, 21–30 mm = 20%, 11–20 mm = 30%, 0–10 mm = 40%) or side-to-side motion (0–4 mm = 10%). Effective September 10, 2017 (published August 3, 2017 at 82 FR 36080), VA narrowed 'normal' unassisted vertical opening to 35 mm or more and introduced a two-factor grid (10% to 50%) combining unassisted millimeter opening with physician-recorded or physician-verified dietary texture restrictions (semisolid, soft, pureed, or full-liquid foods).",
+  "record_clues": [
+    "A pre-September 10, 2017 10% or 20% TMJ rating (for example, 35–40 mm opening = 10%, or 30 mm opening = 20%) reduced after September 10, 2017 solely because the updated Diagnostic Code 9905 changed the millimeter cutoffs.",
+    "Dental or C&P jaw exams recording objective painful motion when opening, chewing, or moving the jaw side-to-side, yet assigning 0% because vertical opening reached 35 mm or more (overlooking the 10% painful-motion floor under 38 C.F.R. § 4.59).",
+    "Medical or dental records verifying a mechanically altered diet (soft foods, pureed foods, or liquid supplements due to jaw locking/pain) that VA failed to apply under Note (3) to post-2017 Diagnostic Code 9905.",
+    "Head, neck, jaw, or oral cavity cancer (Diagnostic Code 9918, including PACT Act presumptive head and neck cancers) reduced from 100% without a mandatory 6-month post-treatment exam and 60-day notice, or omitting separate ratings for radiation jawbone damage (osteoradionecrosis, Diagnostic Code 9900), speech, taste/smell, or facial nerve residuals."
+  ],
+  "important_cautions": [
+    "Cavities and routine missing teeth vs. compensable bone loss: under 38 C.F.R. § 3.381(b) and Diagnostic Code 9913, treatable cavities, gum (periodontal) disease, and replaceable missing teeth without loss of actual jawbone substance do NOT receive monthly disability pay—instead, they are adjudicated for VA outpatient dental care eligibility under 38 C.F.R. § 17.161. By contrast, a compensable 10%+ rating for Diagnostic Code 9905 TMD or jawbone loss unlocks comprehensive Class I VA dental care.",
+    "Non-combination rule inside Diagnostic Code 9905: under Note (1) in both the 1994 and 2017 schedules, limited vertical jaw opening and limited lateral (side-to-side) excursion cannot be combined with each other—VA assigns whichever single tier is higher.",
+    "Dietary elevation proof: under post-September 10, 2017 Note (3) to Diagnostic Code 9905, mechanically altered diet tiers require a texture-modified diet recorded or verified by a physician—self-chosen soft foods without clinical documentation will not trigger the higher grid column.",
+    "Do not cite the rescinded February 17, 2026 medication Interim Final Rule (91 FR 7118, withdrawn February 27, 2026 at 91 FR 9712) as active law, and remember 38 C.F.R. § 20.1409(c) allows only one final merits Clear and Unmistakable Error (CUE) decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Even if my unassisted jaw opening measured 35 mm or wider, did the examiner document objective painful motion during jaw movement that warrants a 10% minimum rating under 38 C.F.R. § 4.59?",
+    "Has my treating doctor or dentist documented and verified in my medical records that I require a soft, semisolid, pureed, or liquid diet due to my TMD under Note (3) to Diagnostic Code 9905?",
+    "If I had a running 10% or 20% TMJ rating before September 10, 2017, did VA honor 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a) protection against schedule-only reductions?",
+    "Once service connection is granted for a compensable dental or jaw condition (such as Diagnostic Code 9905 TMD), how do I enroll for Class I comprehensive VA outpatient dental care under 38 C.F.R. § 17.161?"
+  ]
+}

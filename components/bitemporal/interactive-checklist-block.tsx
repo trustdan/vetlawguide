@@ -31,7 +31,7 @@ export function InteractiveChecklistBlock({
           <button
             type="button"
             onClick={() => setCheckedMap({})}
-            className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-2 py-0.5 text-[11px] font-medium text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-1 rounded border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-muted-foreground hover:text-foreground"
           >
             <RotateCcw className="h-3 w-3" aria-hidden="true" />
             <span>Clear Checks</span>

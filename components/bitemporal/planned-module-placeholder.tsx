@@ -12,9 +12,9 @@ export function PlannedModulePlaceholder({
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
           <span className="inline-flex items-center gap-1.5 rounded border border-border bg-surface-elevated px-2 py-0.5 font-mono font-semibold text-muted-foreground">
             <Bookmark className="h-3 w-3 text-accent" aria-hidden="true" />
-            Queued for Ingestion {topic.waveId}
+            Verbatim Transcription In Progress
           </span>
-          <span className="font-mono text-[11px] text-muted-foreground">
+          <span className="font-mono text-xs text-muted-foreground">
             Not Yet Published — Do Not Rely
           </span>
         </div>

@@ -1,0 +1,34 @@
+{
+  "upstream_id": "cfr-diff-pension-net-worth-and-effective-date-diffs",
+  "upstream_path": "cfr-diffs/part-3/pension-net-worth-and-effective-date-diffs.md",
+  "upstream_sha256": "a449da0f8bc3e8db1406d627389d0b3ae0e2e050eec6a7ad65c77bb9fe56a6ab",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.400o2-2019-ama-intro",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-3.700a3-2009-combat-severance",
+    "38-cfr-3.274-3.278-2018-csra-lookback",
+    "38-cfr-1.963b-2026-1yr-waiver"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Key Date Cutoffs: Informal Claims (2015), Severance Offsets (1996/2008), Pension Transfers (2018) & Debt Waivers (2022/2026)",
+  "what_this_means": "Across VA compensation, wartime pension, and overpayment law, a handful of sharp calendar cutoffs determine whether an older medical visit counts as a claim, how much separation pay VA can recoup, whether gifting assets triggers a pension penalty, and how long you have to request a debt waiver. This historical comparison maps four major rule shifts side-by-side: (1) March 24, 2015 (when Intent to File replaced informal claims and VA hospital-report claims under former 38 C.F.R. § 3.157(b)), (2) October 1, 1996 and January 28, 2008 (after-tax separation/severance recoupment caps and combat-zone severance exemptions under 38 C.F.R. § 3.700), (3) October 18, 2018 (bright-line pension net worth and 36-month transfer lookback under 38 C.F.R. §§ 3.274–3.279), and (4) December 29, 2022 / January 26, 2026 (expansion of the overpayment waiver window from 180 days to 1 year under 38 U.S.C. § 5302(a) and 38 C.F.R. § 1.963(b)).",
+  "record_clues": [
+    "A pre-March 24, 2015 VA medical center outpatient exam or hospital admission showing worsening of an already service-connected disability (including a 0% rating) that VA never adjudicated as an informal claim for increase under former 38 C.F.R. § 3.157(b).",
+    "A VA Award Letter recouping gross pre-tax separation or severance pay received after September 30, 1996, OR recouping Chapter 61 combat-zone / combat-related disability severance pay for a separation on or after January 28, 2008.",
+    "A VA Pension denial applying a 36-month transfer penalty to a gift or trust created before October 18, 2018, or where total net worth was already below VA's bright-line limit.",
+    "A Debt Management Center or Committee on Waivers and Compromises letter dismissing a waiver request filed 181–365 days after a post-December 29, 2022 debt notice based on the outdated 180-day regulation."
+  ],
+  "important_cautions": [
+    "Prospective military separation cutoffs: the combat-zone / combat-related disability severance non-recoupment rule (10 U.S.C. § 1212(d)(2)) applies strictly to service members separated on or after January 28, 2008, and the after-tax net recoupment cap applies strictly to separation/severance payments made after September 30, 1996.",
+    "March 24, 2015 claim-form cutoff: VA medical records generated ON OR AFTER March 24, 2015 do NOT automatically initiate a claim for increase—though pre-March 24, 2015 informal claims that VA never adjudicated remain viable (Shea v. Wilkie).",
+    "October 18, 2018 pension transfer cutoff: pre-October 18, 2018 asset transfers are exempt from the 36-month penalty period, whereas uncompensated transfers of excess assets ON OR AFTER October 18, 2018 can trigger up to a 5-year pension penalty.",
+    "Judicial invalidation vs. CUE: while the Federal Circuit invalidated VA's ban on Intent to File for Supplemental Claims in Military-Veterans Advocacy v. Secretary of Veterans Affairs (July 30, 2021), George v. McDonough and 38 C.F.R. § 20.1403(e) bar using that later court ruling to claim Clear and Unmistakable Error (CUE) against final pre-July 30, 2021 decisions."
+  ],
+  "questions_for_representative": [
+    "Do my pre-March 24, 2015 VA medical center records contain an unadjudicated informal claim for increase under former 38 C.F.R. § 3.157(b)?",
+    "Did VA calculate my separation or disability severance recoupment using my net after-tax payout (post-September 30, 1996), or exempt my Chapter 61 combat-related severance pay if I separated on or after January 28, 2008?",
+    "If VA denied my Wartime or Survivors Pension due to an asset transfer, did the transfer happen before October 18, 2018 or stay below the bright-line net-worth threshold?",
+    "Was my overpayment waiver filed within 1 year of a debt notice dated on or after December 29, 2022 under 38 U.S.C. § 5302(a)?"
+  ]
+}

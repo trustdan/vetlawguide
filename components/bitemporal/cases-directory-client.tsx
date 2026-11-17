@@ -6,6 +6,8 @@ import {
   ArrowRight,
   Calendar,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
   Scale,
   Search,
@@ -20,14 +22,18 @@ import {
   HISTORICAL_ERAS,
   filterAuthoritiesForSelectedEra,
   getHistoricalEraById,
+  paginateAuthorities,
   type EraAuthorityFilterMode,
 } from "@/lib/corpus/eras-and-authorities";
 import {
   CANONICAL_PRACTICE_DOMAINS,
+  type AudienceMode,
   type AuthorityTier,
   type PrecedentEntry,
 } from "@/lib/corpus/types";
 import { cn } from "@/lib/utils";
+
+const AUTHORITIES_PER_PAGE = 25;
 
 type TierFilterId = "all" | AuthorityTier | "nonprecedential-watchlist";
 
@@ -58,6 +64,17 @@ const TIER_BADGE_LABELS: Record<AuthorityTier, string> = {
   "district-or-other": "Federal District / Class Order",
 };
 
+const VETERAN_TIER_BADGE_LABELS: Record<AuthorityTier, string> = {
+  scotus: "U.S. Supreme Court",
+  "fed-cir": "Federal Circuit Court (Binding)",
+  "cavc-precedential": "Veterans Court Ruling (Binding)",
+  "vaopgcprec-binding": "VA General Counsel Opinion (Binding)",
+  "vaopgcprec-quarantined": "VA General Counsel (Withdrawn / Do Not Cite)",
+  "cavc-nonprecedential-rule30a": "Single-Judge Memo (Not Binding — Rule 30(a))",
+  "fed-cir-nonprecedential": "Federal Circuit Order (Nonprecedential)",
+  "district-or-other": "Federal Court / Class Order",
+};
+
 function matchesAuthoritySearch(entry: PrecedentEntry, rawQuery: string): boolean {
   const q = rawQuery.trim().toLowerCase();
   if (!q) return true;
@@ -76,14 +93,23 @@ function matchesAuthoritySearch(entry: PrecedentEntry, rawQuery: string): boolea
   return hay.includes(q);
 }
 
-function AuthorityCard({
+function summarizeOneLine(text: string | null | undefined, maxChars = 150): string | null {
+  if (!text) return null;
+  const clean = text.trim().replace(/\s+/g, " ");
+  if (clean.length <= maxChars) return clean;
+  return `${clean.slice(0, maxChars - 1).trimEnd()}…`;
+}
+
+function CompactAuthorityRow({
   entry,
   activeEraSelected,
+  audienceMode,
 }: {
   entry: PrecedentEntry;
   activeEraSelected: boolean;
+  audienceMode: AudienceMode;
 }) {
-  const [modulesOpen, setModulesOpen] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const tier = entry.authorityTier ?? "cavc-precedential";
   const isQuarantinedOrNonprec =
@@ -94,65 +120,117 @@ function AuthorityCard({
     Boolean(entry.isNonprecedentialFedCir);
 
   const citedModules = entry.citedByModules ?? [];
-  const previewModules = modulesOpen ? citedModules : citedModules.slice(0, 3);
   const applicableEras = entry.applicableDecisionEras ?? [];
+  const previewText = summarizeOneLine(
+    audienceMode === "veteran"
+      ? (entry.veteranPlainSummary ?? entry.coreHolding ?? entry.litigationUtility)
+      : (entry.coreHolding ?? entry.litigationUtility ?? entry.veteranPlainSummary),
+    155,
+  );
 
   return (
     <article
       className={cn(
-        "flex min-w-0 max-w-full flex-col justify-between rounded-lg border bg-surface-elevated p-4 text-xs break-words transition-colors",
+        "min-w-0 max-w-full px-4 py-3.5 text-xs break-words transition-colors",
         isQuarantinedOrNonprec
-          ? "quarantine-stripe border-accent/60"
-          : "border-border",
+          ? "quarantine-stripe bg-surface"
+          : "bg-surface-elevated hover:bg-surface/80",
       )}
     >
-      <div className="space-y-2.5">
-        {/* Top Metadata Strip */}
-        <div className="flex flex-wrap items-center justify-between gap-1.5">
+      {/* Compact Scannable Header Row */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1 space-y-1">
           <div className="flex flex-wrap items-center gap-1.5">
             <span
               className={cn(
-                "rounded px-2 py-0.5 font-mono text-[10px] font-semibold",
+                "rounded border px-2 py-0.5 font-mono text-xs font-semibold",
                 isQuarantinedOrNonprec
-                  ? "border border-accent/50 bg-surface font-bold text-accent"
-                  : "bg-primary text-primary-foreground",
+                  ? "border-accent/60 bg-background font-bold text-accent"
+                  : "border-border bg-surface text-primary",
               )}
             >
-              {TIER_BADGE_LABELS[tier]}
+              {audienceMode === "veteran"
+                ? VETERAN_TIER_BADGE_LABELS[tier]
+                : TIER_BADGE_LABELS[tier]}
             </span>
 
             {entry.issuanceYear && (
-              <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+              <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-xs text-muted-foreground">
                 Issued {entry.issuanceDateLabel ?? entry.issuanceYear}
               </span>
             )}
 
             {entry.eraGovernanceScope === "cross-era" ? (
-              <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
-                Cross-Era Doctrine (1945–Present)
+              <span className="rounded border border-border bg-surface px-1.5 py-0.5 font-mono text-xs text-muted-foreground">
+                Cross-Era
               </span>
             ) : (
-              <span className="rounded border border-primary/40 bg-surface px-1.5 py-0.5 font-mono text-[10px] font-semibold text-primary">
-                Era-Bounded ({applicableEras.length} Era
-                {applicableEras.length === 1 ? "" : "s"})
+              <span className="rounded border border-primary/40 bg-surface px-1.5 py-0.5 font-mono text-xs font-medium text-primary">
+                {applicableEras.length} Era{applicableEras.length === 1 ? "" : "s"}
               </span>
             )}
+
+            <span className="font-mono text-xs text-muted-foreground">
+              · Checked {entry.checkedAsOf}
+            </span>
           </div>
 
-          <span className="font-mono text-[10px] text-muted-foreground">
-            Checked {entry.checkedAsOf}
-          </span>
-        </div>
-
-        {/* Citation Heading */}
-        <div>
-          <h3 className="font-serif text-base font-bold text-foreground">
+          <h3 className="font-serif text-base font-bold leading-snug text-foreground">
             {entry.citation}
           </h3>
+
+          {/* Explicit Nonprecedential / Quarantined Guardrails Always Visible (Rule 02) */}
+          {entry.isNonprecedentialRule30a && (
+            <p className="font-semibold text-accent">
+              <LexiconText text="Nonprecedential single-judge memorandum decision (CAVC Rule 30(a)) — do not cite as binding precedent." />
+            </p>
+          )}
+          {entry.isNonprecedentialFedCir && (
+            <p className="font-semibold text-accent">
+              <LexiconText text="Nonprecedential Federal Circuit disposition (Fed. Cir. R. 32.1)." />
+            </p>
+          )}
+          {tier === "vaopgcprec-quarantined" && (
+            <p className="font-semibold text-accent">
+              <LexiconText text="Quarantined / Withdrawn or Invalidated OGC Opinion — never cite as active binding law (relevant only when auditing historical decisions under 38 C.F.R. § 20.1403(e))." />
+            </p>
+          )}
+
+          {!detailsOpen && previewText && (
+            <p className="leading-relaxed text-muted-foreground">
+              <LexiconText text={previewText} />
+            </p>
+          )}
+        </div>
+
+        <div className="flex shrink-0 flex-wrap items-center gap-2 sm:flex-col sm:items-end">
+          <button
+            type="button"
+            aria-expanded={detailsOpen}
+            onClick={() => setDetailsOpen((prev) => !prev)}
+            className="inline-flex min-h-8 items-center gap-1 rounded-md border border-border bg-background px-2.5 py-1 text-xs font-semibold text-primary hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            <span>
+              {detailsOpen
+                ? "Hide details"
+                : `Details & ${citedModules.length} guide${citedModules.length === 1 ? "" : "s"}`}
+            </span>
+            {detailsOpen ? (
+              <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+            ) : (
+              <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Expandable Holdings, Persona Cross-Inspection, Temporal Cutoffs & Cited-In Links */}
+      {detailsOpen && (
+        <div className="mt-3 space-y-3 border-t border-border/80 pt-3">
           {entry.validityLabel && (
             <p
               className={cn(
-                "mt-0.5 font-mono text-[11px]",
+                "font-mono text-xs",
                 isQuarantinedOrNonprec
                   ? "font-semibold text-accent"
                   : "text-muted-foreground",
@@ -161,141 +239,175 @@ function AuthorityCard({
               Status: {entry.validityLabel}
             </p>
           )}
-        </div>
 
-        {/* Nonprecedential / Quarantined Explicit Guardrails (Rule 02) */}
-        {entry.isNonprecedentialRule30a && (
-          <div className="rounded border border-accent/40 bg-surface p-2 text-[11px] font-semibold text-accent">
-            Nonprecedential single-judge memorandum decision (CAVC Rule 30(a)) —
-            do not cite as binding precedent.
-          </div>
-        )}
-        {entry.isNonprecedentialFedCir && (
-          <div className="rounded border border-accent/40 bg-surface p-2 text-[11px] font-semibold text-accent">
-            Nonprecedential Federal Circuit disposition (Fed. Cir. R. 32.1).
-          </div>
-        )}
-        {tier === "vaopgcprec-quarantined" && (
-          <div className="rounded border border-accent/40 bg-surface p-2 text-[11px] font-semibold text-accent">
-            Quarantined / Withdrawn or Invalidated OGC Opinion — never cite as
-            active binding law (relevant only when auditing historical pre-withdrawal
-            decisions under 38 C.F.R. § 20.1403(e)).
-          </div>
-        )}
+          {entry.coreHolding && (
+            <p className="leading-relaxed text-muted-foreground">
+              <strong className="font-semibold text-foreground">Holding: </strong>
+              <LexiconText text={entry.coreHolding} />
+            </p>
+          )}
 
-        {/* Dual-Persona Holding, Plain-English Summary & Litigation Scope With Cross-Inspection */}
-        {entry.coreHolding && (
-          <p className="leading-relaxed text-muted-foreground">
-            <strong className="font-semibold text-foreground">Holding: </strong>
-            <LexiconText text={entry.coreHolding} />
-          </p>
-        )}
-
-        {(entry.veteranPlainSummary || entry.litigationUtility) && (
-          <CrossInspectionExpander
-            veteranContent={
-              entry.veteranPlainSummary ? (
-                <p className="rounded-md border border-border/80 bg-surface p-2.5 leading-relaxed text-foreground">
-                  <strong className="font-semibold text-primary">
-                    Plain-English Meaning:{" "}
-                  </strong>
-                  <LexiconText text={entry.veteranPlainSummary} />
-                </p>
-              ) : (
-                <p className="text-[11px] leading-relaxed text-muted-foreground">
-                  <LexiconText
-                    text={`Referenced across ${citedModules.length} guide(s) below. Expand practitioner notes for technical audit & pleading scope.`}
-                  />
-                </p>
-              )
-            }
-            practitionerContent={
-              entry.litigationUtility ? (
-                <p className="rounded-md border border-border/80 bg-surface p-2.5 leading-relaxed text-muted-foreground">
-                  <strong className="font-semibold text-foreground">
-                    Audit &amp; Pleading Scope:{" "}
-                  </strong>
-                  <LexiconText text={entry.litigationUtility} />
-                </p>
-              ) : (
-                <p className="text-[11px] leading-relaxed text-muted-foreground">
-                  {`Controlling ${TIER_BADGE_LABELS[tier]} authority cited across ${citedModules.length} corpus module(s).`}
-                </p>
-              )
-            }
-          />
-        )}
-
-        {/* Applicable Decision Eras Pills */}
-        {applicableEras.length > 0 && applicableEras.length < 5 && (
-          <div className="flex flex-wrap items-center gap-1 pt-0.5">
-            <span className="text-[10px] font-semibold text-muted-foreground">
-              Governs Decisions In:
-            </span>
-            {applicableEras.map((eId) => {
-              const spec = getHistoricalEraById(eId);
-              if (!spec) return null;
-              return (
-                <span
-                  key={eId}
-                  className={cn(
-                    "rounded border px-1.5 py-0.5 font-mono text-[10px]",
-                    activeEraSelected
-                      ? "border-primary/40 bg-surface font-semibold text-foreground"
-                      : "border-border bg-surface text-muted-foreground",
-                  )}
-                >
-                  {spec.windowLabel}
-                </span>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* Reverse "Cited In" Corpus Module Links */}
-      {citedModules.length > 0 && (
-        <div className="mt-3 border-t border-border/70 pt-2.5">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="font-mono text-[10px] font-semibold text-muted-foreground">
-              Cited in {citedModules.length} Corpus Module
-              {citedModules.length === 1 ? "" : "s"}:
-            </span>
-            {citedModules.length > 3 && (
-              <button
-                type="button"
-                aria-expanded={modulesOpen}
-                onClick={() => setModulesOpen((prev) => !prev)}
-                className="inline-flex items-center gap-0.5 text-[10px] font-semibold text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
-              >
-                <span>
-                  {modulesOpen
-                    ? "Show fewer"
-                    : `+${citedModules.length - 3} more`}
-                </span>
-                {modulesOpen ? (
-                  <ChevronUp className="h-3 w-3" aria-hidden="true" />
+          {(entry.veteranPlainSummary || entry.litigationUtility) && (
+            <CrossInspectionExpander
+              veteranContent={
+                entry.veteranPlainSummary ? (
+                  <p className="rounded-md border border-border/80 bg-surface p-2.5 leading-relaxed text-foreground">
+                    <strong className="font-semibold text-primary">
+                      Plain-English Meaning:{" "}
+                    </strong>
+                    <LexiconText text={entry.veteranPlainSummary} />
+                  </p>
                 ) : (
-                  <ChevronDown className="h-3 w-3" aria-hidden="true" />
-                )}
-              </button>
-            )}
-          </div>
-          <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {previewModules.map((mod) => (
-              <Link
-                key={mod.id}
-                href={mod.route}
-                className="inline-flex max-w-full items-center gap-1 rounded border border-border bg-surface px-2 py-0.5 text-[11px] text-primary hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"
-              >
-                <span className="truncate">{mod.title}</span>
-                <ArrowRight className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    <LexiconText
+                      text={`Referenced across ${citedModules.length} guide(s) below. Expand practitioner notes for technical audit & pleading scope.`}
+                    />
+                  </p>
+                )
+              }
+              practitionerContent={
+                entry.litigationUtility ? (
+                  <p className="rounded-md border border-border/80 bg-surface p-2.5 leading-relaxed text-muted-foreground">
+                    <strong className="font-semibold text-foreground">
+                      Audit &amp; Pleading Scope:{" "}
+                    </strong>
+                    <LexiconText text={entry.litigationUtility} />
+                  </p>
+                ) : (
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {`Controlling ${TIER_BADGE_LABELS[tier]} authority cited across ${citedModules.length} source module(s).`}
+                  </p>
+                )
+              }
+            />
+          )}
+
+          {applicableEras.length > 0 && applicableEras.length < 5 && (
+            <div className="flex flex-wrap items-center gap-1">
+              <span className="text-xs font-semibold text-muted-foreground">
+                Governs Decisions In:
+              </span>
+              {applicableEras.map((eId) => {
+                const spec = getHistoricalEraById(eId);
+                if (!spec) return null;
+                return (
+                  <span
+                    key={eId}
+                    className={cn(
+                      "rounded border px-1.5 py-0.5 font-mono text-xs",
+                      activeEraSelected
+                        ? "border-primary/40 bg-surface font-semibold text-foreground"
+                        : "border-border bg-surface text-muted-foreground",
+                    )}
+                  >
+                    {spec.windowLabel}
+                  </span>
+                );
+              })}
+            </div>
+          )}
+
+          {(entry.eraCutoffCautions ?? []).length > 0 && (
+            <div className="space-y-1 rounded-md border border-accent/40 bg-surface p-2.5">
+              <div className="font-semibold text-foreground">
+                Temporal Cutoff Notes:
+              </div>
+              <ul className="list-disc space-y-1 pl-4 text-muted-foreground">
+                {(entry.eraCutoffCautions ?? []).map((c, idx) => (
+                  <li key={`${c.eraId}-${idx}`}>
+                    <LexiconText text={c.caution} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {citedModules.length > 0 && (
+            <div className="space-y-1.5 pt-1">
+              <div className="font-mono text-xs font-semibold text-muted-foreground">
+                Cited in {citedModules.length} Guide
+                {citedModules.length === 1 ? "" : "s"} / Regulation
+                {citedModules.length === 1 ? "" : "s"}:
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {citedModules.map((mod) => (
+                  <Link
+                    key={mod.id}
+                    href={mod.route}
+                    className="inline-flex max-w-full items-center gap-1 rounded border border-border bg-background px-2.5 py-1 text-xs text-primary hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"
+                  >
+                    <span className="truncate">{mod.title}</span>
+                    <ArrowRight
+                      className="h-3 w-3 shrink-0"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </article>
+  );
+}
+
+function PaginationControls({
+  label,
+  currentPage,
+  totalPages,
+  startIndex,
+  endIndex,
+  totalItems,
+  onPageChange,
+}: {
+  label: string;
+  currentPage: number;
+  totalPages: number;
+  startIndex: number;
+  endIndex: number;
+  totalItems: number;
+  onPageChange: (nextPage: number) => void;
+}) {
+  if (totalItems === 0) return null;
+
+  return (
+    <nav
+      aria-label={label}
+      className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface px-3.5 py-2.5 text-xs"
+    >
+      <div className="font-mono text-muted-foreground">
+        Showing{" "}
+        <strong className="text-foreground">
+          {startIndex}–{endIndex}
+        </strong>{" "}
+        of <strong className="text-foreground">{totalItems}</strong> authorities
+        {totalPages > 1 ? ` · Page ${currentPage} of ${totalPages}` : ""}
+      </div>
+
+      {totalPages > 1 && (
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            disabled={currentPage <= 1}
+            onClick={() => onPageChange(currentPage - 1)}
+            className="inline-flex min-h-8 items-center gap-1 rounded-md border border-border bg-background px-2.5 py-1 font-semibold text-foreground enabled:hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>Previous</span>
+          </button>
+          <button
+            type="button"
+            disabled={currentPage >= totalPages}
+            onClick={() => onPageChange(currentPage + 1)}
+            className="inline-flex min-h-8 items-center gap-1 rounded-md border border-border bg-background px-2.5 py-1 font-semibold text-foreground enabled:hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <span>Next</span>
+            <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }
 
@@ -308,14 +420,33 @@ export function CasesDirectoryClient({
   checkedAsOf: string;
   totalModules: number;
 }) {
-  const { activeEraId, selectEra, decisionDate } = useResearchContext();
+  const { audienceMode, activeEraId, selectEra, decisionDate } = useResearchContext();
 
   const [filterMode, setFilterMode] =
     useState<EraAuthorityFilterMode>("decision-governance");
   const [showCrossEraWhenFiltered, setShowCrossEraWhenFiltered] = useState(false);
+  const [showAllCutoffs, setShowAllCutoffs] = useState(false);
   const [selectedTier, setSelectedTier] = useState<TierFilterId>("all");
   const [selectedDomain, setSelectedDomain] = useState<string>("all");
   const [query, setQuery] = useState("");
+
+  // Keyed pagination state resets synchronously to page 1 whenever any filter changes
+  const filterKey = `${activeEraId ?? "all"}|${filterMode}|${selectedTier}|${selectedDomain}|${query.trim().toLowerCase()}`;
+  const [pageState, setPageState] = useState<{ key: string; page: number }>({
+    key: filterKey,
+    page: 1,
+  });
+  const [crossEraPageState, setCrossEraPageState] = useState<{
+    key: string;
+    page: number;
+  }>({
+    key: filterKey,
+    page: 1,
+  });
+
+  const requestedPage = pageState.key === filterKey ? pageState.page : 1;
+  const requestedCrossEraPage =
+    crossEraPageState.key === filterKey ? crossEraPageState.page : 1;
 
   const activeEraSpec = getHistoricalEraById(activeEraId);
 
@@ -353,13 +484,15 @@ export function CasesDirectoryClient({
     [facetFiltered, activeEraId, filterMode],
   );
 
-  // Sort curated landmarks & VAOPGCPREC digests to the top within each bucket so high-signal cards lead
   const sortedPrimary = useMemo(() => {
     return [...eraPartition.eraSpecificAuthorities].sort((a, b) => {
       const aCur = a.isCuratedLandmark ? 1 : 0;
       const bCur = b.isCuratedLandmark ? 1 : 0;
       if (aCur !== bCur) return bCur - aCur;
-      return b.citedByModuleIds.length - a.citedByModuleIds.length || a.citation.localeCompare(b.citation);
+      return (
+        b.citedByModuleIds.length - a.citedByModuleIds.length ||
+        a.citation.localeCompare(b.citation)
+      );
     });
   }, [eraPartition.eraSpecificAuthorities]);
 
@@ -368,9 +501,31 @@ export function CasesDirectoryClient({
       const aCur = a.isCuratedLandmark ? 1 : 0;
       const bCur = b.isCuratedLandmark ? 1 : 0;
       if (aCur !== bCur) return bCur - aCur;
-      return b.citedByModuleIds.length - a.citedByModuleIds.length || a.citation.localeCompare(b.citation);
+      return (
+        b.citedByModuleIds.length - a.citedByModuleIds.length ||
+        a.citation.localeCompare(b.citation)
+      );
     });
   }, [eraPartition.crossEraAuthorities]);
+
+  const primarySlice = useMemo(
+    () => paginateAuthorities(sortedPrimary, requestedPage, AUTHORITIES_PER_PAGE),
+    [sortedPrimary, requestedPage],
+  );
+
+  const crossEraSlice = useMemo(
+    () =>
+      paginateAuthorities(
+        sortedCrossEra,
+        requestedCrossEraPage,
+        AUTHORITIES_PER_PAGE,
+      ),
+    [sortedCrossEra, requestedCrossEraPage],
+  );
+
+  const visibleCutoffs = showAllCutoffs
+    ? eraPartition.eraCutoffWarnings
+    : eraPartition.eraCutoffWarnings.slice(0, 4);
 
   return (
     <div className="space-y-6">
@@ -390,17 +545,9 @@ export function CasesDirectoryClient({
                   </span>
                 </div>
                 <p className="max-w-3xl leading-relaxed text-muted-foreground">
-                  Because federal Veterans Law court review began November 18, 1988
-                  (VJRA) and binding VAOPGCPREC opinions began in 1989, VetLawGuide
-                  separates{" "}
-                  <strong className="text-foreground">
-                    authorities governing decisions from {activeEraSpec.windowLabel}
-                  </strong>{" "}
-                  (default) from{" "}
-                  <strong className="text-foreground">
-                    opinions issued during {activeEraSpec.windowLabel}
-                  </strong>
-                  —without guessing single-era tags for cross-era doctrines.
+                  <LexiconText
+                    text={`Because federal Veterans Law court review began November 18, 1988 under the Veterans' Judicial Review Act (VJRA) and binding VA General Counsel Precedent Opinions (VAOPGCPREC) began in 1989, VetLawGuide separates authorities governing decisions from ${activeEraSpec.windowLabel} (default) from opinions issued during ${activeEraSpec.windowLabel}.`}
+                  />
                 </p>
               </>
             ) : (
@@ -408,14 +555,14 @@ export function CasesDirectoryClient({
                 <div className="inline-flex items-center gap-1.5 font-semibold text-foreground">
                   <Scale className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                   <span>
-                    {`Showing All ${facetFiltered.length} Judicial & VA OGC Authorities Across ${totalModules} Corpus Modules (Checked ${checkedAsOf})`}
+                    {`Showing All ${facetFiltered.length} Judicial & VA OGC Authorities Across ${totalModules} Source Modules (Checked ${checkedAsOf})`}
                   </span>
                 </div>
                 <p className="max-w-3xl leading-relaxed text-muted-foreground">
-                  Click any of the{" "}
-                  <strong className="text-foreground">5 Historical Eras</strong> in
-                  the sticky bar at the top of the page (or below) to immediately
-                  filter court decisions and General Counsel opinions for that era.
+                  Select any <strong className="text-foreground">Historical Era</strong>{" "}
+                  below (or via the Law-as-of selector in the header) to filter court
+                  decisions and General Counsel opinions, or expand any row to inspect
+                  its full holding and linked guides.
                 </p>
               </>
             )}
@@ -433,14 +580,14 @@ export function CasesDirectoryClient({
           )}
         </div>
 
-        {/* Quick Era Selector Strip (Mirrors Top Sticky Bar) */}
+        {/* Quick Era Selector Strip */}
         <div className="flex flex-wrap items-center gap-1.5 pt-1">
           <button
             type="button"
             aria-pressed={activeEraId === null}
             onClick={() => selectEra(null)}
             className={cn(
-              "rounded-md border px-2.5 py-1 font-mono text-[11px] font-semibold focus-visible:outline-2 focus-visible:outline-primary",
+              "rounded-md border px-2.5 py-1 font-mono text-xs font-semibold focus-visible:outline-2 focus-visible:outline-primary",
               activeEraId === null
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border bg-surface-elevated text-muted-foreground hover:text-foreground",
@@ -457,7 +604,7 @@ export function CasesDirectoryClient({
                 aria-pressed={isSelected}
                 onClick={() => selectEra(era.eraId)}
                 className={cn(
-                  "rounded-md border px-2.5 py-1 text-[11px] font-medium focus-visible:outline-2 focus-visible:outline-primary",
+                  "rounded-md border px-2.5 py-1 text-xs font-medium focus-visible:outline-2 focus-visible:outline-primary",
                   isSelected
                     ? "border-primary bg-primary font-semibold text-primary-foreground"
                     : "border-border bg-surface-elevated text-foreground hover:border-primary/60",
@@ -476,7 +623,7 @@ export function CasesDirectoryClient({
           })}
         </div>
 
-        {/* Bitemporal Era Lens Switcher (Visible Whenever an Era Is Selected) */}
+        {/* Bitemporal Era Lens Switcher */}
         {activeEraSpec && (
           <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/80 pt-3">
             <div
@@ -489,7 +636,7 @@ export function CasesDirectoryClient({
                 aria-pressed={filterMode === "decision-governance"}
                 onClick={() => setFilterMode("decision-governance")}
                 className={cn(
-                  "max-w-full rounded px-2.5 py-1 text-left text-[11px] font-semibold focus-visible:outline-2 focus-visible:outline-primary",
+                  "max-w-full rounded px-2.5 py-1 text-left text-xs font-semibold focus-visible:outline-2 focus-visible:outline-primary",
                   filterMode === "decision-governance"
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground",
@@ -504,7 +651,7 @@ export function CasesDirectoryClient({
                 aria-pressed={filterMode === "issuance-year"}
                 onClick={() => setFilterMode("issuance-year")}
                 className={cn(
-                  "rounded px-2.5 py-1 text-[11px] font-semibold focus-visible:outline-2 focus-visible:outline-primary",
+                  "rounded px-2.5 py-1 text-xs font-semibold focus-visible:outline-2 focus-visible:outline-primary",
                   filterMode === "issuance-year"
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground",
@@ -592,7 +739,7 @@ export function CasesDirectoryClient({
                 aria-pressed={isSelected}
                 onClick={() => setSelectedTier(tf.id)}
                 className={cn(
-                  "rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+                  "rounded-md border px-2.5 py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-primary",
                   isSelected
                     ? "border-primary bg-primary font-semibold text-primary-foreground"
                     : "border-border bg-surface text-muted-foreground hover:text-foreground",
@@ -605,7 +752,7 @@ export function CasesDirectoryClient({
         </div>
       </section>
 
-      {/* Pre-VJRA Empty Issuance Note (When 1945–1961 or 1962–1988 + Opinion Issuance Mode Selected) */}
+      {/* Pre-VJRA Empty Issuance Note */}
       {eraPartition.preVjraIssuanceEmptyNote && (
         <section
           aria-label="Pre-1988 judicial review explanation"
@@ -632,30 +779,52 @@ export function CasesDirectoryClient({
         </section>
       )}
 
-      {/* Temporal Cutoffs & Inapplicable Doctrines Alert Strip for Selected Era */}
+      {/* Temporal Cutoffs & Inapplicable Doctrines Alert Strip (Expandable Beyond Top 4) */}
       {activeEraSpec && eraPartition.eraCutoffWarnings.length > 0 && (
         <section
           aria-labelledby="era-cutoff-warnings-heading"
           className="space-y-2.5 rounded-lg border border-accent/50 bg-surface p-4 text-xs"
         >
-          <h2
-            id="era-cutoff-warnings-heading"
-            className="inline-flex items-center gap-1.5 font-serif text-base font-bold text-foreground"
-          >
-            <TriangleAlert className="h-4 w-4 text-accent" aria-hidden="true" />
-            <span>
-              Temporal Cutoffs &amp; Inapplicable Doctrines for{" "}
-              {activeEraSpec.windowLabel} Decisions (
-              {eraPartition.eraCutoffWarnings.length})
-            </span>
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2
+              id="era-cutoff-warnings-heading"
+              className="inline-flex items-center gap-1.5 font-serif text-base font-bold text-foreground"
+            >
+              <TriangleAlert className="h-4 w-4 text-accent" aria-hidden="true" />
+              <span>
+                Temporal Cutoffs &amp; Inapplicable Doctrines for{" "}
+                {activeEraSpec.windowLabel} Decisions (
+                {eraPartition.eraCutoffWarnings.length})
+              </span>
+            </h2>
+
+            {eraPartition.eraCutoffWarnings.length > 4 && (
+              <button
+                type="button"
+                aria-expanded={showAllCutoffs}
+                onClick={() => setShowAllCutoffs((prev) => !prev)}
+                className="inline-flex items-center gap-1 font-semibold text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
+              >
+                <span>
+                  {showAllCutoffs
+                    ? "Show fewer cutoffs"
+                    : `Show all ${eraPartition.eraCutoffWarnings.length} cutoffs`}
+                </span>
+                {showAllCutoffs ? (
+                  <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+                ) : (
+                  <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                )}
+              </button>
+            )}
+          </div>
+
           <p className="text-muted-foreground">
-            The following authorities have strict statutory or regulatory effective
-            dates that limit or bar their use on {activeEraSpec.windowLabel}{" "}
-            decisions:
+            The following authorities have statutory or regulatory effective dates
+            that limit or bar their use on {activeEraSpec.windowLabel} decisions:
           </p>
           <div className="grid gap-2 sm:grid-cols-2">
-            {eraPartition.eraCutoffWarnings.slice(0, 6).map(({ entry, caution }) => (
+            {visibleCutoffs.map(({ entry, caution }) => (
               <div
                 key={entry.slug}
                 className="min-w-0 rounded border border-border bg-surface-elevated p-2.5 break-words"
@@ -663,7 +832,7 @@ export function CasesDirectoryClient({
                 <div className="font-semibold text-foreground">
                   {entry.shortTitle ?? entry.citation}
                 </div>
-                <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
+                <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
                   <LexiconText text={caution} />
                 </p>
               </div>
@@ -672,7 +841,7 @@ export function CasesDirectoryClient({
         </section>
       )}
 
-      {/* Primary Authorities Grid */}
+      {/* Primary Authorities Paginated List (25 per page) */}
       <section aria-labelledby="primary-authorities-heading" className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2
@@ -699,19 +868,46 @@ export function CasesDirectoryClient({
             the search box or resetting Tier / Domain filters.
           </div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2">
-            {sortedPrimary.map((entry) => (
-              <AuthorityCard
-                key={entry.slug}
-                entry={entry}
-                activeEraSelected={activeEraId !== null}
+          <>
+            <PaginationControls
+              label="Authorities pagination top"
+              currentPage={primarySlice.currentPage}
+              totalPages={primarySlice.totalPages}
+              startIndex={primarySlice.startIndex}
+              endIndex={primarySlice.endIndex}
+              totalItems={primarySlice.totalItems}
+              onPageChange={(next) => setPageState({ key: filterKey, page: next })}
+            />
+
+            <div className="divide-y divide-border overflow-hidden rounded-xl border border-border">
+              {primarySlice.items.map((entry) => (
+                <CompactAuthorityRow
+                  key={entry.slug}
+                  entry={entry}
+                  activeEraSelected={activeEraId !== null}
+                  audienceMode={audienceMode}
+                />
+              ))}
+            </div>
+
+            {primarySlice.totalPages > 1 && (
+              <PaginationControls
+                label="Authorities pagination bottom"
+                currentPage={primarySlice.currentPage}
+                totalPages={primarySlice.totalPages}
+                startIndex={primarySlice.startIndex}
+                endIndex={primarySlice.endIndex}
+                totalItems={primarySlice.totalItems}
+                onPageChange={(next) =>
+                  setPageState({ key: filterKey, page: next })
+                }
               />
-            ))}
-          </div>
+            )}
+          </>
         )}
       </section>
 
-      {/* Cross-Era Foundational Authorities Section (When an Era Is Active in Decision-Governance Mode) */}
+      {/* Cross-Era Foundational Authorities Section (Expandable + Paginated) */}
       {activeEraSpec &&
         filterMode === "decision-governance" &&
         sortedCrossEra.length > 0 && (
@@ -741,7 +937,7 @@ export function CasesDirectoryClient({
                 <span>
                   {showCrossEraWhenFiltered
                     ? "Hide Cross-Era Doctrines"
-                    : `Show All ${sortedCrossEra.length} Cross-Era Doctrines`}
+                    : `Show Cross-Era Doctrines (${sortedCrossEra.length})`}
                 </span>
                 {showCrossEraWhenFiltered ? (
                   <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
@@ -752,14 +948,28 @@ export function CasesDirectoryClient({
             </div>
 
             {showCrossEraWhenFiltered && (
-              <div className="grid gap-4 pt-2 md:grid-cols-2">
-                {sortedCrossEra.map((entry) => (
-                  <AuthorityCard
-                    key={entry.slug}
-                    entry={entry}
-                    activeEraSelected
-                  />
-                ))}
+              <div className="space-y-3 pt-2">
+                <PaginationControls
+                  label="Cross-era authorities pagination"
+                  currentPage={crossEraSlice.currentPage}
+                  totalPages={crossEraSlice.totalPages}
+                  startIndex={crossEraSlice.startIndex}
+                  endIndex={crossEraSlice.endIndex}
+                  totalItems={crossEraSlice.totalItems}
+                  onPageChange={(next) =>
+                    setCrossEraPageState({ key: filterKey, page: next })
+                  }
+                />
+                <div className="divide-y divide-border overflow-hidden rounded-xl border border-border">
+                  {crossEraSlice.items.map((entry) => (
+                    <CompactAuthorityRow
+                      key={entry.slug}
+                      entry={entry}
+                      activeEraSelected
+                      audienceMode={audienceMode}
+                    />
+                  ))}
+                </div>
               </div>
             )}
           </section>

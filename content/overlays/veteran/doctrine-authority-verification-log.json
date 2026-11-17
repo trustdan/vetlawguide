@@ -1,0 +1,29 @@
+{
+  "upstream_id": "doctrine-authority-verification-log",
+  "upstream_path": "docs/authority-verification-log.md",
+  "upstream_sha256": "c7d45066bfe88bf8e036f22cb63d32a7e8e26456f141443e6d535d8d21ca38e8",
+  "linked_version_ids": [
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-4.56-1997-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How Legal Sources Rank in VA Claims & Why Official Regulation Dates Must Be Checked",
+  "what_this_means": "Not everything printed online or inside a VA manual carries the same legal weight. In Veterans Law, Acts of Congress (38 U.S.C.) rank highest, followed by binding federal court precedents (U.S. Supreme Court, Federal Circuit, and precedential three-judge CAVC panels), enacted VA regulations (38 C.F.R.), and active VA General Counsel Precedent Opinions (VAOPGCPREC). Below those sit VA's internal M21-1 Adjudication Procedures Manual (which guides Regional Office raters, though the Board of Veterans' Appeals is not strictly bound by it unless discussed) and single-judge CAVC memorandum decisions. This guide explains how accredited representatives verify that every statute, regulation, and court case actually governed on the exact date of your VA decision.",
+  "record_clues": [
+    "A VA rating decision or representative letter quoting today's online eCFR regulation text to challenge a decision issued 15 or 30 years ago, when the regulation read differently.",
+    "A citation to a Federal Register notice date where the new rule did not actually take effect until 30 or 60 days later—or was only a proposed rule that never became law.",
+    "A brief relying on a single-judge CAVC memorandum decision ('mem. dec.') as if it were binding law, rather than checking CAVC Rule 30(a) nonprecedential limits."
+  ],
+  "important_cautions": [
+    "Publication Date vs. Effective Date: When VA publishes a final rule in the Federal Register, its 'Effective Date' is usually weeks or months after the publication date. Always verify the exact effective date before comparing an older rating decision against a rule change.",
+    "Nonprecedential Single-Judge Decisions (CAVC Rule 30(a)): Single-judge CAVC memorandum decisions ('mem. dec.') are nonprecedential under CAVC Rule 30(a)—they may be cited for persuasive reasoning where permitted, never as binding precedent.",
+    "Proposed & Rescinded Rules Are Not Enacted Law: Proposed rules (such as RIN 2900-AQ72 on sleep apnea/tinnitus, RIN 2900-AQ82 on mental disorders, or 90 FR 46542 on painful scars) and rescinded rules (such as the February 17, 2026 § 4.10 medication rule at 91 FR 7118, rescinded February 27, 2026 at 91 FR 9712) are not enacted law.",
+    "Post-Decision Court Reinterpretations (George v. McDonough): Under 38 C.F.R. § 20.1403(e), a later court decision that changes how an existing statute or regulation is interpreted applies to open claims, timely appeals, and § 3.156(c) service-record reconsiderations, but cannot prove Clear and Unmistakable Error (CUE) in an older final decision."
+  ],
+  "questions_for_representative": [
+    "Have we checked the exact print edition of 38 C.F.R. and 38 U.S.C. that was in effect on the day my VA decision was issued, rather than relying on today's eCFR?",
+    "Are the court cases supporting my argument binding precedential panel opinions, and were any relied-upon VA General Counsel opinions later withdrawn?",
+    "Does our strategy rely on an enacted regulation in force at the time of the decision, or would an open-claim / 38 C.F.R. § 3.156(c) route avoid the George v. McDonough CUE bar?"
+  ]
+}

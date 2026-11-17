@@ -110,7 +110,7 @@ export default async function CfrVersionPermalinkPage({
           {priorVersion && (
             <Link
               href={priorVersion.permalink}
-              className="inline-flex items-center gap-1 rounded border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-medium text-foreground hover:bg-muted"
+              className="inline-flex items-center gap-1 rounded border border-border bg-surface px-2.5 py-1 font-mono text-xs font-medium text-foreground hover:bg-muted"
             >
               <ArrowLeft className="h-3 w-3" aria-hidden="true" />
               <span>Prior ({priorVersion.effective_from})</span>
@@ -119,7 +119,7 @@ export default async function CfrVersionPermalinkPage({
           {nextVersion && (
             <Link
               href={nextVersion.permalink}
-              className="inline-flex items-center gap-1 rounded border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-medium text-foreground hover:bg-muted"
+              className="inline-flex items-center gap-1 rounded border border-border bg-surface px-2.5 py-1 font-mono text-xs font-medium text-foreground hover:bg-muted"
             >
               <span>Superseded By ({nextVersion.effective_from})</span>
               <ArrowRight className="h-3 w-3" aria-hidden="true" />

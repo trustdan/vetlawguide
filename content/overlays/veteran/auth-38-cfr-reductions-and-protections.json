@@ -1,0 +1,34 @@
+{
+  "upstream_id": "auth-38-cfr-reductions-and-protections",
+  "upstream_path": "authorities/part-3/38-cfr-3.105e-3.344-3.951-3.957-reductions.md",
+  "upstream_sha256": "fa861fb377e27ebc61949849fcf77fc8c07ed1bcd147f162b5c1eaed9bbda5ba",
+  "linked_version_ids": [
+    "38-cfr-3.105i-1992-predetermination",
+    "38-cfr-3.344-1961-stabilization",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.951-1969-preservation",
+    "38-cfr-3.951-1992-preservation",
+    "38-cfr-3.953-1961-savings",
+    "38-cfr-3.953-1961-dec-savings",
+    "38-cfr-3.957-1968-ten-year"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Exact Legal Rules Protecting Existing VA Ratings Against Unfair Reductions or Severance (38 C.F.R. §§ 3.105, 3.343, 3.344, 3.951–3.957)",
+  "what_this_means": "This reference module gathers the exact federal regulations that govern how and when VA is allowed to reduce a disability rating, end a 100% or Total Disability Based on Individual Unemployability (TDIU) award, or sever service connection altogether. Together, these regulations create a layered shield: due-process notice and hearing timelines (§ 3.105(d)–(i)), strict medical proof before ending total ratings (§ 3.343) or lowering 5-year stabilized ratings (§ 3.344), protection against rating cuts caused merely by updates to the VA Rating Schedule (§ 3.951(a)), a 10-year shield for service connection (§ 3.957), a 20-year shield for continuous percentage levels (§ 3.951(b)), and statutory savings clauses for pre-1958 and pre-1959 awards (§ 3.953).",
+  "record_clues": [
+    "Rating decisions or VA Code Sheets lowering a percentage, ending TDIU, or severing service connection without citing 38 C.F.R. §§ 3.105(d)/(e), 3.343, or 3.344.",
+    "A reduction of a 100% schedular rating without proof of material improvement (§ 3.343(a)), or discontinuance of TDIU without clear and unmistakable evidence of actual employability (§ 3.343(c)).",
+    "Any reduction of an existing disability evaluation right after VA revised the Diagnostic Code criteria for that body system, where your actual medical symptoms had not improved (§ 3.951(a)).",
+    "Post-World War II or Korean War era awards in effect on December 31, 1957 or December 31, 1958 protected by the statutory savings provisions of § 3.953."
+  ],
+  "important_cautions": [
+    "Check Exact Regulatory Dates: Predetermination hearing rights (§ 3.105(i), freezing benefits if requested within 30 days) took effect January 21, 1992 (56 FR 65846), and the 60-day post-final-notice payment buffer in § 3.105(e) was added April 11, 1990 (55 FR 13528). Earlier reductions must be audited against the print CFR in force on that date.",
+    "How the 5-, 10-, and 20-Year Clocks Measure Time: Protection periods generally measure from the original effective date of the rating or service connection up to the effective date when the reduction or severance actually takes effect after proper notice—not merely the date of a proposed letter.",
+    "Statutory Fraud Exception: Proven fraud by the claimant is an explicit statutory exception to both the 10-year service-connection protection (§ 3.957) and the 20-year continuous-rating protection (§ 3.951(b))."
+  ],
+  "questions_for_representative": [
+    "When you count from my rating's effective date to the actual effective date of the reduction, had my evaluation crossed the 5-year (§ 3.344), 10-year (§ 3.957), or 20-year (§ 3.951(b)) protection threshold?",
+    "Did VA lower my existing evaluation after a Rating Schedule revision without proving actual medical improvement, contrary to 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a)?",
+    "If VA ended my TDIU or 100% evaluation, did the decision apply the specific heightened standards in 38 C.F.R. § 3.343(a) and (c)?"
+  ]
+}

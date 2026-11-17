@@ -1,0 +1,35 @@
+{
+  "upstream_id": "auth-38-cfr-3-12-3-13-3-354-cod-insanity-service",
+  "upstream_path": "authorities/part-3/38-cfr-3.12-3.13-3.354-cod-insanity.md",
+  "upstream_sha256": "7a684b2298588e40f49f42e3cd7270b661eba3f29dbbc2c57067a42546258d78",
+  "linked_version_ids": [
+    "38-cfr-3.12-1963-pre2022-cod",
+    "38-cfr-3.12-pre2024-cod",
+    "38-cfr-3.12-2024-cod",
+    "38-cfr-3.13-1961-conditional-discharge",
+    "38-cfr-3.13-2022-current",
+    "38-cfr-3.354-insanity",
+    "38-cfr-3.400g-1962-military-records",
+    "38-cfr-3.6-duty-periods",
+    "38-cfr-3.6-2022-duty-periods",
+    "38-cfr-3.301d-2006-allen-substance-abuse"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Exact Legal Rules on Character of Discharge (§§ 3.12–3.13), Insanity (§ 3.354), Military Upgrades (§ 3.400(g)) & Guard/Reserve Duty (§ 3.6)",
+  "what_this_means": "This reference module brings together the exact VA regulations that decide threshold eligibility ('Veteran status'): how VA evaluates less-than-honorable discharges before and after the June 25, 2024 overhaul (§ 3.12), how back-to-back reenlistments protect earlier honorable service (§ 3.13), how disease-induced insanity removes discharge bars (§ 3.354), how effective dates work after a military discharge upgrade or record correction (§ 3.400(g)), how National Guard and Reserve Active Duty for Training (ADT) and Inactive Duty Training (IADT) qualify as active service (§ 3.6), and how line-of-duty and secondary substance-use rules operate (§§ 3.301(d), 3.310).",
+  "record_clues": [
+    "A VA Character of Discharge determination citing old § 3.12(d) bars (such as 'willful and persistent misconduct' or former § 3.12(d)(5)) prior to the June 25, 2024 overhaul.",
+    "A military record correction or discharge upgrade from a BCMR/BCNR (10 U.S.C. § 1552) or DRB (10 U.S.C. § 1553) triggering special effective-date rules under 38 C.F.R. § 3.400(g).",
+    "National Guard or Reserve orders, drill attendance records, or Line of Duty packets involving an in-service injury, ADT disease, or an IADT heart attack, cardiac arrest, or stroke (§ 3.6(d)–(e))."
+  ],
+  "important_cautions": [
+    "Publication vs. Effective Date on § 3.12 Overhaul: VA published the Character of Discharge overhaul on April 26, 2024 (89 FR 32361), and it took effect June 25, 2024—applying to claims pending on or received on/after June 25, 2024, with no § 3.114(a) liberalizing effective date prior to June 25, 2024.",
+    "Substance Use Primary Bar vs. Secondary Service Connection: Since November 1, 1990 (codified May 24, 1995 at 60 FR 27407 in § 3.301(d)), direct primary service connection for alcohol or drug abuse is barred—but under Allen v. Principi and § 3.310(a)–(b) (effective October 10, 2006 at 71 FR 52744), substance use disorders or organ damage proximately caused or aggravated by a service-connected condition (like PTSD or chronic pain) ARE compensable.",
+    "ADT vs. IADT Coverage Difference (§ 3.6): Active Duty for Training (ADT) covers both injury and disease incurred or aggravated in line of duty, whereas Inactive Duty Training (weekend drills / IADT) covers injuries plus acute myocardial infarction, cardiac arrest, and stroke (§ 3.6(a)(3), (d)–(e))."
+  ],
+  "questions_for_representative": [
+    "Under which exact version of 38 C.F.R. § 3.12 was my earlier discharge decision made, and how does the June 25, 2024 rule change my options on a Supplemental Claim?",
+    "After my BCMR/BCNR or DRB discharge upgrade, how does 38 C.F.R. § 3.400(g) interact with any newly associated service records under § 3.156(c) to set my earliest effective date?",
+    "If my alcohol or substance condition stemmed from self-medicating service-connected PTSD or pain, did VA evaluate secondary causation or aggravation under 38 C.F.R. § 3.310(a)–(b) (Allen v. Principi)?"
+  ]
+}

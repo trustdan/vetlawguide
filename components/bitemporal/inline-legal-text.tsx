@@ -48,7 +48,7 @@ function CfrCiteChip({ rawCite }: { rawCite: string }) {
           </span>
           <span className="mt-1 block text-muted-foreground">
             {isWave1
-              ? "Point-in-time verbatim snapshots, Federal Register effective dates, and redline diff available in Wave 1."
+              ? "Point-in-time verbatim snapshots, Federal Register effective dates, and redline diff available."
               : "Browse indexed point-in-time Federal Register transition intervals in the 38 C.F.R. Reader."}
           </span>
           <Link

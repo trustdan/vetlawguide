@@ -120,7 +120,7 @@ export function ScopeCautionsDialog({ open, onClose }: ScopeCautionsDialogProps)
             <p className="text-muted-foreground">
               Proposed Federal Register rules (such as <code className="font-mono text-xs">RIN</code> notices)
               and rescinded Interim Final Rules are quarantined with caution striping and
-              have zero binding legal force. Whenever a historical date or VASRD wave is
+              have zero binding legal force. Whenever a historical date or rating schedule section is
               marked <strong>Summary Only</strong> or <strong>Not Yet Indexed — Do Not Rely</strong>,
               always verify the official print <code className="font-mono text-xs">38 C.F.R.</code>{" "}
               edition on GovInfo before pleading.

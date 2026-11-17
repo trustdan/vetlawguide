@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-13-ancillary-grants-sah-auto-clothing-dea-spina-bifida",
+  "upstream_path": "playbooks/13-ancillary-grants-sah-auto-clothing-dea-spina-bifida.md",
+  "upstream_sha256": "1a7e8f799d93009887670b3d77dbd48b1598a9d726ffef9e00d7c7bb2372091e",
+  "linked_version_ids": [
+    "38-cfr-3.810-2011-sursely-clothing",
+    "38-cfr-3.810-2012-sursely-clothing",
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.350f-1983-barry-steps"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Overlooked Housing, Vehicle, Clothing & Family Grants: SAH Home Adaptation, Auto Grants, Multiple Clothing Allowances, Retroactive DEA & Spina Bifida",
+  "what_this_means": "When a Veteran reaches severe disability tiers—such as 100% Permanent and Total (P&T), Loss of Use of a hand or foot, severe balance/locomotion impairment, blindness, or severe burns—monthly compensation is only part of what Congress authorized. High-dollar 'ancillary' benefits are frequently left off VA rating decisions unless someone checks for them: Specially Adapted Housing (SAH / SHA, Chapter 21) grants to build or remodel an accessible home, Chapter 39 Automobile & Adaptive Equipment grants, MULTIPLE annual VA Clothing Allowances (§ 3.810) when more than one brace/prosthetic or prescription skin cream ruins your clothes, retroactive Chapter 35 Dependents' Educational Assistance (DEA) and CHAMPVA health care for spouses and children, and Chapter 18 benefits for biological children with spina bifida (or covered birth defects of female Vietnam Veterans).",
+  "record_clues": [
+    "A 100% P&T or SMC Rating Code Sheet that makes no mention of Chapter 35 DEA (§ 3.807), CHAMPVA, Specially Adapted Housing (§§ 3.809–3.809a), or Automobile/Adaptive Equipment (§ 3.808).",
+    "VA Prosthetics or C&P notes showing regular reliance on braces (AFOs/KAFOs), crutches, canes, walkers, or a wheelchair for bilateral lower-extremity or balance conditions (Jensen v. Shulkin SAH standard).",
+    "A prior VA automobile purchase grant paid 30+ years ago (eligible for a second vehicle grant starting January 5, 2023 under the AUTO for Veterans Act, Pub. L. 117-333!), or hip/knee ankylosis qualifying for recurring adaptive equipment.",
+    "VA Prosthetics denying a Clothing Allowance (VA Form 10-8678) because a prescribed brace wasn't 'rigid,' or paying only ONE annual clothing allowance when multiple braces/wheelchairs/skin creams damage different garments (Sursely v. Peake).",
+    "A multi-year retroactive 100% P&T award where your spouse or college-aged children paid tuition while your appeal was pending—triggering a strict 1-year window to claim retroactive Chapter 35 DEA stipends (38 C.F.R. § 21.4131)!"
+  ],
+  "important_cautions": [
+    "Strict 1-Year Deadline for Retroactive Chapter 35 DEA (38 C.F.R. § 21.4131): When VA grants retroactive 100% P&T status covering past years in which your spouse or child attended college/training, they must file VA Form 22-5490 within 1 year of the P&T rating notice letter to capture multi-year retroactive DEA stipends.",
+    "Disabled Child Chapter 35 Election Trap (38 U.S.C. § 3562): Never have an 18-to-23 disabled child cash a Chapter 35 DEA check before adjudicating lifetime § 3.356 helpless-child status first, or schoolchild dependency can be permanently barred if § 3.356 fails.",
+    "Second Automobile Grant 10-Year vs. 30-Year Phase-In (Pub. L. 117-333): Between January 5, 2023 and January 4, 2033, a second Chapter 39 automobile purchase grant requires 30+ years since the prior grant; the 10-year recurring cycle opens on January 5, 2033 (though adaptive equipment has no one-vehicle limit).",
+    "Chapter 18 Spina Bifida Statutory Scope: Chapter 18 excludes spina bifida occulta (§ 1802) and currently covers qualifying herbicide service in Vietnam, the Korean DMZ, and Thailand (January 9, 1962 – May 7, 1975)—the 2022 PACT Act did not add Laos, Cambodia, or Guam to Chapter 18."
+  ],
+  "questions_for_representative": [
+    "Since my 100% P&T award was backdated, are we within the 1-year window under 38 C.F.R. § 21.4131 for my spouse or college-aged children to claim retroactive Chapter 35 DEA education benefits?",
+    "Do my braces, assistive mobility devices, Loss of Use, blindness, or burn injuries qualify me for a Chapter 21 Specially Adapted Housing (SAH/SHA) grant (Jensen v. Shulkin) or Chapter 39 Auto/Adaptive Equipment?",
+    "Do I use multiple orthopedic appliances, prosthetics, or prescription skin creams that damage separate articles of clothing—qualifying for multiple annual Clothing Allowances under 38 C.F.R. § 3.810 (Sursely v. Peake)?",
+    "Did I receive a VA automobile grant more than 30 years ago that now qualifies me for a second vehicle grant under Pub. L. 117-333?"
+  ]
+}

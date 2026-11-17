@@ -68,10 +68,129 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
 
+    // Verify 400% zoom (320px width) reflow + >= 50% usable content height (ADR-0007)
+    const zoomHeaderBox = await page.getByTestId("global-site-header").boundingBox();
+    expect(zoomHeaderBox).not.toBeNull();
+    expect(zoomHeaderBox!.height).toBeLessThanOrEqual(320);
+
     const hasHorizontalOverflow = await page.evaluate(() => {
       return document.documentElement.scrollWidth > document.documentElement.clientWidth;
     });
     expect(hasHorizontalOverflow).toBe(false);
+  });
+
+  test("EPIC 10 & EPIC 12 gateway home, <= 120px mobile header, neutral charcoal dark mode, Guides tabs, and Octocat pointer-events pass WCAG 2.2 AA", async ({
+    page,
+  }) => {
+    // 1. Desktop 1280×800: Search + all 4 illustrated gateways visible above the fold, <= 250 words, Octocat click-through hit-testing
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/");
+
+    const mainWordCount = await page.locator("main").evaluate((el) => {
+      const text = (el as HTMLElement).innerText || "";
+      return text.trim().split(/\s+/).filter(Boolean).length;
+    });
+    expect(mainWordCount).toBeLessThanOrEqual(250);
+
+    for (const gwId of [
+      "gateway-card-browse-topics",
+      "gateway-card-disability-ratings",
+      "gateway-card-investigate-decision",
+      "gateway-card-law-and-cases",
+    ]) {
+      const gwBox = await page.getByTestId(gwId).boundingBox();
+      expect(gwBox, `${gwId} missing`).not.toBeNull();
+      expect(
+        gwBox!.y + gwBox!.height,
+        `${gwId} extends below 1280×800 fold`,
+      ).toBeLessThanOrEqual(800);
+    }
+
+    // Verify authentic Octocat upper-right hit-target AND lower-left pass-through to underlying header
+    const octocatHitTest = await page.evaluate(() => {
+      const cornerLink = document.querySelector('[data-testid="github-corner"]');
+      if (!cornerLink) return { found: false, topRightHitsOcto: false, bottomLeftPassesThrough: false };
+      const rect = cornerLink.getBoundingClientRect();
+      const topRightEl = document.elementFromPoint(rect.right - 12, rect.top + 12);
+      const bottomLeftEl = document.elementFromPoint(rect.left + 8, rect.bottom - 8);
+      return {
+        found: true,
+        topRightHitsOcto: Boolean(topRightEl && cornerLink.contains(topRightEl)),
+        bottomLeftPassesThrough: Boolean(bottomLeftEl && !cornerLink.contains(bottomLeftEl)),
+      };
+    });
+    expect(octocatHitTest).toEqual({
+      found: true,
+      topRightHitsOcto: true,
+      bottomLeftPassesThrough: true,
+    });
+
+    // Verify visitor-question primary navigation stays identical across Veteran & Practitioner modes
+    const primaryNav = page.getByRole("navigation", {
+      name: "Primary research navigation",
+    });
+    const vetNavLabels = await primaryNav.locator("a, button").allInnerTexts();
+    await page.getByRole("button", { name: "Practitioners" }).click();
+    const pracNavLabels = await primaryNav.locator("a, button").allInnerTexts();
+    expect(pracNavLabels).toEqual(vetNavLabels);
+    expect(vetNavLabels.map((s) => s.trim())).toEqual([
+      "Browse",
+      "Ratings",
+      "Investigate",
+      "Law",
+      "Guides",
+      "Reference",
+    ]);
+
+    // Verify neutral charcoal dark mode (#17181a -> rgb(23, 24, 26)) + WCAG 2.2 AA
+    await page.getByRole("button", { name: "Toggle color theme" }).click();
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    const darkBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    expect(darkBg).toBe("rgb(23, 24, 26)");
+
+    const darkHomeScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(darkHomeScan.violations).toEqual([]);
+
+    // 2. Unified /playbooks Guides hub filter pills (All guides, Issue guides, Checklists, Legal treatises)
+    await page.goto("/playbooks");
+    await page.getByRole("button", { name: /^Checklists/i }).click();
+    await expect(
+      page.locator('a[href="/checklists/board-cue-pre-filing-gate"]:visible').first(),
+    ).toBeVisible();
+    const guidesDarkScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(guidesDarkScan.violations).toEqual([]);
+
+    // 3. Mobile 390×844: Sticky header <= 120px, Search + Gateway 1 above the fold, "Law as of" chip opens Era sheet
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+
+    const mobileHeaderBox = await page.getByTestId("global-site-header").boundingBox();
+    expect(mobileHeaderBox).not.toBeNull();
+    expect(mobileHeaderBox!.height).toBeLessThanOrEqual(120);
+
+    const firstGwBox = await page.getByTestId("gateway-card-browse-topics").boundingBox();
+    expect(firstGwBox).not.toBeNull();
+    expect(firstGwBox!.y + firstGwBox!.height).toBeLessThanOrEqual(844);
+
+    await page.getByTestId("era-chip-trigger").click();
+    const era2Btn = page.getByRole("button", { name: /1962–1988/i });
+    await expect(era2Btn).toBeVisible();
+    await era2Btn.click();
+    await page.getByTestId("era-chip-trigger").click();
+
+    // 4. Verify active-date chip truncation + >= 50% usable content height at 320×640 (400% zoom)
+    await page.setViewportSize({ width: 320, height: 640 });
+    const activeChipOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+    expect(activeChipOverflow).toBe(false);
+    const activeZoomHeader = await page.getByTestId("global-site-header").boundingBox();
+    expect(activeZoomHeader).not.toBeNull();
+    expect(activeZoomHeader!.height).toBeLessThanOrEqual(320);
   });
 
   test("Epic 2 /cfr point-in-time routes enforce 1997-06-20 pub-vs-eff resolution, 90 FR 46542 quarantine, WCAG 2.2 AA, and 400% zoom", async ({
@@ -138,55 +257,73 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     expect(cfrOverflow).toBe(false);
   });
 
-  test("E2-S5 /explore osintframework-style SVG tree morphs across Veteran/Practitioner modes & Decision Dates, honors 1:1 Outline parity, WCAG 2.2 AA, and 400% zoom", async ({
+  test("EPIC 11 /explore 5-branch Browse Directory default, #survivor-benefits deep-link, date-reactive badges, and short-label Map toggle pass WCAG 2.2 AA & 400% zoom", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/explore");
 
-    // Veteran Pathway Explorer Tree active by default
-    await expect(page.getByText(/Veteran Pathway Explorer Tree/i)).toBeVisible();
+    // 1. Directory is the default active presentation mode with all 5 visitor-need branches
+    await expect(page.getByRole("button", { name: /^Directory$/i })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    for (const branchHeading of [
+      "Disability ratings",
+      "Older decisions and review options",
+      "Survivor and family benefits",
+      "Records, forms, and unfamiliar terms",
+      "Law, cases, and historical changes",
+    ]) {
+      await expect(
+        page.getByRole("heading", { level: 2, name: branchHeading }),
+      ).toBeVisible();
+    }
+
     const vetExploreScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
     expect(vetExploreScan.violations).toEqual([]);
 
-    // Switch to Practitioners mode -> transforms into Point-in-Time Law Tree
-    await page.getByRole("button", { name: "Practitioners" }).click();
-    await expect(page.getByText(/Practitioner Point-in-Time Law Tree/i)).toBeVisible();
-
-    // Morph tree by Decision Date (1997-06-20 Trap) and verify node morphs
+    // 2. Select Decision Date (1997-06-20 Trap) and verify live Pub-Gap Trap badge inside Disability ratings
     await page.getByRole("button", { name: /§ 4\.56 Gap Trap \(1997-06-20\)/i }).click();
-    await expect(
-      page.getByRole("button", { name: /Title 38 Law Tree \(1997-06-20\)/i }),
-    ).toBeVisible();
-
-    // Tree starts collapsed at first; toggle Expand All -> Collapse All and inspect 1:1 Outline
-    const expandToggle = page.getByRole("button", { name: /^Expand All$/i });
-    await expect(expandToggle).toBeVisible();
-    await expandToggle.click();
-    await expect(page.getByRole("button", { name: /^Collapse All$/i })).toBeVisible();
-
-    await page.getByRole("button", { name: /1:1 Outline/i }).click();
     await expect(
       page.getByText(/Pub-Gap Trap \(62 FR 30235\)!/i).first(),
     ).toBeVisible();
-    const outlineScan = await new AxeBuilder({ page })
+
+    // 3. Deep-link to /explore#survivor-benefits auto-expands Survivor and family benefits branch
+    await page.goto("/explore#survivor-benefits");
+    await expect(
+      page.locator("#survivor-benefits button[aria-expanded='true']").first(),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /38 C\.F\.R\. § 3\.22 DIC Benefits/i }).first(),
+    ).toBeVisible();
+
+    // 4. Switch to Practitioners mode & toggle secondary short-label Map view
+    await page.getByRole("button", { name: "Practitioners" }).click();
+    await page.getByRole("button", { name: /^Map$/i }).click();
+    await expect(
+      page.getByRole("button", { name: /Browse Title 38 Topics/i }),
+    ).toBeVisible();
+
+    const mapScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
-    expect(outlineScan.violations).toEqual([]);
+    expect(mapScan.violations).toEqual([]);
 
-    // Collapse All flips button back to Expand All
-    await page.getByRole("button", { name: /^Collapse All$/i }).click();
-    await expect(page.getByRole("button", { name: /^Expand All$/i })).toBeVisible();
-
-    // Verify 400% zoom (320px width) reflow on /explore SVG tree
-    await page.getByRole("button", { name: /Interactive Tree/i }).click();
+    // 5. Verify 400% zoom (320px width) reflow across Map & Directory views
     await page.setViewportSize({ width: 320, height: 640 });
-    const exploreOverflow = await page.evaluate(() => {
+    const exploreMapOverflow = await page.evaluate(() => {
       return document.documentElement.scrollWidth > document.documentElement.clientWidth;
     });
-    expect(exploreOverflow).toBe(false);
+    expect(exploreMapOverflow).toBe(false);
+
+    await page.getByRole("button", { name: /^Directory$/i }).click();
+    const exploreDirOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+    expect(exploreDirOverflow).toBe(false);
   });
 
   test("Epic 3 explainable search, fisheye rail, 3-column playbooks/checklists, /crosswalk, and /reference/forms-and-codes pass WCAG 2.2 AA & 400% zoom", async ({
@@ -202,9 +339,12 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     await page.keyboard.press("Escape");
     await expect(searchDialog).toHaveCount(0);
 
-    // 2. Fisheye chronology rail sets global Decision Date
+    // 2. Fisheye chronology rail (canonical single home at /timeline per ADR-0008) sets global Decision Date
+    await page.goto("/timeline");
     await page.getByRole("button", { name: /1963.*Mandatory SOC Act/i }).click();
-    await expect(page.getByText("1974-08-12").first()).toBeVisible();
+    await expect(page.locator("#sticky-decision-date-input")).toHaveValue(
+      "1974-08-12",
+    );
 
     // 3. 3-column Playbook 01 reader in Veteran & Practitioner modes + 400% zoom
     await page.goto("/playbooks/01-penetrating-wounds-scars-vs-muscles");
@@ -262,13 +402,24 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     expect(fcScan.violations).toEqual([]);
   });
 
-  test("Epic 4 /investigate workspace passes WCAG 2.2 AA across Veteran & Practitioner modes, honors reduced-motion, and reflows cleanly at 400% zoom", async ({
+  test("Epic 4 & E11-S3 staged /investigate workspace + 3-block summary passes WCAG 2.2 AA across Veteran & Practitioner modes, honors reduced-motion, and reflows cleanly at 400% zoom", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/investigate");
 
-    // 1. Veteran mode WCAG 2.2 AA scan (including Markdown packet preview)
+    // 1. Stage 1 Veteran mode WCAG 2.2 AA scan
+    const vetStage1Scan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(vetStage1Scan.violations).toEqual([]);
+
+    // Advance to Stage 4 Summary, verify 3 blocks (What you know, Records to find, Questions to discuss) & Markdown packet preview
+    await page.getByTestId("stage-tab-4").click();
+    await expect(page.getByTestId("summary-what-you-know")).toBeVisible();
+    await expect(page.getByTestId("records-to-locate-section")).toBeVisible();
+    await expect(page.getByTestId("summary-questions-to-discuss")).toBeVisible();
+
     await page.getByRole("button", { name: /Preview Exported Markdown/i }).click();
     const vetInvScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
@@ -359,27 +510,49 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     expect(erasOverflow).toBe(false);
   });
 
-  test("ADR-0006 sticky top Era bar filters /cases judicial & VAOPGCPREC authorities, surfaces temporal cutoffs, and passes WCAG 2.2 AA & 400% zoom", async ({
+  test("ADR-0006 & E11-S2 /cases 25-per-page pagination, expandable compact rows, and sticky Era filtering pass WCAG 2.2 AA & 400% zoom", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/cases");
 
-    // 1. Default All Eras state shows full authority directory
+    // 1. Default All Eras state shows full authority count + 25-per-page pagination
     await expect(
       page.getByText(/Showing All \d+ Judicial & VA OGC Authorities/i),
     ).toBeVisible();
+    await expect(
+      page.getByText(/Showing 1–25 of 437 authorities · Page 1 of 18/i).first(),
+    ).toBeVisible();
+
+    // Advance to Page 2 and expand the first row's holding details
+    await page
+      .getByRole("navigation", { name: "Authorities pagination top" })
+      .getByRole("button", { name: /Next/i })
+      .click();
+    await expect(
+      page.getByText(/Showing 26–50 of 437 authorities · Page 2 of 18/i).first(),
+    ).toBeVisible();
+
+    const firstDetailsBtn = page
+      .getByRole("button", { name: /^Details & \d+ guide/i })
+      .first();
+    await firstDetailsBtn.click();
+    await expect(page.getByText(/^Holding:/i).first()).toBeVisible();
+
     const vetAllScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
     expect(vetAllScan.violations).toEqual([]);
 
-    // 2. Click Era 2 (1962–1988) in the Sticky Top Era Bar -> immediately filters /cases
+    // 2. Click Era 2 (1962–1988) in the Sticky Top Era Bar -> immediately filters /cases and resets pagination to Page 1
     const stickyBar = page.getByTestId("sticky-era-timeline-bar");
     await stickyBar.getByRole("button", { name: /1962–1988/i }).click();
 
     await expect(
       page.getByText(/Filtered by Top Era Bar: Era 2: Pre-VJRA Closed Era/i),
+    ).toBeVisible();
+    await expect(
+      page.getByText(/Showing 1–\d+ of \d+ authorities/i).first(),
     ).toBeVisible();
     await expect(
       page.getByText(/Pre-July 21, 1992 CUE Cutoff \(VAOPGCPREC 12-95\)/i),
@@ -406,7 +579,7 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
       .analyze();
     expect(pracEraScan.violations).toEqual([]);
 
-    // Verify zero ?mode= or ?era= URL clutter and 400% zoom (320px) reflow
+    // Verify zero ?mode= / ?era= / ?page= URL clutter and 400% zoom (320px) reflow
     expect(new URL(page.url()).search).toBe("");
     await page.setViewportSize({ width: 320, height: 640 });
     const casesOverflow = await page.evaluate(() => {
@@ -422,13 +595,15 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
 
     // 1. FR Publication-vs-Effective Date Trap on § 3.12 (published 2024-04-26, effective 2024-06-25):
     // 2024-05-15 must resolve to 2022-05-03 pre-2024 text, surface Publication-Gap Trap Alert,
-    // render Honest PLAIN_ENGLISH_IN_PROGRESS banner (no false SHA-256 overlay claim), and show Redline Comparison
+    // render VERBATIM_VERIFIED + SHA-256 Locked Companion banner (111/111 E5-S4/S5 overlay parity), and show Redline Comparison
     await page.goto("/cfr/38-cfr-3.12a-l?date=2024-05-15");
     await expect(page.locator('[aria-current="page"]')).toContainText("Eff. 2022-05-03");
     await expect(
-      page.getByText(/Primary-Source Verified — Plain-English Guide in Progress/i).first(),
+      page.getByText(/Verbatim Primary Text Verified/i).first(),
     ).toBeVisible();
-    await expect(page.getByText(/Verbatim Primary Text Verified/i)).toHaveCount(0);
+    await expect(
+      page.getByText(/Plain-English Companion · SHA-256 Locked/i).first(),
+    ).toBeVisible();
     await expect(page.getByText(/Verbatim Primary Source/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", {
@@ -478,5 +653,140 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
       return document.documentElement.scrollWidth > document.documentElement.clientWidth;
     });
     expect(tbiOverflow).toBe(false);
+  });
+
+  test("EPIC 6 Piercing-Finality Flowchart, semantic Map edges, and 4-track /timeline + Quarantined Watchlist pass WCAG 2.2 AA, keyboard nav, reduced-motion, and 400% zoom", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+
+    // 1. /explore#older-decisions features Piercing-Finality Decision Flowchart & semantic Map edges
+    await page.goto("/explore#older-decisions");
+    const flowchartDirLink = page
+      .getByRole("link", { name: /Piercing-Finality Decision Flowchart/i })
+      .first();
+    await expect(flowchartDirLink).toBeVisible();
+
+    await page.getByRole("button", { name: /^Map$/i }).click();
+    await expect(page.getByText("Relationship edges:")).toBeVisible();
+    await expect(page.getByText("pierces finality").first()).toBeVisible();
+    await page
+      .getByRole("button", { name: /Browse Topics & Situations/i })
+      .focus();
+    await expect(page.getByTestId("map-focus-ring-browse-root")).toBeVisible();
+    const mapEdgeScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(mapEdgeScan.violations).toEqual([]);
+
+    // 2. Dedicated /explore/piercing-finality keyboard Tab focus ring + ArrowDown navigation, FR date-gap alert, and 1:1 Accessible Outline parity
+    await page.goto("/explore/piercing-finality");
+    const step1Node = page.getByRole("button", {
+      name: /^Step 1: Void rating reduction/i,
+    });
+    await step1Node.focus();
+    await expect(
+      page.getByTestId("flowchart-focus-ring-void-reduction"),
+    ).toBeVisible();
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByTestId("flowchart-focus-ring-service-records-3156c"),
+    ).toBeVisible();
+    await step1Node.focus();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.getByTestId("flowchart-step-inspector")).toContainText(
+      "Step 2 of 6",
+    );
+
+    await page
+      .getByRole("button", { name: /§ 3\.156\(c\) FR Gap \(2006-09-20\)/i })
+      .click();
+    await expect(page.getByTestId("flowchart-step-inspector")).toContainText(
+      "71 FR 52455",
+    );
+
+    const flowVetScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(flowVetScan.violations).toEqual([]);
+
+    // Switch to Practitioners + 1:1 Accessible Outline mode and verify exact § 20.1409(c) Step 6 parity
+    await page.getByRole("button", { name: "Practitioners" }).click();
+    await page.getByRole("button", { name: /1:1 Accessible Outline/i }).click();
+    await expect(page.getByTestId("flowchart-accessible-outline")).toContainText(
+      "20.1409(c)",
+    );
+    const outlineScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(outlineScan.violations).toEqual([]);
+
+    // 400% zoom (320×640) + prefers-reduced-motion reflow check on /explore/piercing-finality
+    await page.setViewportSize({ width: 320, height: 640 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.getByRole("button", { name: /Interactive Flowchart/i }).click();
+    const flowOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+    expect(flowOverflow).toBe(false);
+    const flowZoomHeader = await page.getByTestId("global-site-header").boundingBox();
+    expect(flowZoomHeader).not.toBeNull();
+    expect(flowZoomHeader!.height).toBeLessThanOrEqual(320);
+
+    // 3. Dedicated /timeline 4-track chronology + toggleable Quarantined Watchlist (7 notices)
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/timeline");
+    await expect(
+      page.getByTestId("timeline-selected-split-card"),
+    ).toContainText("Retroactive Opportunity");
+    await expect(
+      page.getByTestId("timeline-selected-split-card"),
+    ).toContainText("Temporal Trap");
+
+    // Watchlist is quarantined out of default enacted view until toggled open (scan WCAG 2.2 AA both closed and open per AUD-AG-001)
+    await expect(page.getByTestId("quarantined-watchlist-panel")).toHaveCount(0);
+    const timelineClosedScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(timelineClosedScan.violations).toEqual([]);
+
+    await page.getByTestId("toggle-quarantined-watchlist").click();
+    const watchPanel = page.getByTestId("quarantined-watchlist-panel");
+    await expect(watchPanel).toBeVisible();
+    for (const qId of [
+      "RIN 2900-AQ72",
+      "RIN 2900-AQ73",
+      "RIN 2900-AQ82",
+      "RIN 2900-AR96",
+      "RIN 2900-AS39",
+      "90 FR 46542",
+      "91 FR 7118",
+    ]) {
+      await expect(watchPanel).toContainText(qId);
+    }
+
+    const timelineLightScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(timelineLightScan.violations).toEqual([]);
+
+    // Dark mode WCAG 2.2 AA scan on /timeline with Quarantined Watchlist open
+    await page.getByRole("button", { name: "Toggle color theme" }).click();
+    const timelineDarkScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(timelineDarkScan.violations).toEqual([]);
+
+    // Mobile 390×844 header budget (<= 120px) & 400% zoom (320×640) reflow on /timeline
+    await page.setViewportSize({ width: 390, height: 844 });
+    const tlMobileHeader = await page.getByTestId("global-site-header").boundingBox();
+    expect(tlMobileHeader).not.toBeNull();
+    expect(tlMobileHeader!.height).toBeLessThanOrEqual(120);
+
+    await page.setViewportSize({ width: 320, height: 640 });
+    const tlOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+    expect(tlOverflow).toBe(false);
   });
 });

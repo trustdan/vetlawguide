@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-11-skin-dermatitis-psoriasis-biologics-4-118",
+  "upstream_path": "cfr-diffs/vasrd/11-skin-dermatitis-psoriasis-biologics-4.118.md",
+  "upstream_sha256": "76551c6b1903df5c9a2e7b0ca755448dc9091d2d6495cbbfdab0c555e3863dd4",
+  "linked_version_ids": [
+    "38-cfr-4.118-skin-1978-pre2002-7806",
+    "38-cfr-4.118-skin-2002-7806",
+    "38-cfr-4.118-skin-2018-general-formula",
+    "38-cfr-3.810-2012-sursely-clothing",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Eczema, Psoriasis, Hives, Chloracne & Melanoma: Comparing Topical vs. Biologic Skin Rules",
+  "what_this_means": "One of the most common VA rating mistakes in dermatology claims happens when a Veteran takes a modern biologic injection, oral immunomodulator, or phototherapy regimen that successfully clears most visible skin plaques—and VA rates the condition at 0% or 10% based on small body-surface area at the exam while overlooking the 30% or 60% systemic-therapy tiers under 38 C.F.R. § 4.118. This historical comparison tracks how VA rated dermatitis, psoriasis, chronic hives (urticaria), Agent Orange chloracne, and skin cancers across the 1978, August 30, 2002, and August 13, 2018 schedules.",
+  "record_clues": [
+    "A post-August 13, 2018 Rating Code Sheet paying 0% or 10% for dermatitis (Diagnostic Code 7806) or psoriasis (Diagnostic Code 7816) despite pharmacy refill logs showing year-round biologic or oral systemic therapy (such as Dupixent, Humira, Cosentyx, Skyrizi, Otezla, Rinvoq, or methotrexate).",
+    "Psoriasis (Diagnostic Code 7816) medical records documenting joint swelling, stiffness, or pain without a separate evaluation for psoriatic arthritis (Diagnostic Code 5002).",
+    "Allergy/immunology notes for chronic urticaria (hives, Diagnostic Code 7825) showing third-line omalizumab (Xolair) or cyclosporine (60% post-August 13, 2018) or second-line montelukast/steroids (30%).",
+    "A pre-August 13, 2018 running 10% superficial acne or chloracne rating (Diagnostic Codes 7828 or 7829) reduced to 0% after August 13, 2018 solely because the rating schedule changed."
+  ],
+  "important_cautions": [
+    "Topical creams do not trigger 30% or 60% systemic tiers: localized steroid or calcineurin creams/ointments (such as triamcinolone, clobetasol, hydrocortisone, or tacrolimus) are classified as topical therapy rather than systemic therapy under Johnson v. Shulkin and 38 C.F.R. § 4.118(a), though they can qualify for annual Clothing Allowances under 38 C.F.R. § 3.810 if they stain or damage outer clothing.",
+    "Chloracne date and Nehmer rule: Agent Orange chloracne (Diagnostic Code 7829) requires 10%+ manifestation within 1 year of last herbicide exposure for presumptive service connection under 38 C.F.R. § 3.307(a)(6)(ii) and is excluded from special Nehmer class-action retroactivity.",
+    "Localized skin cancer procedures: simple Mohs surgery, cryotherapy, curettage, topical 5-FU, or wide local excision confined to the skin does not trigger the automatic 100% active-malignancy tier under Diagnostic Codes 7818 or 7833 (which requires more extensive surgery, systemic therapy, or extensive radiation).",
+    "Unfinalized and rescinded rules caution: VA's September 29, 2025 painful-scar proposal (90 FR 46542) remains an unfinalized proposed rule (not enacted law), and VA's February 17, 2026 medication Interim Final Rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712)."
+  ],
+  "questions_for_representative": [
+    "Do my pharmacy refill records over the past 12 months prove constant or near-constant systemic biologic, immunosuppressive, or phototherapy use warranting 60% (or 6+ weeks warranting 30%) under 38 C.F.R. § 4.118?",
+    "If I have service-connected psoriasis, have we checked my records for a separate psoriatic arthritis evaluation under Diagnostic Code 5002?",
+    "Did VA unlawfully lower a pre-August 13, 2018 running 10% acne or chloracne rating without proving actual medical improvement as required by 38 U.S.C. § 1155 and 38 C.F.R. § 3.951(a)?",
+    "Have I applied by August 1 for an annual VA Clothing Allowance (or two allowances if multiple medications or braces affect distinct garments) under 38 C.F.R. § 3.810?"
+  ]
+}

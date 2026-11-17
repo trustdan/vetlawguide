@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-4-85-4-87-auditory-tinnitus-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.85-4.87-auditory-tinnitus-evolution.md",
+  "upstream_sha256": "d146214795b3e87101361f2e788550a2e25786a510da9b313a54c905926c7604",
+  "linked_version_ids": [
+    "38-cfr-4.85-4.87-1987-cnc-hearing",
+    "38-cfr-4.85-4.87-1999-auditory",
+    "38-cfr-4.87-6260-1946-pre1999-trauma",
+    "38-cfr-4.87-6260-1999-recurrent",
+    "38-cfr-4.87-6260-2003-tinnitus-single"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Hearing Loss, Vestibular Balance & Tinnitus Regulations (38 C.F.R. §§ 3.385 & 4.85–4.87) Across Eras",
+  "what_this_means": "VA evaluates hearing loss mechanically using two measurements from a licensed audiologist's exam: controlled Maryland CNC 50-word speech recognition and puretone decibel averages across 1000, 2000, 3000, and 4000 Hz (introduced December 18, 1987). Effective June 10, 1999 (64 FR 25202), VA added two critical 'exceptional hearing pattern' rules in 38 C.F.R. § 4.86(a)–(b) that allow puretone-only Table VIa when high-frequency drop-offs mask severe real-world hearing difficulty, updated Meniere's syndrome (Diagnostic Code 6205) and vestibular dizziness (Diagnostic Code 6204), and broadened recurrent tinnitus (Diagnostic Code 6260) beyond head injury or acoustic trauma—before clarifying on June 13, 2003 that recurrent tinnitus receives a single 10% evaluation whether heard in one or both ears.",
+  "record_clues": [
+    "An audiogram meeting VA's disability threshold in 38 C.F.R. § 3.385 (such as >=40 dB at any frequency 500–4000 Hz, >=26 dB at three or more frequencies, or <94% speech recognition) that VA denied outright instead of granting at least 0% service connection.",
+    "A post-June 10, 1999 audiogram showing >=55 dB loss at ALL FOUR frequencies (1000, 2000, 3000, and 4000 Hz) [§ 4.86(a)], OR <=30 dB at 1000 Hz with >=70 dB at 2000 Hz [§ 4.86(b)], where VA used Table VI instead of checking Table VIa (including the +1 Roman numeral step-up under § 4.86(b)).",
+    "A pre-June 10, 1999 tinnitus denial because the ringing did not stem from a specific concussion, head injury, or single acoustic trauma.",
+    "Meniere's syndrome (Diagnostic Code 6205) rated at 30% without checking whether separate ratings for vertigo (Diagnostic Code 6204), hearing loss (Diagnostic Code 6100), and tinnitus (Diagnostic Code 6260) produce a higher combined evaluation."
+  ],
+  "important_cautions": [
+    "Single 10% cap on recurrent tinnitus in every era: under Note (2) to Diagnostic Code 6260 (effective June 13, 2003) and the Federal Circuit's decision in Smith v. Nicholson (2006, upholding VAOPGCPREC 2-2003 for pre-2003 claims), VA assigns only ONE 10% rating for recurrent tinnitus regardless of whether ringing is perceived in one ear, both ears, or the head.",
+    "Anti-pyramiding rule for Meniere's syndrome: VA must award WHICHEVER method is higher—either Diagnostic Code 6205 (30%/60%/100%) OR separate ratings for hearing loss, vertigo, and tinnitus—never both stacked together.",
+    "June 10, 1999 date cutoff: the exceptional hearing pattern rules in 38 C.F.R. § 4.86(a)–(b) took effect June 10, 1999 (published May 11, 1999 at 64 FR 25202) and cannot prove Clear and Unmistakable Error (CUE) in final decisions issued before June 10, 1999.",
+    "Rumored tinnitus changes are NOT law: VA's February 15, 2022 audiology notice (RIN 2900-AQ72, 87 FR 8474, proposing to eliminate standalone 10% tinnitus) remains a proposed, unfinalized rule and is not enacted law. Also remember 38 C.F.R. § 20.1409(c) allows only one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Can we check my audiogram decibel numbers at 1000, 2000, 3000, and 4000 Hz to see if I qualify for Table VIa exceptional hearing patterns under 38 C.F.R. § 4.86(a) or (b)?",
+    "If my audiogram met 38 C.F.R. § 3.385 thresholds (or my separation exam showed an acoustic shift before crossing § 3.385 under Hensley v. Brown), should service connection be established even if Table VII initially yields 0%?",
+    "If I have Meniere's disease, have we compared the single Diagnostic Code 6205 rating against separate ratings for vertigo, hearing loss, and tinnitus?",
+    "Do my tinnitus or hearing symptoms cause secondary sleep disturbance, migraines, depression, or anxiety under 38 C.F.R. § 3.310?"
+  ]
+}

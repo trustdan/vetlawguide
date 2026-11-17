@@ -1,0 +1,29 @@
+{
+  "upstream_id": "checklist-smc-and-ancillary-audit-worksheet",
+  "upstream_path": "checklists/smc-and-ancillary-audit-worksheet.md",
+  "upstream_sha256": "de3a36b2916f12c975cf1f7dc214725197968c5868388a763a715ea42b3d8724",
+  "linked_version_ids": [
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.350j-3.352b-2018-smct",
+    "38-cfr-3.810-2012-sursely-clothing"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "5-Step SMC & Ancillary Benefits Audit Worksheet for Severely Disabled Veterans & Caregivers",
+  "what_this_means": "When a Veteran is rated 100% or TDIU—or lives with polytrauma, Traumatic Brain Injury (TBI), spinal cord or nerve paralysis, ALS, Parkinson's, blindness, or advanced cancer—VA Rating Code Sheets routinely miss higher Special Monthly Compensation (SMC) tiers and tens of thousands of dollars in housing, vehicle, clothing, and family education grants. This 5-step worksheet helps Veterans, family caregivers, and accredited representatives audit every layer: (1) missing SMC(k) add-ons and functional Loss of Use, (2) statutory/factual SMC(s) Housebound, (3) Aid & Attendance SMC(l), SMC(r)(1)/(2), and TBI SMC(t) under Laska, (4) multi-step bumps under Barry v. McDonough, and (5) SAH housing, Chapter 39 Auto, multiple Clothing Allowances, CHAMPVA, and retroactive Chapter 35 DEA.",
+  "record_clues": [
+    "Your latest VA Rating Code Sheet (showing any lettered SMC codes like K-1, S-1, L-1, M-1, P-1, R-1, or T) alongside a list of every service-connected Diagnostic Code and percentage.",
+    "Medical notes, VA Form 21-2680, PCAFC Caregiver records, or Prosthetics records showing braces (AFOs), wheelchairs, walkers, skin creams, or daily caregiver assistance.",
+    "Award notification dates for 100% Permanent & Total (P&T) status—critical for checking the 1-year retroactive Chapter 35 DEA education filing window (38 C.F.R. § 21.4131)."
+  ],
+  "important_cautions": [
+    "Keep Personal Information Private: Never save Social Security numbers, VA file numbers, or unredacted medical letters in shared or public files—keep your completed worksheet private for your accredited representative.",
+    "Respect Statutory Floors & Anti-Pyramiding Rules: TBI SMC(t) cannot precede October 1, 2011; the same extremity or organ impairment cannot be double-counted for both base SMC(l)–(n) and § 3.350(f) step bumps (Breniser / Amberman); and under George v. McDonough (§ 20.1403(e)), Barry and Laska apply via open claims, Supplemental Claims, or § 3.156(c) rather than CUE on final pre-2024 decisions.",
+    "Act Within 1 Year of Initial P&T Notice for Retroactive DEA: Under 38 C.F.R. § 21.4131, spouses and eligible children have 1 year from notification of a retroactive P&T grant to file VA Form 22-5490 and recover retroactive college/training stipends."
+  ],
+  "questions_for_representative": [
+    "Walking through all 5 gates on my Rating Code Sheet, did VA miss any inferred SMC(k), functional Loss of Use (§ 4.63), SMC(s), Aid & Attendance, TBI SMC(t) (Laska), or multi-step Barry bumps?",
+    "Have we checked every ancillary grant tied to my disabilities—Chapter 21 SAH/SHA housing, Chapter 39 Auto/Adaptive Equipment, Sursely multiple Clothing Allowances (§ 3.810), CHAMPVA, and Chapter 35 DEA?",
+    "Which filing lane—timely HLR/Board appeal, Supplemental Claim with a VA Form 21-2680, unadjudicated AMA issue audit, or Regional Office CUE on an older math error—protects my earliest effective date?"
+  ]
+}

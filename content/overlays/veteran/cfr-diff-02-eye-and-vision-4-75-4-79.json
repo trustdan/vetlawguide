@@ -1,0 +1,31 @@
+{
+  "upstream_id": "cfr-diff-02-eye-and-vision-4-75-4-79",
+  "upstream_path": "cfr-diffs/vasrd/02-eye-and-vision-4.75-4.79.md",
+  "upstream_sha256": "30f5cc9057432d65b6ca996bf375ff9d7ac2ffa1b25f645c83f0064281844b55",
+  "linked_version_ids": [
+    "38-cfr-4.75-4.79-2008-eye",
+    "38-cfr-4.75-4.79-2018-eye",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Eye & Vision Impairment Guide: Treatment Visits, Double Vision, Paired-Eye Rules & Hereditary Eye Diseases",
+  "what_this_means": "Eye disabilities often involve much more than a standard 20/20 chart reading. Under 38 C.F.R. §§ 4.75–4.79, VA evaluates central acuity, visual field narrowing or blind spots (scotomas/hemianopsia after TBI or stroke), double vision (diplopia, Diagnostic Code 6090), active clinic treatment visits (since May 13, 2018), facial disfigurement or prosthesis inability, and Special Monthly Compensation. In addition, federal courts (O'Bryan v. McDonald) and VA General Counsel opinions confirm that progressive hereditary eye diseases—such as retinitis pigmentosa or keratoconus—are compensable diseases rather than uncompensable 'congenital defects' if they first manifest or worsen during service.",
+  "record_clues": [
+    "Diabetic retinopathy (Diagnostic Code 6040), macular degeneration or retinal dystrophy (Diagnostic Code 6042), uveitis (Diagnostic Code 6000), or glaucoma (Diagnostic Codes 6012/6013) rated 0% or 10% despite 3 or more active treatment clinic visits per year after May 13, 2018.",
+    "Post-TBI or post-stroke double vision (diplopia, Diagnostic Code 6090) accompanied by reduced visual acuity or visual field loss in the same eye where VA omitted the mandatory 1-, 2-, or 3-step visual acuity elevation under 38 C.F.R. § 4.78(b)(1).",
+    "A VA denial rejecting keratoconus (Diagnostic Code 6035), retinitis pigmentosa (Diagnostic Code 6042), or hereditary optic neuropathy as a 'congenital defect' under 38 C.F.R. § 3.303(c).",
+    "Loss of one eye to light perception only (30%, Diagnostic Code 6064) or anatomical removal (40%, Diagnostic Code 6063, or 50% if unable to wear a prosthesis) missing statutory SMC(k)—or bilateral 5/200 vision (Diagnostic Code 6065) missing SMC(l)–(n) and housing/auto grants."
+  ],
+  "important_cautions": [
+    "Unilateral vs. bilateral SMC blindness thresholds: for a single eye, statutory SMC(k) under 38 C.F.R. § 3.350(a)(4) requires vision reduced to 'light perception only' (or anatomical loss), whereas bilateral 5/200 vision in BOTH eyes triggers higher SMC(l) and Specially Adapted Housing / Chapter 39 Automobile eligibility.",
+    "Diplopia (Diagnostic Code 6090) is assigned to ONE eye only (never stacked on both eyes simultaneously under § 4.78(b)(1)), and occasional diplopia or diplopia fully corrected by eyeglasses is rated 0%.",
+    "Exact overhaul dates govern historical reviews: December 10, 2008 (73 FR 66543) and May 13, 2018 (83 FR 15316) rules cannot prove Clear and Unmistakable Error (CUE) before their effective dates; pre-revision running ratings are protected by 38 C.F.R. § 3.951(a); and George v. McDonough / 38 C.F.R. §§ 20.1403(e) and 20.1409(c) restrict CUE motions.",
+    "VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712) and is not active law."
+  ],
+  "questions_for_representative": [
+    "Did my VA eye exam perform automated Humphrey or Goldmann kinetic visual field testing—especially if I have glaucoma, diabetes, TBI, or stroke history?",
+    "If I have double vision (diplopia) along with reduced visual acuity or visual field loss in the same eye, did VA apply the step-up table in 38 C.F.R. § 4.78(b)(1)?",
+    "Was a progressive hereditary eye condition like keratoconus or retinitis pigmentosa mistakenly denied as a congenital defect?",
+    "Do my clinic records show active eye-injection, laser, or flare treatment visits since May 13, 2018 that support a 20%, 40%, or 60% rating under the General Rating Formula?"
+  ]
+}

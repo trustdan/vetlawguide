@@ -1,0 +1,33 @@
+{
+  "upstream_id": "doctrine-evidence-medical-exams-and-lay-credibility",
+  "upstream_path": "docs/evidence-medical-exams-and-lay-credibility.md",
+  "upstream_sha256": "c58dafb773ba4856a9ecde411760da05a98c8897c14e863ba7944101bb5bd8ff",
+  "linked_version_ids": [
+    "38-cfr-3.159-2001-vcaa-duty-to-assist",
+    "38-cfr-3.159-2019-ama-duty-to-assist",
+    "38-cfr-3.159-2022-ama-duty-to-assist",
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Challenging Inadequate C&P Exams, Lay Buddy Statements & Benefit of the Doubt",
+  "what_this_means": "Most VA disability denials turn on medical evidence and credibility rather than obscure technicalities. Under VA's Duty to Assist (38 U.S.C. § 5103A; 38 C.F.R. § 3.159), once your record shows (1) competent evidence of a current disability or persistent symptoms, (2) an in-service event, injury, or toxic exposure, and (3) a minimal 'indication' that the two may be linked (McLendon v. Nicholson), VA must provide a medical nexus exam—and once VA undertakes an exam, that medical opinion must be informed of accurate facts and backed by clear medical reasoning (Barr v. Nicholson; Nieves-Rodriguez v. Peake). Furthermore, Veterans and fellow service members are legally competent to describe observable symptoms like ringing ears, joint pain, falls, or post-assault behavioral changes, and VA cannot reject credible lay testimony merely because sick-call records are silent (Buchanan v. Nicholson; Jandreau v. Nicholson).",
+  "record_clues": [
+    "A VA denial refusing to schedule a C&P nexus exam because 'there is no medical evidence in the record linking your condition to service' (circularly demanding the very medical opinion VA was required to provide under McLendon and Waters v. Shinseki).",
+    "A C&P examiner checking 'less likely than not' solely because Service Treatment Records did not mention ongoing complaints at separation, while ignoring buddy statements or lay continuity accounts (Dalton v. Nicholson).",
+    "A Board decision giving more weight to a VA contract examiner solely because they checked 'C-file reviewed,' while brushing aside a detailed, well-reasoned private specialist nexus letter (Nieves-Rodriguez v. Peake).",
+    "Identified Social Security Administration (SSA) disability files, inpatient military hospital charts, or Vet Center counseling records that VA stopped trying to obtain without a formal unavailability finding under 38 C.F.R. § 3.159(e)(1)."
+  ],
+  "important_cautions": [
+    "Crucial open-claim vs. CUE boundary: under en banc Federal Circuit law (Cook v. Principi) and 38 C.F.R. §§ 3.105(a)(1)(iii)/(vi) and 20.1403(d)(2)–(3), VA's failure to assist, failure to order a C&P exam, reliance on an inadequate C&P exam, or weighing of conflicting medical opinions can NEVER constitute Clear and Unmistakable Error (CUE) against a final decision. Always raise these errors in a timely Higher-Level Review, Supplemental Claim, or Board/CAVC appeal!",
+    "Raise examiner qualification objections early: under Francway v. Wilkie (2019), VA examiners are presumed qualified unless you specifically challenge the examiner's clinical qualifications or specialty credentials BEFORE the Board of Veterans' Appeals—waiting until a CAVC court appeal waives the objection.",
+    "Supreme Court standard on Benefit of the Doubt (Bufkin v. Collins, 2025): the CAVC reviews VA's finding that positive and negative evidence were not in 'approximate balance' under 38 U.S.C. § 5107(b) deferentially for clear error, so successful appeals focus on exposing flawed exam reasoning (Nieves-Rodriguez), improper rejection of lay statements (Buchanan), and missing Board explanations (38 U.S.C. § 7104(d)(1)).",
+    "Under AMA (38 U.S.C. § 5103A(e)(2)), VA's automatic duty to gather records and order exams ends when the initial Regional Office decision issues—unless a Higher-Level Reviewer or the Board finds a pre-decisional Duty-to-Assist error or you file a Supplemental Claim."
+  ],
+  "questions_for_representative": [
+    "Did the C&P examiner base a negative opinion solely on the absence of military sick-call visits while ignoring my lay statement or buddy statements describing continuous symptoms since service (Dalton v. Nicholson; Buchanan v. Nicholson)?",
+    "If I obtain a private Independent Medical Examination (IME), does the doctor have the relevant facts from my medical history and explain the clinical 'why' (biomechanics, medical literature, and timeline) as emphasized in Nieves-Rodriguez v. Peake?",
+    "Is there any reason to question the C&P examiner's medical specialty or credentials on the record now—before the Board decides my appeal—so it is not waived under Francway v. Wilkie?",
+    "Did VA obtain my complete Social Security Administration disability medical file or Vet Center records before denying my claim?"
+  ]
+}

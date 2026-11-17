@@ -1,0 +1,31 @@
+{
+  "upstream_id": "doctrine-service-connection-direct-soundness-aggravation",
+  "upstream_path": "docs/service-connection-direct-soundness-aggravation.md",
+  "upstream_sha256": "5a9fdfae9b7c73c3bbddfea6e7513dadefdbb9082e49d5e3071e05c424cf2abf",
+  "linked_version_ids": [
+    "38-cfr-3.304b-1961-pre2005-soundness",
+    "38-cfr-3.304b-2005-wagner-soundness",
+    "38-cfr-4.130-2014-dsm5"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Direct Service Connection, the Presumption of Soundness, In-Service Aggravation & Hereditary Diseases",
+  "what_this_means": "To establish direct service connection, VA generally looks for three things: a current disability, an in-service injury, event, or illness, and a medical link between them (38 C.F.R. § 3.303). Two powerful statutory protections prevent unfair 'preexisting condition' denials: if a condition was NOT recorded on your military entrance physical, you are presumed to have entered service in sound condition unless VA proves by clear and unmistakable evidence BOTH that the condition existed before service AND that service did not aggravate it (38 U.S.C. § 1111; 38 C.F.R. § 3.304(b)). And if a condition WAS noted at entrance, worsening beyond natural progression during service establishes in-service aggravation (38 U.S.C. § 1153; 38 C.F.R. § 3.306). In addition, VA law distinguishes static congenital birth defects from progressive hereditary or genetic diseases, which CAN be service-connected if they first manifest or worsen in service.",
+  "record_clues": [
+    "A military entrance clinical examination (Standard Form 88 or DD Form 2808) marking the relevant body system 'Normal', paired with a VA denial claiming the disability 'existed prior to service (EPTS)'.",
+    "A self-reported childhood history check-mark on a medical history questionnaire (SF 93 or DD Form 2807-1) where the entrance physician found no clinical abnormality, yet VA treated the history note as an entrance defect.",
+    "A VA examination opinion stating a condition 'likely preexisted service' without clear and unmistakable proof, or failing to address whether active duty aggravated the condition.",
+    "A VA denial labeling a progressive genetic or familial disease—such as retinitis pigmentosa, keratoconus, hypertrophic cardiomyopathy, Charcot-Marie-Tooth neuropathy, or polycystic kidney disease—as an uncompensable 'congenital defect' under 38 C.F.R. § 3.303(c)."
+  ],
+  "important_cautions": [
+    "Critical Supreme Court limit on older decisions: before Wagner v. Principi (decided June 1, 2004) and VA's May 4, 2005 amendment to 38 C.F.R. § 3.304(b) (70 FR 23027), the printed regulation omitted the lack-of-aggravation prong. In George v. McDonough (2022), the Supreme Court held that applying that pre-2004 regulation cannot be challenged as Clear and Unmistakable Error (CUE) in a final pre-Wagner decision under 38 C.F.R. § 20.1403(e), though open claims, Supplemental Claims, and 38 C.F.R. § 3.156(c) service-record reviews can apply current law.",
+    "Temporary flare-ups vs. aggravation: for conditions noted on an entrance exam, temporary symptom flare-ups during service that return to the pre-service baseline without lasting worsening do not establish in-service aggravation under 38 U.S.C. § 1153.",
+    "Continuity of symptoms and psychiatric diagnoses: under Walker v. Shinseki, the 38 C.F.R. § 3.303(b) chronicity/continuity shortcut applies only to chronic diseases listed in 38 C.F.R. § 3.309(a), and under Martinez-Bodon v. McDonough, mental health service connection requires a formal DSM-5 diagnosis under 38 C.F.R. §§ 4.125(a) and 4.130.",
+    "Preserve Board review rights carefully: under 38 C.F.R. § 20.1409(c), claimants receive only one final merits CUE decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Can we inspect my actual military entrance clinical exam (SF 88 or DD Form 2808) to verify whether a doctor clinically noted any defect at enlistment?",
+    "If my claim was denied as 'existed prior to service' before June 2004, should we pursue a Supplemental Claim with new and relevant medical evidence—or newly obtained military records under 38 C.F.R. § 3.156(c)—rather than a CUE motion barred by George v. McDonough?",
+    "Did VA misclassify a progressive hereditary or genetic disease as a static 'congenital defect' under 38 C.F.R. § 3.303(c)?",
+    "If my condition was noted at entrance, do my service medical records or post-deployment exams show lasting worsening beyond natural progression under 38 C.F.R. § 3.306?"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "upstream_id": "playbook-20-backpay-offsets-crdp-crsc-severance-recoupment",
+  "upstream_path": "playbooks/20-backpay-offsets-crdp-crsc-severance-recoupment.md",
+  "upstream_sha256": "27c71a7846ed128d1feb6dc5299b88f3fd170f7e8a924f3c15cba1372ec39bca",
+  "linked_version_ids": [
+    "38-cfr-3.700a-2002-after-tax-recoupment",
+    "38-cfr-3.700a3-2008-statutory-combat",
+    "38-cfr-3.700a3-2009-combat-severance",
+    "38-cfr-14.636-2019-ama-attorney-fees"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Auditing Back-Pay Withholdings: CRDP vs. CRSC (Soto), Severance Pay Recoupment & Drill Pay",
+  "what_this_means": "Winning a retroactive VA rating or earlier effective date is only half the battle—many Veterans are shocked when their VA Award Letter withholds thousands of dollars for military retired pay, Disability Severance Pay, Separation Pay, Reserve drill days, or felony incarceration. This playbook explains the rules governing Concurrent Retirement and Disability Pay (CRDP, 10 U.S.C. § 1414), Combat-Related Special Compensation (CRSC, 10 U.S.C. § 1413a—including the U.S. Supreme Court's 2025 ruling in Soto v. United States removing the 6-year Barring Act cap on retroactive CRSC arrears), after-tax and combat-zone limits on severance/separation pay recoupment (38 C.F.R. § 3.700), Defense Finance and Accounting Service (DFAS) Audit Error Worksheet holds, and dependent apportionments.",
+  "record_clues": [
+    "A DD-214 (Blocks 18, 24, 26, or 28) listing Disability Severance Pay, Involuntary Separation Pay (ISP), Special Separation Benefit (SSB), or Voluntary Separation Incentive (VSI) alongside a VA Award Letter withholding table.",
+    "A DFAS Retiree Account Statement (RAS) showing a 'VA Waiver' deduction, or a VA Award Letter holding back retroactive pay pending a DFAS Audit Error Worksheet (AEW) reconciliation.",
+    "A Chapter 61 medical retiree (or 20-year retiree) with combat, hazardous-duty, instrumentality-of-war, or simulated-war disabilities whose retroactive CRSC back pay was previously capped at 6 years before Soto v. United States, 605 U.S. 360 (2025).",
+    "VA Form 21-8951 / 21-8951-2 Reserve drill-pay adjustment notices, or a felony-incarceration reduction past Day 60 where eligible spouse/child dependents were not notified of apportionment rights (38 C.F.R. §§ 3.665–3.666)."
+  ],
+  "important_cautions": [
+    "Chapter 61 medical retirees (<20 years) do NOT get CRDP: under 10 U.S.C. § 1414(b)(2), automatic CRDP at a 50%+ VA rating requires a 20-year (or TERA/Reserve gray-area) retirement—Chapter 61 medical retirees with under 20 years must apply to their military branch on DD Form 2860 for CRSC (10 U.S.C. § 1413a) to restore offset retired pay.",
+    "Disability Severance Pay vs. Separation Pay recoupment: under 38 C.F.R. § 3.700(a)(3), Disability Severance Pay is recouped ONLY from monthly compensation attributable to the specific severance disability (leaving independent VA disabilities untouched), AND is 100% exempt from recoupment if separated under Chapter 61 ON OR AFTER January 28, 2008 for a combat-zone or combat-related injury (10 U.S.C. § 1212(d)(2)). By contrast, nondisability Separation Pay / SSB (§ 3.700(a)(5)) is recouped across all VA compensation—but for any payout after September 30, 1996, VA can recoup ONLY the net after-tax amount, never the pre-tax gross!",
+    "Direct-pay attorney fee limits: under Federal Circuit precedent, accredited representatives forfeit VA direct-pay withholding if the fee agreement is not filed within 30 days (Ravin v. Wilkie), and cannot collect a 20% direct-pay contingency fee on the uncollected face value of a canceled overpayment debt (Gumpenberger v. Wilkie).",
+    "Under George v. McDonough and 38 C.F.R. § 20.1403(e), later judicial reinterpretations cannot support Clear and Unmistakable Error (CUE) against older final decisions, and under 38 C.F.R. § 20.1409(c), only one final merits CUE decision is allowed per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "If VA is recouping separation or disability severance pay paid after September 30, 1996, did VA deduct the federal income taxes withheld so it recoups only the net after-tax amount under 38 C.F.R. § 3.700?",
+    "If I was medically separated under Chapter 61 on or after January 28, 2008 for a combat-zone or combat-related injury, is VA unlawfully recouping exempt disability severance pay under 10 U.S.C. § 1212(d)(2)?",
+    "As a military retiree (including Chapter 61), should I file DD Form 2860 with my service branch for tax-free CRSC—and if DFAS previously capped my CRSC back pay at 6 years, how do I pursue uncapped arrears after Soto v. United States (2025)?",
+    "Has DFAS completed its Audit Error Worksheet (AEW) audit so VA releases the rest of my withheld retroactive compensation?"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-ama-part-19-20-and-part-14-fee-evolution",
+  "upstream_path": "cfr-diffs/part-20/ama-part-19-20-and-part-14-fee-evolution.md",
+  "upstream_sha256": "692c42c86892c3af6dd3ace61d9f87fbd68e36943291e838342c6f9ec802b36f",
+  "linked_version_ids": [
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-14.636-2008-post-nod-attorney-fees",
+    "38-cfr-14.636-2019-ama-attorney-fees",
+    "38-cfr-17.1005-2023-wolfe-coinsurance"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Legacy vs. Modern (AMA) Appeals, Representation Fee History & Emergency Coinsurance Rules",
+  "what_this_means": "VA's procedural rules changed dramatically across four eras—especially on February 19, 2019 when the Appeals Modernization Act (AMA, 84 FR 138) replaced the old open-record Legacy appeal system (Statement of the Case + VA Form 9) with three distinct review lanes and strict 90-day Board evidence windows. This historical comparison tracks: (1) Legacy Part 19 open-record rules versus AMA Part 20 closed/windowed dockets, (2) Board Clear and Unmistakable Error (CUE) rules enacted February 12, 1999, (3) when accredited attorneys and claims agents can legally charge fees across pre-2007, 2007–2019, and post-February 19, 2019 rules (38 C.F.R. § 14.636), and (4) non-VA emergency medical coinsurance reimbursement after Staab and Wolfe (38 C.F.R. §§ 17.1002 and 17.1005).",
+  "record_clues": [
+    "The date of the initial VA Regional Office decision: decisions noticed BEFORE February 19, 2019 stay in the Legacy system unless opted into AMA, whereas initial decisions noticed ON OR AFTER February 19, 2019 are governed by AMA.",
+    "A VA Form 10182 Board appeal citing or incorporating medical evidence that was already uploaded to VA's file between the Regional Office decision and the Notice of Disagreement (Cash v. Collins).",
+    "A Regional Office or VA General Counsel letter refusing to recognize an accredited representative's contingency fee on a non-continuous Supplemental Claim or CUE motion based on invalidated language in 38 C.F.R. § 14.636(c)(1)(i) (struck down in Military-Veterans Advocacy v. Secretary of Veterans Affairs).",
+    "A non-VA emergency care bill denied under 38 U.S.C. § 1725 because Medicare or private insurance left 20% coinsurance unpaid (reimbursable under Wolfe v. McDonough and the April 24, 2023 rule at 88 FR 10835)."
+  ],
+  "important_cautions": [
+    "Do not mix Legacy and AMA evidence rules: an AMA appeal of a post-February 19, 2019 decision does NOT keep an open evidentiary record up to the Board decision—evidence uploaded outside the selected AMA Board docket window can be ignored unless properly submitted or preserved via a follow-on Supplemental Claim.",
+    "Fee-trigger dates protect Veterans: nobody may charge a fee on an initial claim before VA issues an initial decision (38 U.S.C. § 5904(c)(1)). On older Legacy cases, the fee trigger turned on whether the Notice of Disagreement was filed on or after June 20, 2007 (Pub. L. 109-461) versus before June 20, 2007 (requiring a prior final Board decision).",
+    "Strict Board CUE finality bar: under 38 C.F.R. § 20.1409(c), once the Board issues a final decision on the merits of a CUE motion on a specific prior Board issue, no second CUE motion is allowed on that Board issue—and under George v. McDonough and 38 C.F.R. § 20.1403(e), later judicial invalidations of regulations cannot establish CUE against earlier final decisions.",
+    "Emergency reimbursement scope under § 1725: percentage-based coinsurance is reimbursable under 38 C.F.R. § 17.1005 after Wolfe, whereas fixed copayments and annual deductibles remain excluded under § 1725(c)(4)(D) (unless the Veteran qualifies under 38 U.S.C. § 1728 for a service-connected emergency or 100% P&T status)."
+  ],
+  "questions_for_representative": [
+    "Is my appeal governed by the pre-February 19, 2019 Legacy open-record system or the post-February 19, 2019 AMA system, and should a remanded Legacy appeal stay in Legacy?",
+    "If medical evidence was uploaded to my VA file in an 'in-between' period before my VA Form 10182 Board appeal, did we clearly incorporate it or select the Evidence Submission docket?",
+    "Does our representation agreement comply with 38 U.S.C. § 5904 and 38 C.F.R. § 14.636 (accredited representative, post-initial-decision trigger, <=20% direct-pay cap, and 30-day filing)?",
+    "If VA denied my non-VA emergency room coinsurance bill under older rules invalidated by Staab or Wolfe, what review options remain open?"
+  ]
+}

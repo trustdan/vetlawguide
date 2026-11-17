@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-03-auditory-hearing-tinnitus-4-85-4-87",
+  "upstream_path": "cfr-diffs/vasrd/03-auditory-hearing-tinnitus-4.85-4.87.md",
+  "upstream_sha256": "538d1dc6306feff015d9dd2330f31b7d7e17836287f763c29013e7411509c0e9",
+  "linked_version_ids": [
+    "38-cfr-4.85-4.87-1987-cnc-hearing",
+    "38-cfr-4.85-4.87-1999-auditory",
+    "38-cfr-4.87-6260-1946-pre1999-trauma",
+    "38-cfr-4.87-6260-1999-recurrent",
+    "38-cfr-4.87-6260-2003-tinnitus-single"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Hearing Loss, Tinnitus & Balance Guide: Table VIa Exceptions, Paired-Ear Rules & Lay Noise Evidence",
+  "what_this_means": "Because VA hearing ratings rely on strict audiometric lookup tables (38 C.F.R. §§ 4.85–4.87), many Veterans with significant difficulty hearing in noisy rooms receive 0% or 10% unless every table rule and related condition is checked. This guide explains how Veterans establish noise exposure and continuous ringing through military occupational specialty and lay statements (Jandreau / Fountain), when VA must switch from Table VI to the puretone-only Table VIa (§ 4.85(c) speech-test unreliability or § 4.86(a)–(b) steep high-frequency loss), when severe hearing loss in one service-connected ear plus hearing loss in the other non-service-connected ear unlocks bilateral 'paired-organ' compensation (38 U.S.C. § 1160(a)(3); 38 C.F.R. § 3.383(a)(3)), and how dizziness/vertigo and Meniere's syndrome are evaluated.",
+  "record_clues": [
+    "A denial of service connection for hearing loss solely because your separation audiogram did not yet cross 38 C.F.R. § 3.385 decibel cutoffs despite documented in-service noise exposure or threshold shifts (Hensley v. Brown).",
+    "A denial of recurrent tinnitus (Diagnostic Code 6260) discounting your consistent lay reports of ringing since service simply because Service Treatment Records were silent (Charles v. Principi; Jandreau v. Nicholson; Fountain v. McDonald).",
+    "A post-December 6, 2002 unilateral service-connected ear compensable at 10% or more (Roman Numeral X or XI when paired with I on Table VII) alongside § 3.385 hearing loss in the opposite non-service-connected ear where VA failed to award bilateral paired-organ compensation under 38 C.F.R. § 3.383(a)(3).",
+    "An audiology report stating Maryland CNC speech recognition testing was unreliable due to a language barrier or cognitive/clinical factor while the rater still used Table VI instead of mandatory Table VIa (§ 4.85(c))."
+  ],
+  "important_cautions": [
+    "No dual bilateral tinnitus rating: the Federal Circuit reversed the earlier Veterans Court ruling in Smith v. Nicholson (2006), confirming that only ONE 10% rating is authorized under Diagnostic Code 6260 in any era, whether tinnitus is in one or both ears.",
+    "Paired-organ hearing threshold: under 38 U.S.C. § 1160(a)(3) and 38 C.F.R. § 3.383(a)(3) (expanded effective December 6, 2002; Boyer v. West), paired-organ relief for a non-service-connected ear applies only when the service-connected ear is independently compensable at 10% or higher (Roman Numeral X or XI on Table VII when paired with I)—not when the service-connected ear is rated 0%.",
+    "Extraschedular limits on hearing loss: difficulty understanding speech in background noise or group settings is already contemplated by the rating tables (Doucette v. Shulkin), whereas distinct uncontemplated symptoms—such as ear pain, vertigo, or secondary mental health/sleep conditions—require separate evaluation.",
+    "Unfinalized and rescinded rules: VA's February 15, 2022 tinnitus proposal (RIN 2900-AQ72, 87 FR 8474) remains a proposed rule that is not enacted law, and VA's February 17, 2026 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712)."
+  ],
+  "questions_for_representative": [
+    "Do my puretone decibel thresholds at 1000, 2000, 3000, and 4000 Hz trigger Table VIa under 38 C.F.R. § 4.86(a) or the +1 Roman numeral step-up under § 4.86(b)?",
+    "Does my MOS, combat history, and lay continuity statement support service connection for tinnitus (Diagnostic Code 6260) or hearing loss (Diagnostic Code 6100) even if I did not report ringing at separation?",
+    "If one ear is compensably service-connected at 10%+ (Roman Numeral X or XI) and my other ear has § 3.385 hearing loss, did VA check paired-organ benefits under 38 C.F.R. § 3.383(a)(3)?",
+    "Have we checked for objective vestibular balance/dizziness findings (Diagnostic Code 6204) or secondary depression, anxiety, or migraines caused by severe constant tinnitus?"
+  ]
+}

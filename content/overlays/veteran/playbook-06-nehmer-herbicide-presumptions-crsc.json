@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-06-nehmer-herbicide-presumptions-crsc",
+  "upstream_path": "playbooks/06-nehmer-herbicide-presumptions-crsc.md",
+  "upstream_sha256": "f5d16817d6a320ca5a92706413a08f99a8da4ca6a475682752c6a5eff26670fb",
+  "linked_version_ids": [
+    "38-cfr-3.816-2003-nehmer",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-4.100-4.104-1998-cardio-lvef",
+    "38-cfr-4.100-4.104-2006-mets-4100",
+    "38-cfr-4.100-4.104-2021-cardio-mets"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Agent Orange Retroactive Effective Dates (Nehmer), One-Year Chronic Diseases & Combat-Related Retiree Pay",
+  "what_this_means": "Normally, when Congress or VA adds a new presumptive illness, benefits cannot go back earlier than the date the new law took effect. For Vietnam-era herbicide Veterans and their families, however, federal court orders codified in 38 C.F.R. § 3.816 (the Nehmer class action rules) require VA to look back to earlier denied claims—or even earlier medical diagnoses already in the file—filed or pending on or after September 25, 1985 for covered Agent Orange conditions. This guide also explains two related retroactive checks: the 1-year post-discharge chronic disease presumption (38 C.F.R. § 3.309(a)) and Combat-Related Special Compensation (CRSC) arrears for military retirees after the U.S. Supreme Court's decision in Soto v. United States.",
+  "record_clues": [
+    "A DD-214, deck log, or personnel record showing service in the Republic of Vietnam or its 12-nautical-mile territorial seas (Blue Water Navy) between January 9, 1962 and May 7, 1975, paired with an older VA denial or VA medical note mentioning ischemic heart disease, prostate or bladder cancer, Type 2 diabetes, Parkinsonism, or hypothyroidism.",
+    "A survivor or family estate record where a Vietnam Veteran passed away from a covered herbicide illness after having filed an earlier disability claim, even if no surviving spouse or dependent child remains.",
+    "An older rating denial stating 'not shown in service treatment records' when medical records within 12 months of military discharge documented a listed chronic condition (such as arthritis, hypertension, peptic ulcer, or organic nervous disease) at a 10% or higher level.",
+    "A Defense Finance and Accounting Service (DFAS) or military branch CRSC award letter that capped retroactive combat-related retiree pay at six years under the Barring Act (31 U.S.C. § 3702)."
+  ],
+  "important_cautions": [
+    "Not every herbicide condition triggers Nehmer class retroactivity: VA excludes PACT Act additions such as hypertension and monoclonal gammopathy of undetermined significance (MGUS), as well as chloracne, from 38 C.F.R. § 3.816 retroactive class rules.",
+    "Location rules differ between Nehmer class membership (focused on Republic of Vietnam and Blue Water Navy service) and expanded PACT Act herbicide locations such as Thailand, Laos, Cambodia, Guam, American Samoa, and Johnston Atoll, which generally follow statutory liberalizing-law effective dates unless direct service records apply.",
+    "Claims that were both filed and finally denied before September 25, 1985—with no later claim pending on or after September 25, 1985—do not qualify under the Nehmer cutoff.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a Clear and Unmistakable Error (CUE) motion on a specific Board issue, no second CUE motion is allowed on that Board issue—so Nehmer and 38 C.F.R. § 3.156(c) service-record pathways should always be checked first."
+  ],
+  "questions_for_representative": [
+    "Does my VA Claims File (C-file) contain an earlier denied claim—or an earlier medical diagnosis or VA hospital code—on or after September 25, 1985 that could anchor an earlier Nehmer effective date under 38 C.F.R. § 3.816?",
+    "If my loved one served in Vietnam or Blue Water Navy waters and has passed away, can surviving family members or the estate request a Nehmer retroactive payee review under the post-December 2, 2021 version of 38 C.F.R. § 3.816(f)?",
+    "Did my medical records within the first year after discharge show a 10% compensable chronic condition under 38 C.F.R. §§ 3.307 and 3.309(a) that an earlier decision overlooked?",
+    "If I am a military retiree receiving CRSC whose retroactive payment was previously capped at six years, how can we check eligibility for unpaid arrears following Soto v. United States?"
+  ]
+}

@@ -39,7 +39,7 @@ const STATE_META: Record<
   CORPUS_GAP_OR_QUEUED_WAVE: {
     headline: "Gap / Not Yet Indexed on VetLawGuide — Do Not Rely",
     defaultDetail:
-      "Held behind an upcoming Ingestion Wave or outside current snapshot dates. VetLawGuide never silently substitutes today's eCFR text.",
+      "Outside current verbatim snapshot dates. VetLawGuide never silently substitutes today's eCFR text.",
     cssPrefix: "gap",
   },
 };
@@ -82,7 +82,7 @@ export function CoverageBanner({
           )}
           <span>{meta.headline}</span>
         </div>
-        <span className="font-mono text-[11px] opacity-90">
+        <span className="font-mono text-xs opacity-90">
           Checked as of {checkedAsOf} · {corpusReleaseId}
         </span>
       </div>

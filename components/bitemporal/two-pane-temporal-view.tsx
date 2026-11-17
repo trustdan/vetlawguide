@@ -108,7 +108,7 @@ export function TwoPaneTemporalView({
                 <Link
                   href={resolved.governingVersion.permalink}
                   prefetch={false}
-                  className="inline-flex items-center gap-1 break-all font-mono text-[11px] font-semibold text-primary underline underline-offset-2"
+                  className="inline-flex items-center gap-1 break-all font-mono text-xs font-semibold text-primary underline underline-offset-2"
                 >
                   <span>{resolved.governingVersion.permalink}</span>
                   <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
@@ -132,7 +132,7 @@ export function TwoPaneTemporalView({
                     color: "var(--status-summary-fg)",
                     borderColor: "var(--status-summary-border)",
                   }}
-                  className="mt-2 rounded border p-2.5 text-[11px] leading-relaxed"
+                  className="mt-2 rounded border p-2.5 text-xs leading-relaxed"
                 >
                   <p className="font-semibold">
                     Summary Only — Verify Official Print 38 C.F.R. Before Filing CUE
@@ -267,7 +267,7 @@ export function TwoPaneTemporalView({
                   <Link
                     href={resolved.governingVersion.permalink}
                     prefetch={false}
-                    className="inline-flex items-center gap-1 break-all font-mono text-[11px] font-semibold text-primary underline underline-offset-2"
+                    className="inline-flex items-center gap-1 break-all font-mono text-xs font-semibold text-primary underline underline-offset-2"
                   >
                     <span>{resolved.governingVersion.permalink}</span>
                     <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
@@ -276,7 +276,7 @@ export function TwoPaneTemporalView({
                 <p className="mt-1 text-muted-foreground">
                   {resolved.governingVersion.heading}
                 </p>
-                <dl className="mt-2 grid grid-cols-1 gap-1.5 border-t border-border/70 pt-2 font-mono text-[11px] sm:grid-cols-2">
+                <dl className="mt-2 grid grid-cols-1 gap-1.5 border-t border-border/70 pt-2 font-mono text-xs sm:grid-cols-2">
                   <div>
                     <dt className="text-muted-foreground">FR Publication Date</dt>
                     <dd className="text-foreground">
@@ -298,7 +298,7 @@ export function TwoPaneTemporalView({
                       color: "var(--status-summary-fg)",
                       borderColor: "var(--status-summary-border)",
                     }}
-                    className="mt-2.5 rounded border p-2.5 text-[11px] leading-relaxed"
+                    className="mt-2.5 rounded border p-2.5 text-xs leading-relaxed"
                   >
                     <p className="font-semibold">
                       Summary Only — Pull Print 38 C.F.R. Edition Before Pleading CUE
@@ -388,7 +388,7 @@ export function TwoPaneTemporalView({
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-1">
                       <span className="font-semibold text-foreground">{veh.title}</span>
-                      <span className="font-mono text-[11px] text-primary">
+                      <span className="font-mono text-xs text-primary">
                         {veh.citation}
                       </span>
                     </div>
@@ -412,7 +412,7 @@ export function TwoPaneTemporalView({
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-1">
                       <span className="font-semibold text-foreground">{lim.title}</span>
-                      <span className="font-mono text-[11px] text-accent">
+                      <span className="font-mono text-xs text-accent">
                         {lim.citation}
                       </span>
                     </div>

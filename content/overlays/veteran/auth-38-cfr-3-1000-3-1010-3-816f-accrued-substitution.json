@@ -1,0 +1,31 @@
+{
+  "upstream_id": "auth-38-cfr-3-1000-3-1010-3-816f-accrued-substitution",
+  "upstream_path": "authorities/part-3/38-cfr-3.1000-3.1010-accrued-substitution.md",
+  "upstream_sha256": "a107161de8bc7348d318b956b9e5d093df140ce2f656975c2aa445304fe34211",
+  "linked_version_ids": [
+    "38-cfr-3.1000-1962-pre2003-2yr-cap",
+    "38-cfr-3.1000-2006-uncapped",
+    "38-cfr-3.1000-2015-uncapped",
+    "38-cfr-3.1010-2014-substitution",
+    "38-cfr-3.816-2003-nehmer",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Exact Legal Rules for Accrued Benefits (§ 3.1000), Survivor Substitution (§ 3.1010) & Nehmer Payees (§ 3.816(f))",
+  "what_this_means": "This reference module compiles the three core VA regulations governing unpaid lifetime benefits after a Veteran's death, including their key historical turning points: (1) 38 C.F.R. § 3.1000 (Accrued Benefits), showing the December 16, 2003 statutory repeal of the old 2-year back-pay cap and the 2015 constructive-possession definition of 'evidence in the file at date of death'; (2) 38 C.F.R. § 3.1010 (Substitution), implementing 38 U.S.C. § 5121A for deaths on or after October 10, 2008—including the rule that a timely DIC or Survivors Pension application automatically counts as a request to substitute; and (3) 38 C.F.R. § 3.816(f) (Nehmer Agent Orange survivor and estate payments), including the December 2, 2021 amendment requiring full payment to newly identified eligible payees.",
+  "record_clues": [
+    "A Veteran's death on or after December 16, 2003 (when Congress repealed the old 2-year limit on accrued back pay) or on or after October 10, 2008 (when Congress enacted § 5121A open-record substitution).",
+    "A VA Form 21P-534EZ survivor claim filed within 1 year of death while a Veteran's claim or appeal was pending—which § 3.1010(c)(2) treats as an automatic request to substitute even if no separate VA Form 21P-0847 was filed.",
+    "A pre-December 2, 2021 Nehmer Agent Orange decision that denied an eligible family payee because VA had already paid part or all of the award to someone else (removed effective December 2, 2021 at 86 FR 68409)."
+  ],
+  "important_cautions": [
+    "Priority Line Does Not Pass Down Upon Waiver (§ 3.1000(c)(2) & § 3.1010(g)(4)): Under standard accrued and substitution rules, if a surviving spouse is alive and eligible, lower-priority relatives (such as children or dependent parents) cannot step in even if the surviving spouse chooses not to file or waives substitution.",
+    "Death During the 120-Day CAVC Appeal Window: If the Board of Veterans' Appeals issued a final decision BEFORE the Veteran died and the Veteran passed away during the 120-day judicial appeal window, VA agency substitution under § 3.1010 does not apply—an accredited attorney must invoke CAVC Rule 43 judicial substitution (Breedlove) alongside a protective VA filing.",
+    "Deemed Substitution Waiver Notice (Reliford v. McDonald): VA cannot close out a pending claim purely on limited closed-record accrued rules without first giving the survivor proper notice of their right to substitute and submit new evidence."
+  ],
+  "questions_for_representative": [
+    "Did my timely VA Form 21P-534EZ DIC/pension application automatically trigger substitution under 38 C.F.R. § 3.1010(c)(2), and did VA notify me of my right to submit new medical evidence before deciding?",
+    "Were VA Medical Center or federal records constructively in VA's possession at the date of death under 38 C.F.R. § 3.1000(d)(4)?",
+    "For a Nehmer Agent Orange back-pay audit, how does the December 2, 2021 amendment to 38 C.F.R. § 3.816(f)(3) affect eligible family or estate payees?"
+  ]
+}

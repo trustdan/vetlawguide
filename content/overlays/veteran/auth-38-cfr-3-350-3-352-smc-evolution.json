@@ -1,0 +1,35 @@
+{
+  "upstream_id": "auth-38-cfr-3-350-3-352-smc-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.350-3.352-smc-evolution.md",
+  "upstream_sha256": "3e98b94390ba8f43e246b770e822ce5a9e3316d00a25f71184e915b4e43e7381",
+  "linked_version_ids": [
+    "38-cfr-3.350a7-2000-statutory-mastectomy",
+    "38-cfr-3.350a7-2000-pre2002-mastectomy",
+    "38-cfr-3.350a7-2002-statutory-25pct",
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.350f-1961-barry-steps",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.350j-3.352b-2018-smct",
+    "38-cfr-3.810-2011-sursely-clothing",
+    "38-cfr-3.810-2012-sursely-clothing"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Exact Legal Rules for Special Monthly Compensation (§§ 3.350, 3.352), Loss of Use (§ 4.63) & Multiple Clothing Allowances (§ 3.810)",
+  "what_this_means": "This reference module contains the exact regulatory text governing VA's Special Monthly Compensation (SMC) system from SMC(k) through SMC(t): creative-organ, extremity, eye/speech/hearing, and breast-tissue SMC(k) add-ons (§ 3.350(a)); Loss of Use of a hand or foot when remaining function is no better than an amputation with a prosthesis (§ 4.63; Tucker v. West); Aid & Attendance and TBI SMC(t) (§§ 3.350(b)/(j), 3.352(a)–(b)); multi-step half-step and full-step increases for additional independent 50%+ and 100% disabilities (§ 3.350(f)(3)–(4); Barry v. McDonough); statutory Housebound SMC(s) (§ 3.350(i)); VA hospitalization adjustments (§ 3.552(b)); and multiple annual Clothing Allowances (§ 3.810(a); Sursely v. Peake).",
+  "record_clues": [
+    "A Rating Code Sheet awarding 100% (or single-disability TDIU) plus additional disabilities combining to 60%+ with no SMC(s) award (§ 3.350(i)(1)).",
+    "Severe foot drop, peroneal/sciatic nerve paralysis, ankylosis, or bilateral extremity impairment where VA rated percentages without testing functional 'Loss of Use' under 38 C.F.R. § 4.63 and § 3.350(a)(2).",
+    "A woman Veteran with service-connected mastectomy, surgical removal of 25%+ breast tissue, or breast radiation treatment missing SMC(k) (§ 3.350(a)).",
+    "An SMC(l)–(n) Code Sheet stopping at a single intermediate step increase despite multiple separate 50%+ or 100% disabilities (§ 3.350(f)(3)–(4); Barry v. McDonough)."
+  ],
+  "important_cautions": [
+    "Exact Breast SMC(k) Dates (2000 vs. 2002): Congress enacted SMC(k) for complete anatomical loss/mastectomy effective November 1, 2000 (Pub. L. 106-419, § 302; former § 3.350(a)(7)), and expanded it effective December 6, 2002 (Pub. L. 107-330, § 102; 68 FR 55467) to cover 25%+ breast tissue loss or radiation treatment of breast tissue.",
+    "TBI SMC(t) Floor & Laska Precedent: SMC(t) cannot take effect before October 1, 2011 (Pub. L. 111-275, § 601(c)). In Laska v. McDonough (September 6, 2024), the CAVC invalidated § 3.352(b)(2)'s extra 'higher level of care' requirement, though George v. McDonough (§ 20.1403(e)) bars CUE against final pre-decision ratings based solely on later judicial reinterpretations like Laska or Barry.",
+    "Anti-Pyramiding Rule in SMC (Amberman & Breniser): Each disability used to trigger a § 3.350(f)(3)–(4) step increase or SMC(s) must be completely separate and distinct from the disability establishing your base SMC rate."
+  ],
+  "questions_for_representative": [
+    "Should VA have evaluated my severe nerve paralysis, foot drop, or joint failure for functional 'Loss of Use' under 38 C.F.R. § 4.63 and § 3.350(a)(2) even though the limb was not amputated?",
+    "Did VA overlook automatic ancillary SMC(k) for prostatectomy/erectile dysfunction, reproductive organ loss, breast surgery/radiation (25%+ tissue or radiation on/after December 6, 2002), or loss of voice/eye/hearing?",
+    "Under Barry v. McDonough, how many separate and distinct 50%+ or 100% disabilities do I have beyond my base SMC(l)–(n) award?"
+  ]
+}

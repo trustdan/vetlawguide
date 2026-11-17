@@ -21,7 +21,7 @@ export function QuarantinedWatchlistCard({
               Quarantined Watchlist — Proposed / Unfinalized or Rescinded (Not Enacted Law)
             </span>
           </h3>
-          <span className="rounded border border-border bg-surface px-2 py-0.5 font-mono text-[11px] font-semibold text-foreground">
+          <span className="rounded border border-border bg-surface px-2 py-0.5 font-mono text-xs font-semibold text-foreground">
             Do Not Cite as Active Regulation
           </span>
         </div>
@@ -39,11 +39,11 @@ export function QuarantinedWatchlistCard({
                   <span className="font-semibold text-foreground">
                     {item.cfr_section} — {item.heading}
                   </span>
-                  <span className="rounded bg-surface px-1.5 py-0.5 font-mono text-[11px] font-semibold text-accent">
+                  <span className="rounded bg-surface px-1.5 py-0.5 font-mono text-xs font-semibold text-accent">
                     {statusLabel}
                   </span>
                 </div>
-                <p className="font-mono text-[11px] text-muted-foreground">
+                <p className="font-mono text-xs text-muted-foreground">
                   Source: {item.federal_register_citation ?? item.version_id} · Notice Date:{" "}
                   {item.publication_date ?? item.effective_from}
                 </p>

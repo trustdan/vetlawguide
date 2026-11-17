@@ -25,10 +25,12 @@
     "fr:watch": "tsx scripts/check_federal_register_drift.ts"
   },
   "dependencies": {
+    "@fontsource-variable/newsreader": "^5.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
     "d3-hierarchy": "^3.1.2",
+    "geist": "^1.9.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.454.0",
     "motion": "^12.42.2",

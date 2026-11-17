@@ -1,0 +1,34 @@
+{
+  "upstream_id": "checklist-award-letter-and-withholding-audit-checklist",
+  "upstream_path": "checklists/award-letter-and-withholding-audit-checklist.md",
+  "upstream_sha256": "95e6360e9dcda14486eb6c6fa74deda47a35e65a7579281ab2caaf676f9605de",
+  "linked_version_ids": [
+    "38-cfr-3.400o2-2019-ama-intro",
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-3.700a3-2009-combat-severance",
+    "38-cfr-4.26d-2023-bilateral",
+    "38-cfr-14.636-2019-ama-attorney-fees",
+    "38-cfr-1.963b-2026-1yr-waiver"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "After You Win: 6-Point Checklist to Audit Your VA Award Letter, Back Pay & Ancillary Benefits",
+  "what_this_means": "Even when VA mails a 'favorable' Rating Decision granting service connection or a higher percentage, errors frequently hide inside the payment math. VA may pick the C&P exam date instead of your claim or Intent to File date, miss staged ratings across earlier years, miscalculate combined percentages or the post-April 16, 2023 bilateral exclusion rule (38 C.F.R. § 4.26(d)), omit inferred Special Monthly Compensation (SMC), forget spouse/child dependents upon crossing 30%, hold back retired pay or over-recoup severance pay, or misstate attorney fee / EAJA offsets. Auditing every grant promptly protects both your lump-sum back pay and your appeal deadlines.",
+  "record_clues": [
+    "A newly issued VA Rating Decision, Higher-Level Review grant, Board grant implementation letter, VA Award Letter monthly payment table, and the internal VA Rating Code Sheet.",
+    "An effective date matching the date of a recent C&P exam rather than the Intent to File date, claim date, or 1-year pre-claim lookback for increased ratings (38 C.F.R. § 3.400(o)(2)).",
+    "Crossing 30% combined for the first time without spouse/child/parent dependency additions (1-year window on VA Form 21-686c under 38 C.F.R. § 3.401(b)), or crossing 100% Permanent & Total without Chapter 35 DEA education and CHAMPVA notices.",
+    "Award Letter 'Withholding' lines for Military Retired Pay (DFAS Audit Error Worksheet hold), Disability Severance Pay, Separation Pay, Reserve Drill Pay, Overpayment Recoupment, or 20% direct-pay representation fees."
+  ],
+  "important_cautions": [
+    "A partial win still starts strict appeal clocks: if your percentage is too low for an earlier period, your effective date is wrong, or SMC was omitted, you must appeal within 1 year (for a Regional Office / HLR grant under 38 C.F.R. § 3.2500) or within 120 days to the CAVC (for a partial Board denial under 38 U.S.C. § 7266(a))—otherwise the unfavorable part becomes final!",
+    "One-year family benefit deadlines: when a rating first crosses 30% combined, submit VA Form 21-686c within 1 year of notification to backdate dependent pay to the rating's effective date (38 C.F.R. § 3.401(b)); when first granted Permanent & Total disability, dependents should check the 1-year Chapter 35 DEA filing window under 38 C.F.R. § 21.4131.",
+    "Mandatory EAJA lesser-fee refund: if an attorney represented you at the CAVC and received an Equal Access to Justice Act (EAJA) award for the same work that produced your VA back pay, federal law (Pub. L. 102-572, § 506(c)) requires the attorney to refund the smaller of the two fees dollar-for-dollar to you.",
+    "If an accompanying letter demands repayment of an overpayment, remember the 30-day stay window (which freezes monthly withholding) and the 1-year statutory waiver deadline under 38 U.S.C. § 5302(a) and 38 C.F.R. § 1.963(b) (180 days for pre-December 29, 2022 notices)."
+  ],
+  "questions_for_representative": [
+    "Can we compare my VA Award Letter line-by-line against the internal VA Rating Code Sheet to verify my effective dates, staged ratings, combined math (38 C.F.R. §§ 4.25 and 4.26(d)), and any inferred Special Monthly Compensation?",
+    "Now that my combined rating is 30%+ (or 100% Permanent & Total), have we filed VA Form 21-686c for my dependents and checked CHAMPVA, Chapter 35 DEA, VA dental care, clothing/auto/housing grants, and state property-tax exemptions?",
+    "Are the military retired pay (DFAS CRDP/CRSC) or separation/severance recoupment withholdings on my Award Letter accurate under 38 C.F.R. § 3.700 (after-tax cap or post-January 28, 2008 combat-severance exemption)?",
+    "If a 20% contingency fee was withheld from my past-due benefits, does it match my net retroactive increase—and am I owed a dollar-for-dollar refund of any prior CAVC EAJA fee covering the same work?"
+  ]
+}

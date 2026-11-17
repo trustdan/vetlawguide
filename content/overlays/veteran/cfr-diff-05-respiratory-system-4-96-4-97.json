@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-05-respiratory-system-4-96-4-97",
+  "upstream_path": "cfr-diffs/vasrd/05-respiratory-system-4.96-4.97.md",
+  "upstream_sha256": "53961c0522af6835eb77dcc89626ca03339560cbfc6a5b2eaea4c0ce32eba12b",
+  "linked_version_ids": [
+    "38-cfr-4.96-4.97-1946-pre1996-respiratory",
+    "38-cfr-4.96-4.97-1996-respiratory",
+    "38-cfr-4.96-4.97-2006-may-tech",
+    "38-cfr-4.96-4.97-2006-pft-exceptions",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Respiratory System Guide: Burn Pit Asthma/Sinusitis/Rhinitis, Sleep Apnea CPAP Rules & Coexisting Lung Ratings",
+  "what_this_means": "With PACT Act burn-pit presumptions (38 U.S.C. § 1120; 38 C.F.R. § 3.320) making asthma, chronic rhinitis, chronic sinusitis, COPD, interstitial lung disease, sarcoidosis, and respiratory cancers presumptive for covered Gulf War and post-9/11 Veterans, accurate evaluation under 38 C.F.R. §§ 4.96–4.97 matters more than ever. This comparison explains how VA evaluates PFT breathing numbers vs. inhaler/steroid therapy, why nasal polyps on CT or endoscopy establish 30% under Diagnostic Code 6522 Rhinitis, why upper-airway nose/sinus ratings stack separately with lower-lung ratings, and how Obstructive Sleep Apnea (Diagnostic Code 6847) interacts with coexisting lung disease.",
+  "record_clues": [
+    "A Rating Code Sheet subsuming Chronic Sinusitis (Diagnostic Codes 6510–6514) or Allergic Rhinitis (Diagnostic Code 6522) into Asthma (Diagnostic Code 6602) or Sleep Apnea (Diagnostic Code 6847).",
+    "Allergic or Vasomotor Rhinitis (Diagnostic Code 6522) rated at 0% or 10% despite a sinus CT scan or ENT nasal endoscopy documenting nasal polyps (which warrants 30%).",
+    "Obstructive Sleep Apnea (Diagnostic Code 6847) rated below 50% despite a medical prescription for a CPAP, BiPAP, APAP, or oral mandibular-advancement breathing assistance device.",
+    "Total laryngectomy (Diagnostic Code 6518) or complete organic aphonia / loss of speech (Diagnostic Code 6519) rated 100% without concurrent statutory Special Monthly Compensation (SMC(k) under 38 C.F.R. § 3.350(a)(6))."
+  ],
+  "important_cautions": [
+    "Endoscopic sinus surgery vs. 'radical surgery': routine functional endoscopic sinus surgery (FESS), polypectomy, or turbinate reduction generally counts as 'repeated surgeries' rather than 'radical surgery' (open obliterative procedures like Caldwell-Luc) under Diagnostic Codes 6510–6514.",
+    "Medication rules differ by code: because Diagnostic Code 6602 (Asthma) explicitly builds bronchodilator and corticosteroid medication into its 10%, 30%, 60%, and 100% tiers, it follows its explicit medication text (McCarroll v. McDonald), whereas non-medication codes like Sinusitis or Rhinitis cannot be discounted for temporary medication relief (Ingram v. Collins).",
+    "Do not confuse proposed or rescinded rules with active law: RIN 2900-AQ72 (87 FR 8474 & 89 FR 74162, proposing revised sleep apnea CPAP rules and Diagnostic Code 6605 constrictive bronchiolitis) remains a proposed, unfinalized rule (not enacted law), and VA's February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712).",
+    "Pre-October 7, 1996 decisions used older qualitative lung criteria rather than Diagnostic Code 6847 or modern PFT tables, and 38 C.F.R. § 20.1409(c) limits Board Clear and Unmistakable Error (CUE) review to one final merits decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Have my Sinusitis (antibiotic courses / incapacitating episodes), Rhinitis (nasal polyps or >50% nasal blockage), and Asthma/COPD/Sleep Apnea all been evaluated under their distinct upper- vs. lower-respiratory rules?",
+    "Does a sinus CT scan or ENT exam show nasal polyps warranting 30% under Diagnostic Code 6522?",
+    "If I have constrictive bronchiolitis or burn-pit lung injury with normal spirometry (FEV-1) but abnormal diffusing capacity (DLCO) or exercise limitation, did the examiner address DLCO under 38 C.F.R. § 4.96(d)?",
+    "If both Asthma and Sleep Apnea are service-connected, did VA consider elevating the single lower-respiratory rating to 60% or 100% under § 4.96(a) (Urban v. Shulkin)?"
+  ]
+}

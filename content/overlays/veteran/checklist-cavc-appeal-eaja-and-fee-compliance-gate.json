@@ -1,0 +1,32 @@
+{
+  "upstream_id": "checklist-cavc-appeal-eaja-and-fee-compliance-gate",
+  "upstream_path": "checklists/cavc-appeal-eaja-and-fee-compliance-gate.md",
+  "upstream_sha256": "fca5d37a72bb8a64f61e0b2421f6e5ff325e365e11a7c899871a4c8c30eb730c",
+  "linked_version_ids": [
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-14.636-2019-ama-attorney-fees"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Appealing to the Veterans Court (CAVC): Deadlines, Remand Agreements & Fee Protections",
+  "what_this_means": "Taking a denied Board of Veterans' Appeals decision to the U.S. Court of Appeals for Veterans Claims (CAVC) involves strict court deadlines and safeguard rules that every Veteran and representative should understand up front. This 7-gate checklist covers the 120-day CAVC appeal deadline, protecting favorable Board findings, avoiding waiver traps in Joint Motions for Partial Remand (JMPRs), the 30-day Equal Access to Justice Act (EAJA) fee deadline (where the government pays your court attorney fees when VA erred), 60-day Federal Circuit appeals, protective 1-year AMA Supplemental Claims after an adverse court ruling, and mandatory EAJA client fee refunds.",
+  "record_clues": [
+    "A final adverse or partially favorable Board of Veterans' Appeals decision stamped with a mailing date (starting the 120-day CAVC Notice of Appeal window under 38 U.S.C. § 7266(a)).",
+    "A draft Joint Motion for Partial Remand (JMPR) negotiated between your CAVC attorney and VA's Office of the General Counsel.",
+    "A CAVC remand judgment or immediate-mandate consent order (CAVC Rule 41(b)) opening the strict 30-day EAJA fee-application window under 28 U.S.C. § 2412(d)(1)(B).",
+    "A VA Form 21-22a appointment, a 38 U.S.C. § 5904 contingency fee agreement, and post-remand VA Award Letters showing both prior EAJA fees and direct-pay contingency withholding."
+  ],
+  "important_cautions": [
+    "Protect the 120-day CAVC clock: a Motion for Board Reconsideration pauses the 120-day CAVC deadline ONLY if filed within the 120-day window (Rosler v. Derwinski), whereas filing an AMA Supplemental Claim does NOT pause the 120-day CAVC deadline.",
+    "JMPR waiver & immediate-mandate EAJA traps: a Joint Motion for Partial Remand should explicitly preserve favorable Board findings (Medrano), reserve unmentioned arguments for remand (avoiding the Carter v. Shinseki waiver trap), and rest on administrative error (preserving EAJA fees under Sumner / Robinson). Also note that consent JMPR orders issue an immediate mandate under CAVC Rule 41(b), meaning the attorney's 30-day EAJA clock expires on Day 30—not Day 90!",
+    "Post-CAVC 1-year continuous-pursuit safeguard: if the CAVC affirms a Board denial (even if you appeal pure legal issues within 60 days to the Federal Circuit under 38 U.S.C. § 7292), filing a protective AMA Supplemental Claim (VA Form 20-0995) or Intent to File within 1 year of the CAVC decision preserves your effective-date chain (38 U.S.C. § 5110(a)(2)(E); Military-Veterans Advocacy v. Secretary of Veterans Affairs).",
+    "Fee compliance & Board CUE caution: direct-pay fee agreements (<=20%) must be filed within 30 days (38 C.F.R. § 14.636(g)(3); Ravin v. Wilkie), attorneys must refund the lesser of overlapping EAJA and § 5904 fees to the Veteran (Pub. L. 102-572, § 506(c)), and under 38 C.F.R. § 20.1409(c), once the Board issues a final merits decision on a CUE motion for a prior Board issue, no second CUE motion is allowed on that Board issue."
+  ],
+  "questions_for_representative": [
+    "What is the exact 120-day CAVC Notice of Appeal deadline from my Board decision's mailing date, and will my CAVC representation be covered by Equal Access to Justice Act (EAJA) fees if we win a remand?",
+    "Before signing a Joint Motion for Partial Remand (JMPR), does the motion lock in my favorable Board factual findings (Medrano), allow me to submit new medical evidence and raise additional arguments on remand (Carter), and preserve EAJA eligibility?",
+    "If the CAVC does not remand an issue, what is my 1-year deadline from the CAVC decision to file a protective Supplemental Claim (VA Form 20-0995) with new and relevant evidence under 38 U.S.C. § 5110(a)(2)(E)?",
+    "If we win an EAJA fee at the CAVC and later win past-due benefits on remand at VA, how will you document and pay my mandatory dollar-for-dollar lesser-fee refund under Pub. L. 102-572, § 506(c)?"
+  ]
+}

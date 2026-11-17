@@ -10,7 +10,7 @@
    - Any mismatch detected by `pnpm qa:drift` (`scripts/audit_translation_drift.ts`) blocks release until reviewed.
 
 3. **Strict Unauthorized Practice of Law (UPL) Guardrails:**
-   - Always render the persistent Tier 1 Educational Disclaimer Bar (*"Educational Reference Only — Nothing on VetLawGuide constitutes legal or medical advice or creates an attorney-client relationship"*) with its `[Scope & CUE/Deadline Cautions]` drawer.
+   - Always render the persistent Tier 1 Educational Disclaimer Bar (*"Educational reference only. Not legal advice."* per `ADR-0007`) paired with its accessible `Scope & CUE/Deadline Cautions` modal explaining attorney-client boundaries, `120-day` CAVC deadlines, and `38 C.F.R. § 20.1409(c)` Board CUE finality.
    - Veteran-facing copy and `/investigate` Veteran exports must present **educational explanations**, **records to locate** (FOIA/C-file, NPRC clinical packets), and **"Questions to Discuss With an Accredited VSO, Claims Agent, or Attorney"**—never individualized directives (`"You have a winning CUE claim"`, `"File a Board CUE motion immediately"`).
 
 4. **Plain-English Ergonomics & Zero Leaked Jargon:**

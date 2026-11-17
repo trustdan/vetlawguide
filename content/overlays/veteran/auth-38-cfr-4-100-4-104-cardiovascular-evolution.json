@@ -1,0 +1,34 @@
+{
+  "upstream_id": "auth-38-cfr-4-100-4-104-cardiovascular-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.100-4.104-cardiovascular-evolution.md",
+  "upstream_sha256": "9a906f990714058433e558652a818e8e8d4e312f2a5be3afe6dc22f13109d47e",
+  "linked_version_ids": [
+    "38-cfr-4.100-4.104-1946-pre1998-cardio",
+    "38-cfr-4.100-4.104-1998-cardio-lvef",
+    "38-cfr-4.100-4.104-2006-mets-4100",
+    "38-cfr-4.100-4.104-2021-cardio-mets",
+    "38-cfr-4.104-7122-1998-cold-injury",
+    "38-cfr-4.104-7122-2021-notes"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Heart & Vascular Regulations (38 C.F.R. §§ 4.100–4.104): Pre-1998, 1998–2021 Ejection Fraction & Post-2021 METs",
+  "what_this_means": "VA's cardiovascular rating schedule (38 C.F.R. §§ 4.100–4.104) spans three distinct historical eras that every Veteran with heart disease—especially Agent Orange / Nehmer Ischemic Heart Disease (Diagnostic Code 7005)—should understand: (1) before January 12, 1998, qualitative congestive heart failure, angina, and 'more than light manual labor' rules; (2) from January 12, 1998 through November 13, 2021 (62 FR 65207; § 4.100 added October 6, 2006), BOTH exercise workload in METs AND standalone Left Ventricular Ejection Fraction (LVEF < 30% = 100%; LVEF 30%–50% = 60%) plus ECG/X-ray/echocardiogram heart enlargement (30%); and (3) effective November 14, 2021 (86 FR 54089, corrected November 9 and November 29, 2021), a unified General Rating Formula for Diseases of the Heart centered on METs workload and echocardiogram/MUGA/MRI hypertrophy (removing standalone LVEF for newly filed claims while protecting existing ratings).",
+  "record_clues": [
+    "A heart rating decision between January 12, 1998 and November 13, 2021—or a Nehmer retroactive award covering those years—that assigned 10% or 30% based on METs while overlooking an echocardiogram or MUGA scan showing Left Ventricular Ejection Fraction (LVEF) of 30%–50% (60%) or under 30% (100%), or ECG/X-ray cardiac hypertrophy (30%).",
+    "A heart claim pending across November 14, 2021 where VA failed to award a higher staged rating for the pre-November 14, 2021 period based on LVEF or ECG/X-ray hypertrophy.",
+    "Peripheral Arterial Disease (Diagnostic Code 7114) rated 0% or 20% solely on a normal/calcified Ankle-Brachial Index (ABI) when ankle pressure, toe pressure, or TcPO2 testing showed worse circulation under corrected Note (2) (86 FR 62095).",
+    "Cold Injury Residuals (Diagnostic Code 7122, from winter combat or training) bundled into one combined percentage instead of separate ratings for each affected hand, foot, ear, or nose (plus the § 4.26 bilateral factor and separate peripheral neuropathy ratings)."
+  ],
+  "important_cautions": [
+    "Existing pre-November 14, 2021 heart ratings are protected: if you held a running 60% or 100% heart rating based on LVEF before November 14, 2021, VA is strictly prohibited from lowering it simply because the November 14, 2021 schedule removed standalone LVEF (38 U.S.C. § 1155; 38 C.F.R. § 3.951(a)).",
+    "Conversely, for initial or increased-rating heart claims filed ON OR AFTER November 14, 2021, standalone LVEF percentages and plain ECG/X-ray hypertrophy are no longer part of the General Rating Formula (30% hypertrophy now requires echocardiogram, multigated acquisition scan, or cardiac MRI).",
+    "Do not apply 1998 LVEF/METs criteria to prove Clear and Unmistakable Error (CUE) in final decisions issued BEFORE January 12, 1998.",
+    "Remember 38 C.F.R. § 20.1409(c): once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific Board issue, no second CUE motion is allowed on that issue."
+  ],
+  "questions_for_representative": [
+    "During any rating period between January 12, 1998 and November 13, 2021, did my cardiology records show an ejection fraction (LVEF) of 50% or less, or left ventricular hypertrophy on ECG, X-ray, or echocardiogram?",
+    "On my heart exam, were my METs (metabolic equivalents) measured or medically estimated accurately based on when shortness of breath, fatigue, chest pain, or dizziness begins?",
+    "If I have diabetes or kidney disease with Peripheral Arterial Disease (Diagnostic Code 7114), did the examiner perform toe pressure or TcPO2 testing instead of relying on calcified ABI numbers?",
+    "If I have cold injury residuals (Diagnostic Code 7122), did VA rate each affected hand, foot, ear, and nose separately plus peripheral nerve damage?"
+  ]
+}

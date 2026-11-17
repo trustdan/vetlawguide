@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-10-hemic-and-lymphatic-4-117",
+  "upstream_path": "cfr-diffs/vasrd/10-hemic-and-lymphatic-4.117.md",
+  "upstream_sha256": "59a57fcf213b9c4c0eedb0da7e50be246162e3be0fe171b6de77dbf0426c28dc",
+  "linked_version_ids": [
+    "38-cfr-4.117-1995-hemic-lymphatic",
+    "38-cfr-4.117-2014-pre2018-hemic",
+    "38-cfr-4.117-2018-hemic-lymphatic",
+    "38-cfr-3.320-3.320b-2021-2025-particulate-pact",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Blood Cancers, Anemia, Splenectomy & MGUS: Comparing 1995 and 2018 Rating Rules",
+  "what_this_means": "Blood and lymphatic disabilities under 38 C.F.R. § 4.117 frequently intersect with Agent Orange (Nehmer), Camp Lejeune, radiation, and PACT Act burn-pit presumptions (including the January 10, 2025 rule at 38 C.F.R. § 3.320b adding acute and chronic leukemias, multiple myelomas, MGUS, myelodysplastic syndromes, and myelofibrosis). Because VA overhauled § 4.117 on December 9, 2018 (83 FR 54250, corrected October 11, 2022 at 87 FR 61248), checking whether a claim was pending or protected before December 9, 2018—and whether secondary organ or nerve complications were rated separately—can substantially change a Veteran's or Survivor's benefits.",
+  "record_clues": [
+    "A retroactive Agent Orange (Nehmer) award for Rai Stage 0 Chronic Lymphocytic Leukemia (Diagnostic Code 7703) that assigned 0% to claim periods before December 9, 2018, or lowered a pre-2018 running 100% CLL or CML award solely because the rating schedule changed.",
+    "An automatic post-treatment rating drop on leukemia, lymphoma, or myeloma without an in-person or clinical VA examination and 60-day advance notice under 38 C.F.R. § 3.105(e).",
+    "A 0% rating for Monoclonal Gammopathy of Undetermined Significance (MGUS, Diagnostic Code 7712) where neurology or nephrology records show paraproteinemic peripheral neuropathy or kidney damage.",
+    "Combat or trauma spleen removal (Diagnostic Code 7706, 20%) without separate ratings for abdominal-wall muscle injury (Diagnostic Code 5319) or painful surgical scars (Diagnostic Codes 7801 or 7804)."
+  ],
+  "important_cautions": [
+    "Distinguish Multiple Myeloma from MGUS under Agent Orange Nehmer rules: full symptomatic Multiple Myeloma and AL Amyloidosis (Diagnostic Code 7717) are covered Nehmer conditions under 38 C.F.R. § 3.816, whereas PACT Act § 404 MGUS is a prospective statutory presumption and is excluded from Nehmer class-action back-pay rules.",
+    "Sickle cell trait versus sickle cell anemia: under the Note to Diagnostic Code 7714, asymptomatic sickle cell trait alone is not a ratable disability unless accompanied by directly attributable pathological findings, whereas sickle cell anemia is a compensable hereditary blood disease.",
+    "Do not rely on the February 17, 2026 medication Interim Final Rule (91 FR 7118)—VA formally rescinded it on February 27, 2026 (91 FR 9712), so it is not enacted law.",
+    "Check exact effective dates (October 23, 1995; March 9, 2012 for Diagnostic Code 7717; December 9, 2018 for the hematologic overhaul; January 10, 2025 for 38 C.F.R. § 3.320b) before alleging error, and remember 38 C.F.R. § 20.1409(c) allows only one final merits Clear and Unmistakable Error (CUE) decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "If my CLL or CML rating existed before December 9, 2018—or my Nehmer effective date reaches before December 9, 2018—did VA properly apply the pre-amendment 100% leukemia rule and 38 U.S.C. § 1155 protection?",
+    "Since my Multiple Myeloma (Diagnostic Code 7712) carries a 5-year 100% evaluation period, did VA apply both 60-day advance notice (38 C.F.R. § 3.105(e)) and 5-year stabilized-rating protections (38 C.F.R. § 3.344) before proposing any reduction?",
+    "Do my oncology or neurology records document secondary chemotherapy neuropathy, paraproteinemic nerve damage, kidney impairment, or Housebound / Aid and Attendance Special Monthly Compensation?",
+    "If I had a traumatic splenectomy (Diagnostic Code 7706), did VA separately evaluate my abdominal muscle group injury and surgical scar?"
+  ]
+}

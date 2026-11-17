@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-14-mental-disorders-4-125-4-130",
+  "upstream_path": "cfr-diffs/vasrd/14-mental-disorders-4.125-4.130.md",
+  "upstream_sha256": "b6004cfa6eb12ba9d9b939d712804b731125b6048e4033de9f57ae7db20aff33",
+  "linked_version_ids": [
+    "38-cfr-4.132-1988-psychoneurotic",
+    "38-cfr-4.16c-1989-mental",
+    "38-cfr-4.130-1996-dsm4",
+    "38-cfr-4.130-2014-dsm5",
+    "38-cfr-3.304f3-2010-fear-hostile"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Mental Health Disorders (1946–Present): PTSD, Depression, Traumatic Separation & Medication Side Effects",
+  "what_this_means": "Under 38 C.F.R. § 4.130, VA evaluates almost all non-eating mental health conditions—including PTSD, major depressive disorder, generalized anxiety, panic disorder, bipolar disorder, and psychotic disorders—under a single General Rating Formula (0%, 10%, 30%, 50%, 70%, or 100%) based on overall occupational and social impairment. This historical guide compares the pre-1988, 1988–1996 (former § 4.132 and former § 4.16(c)), November 7, 1996 (DSM-IV), and August 4, 2014 (DSM-5) rules, while flagging common errors such as discounting passive suicidal thoughts, overlooking the 50% post-discharge floor under 38 C.F.R. § 4.129, denying non-PTSD mental diagnoses when a Veteran filed for 'PTSD,' or missing secondary physical conditions caused by psychiatric medications.",
+  "record_clues": [
+    "VA mental health or C&P exam notes recording passive or active suicidal ideation (such as 'thoughts of being better off dead') where VA assigned 30% or 50% because there was no active plan or psychiatric hospitalization (contrary to Bankhead v. Shulkin on open claims/appeals).",
+    "Military Medical Evaluation Board / Physical Evaluation Board (MEB/PEB) separation records for a trauma-induced mental disorder on or after November 7, 1996 where VA assigned less than 50% from discharge in violation of 38 C.F.R. § 4.129.",
+    "An older 'PTSD' denial where a VA examiner diagnosed major depression, generalized anxiety, or chronic adjustment disorder instead of PTSD and VA stopped without evaluating whether that acquired psychiatric diagnosis was connected to service (Clemons v. Shinseki).",
+    "Prescriptions for SSRIs, SNRIs, or antipsychotics accompanied by weight gain/obesity leading to obstructive sleep apnea, teeth grinding/TMJ (Diagnostic Code 9905), or sexual dysfunction (Diagnostic Code 7522 or 7632 + SMC(k))."
+  ],
+  "important_cautions": [
+    "Single combined mental health rating rule: under 38 C.F.R. § 4.14 and Federal Circuit precedent (Amberman v. Shinseki), VA generally assigns one combined mental health percentage covering overlapping psychiatric diagnoses (such as PTSD plus depression plus anxiety), and Federal Circuit precedent (Martinez-Bodon v. McDonough) requires a formal DSM-5 diagnosis to establish psychiatric service connection.",
+    "One-year post-discharge chronic presumption limit: under 38 C.F.R. § 3.309(a), only 'psychoses' (Diagnostic Codes 9201–9211) qualify for the automatic 1-year post-discharge chronic disease presumption—PTSD, anxiety, and non-psychotic depression require direct, stressor-presumptive (§ 3.304(f)), or secondary service connection.",
+    "Quarantined proposed and rescinded rules: VA's February 15, 2022 proposed 5-domain mental health schedule (87 FR 8498, RIN 2900-AQ82) remains an unfinalized proposed rule (not enacted law), and VA's February 17, 2026 medication Interim Final Rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712).",
+    "Check historical dates and *George* limits before considering CUE: suicidal ideation did not enter the 70% regulation until November 7, 1996, and under George v. McDonough and 38 C.F.R. § 20.1403(e), a later court interpretation like Bankhead v. Shulkin (2017) cannot establish Clear and Unmistakable Error (CUE) against a final pre-2017 decision."
+  ],
+  "questions_for_representative": [
+    "Do my VA therapy notes or C&P exam document suicidal ideation, near-continuous panic/depression, or inability to maintain work and family relationships matching the 70% or 100% tier of 38 C.F.R. § 4.130?",
+    "If VA denied my earlier PTSD claim even though the examiner diagnosed depression or anxiety, can we review whether Clemons v. Shinseki or newly obtained military stressor/personnel records (38 C.F.R. § 3.156(c)) apply?",
+    "Have we checked my medical records for secondary conditions caused or aggravated by my psychiatric condition or medications—such as jaw clenching/TMD (Diagnostic Code 9905), sleep apnea via medication-induced weight gain, or SMC(k)?",
+    "If I had continuous inpatient VA or approved psychiatric hospitalization lasting more than 21 days (38 C.F.R. § 4.29) or 6+ months (38 C.F.R. § 4.128), did VA pay the mandatory temporary 100% evaluation?"
+  ]
+}

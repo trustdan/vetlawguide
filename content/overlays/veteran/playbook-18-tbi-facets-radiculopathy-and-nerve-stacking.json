@@ -1,0 +1,35 @@
+{
+  "upstream_id": "playbook-18-tbi-facets-radiculopathy-and-nerve-stacking",
+  "upstream_path": "playbooks/18-tbi-facets-radiculopathy-and-nerve-stacking.md",
+  "upstream_sha256": "4538588aef8dc8353f4126efc21579577e565c394d484874e9622a5c68aa462d",
+  "linked_version_ids": [
+    "38-cfr-4.124a-8045-1946-pre1996-tbi",
+    "38-cfr-4.124a-8045-pre2008-tbi",
+    "38-cfr-4.124a-8045-2008-tbi-facets",
+    "38-cfr-4.124a-8045-2014-dsm5-tbi",
+    "38-cfr-3.310d-2014-tbi-secondary",
+    "38-cfr-3.350j-3.352b-2018-smct",
+    "38-cfr-4.71a-2003-spine"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Traumatic Brain Injury (10-Facet Table), Separate Physical Residuals & Nerve Radiculopathy Ratings",
+  "what_this_means": "Since October 23, 2008, VA evaluates Traumatic Brain Injury (TBI, Diagnostic Code 8045 under 38 C.F.R. § 4.124a) across three distinct areas: (1) a 10-facet cognitive/residual table where the SINGLE highest-scored facet sets the cognitive rating (0%, 10%, 40%, 70%, or 100%—never an average!), (2) emotional/behavioral disorders under § 4.130, and (3) distinct physical/neurological conditions—such as migraines (Diagnostic Code 8100), dizziness/vertigo (Diagnostic Code 6204), tinnitus (Diagnostic Code 6260), vision changes, or nerve damage—which Note (1) requires VA to rate separately unless the exact same symptom would be counted twice. This playbook also explains how radiating nerve pain/weakness from neck or back injuries ('radiculopathy', Diagnostic Codes 8510–8730) is rated separately from spine range of motion.",
+  "record_clues": [
+    "A post-October 23, 2008 TBI Disability Benefits Questionnaire (DBQ) checking Level 2 (40%), Level 3 (70%), or Total (100%) on even one of the 10 TBI facets while the Rating Code Sheet assigned only 10%.",
+    "A combined 'PTSD with TBI' rating where VA folded physical TBI residuals—like migraines, balance/vestibular issues, double vision, or motor/speech deficits—into the mental health rating without separate Diagnostic Codes.",
+    "A pre-October 23, 2008 TBI rating capped at 10% under former Diagnostic Code 8045-9304 despite separately diagnosed migraines, cranial nerve palsy, tinnitus, or vertigo—or a Veteran who never requested a post-2008 Note (5) TBI review.",
+    "A post-September 26, 2003 neck or back exam recording radiating numbness, tingling, or weakness down the arms or legs (sciatic AND femoral nerve involvement, or multi-root cervical radiculopathy) that was omitted or under-coded on the Rating Code Sheet, or severe TBI supervision needs omitted from Special Monthly Compensation at the SMC(t) rate."
+  ],
+  "important_cautions": [
+    "Key effective-date floors: the 10-facet TBI rating table took effect October 23, 2008 (published September 23, 2008 at 73 FR 54693) and cannot establish Clear and Unmistakable Error (CUE) or back pay prior to October 23, 2008. Likewise, TBI Special Monthly Compensation under 38 U.S.C. § 1114(t) (SMC(t)) took statutory effect October 1, 2011.",
+    "Nerve combination rules on the upper vs. lower extremities: in the leg, separate sciatic (Diagnostic Code 8520) and femoral (Diagnostic Code 8526) radiculopathy ratings can combine, whereas in the same arm, multi-root cervical radiculopathy affecting radial, median, and ulnar nerves is rated as a single combined Radicular Group (Diagnostic Codes 8510–8513, with higher Major vs. Minor dominant-hand tiers under 38 C.F.R. § 4.69) rather than three separate arm nerve codes.",
+    "Exam-adequacy errors vs. CUE: an initial TBI exam performed by a non-specialist or an inadequately explained 'inextricably intertwined' PTSD/TBI opinion is a duty-to-assist error addressed in open claims/appeals—not CUE (Cook v. Principi)—and later court rulings like Laska v. McDonough (2024, invalidating extra-statutory skilled-care hurdles in 38 C.F.R. § 3.352(b)(2) for SMC(t)) are subject to George v. McDonough and 38 C.F.R. §§ 20.1403(e) and 20.1409(c).",
+    "Quarantined rulemakings: VA's November 12, 2024 neurological rating notice (RIN 2900-AQ73, 89 FR 88917) remains a proposed rule that is not enacted law, and the February 17, 2026 § 4.10 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712)."
+  ],
+  "questions_for_representative": [
+    "Does my TBI examination sheet show a Level 2 (40%), Level 3 (70%), or Total (100%) box checked on any single TBI facet, and were my migraines, vertigo, vision, and tinnitus rated separately under Note (1)?",
+    "If my TBI was combined with PTSD, did the examiner provide a medical explanation for why specific cognitive vs. emotional symptoms could or could not be separated?",
+    "On my neck or back Rating Code Sheet, did VA separately rate every affected peripheral nerve (such as both sciatic and femoral nerves in the legs, or the appropriate Radicular Group and dominant-arm column in the arms)?",
+    "If service-connected TBI requires regular daily supervision, reminders, or Aid and Attendance from family to stay safe at home, should we evaluate entitlement to SMC(t) under Laska v. McDonough?"
+  ]
+}

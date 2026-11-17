@@ -93,7 +93,7 @@ export function InteractiveCrosswalk({
             href="/docs/title-38-statutory-crosswalk"
             className="mt-2 inline-flex items-center gap-1 font-semibold text-primary hover:underline"
           >
-            <span>Open Full 3-Column Statutory Crosswalk Treatise</span>
+            <span>Read the statutory crosswalk treatise</span>
             <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
         </div>
@@ -141,7 +141,7 @@ export function InteractiveCrosswalk({
               key={chip.query}
               type="button"
               onClick={() => setUserQuery(chip.query)}
-              className="inline-flex min-h-6 items-center rounded border border-border bg-surface px-2.5 py-1 font-mono text-[11px] text-foreground hover:bg-muted"
+              className="inline-flex min-h-6 items-center rounded border border-border bg-surface px-2.5 py-1 font-mono text-xs text-foreground hover:bg-muted"
             >
               {chip.label}
             </button>

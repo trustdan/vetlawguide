@@ -8,6 +8,7 @@ import {
   extractIssuanceYear,
   filterAuthoritiesForSelectedEra,
   normalizeVaopgcprecKey,
+  paginateAuthorities,
   resolveEraIdForDate,
 } from "@/lib/corpus/eras-and-authorities";
 
@@ -175,6 +176,29 @@ describe("Sticky Era Boundaries, VAOPGCPREC Citator & Bitemporal Era Filtering (
     });
     expect(era1Issuance.eraSpecificAuthorities).toHaveLength(0);
     expect(era1Issuance.preVjraIssuanceEmptyNote).toContain("211(a)");
+
+    // 4. Deterministic 25-per-page authority pagination clamps bounds cleanly across all 437 authorities
+    const page1 = paginateAuthorities(precs, 1, 25);
+    expect(page1.totalItems).toBe(437);
+    expect(page1.totalPages).toBe(18);
+    expect(page1.currentPage).toBe(1);
+    expect(page1.startIndex).toBe(1);
+    expect(page1.endIndex).toBe(25);
+    expect(page1.items).toHaveLength(25);
+
+    const pageLast = paginateAuthorities(precs, 99, 25);
+    expect(pageLast.currentPage).toBe(18);
+    expect(pageLast.startIndex).toBe(426);
+    expect(pageLast.endIndex).toBe(437);
+    expect(pageLast.items).toHaveLength(12);
+
+    const pageEmpty = paginateAuthorities([], 3, 25);
+    expect(pageEmpty.totalItems).toBe(0);
+    expect(pageEmpty.totalPages).toBe(1);
+    expect(pageEmpty.currentPage).toBe(1);
+    expect(pageEmpty.startIndex).toBe(0);
+    expect(pageEmpty.endIndex).toBe(0);
+    expect(pageEmpty.items).toHaveLength(0);
   });
 });
 

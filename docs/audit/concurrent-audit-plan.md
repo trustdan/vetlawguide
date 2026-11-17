@@ -10,7 +10,7 @@ Run three independent audit sessions against the same `vetlawguide` checkout at 
 | :--- | :--- | :--- | :--- |
 | **Claude Code** | `.claude/agents/qa-bitemporal-legal-auditor.md` & `.claude/agents/qa-upl-plain-english-warden.md` | Long-chain bitemporal legal accuracy (*George*, `§ 20.1409(c)`, `Rule 30(a)`, `RIN` quarantine), UPL boundaries, Veteran overlay fidelity, and `CLAUDE.md`/`AGENTS.md` claim truth | `#3`, `#4`, `#6`, `#10`, `#11` |
 | **OpenAI Codex** | `.codex/README.md` & `.agents/skills/concurrent-tri-harness-audit/SKILL.md` | Pragmatic Programmer orthogonality/anti-bloat (`#2`), deterministic compiler invariants (`supersedes` chains, FR pub-vs-eff edge dates), three-valued screener logic (`Unknown != No`), security/PII/CSP checks, and `tsc` / Vitest probes | `#2`, `#5`, `#7`, `#8`, `#12` |
-| **Google Antigravity** | `.agents/agents/qa-a11y-browser-verifier.md` + `browser` subagent | Live browser walkthroughs, `WCAG 2.2 AA+`, `200%–400%` zoom reflow (~84px header budget), `<GitHubCorner />` reduced-motion, `1:1` Outline parity, and Playwright `/investigate` network silence | `#8`, `#9`, `#11`, `#12`, `#13` |
+| **Google Antigravity** | `.agents/agents/qa-a11y-browser-verifier.md` + `browser` subagent | Live browser walkthroughs, `WCAG 2.2 AA+`, `200%–400%` zoom reflow (`<=144px` desktop / `<=120px` mobile / `>=50%` `400%`-zoom content budget, `ADR-0006` & `ADR-0007`), `<GitHubCorner />` reduced-motion, `1:1` Outline parity, and Playwright `/investigate` network silence | `#8`, `#9`, `#11`, `#12`, `#13` |
 
 ---
 

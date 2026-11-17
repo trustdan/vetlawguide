@@ -1,0 +1,32 @@
+{
+  "upstream_id": "doctrine-ama-lanes-and-bva-litigation-manual",
+  "upstream_path": "docs/ama-lanes-and-bva-litigation-manual.md",
+  "upstream_sha256": "40526158773df01896d2aa1de5d11c5d4d6461d4278a2287c3ef429a556e1f0d",
+  "linked_version_ids": [
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-3.159-2022-ama-duty-to-assist"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Choosing Your VA Review Lane: Supplemental Claim, Higher-Level Review & the Three Board Dockets",
+  "what_this_means": "Since February 19, 2019, whenever VA issues an initial decision you disagree with, the Appeals Modernization Act (AMA) gives you 1 year to preserve your effective date by choosing one of three paths: (1) a Supplemental Claim (VA Form 20-0995) when you have or want VA to gather 'new and relevant' evidence, (2) a Higher-Level Review (VA Form 20-0996) when a senior reviewer can spot a legal mistake or pre-decision Duty-to-Assist error on the existing closed record (with an optional informal phone conference), or (3) a Board of Veterans' Appeals Notice of Disagreement (VA Form 10182) on one of three dockets—Direct Review (fastest, closed record), Evidence Submission (90-day post-NOD evidence window), or Hearing (testimony before a Veterans Law Judge plus a 90-day post-hearing evidence window).",
+  "record_clues": [
+    "An AMA Rating Decision that skipped a required VA nexus exam, relied on a flawed C&P opinion, or failed to request identified VA or Social Security medical records—often a strong fit for a Higher-Level Review informal conference or Supplemental Claim.",
+    "A private medical nexus letter (IME/DBQ) or buddy statement uploaded to VA's system in an AMA 'dead zone'—such as between the Regional Office decision and filing VA Form 10182, or after filing VA Form 10182 on the Hearing docket BEFORE the hearing date (Cook v. McDonough; Cash v. Collins).",
+    "A post-remand VA decision that repeated the exact same defective medical opinion or ignored a Board/Higher-Level Review remand instruction (violating Stegall v. West).",
+    "An older Legacy appeal marked 'Withdrawn' or 'Closed' in VA's tracking system between December 12, 1990 and February 6, 2025 after a partial grant or Supplemental Statement of the Case despite a timely appeal (Freund v. Collins class)."
+  ],
+  "important_cautions": [
+    "Barred lane combinations: you can NEVER file a Higher-Level Review against a prior Higher-Level Review decision or against a Board of Veterans' Appeals decision (38 U.S.C. § 5104B(b)(2); 38 C.F.R. § 3.2601(b)).",
+    "Strict Board evidence windows: uploading new medical evidence during a Higher-Level Review, during a Board Direct Review appeal, or AFTER the 90-day Evidence/Hearing window closes means the reviewer or Veterans Law Judge cannot consider it in that decision (though you can file a Supplemental Claim within 1 year after a Board denial to have it considered).",
+    "Board docket-switching deadline: under 38 C.F.R. § 20.202(c)(2) and Brack v. Collins (2026), you can switch Board dockets only before the later of 1 year from the Regional Office decision notice or 60 days after the Board receives VA Form 10182—and only BEFORE submitting evidence or hearing testimony.",
+    "Post-CAVC 1-year protection: if you lose at the Court of Appeals for Veterans Claims (CAVC)—even while appealing further to the Federal Circuit—you must file a protective Supplemental Claim (or Intent to File) within 1 year of the CAVC judgment to preserve continuous pursuit of your effective date (38 U.S.C. § 5110(a)(2)(E))."
+  ],
+  "questions_for_representative": [
+    "Based on what is already in my VA Claims File, should we point out a Duty-to-Assist or legal error in a Higher-Level Review, submit a new private nexus opinion in a Supplemental Claim, or appeal to the Board?",
+    "If we appeal to the Board on VA Form 10182, which docket (Direct Review, Evidence Submission, or Hearing) prevents my medical evidence from falling into an unreadable 'dead zone'?",
+    "If I still have a long-running Legacy appeal (from a pre-February 19, 2019 decision), why might staying in Legacy's open-record system be safer than irrevocably opting into AMA?",
+    "Did VA comply substantially with every instruction in my prior Board remand or Higher-Level Review Duty-to-Assist return (Stegall v. West)?"
+  ]
+}

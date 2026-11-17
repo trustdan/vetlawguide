@@ -1,0 +1,35 @@
+{
+  "upstream_id": "playbook-04-unadjudicated-tdiu-informal-claims-smc",
+  "upstream_path": "playbooks/04-unadjudicated-tdiu-informal-claims-smc.md",
+  "upstream_sha256": "c98cf198f1fcc818b4409e11eb7a6e2195a8bcffa3c50eec009731636e068110",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.155-3.157b-2015-repeal",
+    "38-cfr-4.16-1975-base",
+    "38-cfr-4.16c-1989-mental",
+    "38-cfr-4.16a-1990-marginal",
+    "38-cfr-4.16a-2014-current",
+    "38-cfr-3.350f-1983-barry-steps"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Overlooked Unemployability (TDIU), Pre-2015 Informal Claims, Mandatory SMC & Silent AMA Decisions",
+  "what_this_means": "Not every past VA oversight requires proving Clear and Unmistakable Error (CUE). Sometimes a Veteran raised a claim or entitlement in the record—and VA simply never decided it. Before March 24, 2015, written statements, VA hospital admissions, or VA outpatient exam reports showing worsening of an already service-connected disability could act as an informal claim for increase (former 38 C.F.R. §§ 3.155(a), 3.157(b)). Likewise, when a Veteran seeks a higher rating and the record shows service-connected disabilities prevent substantially gainful work, VA must consider Total Disability Based on Individual Unemployability (TDIU) as part of that claim. And for decisions issued on or after February 19, 2019 under the Appeals Modernization Act (AMA), if VA stays completely silent on a claimed or reasonably raised issue instead of giving explicit written notice under 38 U.S.C. § 5104(b), that issue may remain legally open and pending.",
+  "record_clues": [
+    "A pre-March 24, 2015 claim for an increased rating where your VA medical notes, Social Security disability award, or Chapter 31 Voc Rehab records showed you could no longer work due to service-connected conditions, yet VA never mentioned TDIU.",
+    "A VA Medical Center (VAMC) hospital admission or VA outpatient examination report dated before March 24, 2015 documenting worsening of an already service-connected condition (even a 0% rating), with no follow-up VA rating decision.",
+    "A Rating Code Sheet showing one single disability rated 100% (or TDIU caused solely by one disability) PLUS separate service-connected disabilities combining to 60% or more, with no statutory Housebound Special Monthly Compensation [SMC(s)] paid.",
+    "A rating decision issued on or after February 19, 2019 that decides one condition while staying completely silent on a related issue, secondary condition, TDIU, or SMC raised by your claim or exam."
+  ],
+  "important_cautions": [
+    "March 24, 2015 Standardized Forms Cutoff: VA repealed former § 3.157(b) and non-form informal claims effective March 24, 2015 (published September 25, 2014 at 79 FR 57660). VA medical visits or loose letters dated on or after March 24, 2015 do not start a claim without a standardized VA claim form or Intent to File (VA Form 21-0966).",
+    "Legacy 'Implicit Denial' vs. Post-2019 AMA Explicit Notice: In pre-February 19, 2019 Legacy decisions, a later decision could sometimes implicitly close out a related pending issue if a reasonable person would have understood it was denied—whereas for AMA decisions on or after February 19, 2019, courts enforce strict explicit-notice rules (Hamill v. Collins).",
+    "TDIU & Statutory SMC(s) Single-Disability Rule: Under Bradley v. Peake and Gazelle v. Shulkin, TDIU counts as the 'single 100% disability' for statutory SMC(s) only if unemployability is warranted by one single disability alone—not a combination of multiple disabilities.",
+    "Judicial Reinterpretation CUE Bar (George v. McDonough): Under 38 C.F.R. § 20.1403(e), later court rulings reinterpreting a statute or regulation (such as Bradley in 2008 or Barry v. McDonough in 2024) apply to open, pending, or timely appealed claims, but cannot be used to allege CUE against an older final decision."
+  ],
+  "questions_for_representative": [
+    "Do my pre-March 24, 2015 VAMC hospital or outpatient treatment records trigger an unadjudicated informal claim for increase under former 38 C.F.R. § 3.157(b)?",
+    "When I sought higher ratings in the past, was there evidence in my file that my service-connected disabilities kept me from working (Roberson / Rice), and did any later Legacy decision implicitly close that TDIU issue?",
+    "Did any AMA rating decision issued on or after February 19, 2019 stay silent on a claimed or reasonably raised TDIU, secondary, or SMC issue without giving explicit § 5104(b) denial notice?",
+    "Does my Rating Code Sheet show a single 100% disability alongside 60% or more in separate disabilities where mandatory statutory SMC(s) was overlooked?"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "upstream_id": "playbook-09-accrued-benefits-substitution-nehmer-estates",
+  "upstream_path": "playbooks/09-accrued-benefits-substitution-nehmer-estates.md",
+  "upstream_sha256": "fbfb663845f4b5ffe2c4a88dd1caa495384ef0a9c2ae6cc522f7c6103c727e38",
+  "linked_version_ids": [
+    "38-cfr-3.1000-1962-pre2003-2yr-cap",
+    "38-cfr-3.1000-2006-uncapped",
+    "38-cfr-3.1000-2015-uncapped",
+    "38-cfr-3.1010-2014-substitution",
+    "38-cfr-3.816-2003-nehmer",
+    "38-cfr-3.816-2021-nehmer-payee"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Recovering Unpaid Back Pay After a Veteran Passes Away: Substitution (§ 5121A), Accrued Benefits (§ 5121) & Nehmer Estates",
+  "what_this_means": "When a Veteran passes away while a VA claim, appeal, or review window is still open, the past-due compensation VA owed the Veteran during their lifetime does not automatically vanish—but strict deadlines and family-priority rules apply. For deaths on or after October 10, 2008, an eligible surviving spouse, minor/school/helpless child, or dependent parent can request 'Substitution' within 1 year of death (38 U.S.C. § 5121A; 38 C.F.R. § 3.1010) to step directly into the Veteran's shoes and submit new medical evidence or nexus opinions, rather than being locked into 'Accrued Benefits' based only on evidence already in the file at death (38 U.S.C. § 5121; 38 C.F.R. § 3.1000). Even broader rules apply to Republic of Vietnam / Blue Water Navy Agent Orange ('Nehmer') awards under 38 C.F.R. § 3.816(f), which can pay full retroactive back pay to adult children or the Veteran's estate with no 1-year filing deadline.",
+  "record_clues": [
+    "A Veteran passed away within the past 12 months while an initial claim, Supplemental Claim, Higher-Level Review, Board appeal, or 1-year/120-day appeal window was still open.",
+    "An older unadjudicated pre-2015 informal claim, overlooked TDIU issue, or silent post-February 19, 2019 AMA issue was still legally pending on the date the Veteran died.",
+    "A Board of Veterans' Appeals decision issued ON OR AFTER the Veteran's date of death (which is legally void and leaves the appeal pending for substitution!).",
+    "A deceased Republic of Vietnam or Blue Water Navy Veteran had a post-September 25, 1985 claim or diagnosis for a covered Agent Orange condition (such as ischemic heart disease, prostate/bladder/lung cancer, Parkinson's, or diabetes), even if only adult children or an estate survive (§ 3.816(f))."
+  ],
+  "important_cautions": [
+    "Strict 1-Year Post-Death Deadline (§ 5121 & § 5121A): Standard accrued-benefits and substitution requests MUST be filed with VA within 1 year of the Veteran's death (unlike § 3.816(f) Nehmer class payouts, which have no claim deadline). Also, if a case is pending at a federal court (CAVC or Federal Circuit), the survivor must BOTH substitute at the court AND file a timely VA accrued/substitution claim within 1 year of death to prevent mooting a remand (Merritt v. Wilkie).",
+    "Power of Attorney Ends at Death: A deceased Veteran's VA Form 21-22a or VSO appointment terminates the moment the Veteran dies; the surviving family member must sign a brand-new appointment form to authorize a representative.",
+    "No Post-Death Brand-New CUE Motions for Accrued Pay: Under Haines v. West, a survivor cannot file a brand-new Clear and Unmistakable Error (CUE) motion after death to collect § 5121 accrued back pay unless the Veteran's own CUE claim was already pending at death (post-death CUE is used instead to establish 10-year § 1318 DIC under § 3.22(b)(1)).",
+    "Adult Children & Estates Eligibility Difference: Under standard § 5121 / § 5121A rules, non-helpless adult children over 23 (or 18 if not in school) cannot substitute or collect accrued pay (beyond reimbursing last-sickness/burial expenses under § 5121(a)(6))—whereas § 3.816(f) Nehmer Agent Orange awards DO pay adult children and estates (note: PACT Act hypertension and MGUS are not Nehmer § 3.816(f) conditions)."
+  ],
+  "questions_for_representative": [
+    "Are we within 1 year of my loved one's death so we can file VA Form 21P-0847 (or VA Form 21P-534EZ) immediately to lock in 38 U.S.C. § 5121A open-record substitution rights?",
+    "Have I signed a new survivor VA Form 21-22 or 21-22a so you have legal authority to view the VBMS file and represent me?",
+    "If my loved one's appeal was at the CAVC (or inside the 120-day CAVC appeal window) at death, have we protected BOTH judicial substitution (CAVC Rule 43) and a timely VA agency filing?",
+    "If only adult children or an estate survive, did the Veteran serve in the Republic of Vietnam / Blue Water Navy with a covered Agent Orange condition eligible for a § 3.816(f) Nehmer estate/adult-child payout?"
+  ]
+}

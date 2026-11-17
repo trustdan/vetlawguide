@@ -2,7 +2,7 @@
 
 > **Calm Research Desk Meets Modern Craft:** Connecting specific VA rating and Board decisions, the exact point-in-time historical and modern law governing them, and the concrete records needed to investigate what happened—backed by inspectable primary sources rather than black-box claims.
 
-`[........ᗧ·······] 49% (28/57 Slices Complete: E5-S3 Live; EPIC 10, EPIC 12 Octocat & EPIC 11 UI/UX Queued Next)`
+`[.............ᗧ··] 82% (47/57 Slices Complete: EPIC 6 & EPIC 7 Tri-Harness Audit Complete; EPIC 8 Grounded Chat Queued Next)`
 
 ---
 
@@ -23,7 +23,7 @@
 pnpm install              # Install dependencies (never use npm or yarn)
 pnpm corpus:sync          # Sync & SHA-256 lock active Bookmark Wave into corpus/upstream/
 pnpm corpus:compile       # Compile corpus/generated/ entity graph & coverage-manifest.json
-pnpm corpus:bookmark      # Print exact Wave ingestion bookmark (Wave 1 Live vs. Waves 2-5 Placeholders)
+pnpm corpus:bookmark      # Print active Wave ingestion bookmark (Wave 5: 111/111 verified modules live)
 pnpm typecheck            # Strict TypeScript check (tsc --noEmit)
 pnpm lint                 # ESLint check
 pnpm test                 # Run Vitest unit & bitemporal compiler/screener suite
@@ -61,6 +61,8 @@ Every Markdown document in this repository is indexed below (`scripts/historian_
 - [ADR-0004: Three-Valued Investigation Engine, Bitemporal Pathway Ordering & Zero-Network Export Contract](docs/adr/ADR-0004-three-valued-investigation-engine-and-zero-network-export.md)
 - [ADR-0005: Full `VA-law-planning` Corpus Ingestion (`W1–W5`), 15-System VASRD Web Hubs & Final SEO Gate](docs/adr/ADR-0005-full-corpus-ingestion-vasrd-hubs-and-seo-epic.md)
 - [ADR-0006: Persistent Sticky Era-Timeline Chrome, Comprehensive Era Definitions Hub & Bitemporal Era-Reactive Authority Directory](docs/adr/ADR-0006-sticky-era-timeline-and-bitemporal-authority-directory.md)
+- [ADR-0007: Compact Mobile Era Chip, Visitor-Question Navigation & Neutral Charcoal Dark Mode](docs/adr/ADR-0007-compact-mobile-era-chip-and-task-navigation.md)
+- [ADR-0008: Dedicated Piercing-Finality Flowchart Route, Semantic Map Edges & Single-Home `/timeline` Chronology](docs/adr/ADR-0008-visual-piercing-finality-flowchart-and-single-home-timeline.md)
 
 ### Concurrent Tri-Harness Audit (`docs/audit/`)
 - [docs/audit/concurrent-audit-plan.md](docs/audit/concurrent-audit-plan.md) — Parallel Claude + Codex + Antigravity audit protocol.

@@ -1,0 +1,33 @@
+{
+  "upstream_id": "doctrine-cavc-federal-circuit-writs-and-class-actions",
+  "upstream_path": "docs/cavc-federal-circuit-writs-and-class-actions.md",
+  "upstream_sha256": "ef2c095b474ee38989641ec75e63f5c607917c5e0738cf61fd0e4b625f6ef8c8",
+  "linked_version_ids": [
+    "38-cfr-3.2500-2019-oct-ama",
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-14.636-2019-ama-attorney-fees",
+    "38-cfr-17.1005-2023-wolfe-coinsurance"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Appealing a Board Denial to Federal Court (CAVC & Federal Circuit): Deadlines, Remands & Writs",
+  "what_this_means": "When the Board of Veterans' Appeals issues a final decision denying all or part of a claim, you can appeal outside VA to an independent federal court: the U.S. Court of Appeals for Veterans Claims (CAVC). Unlike VA Regional Offices and the Board, the CAVC does not take new medical evidence—instead, it reviews the existing Board record to decide whether the Board misapplied the law, failed to provide adequate 'reasons or bases' (38 U.S.C. § 7104(d)(1)), or committed clear factual error, often vacating and remanding flawed Board decisions (with government-paid EAJA attorney fees). Decisions of the CAVC can be appealed within 60 days to the U.S. Court of Appeals for the Federal Circuit on pure questions of statutory or regulatory interpretation (38 U.S.C. § 7292).",
+  "record_clues": [
+    "A final Board of Veterans' Appeals decision accompanied by VA Form 4597 ('Your Rights to Appeal Our Decision'), which starts the 120-day clock to file a CAVC Notice of Appeal (38 U.S.C. § 7266(a)).",
+    "A 'mixed' Board decision that granted one issue (or made favorable factual findings, which are binding on VA under 38 U.S.C. § 5104A and Medrano v. Nicholson) while denying a higher percentage or earlier effective date.",
+    "A Joint Motion for Partial Remand (JMPR) negotiated between your appellate attorney and VA General Counsel at the CAVC Rule 33 conference.",
+    "Severe illness, hospitalization, homelessness, or VA mail misdelivery that caused a Notice of Appeal to arrive after Day 120 (potentially supporting equitable tolling under Henderson v. Shinseki)."
+  ],
+  "important_cautions": [
+    "Critical 120-day CAVC trap: filing an AMA Supplemental Claim (VA Form 20-0995) after a Board denial does NOT pause ('toll') the 120-day deadline to appeal to the CAVC! (Only a timely Motion for Board Reconsideration filed within the 120-day window pauses the CAVC clock under Rosler v. Derwinski.) Meanwhile, under AMA, you have up to 1 year after a Board denial to file a Supplemental Claim with new and relevant evidence—meaning many Veterans consult a CAVC appellate attorney well before Day 120.",
+    "Board remands cannot be appealed to the CAVC: if the Board remanded an issue back to the Regional Office for another exam or development, that remanded issue is not a 'final decision' and cannot be appealed to the CAVC yet (Kirkpatrick v. Nicholson).",
+    "Narrow JMPR waiver trap & benefit-of-the-doubt limits: if your attorney signs an overly narrow Joint Motion for Partial Remand without preserving other arguments and favorable findings, unmentioned arguments on that issue can be waived on remand (Carter v. Shinseki). Also note that under Bufkin v. Collins (2025), the CAVC does not re-weigh close evidence from scratch under the benefit-of-the-doubt rule—making legal and reasons-or-bases challenges essential.",
+    "Extraordinary writs (mandamus) cannot bypass regular appeals: the CAVC grants All Writs Act petitions only for extraordinary, unreasonable agency delays where no ordinary administrative appeal path solves the problem (Martin v. O'Rourke; Wolfe v. McDonough)."
+  ],
+  "questions_for_representative": [
+    "What is the exact 120th calendar day from the mailing date stamped on my Board decision, and should we file a CAVC Notice of Appeal before Day 120 or file a Supplemental Claim with new medical evidence within 1 year?",
+    "Does my Board decision contain favorable factual findings (such as conceding an in-service injury or diagnosis) that are legally protected from being overturned by the CAVC or VA on remand (Medrano v. Nicholson; 38 U.S.C. § 5104A)?",
+    "If VA's lawyer offers a Joint Motion for Partial Remand (JMPR) at the CAVC, does the draft agreement preserve my right to submit new evidence and argue additional errors on remand (Carter v. Shinseki) while establishing EAJA fee eligibility?",
+    "If the CAVC affirms a Board denial—or while a legal issue is appealed within 60 days to the Federal Circuit—should we also file a protective Supplemental Claim or Intent to File within 1 year of the CAVC judgment to protect my effective date?"
+  ]
+}

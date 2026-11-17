@@ -1,0 +1,33 @@
+{
+  "upstream_id": "authority-38-cfr-part-20-ama-evid-windows-and-part-14-fees",
+  "upstream_path": "authorities/part-20/38-cfr-part-20-ama-evid-windows-and-part-14-fees.md",
+  "upstream_sha256": "84be73a7fe0c53f4fe539df9f360e3d492d56b673be365dccb16eb3c6d1d645e",
+  "linked_version_ids": [
+    "38-cfr-20.202-20.303-2019-ama-board-windows",
+    "38-cfr-20.1400-1999-subpart-o-board-cue",
+    "38-cfr-20.1400-2019-ama-subpart-o-cue",
+    "38-cfr-14.636-2008-post-nod-attorney-fees",
+    "38-cfr-14.636-2019-ama-attorney-fees"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Board Appeal Evidence Windows, Board CUE Rules & Accredited Representative Fee Snapshots",
+  "what_this_means": "This module compiles the exact regulations governing the three modern Appeals Modernization Act (AMA) review lanes—Supplemental Claims (38 C.F.R. § 3.2501), Higher-Level Reviews (38 C.F.R. § 3.2601), and Board of Veterans' Appeals dockets (38 C.F.R. Part 20)—alongside the Board's Clear and Unmistakable Error (CUE) rules (Subpart O, 38 C.F.R. §§ 20.1400–20.1409) and VA's accreditation and contingency-fee rules for claims agents and attorneys (38 C.F.R. §§ 14.629 and 14.636). Effective February 19, 2019, each AMA Board docket has strict rules on whether and when new evidence can be submitted: Direct Review is closed to new evidence, Evidence Submission allows new evidence only within 90 days after the Board receives VA Form 10182, and the Hearing docket allows new evidence only at the Board hearing or within 90 days after the hearing.",
+  "record_clues": [
+    "VA Form 20-0995 (Supplemental Claim), VA Form 20-0996 (Higher-Level Review), or VA Form 10182 (Board Appeal Notice of Disagreement) showing which review lane or Board docket was checked.",
+    "Medical opinions or lay statements uploaded to VA's electronic file before or outside the 90-day Board evidence window, or incorporated by reference in a VA Form 10182 addendum.",
+    "A prior final Board of Veterans' Appeals decision evaluated for either a Motion for Reconsideration (38 C.F.R. § 20.1001) or a Subpart O CUE motion (38 C.F.R. §§ 20.1400–20.1409).",
+    "VA Form 21-22a (appointment of an accredited attorney or claims agent) and a contingency fee agreement specifying whether VA withholds up to 20% directly from past-due benefits."
+  ],
+  "important_cautions": [
+    "Closed-record and docket-switching traps: you cannot submit new evidence in a Higher-Level Review or a Board Direct Review appeal, and under 38 C.F.R. § 20.202(c)(2), switching Board dockets is allowed only within the later of 1 year from the Regional Office decision notice or 60 days after the Board receives VA Form 10182—and before you submit evidence or testify.",
+    "High-stakes Board CUE rule: under 38 C.F.R. § 20.1409(c), once the Board issues a final decision on the merits of a Subpart O CUE motion on a specific prior Board decision issue, any later CUE motion on that same Board issue is dismissed with prejudice. Moreover, duty-to-assist errors, evidence-weighing disputes, Board issues already decided by a federal court, and later changes in legal interpretation (George v. McDonough; 38 C.F.R. § 20.1403(e)) can never be Board CUE.",
+    "Invalidated fee bar in eCFR print text: although part of 38 C.F.R. § 14.636(c)(1)(i) purported to bar attorney/agent fees on Supplemental Claims or CUE motions filed more than 1 year after an initial decision, the Federal Circuit struck down that restriction in Military-Veterans Advocacy v. Secretary of Veterans Affairs (2021).",
+    "Fee consumer protections: nobody may legally charge a fee to prepare an initial VA claim before VA issues an initial decision (38 U.S.C. § 5904(c)(1)), and direct-pay VA withholding requires a contingency fee of 20% or less filed within 30 days of signing."
+  ],
+  "questions_for_representative": [
+    "Which AMA lane—Supplemental Claim (with new and relevant evidence), Higher-Level Review (closed record with an informal conference), or one of the three Board dockets—best fits the evidence we already have versus the evidence we still need?",
+    "If we chose the Board Evidence Submission or Hearing docket on VA Form 10182, what are the exact start and end dates of my 90-day evidence submission window?",
+    "Before anyone considers a Board CUE motion under 38 C.F.R. §§ 20.1400–20.1409, can we reach the same goal more safely through a Supplemental Claim, newly associated service records (38 C.F.R. § 3.156(c)), or timely judicial appeal?",
+    "Are you VA-accredited on VA's Office of the General Counsel roster, is your contingency fee 20% or less of past-due benefits, and how do Equal Access to Justice Act (EAJA) fee offsets work if my appeal goes to court?"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-14-secondary-service-connection-aggravation-obesity",
+  "upstream_path": "playbooks/14-secondary-service-connection-aggravation-obesity.md",
+  "upstream_sha256": "3be52dc2ca60463a0ba9c001a5d754e3da135ce936d68e338ebd56674e6e00cd",
+  "linked_version_ids": [
+    "38-cfr-3.310-1979-era1a",
+    "38-cfr-3.310-2001-era1b",
+    "38-cfr-3.310b-2006-secondary-aggravation",
+    "38-cfr-3.310d-2014-tbi-secondary",
+    "38-cfr-3.301d-2006-allen-substance-abuse"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Secondary Conditions, Incremental Aggravation, Medication Side Effects & Weight Gain as an Intermediate Link",
+  "what_this_means": "Service connection does not stop with the injury that happened in uniform. Under 38 C.F.R. § 3.310, a new health condition is compensated as service-connected if an already service-connected disability—or the prescription medication used to treat it—either caused the new condition (§ 3.310(a)) or aggravated a non-service-connected condition above its baseline level (§ 3.310(b)). Under Ward v. Wilkie, secondary aggravation includes any measurable or incremental additional disability without requiring 'permanent worsening.' In addition, when service-connected pain, limited mobility, mental health symptoms, or medications contribute to weight gain/obesity that in turn causes or aggravates conditions like sleep apnea, hypertension, or Type 2 diabetes, obesity can serve as a valid intermediate link in the causal chain (VAOPGCPREC 1-2017; Walsh v. Wilkie).",
+  "record_clues": [
+    "A VA exam or denial letter rejecting secondary aggravation because there was 'no permanent worsening' of an underlying condition (conflicting with Ward v. Wilkie).",
+    "VA medical center vital signs showing weight gain or Body Mass Index (BMI) of 30 or higher alongside service-connected knee/back pain, PTSD, depression, or weight-inducing medications, paired with obstructive sleep apnea, hypertension, or diabetes.",
+    "Long-term VA or private pharmacy records for anti-inflammatory pain relievers (NSAIDs), antidepressants (SSRIs/SNRIs), corticosteroids, or opioids alongside acid reflux/GERD, chronic kidney disease, erectile dysfunction, or jaw clenching.",
+    "A service-connected lower-limb amputation at or above the knee (or both ankles) followed by heart disease (§ 3.310(c)), or service-connected Traumatic Brain Injury followed by Parkinsonism, seizures, dementia, depression, or pituitary hormone deficiency (§ 3.310(d))."
+  ],
+  "important_cautions": [
+    "Obesity itself is not assigned a standalone VA disability percentage; rather, under VAOPGCPREC 1-2017 it functions strictly as an intermediate step linking a service-connected disability to a ratable secondary condition such as sleep apnea or diabetes.",
+    "Effective dates for newly claimed secondary conditions generally run from the date of the secondary claim or Intent to File—they do not automatically inherit the primary disability's original effective date or the 1-year increased-rating lookback of 38 C.F.R. § 3.400(o)(2) (Ellington v. Peake).",
+    "Under George v. McDonough and 38 C.F.R. § 20.1403(e), later judicial clarifications like Ward v. Wilkie (2019) or Walsh v. Wilkie (2020) apply to open claims and Supplemental Claims, not Clear and Unmistakable Error (CUE) motions attacking older final decisions.",
+    "Beware of unfinalized or rescinded rules: VA's sleep apnea proposal (RIN 2900-AQ72, 87 FR 8474) remains a proposed rule that is not enacted law, and VA's February 17, 2026 medication rule (91 FR 7118) was formally rescinded on February 27, 2026 (91 FR 9712)."
+  ],
+  "questions_for_representative": [
+    "Do my pharmacy and treatment records support a secondary claim—either through direct causation or incremental aggravation under 38 C.F.R. § 3.310(a)–(b)—for side effects of my service-connected medications?",
+    "If service-connected orthopedic pain, limited exercise capacity, or mental health symptoms contributed to weight gain before I developed sleep apnea, diabetes, or high blood pressure, what medical nexus evidence should we gather for an intermediate-step claim?",
+    "Did a prior VA examiner improperly demand 'permanent worsening' or refuse to estimate my pre-aggravation baseline severity?",
+    "Do any automatic secondary rules apply to my case, such as cardiovascular conditions after qualifying lower-extremity amputations (§ 3.310(c)) or neurological/endocrine conditions after TBI (§ 3.310(d))?"
+  ]
+}

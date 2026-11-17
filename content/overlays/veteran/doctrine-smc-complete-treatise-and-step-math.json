@@ -1,0 +1,31 @@
+{
+  "upstream_id": "doctrine-smc-complete-treatise-and-step-math",
+  "upstream_path": "docs/smc-complete-treatise-and-step-math.md",
+  "upstream_sha256": "551280ed933517c6873d0d9a20f9eb4192f6f9f446b6ca603d8abe383713b7cb",
+  "linked_version_ids": [
+    "38-cfr-3.350a7-2002-breast-smck",
+    "38-cfr-3.350f-1961-barry-steps",
+    "38-cfr-3.350f-1983-barry-steps",
+    "38-cfr-3.350j-3.352b-2018-smct"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Plain-English Guide to Special Monthly Compensation (SMC) Ladder & Multi-Step Rate Math (38 U.S.C. § 1114(k)–(t))",
+  "what_this_means": "VA's 100% schedular rate is NOT the ceiling of disability compensation. When a Veteran suffers anatomical loss or functional Loss of Use of organs, senses, or limbs, becomes housebound, or needs daily Aid & Attendance, 38 U.S.C. § 1114(k)–(t) replaces or supplements standard table math with Special Monthly Compensation (SMC). Historically, VA's computer software and manuals capped intermediate half-step (§ 3.350(f)(3), for independent 50%+ disabilities) and full-step (§ 3.350(f)(4), for independent 100% disabilities) increases at just ONE single step. On May 16, 2024, in Barry v. McDonough, the Federal Circuit struck down that one-bump cap—holding that EACH separate and distinct 50%+ or 100% disability adds its own incremental step up the SMC ladder toward the SMC(o) / maximum SMC(p) ceiling (which can in turn unlock higher-level Aid & Attendance under SMC(r)(1)).",
+  "record_clues": [
+    "A Rating Code Sheet awarding SMC(l), SMC(m), or SMC(n) alongside TWO OR MORE separate 50%+ or 100% disabilities where VA granted only a single half-step or full-step increase (Barry v. McDonough).",
+    "Up to three separate SMC(k) add-ons stackable on top of 0%–100%, SMC(s), or SMC(l)–(n) (capped so total monthly pay does not exceed SMC(o) or SMC(p) limits) for erectile dysfunction, prostatectomy, reproductive/breast tissue loss, aphonia, unilateral eye/hearing loss, or Loss of Use of a hand/foot.",
+    "100% schedular (or single-disability TDIU) plus 60%+ in separate disabilities with no statutory Housebound SMC(s) paid, OR actual factual 'substantially confined to the home/ward' status overlooked under § 3.350(i)(2).",
+    "Severe bilateral nerve damage, foot drop with AFO braces, or ruined joint function rated 40%–80% without checking functional 'Loss of Use' under 38 C.F.R. § 4.63."
+  ],
+  "important_cautions": [
+    "Anti-Pyramiding / No Double-Counting (Amberman & Breniser): You cannot use the exact same disability or overlapping functional impairment twice—every 50%+ combination or 100% disability used for a § 3.350(f)(3)–(4) step bump must be completely separate from the conditions used to establish your base SMC(l)–(n) rate.",
+    "TDIU Limits in SMC Math: Under § 3.350(f)(4) and Buie / Bradley / Gazelle, a full-step increase under § 3.350(f)(4) requires an independent 100% schedular disability (not TDIU), and statutory SMC(s) based on TDIU requires that ONE single disability alone warranted TDIU.",
+    "CUE vs. Open/Supplemental Claims After Barry & Laska: Under George v. McDonough and 38 C.F.R. § 20.1403(e), Barry (May 16, 2024) and Laska (September 6, 2024) cannot be used to assert Clear and Unmistakable Error (CUE) against final pre-decision ratings—use a Supplemental Claim, timely appeal, § 3.156(c) service records, or check for an unadjudicated AMA issue (Hamill v. Collins)."
+  ],
+  "questions_for_representative": [
+    "Can we list my base SMC disability on one side of a page and list my completely separate service-connected disabilities on the other side to check how many § 3.350(f)(3) half-steps and § 3.350(f)(4) full-steps apply after Barry v. McDonough?",
+    "Am I missing any SMC(k) add-ons (up to three) or statutory/factual SMC(s) Housebound compensation?",
+    "If multiple Barry step increases raise my rate to SMC(n½)+k or maximum SMC(p) and I also need regular Aid & Attendance, does that unlock SMC(r)(1) higher-level care?",
+    "Did a post-February 19, 2019 AMA decision fail to give explicit notice on reasonably raised SMC (Hamill v. Collins), keeping my earlier effective date alive?"
+  ]
+}

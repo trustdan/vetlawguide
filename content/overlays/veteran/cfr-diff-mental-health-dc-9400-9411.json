@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-mental-health-dc-9400-9411",
+  "upstream_path": "cfr-diffs/vasrd/mental-health-dc-9400-9411.md",
+  "upstream_sha256": "943ad4c9f5dfcf6386149436ad7688659d94331b88619f4a8879bc0ce30a4f60",
+  "linked_version_ids": [
+    "38-cfr-4.132-1988-psychoneurotic",
+    "38-cfr-4.130-1996-dsm4",
+    "38-cfr-4.130-2014-dsm5",
+    "38-cfr-3.344-1993-stabilization",
+    "38-cfr-3.304f3-2010-fear-hostile"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "PTSD & Anxiety Ratings (DC 9400–9440): Pre-1980 Labels, the 1996 Checklist Trap & Stabilized Protections",
+  "what_this_means": "Posttraumatic Stress Disorder (Diagnostic Code 9411) was not added to the psychiatric manual (DSM-III) or VA's rating schedule until 1980, meaning many Vietnam, Korean, and WWII combat Veterans were originally diagnosed in the 1960s and 1970s with 'anxiety reaction,' 'combat fatigue,' 'nervousness,' or mislabeled with a noncompensable 'personality disorder.' This focused historical diff explains how Diagnostic Codes 9400–9440 evolved across the 1980, February 3, 1988, November 7, 1996, and August 4, 2014 updates—and why VA raters cannot treat the symptom list in 38 C.F.R. § 4.130 as a rigid all-or-nothing checklist.",
+  "record_clues": [
+    "1960s–1980s military separation or VA rating sheets denying 'nervousness' or 'immature/inadequate personality' despite combat awards, casualty exposure, or post-combat nightmares and hypervigilance.",
+    "A post-November 7, 1996 Rating Decision denying a 50% or 70% mental rating because the Veteran did not have every single example symptom listed in 38 C.F.R. § 4.130 (violating Mauerhan v. Principi), or overlooking documented suicidal ideation.",
+    "A reduction of a PTSD or anxiety rating held for 5 or more years based on a single routine C&P exam without proving sustained improvement under the ordinary conditions of life and work (38 C.F.R. § 3.344).",
+    "Combat decorations, unit deck logs, morning reports, or hostile-activity deployments that were never associated with the file when an older PTSD claim was denied (38 C.F.R. § 3.156(c))."
+  ],
+  "important_cautions": [
+    "Exact November 7, 1996 symptom date: suicidal ideation and today's occupational/social symptom examples were enacted in 38 C.F.R. § 4.130 effective November 7, 1996 (published October 8, 1996 at 61 FR 52695). You cannot cite post-1996 symptom examples or later cases like Mauerhan or Bankhead to claim Clear and Unmistakable Error (CUE) in a final pre-November 7, 1996 decision.",
+    "Unfinalized proposal warning: VA's February 15, 2022 proposed rule to replace the § 4.130 formula with a 5-domain model and 10% minimum floor (87 FR 8498, RIN 2900-AQ82) is still an unfinalized proposed rule and is NOT enacted law.",
+    "Look for missing official military records first: if combat citations, unit action reports, or inpatient psychiatric ward charts were missing when an older PTSD claim was denied, submitting official service department records under 38 C.F.R. § 3.156(c) avoids the strict legal bars of CUE.",
+    "Under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final decision on the merits of a CUE motion on a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "If VA denied me decades ago for 'nervousness' or 'personality disorder' before PTSD was recognized, do newly obtained military unit records or combat logs trigger retroactive reconsideration under 38 C.F.R. § 3.156(c)?",
+    "Did VA treat the symptom examples in 38 C.F.R. § 4.130 as a mandatory checklist instead of evaluating the overall frequency, severity, and duration of my occupational and social impairment?",
+    "If VA lowered my long-term PTSD or anxiety percentage after 5 or more years at the same level, did VA violate the stabilized-rating rules of 38 C.F.R. § 3.344 (making the reduction void)?",
+    "If my 70% PTSD or anxiety rating prevents me from holding substantially gainful employment, has VA adjudicated entitlement to a 100% payment rate via TDIU under 38 C.F.R. § 4.16(a)?"
+  ]
+}

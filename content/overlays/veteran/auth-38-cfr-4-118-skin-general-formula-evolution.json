@@ -1,0 +1,33 @@
+{
+  "upstream_id": "auth-38-cfr-4-118-skin-general-formula-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.118-skin-general-formula-evolution.md",
+  "upstream_sha256": "86f53394c9e584117c1263c42cb8a88db9d820f430fefa871dab584b533ae344",
+  "linked_version_ids": [
+    "38-cfr-4.118-skin-1946-pre1978-7806",
+    "38-cfr-4.118-skin-1978-pre2002-7806",
+    "38-cfr-4.118-skin-2002-7806",
+    "38-cfr-4.118-skin-2018-general-formula",
+    "38-cfr-3.810-2012-sursely-clothing"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Skin Disorder Rating Snapshots: Eczema, Psoriasis, Biologics & 1978–2018 Rule Changes",
+  "what_this_means": "This module preserves the exact historical and current text of 38 C.F.R. § 4.118 for non-scar skin conditions (Diagnostic Codes 7806–7833). From October 2, 1978 through August 29, 2002, VA rated dermatitis/eczema (Diagnostic Code 7806) and psoriasis (Diagnostic Code 7816) using qualitative descriptions of crusting, weeping, or ulceration. On August 30, 2002 (67 FR 49590), VA switched to body-surface / exposed-area percentages OR total duration of systemic therapy (such as oral or injected corticosteroids or immunosuppressants). Effective August 13, 2018 (published July 13, 2018 at 83 FR 32592), VA enacted the General Rating Formula for the Skin, explicitly defining systemic versus topical therapy by route of administration and listing biologics, phototherapy, retinoids, and PUVA alongside systemic immunosuppressives.",
+  "record_clues": [
+    "Dermatology or pharmacy records showing constant or near-constant (or 6+ weeks per year) biologic injections or infusions (such as dupilumab/Dupixent, adalimumab/Humira, secukinumab/Cosentyx, or risankizumab/Skyrizi), oral immunosuppressants, retinoids, or narrowband UVB phototherapy.",
+    "Herbicide-exposure records paired with chloracne (Diagnostic Code 7829), including deep acne nodules or cysts or involvement of skin-fold (intertriginous) areas.",
+    "Oncology or dermatologic surgery notes for malignant melanoma (Diagnostic Code 7833) or skin carcinoma (Diagnostic Code 7818) requiring immunotherapy, chemotherapy, lymph-node surgery, or excision more extensive than simple wide local excision.",
+    "Prescriptions for topical steroid, coal-tar, anthralin, or retinoid creams/ointments that stain or damage outer clothing, which can qualify for annual VA Clothing Allowances under 38 C.F.R. § 3.810(a)."
+  ],
+  "important_cautions": [
+    "Topical creams versus systemic treatments: under both Federal Circuit precedent (Johnson v. Shulkin) for the 2002–2018 schedule and the explicit post-August 13, 2018 definition in 38 C.F.R. § 4.118(a), creams, ointments, or lotions applied strictly to the skin count as topical therapy (0% on medication tier alone) rather than systemic therapy (10%, 30%, or 60%).",
+    "Overlapping skin area rule: under 38 C.F.R. § 4.118(b), multiple skin diagnoses affecting the exact same area of skin cannot be combined separately—only the highest single rating for that overlapping skin area applies.",
+    "Quarantined rule alert: VA's September 29, 2025 notice on painful scars under Diagnostic Code 7804 (90 FR 46542) is an unfinalized proposed rule and is NOT enacted law.",
+    "Under George v. McDonough and 38 C.F.R. § 20.1403(e), later court interpretations do not establish Clear and Unmistakable Error (CUE) in older final decisions, and under 38 C.F.R. § 20.1409(c), only one final merits CUE decision is permitted per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Did VA assign 0% or 10% based on cleared skin surface area at my exam even though I take continuous or 6-week+ systemic biologic, oral immunosuppressive, or phototherapy treatment qualifying for 30% or 60%?",
+    "Do my prescribed topical skin ointments or creams permanently stain or damage my outer garments, making me eligible for one or more annual Clothing Allowances under 38 U.S.C. § 1162 and 38 C.F.R. § 3.810(a)?",
+    "If I had melanoma or skin cancer requiring immunotherapy or surgery beyond wide local excision, did VA assign a 100% rating and hold a mandatory 6-month post-treatment exam before stepping down to residuals?",
+    "Was my skin claim pending before August 13, 2018 so that VA had to evaluate both the 2002 and 2018 skin formulas and assign whichever was more favorable?"
+  ]
+}

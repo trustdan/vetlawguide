@@ -1,0 +1,33 @@
+{
+  "upstream_id": "cfr-diff-12-endocrine-system-4-119",
+  "upstream_path": "cfr-diffs/vasrd/12-endocrine-system-4.119.md",
+  "upstream_sha256": "ea2970c53ebd11b30203989b86db6282ae5d3933e2e3f0fe3e611d37be6db754",
+  "linked_version_ids": [
+    "38-cfr-4.119-pre2017-endocrine",
+    "38-cfr-4.119-2017-endocrine",
+    "38-cfr-4.16a-2014-current",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-3.951-1992-preservation"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Diabetes, Hypothyroidism & Secondary Complications: Comparing Pre-2017 and Modern Rules",
+  "what_this_means": "In endocrine disability claims under 38 C.F.R. § 4.119, the biggest difference in monthly compensation rarely comes from the base diabetes or thyroid percentage alone—it comes from mandatory separate ratings for secondary organ and nerve complications across the body. This comparison tracks the December 10, 2017 endocrine overhaul (published November 2, 2017 at 82 FR 50802), showing how Agent Orange (Nehmer) Type 2 Diabetes and Hypothyroidism claims, post-TBI pituitary hormone deficiencies, thyroid cancers, and multi-system secondary complications are evaluated.",
+  "record_clues": [
+    "A 20% rating for Type 2 Diabetes Mellitus (Diagnostic Code 7913) where VA medical notes show tingling/burning feet or hands (diabetic neuropathy), diabetic eye exams (Diagnostic Code 6040), reduced kidney eGFR labs (Diagnostic Code 7541), peripheral arterial disease (Diagnostic Code 7114), heart disease, or erectile dysfunction (Diagnostic Code 7522 + SMC(k)) missing from the Rating Code Sheet.",
+    "An Agent Orange / Blue Water Navy retroactive hypothyroidism grant (Diagnostic Code 7903, added by Congress effective January 1, 2021 with Nehmer retroactivity) assigning 0% for pre-December 10, 2017 years despite continuous levothyroxine medication.",
+    "A diabetic Veteran denied Total Disability based on Individual Unemployability (TDIU, 38 C.F.R. § 4.16(a)) for 'no single 40% disability' even though multiple diabetic complications share a common diabetic origin and combine to 40% or 60%+ under § 4.16(a)(1).",
+    "Thyroid or endocrine cancer (Diagnostic Code 7914) dropped from 100% to 0% after surgery or radioactive iodine without waiting 6 months, holding a VA exam, and giving 60-day advance notice."
+  ],
+  "important_cautions": [
+    "Non-insulin injectables versus insulin: oral medications (like metformin or SGLT2 inhibitors) and non-insulin GLP-1/GIP injections (such as semaglutide/Ozempic or tirzepatide/Mounjaro) do not satisfy the 'one or more daily injection of insulin' requirement for the 40% tier of Diagnostic Code 7913, which also requires restricted diet AND medical regulation of activities (Middleton v. Shinseki; Camacho v. Nicholson).",
+    "Medication rules differ between base diabetes and secondary neuropathy: because Diagnostic Code 7913 explicitly incorporates medication into its tiers, VA does not guess at unmedicated blood sugar (Jackson v. McDonough), whereas peripheral nerve codes for diabetic neuropathy are silent on medication (Ingram v. Collins). Never treat the rescinded February 17, 2026 medication rule (91 FR 7118, rescinded February 27, 2026 at 91 FR 9712) as active law.",
+    "Note on 89 FR 9803 (February 12, 2024): while VA's regulatory text update to 38 C.F.R. § 3.309(e) was published as a proposed rule, the underlying statutory Agent Orange presumption for hypothyroidism under 38 U.S.C. § 1116 has been active statutory law since January 1, 2021.",
+    "Do not file a Board CUE motion lightly: under 38 C.F.R. § 20.1409(c), once the Board issues a final merits decision on a CUE motion on a specific prior Board issue, no second CUE motion is allowed on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Have we checked all four extremities (plus the 10% bilateral factor under 38 C.F.R. § 4.26), my eyes, my kidneys, my cardiovascular system, and SMC(k) for separately ratable secondary complications of service-connected diabetes?",
+    "Can my diabetes rating and all of my secondary diabetic complications be grouped together as 'one disability' from a common etiology under 38 C.F.R. § 4.16(a)(1) to meet the schedular threshold for TDIU?",
+    "If my hypothyroidism effective date goes back before December 10, 2017 under Nehmer, did VA pay the pre-2017 10% continuous-medication (or 30%/60% symptom) rate for the pre-December 10, 2017 period?",
+    "If I had a service-connected Traumatic Brain Injury, should we screen for secondary pituitary/endocrine hormone deficiency under 38 C.F.R. § 3.310(d)?"
+  ]
+}

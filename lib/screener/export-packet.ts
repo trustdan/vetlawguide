@@ -6,7 +6,7 @@ import type {
   PractitionerVerificationGate,
   TriValue,
 } from "./types";
-import { WAVE1_SCREENING_QUESTIONS } from "./engine";
+import { SCREENING_QUESTIONS } from "./engine";
 
 function formatAgencyHuman(agency: DecisionAgency): string {
   switch (agency) {
@@ -27,6 +27,18 @@ function formatFocusHuman(focus: IssueFocus): string {
       return "Missing Military or Inpatient Surgical Records (38 C.F.R. § 3.156(c))";
     case "finality-nod-informal-notice":
       return "Unfinished Appeal / Unissued Statement of the Case / Pre-2015 Informal Claim / Defective Notice";
+    case "stabilized-reduction-or-severance":
+      return "Lowered or Severed Existing Rating (38 C.F.R. §§ 3.105(e), 3.344, 3.951, 3.957)";
+    case "tdiu-or-smc":
+      return "Unemployability (TDIU, 38 C.F.R. § 4.16) & Special Monthly Compensation (SMC k–t)";
+    case "nehmer-herbicide":
+      return "Agent Orange / Herbicide Presumptions & Nehmer Retroactive Awards (38 C.F.R. § 3.816)";
+    case "survivor-dic-accrued":
+      return "Survivor DIC (§ 1310 / § 1318 / PACT § 3.33), Pending-Claim Substitution (§ 5121A) & Accrued Back Pay";
+    case "cod-or-insanity":
+      return "Character of Discharge (2024 38 C.F.R. § 3.12), Prior Enlistments (§ 3.13) & Insanity (§ 3.354(b))";
+    case "severance-recoupment":
+      return "Military Disability Severance / Separation Pay Recoupment Audit (10 U.S.C. § 1212(d)(2); 38 C.F.R. § 3.700(a)(3))";
     case "general-collateral-review":
       return "General Historical Rating or Board Decision Audit";
   }
@@ -156,7 +168,7 @@ export function buildVeteranDiscussionPacketMarkdown(
     `- **Was a prior Board CUE motion already decided on the merits on this issue?** ${formatTriValueVeteran(report.intake.priorBvaCueDecidedOnMerits)}`,
   );
 
-  for (const q of WAVE1_SCREENING_QUESTIONS) {
+  for (const q of SCREENING_QUESTIONS) {
     const val = report.intake.answers[q.factId] ?? "unknown";
     lines.push(`- **${q.veteranQuestion}** — *${formatTriValueVeteran(val)}*`);
   }

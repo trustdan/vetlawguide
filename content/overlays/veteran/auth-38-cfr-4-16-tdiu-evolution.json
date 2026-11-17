@@ -1,0 +1,31 @@
+{
+  "upstream_id": "auth-38-cfr-4-16-tdiu-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.16-tdiu-evolution.md",
+  "upstream_sha256": "4596be83a52b8844bb0742441a17f9bd09173d26bd0cd063a5e69c9ca3d2a9de",
+  "linked_version_ids": [
+    "38-cfr-4.16-1975-base",
+    "38-cfr-4.16c-1989-mental",
+    "38-cfr-4.16a-1990-marginal",
+    "38-cfr-4.16a-2014-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Total Disability Based on Individual Unemployability (TDIU) Rules From 1975 to Today (38 C.F.R. § 4.16)",
+  "what_this_means": "Even when your combined VA rating does not reach 100% on the standard rating table, 38 C.F.R. § 4.16 allows VA to pay you at the full 100% monthly compensation rate if your service-connected disabilities prevent you from securing or following 'substantially gainful employment.' Under § 4.16(a), Veterans meet the standard percentage gateway with one disability rated 60% or higher (including multiple disabilities sharing a common cause, single body system, or combat/POW incurrence under items (1)–(5)), OR a combined rating of 70% or higher with at least one disability at 40%+. Even below those percentages, § 4.16(b) requires VA raters to refer unemployable Veterans for extraschedular TDIU consideration. Furthermore, for a specific seven-year historical window (March 1, 1989 through November 6, 1996), former § 4.16(c) required VA to assign a full 100% schedular mental health rating whenever a 70% mental disorder was the Veteran's sole compensable condition and prevented gainful work.",
+  "record_clues": [
+    "A Rating Code Sheet showing a single 60%+ disability (or 70%+ combined with one 40%+ disability) alongside VA medical, Voc Rehab, or Social Security records showing you were unable to work.",
+    "Multiple smaller ratings from the same in-service accident, combat action, or major body system that were never grouped together as 'one disability' under § 4.16(a)(1)–(5) to clear the 60% or 40% threshold.",
+    "A TDIU denial citing part-time, odd-job, or family-business earnings below the U.S. Census Bureau poverty threshold for one person, or accommodated work in a sheltered/protected setting (§ 4.16(a)).",
+    "A mental health rating decision dated between March 1, 1989 and November 6, 1996 keeping a Veteran at 70% despite unemployability from that sole mental disorder (former § 4.16(c))."
+  ],
+  "important_cautions": [
+    "Historical Effective Dates Matter: VA added the Census Bureau poverty-threshold and protected-employment rule to § 4.16(a) effective September 4, 1990 (published August 3, 1990 at 55 FR 31579). That post-September 1990 text cannot be cited as Clear and Unmistakable Error (CUE) against a pre-September 4, 1990 decision.",
+    "Former § 4.16(c) Window (1989–1996): The automatic 100% schedular mental-health upgrade under former § 4.16(c) was in force only from March 1, 1989 (54 FR 4281) until its repeal effective November 7, 1996 (61 FR 52700).",
+    "Service-Connected Disabilities Only: Under both § 4.16(a) and § 4.16(b), VA can consider only the impact of service-connected disabilities—not non-service-connected illnesses or advancing age—when deciding whether you are unable to maintain substantially gainful employment."
+  ],
+  "questions_for_representative": [
+    "Do my service-connected conditions qualify to be grouped as 'one disability' under § 4.16(a)(1)–(5) (common cause, single body system, multiple injuries in action, or POW captivity) to meet the 60% or 40% threshold?",
+    "Were my earnings below the U.S. Census Bureau single-person poverty threshold, or did a family member or sympathetic employer provide special accommodations qualifying as protected/marginal employment?",
+    "If my combined rating was below 60% / 70%-40% when I became unable to work solely from service-connected conditions, should VA have referred my claim under 38 C.F.R. § 4.16(b)?",
+    "Was my claim decided between March 1, 1989 and November 6, 1996 when former 38 C.F.R. § 4.16(c) was in effect?"
+  ]
+}
