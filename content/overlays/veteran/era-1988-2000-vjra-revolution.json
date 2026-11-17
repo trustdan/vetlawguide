@@ -1,0 +1,29 @@
+{
+  "upstream_id": "era-1988-2000-vjra-revolution",
+  "upstream_path": "eras/1988-2000-vjra-revolution.md",
+  "upstream_sha256": "a75e999601ff2f9128a6f0e0c9511a20ea2dd96378c824383ce9f4c68f4b795e",
+  "linked_version_ids": [
+    "38-cfr-3.655-1990-legacy",
+    "38-cfr-4.56-1997-current",
+    "38-cfr-3.156c-1962-pre2006"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Era 3 (1988–2000): Early Court Review & 'Not Well Grounded' Denials",
+  "what_this_means": "The Veterans' Judicial Review Act of November 18, 1988 created independent court review for the first time and required written explanations on VA decisions. However, between November 1988 and November 2000, the law also enforced a strict hurdle called the 'well-grounded claim' rule: if a Veteran did not already have medical evidence linking a condition to service, VA routinely dismissed the claim as 'not well grounded' without providing a VA medical exam. Starting July 21, 1992, VA also became legally responsible for VA hospital records that existed when it decided a claim even if they had not been copied into the paper claims folder.",
+  "record_clues": [
+    "A 1990s Regional Office or Board denial letter stating your claim was 'not well grounded'—especially if military medical or unit records were missing at the time.",
+    "A rating decision dated on or after July 21, 1992 that overlooked findings already recorded in VA Medical Center computer or hospital charts.",
+    "Rating decisions issued near major 1990s schedule updates, such as the November 7, 1996 mental health update or the July 3, 1997 muscle-injury update (published June 3, 1997)."
+  ],
+  "important_cautions": [
+    "A 1990–2000 'not well grounded' denial usually cannot be overturned via Clear and Unmistakable Error (CUE) merely because VA declined to schedule a C&P exam—under the law in effect before November 9, 2000, VA did not owe an exam until a claim was well grounded, and duty-to-assist errors are not CUE.",
+    "Always separate a regulation's Federal Register publication date from its effective date (for example, 38 C.F.R. § 4.56 was published June 3, 1997 but took effect July 3, 1997), and note that post-decision court reinterpretations cannot establish CUE against final decisions under 38 C.F.R. § 20.1403(e) (George v. McDonough).",
+    "Congress created Board CUE motions on November 21, 1997, subject to 38 C.F.R. § 20.1409(c)'s strict limit of one final merits CUE decision per prior Board decision on an issue."
+  ],
+  "questions_for_representative": [
+    "Was my 1990s claim dismissed as 'not well grounded' because official military service or unit records were missing—and if those records were later found, does 38 C.F.R. § 3.156(c) reopen that 1990s effective date?",
+    "For my post-July 21, 1992 rating decision, were there existing VA Medical Center records showing higher severity—or VA treatment within 1 year after the decision under Legacy 38 C.F.R. § 3.156(b)?",
+    "Which exact edition of the VA Rating Schedule was in force on the effective date of my 1990s rating decision?"
+  ]
+}
+

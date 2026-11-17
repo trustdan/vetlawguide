@@ -1,0 +1,27 @@
+{
+  "upstream_id": "doctrine-procedural-vehicles-piercing-finality",
+  "upstream_path": "docs/procedural-vehicles-piercing-finality.md",
+  "upstream_sha256": "6d997a302ce3e35ad7e88d0108814f5ec7c44e63c7281808c55a4b84e05ca0cd",
+  "linked_version_ids": [
+    "38-cfr-3.156c-1962-pre2006",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Legal Ways an Old, Unappealed VA Decision Can Still Be Reopened or Corrected",
+  "what_this_means": "Normally, if a VA rating decision is not appealed within one year, it becomes final—and filing a new claim years later pays benefits only from the date of the new claim. However, federal law recognizes several specific pathways that either bypass finality or show that the older claim never legally closed: (1) newly located official military or surgical records under 38 C.F.R. § 3.156(c), (2) older claims, VA hospital reports (before March 24, 2015), or timely Notices of Disagreement (NODs) that VA never properly finished or mailed, (3) improper reductions of long-standing ratings, and (4) Clear and Unmistakable Error (CUE) for undebatable errors in the law and record at the time.",
+  "record_clues": [
+    "Military inpatient hospital folders from the National Personnel Records Center (NPRC), field medical cards (DD 1380), deck logs, or unit histories added to your C-file years after an earlier denial.",
+    "Envelopes in your C-file stamped 'Returned Undeliverable,' or VA Medical Center (VAMC) records showing a newer mailing address than the address VA used for a decision or C&P exam letter.",
+    "A timely pre-2019 Notice of Disagreement (NOD) in your file with no responsive Statement of the Case (SOC), or a post-February 19, 2019 Appeals Modernization Act (AMA) decision that silently skipped a claimed condition."
+  ],
+  "important_cautions": [
+    "Checking non-CUE pathways (like § 3.156(c) service records or unfinished pending claims) first is often critical because those pathways allow VA to consider new medical opinions and apply the benefit-of-the-doubt rule, whereas CUE is strictly limited to the historical record.",
+    "Missing records or an inadequate C&P exam (duty-to-assist errors) cannot establish CUE, and later court reinterpretations of a rule generally cannot prove CUE in an older final decision.",
+    "Under 38 C.F.R. § 20.1409(c), VA allows only one final merits CUE decision per prior Board of Veterans' Appeals (BVA) decision on an issue—never rush a Board CUE filing without full C-file review."
+  ],
+  "questions_for_representative": [
+    "Before considering a CUE motion, could my older decision qualify for reconsideration based on newly associated military or inpatient surgical records under 38 C.F.R. § 3.156(c)?",
+    "Does my C-file contain any unfinished pre-2015 informal claims, VA hospital reports, unissued Statements of the Case (SOCs), or returned mail envelopes?",
+    "If I am a military retiree with combat-related disabilities, should we also check Combat-Related Special Compensation (CRSC) back-pay rules with my service branch?"
+  ]
+}

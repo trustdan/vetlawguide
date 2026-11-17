@@ -1,0 +1,513 @@
+[
+  {
+    "eraAAuthority": "Vet. Reg. No. 1(a), Part I",
+    "subject": "Wartime service-connected disability & death compensation (par. I(a) basic grant; par. I(b) soundness; par. I(c) chronic/tropical presumptions; par. II(a)–(p) percentage & statutory SMC rates)",
+    "eraBSection": "38 U.S.C. §§ 310–315",
+    "eraCSection": "38 U.S.C. §§ 1110–1115",
+    "notes": "E.O. 6156 (June 6, 1933), as amended"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 1(a), Part II",
+    "subject": "Peacetime service-connected disability & death compensation (Note: historically paid at 80% of wartime rates until equalized by Pub. L. 93-177 / Pub. L. 93-295 in 1973–1974!)",
+    "eraBSection": "38 U.S.C. §§ 331–335",
+    "eraCSection": "38 U.S.C. §§ 1131–1135",
+    "notes": "E.O. 6156 (June 6, 1933), as amended"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 1(a), Part III",
+    "subject": "Non-service-connected (NSC) permanent and total wartime disability pension",
+    "eraBSection": "38 U.S.C. §§ 521–523",
+    "eraCSection": "38 U.S.C. §§ 1521–1523",
+    "notes": "E.O. 6156 (June 6, 1933), as amended"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 1(a), Part VII",
+    "subject": "Vocational rehabilitation for service-disabled veterans",
+    "eraBSection": "38 U.S.C. §§ 1501–1511",
+    "eraCSection": "38 U.S.C. §§ 3100–3121 (Ch. 31)",
+    "notes": "Added by Pub. L. 78-16 (57 Stat. 43, Mar. 24, 1943)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 1(a), Part VIII",
+    "subject": "WWII G.I. Bill education and training allowances",
+    "eraBSection": "38 U.S.C. Ch. 33/34 (Korean/Post-Korean)",
+    "eraCSection": "38 U.S.C. Ch. 30 / 33",
+    "notes": "Added by Pub. L. 78-346 (58 Stat. 284, June 22, 1944)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 2(a)",
+    "subject": "Filing of claims, effective dates of awards, reductions/discontinuances, and appellate review before the Board of Veterans' Appeals (Part II)",
+    "eraBSection": "38 U.S.C. §§ 3001, 3010, 3012, 4001–4008",
+    "eraCSection": "38 U.S.C. §§ 5101, 5110, 5112, 7101–7108",
+    "notes": "E.O. 6230 (July 28, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 3(a)",
+    "subject": "Authority for the Schedule for Rating Disabilities (VASRD) based on average impairment in earning capacity (basis for the 1945 Schedule, eff. Apr. 1, 1946)",
+    "eraBSection": "38 U.S.C. § 355",
+    "eraCSection": "38 U.S.C. § 1155",
+    "notes": "E.O. 6157 (June 6, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 4 & No. 5",
+    "subject": "Protected pre-1933 awards and emergency officers' retirement rules",
+    "eraBSection": "Savings notes",
+    "eraCSection": "Historical savings notes",
+    "notes": "E.O. 6092 & E.O. 6093 (Mar. 31, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 6(a) & No. 7(a)",
+    "subject": "Eligibility for VA hospital, domiciliary, and outpatient medical care",
+    "eraBSection": "38 U.S.C. §§ 610, 612",
+    "eraCSection": "38 U.S.C. §§ 1710, 1712",
+    "notes": "E.O. 6232 & E.O. 6233 (July 28, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 8",
+    "subject": "Yearly renewable term / government life insurance administration",
+    "eraBSection": "38 U.S.C. Ch. 19 (§§ 701+)",
+    "eraCSection": "38 U.S.C. Ch. 19 (§§ 1901+)",
+    "notes": "E.O. 6096 (Mar. 31, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 9(a)",
+    "subject": "Burial flags, funeral expenses, and burial allowances",
+    "eraBSection": "38 U.S.C. §§ 901–904",
+    "eraCSection": "38 U.S.C. §§ 2301–2304",
+    "notes": "E.O. 6158 (June 6, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 10",
+    "subject": "Master definitions (\"veteran,\" \"child,\" \"widow,\" par. VIII line of duty & willful misconduct), non-assignability, and agent/attorney rules",
+    "eraBSection": "38 U.S.C. §§ 101, 105, 3101, 3404",
+    "eraCSection": "38 U.S.C. §§ 101, 105, 5301, 5904",
+    "notes": "E.O. 6098 (Mar. 31, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 11",
+    "subject": "Confidentiality of VA claims files and release of records",
+    "eraBSection": "38 U.S.C. § 3301",
+    "eraCSection": "38 U.S.C. § 5701",
+    "notes": "E.O. 6099 (Mar. 31, 1933)"
+  },
+  {
+    "eraAAuthority": "Vet. Reg. No. 12",
+    "subject": "Presumptions of service connection for Spanish-American War & WWI veterans",
+    "eraBSection": "38 U.S.C. §§ 353, 512",
+    "eraCSection": "38 U.S.C. §§ 1153, 1512",
+    "notes": "E.O. 6100 (Mar. 31, 1933)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 1 — General Definitions & Ancillary Rules",
+    "eraBSection": "§§ 101–114",
+    "eraCSection": "§§ 101–118",
+    "notes": "Retained 3-digit 100-series (Pub. L. 85-857; Pub. L. 102-83)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 3 / 5 / 7 / 9 — VA Organization & Authority of Secretary",
+    "eraBSection": "§§ 201–246 (former Ch. 3)",
+    "eraCSection": "§§ 301–324, 501–547, 701–728, 901–905",
+    "notes": "Restated & redistributed (Pub. L. 102-83, § 2(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 11 — Disability & Death Compensation",
+    "eraBSection": "§§ 301–363",
+    "eraCSection": "§§ 1101–1168",
+    "notes": "+ 800 (replace leading 3 with 11; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 13 — Dependency & Indemnity Compensation (DIC)",
+    "eraBSection": "§§ 401–423",
+    "eraCSection": "§§ 1301–1323",
+    "notes": "+ 900 (replace leading 4 with 13; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 15 — Non-Service-Connected Pension",
+    "eraBSection": "§§ 501–562",
+    "eraCSection": "§§ 1501–1562",
+    "notes": "+ 1000 (replace leading 5 with 15; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 17 — Hospital, Medical Care & §§ 1725/1728 Reimbursement",
+    "eraBSection": "§§ 601–664",
+    "eraCSection": "§§ 1701–1789",
+    "notes": "+ 1100 (replace leading 6 with 17; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 19 — Life Insurance (NSLI, USGLI, SGLI)",
+    "eraBSection": "§§ 701–788",
+    "eraCSection": "§§ 1901–1988",
+    "notes": "+ 1200 (replace leading 7 with 19; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 21 — Specially Adapted Housing (SAH)",
+    "eraBSection": "§§ 801–806",
+    "eraCSection": "§§ 2101–2109",
+    "notes": "+ 1300 (replace leading 8 with 21; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 23 — Burial & Plot Allowances",
+    "eraBSection": "§§ 901–908",
+    "eraCSection": "§§ 2301–2308",
+    "notes": "+ 1400 (replace leading 9 with 23; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 24 — National Cemeteries & Memorials",
+    "eraBSection": "§§ 1000–1010",
+    "eraCSection": "§§ 2400–2414",
+    "notes": "+ 1400 (replace 10 with 24; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 30 / 32 — All-Volunteer Force (MGIB) & VEAP",
+    "eraBSection": "§§ 1401–1436, 1601–1643",
+    "eraCSection": "§§ 3001–3036, 3201–3243",
+    "notes": "+ 1600 (Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 31 — Vocational Rehabilitation (VR&E)",
+    "eraBSection": "§§ 1500–1521",
+    "eraCSection": "§§ 3100–3122",
+    "notes": "+ 1600 (replace 15 with 31; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 35 — Survivors' & Dependents' Education (DEA)",
+    "eraBSection": "§§ 1700–1766",
+    "eraCSection": "§§ 3500–3566",
+    "notes": "+ 1800 (replace 17 with 35; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 37 — Housing & Small Business Loans",
+    "eraBSection": "§§ 1801–1851",
+    "eraCSection": "§§ 3701–3775",
+    "notes": "+ 1900 (replace 18 with 37; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 39 — Adaptive Automobiles & Equipment",
+    "eraBSection": "§§ 1901–1904",
+    "eraCSection": "§§ 3901–3904",
+    "notes": "+ 2000 (replace 19 with 39; Pub. L. 102-83, § 5(a), Aug. 6, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 51 — Claims, Effective Dates & Payments",
+    "eraBSection": "§§ 3001–3023",
+    "eraCSection": "§§ 5101–5126",
+    "notes": "+ 2100 (replace 30 with 51; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 53 — Special Provisions (COD, Offsets, Waivers, Apportionment)",
+    "eraBSection": "§§ 3101–3118",
+    "eraCSection": "§§ 5301–5321",
+    "notes": "+ 2200 (replace 31 with 53; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 55 — Minors, Incompetents & Fiduciaries",
+    "eraBSection": "§§ 3201–3205",
+    "eraCSection": "§§ 5501–5510",
+    "notes": "+ 2300 (replace 32 with 55; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 57 — Records, Confidentiality & Investigations",
+    "eraBSection": "§§ 3301–3313",
+    "eraCSection": "§§ 5701–5728",
+    "notes": "+ 2400 (replace 33 with 57; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 59 — Agents, Attorneys & § 5904 Fees",
+    "eraBSection": "§§ 3401–3405",
+    "eraCSection": "§§ 5901–5906",
+    "notes": "+ 2500 (replace 34 with 59; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 61 — Penal, Fraud & Forfeiture Provisions",
+    "eraBSection": "§§ 3501–3505",
+    "eraCSection": "§§ 6101–6108",
+    "notes": "+ 2600 (replace 35 with 61; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 71 — Board of Veterans' Appeals (BVA)",
+    "eraBSection": "§§ 4001–4009",
+    "eraCSection": "§§ 7101–7113",
+    "notes": "+ 3100 (replace 40 with 71; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraAAuthority": "Pre-1959 Veterans' Regulations",
+    "subject": "Ch. 72 — Court of Appeals for Veterans Claims (CAVC)",
+    "eraBSection": "§§ 4051–4092",
+    "eraCSection": "§§ 7251–7299",
+    "notes": "+ 3200 (replace 40 with 72; Pub. L. 102-40, § 402, May 7, 1991)"
+  },
+  {
+    "eraCSection": "§ 101(2), (13), (16), (24)",
+    "eraBSection": "§ 101(2), (13), (16), (24)",
+    "eraAAuthority": "Vet. Reg. No. 10, pars. I–IV",
+    "subject": "Definitions of \"veteran\"",
+    "notes": "Definitions of \"veteran\" (\"under conditions other than dishonorable\"), \"compensation,\" \"service-connected,\" and \"active military, naval, or air service.\""
+  },
+  {
+    "eraCSection": "§ 105(a)",
+    "eraBSection": "§ 105(a)",
+    "eraAAuthority": "Vet. Reg. No. 10, par. VIII",
+    "subject": "Presumption of line of duty and willful-misconduct / primary substance-abuse bar",
+    "notes": "Presumption of line of duty and willful-misconduct / primary substance-abuse bar (cf. Allen v. Principi secondary exception)."
+  },
+  {
+    "eraCSection": "§ 110",
+    "eraBSection": "§ 110",
+    "eraAAuthority": "Pub. L. 83-311 (68 Stat. 29, Mar. 17, 1954)",
+    "subject": "20-year continuous rating protection",
+    "notes": "20-year continuous rating protection (38 C.F.R. § 3.951(b)) barring reduction below continuous level absent fraud (Playbook 05)."
+  },
+  {
+    "eraCSection": "§ 501(a)",
+    "eraBSection": "§ 210(c)",
+    "eraAAuthority": "Pub. L. 73-2 / Vet. Regs.",
+    "subject": "General rulemaking authority of the Secretary to prescribe regulations, proof requirements, and forms.",
+    "notes": "General rulemaking authority of the Secretary to prescribe regulations, proof requirements, and forms."
+  },
+  {
+    "eraCSection": "§ 502",
+    "eraBSection": "§ 223 (added Nov. 18, 1988)",
+    "eraAAuthority": "Barred (Economy Act § 5)",
+    "subject": "Direct Federal Circuit APA judicial review of VA rulemakings and substantive general policies.",
+    "notes": "Direct Federal Circuit APA judicial review of VA rulemakings and substantive general policies."
+  },
+  {
+    "eraCSection": "§ 511(a)–(b)",
+    "eraBSection": "§ 211(a)",
+    "eraAAuthority": "Economy Act § 5; 54 Stat. 1197",
+    "subject": "Secretary's exclusive benefit-adjudication jurisdiction and judicial-review channeling rule",
+    "notes": "Secretary's exclusive benefit-adjudication jurisdiction and judicial-review channeling rule (with four § 511(b) exceptions)."
+  },
+  {
+    "eraCSection": "§ 1110 & § 1131",
+    "eraBSection": "§ 310 & § 331",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. I, par. I(a) & Pt. II, par. I(a)",
+    "subject": "Basic wartime",
+    "notes": "Basic wartime (§ 1110) and peacetime (§ 1131) service-connected disability compensation grants."
+  },
+  {
+    "eraCSection": "§ 1111 & § 1132",
+    "eraBSection": "§ 311 & § 332",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. I, par. I(b) (Pub. L. 78-144)",
+    "subject": "Presumption of sound condition at entry unless noted at entrance",
+    "notes": "Presumption of sound condition at entry unless noted at entrance; requires clear & unmistakable proof of both preexistence and lack of aggravation (Wagner)."
+  },
+  {
+    "eraCSection": "§ 1112 & § 1137",
+    "eraBSection": "§ 312 & § 337",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. I, par. I(c)",
+    "subject": "Statutory chronic, tropical, POW, ALS",
+    "notes": "Statutory chronic, tropical, POW, ALS (§ 3.318), and radiation (§ 1112(c)) presumptions (Playbook 07)."
+  },
+  {
+    "eraCSection": "§ 1114(a)–(t)",
+    "eraBSection": "§ 314(a)–(s)",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. I, par. II(a)–(p)",
+    "subject": "Compensation dollar rates",
+    "notes": "Compensation dollar rates (a–j) and Special Monthly Compensation (SMC(k)–(t)) (Playbook 04)."
+  },
+  {
+    "eraCSection": "§ 1116 / § 1116A",
+    "eraBSection": "§ 316 (added Feb. 6, 1991, Pub. L. 102-4)",
+    "eraAAuthority": "None",
+    "subject": "Agent Orange / herbicide presumptive service connection",
+    "notes": "Agent Orange / herbicide presumptive service connection (Pub. L. 102-4; Pub. L. 116-23 Blue Water Navy; Pub. L. 117-168 PACT Act) (Playbook 06)."
+  },
+  {
+    "eraCSection": "§ 1151",
+    "eraBSection": "§ 351",
+    "eraAAuthority": "World War Veterans' Act § 213 (1924); Pub. L. 73-141, § 31",
+    "subject": "Compensation \"as if\" service-connected for additional disability or death caused by VA medical care/vocational rehabilitation",
+    "notes": "Compensation \"as if\" service-connected for additional disability or death caused by VA medical care/vocational rehabilitation (Note: Pub. L. 104-204, § 422, eff. Oct. 1, 1997, added fault/unforeseen-event element overturning Gardner)."
+  },
+  {
+    "eraCSection": "§ 1153",
+    "eraBSection": "§ 353",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. I, par. I(d)",
+    "subject": "In-service aggravation of preexisting injury or disease beyond natural progression.",
+    "notes": "In-service aggravation of preexisting injury or disease beyond natural progression."
+  },
+  {
+    "eraCSection": "§ 1154(a)–(b)",
+    "eraBSection": "§ 354(a)–(b)",
+    "eraAAuthority": "Pub. L. 77-361 (55 Stat. 847, Dec. 20, 1941)",
+    "subject": "Consideration of places/types/circumstances of service",
+    "notes": "Consideration of places/types/circumstances of service ((a)) and combat-veteran lay evidence relaxation ((b))."
+  },
+  {
+    "eraCSection": "§ 1155",
+    "eraBSection": "§ 355",
+    "eraAAuthority": "Vet. Reg. No. 3(a)",
+    "subject": "VASRD schedule authority + prohibition against reducing an individual's in-force percentage solely due to a VASRD revision",
+    "notes": "VASRD schedule authority + prohibition against reducing an individual's in-force percentage solely due to a VASRD revision (38 C.F.R. § 3.951(a))."
+  },
+  {
+    "eraCSection": "§ 1159",
+    "eraBSection": "§ 359 (eff. Jan. 1, 1962)",
+    "eraAAuthority": "None (pre-1958 savings in § 3.953)",
+    "subject": "10-year protection of service connection against severance",
+    "notes": "10-year protection of service connection against severance (38 C.F.R. § 3.957)."
+  },
+  {
+    "eraCSection": "§ 1160",
+    "eraBSection": "§ 360 (added Pub. L. 87-610, 1962)",
+    "eraAAuthority": "None",
+    "subject": "Paired-organ / extremity \"as if\" service connection",
+    "notes": "Paired-organ / extremity \"as if\" service connection (38 C.F.R. § 3.383)."
+  },
+  {
+    "eraCSection": "§ 1310 & § 1318",
+    "eraBSection": "§ 410(a) & § 410(b) / § 418",
+    "eraAAuthority": "Pub. L. 84-881 (1956 DIC Act)",
+    "subject": "Service-connected survivor DIC",
+    "notes": "Service-connected survivor DIC (§ 1310) and 10-year 100% / TDIU non-service-connected death DIC (§ 1318, formerly § 410(b) until Pub. L. 100-687 § 1403 created § 418)."
+  },
+  {
+    "eraCSection": "§ 1521",
+    "eraBSection": "§ 521",
+    "eraAAuthority": "Vet. Reg. 1(a), Pt. III",
+    "subject": "Wartime non-service-connected Veterans Pension",
+    "notes": "Wartime non-service-connected Veterans Pension (overhauled by Pub. L. 95-588 Improved Pension, eff. Jan. 1, 1979)."
+  },
+  {
+    "eraCSection": "§ 1725 & § 1728",
+    "eraBSection": "(Added Pub. L. 106-117 in 1999) & § 628 (added 1973)",
+    "eraAAuthority": "Administrative rules",
+    "subject": "Unauthorized non-VA emergency medical care reimbursement",
+    "notes": "Unauthorized non-VA emergency medical care reimbursement (§ 1728 SC/voc-rehab emergencies; § 1725 NSC emergencies—Staab / Wolfe)."
+  },
+  {
+    "eraCSection": "§ 5101(a)",
+    "eraBSection": "§ 3001(a)",
+    "eraAAuthority": "Vet. Reg. No. 2(a), Pt. I, par. I",
+    "subject": "Requirement to file a specific claim in the form prescribed by the Secretary.",
+    "notes": "Requirement to file a specific claim in the form prescribed by the Secretary."
+  },
+  {
+    "eraCSection": "§ 5104(a)–(b)",
+    "eraBSection": "§ 3004 (added Pub. L. 101-237, 1989)",
+    "eraAAuthority": "38 C.F.R. § 3.103",
+    "subject": "Mandatory notice of decisions & AMA explicit-notice rule",
+    "notes": "Mandatory notice of decisions & AMA explicit-notice rule (§ 5104(b)) abolishing implicit denial post-Feb. 19, 2019 (Hamill v. Collins, 166 F.4th 1030 (Fed. Cir. 2026))."
+  },
+  {
+    "eraCSection": "§ 5107(b)",
+    "eraBSection": "§ 3007(b) (codified 1988)",
+    "eraAAuthority": "38 C.F.R. § 3.102 (1961+)",
+    "subject": "Benefit of the doubt",
+    "notes": "Benefit of the doubt (\"approximate balance\" / equipoise) (Gilbert; Bufkin v. Collins, 604 U.S. 369 (2025))."
+  },
+  {
+    "eraCSection": "§ 5108",
+    "eraBSection": "§ 3008 (codified 1988)",
+    "eraAAuthority": "38 C.F.R. § 3.156(a)",
+    "subject": "Reopening / Supplemental Claim threshold",
+    "notes": "Reopening / Supplemental Claim threshold (new and material in Legacy; new and relevant post-Feb. 19, 2019 under AMA)."
+  },
+  {
+    "eraCSection": "§ 5110(a)–(n)",
+    "eraBSection": "§ 3010(a)–(n)",
+    "eraAAuthority": "Vet. Reg. No. 2(a), Pt. I",
+    "subject": "Master Effective-Date Statute",
+    "notes": "Master Effective-Date Statute ((a) date of claim / continuous pursuit; (b)(1) 1-yr post-discharge; (b)(2) 1-yr increase lookback; (d) 1-yr death DIC lookback; (g) liberalizing law § 3.114)."
+  },
+  {
+    "eraCSection": "§ 5112(b)(6)",
+    "eraBSection": "§ 3012(b)(6)",
+    "eraAAuthority": "Vet. Reg. No. 2(a), Pt. I, par. IV",
+    "subject": "Effective date of rating reductions",
+    "notes": "Effective date of rating reductions (last day of month + 60 days after final notice; 38 C.F.R. § 3.105(e))."
+  },
+  {
+    "eraCSection": "§ 5121",
+    "eraBSection": "§ 3021",
+    "eraAAuthority": "Pub. L. 78-144, § 12 (1943)",
+    "subject": "Accrued benefits payable upon claimant's death based on evidence in file at date of death.",
+    "notes": "Accrued benefits payable upon claimant's death based on evidence in file at date of death."
+  },
+  {
+    "eraCSection": "§ 5303",
+    "eraBSection": "§ 3103",
+    "eraAAuthority": "Pub. L. 78-346, § 300 (1944)",
+    "subject": "Statutory Character-of-Discharge",
+    "notes": "Statutory Character-of-Discharge (COD) bars and § 5303(b) insanity exception (38 C.F.R. §§ 3.12, 3.354)."
+  },
+  {
+    "eraCSection": "§ 5304 & § 5305",
+    "eraBSection": "§ 3104 & § 3105",
+    "eraAAuthority": "Economy Act / 1944 Act",
+    "subject": "Prohibition against concurrent duplication of military retired pay and VA compensation",
+    "notes": "Prohibition against concurrent duplication of military retired pay and VA compensation (subject to 10 U.S.C. §§ 1413a CRSC, 1414 CRDP)."
+  },
+  {
+    "eraCSection": "§ 5307",
+    "eraBSection": "§ 3107",
+    "eraAAuthority": "Pub. L. 76-866 (1940)",
+    "subject": "Apportionment of veteran's benefits to estranged spouse, children, or dependent parents.",
+    "notes": "Apportionment of veteran's benefits to estranged spouse, children, or dependent parents."
+  },
+  {
+    "eraCSection": "§ 5314 & § 5302",
+    "eraBSection": "§ 3114 & § 3102",
+    "eraAAuthority": "World War Veterans' Act § 28",
+    "subject": "Benefit overpayment recoupment offsets",
+    "notes": "Benefit overpayment recoupment offsets (§ 5314) and equity/good-conscience debt waivers (§ 5302)."
+  },
+  {
+    "eraCSection": "§ 5502 & § 5503",
+    "eraBSection": "§ 3202 & § 3203",
+    "eraAAuthority": "World War Veterans' Act § 21",
+    "subject": "Appointment/supervision of fiduciaries and incompetency determinations",
+    "notes": "Appointment/supervision of fiduciaries and incompetency determinations (38 C.F.R. § 3.353)."
+  },
+  {
+    "eraCSection": "§ 5904",
+    "eraBSection": "§ 3404",
+    "eraAAuthority": "Vet. Reg. No. 10, par. XVII",
+    "subject": "Accreditation and contingency/direct-pay attorney fees",
+    "notes": "Accreditation and contingency/direct-pay attorney fees (§ 5904(c)–(d))."
+  },
+  {
+    "eraCSection": "§ 7104(a), (c), (d)(1)",
+    "eraBSection": "§ 4004(a), (c), (d)(1)",
+    "eraAAuthority": "Vet. Reg. No. 2(a), Pt. II",
+    "subject": "BVA jurisdiction",
+    "notes": "BVA jurisdiction ((a)), binding force of statutes, regulations & VAOPGCPREC opinions ((c)), and written \"reasons or bases\" ((d)(1))."
+  },
+  {
+    "eraCSection": "§ 7105",
+    "eraBSection": "§ 4005",
+    "eraAAuthority": "Vet. Reg. No. 2(a), Pt. II",
+    "subject": "Filing of Notice of Disagreement",
+    "notes": "Filing of Notice of Disagreement (NOD)—Legacy SOC/Form 9 vs. AMA direct VA Form 10182 (1-year deadline)."
+  },
+  {
+    "eraCSection": "§ 7252, § 7261, § 7266, § 7292",
+    "eraBSection": "§§ 4052, 4061, 4066, 4092 (1988–May 6, 1991)",
+    "eraAAuthority": "None",
+    "subject": "CAVC exclusive jurisdiction",
+    "notes": "CAVC exclusive jurisdiction (§ 7252), scope of review (§ 7261), 120-day appeal window (§ 7266, subject to Henderson equitable tolling), and Federal Circuit review (§ 7292)."
+  }
+]

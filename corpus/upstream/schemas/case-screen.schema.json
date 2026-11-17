@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://va-law-planning.local/schemas/case-screen.schema.json",
+  "title": "Veterans Law Retroactive Case-Screening Hypothesis Record",
+  "description": "Structured intake and issue-spotting schema enforcing temporal gates, finality/notice event auditing, Bell constructive-possession scope, and cross-system Title 10 CRSC routing.",
+  "type": "object",
+  "required": [
+    "screen_id",
+    "veteran_profile",
+    "target_issue",
+    "claim_and_decision_timeline",
+    "finality_and_record_scope",
+    "retroactive_vehicle_candidates",
+    "verification_gates"
+  ],
+  "properties": {
+    "screen_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Anonymized case-screen identifier (never include SSN, VA file number, or veteran name in repo)."
+    },
+    "veteran_profile": {
+      "type": "object",
+      "required": ["service_eras", "retiree_status"],
+      "properties": {
+        "service_eras": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["WWII", "Korea", "Vietnam", "Cold-War-Peacetime", "Gulf-War", "Post-9/11"]
+          }
+        },
+        "ninety_days_continuous_service": { "type": "boolean" },
+        "combat_indicator": { "type": "boolean" },
+        "purple_heart_or_combat_badge": { "type": "boolean" },
+        "pow_status": { "type": "boolean" },
+        "retiree_status": {
+          "type": "string",
+          "enum": ["none", "regular-20yr", "reserve-20yr", "chapter-61-medical", "tdrl-severance"]
+        },
+        "toxic_exposure_zones": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rvn-boots-on-ground",
+              "rvn-blue-water-12nm",
+              "korean-dmz",
+              "thailand-base",
+              "laos-cambodia-guam-samoa-johnston",
+              "camp-lejeune",
+              "sw-asia-burn-pit-tera"
+            ]
+          }
+        }
+      }
+    },
+    "target_issue": {
+      "type": "object",
+      "required": ["disability_description"],
+      "properties": {
+        "disability_description": { "type": "string" },
+        "diagnostic_codes_historical": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "diagnostic_codes_current": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "claim_and_decision_timeline": {
+      "type": "object",
+      "properties": {
+        "earliest_possible_claim_date": {
+          "type": ["string", "null"],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "challenged_decision": {
+          "type": "object",
+          "required": ["agency", "decision_date"],
+          "properties": {
+            "agency": { "type": "string", "enum": ["AOJ-RO", "BVA"] },
+            "decision_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "notification_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+          }
+        },
+        "notice_events": {
+          "type": "array",
+          "description": "Computable mailing audit entries per Ashley, Mindenhall, Cross, Woods, and Romero.",
+          "items": {
+            "type": "object",
+            "required": ["document_type", "document_date", "address_matches_latest_of_record"],
+            "properties": {
+              "document_type": {
+                "type": "string",
+                "enum": ["cp-exam-notice", "rating-decision-letter", "soc-ssoc", "proposed-reduction", "bva-decision"]
+              },
+              "document_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+              "address_matches_latest_of_record": { "type": "boolean" },
+              "better_address_in_va_records": { "type": "boolean" },
+              "returned_undeliverable_in_cfile": { "type": "boolean" },
+              "representative_copy_required_and_sent": { "type": ["boolean", "null"] },
+              "systemic_irregularity_evidence": { "type": "boolean" },
+              "proof_of_actual_receipt": { "type": "boolean" }
+            }
+          }
+        },
+        "service_records_added_after_denial": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["record_type", "associated_date", "existed_at_prior_decision", "relevant_to_disputed_issue"],
+            "properties": {
+              "record_type": { "type": "string" },
+              "associated_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+              "existed_at_prior_decision": { "type": "boolean" },
+              "relevant_to_disputed_issue": { "type": "boolean" },
+              "claimant_withheld_identifying_info_3_156c2": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "finality_and_record_scope": {
+      "type": "object",
+      "required": ["decision_finality_status", "bva_subsumed", "implicit_denial_regime", "record_scope"],
+      "properties": {
+        "decision_finality_status": {
+          "type": "string",
+          "enum": [
+            "non-final-defective-notice",
+            "non-final-nod-without-soc",
+            "non-final-lang-3-156b-vamc-within-1yr",
+            "non-final-freund-vacols-sweep",
+            "non-final-ama-omitted-issue-hamill",
+            "non-final-continuous-pursuit",
+            "final"
+          ]
+        },
+        "bva_subsumed": {
+          "type": "boolean",
+          "description": "If true, AOJ CUE under § 5109A is jurisdictionally barred; must evaluate BVA CUE under § 7111."
+        },
+        "prior_bva_cue_decided_on_merits": {
+          "type": "boolean",
+          "description": "If true, res judicata under 38 C.F.R. § 20.1409(c) bars any second BVA CUE motion on the same issue."
+        },
+        "implicit_denial_regime": {
+          "type": "string",
+          "enum": ["legacy-deshotel-adams-hampton", "ama-no-implicit-denial-hamill", "not-applicable"]
+        },
+        "record_scope": {
+          "type": "string",
+          "enum": [
+            "open-record-benefit-of-doubt",
+            "actual-cfile-only-pre-1992-07-21",
+            "constructive-va-record-post-bell-1992-07-21",
+            "closed-board-record"
+          ]
+        }
+      }
+    },
+    "retroactive_vehicle_candidates": {
+      "type": "object",
+      "properties": {
+        "primary_title38_vehicle": {
+          "type": "string",
+          "enum": [
+            "service-records-3.156c",
+            "nehmer-3.816",
+            "void-rating-reduction",
+            "defective-notice-pending-claim",
+            "ama-explicit-notice-5104b-hamill",
+            "pre-2015-pending-informal-or-tdiu",
+            "ama-continuous-pursuit-3.2500",
+            "cue-ro-3.105a",
+            "cue-bva-7111",
+            "prospective-supplemental-only"
+          ]
+        },
+        "cue_gate_check": {
+          "type": "object",
+          "properties": {
+            "error_of_fact_or_extant_law": { "type": "string", "enum": ["yes", "no", "unverified"] },
+            "undebatable_non_weighing": { "type": "string", "enum": ["yes", "no", "unverified"] },
+            "manifestly_changed_combined_payment": { "type": "string", "enum": ["yes", "no", "unverified"] },
+            "barred_by_cook_duty_to_assist": { "type": "boolean" },
+            "barred_by_george_later_change_in_law": { "type": "boolean" }
+          }
+        },
+        "ancillary_and_cross_system_multipliers": {
+          "type": "object",
+          "properties": {
+            "smc_k_candidate": { "type": "boolean" },
+            "smc_l_aid_and_attendance_candidate": { "type": "boolean" },
+            "smc_s_statutory_housebound_candidate": { "type": "boolean" },
+            "smc_f_barry_multistep_candidate": {
+              "type": "boolean",
+              "description": "Multiple half-step/full-step intermediate SMC bumps under 38 C.F.R. § 3.350(f)(3)-(4) per Barry v. McDonough (2024)."
+            },
+            "dod_title10_crsc_soto_uncapped_arrears": {
+              "type": "boolean",
+              "description": "Title 10 DoD/DFAS retired-pay claim (10 U.S.C. § 1413a), NOT a Title 38 VA claim."
+            }
+          }
+        }
+      }
+    },
+    "verification_gates": {
+      "type": "object",
+      "required": [
+        "contemporaneous_cfr_text_pulled",
+        "publication_vs_effective_date_checked",
+        "bva_subsumption_checked",
+        "combined_ratings_table_math_checked",
+        "unfinalized_proposals_guard_checked"
+      ],
+      "properties": {
+        "contemporaneous_cfr_text_pulled": { "type": "boolean" },
+        "publication_vs_effective_date_checked": { "type": "boolean" },
+        "bva_subsumption_checked": { "type": "boolean" },
+        "combined_ratings_table_math_checked": { "type": "boolean" },
+        "unfinalized_proposals_guard_checked": { "type": "boolean" }
+      }
+    }
+  }
+}

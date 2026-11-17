@@ -1,0 +1,27 @@
+{
+  "upstream_id": "auth-38-cfr-3-156c-evolution",
+  "upstream_path": "authorities/part-3/38-cfr-3.156c-service-records-evolution.md",
+  "upstream_sha256": "97e62baeaf224ecd7ed0e1c048f1f3767dd1e6da7f15cf91bfadc98cad9ac820",
+  "linked_version_ids": [
+    "38-cfr-3.156c-1962-pre2006",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "When Newly Located Military or Service Records Reopen an Old Claim With Early Effective Dates (38 C.F.R. § 3.156(c))",
+  "what_this_means": "Sometimes VA denied or underrated a claim years or decades ago because official military records—such as inpatient surgical packets, field medical cards, deck logs, morning reports, or formerly classified unit records—had not yet been placed into the VA claims file. Under both the pre-October 6, 2006 and current versions of 38 C.F.R. § 3.156(c), when VA later receives relevant official service department records that existed at the time of the original decision, VA must reconsider the prior claim and—if benefits are granted at least in part based on those records—can assign an effective date back to the original claim (or when the condition arose, if later), without requiring the Veteran to prove Clear and Unmistakable Error (CUE).",
+  "record_clues": [
+    "Old VA denial letters stating 'service medical records are negative' or 'records unavailable from the National Personnel Records Center (NPRC),' followed years later by newly located hospital clinical packets, morning reports, or deck logs.",
+    "Inpatient hospital treatment folders stored separately at NPRC that were never sent to VA with your routine outpatient Service Treatment Records (STRs).",
+    "Declassified unit histories, combat action logs, or Department of Defense (DoD) / Joint Services Records Research Center (JSRRC) stressor verification records associated with your C-file after an earlier denial."
+  ],
+  "important_cautions": [
+    "Publication vs. Effective Date Note: VA proposed updating § 3.156(c) on June 20, 2005 (70 FR 35388) and published the final rule on September 6, 2006 (71 FR 52455), taking effect October 6, 2006—though courts have recognized that the pre-2006 rule paired with former § 3.400(q)(2) carried parallel retroactive effective-date protections.",
+    "Section 3.156(c) does not apply to records created after VA's earlier decision (such as a modern private doctor's letter) or cases where the claimant did not give VA enough basic identifying information to request the military records.",
+    "Even when newly associated service records show an in-service injury, medical evidence across the historical period is still needed to establish the disability's existence and severity over time."
+  ],
+  "questions_for_representative": [
+    "Can we compare the exact inventory of service records listed in my original VA rating decision against the full NPRC inpatient clinical and unit records in my C-file today?",
+    "Were any hospital admission packets, operative notes, deck logs, or unit records added to my C-file after my original denial or 0% rating?",
+    "Would pursuing reconsideration under 38 C.F.R. § 3.156(c) be more protective than a CUE motion, since § 3.156(c) allows VA to weigh the newly associated service records under the benefit-of-the-doubt standard?"
+  ]
+}

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9f5;
+  --foreground: #141923;
+  --surface: #f3eee3;
+  --surface-elevated: #ffffff;
+  --muted: #eae3d4;
+  --muted-foreground: #414a5c;
+  --border: #d4cbb8;
+  --primary: #1b365d;
+  --primary-foreground: #fbf9f5;
+  --accent: #784f12;
+  --accent-foreground: #ffffff;
+
+  /* 4-State Honest Coverage & Quarantine Tokens (WCAG 2.2 AA+ Contrast Verified) */
+  --status-verified-bg: #e8f5ee;
+  --status-verified-fg: #14532d;
+  --status-verified-border: #6ee7b7;
+
+  --status-summary-bg: #fef6e0;
+  --status-summary-fg: #713f12;
+  --status-summary-border: #fbbf24;
+
+  --status-pending-bg: #edf4fc;
+  --status-pending-fg: #1e3a8a;
+  --status-pending-border: #93c5fd;
+
+  --status-gap-bg: #fef2f2;
+  --status-gap-fg: #7f1d1d;
+  --status-gap-border: #fca5a5;
+
+  /* Semantic Redline Diff Tokens (WCAG 2.2 AAA Contrast + Non-Color Del/Ins Cues) */
+  --diff-removed-bg: #fee2e2;
+  --diff-removed-fg: #7f1d1d;
+  --diff-removed-border: #f87171;
+
+  --diff-added-bg: #dcfce7;
+  --diff-added-fg: #14532d;
+  --diff-added-border: #4ade80;
+
+  --font-serif: "Newsreader", "Source Serif 4", "Iowan Old Style", "Charter", Georgia, serif;
+  --font-sans: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.dark {
+  --background: #0d131f;
+  --foreground: #f1efe9;
+  --surface: #131c2e;
+  --surface-elevated: #182338;
+  --muted: #1f2d45;
+  --muted-foreground: #bac5d6;
+  --border: #2c3d59;
+  --primary: #93c5fd;
+  --primary-foreground: #0d131f;
+  --accent: #facc15;
+  --accent-foreground: #0d131f;
+
+  --status-verified-bg: #0f291e;
+  --status-verified-fg: #bbf7d0;
+  --status-verified-border: #166534;
+
+  --status-summary-bg: #2e2109;
+  --status-summary-fg: #fde68a;
+  --status-summary-border: #b45309;
+
+  --status-pending-bg: #11223d;
+  --status-pending-fg: #bfdbfe;
+  --status-pending-border: #2563eb;
+
+  --status-gap-bg: #311014;
+  --status-gap-fg: #fecaca;
+  --status-gap-border: #b91c1c;
+
+  --diff-removed-bg: #3b1318;
+  --diff-removed-fg: #fecaca;
+  --diff-removed-border: #b91c1c;
+
+  --diff-added-bg: #0f2e1f;
+  --diff-added-fg: #bbf7d0;
+  --diff-added-border: #15803d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.quarantine-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--status-summary-bg),
+    var(--status-summary-bg) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Zero-flash Dual-Persona CSS visibility rules (switched via <html data-mode>) */
+html[data-mode="veteran"] [data-persona="practitioner-only"] {
+  display: none !important;
+}
+
+html[data-mode="practitioner"] [data-persona="veteran-only"] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}

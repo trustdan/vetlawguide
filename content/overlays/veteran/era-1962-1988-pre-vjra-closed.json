@@ -1,0 +1,30 @@
+{
+  "upstream_id": "era-1962-1988-pre-vjra-closed",
+  "upstream_path": "eras/1962-1988-pre-vjra-closed-era.md",
+  "upstream_sha256": "7f5d98104ccd92721fb93c08bd0d0551c705e1fe4e268eef19e3473742b02c41",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.344-1961-stabilization",
+    "38-cfr-3.156c-1962-pre2006",
+    "38-cfr-3.816-2003-nehmer"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Era 2 (1962–1988): Vietnam Era & Pre-Court VA Decisions",
+  "what_this_means": "From 1962 until November 1988, no independent federal court reviewed VA benefit denials, and lawyers were barred from charging more than $10—meaning most Veterans navigated claims alone or with busy service organizations. At the same time, two protective rules existed during this era: starting January 1, 1963, if you sent a written Notice of Disagreement (NOD), VA had to mail back a formal Statement of the Case (SOC) or your appeal stayed open; and VA hospital or outpatient exam reports for an already service-connected condition automatically counted as informal claims for a higher rating under former 38 C.F.R. § 3.157(b).",
+  "record_clues": [
+    "A letter or VA Form 21-4138 sent within one year of a 1963–1988 rating decision disagreeing with the outcome, with no Statement of the Case (SOC) in the file.",
+    "A 0% or low service-connected rating followed by VA Medical Center admission summaries (Form 10-1000) or clinic reports showing the condition worsened.",
+    "Vietnam inpatient evacuation hospital or surgical ship charts (stored separately from the thin outpatient health jacket), post-September 25, 1985 Agent Orange denials, or pre-1980 combat trauma labeled 'personality disorder' before PTSD (Diagnostic Code 9411) was added in April 1980."
+  ],
+  "important_cautions": [
+    "For Clear and Unmistakable Error (CUE) motions challenging pre-July 21, 1992 decisions, VA medical center records that were never placed into the Regional Office claims folder cannot be used to prove CUE—though they should be checked as possible unadjudicated informal claims under former 38 C.F.R. § 3.157(b).",
+    "Later court reinterpretations of a regulation cannot establish CUE against a final 1962–1988 decision under 38 C.F.R. § 20.1403(e) (George v. McDonough), whereas open claims, missing-SOC appeals, void reductions (38 C.F.R. § 3.344), Nehmer herbicide rules (38 C.F.R. § 3.816), and newly associated military records (38 C.F.R. § 3.156(c)) are not CUE motions.",
+    "Remember that under 38 C.F.R. § 20.1409(c), once the Board of Veterans' Appeals issues a final merits decision on a CUE motion for a specific Board issue, a second CUE motion on that Board issue is barred."
+  ],
+  "questions_for_representative": [
+    "Is there any written disagreement letter in my C-file after January 1, 1963 where VA never issued a Statement of the Case?",
+    "Did VA only pull my thin outpatient health record in the 1970s while missing separate military hospital inpatient surgical charts that could support reconsideration under 38 C.F.R. § 3.156(c)?",
+    "If I had an Agent Orange condition denied or claimed on or after September 25, 1985, or a 5-year rating reduced on a single exam, do Nehmer (38 C.F.R. § 3.816) or stabilized-rating rules (38 C.F.R. § 3.344) apply?"
+  ]
+}
+

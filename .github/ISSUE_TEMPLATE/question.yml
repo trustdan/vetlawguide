@@ -1,0 +1,42 @@
+name: "General Question or Site Feedback"
+description: "Ask a general question about how VetLawGuide works or suggest a clarity improvement (Public — No Personal Info!)."
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ### ⚠️ PUBLIC REPOSITORY — NEVER INCLUDE PERSONAL OR MEDICAL INFORMATION
+        > Everything submitted here is **publicly visible on the internet**.
+        > **DO NOT include:** Social Security Numbers, VA claim/file numbers, service numbers, `DD-214` scans, C-file excerpts, real names of claimants, or private medical history.
+        > *VetLawGuide is an educational reference only and cannot give legal advice on an individual claim.*
+  - type: input
+    id: page_url
+    attributes:
+      label: "Page URL or Section (Optional)"
+      description: "Which page, Diagnostic Code, or 38 C.F.R. section were you viewing?"
+      placeholder: "e.g., /cfr/38-cfr-4.56/1946-04-01 or DC 7804"
+  - type: dropdown
+    id: audience_mode
+    attributes:
+      label: "Which mode were you reading?"
+      options:
+        - "Veterans (Plain-English View)"
+        - "Practitioners (Technical Reference View)"
+        - "Both / Not Sure"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "Your Question or Feedback (General Law / Site UX Only — Zero PII)"
+      description: "Describe what was unclear or what question you hoped the page would answer."
+    validations:
+      required: true
+  - type: checkboxes
+    id: zero_pii_confirm
+    attributes:
+      label: "Privacy Confirmation"
+      options:
+        - label: "I confirm this public issue contains NO SSNs, VA file numbers, DD-214s, or private medical details."
+          required: true

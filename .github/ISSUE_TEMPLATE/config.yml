@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Find an Accredited VSO, Claims Agent, or Attorney (VA Official Search)"
+    url: "https://www.va.gov/get-help-from-accredited-representative/find-rep/"
+    about: "GitHub Issues are public and cannot provide individual legal advice. Use VA's official directory to connect privately with an accredited representative."
+  - name: "Veterans Crisis Line (Dial 988, Press 1)"
+    url: "https://www.veteranscrisisline.net/"
+    about: "Free, confidential 24/7 support for Veterans and their families."

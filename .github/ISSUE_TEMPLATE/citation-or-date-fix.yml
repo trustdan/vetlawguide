@@ -1,0 +1,44 @@
+name: "Citation, Effective-Date, or Coverage Fix"
+description: "Report a Federal Register date discrepancy, CFR transcription typo, case treatment update, or statutory crosswalk correction."
+title: "[Citation/Date Fix]: "
+labels: ["legal-provenance", "corpus-fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ### ⚠️ PUBLIC ISSUE — CITE OFFICIAL SOURCES ONLY (NO CLIENT C-FILE DATA)
+        > Please reference only public authorities (`38 C.F.R.`, `Federal Register`, `38 U.S.C.`, `Vet. App.` / `F.3d` / `F.4th` / `U.S.`, `VAOPGCPREC`). **Never paste unredacted client C-file pages, SSNs, or VA file numbers.**
+  - type: input
+    id: authority
+    attributes:
+      label: "Affected Regulation, Statute, Diagnostic Code, or Case"
+      placeholder: "e.g., 38 C.F.R. § 4.56 (62 FR 30235) or VAOPGCPREC 1-2017"
+    validations:
+      required: true
+  - type: input
+    id: page_or_version
+    attributes:
+      label: "VetLawGuide URL & Corpus Version Stamp"
+      placeholder: "e.g., /cfr/38-cfr-4.56/1946-04-01 (corpus-v2026.11.x)"
+  - type: textarea
+    id: discrepancy
+    attributes:
+      label: "What Needs Correction?"
+      description: "Describe the text, publication-vs.-effective date, bitemporal scope, or case treatment issue."
+    validations:
+      required: true
+  - type: textarea
+    id: primary_source
+    attributes:
+      label: "Official Primary-Source Pinpoint Citation / URL"
+      description: "Link to GovInfo, FederalRegister.gov, eCFR, or official court reporter."
+      placeholder: "https://www.govinfo.gov/..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: zero_pii_confirm
+    attributes:
+      label: "Privacy Confirmation"
+      options:
+        - label: "I confirm this issue contains NO client PII, SSNs, VA file numbers, or private records."
+          required: true

@@ -1,0 +1,27 @@
+{
+  "upstream_id": "cfr-diff-muscle-injuries-dc-5301-5323",
+  "upstream_path": "cfr-diffs/vasrd/muscle-injuries-dc-5301-5323.md",
+  "upstream_sha256": "aedfb4199bf0de5602442c7b844e2e92836e1a464df8cd8fb06d064ab89dce77",
+  "linked_version_ids": [
+    "38-cfr-4.56-1946-pre1997",
+    "38-cfr-4.56-1997-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "What Changed on July 3, 1997 in VA Muscle-Injury Ratings—and Why Surgical Debridement Matters",
+  "what_this_means": "Comparing the pre-July 3, 1997 and current versions of 38 C.F.R. § 4.56 highlights two practical details: first, in both eras, surgical debridement (removing damaged tissue from a deep wound) and prolonged infection appear in the Moderately Severe and Severe grades rather than the Moderate grade; second, certain muscle groups—such as the posterior thigh/hamstrings (Diagnostic Code 5313) and gluteal muscles (Diagnostic Code 5317)—carry higher percentage steps even at lower severity tiers, and upper-body injuries distinguish between the dominant and non-dominant arm.",
+  "record_clues": [
+    "In-service hospital summaries describing 'debridement of wound track,' 'comminuted fracture with muscle damage,' or 'compartment syndrome / fasciotomy.'",
+    "Upper-arm, shoulder, or forearm shrapnel (SFW) or bullet injuries where right-handed vs. left-handed dominance was never noted on the rating sheet.",
+    "Posterior thigh (hamstring) or buttock/hip shrapnel wounds rated 0% as superficial scars despite documented muscle-group involvement."
+  ],
+  "important_cautions": [
+    "VA's anti-pyramiding rules (38 C.F.R. §§ 4.14 and 4.55) restrict combining a muscle rating and a joint range-of-motion rating when both compensate the exact same movement limitation, though painful or disfiguring skin scars can often be rated separately.",
+    "Retained metallic fragments alone do not automatically establish a Severe rating; VA looks at the wound mechanism, tissue loss, and functional muscle symptoms recorded at the time.",
+    "Before challenging an older Board of Veterans' Appeals decision, discuss 38 C.F.R. § 20.1409(c)'s limit of one final merits CUE decision per prior Board decision on an issue with an accredited representative."
+  ],
+  "questions_for_representative": [
+    "Which specific anatomical Muscle Group (I through XXIII, Diagnostic Codes 5301–5323) matches the entrance-to-exit path shown in my surgical or C&P exam records?",
+    "Did my in-service treatment involve surgical debridement or prolonged hospitalization, and how did the version of 38 C.F.R. § 4.56 in effect on my decision date classify that history?",
+    "For an upper-extremity wound, did VA apply the correct major (dominant) or minor (non-dominant) percentage column?"
+  ]
+}

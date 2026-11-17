@@ -1,0 +1,30 @@
+{
+  "upstream_id": "era-1945-1961-post-wwii-korean",
+  "upstream_path": "eras/1945-1961-post-wwii-korean-era.md",
+  "upstream_sha256": "4a4e6d40f37e4b940435dd7a5f0fdae5a22e70a2681876b84dd7fbd443e34f5b",
+  "linked_version_ids": [
+    "38-cfr-part-4-vasrd-1946-base",
+    "38-cfr-3.953-1961-savings",
+    "38-cfr-4.56-1946-pre1997",
+    "38-cfr-3.156c-1962-pre2006"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Era 1 (1945–1961): Post-WWII & Korean War Rating Decisions",
+  "what_this_means": "After World War II, VA launched the modern 4-digit Diagnostic Code rating schedule effective April 1, 1946. Rating sheets from 1945 through 1961 were typically one-page carbon copies with almost no written explanation, and decisions before January 1, 1959 cited World War II 'Veterans' Regulations' rather than modern Title 38 law numbers. Many separating service members filled out VA Form 8-526 right at the separation center—and if VA left a listed condition undecided or rated a deep gunshot or shrapnel wound only as a surface scar, those historical records still matter today.",
+  "record_clues": [
+    "A discharge-center application on VA Form 8-526 listing multiple injuries or illnesses in handwriting, paired with a 1-page carbon-copy rating sheet that decided some conditions and stayed silent on others.",
+    "Discharge and separation records such as AGO Form 53-55, WD AGO Form 38, NAVPERS 553, or an early Korean War DD Form 214 (introduced in 1950).",
+    "Pre-1959 rating sheets citing 'Vet. Reg. No. 1(a)' or 1959–1961 sheets citing three-digit Title 38 section numbers (§ 310 or § 314), or mentions of records lost in the July 12, 1973 National Personnel Records Center (NPRC) St. Louis fire."
+  ],
+  "important_cautions": [
+    "Older laws use different numbers than today's statutes (for example, Vet. Reg. No. 1(a) before 1959, § 310 from 1959 to 1991, and § 1110 today), and Congress protected disability compensation payable on December 31, 1957 or December 31, 1958 under special grandfathering rules (38 C.F.R. § 3.953).",
+    "For Clear and Unmistakable Error (CUE) reviews of decisions issued before July 21, 1992, VA hospital records that were not physically inside the Regional Office claims folder generally do not count as part of the record, and later court reinterpretations cannot establish CUE under 38 C.F.R. § 20.1403(e) (George v. McDonough).",
+    "Reconstructing burned or misplaced military hospital, morning report, or Surgeon General index records to request reconsideration under 38 C.F.R. § 3.156(c) follows different rules than CUE—and under 38 C.F.R. § 20.1409(c), claimants get only one final merits CUE decision per prior Board decision issue."
+  ],
+  "questions_for_representative": [
+    "Did my original VA Form 8-526 list any symptoms or injuries that the 1940s or 1950s rating sheet never addressed?",
+    "Were my separation physical and military surgical records physically inside my VA Claims File when the original rating was issued, or can newly located service/morning-report records be submitted under 38 C.F.R. § 3.156(c)?",
+    "Does a pre-1959 statutory savings clause (38 C.F.R. § 3.953) or 10/20-year protection rule (38 C.F.R. §§ 3.951, 3.957) protect any historical evaluation in my file?"
+  ]
+}
+

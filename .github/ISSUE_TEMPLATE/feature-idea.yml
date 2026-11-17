@@ -1,0 +1,35 @@
+name: "Feature Idea or Topic Request"
+description: "Suggest a new playbook topic, VASRD diagnostic code guide, plain-English checklist, or research-desk improvement."
+title: "[Feature/Topic]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ### ⚠️ PUBLIC REPOSITORY — ZERO PERSONAL OR MEDICAL DETAILS
+        > Describe general Veterans Law topics or research workflows only. **Never include SSNs, VA claim numbers, DD-214s, or personal medical details.**
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Area of VetLawGuide"
+      options:
+        - "Plain-English Veteran Guide / Checklist"
+        - "Point-in-Time 38 C.F.R. Snapshot or Redline Diff"
+        - "Practitioner Playbook / C-File Trigger"
+        - "Historical Investigation Workspace (/investigate)"
+        - "Timeline / Knowledge Map / Accessibility"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "What research question or workflow would this help solve?"
+    validations:
+      required: true
+  - type: checkboxes
+    id: zero_pii_confirm
+    attributes:
+      label: "Privacy Confirmation"
+      options:
+        - label: "I confirm this public post contains NO SSNs, VA file numbers, or private medical records."
+          required: true

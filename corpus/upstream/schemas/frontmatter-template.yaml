@@ -1,0 +1,46 @@
+# Copy this YAML frontmatter block to the top of any new file in:
+# - docs/
+# - eras/
+# - playbooks/
+# - cfr-diffs/ (including subdirectories part-3/, part-4-policy/, vasrd/, part-20/)
+# - authorities/ (including subdirectories part-3/, part-4/, part-20/)
+# - checklists/
+#
+# Validate all repository files anytime with:
+#   python scripts/validate_kb.py
+
+---
+id: playbook-example-slug
+title: "Descriptive Title of the Legal Rule, Era, Snapshot, or Playbook"
+category: playbook # doctrine | era-lens | playbook | cfr-diff | checklist | authority-snapshot
+effective_from: "1946-04-01"
+effective_to: "present" # YYYY-MM-DD or "present"
+bitemporal_scope: mixed-see-text # cue-and-open-claim | open-claim-only-george-restricted | prospective-liberalizing-3.114 | mixed-see-text
+practice_domains:
+  - finality-and-cue
+  - disability-compensation
+vasrd_system: 01-musculoskeletal # null or 01-musculoskeletal .. 15-dental-oral | part-4-general-policy
+statutes:
+  - "38 U.S.C. § 5109A"
+  - "38 U.S.C. § 5110"
+cfr_citations:
+  - "38 C.F.R. § 3.105(a)"
+  - "38 C.F.R. § 3.156(c)"
+diagnostic_codes:
+  - "5301-5323"
+  - "7800-7805"
+key_precedents:
+  - "Russell v. Principi, 3 Vet. App. 310 (1992) (en banc)"
+  - "Esteban v. Brown, 6 Vet. App. 259 (1994)"
+retro_pathways:
+  - cue-ro-3.105a
+  - service-records-3.156c
+c_file_triggers:
+  - "0% or 10% scar rating for GSW / shrapnel / shell fragment wound"
+  - "DD Form 1380 / SF 600 / Purple Heart citation mentioning debridement or retained foreign body"
+kill_switches:
+  - "Prior BVA decision on the exact disability issue subsumed the RO decision (must file BVA CUE under 38 U.S.C. § 7111 instead)"
+  - "Weighing of conflicting medical opinions (judgment call is not CUE under Fugo v. Brown)"
+unfinalized_proposals: []
+verification_status: primary-source-verified # baseline-verified | primary-source-verified | needs-historical-fr-check
+---

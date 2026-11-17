@@ -1,0 +1,32 @@
+{
+  "zero-pii-repo-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -s hooks/pii_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "upstream-corpus-immutability-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -s hooks/corpus_lock_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "upstream_id": "doctrine-forms-and-codesheet-lexicon",
+  "upstream_path": "docs/forms-and-codesheet-lexicon.md",
+  "upstream_sha256": "7410c7886a589d75a6d76a955c9cc2c948c064601eb2a8243ad8382d9b28cebb",
+  "linked_version_ids": [
+    "38-cfr-3.157b-1961-2015",
+    "38-cfr-3.155-3.157b-2015-repeal",
+    "38-cfr-3.156c-2006-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How to Read Old VA Claim Forms, Military File Codes, and Internal Rating Code Sheets",
+  "what_this_means": "When VA decided a claim decades ago, it usually mailed the Veteran only a short summary letter while filing the detailed 'Rating Code Sheet' inside the internal VA Claims File (C-file). That internal code sheet—along with older forms like VA Form 8-526, VA Form 21-4138, and hospital transfer slip VA Form 10-7131—holds the exact 4-digit Diagnostic Codes, hyphenated 'analogous' codes (such as 7399-7346), bilateral limb math, and Special Monthly Compensation (SMC) letters needed to understand how VA calculated your rating.",
+  "record_clues": [
+    "Handwritten conditions listed on an original separation claim (VA Form 8-526 or 21-526) that never appeared as granted or denied on the first Rating Code Sheet.",
+    "Pre-March 24, 2015 statements (VA Form 21-4138) or VA Medical Center (VAMC) hospital notices (VA Form 10-7131) reporting worsening symptoms or an updated home address.",
+    "Hyphenated codes ending in '99' (for example, 5299-5257 or 7399-7346), which mean VA rated an unlisted condition 'by analogy' to a listed Diagnostic Code."
+  ],
+  "important_cautions": [
+    "March 24, 2015 Form Cutoff: Before March 24, 2015, a written statement (VA Form 21-4138) or VA hospital admission report (former § 3.157(b)) could start an informal claim. On or after March 24, 2015, VA requires standardized forms (such as VA Form 21-526EZ or Intent to File VA Form 21-0966) to start a claim.",
+    "When submitting newly located military records under 38 C.F.R. § 3.156(c) alongside a modern Supplemental Claim form (VA Form 20-0995), representatives explicitly note § 3.156(c) so VA evaluates the original claim date rather than only the new form date.",
+    "Summary award letters from VA.gov do not replace a full FOIA copy of your C-file when checking historical Diagnostic Codes."
+  ],
+  "questions_for_representative": [
+    "Have we obtained all historical internal VA Rating Code Sheets from my C-file via a FOIA / Privacy Act request?",
+    "Did my original VA Form 8-526 / 21-526 list any symptoms or conditions that were left off the Rating Code Sheet without a decision?",
+    "What do the hyphenated Diagnostic Codes, bilateral factor entries, or SMC letter codes on my Rating Code Sheet mean?"
+  ]
+}

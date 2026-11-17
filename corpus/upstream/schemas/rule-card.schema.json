@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://va-law-planning.local/schemas/rule-card.schema.json",
+  "title": "Veterans Law Reference Library & Retroactive Screening Rule Card (v2.0)",
+  "description": "Frontmatter schema for cataloging Title 38 statutes, historical 38 C.F.R. provisions, bitemporal CUE vs. open-claim scope, CAVC/Fed. Cir. precedents, VASRD diffs, and law-firm playbooks.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "category",
+    "effective_from",
+    "effective_to",
+    "statutes",
+    "cfr_citations",
+    "key_precedents",
+    "retro_pathways",
+    "verification_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique kebab-case identifier (e.g., playbook-penetrating-wounds-muscle-vs-scar)."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Human-readable title of the playbook, era lens, treatise, or CFR historical diff."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "doctrine",
+        "era-lens",
+        "playbook",
+        "cfr-diff",
+        "checklist",
+        "authority-snapshot"
+      ],
+      "description": "Primary Diataxis document classification in the repository."
+    },
+    "effective_from": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Start date (YYYY-MM-DD) of the applicable statutory/regulatory window."
+    },
+    "effective_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|present)$",
+      "description": "End date (YYYY-MM-DD) or 'present' if currently in force."
+    },
+    "bitemporal_scope": {
+      "type": "string",
+      "enum": [
+        "cue-and-open-claim",
+        "open-claim-only-george-restricted",
+        "prospective-liberalizing-3.114",
+        "mixed-see-text"
+      ],
+      "description": "Judicial-interpretation temporal scope under George v. McDonough, 596 U.S. 740 (2022) and 38 C.F.R. § 20.1403(e)."
+    },
+    "practice_domains": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "finality-and-cue",
+          "disability-compensation",
+          "character-of-discharge",
+          "toxic-exposure",
+          "vasrd-rating-schedule",
+          "tdiu-unemployability",
+          "smc-ancillary",
+          "survivors-dic-accrued",
+          "effective-dates-offsets",
+          "pension-fiduciary-debt",
+          "appeals-cavc-litigation",
+          "vre-medical-reimbursement",
+          "fees-eaja"
+        ]
+      },
+      "description": "Veterans law-firm case domains addressed by this module."
+    },
+    "vasrd_system": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "part-4-general-policy",
+        "01-musculoskeletal",
+        "02-eye-vision",
+        "03-auditory",
+        "04-infectious-immune",
+        "05-respiratory",
+        "06-cardiovascular",
+        "07-digestive",
+        "08-genitourinary",
+        "09-gynecological-breast",
+        "10-hemic-lymphatic",
+        "11-skin",
+        "12-endocrine",
+        "13-neurological",
+        "14-mental-disorders",
+        "15-dental-oral"
+      ],
+      "description": "Canonical 38 C.F.R. Part 4 body system classification (if applicable)."
+    },
+    "statutes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Title 38 or Title 10/28/31 U.S.C. sections implicated (e.g., '38 U.S.C. § 5109A')."
+    },
+    "cfr_citations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "38 C.F.R. citations (both current and historical section numbers)."
+    },
+    "diagnostic_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "VASRD 4-digit diagnostic codes or ranges (e.g., '5301-5323', '7800-7805')."
+    },
+    "key_precedents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Controlling SCOTUS, Fed. Cir., CAVC, and VAOPGCPREC citations."
+    },
+    "retro_pathways": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "cue-ro-3.105a",
+          "cue-bva-7111",
+          "service-records-3.156c",
+          "pending-unadjudicated-claim",
+          "defective-notice-presumption-rebuttal",
+          "void-rating-reduction",
+          "nehmer-3.816",
+          "ama-explicit-notice-5104b",
+          "ama-continuous-pursuit-3.2500",
+          "crsc-soto-settlement",
+          "direct-or-secondary-sc",
+          "presumptive-sc-3.307-3.320",
+          "cod-insanity-upgrade-gateway",
+          "section-1151-malpractice",
+          "liberalizing-law-3.114",
+          "increased-rating-lookback-5110b2",
+          "survivor-dic-1310-1318",
+          "accrued-substitution-5121",
+          "smc-statutory-entitlement",
+          "offset-recoupment-audit",
+          "cavc-eaja-litigation"
+        ]
+      },
+      "description": "Procedural and substantive legal pathways used to establish entitlement or retroactive effective dates."
+    },
+    "c_file_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Specific VA form numbers, code sheet notations, or clinical terms that trigger an audit."
+    },
+    "kill_switches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Factual or legal conditions that defeat the theory (e.g., BVA subsumption, George v. McDonough CUE bar)."
+    },
+    "unfinalized_proposals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Watchlist of unfinalized proposed rules or rescinded IFRs that must NOT be cited as active law (e.g., RIN 2900-AQ72, RIN 2900-AQ82, 90 FR 46542, 91 FR 7118)."
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "baseline-verified",
+        "primary-source-verified",
+        "needs-historical-fr-check"
+      ],
+      "description": "Audit confidence level against Federal Register / U.S. Reports / Vet. App. reporters."
+    }
+  },
+  "additionalProperties": true
+}

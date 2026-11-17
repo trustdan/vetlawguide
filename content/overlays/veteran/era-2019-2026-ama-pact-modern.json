@@ -1,0 +1,29 @@
+{
+  "upstream_id": "era-2019-2026-ama-pact-modern",
+  "upstream_path": "eras/2019-2026-ama-pact-modern-era.md",
+  "upstream_sha256": "c7d490dff7be68ca47754a3965ac7b3555e9f99899615d4c3b75a9b4a1fb3ec3",
+  "linked_version_ids": [
+    "38-cfr-3.655-2019-ama",
+    "38-cfr-3.816-2021-nehmer-payee",
+    "38-cfr-3.33-2024-pact-dic"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Era 5 (2019–Present): Modern AMA Lanes, PACT Act & Recent Rulings",
+  "what_this_means": "Starting February 19, 2019, the Appeals Modernization Act (AMA) replaced the old multi-year appeal process with three review options—Supplemental Claims (Form 20-0995), Higher-Level Reviews (Form 20-0996), and Board Appeals (Form 10182)—allowing you to protect your original effective date by pursuing a review option within one year of each VA or Board decision. This era also includes the August 2022 PACT Act toxic-exposure expansions, the June 2024 Character of Discharge update, and major 2024–2026 court rulings on explicit decision notices, medication effects, Special Monthly Compensation steps, and Combat-Related Special Compensation back pay.",
+  "record_clues": [
+    "An AMA decision letter dated on or after February 19, 2019 that stayed completely silent on a claimed or reasonably raised condition (which courts held in 2026 cannot be 'implicitly denied' under 38 U.S.C. § 5104(b)).",
+    "A PACT Act grant where VA assigned the date your form arrived instead of looking back up to one year (or to August 10, 2022 for timely 2022–2023 Intent to File claims), or a survivor DIC denial eligible for PACT re-evaluation under 38 C.F.R. § 3.33.",
+    "A rating issued around February 17–27, 2026 that lowered an evaluation because medication reduced symptoms (under a short-lived 38 C.F.R. § 4.10 interim rule at 91 FR 7118 that VA rescinded 10 days later at 91 FR 9712)."
+  ],
+  "important_cautions": [
+    "Deadline caution: While filing a Supplemental Claim within 1 year of a Regional Office or Board denial preserves continuous pursuit under 38 C.F.R. § 3.2500, filing a Supplemental Claim after a Court of Appeals for Veterans Claims (CAVC) affirmance does NOT preserve the original effective date—and CAVC appeals carry a 120-day filing window from a Board denial.",
+    "Do not confuse online rumors about proposed rules with active law: proposed changes to sleep apnea (DC 6847) and tinnitus (DC 6260) under RIN 2900-AQ72, mental health under RIN 2900-AQ82, and painful scars under 90 FR 46542 remain unfinalized proposals (not enacted law), and the February 2026 medication rule (91 FR 7118) was rescinded.",
+    "Under Arellano v. McDonough (2023), the 1-year post-discharge filing window for a day-after-discharge effective date cannot be extended by equitable tolling, and Board CUE motions remain governed by 38 C.F.R. §§ 20.1403(e) and 20.1409(c)."
+  ],
+  "questions_for_representative": [
+    "Is my AMA claim still within its 1-year window—and which lane (Supplemental Claim with new and relevant evidence, Higher-Level Review, or Board Appeal) best protects my effective date?",
+    "Did my post-February 19, 2019 AMA decision omit any claimed or secondary issue without explicit notice under 38 U.S.C. § 5104(b), or miscalculate a PACT Act effective date?",
+    "If I am a military retiree receiving Combat-Related Special Compensation (CRSC) or rated at Special Monthly Compensation (SMC l–n), how do the recent Soto (2025) or Barry (2024) rulings affect my case?"
+  ]
+}
+

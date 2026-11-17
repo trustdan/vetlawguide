@@ -1,0 +1,467 @@
+import type { LexiconEntry } from "./types";
+
+/**
+ * Single Source of Truth (Rule 00 DRY) for baseline VA/military acronyms,
+ * historical forms, and rating code-sheet shorthand used by both the build-time
+ * corpus compiler (`lib/corpus/compiler.ts`) and inline accessible UI decoder
+ * popovers (`components/bitemporal/lexicon-text.tsx`).
+ */
+export const BASELINE_ACRONYMS: ReadonlyArray<LexiconEntry> = [
+  {
+    key: "C&P",
+    kind: "acronym",
+    label: "Compensation & Pension (C&P) Exam",
+    plainEnglish:
+      "A medical examination ordered by VA to evaluate the severity or service link of a claimed condition.",
+    practitionerNote:
+      "Governed by McLendon, Barr, and Nieves-Rodriguez adequacy standards; check 38 C.F.R. § 3.655 and mailing regularity on missed-exam denials.",
+  },
+  {
+    key: "TDIU",
+    kind: "acronym",
+    label: "Total Disability Based on Individual Unemployability (TDIU)",
+    plainEnglish:
+      "Pays at the 100% compensation rate when service-connected disabilities prevent substantially gainful employment, even if combined ratings are below 100%.",
+    practitionerNote:
+      "38 C.F.R. § 4.16(a) schedular vs. § 4.16(b) extraschedular; raised implicitly per Roberson and Rice whenever record evidence shows unemployability.",
+  },
+  {
+    key: "SMC",
+    kind: "acronym",
+    label: "Special Monthly Compensation (SMC)",
+    plainEnglish:
+      "Additional monthly compensation above standard percentage rates for severe disabilities, loss of use of extremities or organs, housebound status, or need for regular aid and attendance.",
+    practitionerNote:
+      "38 U.S.C. § 1114(k)–(t) and 38 C.F.R. §§ 3.350, 3.352; mandatory statutory entitlement audited for Barry § 3.350(f) cumulative steps and SMC(t) TBI care.",
+  },
+  {
+    key: "NOD",
+    kind: "acronym",
+    label: "Notice of Disagreement (NOD)",
+    plainEnglish:
+      "The formal written filing that starts an appeal of a VA rating decision.",
+    practitionerNote:
+      "Legacy pre-Feb. 19, 2019 written NODs required VA to issue a Statement of the Case (SOC) under § 7105 (Tablazon pending-appeal trigger); AMA Board NODs use VA Form 10182.",
+  },
+  {
+    key: "SOC",
+    kind: "acronym",
+    label: "Statement of the Case (SOC)",
+    plainEnglish:
+      "VA's detailed written explanation of the laws and facts behind a Legacy denial, sent after a Veteran filed a Notice of Disagreement.",
+    practitionerNote:
+      "Required from Jan. 1, 1963 (Pub. L. 87-666) through Legacy appeals; failure to issue an SOC after a timely NOD keeps the Legacy appeal legally pending.",
+  },
+  {
+    key: "CUE",
+    kind: "acronym",
+    label: "Clear and Unmistakable Error (CUE)",
+    plainEnglish:
+      "A strict legal challenge to revise a final VA Regional Office or Board decision based on an undebatable error in the record and law that existed at the time.",
+    practitionerNote:
+      "38 C.F.R. § 3.105(a) (RO) and 38 U.S.C. § 7111 / 38 C.F.R. §§ 20.1400–1411 (Board). Subject to George v. McDonough (§ 20.1403(e)), Cook duty-to-assist bar, § 4.25 manifest outcome change, and § 20.1409(c) one-final-merits-decision-per-Board-issue bar.",
+  },
+  {
+    key: "T&T",
+    kind: "codesheet",
+    label: "Through-and-Through (T&T) Wound",
+    plainEnglish:
+      "A gunshot or shrapnel wound with both an entrance and exit path passing through tissue or muscle.",
+    practitionerNote:
+      "Audit against 38 C.F.R. § 4.56 muscle group criteria (DC 5301–5323) whenever a code sheet shows only a 0% or 10% skin scar (DC 7800–7805).",
+  },
+  {
+    key: "SFW",
+    kind: "codesheet",
+    label: "Shell / Shrapnel Fragment Wound (SFW)",
+    plainEnglish:
+      "Military medical shorthand for a combat wound caused by artillery, mortar, grenade, or explosive fragments.",
+    practitionerNote:
+      "Check operative notes, X-rays for retained metallic foreign bodies (MFB), and debridement history under 38 C.F.R. §§ 4.55, 4.56, 4.73, and § 4.14 (Esteban).",
+  },
+  {
+    key: "GSW",
+    kind: "codesheet",
+    label: "Gunshot Wound (GSW)",
+    plainEnglish:
+      "Military medical and rating code-sheet shorthand for a bullet wound.",
+    practitionerNote:
+      "Audit entrance/exit track, surgical debridement, fascial defect, and Muscle Groups I–XXIII (DC 5301–5323) alongside scar codes (DC 7800–7805) and peripheral nerves.",
+  },
+  {
+    key: "MFB",
+    kind: "codesheet",
+    label: "Metallic Foreign Body (MFB)",
+    plainEnglish:
+      "Retained bullet or shrapnel fragments visible on X-ray or clinical examination inside tissue or muscle.",
+    practitionerNote:
+      "Relevant to muscle injury severity under 38 C.F.R. § 4.56 (e.g., scattered minute fragments in high-velocity explosive tracks vs. absence of fragments in Slight).",
+  },
+  {
+    key: "VASRD",
+    kind: "acronym",
+    label: "VA Schedule for Rating Disabilities (VASRD)",
+    plainEnglish:
+      "VA's official rulebook in 38 C.F.R. Part 4 assigning disability percentages (0% to 100%) by medical condition and Diagnostic Code.",
+    practitionerNote:
+      "Codified in 38 C.F.R. Part 4 pursuant to 38 U.S.C. § 1155; baseline post-WWII edition took effect April 1, 1946 (29 FR 6718 repub. May 22, 1964).",
+  },
+  {
+    key: "RO",
+    kind: "acronym",
+    label: "VA Regional Office (RO)",
+    plainEnglish:
+      "The local Veterans Benefits Administration office that issues initial disability rating decisions.",
+    practitionerNote:
+      "Agency of Original Jurisdiction (AOJ); final unappealed RO decisions are subject to CUE revision under 38 U.S.C. § 5109A / 38 C.F.R. § 3.105(a) unless subsumed by a merits BVA decision.",
+  },
+  {
+    key: "AOJ",
+    kind: "acronym",
+    label: "Agency of Original Jurisdiction (AOJ)",
+    plainEnglish:
+      "The initial VA decision-making office (usually a VA Regional Office) that decides claims before any appeal to the Board.",
+    practitionerNote:
+      "Reconsiders claims upon receipt of newly associated official service department records under 38 C.F.R. § 3.156(c).",
+  },
+  {
+    key: "BVA",
+    kind: "acronym",
+    label: "Board of Veterans' Appeals (BVA)",
+    plainEnglish:
+      "VA's administrative appellate tribunal in Washington, D.C., where Veterans Law Judges review appealed Regional Office decisions.",
+    practitionerNote:
+      "Governed by 38 U.S.C. §§ 7101–7113 and 38 C.F.R. Part 20; final Board merits decisions subsume underlying RO decisions (§ 20.1104) and allow one final merits CUE decision per issue (§ 20.1409(c)).",
+  },
+  {
+    key: "CAVC",
+    kind: "acronym",
+    label: "U.S. Court of Appeals for Veterans Claims (CAVC)",
+    plainEnglish:
+      "The independent federal court (outside VA) that reviews final Board of Veterans' Appeals decisions when appealed within 120 days.",
+    practitionerNote:
+      "Created by the 1988 VJRA (formerly COVA); three-judge panel opinions are precedential, while single-judge memorandum decisions are nonprecedential under CAVC Rule 30(a).",
+  },
+  {
+    key: "VAMC",
+    kind: "acronym",
+    label: "VA Medical Center (VAMC)",
+    plainEnglish:
+      "A Department of Veterans Affairs hospital or outpatient clinic providing medical care.",
+    practitionerNote:
+      "VAMC treatment records are constructively within VA possession from July 21, 1992 forward (Bell v. Derwinski) and could trigger informal increase claims prior to March 24, 2015 (former § 3.157(b)) or § 3.156(b) continuity (Lang).",
+  },
+  {
+    key: "STRs",
+    kind: "acronym",
+    label: "Service Treatment Records (STRs)",
+    plainEnglish:
+      "Your official military medical and dental records from active duty, training, or reserve service.",
+    practitionerNote:
+      "Outpatient STRs were often archived separately from inpatient hospital clinical folders at NPRC; newly associated STRs trigger reconsideration under 38 C.F.R. § 3.156(c).",
+  },
+  {
+    key: "NPRC",
+    kind: "acronym",
+    label: "National Personnel Records Center (NPRC)",
+    plainEnglish:
+      "The federal archive in St. Louis, Missouri that stores discharged service members' military personnel and medical records.",
+    practitionerNote:
+      "Check both the Official Military Personnel File (OMPF) and separately indexed inpatient clinical hospital treatment packets (1973 NPRC fire reconstruction & organizational records).",
+  },
+  {
+    key: "JSRRC",
+    kind: "acronym",
+    label: "Joint Services Records Research Center (JSRRC)",
+    plainEnglish:
+      "The military research office (now part of the Defense POW/MIA Accounting Agency / Army records research) that searches historical unit logs, morning reports, and combat records to verify in-service events.",
+    practitionerNote:
+      "Unit records, deck logs, and combat after-action reports obtained after an earlier denial trigger reconsideration and retroactive effective dates under 38 C.F.R. § 3.156(c)(1)(i).",
+  },
+  {
+    key: "DoD",
+    kind: "acronym",
+    label: "Department of Defense (DoD)",
+    plainEnglish:
+      "The federal military department overseeing the Armed Forces and official military service records.",
+    practitionerNote:
+      "Records forwarded by DoD or a service department at any time after VA's original request qualify under 38 C.F.R. § 3.156(c)(1)(ii).",
+  },
+  {
+    key: "DBQ",
+    kind: "acronym",
+    label: "Disability Benefits Questionnaire (DBQ)",
+    plainEnglish:
+      "VA's standardized medical examination worksheet recording measurable symptoms, scar counts, or range-of-motion findings.",
+    practitionerNote:
+      "Compare objective DBQ checkboxes/measurements directly against VASRD diagnostic criteria (e.g., painful scar counts under post-2008 DC 7804).",
+  },
+  {
+    key: "AMA",
+    kind: "acronym",
+    label: "Appeals Modernization Act (AMA)",
+    plainEnglish:
+      "The current three-lane VA review system (Supplemental Claim, Higher-Level Review, or Board Appeal) in effect since February 19, 2019.",
+    practitionerNote:
+      "Pub. L. 115-55 (eff. Feb. 19, 2019); governs post-2019 claims alongside § 5104(b) notice duties (Hamill v. Collins) while preserving § 3.156(c) service-record effective dates.",
+  },
+  {
+    key: "VJRA",
+    kind: "acronym",
+    label: "Veterans' Judicial Review Act of 1988 (VJRA)",
+    plainEnglish:
+      "The historic 1988 law that created independent federal court review of VA benefits decisions for the first time.",
+    practitionerNote:
+      "Pub. L. 100-687 (Nov. 18, 1988); established COVA/CAVC, codified benefit of the doubt, and ended VA's unreviewable pre-1988 finality era.",
+  },
+  {
+    key: "VSO",
+    kind: "acronym",
+    label: "Veterans Service Organization / Officer (VSO)",
+    plainEnglish:
+      "A VA-accredited representative (such as DAV, VFW, American Legion, or county/state Veteran service officers) who assists with VA claims free of charge.",
+    practitionerNote:
+      "Accredited under 38 U.S.C. § 5902 and 38 C.F.R. § 14.629.",
+  },
+  {
+    key: "FOIA",
+    kind: "acronym",
+    label: "Freedom of Information Act / Privacy Act C-File Request",
+    plainEnglish:
+      "A formal request (VA Form 20-10206) to obtain a complete copy of your VA claims file (C-file), including internal Rating Code Sheets and old exams.",
+    practitionerNote:
+      "38 C.F.R. §§ 1.550–1.580; essential for inspecting internal Rating Code Sheets rather than relying solely on summary notification letters.",
+  },
+  {
+    key: "DD-214",
+    kind: "form",
+    label: "DD Form 214 (Certificate of Release or Discharge from Active Duty)",
+    plainEnglish:
+      "Your official military separation summary listing service dates, combat awards (such as a Purple Heart), and character of discharge.",
+    practitionerNote:
+      "Introduced Jan. 1, 1950 (replacing WWII WD AGO 53-55 / NAVPERS 553); combat decorations trigger 38 U.S.C. § 1154(b) lay-corroboration rules.",
+  },
+  {
+    key: "DD 1380",
+    kind: "form",
+    label: "DD Form 1380 (U.S. Field Medical Card)",
+    plainEnglish:
+      "Emergency field casualty tag attached to a wounded service member at an aid station recording acute combat injuries and initial treatment.",
+    practitionerNote:
+      "Primary contemporaneous service department record under 38 C.F.R. § 3.156(c) proving penetrating GSW/SFW mechanism even when hospital admission folders were lost.",
+  },
+  {
+    key: "8-526",
+    kind: "form",
+    label: "Historical VA Form 8-526 / 21-526 (Veteran's Application for Compensation or Pension)",
+    plainEnglish:
+      "The classic post-WWII and Vietnam-era formal VA disability compensation application form.",
+    practitionerNote:
+      "Audit handwritten contention blocks on historical VA Form 8-526 / 21-526 for reasonably raised conditions that the RO never adjudicated on the Rating Code Sheet (pending claim stream).",
+  },
+  {
+    key: "10-7131",
+    kind: "form",
+    label: "VA Form 10-7131 (Exchange of Beneficiary Information & Request for Administrative Action)",
+    plainEnglish:
+      "Internal communication form sent between a VA hospital and a VA Regional Office reporting admissions, diagnoses, or updated Veteran addresses.",
+    practitionerNote:
+      "Key pre-2015 informal-claim trigger (former § 3.157(b)) and constructive address-notice proof when rebutting the presumption of mailing regularity on missed exams/notices.",
+  },
+  {
+    key: "DIC",
+    kind: "acronym",
+    label: "Dependency and Indemnity Compensation (DIC)",
+    plainEnglish:
+      "Monthly tax-free VA survivor benefits paid to eligible surviving spouses, children, or parents when a Veteran dies from a service-connected condition or after extended 100% / TDIU disability.",
+    practitionerNote:
+      "38 U.S.C. § 1310 (service-connected death) and § 1318 / 38 C.F.R. § 3.22 (10-year 100%/TDIU or hypothetical CUE / § 3.156(c) reconstruction).",
+  },
+  {
+    key: "COVA",
+    kind: "acronym",
+    label: "U.S. Court of Veterans Appeals (COVA — now CAVC)",
+    plainEnglish:
+      "The original name (1988–1999) of the independent federal court that reviews Board of Veterans' Appeals decisions, renamed the Court of Appeals for Veterans Claims (CAVC) on March 1, 1999.",
+    practitionerNote:
+      "Created by Pub. L. 100-687 (Nov. 18, 1988) and renamed CAVC by Pub. L. 105-368 (eff. Mar. 1, 1999); pre-1999 West Vet. App. opinions cite COVA.",
+  },
+  {
+    key: "HLR",
+    kind: "acronym",
+    label: "Higher-Level Review (HLR)",
+    plainEnglish:
+      "One of the three modern review lanes where a senior VA reviewer re-examines an existing decision for error without considering new evidence.",
+    practitionerNote:
+      "38 U.S.C. § 5104B and 38 C.F.R. § 3.2601 (VA Form 20-0996); closed evidentiary record with optional informal conference.",
+  },
+  {
+    key: "CRSC",
+    kind: "acronym",
+    label: "Combat-Related Special Compensation (CRSC)",
+    plainEnglish:
+      "Tax-free monthly military retiree compensation that restores retired pay offset by VA disability payments when disabilities were caused by combat or combat-related training.",
+    practitionerNote:
+      "10 U.S.C. § 1413a; Soto v. United States (2025) abolished the 6-year Barring Act cap on retroactive CRSC arrears.",
+  },
+  {
+    key: "VBMS",
+    kind: "acronym",
+    label: "Veterans Benefits Management System (VBMS)",
+    plainEnglish:
+      "VA's electronic claims folder (eFolder) system holding scanned service records, Rating Code Sheets, medical exams, and decision letters.",
+    practitionerNote:
+      "Accredited representatives with VBMS access can inspect complete eFolder document metadata and historical Rating Code Sheets directly.",
+  },
+  {
+    key: "JMR",
+    kind: "acronym",
+    label: "Joint Motion for Remand (JMR)",
+    plainEnglish:
+      "An agreement between a Veteran's court attorney and VA's court counsel asking the Court of Appeals for Veterans Claims to send a flawed Board decision back for a new decision.",
+    practitionerNote:
+      "Vacates the appealed Board decision (preventing finality from attaching on remanded issues and preserving open-claim retroactivity).",
+  },
+  {
+    key: "TERA",
+    kind: "acronym",
+    label: "Toxic Exposure Risk Activity (TERA)",
+    plainEnglish:
+      "Documented military exposure to burn pits, chemicals, radiation, or other occupational toxins requiring VA to consider a medical nexus opinion under the 2022 PACT Act.",
+    practitionerNote:
+      "38 U.S.C. §§ 1168 & 1710(e)(4); mandates examination + toxic-exposure medical opinion unless exception applies.",
+  },
+  {
+    key: "C-file",
+    kind: "codesheet",
+    label: "VA Claims File (C-file / eFolder)",
+    plainEnglish:
+      "Your master VA claims folder containing every application, service record, medical exam, internal Rating Code Sheet, and decision letter VA has on file.",
+    practitionerNote:
+      "Request via FOIA / Privacy Act (VA Form 20-10206) or inspect directly via accredited VBMS eFolder access before pleading CUE.",
+  },
+  {
+    key: "VACOLS",
+    kind: "acronym",
+    label: "Veterans Appeals Control and Locator System (VACOLS)",
+    plainEnglish:
+      "VA's historical electronic tracking database for Legacy appeals filed before February 19, 2019, recording Notice of Disagreement, Statement of the Case, and Board docket dates.",
+    practitionerNote:
+      "Audit VACOLS docket entries for unissued SOCs (Tablazon) and improper administrative closures (Freund v. Collins class certified Mar. 2026).",
+  },
+  {
+    key: "DFAS",
+    kind: "acronym",
+    label: "Defense Finance and Accounting Service (DFAS)",
+    plainEnglish:
+      "The Department of Defense agency that pays military retirement checks and administers Combat-Related Special Compensation (CRSC) payments separately from VA.",
+    practitionerNote:
+      "Administers Title 10 retired pay and 10 U.S.C. § 1413a CRSC arrears (uncapped following Soto v. United States, 605 U.S. 360 (2025)).",
+  },
+  {
+    key: "DTA",
+    kind: "acronym",
+    label: "VA Duty to Assist (DTA)",
+    plainEnglish:
+      "VA's legal obligation in open claims to make reasonable efforts to obtain relevant military/medical records and schedule needed exams—though a failure to assist cannot prove CUE in an older final decision.",
+    practitionerNote:
+      "Codified at 38 U.S.C. § 5103A; excluded from collateral CUE under Cook v. Principi, 318 F.3d 1334 (Fed. Cir. 2002) (en banc) and 38 C.F.R. § 20.1403(d)(2).",
+  },
+  {
+    key: "ITF",
+    kind: "acronym",
+    label: "Intent to File (ITF — VA Form 21-0966)",
+    plainEnglish:
+      "A quick VA filing (VA Form 21-0966) that locks in today's potential effective date for up to 1 year while you gather records for a formal claim.",
+    practitionerNote:
+      "38 C.F.R. § 3.155(b) (eff. Mar. 24, 2015); applies one active ITF per general benefit type (Hines v. Principi / Military-Veterans Advocacy).",
+  },
+  {
+    key: "SF 180",
+    kind: "form",
+    label: "Standard Form 180 (Request Pertaining to Military Records)",
+    plainEnglish:
+      "The official federal request form sent to the National Personnel Records Center (NPRC) to obtain military personnel files and separately archived inpatient hospital surgical charts.",
+    practitionerNote:
+      "Specify inpatient clinical/ward registers, hospital name, and admission month/year to retrieve § 3.156(c) records omitted from routine outpatient STR jackets.",
+  },
+  {
+    key: "SF 88",
+    kind: "form",
+    label: "Standard Form 88 (Report of Medical Examination)",
+    plainEnglish:
+      "Your military entrance or separation physical examination worksheet documenting objective physical findings, scars, and functional limitations at enlistment and discharge.",
+    practitionerNote:
+      "Paired with SF 93 medical history and SF 600 chronological care sheets; key T₀ evidence for in-service wound tracks and baseline severity.",
+  },
+  {
+    key: "20-10206",
+    kind: "form",
+    label: "VA Form 20-10206 (Freedom of Information Act / Privacy Act Request)",
+    plainEnglish:
+      "The official VA form used to request a complete copy of your VA Claims File (C-file), including internal Rating Code Sheets and prior medical exams.",
+    practitionerNote:
+      "38 C.F.R. §§ 1.550–1.580; request complete VBMS eFolder plus any unindexed paper/microfiche Rating Code Sheets.",
+  },
+  {
+    key: "21-0966",
+    kind: "form",
+    label: "VA Form 21-0966 (Intent to File a Claim for Compensation)",
+    plainEnglish:
+      "Reserves today's potential effective date for up to 1 year while you and an accredited representative gather records before submitting a formal claim.",
+    practitionerNote:
+      "38 C.F.R. § 3.155(b); protects prospective effective-date entitlement while awaiting FOIA / NPRC § 3.156(c) production.",
+  },
+  {
+    key: "20-0995",
+    kind: "form",
+    label: "VA Form 20-0995 (Decision Review Request: Supplemental Claim)",
+    plainEnglish:
+      "Modern VA form used to reopen or readjudicate a previously decided issue by submitting or identifying new and relevant evidence.",
+    practitionerNote:
+      "38 U.S.C. § 5108 and 38 C.F.R. § 3.2501; triggers VA's § 5103A duty to assist and § 5107(b) benefit of the doubt.",
+  },
+  {
+    key: "21-526EZ",
+    kind: "form",
+    label: "VA Form 21-526EZ (Application for Disability Compensation and Related Compensation Benefits)",
+    plainEnglish:
+      "VA's standard formal application form (since March 24, 2015) for new disability claims or claims for an increased rating on an already service-connected condition.",
+    practitionerNote:
+      "38 C.F.R. § 3.155; audit every listed contention against AMA § 5104(b) explicit decision notice under Hamill v. Collins (2026).",
+  },
+  {
+    key: "21-4138",
+    kind: "form",
+    label: "VA Form 21-4138 (Statement in Support of Claim)",
+    plainEnglish:
+      "Written statement form used to submit lay testimony—and prior to March 24, 2015, capable of starting an informal claim or Legacy Notice of Disagreement.",
+    practitionerNote:
+      "Audit pre-March 24, 2015 signed 21-4138s for unadjudicated informal claims (former § 3.155(a)) or timely Legacy NODs lacking a responsive SOC.",
+  },
+];
+
+export const FORM_PLAIN_ENGLISH_BY_KEY: Readonly<Record<string, string>> = {
+  "VA Form 8-526 / 21-526":
+    "VA's standard formal disability compensation application used from 1945 through March 2015. Check handwritten symptom lists on old 8-526 or 21-526 forms against your Rating Code Sheet—any condition VA forgot to decide may still be an open pending claim.",
+  "VA Form 21-526EZ":
+    "VA's standardized disability compensation claim form required for new or increased claims filed on or after March 24, 2015. Check every condition listed on your 21-526EZ against VA's decision letter to verify none were silently skipped.",
+  "VA Form 21-0966":
+    "VA's Intent to File form (introduced March 24, 2015) that reserves a potential effective date for up to 1 year while you gather medical or service records for a complete formal claim.",
+  "VA Form 21-4138":
+    "Veteran's written Statement in Support of Claim. Before March 24, 2015, a signed 21-4138 could start an informal claim or Legacy appeal (NOD); on or after March 24, 2015, it serves as supporting lay evidence rather than a standalone claim form.",
+  "VA Form 21-8940":
+    "VA's employment-history questionnaire for Total Disability Based on Individual Unemployability (TDIU). VA uses it to gather work details, though unemployability can already be raised whenever medical or vocational records in your file show service-connected conditions prevent substantially gainful work.",
+  "VA Form 21-2680":
+    "Medical examination form completed by a clinician to document housebound status or the need for regular aid and attendance for Special Monthly Compensation (SMC).",
+  "VA Form 21-2545":
+    "Historical VA Compensation & Pension (C&P) medical examination report used from the 1940s through the 2000s before modern DBQ worksheets. Its physical exam notes often record deep muscle scars, painful motion, or work limitations.",
+  "VA Form 10-7131 / 10-7132":
+    "Internal notice sent from a VA Medical Center (VAMC) to a VA Regional Office (RO). Before March 24, 2015, hospital reports for an already service-connected condition could trigger an automatic informal claim for an increased rating and show VA knew an updated mailing address.",
+  "VA Form 10-564-D / 21-2507a":
+    "Historical VA hospital summary and C&P exam scheduling request. Useful for checking what mailing address VA used if an older claim was denied for missing a scheduled exam.",
+  "VA Form P-9 / 1-9 / VA Form 9":
+    "The formal Substantive Appeal form used under the pre-2019 Legacy appeals system to send a disagreed claim to the Board of Veterans' Appeals (BVA) after receiving a Statement of the Case (SOC).",
+  "VA Form 20-0995 / 20-0996 / 10182":
+    "The three modern Appeals Modernization Act (AMA) review forms effective February 19, 2019: Supplemental Claim with new and relevant evidence (20-0995), Higher-Level Review (20-0996), and Board Notice of Disagreement (10182).",
+};

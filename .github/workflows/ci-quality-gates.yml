@@ -1,0 +1,49 @@
+name: CI Quality, Legal & Accessibility Gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Compiler, Legal/UPL QA, Typecheck & Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Compile corpus & verify manifest hashes
+        run: pnpm corpus:compile
+
+      - name: Run Lane 3 QA gates (Legal, UPL, Drift, Security, Historian)
+        run: pnpm qa:all
+
+      - name: Strict TypeScript & ESLint checks
+        run: |
+          pnpm typecheck
+          pnpm lint
+
+      - name: Unit & bitemporal boundary tests (Vitest)
+        run: pnpm test
+
+      - name: Production static build (Next.js 16)
+        run: pnpm build

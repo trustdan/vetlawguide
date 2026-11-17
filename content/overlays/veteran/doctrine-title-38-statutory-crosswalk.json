@@ -1,0 +1,26 @@
+{
+  "upstream_id": "doctrine-title-38-statutory-crosswalk",
+  "upstream_path": "docs/title-38-statutory-crosswalk.md",
+  "upstream_sha256": "9f1f8dcd97e31a47e4518c39966d81a9bd7533db6751e7bafcd7a39471e7e274",
+  "linked_version_ids": [
+    "38-cfr-3.953-1961-savings"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Translating Old Law Numbers on WWII, Korea, and Vietnam VA Rating Papers (1933–Present)",
+  "what_this_means": "If you read an older VA rating sheet or denial letter from the 1940s through 1991, the law section numbers look completely different from today's Veterans statutes. Congress reorganized and renumbered Veterans benefits laws in two major waves: first on January 1, 1959 (replacing presidential 'Veterans' Regulations' like Vet. Reg. No. 1(a) with Title 38 sections like § 310 and § 3010), and again in May and August 1991 (renumbering § 310 to § 1110 and § 3010 to § 5110 so the first two digits match each chapter). This guide translates those old numbers into today's sections.",
+  "record_clues": [
+    "WWII or Korean War Rating Code Sheets citing 'Vet. Reg. No. 1(a), Part I' (wartime rates) or 'Part II' (peacetime rates, which historically paid 80% of wartime rates before 1973–1974).",
+    "1959–1991 VA Regional Office (RO) or Board (BVA) decisions citing former 38 U.S.C. §§ 211(a), 310, 314, 354, 355, 410, 3001, 3010, or 4004.",
+    "Decisions issued between May 7, 1991 and August 5, 1991—a 91-day window when procedural rules already used new 5000/7000 numbers while benefit sections still used old 300/400 numbers."
+  ],
+  "important_cautions": [
+    "Renumbering a law section is not the same as changing what the law required: some modern rules (such as the 1988 creation of CAVC court review, the 1997 statutory Board CUE Act, the 2019 Appeals Modernization Act, and the 2022 PACT Act) did not exist in earlier eras.",
+    "Pre-1959 compensation awards that were already in place on December 31, 1957 or December 31, 1958 carry special statutory protection rules (38 C.F.R. § 3.953).",
+    "When reviewing a pre-1991 decision, an accredited representative checks both the old section number printed on the decision and whether the underlying wording was identical at that time."
+  ],
+  "questions_for_representative": [
+    "What do the 'Vet. Reg. No. 1(a)' or three-digit Title 38 section numbers on my historical Rating Code Sheet correspond to in today's law?",
+    "Was the legal protection we are discussing already part of the law on the date of my older decision, or was it added by Congress in a later year?",
+    "Does my pre-1959 or long-standing rating qualify for statutory savings or 10-year / 20-year protection rules?"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "upstream_id": "era-2000-2018-vcaa-legacy-modernization",
+  "upstream_path": "eras/2000-2018-vcaa-legacy-modernization.md",
+  "upstream_sha256": "71048acdfe9033f5e1114362786f1fdbc3528d19ea5714155073dea7108db79b",
+  "linked_version_ids": [
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-4.118-2008-scars",
+    "38-cfr-3.155-3.157b-2015-repeal"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Era 4 (2000–2018): Duty-to-Assist Era & The 2015 Standard Form Wall",
+  "what_this_means": "On November 9, 2000, Congress passed the Veterans Claims Assistance Act (VCAA), ending 'not well grounded' dismissals and requiring VA to help gather records and provide medical nexus exams when basic clues exist. Two major date boundaries define this era: first, on March 24, 2015, VA ended informal letter and hospital-report claims, requiring standardized forms (such as Intent to File Form 21-0966 and Form 21-526EZ); second, for Legacy Regional Office decisions issued before February 19, 2019, relevant VA Medical Center records created within one year after a decision could keep that claim legally open under 38 C.F.R. § 3.156(b) if VA never reviewed them.",
+  "record_clues": [
+    "Written statements (Form 21-4138), unemployability evidence, or VA hospital exam reports dated BEFORE March 24, 2015 versus standardized Form 21-526EZ / 21-0966 filings ON OR AFTER March 24, 2015.",
+    "VA Medical Center treatment notes created within 365 days AFTER a 2000–2018 Regional Office rating decision for the exact condition decided.",
+    "Ratings for spine conditions (updated September 26, 2003), scars and Traumatic Brain Injury (updated October 23, 2008), non-combat PTSD fear stressors (updated July 13, 2010 per 75 FR 39843 & 75 FR 41092), or 2010 Agent Orange additions (ischemic heart disease, Parkinson's, B-cell leukemias)."
+  ],
+  "important_cautions": [
+    "March 24, 2015 is a strict regulatory cutoff: VA medical notes or informal letters dated on or after March 24, 2015 do not start a claim without a prescribed VA claim form or Intent to File.",
+    "Once a 2000–2018 decision becomes truly final, a failure in VA's duty to assist (such as an inadequate C&P exam) cannot establish Clear and Unmistakable Error (CUE), and later court reinterpretations are barred in CUE under 38 C.F.R. § 20.1403(e) (George v. McDonough)—which is why checking whether the claim stayed open under 38 C.F.R. § 3.156(b) or § 3.156(c) matters first.",
+    "In pre-February 19, 2019 Legacy decisions, VA may argue a related unmentioned issue was 'implicitly denied,' and Board CUE motions remain limited by 38 C.F.R. § 20.1409(c) to one final merits CUE decision per prior Board issue."
+  ],
+  "questions_for_representative": [
+    "Did I receive VA Medical Center care for my claimed condition within one year after my pre-February 19, 2019 rating decision that could have kept the claim open under 38 C.F.R. § 3.156(b)?",
+    "Were any written statements, unemployability clues, or VA exam reports received before the March 24, 2015 informal-claim cutoff never adjudicated?",
+    "Did VA apply the exact spine, scar, TBI, or Nehmer effective-date rule in force on my 2000–2018 decision date?"
+  ]
+}
+

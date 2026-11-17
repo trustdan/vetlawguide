@@ -1,0 +1,21 @@
+# Exclude internal agent harnesses, audits, and planning briefs from Vercel upload
+.agents/
+.claude/
+.codex/
+docs/
+tests/
+vision.md
+chatgpt-vision.md
+claude-vision.md
+antigravity-vision.md
+VA-LAW-CORPUS-AND-LLM-BRIEF.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+BACKLOG.md
+PLAN.md
+README.md
+
+# Explicitly keep pinned VA-law-planning corpus and overlays for Next.js static build!
+!corpus/**
+!content/**

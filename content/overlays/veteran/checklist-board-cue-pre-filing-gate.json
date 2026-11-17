@@ -1,0 +1,27 @@
+{
+  "upstream_id": "checklist-board-cue-pre-filing-gate",
+  "upstream_path": "checklists/board-cue-pre-filing-gate.md",
+  "upstream_sha256": "fcac3bccd59554f6d65068bfc1177418fcc5b4892f30409b60ad1a56f3477eb0",
+  "linked_version_ids": [
+    "38-cfr-3.156c-2006-current",
+    "38-cfr-4.56-1946-pre1997"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "Safety Checklist Before Challenging an Old Board of Veterans' Appeals (BVA) Decision for CUE",
+  "what_this_means": "Challenging an older final Board of Veterans' Appeals (BVA) decision for Clear and Unmistakable Error (CUE) carries a high-stakes procedural rule that surprises many Veterans: under 38 C.F.R. § 20.1409(c), once the Board issues a final decision on the merits of a CUE motion on a specific Board issue, no second CUE motion is allowed on that Board issue—even if an attorney later spots a much stronger legal error in the exact same Board decision. This checklist explains the five safety checks an accredited representative performs before ever filing a Board CUE motion.",
+  "record_clues": [
+    "A prior final Board of Veterans' Appeals (BVA) decision in your C-file that decided the specific disability rating or service-connection issue you are questioning.",
+    "Any earlier letters or motions in your C-file mentioning 'Clear and Unmistakable Error' or 'motion for revision' (important to check whether one was already decided on the merits or dismissed without prejudice).",
+    "Historical VA Rating Code Sheets showing whether correcting the error would have changed your combined monthly compensation percentage on that date."
+  ],
+  "important_cautions": [
+    "Single Merits Decision Limit (38 C.F.R. § 20.1409(c)): Filing a quick, handwritten, or incomplete Board CUE motion that gets denied on the merits permanently closes future Board CUE motions on that Board decision issue (though a dismissal without prejudice for lack of specificity under § 20.1404 does not count as a merits decision).",
+    "If a federal court (such as the CAVC) already reviewed and decided that specific issue on the merits, the Board no longer has authority to revise it via CUE.",
+    "Arguments that VA failed to get records, provided a poor C&P exam, weighed conflicting medical opinions unfairly, or failed to apply a later change in law are excluded from CUE by regulation."
+  ],
+  "questions_for_representative": [
+    "Can we check whether newly located service department records under 38 C.F.R. § 3.156(c) can reopen this issue at the Regional Office (RO) without risking my one merits Board CUE opportunity?",
+    "Has any prior Board CUE motion ever been decided on the merits for this issue in my C-file, or was this Board issue ever decided on appeal by the CAVC?",
+    "Have we pulled the exact word-for-word 38 C.F.R. regulation in effect on the date of the Board decision and verified that the Combined Ratings Table math would have increased my monthly payment?"
+  ]
+}

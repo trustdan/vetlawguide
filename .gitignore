@@ -1,3 +1,20 @@
-.vercel
+# Dependencies & build outputs
+node_modules/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Vercel & local environment
+.vercel/
+.env
+.env*.local
+
+# OS & editor metadata
 .DS_Store
-node_modules
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+work/

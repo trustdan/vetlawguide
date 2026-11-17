@@ -1,0 +1,33 @@
+{
+  "upstream_id": "playbook-01-penetrating-wounds-scars-vs-muscles",
+  "upstream_path": "playbooks/01-penetrating-wounds-scars-vs-muscles.md",
+  "upstream_sha256": "7548354ad7070bff34d27039879fc4c8049b533d5a9fb4f3fc6dc0cb4291d1fa",
+  "linked_version_ids": [
+    "38-cfr-4.56-1946-pre1997",
+    "38-cfr-4.56-1997-current",
+    "38-cfr-4.118-1946-pre1978",
+    "38-cfr-4.118-1978-pre2002",
+    "38-cfr-4.118-2002-scars",
+    "38-cfr-4.118-2008-scars",
+    "38-cfr-4.118-2018-scars"
+  ],
+  "reviewed_at": "2026-11-16",
+  "plain_english_title": "Gunshot & Shrapnel Wounds Rated Only as a 0% or 10% Skin Scar",
+  "what_this_means": "When a bullet or explosive fragment passes into or through the body, it can cause up to three distinct types of lasting disability: (1) a surface skin scar, (2) underlying muscle damage causing weakness or early fatigue, and (3) nerve damage causing numbness or tingling. In many older rating decisions, VA assigned only a 0% or 10% skin-scar code (Diagnostic Codes 7800–7805) without evaluating whether the wound damaged an underlying muscle group (Diagnostic Codes 5301–5323) or peripheral nerve.",
+  "record_clues": [
+    "A VA Rating Code Sheet showing 0% or 10% under Diagnostic Code 7800, 7801, 7802, 7804, or 7805 for a gunshot wound (GSW) or shrapnel/fragment wound (SFW), with no 5300-series muscle code listed.",
+    "A Purple Heart on a DD-214, casualty report, or military award citation.",
+    "Service hospital, surgical, or separation exam notes mentioning 'through-and-through' (T&T), 'debridement' (surgical cleaning of damaged deep tissue), 'retained metallic fragments' on X-ray, 'fascia defect', or muscle weakness/atrophy."
+  ],
+  "important_cautions": [
+    "Exact decision dates matter: VA overhauled the muscle-injury regulation (38 C.F.R. § 4.56) effective July 3, 1997 (published June 3, 1997 at 62 FR 30235), and updated skin-scar rules in 2002, 2008, and 2018. Meanwhile, a September 29, 2025 painful-scars notice (90 FR 46542) is a proposed rule only and is NOT enacted law.",
+    "If hospital surgical ward charts were missing when VA first decided the claim, requesting those official inpatient records and submitting them under 38 C.F.R. § 3.156(c) is very different from filing a Clear and Unmistakable Error (CUE) motion.",
+    "Do not file a Board of Veterans' Appeals CUE motion lightly: under 38 C.F.R. § 20.1409(c), once the Board issues a final decision on the merits of a CUE motion on a specific prior Board issue, no further CUE motions are permitted on that Board issue."
+  ],
+  "questions_for_representative": [
+    "Can we request my complete VA Claims File (C-file), including every historical internal VA Rating Code Sheet, to see the exact 4-digit Diagnostic Codes assigned?",
+    "Did VA have my military inpatient surgical / evacuation hospital packet—not just my outpatient health jacket—when it issued the original scar rating (38 C.F.R. § 3.156(c))?",
+    "Based on the exact version of 38 C.F.R. § 4.56 in effect on my decision date, do my service records document muscle-group involvement or nerve symptoms separate from the surface skin scar?",
+    "Would an additional muscle or nerve rating have changed my combined monthly compensation percentage on that date under VA's Combined Ratings Table (38 C.F.R. § 4.25)?"
+  ]
+}

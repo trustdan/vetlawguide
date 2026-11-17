@@ -1,0 +1,27 @@
+{
+  "upstream_id": "auth-38-cfr-4-56-muscle-injuries",
+  "upstream_path": "authorities/part-4/38-cfr-4.56-muscle-injuries-1946-to-present.md",
+  "upstream_sha256": "65b2f0c52c65f4fa2fb28ca43f7e230456c8c8ccf53d01cd7478a92250deb788",
+  "linked_version_ids": [
+    "38-cfr-4.56-1946-pre1997",
+    "38-cfr-4.56-1997-current"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How VA Evaluates Gunshot, Shrapnel, and Penetrating Muscle Injuries (38 C.F.R. § 4.56)",
+  "what_this_means": "When a bullet, shell fragment (SFW), or penetrating injury passes into or through a muscle group—rather than only grazing the outer skin—VA's rating schedule provides dedicated muscle-injury grades (Slight, Moderate, Moderately Severe, and Severe) under Diagnostic Codes 5301 through 5323. On July 3, 1997, VA reorganized 38 C.F.R. § 4.56 to state explicitly that a through-and-through (T&T) wound with muscle damage is rated at least Moderate for each damaged muscle group, while older decisions from April 1, 1946 through July 2, 1997 are governed by the earlier 1945 rating schedule wording.",
+  "record_clues": [
+    "A historical VA Rating Code Sheet showing only a 0% or 10% skin scar code (7800–7805) for a combat gunshot wound, shrapnel wound (SFW), or through-and-through (T&T) injury.",
+    "Field hospital sheets, surgical operative notes, or separation exams mentioning surgical debridement (cleaning away damaged tissue), deep fascia loss, muscle weakness, or fatigue-pain after ordinary use.",
+    "X-ray reports noting retained metallic fragments inside muscle tissue or a Purple Heart listed on a DD-214."
+  ],
+  "important_cautions": [
+    "Exact decision dates matter: VA published the revised § 4.56 rule on June 3, 1997, but it did not take effect until July 3, 1997. A Clear and Unmistakable Error (CUE) review of a pre-July 3, 1997 decision must compare the record against the pre-1997 text rather than quoting the post-July 3, 1997 rule.",
+    "Shallow skin cuts or grazes that never penetrated the muscle covering (fascia) or muscle tissue are generally evaluated under skin scar criteria rather than muscle codes.",
+    "Under 38 C.F.R. § 20.1409(c), VA allows only one final merits CUE decision per prior Board decision on an issue, and active appeal deadlines (such as the 120-day judicial appeal window) remain strict."
+  ],
+  "questions_for_representative": [
+    "Does my VA claims file (C-file) contain the internal Rating Code Sheet showing whether VA ever considered muscle Diagnostic Codes 5301–5323 alongside my scar code?",
+    "Do my military surgical notes or C&P exams document a through-and-through (T&T) track, surgical debridement, or muscle fatigue and loss of strength?",
+    "If service hospital records were missing when VA first decided my claim, should we evaluate reconsideration under 38 C.F.R. § 3.156(c) before considering a CUE motion?"
+  ]
+}

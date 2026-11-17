@@ -1,0 +1,39 @@
+name: Federal Register 38 C.F.R. Drift Watcher
+
+on:
+  schedule:
+    # Runs Mondays and Thursdays at 13:15 UTC
+    - cron: "15 13 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-federal-register:
+    name: Query Federal Register API (38 C.F.R. Parts 3, 4, 14, 20)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check Federal Register API for unindexed 38 C.F.R. rules/proposals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: pnpm fr:watch

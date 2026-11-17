@@ -1,0 +1,30 @@
+{
+  "upstream_id": "authority-38-cfr-4-118-scars-evolution",
+  "upstream_path": "authorities/part-4/38-cfr-4.118-scars-evolution.md",
+  "upstream_sha256": "4c7e970c71aba0de510a233437b281e1bfbd3f3ada7f7159acb10823a2c522bb",
+  "linked_version_ids": [
+    "38-cfr-4.118-1946-pre1978",
+    "38-cfr-4.118-1978-pre2002",
+    "38-cfr-4.118-2002-scars",
+    "38-cfr-4.118-2008-scars",
+    "38-cfr-4.118-2018-scars"
+  ],
+  "reviewed_at": "2026-11-17",
+  "plain_english_title": "How VA Scar and Disfigurement Rules Changed in 2002, 2008, and 2018 (38 C.F.R. § 4.118)",
+  "what_this_means": "VA's rules for rating skin scars and facial/neck disfigurement (Diagnostic Codes 7800–7805) changed substantially across four eras. Before August 30, 2002, head, face, and neck scars used broad descriptive terms. On August 30, 2002, VA introduced an 8-item checklist of measurable disfigurement features (up to 80%). On October 23, 2008, VA switched painful or unstable scars (Diagnostic Code 7804) from a flat 10% cap to a scar-count scale (10% for 1–2 scars, 20% for 3–4 scars, 30% for 5 or more scars, plus 10% if both painful and unstable). On August 13, 2018, VA removed the 'nonlinear' shape restriction on deep scars and defined six body zones.",
+  "record_clues": [
+    "C&P scar examination worksheets listing multiple tender, painful, or repeatedly breaking-down surgical or shrapnel scars.",
+    "Head, face, or neck scars measuring 5+ inches long or 1/4+ inch wide, or showing sunken/raised contour, skin adherence, color changes, or tissue loss.",
+    "Deep burn or shrapnel scars on the trunk, arms, or legs covering 6 square inches or more with underlying soft-tissue damage."
+  ],
+  "important_cautions": [
+    "Do not apply post-October 23, 2008 scar-counting percentages (20% or 30% under Diagnostic Code 7804) as a Clear and Unmistakable Error (CUE) argument against a decision issued before October 23, 2008, when the regulation capped superficial painful scars at 10%.",
+    "Proposed / Not Enacted Alert: On September 29, 2025 (90 FR 46542), VA published a proposed, unfinalized rule regarding objective pain confirmation under Diagnostic Code 7804. Because 90 FR 46542 is proposed and not enacted law, current enacted § 4.118 standards remain in effect.",
+    "A painful or disfiguring scar rating can often exist alongside a separate rating for underlying muscle, nerve, or joint damage when distinct symptoms are involved."
+  ],
+  "questions_for_representative": [
+    "Were my painful or unstable scars evaluated before or after October 23, 2008, and does my current rating reflect the total count of painful or unstable scars?",
+    "For head, face, or neck scars, did the examiner measure all eight objective disfigurement characteristics under Diagnostic Code 7800?",
+    "Are there underlying muscle, nerve, or range-of-motion limitations caused by the injury that should be evaluated separately under Diagnostic Code 7805?"
+  ]
+}
