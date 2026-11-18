@@ -25,7 +25,7 @@ function ArchivalEmblem() {
       viewBox="0 0 32 32"
       fill="none"
       aria-hidden="true"
-      className="h-8 w-8 shrink-0 rounded-full"
+      className="h-10 w-10 shrink-0 rounded-full ring-1 ring-white/25 sm:h-11 sm:w-11"
     >
       <rect width="32" height="32" rx="16" fill="#1e2022" />
       <rect x="5" y="7.5" width="22" height="17" rx="2.5" fill="#8ea38b" />
@@ -508,10 +508,13 @@ export function ChatWidget() {
           data-testid="chat-widget-launcher"
           onClick={() => setOpen(true)}
           aria-label="Open research chat"
-          className="group flex items-center gap-2 rounded-full border border-border bg-surface-elevated py-1.5 pr-4 pl-1.5 text-foreground shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none motion-reduce:hover:scale-100"
+          className="group flex items-center gap-2.5 rounded-full border-2 border-background bg-primary py-2 pr-5 pl-2 text-primary-foreground shadow-2xl ring-2 ring-primary/35 transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:gap-3 sm:py-2.5 sm:pr-6 sm:pl-2.5 motion-reduce:transition-none motion-reduce:hover:scale-100"
         >
           <ArchivalEmblem />
-          <span className="text-sm font-medium">Chat</span>
+          <span className="text-base font-bold tracking-tight sm:text-lg">
+            <span className="sm:hidden">Chat</span>
+            <span className="hidden sm:inline">Research Chat</span>
+          </span>
         </button>
       )}
     </div>

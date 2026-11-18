@@ -202,20 +202,23 @@ export function SiteHeader({
             <div
               role="group"
               aria-label="Audience presentation mode"
-              className="inline-flex items-center rounded-md border border-border bg-surface p-0.5 text-xs leading-none"
+              className="inline-flex items-center gap-0.5 rounded-lg border-2 border-primary/45 bg-surface-elevated p-0.5 leading-none shadow-sm ring-1 ring-primary/10 sm:gap-1 sm:p-1"
             >
               <button
                 type="button"
                 aria-pressed={audienceMode === "veteran"}
                 onClick={() => setAudienceMode("veteran")}
                 className={cn(
-                  "inline-flex items-center gap-1 rounded px-1.5 py-1 font-semibold focus-visible:outline-2 focus-visible:outline-primary sm:px-2.5",
+                  "inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
                   audienceMode === "veteran"
-                    ? "bg-primary text-primary-foreground shadow-xs"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "bg-primary font-bold text-primary-foreground shadow-sm"
+                    : "text-foreground hover:bg-surface",
                 )}
               >
-                <Shield className="hidden h-3.5 w-3.5 sm:inline" aria-hidden="true" />
+                <Shield
+                  className="hidden h-4 w-4 shrink-0 sm:inline"
+                  aria-hidden="true"
+                />
                 <span>Veterans</span>
               </button>
               <button
@@ -223,13 +226,16 @@ export function SiteHeader({
                 aria-pressed={audienceMode === "practitioner"}
                 onClick={() => setAudienceMode("practitioner")}
                 className={cn(
-                  "inline-flex items-center gap-1 rounded px-1.5 py-1 font-semibold focus-visible:outline-2 focus-visible:outline-primary sm:px-2.5",
+                  "inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
                   audienceMode === "practitioner"
-                    ? "bg-primary text-primary-foreground shadow-xs"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "bg-primary font-bold text-primary-foreground shadow-sm"
+                    : "text-foreground hover:bg-surface",
                 )}
               >
-                <Scale className="hidden h-3.5 w-3.5 sm:inline" aria-hidden="true" />
+                <Scale
+                  className="hidden h-4 w-4 shrink-0 sm:inline"
+                  aria-hidden="true"
+                />
                 <span>Practitioners</span>
               </button>
             </div>

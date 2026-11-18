@@ -71,8 +71,9 @@ Every Markdown document in this repository is indexed below (`scripts/historian_
 - [docs/audit/concurrent-audit-plan.md](docs/audit/concurrent-audit-plan.md) — Parallel Claude + Codex + Antigravity audit protocol.
 - [docs/audit/AUDIT_TRACKER.md](docs/audit/AUDIT_TRACKER.md) — Shared lane-isolated milestone audit ledger.
 
-### UI/UX Simplification Specification (`docs/ux/`)
+### UI/UX Simplification Specification (`docs/ux/`) & Launch Runbook (`docs/launch/`)
 - [docs/ux/ui-ux-simplification-recommendations.md](docs/ux/ui-ux-simplification-recommendations.md) — Home page, Browse directory, navigation, mobile header, visual-system, progressive-disclosure & cut-paper illustration specification (adopted into `EPIC 10` & `EPIC 11`).
+- [docs/launch/POST_CODE_LAUNCH_AND_OPS_GUIDE.md](docs/launch/POST_CODE_LAUNCH_AND_OPS_GUIDE.md) — Step-by-step external launch, Google Search Console / Bing indexing, Vercel BotID / env, and Supabase operations checklist.
 
 ### Workspace Rules (`.agents/rules/`), Agents (`.agents/agents/`) & Skills (`.agents/skills/`)
 - **Rules:** [00-pragmatic-programmer.md](.agents/rules/00-pragmatic-programmer.md), [01-corpus-ssot-and-sync.md](.agents/rules/01-corpus-ssot-and-sync.md), [02-bitemporal-and-legal-precision.md](.agents/rules/02-bitemporal-and-legal-precision.md), [03-dual-persona-and-upl-safety.md](.agents/rules/03-dual-persona-and-upl-safety.md), [04-calm-craft-and-accessibility.md](.agents/rules/04-calm-craft-and-accessibility.md), [05-privacy-security-and-stack.md](.agents/rules/05-privacy-security-and-stack.md).
