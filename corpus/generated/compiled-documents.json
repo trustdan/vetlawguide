@@ -173,7 +173,7 @@
     "veteranOverlay": {
       "upstream_id": "checklist-board-cue-pre-filing-gate",
       "upstream_path": "checklists/board-cue-pre-filing-gate.md",
-      "upstream_sha256": "fcac3bccd59554f6d65068bfc1177418fcc5b4892f30409b60ad1a56f3477eb0",
+      "upstream_sha256": "45c402e5197c8b2d4a0d9be9736dfaec119cd3d0eb7c47d78244278f97912cf3",
       "linked_version_ids": [
         "38-cfr-3.156c-2006-current",
         "38-cfr-4.56-1946-pre1997"
@@ -2044,7 +2044,7 @@
     "veteranOverlay": {
       "upstream_id": "playbook-01-penetrating-wounds-scars-vs-muscles",
       "upstream_path": "playbooks/01-penetrating-wounds-scars-vs-muscles.md",
-      "upstream_sha256": "7548354ad7070bff34d27039879fc4c8049b533d5a9fb4f3fc6dc0cb4291d1fa",
+      "upstream_sha256": "b5f2ffffe6865c19efa22bad469e08f8d979deea7f65913cbee29f64b10683e4",
       "linked_version_ids": [
         "38-cfr-4.56-1946-pre1997",
         "38-cfr-4.56-1997-current",
@@ -22425,7 +22425,7 @@
     "veteranOverlay": {
       "upstream_id": "authority-38-cfr-4-71a-spine-evolution",
       "upstream_path": "authorities/part-4/38-cfr-4.71a-spine-evolution.md",
-      "upstream_sha256": "2aa17115bf6cb30523e76fce878602eaa95b00b20ac76b6315c5ad727d380661",
+      "upstream_sha256": "0a7cf7f8f953bb94a2057b9168d2da39e675539f5b1bb5f3d49c3f5e9d6df531",
       "linked_version_ids": [
         "38-cfr-4.71a-1946-pre2002-spine",
         "38-cfr-4.71a-2002-ivds",
@@ -26066,7 +26066,7 @@
     "veteranOverlay": {
       "upstream_id": "cfr-diff-mental-health-dc-9400-9411",
       "upstream_path": "cfr-diffs/vasrd/mental-health-dc-9400-9411.md",
-      "upstream_sha256": "943ad4c9f5dfcf6386149436ad7688659d94331b88619f4a8879bc0ce30a4f60",
+      "upstream_sha256": "f0489e1267c1b39b7ac8bcbb8cb1c9ebfb327f62472af18a121ed567fa96215f",
       "linked_version_ids": [
         "38-cfr-4.132-1988-psychoneurotic",
         "38-cfr-4.130-1996-dsm4",
@@ -26263,7 +26263,7 @@
     "veteranOverlay": {
       "upstream_id": "cfr-diff-orthopedic-spine-joints",
       "upstream_path": "cfr-diffs/vasrd/orthopedic-spine-joints.md",
-      "upstream_sha256": "a0ee94c940e352389aebe8a95ec14adc05d8298c53bbfb362c4ed83f4fdf0620",
+      "upstream_sha256": "405ece4d9647c60a78ffe54b2b97ad5543963620c30614c9e71ea08c5835fbed",
       "linked_version_ids": [
         "38-cfr-4.71a-1946-pre2002-spine",
         "38-cfr-4.71a-2002-ivds",
@@ -29126,7 +29126,7 @@
     "veteranOverlay": {
       "upstream_id": "checklist-c-file-audit-protocol",
       "upstream_path": "checklists/c-file-audit-protocol.md",
-      "upstream_sha256": "0cf2d01b87eb8dd2e2020dccb12af7142b629ed4a6effb83e13497f3f888de62",
+      "upstream_sha256": "3c57f25708e83ec4c55fe5693219647bf75d20ef1daaca7876b4fa6b1b8c6cbb",
       "linked_version_ids": [
         "38-cfr-3.156c-2006-current",
         "38-cfr-3.157b-1961-2015",
@@ -37812,7 +37812,7 @@
     "veteranOverlay": {
       "upstream_id": "playbook-03-service-department-records-38-cfr-3-156c",
       "upstream_path": "playbooks/03-service-department-records-38-cfr-3-156c.md",
-      "upstream_sha256": "523a7cb58c9e02357ebfd70fedb8017d8ed422cf12bdf86c5f79475a968ce336",
+      "upstream_sha256": "7467d20e624fc32d327ba9e59470e5056fb3fddee6fafa94a021fd733d08e67c",
       "linked_version_ids": [
         "38-cfr-3.156c-1962-pre2006",
         "38-cfr-3.156c-2006-current"
@@ -38084,7 +38084,7 @@
     "veteranOverlay": {
       "upstream_id": "playbook-04-unadjudicated-tdiu-informal-claims-smc",
       "upstream_path": "playbooks/04-unadjudicated-tdiu-informal-claims-smc.md",
-      "upstream_sha256": "c98cf198f1fcc818b4409e11eb7a6e2195a8bcffa3c50eec009731636e068110",
+      "upstream_sha256": "a99f8cab5cc7c6beedee6e6bc3a95332fe11be0c7794a56987855a0de12eff76",
       "linked_version_ids": [
         "38-cfr-3.157b-1961-2015",
         "38-cfr-3.155-3.157b-2015-repeal",

@@ -1,7 +1,7 @@
 {
   "upstream_id": "playbook-01-penetrating-wounds-scars-vs-muscles",
   "upstream_path": "playbooks/01-penetrating-wounds-scars-vs-muscles.md",
-  "upstream_sha256": "7548354ad7070bff34d27039879fc4c8049b533d5a9fb4f3fc6dc0cb4291d1fa",
+  "upstream_sha256": "b5f2ffffe6865c19efa22bad469e08f8d979deea7f65913cbee29f64b10683e4",
   "linked_version_ids": [
     "38-cfr-4.56-1946-pre1997",
     "38-cfr-4.56-1997-current",

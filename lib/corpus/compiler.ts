@@ -44,8 +44,17 @@ export interface CompiledCorpusBundle {
   linkResolutionMap: Record<string, string>;
 }
 
+/**
+ * Computes a canonical LF-normalized SHA-256 hex digest for text corpus files
+ * so `manifest.lock.json` and `upstream_sha256` overlay locks match identically
+ * across Windows (`CRLF`) and Linux/macOS (`LF`) checkouts while catching any
+ * single-character content mutation.
+ */
 export function sha256Hex(buffer: Buffer | string): string {
-  return createHash("sha256").update(buffer).digest("hex");
+  const normalized = (
+    typeof buffer === "string" ? buffer : buffer.toString("utf8")
+  ).replace(/\r\n/g, "\n");
+  return createHash("sha256").update(normalized, "utf8").digest("hex");
 }
 
 const DIRECT_CFR_ENTITY_ROUTES: Record<string, string> = {

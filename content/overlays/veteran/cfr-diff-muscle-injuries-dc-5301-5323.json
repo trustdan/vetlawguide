@@ -1,7 +1,7 @@
 {
   "upstream_id": "cfr-diff-muscle-injuries-dc-5301-5323",
   "upstream_path": "cfr-diffs/vasrd/muscle-injuries-dc-5301-5323.md",
-  "upstream_sha256": "aedfb4199bf0de5602442c7b844e2e92836e1a464df8cd8fb06d064ab89dce77",
+  "upstream_sha256": "3d6ee60ec83bd126374cbd7fd8ab0e59b9fc0f401c92301cb956feaf72b66239",
   "linked_version_ids": [
     "38-cfr-4.56-1946-pre1997",
     "38-cfr-4.56-1997-current"

@@ -1,7 +1,7 @@
 {
   "upstream_id": "playbook-04-unadjudicated-tdiu-informal-claims-smc",
   "upstream_path": "playbooks/04-unadjudicated-tdiu-informal-claims-smc.md",
-  "upstream_sha256": "c98cf198f1fcc818b4409e11eb7a6e2195a8bcffa3c50eec009731636e068110",
+  "upstream_sha256": "a99f8cab5cc7c6beedee6e6bc3a95332fe11be0c7794a56987855a0de12eff76",
   "linked_version_ids": [
     "38-cfr-3.157b-1961-2015",
     "38-cfr-3.155-3.157b-2015-repeal",

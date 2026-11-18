@@ -1,7 +1,7 @@
 {
   "upstream_id": "authority-38-cfr-4-71a-spine-evolution",
   "upstream_path": "authorities/part-4/38-cfr-4.71a-spine-evolution.md",
-  "upstream_sha256": "2aa17115bf6cb30523e76fce878602eaa95b00b20ac76b6315c5ad727d380661",
+  "upstream_sha256": "0a7cf7f8f953bb94a2057b9168d2da39e675539f5b1bb5f3d49c3f5e9d6df531",
   "linked_version_ids": [
     "38-cfr-4.71a-1946-pre2002-spine",
     "38-cfr-4.71a-2002-ivds",

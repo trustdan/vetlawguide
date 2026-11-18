@@ -1,7 +1,7 @@
 {
   "upstream_id": "cfr-diff-orthopedic-spine-joints",
   "upstream_path": "cfr-diffs/vasrd/orthopedic-spine-joints.md",
-  "upstream_sha256": "a0ee94c940e352389aebe8a95ec14adc05d8298c53bbfb362c4ed83f4fdf0620",
+  "upstream_sha256": "405ece4d9647c60a78ffe54b2b97ad5543963620c30614c9e71ea08c5835fbed",
   "linked_version_ids": [
     "38-cfr-4.71a-1946-pre2002-spine",
     "38-cfr-4.71a-2002-ivds",

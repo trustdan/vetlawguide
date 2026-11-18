@@ -1,7 +1,7 @@
 {
   "upstream_id": "playbook-03-service-department-records-38-cfr-3-156c",
   "upstream_path": "playbooks/03-service-department-records-38-cfr-3-156c.md",
-  "upstream_sha256": "523a7cb58c9e02357ebfd70fedb8017d8ed422cf12bdf86c5f79475a968ce336",
+  "upstream_sha256": "7467d20e624fc32d327ba9e59470e5056fb3fddee6fafa94a021fd733d08e67c",
   "linked_version_ids": [
     "38-cfr-3.156c-1962-pre2006",
     "38-cfr-3.156c-2006-current"

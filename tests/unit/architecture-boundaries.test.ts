@@ -2,7 +2,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { compileCorpusFromDisk } from "@/lib/corpus/compiler";
+import { compileCorpusFromDisk, sha256Hex } from "@/lib/corpus/compiler";
 import { resolveWave1CfrHref } from "@/lib/corpus/temporal";
 
 const REPO_ROOT = resolve(__dirname, "..", "..");
@@ -151,6 +151,14 @@ describe("Repository Architecture, Lifecycle Hooks & Live Corpus Integrity", () 
 
     expect(bundle.coverageManifest.totals.statutoryCrosswalkEntries).toBeGreaterThan(10);
     expect(bundle.coverageManifest.totals.lexiconEntries).toBeGreaterThan(10);
+
+    // Cross-OS CRLF vs. LF digest invariance for GitHub Actions (ubuntu-latest) <-> Windows
+    expect(sha256Hex("38 C.F.R. § 4.56\r\nEffective 1997-07-03\r\n")).toBe(
+      sha256Hex("38 C.F.R. § 4.56\nEffective 1997-07-03\n"),
+    );
+    expect(sha256Hex("38 C.F.R. § 4.56\nEffective 1997-07-03\n")).not.toBe(
+      sha256Hex("38 C.F.R. § 4.56\nEffective 1997-06-03\n"),
+    );
   });
 
   it("enforces Pragmatic Programmer orthogonality (pure lib/ engines never import React/Next/UI) and zero Broken Windows", () => {

@@ -1,7 +1,7 @@
 {
   "upstream_id": "authority-38-cfr-4-118-scars-evolution",
   "upstream_path": "authorities/part-4/38-cfr-4.118-scars-evolution.md",
-  "upstream_sha256": "4c7e970c71aba0de510a233437b281e1bfbd3f3ada7f7159acb10823a2c522bb",
+  "upstream_sha256": "f61ce0ddb85e11ebbf20aebaace9d94fa014f01f5cb2a9f9033730d1ea967143",
   "linked_version_ids": [
     "38-cfr-4.118-1946-pre1978",
     "38-cfr-4.118-1978-pre2002",
