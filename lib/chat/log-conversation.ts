@@ -11,12 +11,15 @@ export interface LogConversationParams {
 }
 
 function getSupabaseServiceClient() {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !key) {
+  const rawUrl = process.env.SUPABASE_URL?.trim();
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+  if (!rawUrl || !key) {
     return null;
   }
-  return createClient(url, key, { auth: { persistSession: false } });
+  const normalizedUrl = rawUrl
+    .replace(/\/rest\/v1\/?$/i, "")
+    .replace(/\/+$/, "");
+  return createClient(normalizedUrl, key, { auth: { persistSession: false } });
 }
 
 /**
