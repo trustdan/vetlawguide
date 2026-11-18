@@ -7,6 +7,7 @@ import {
   getEraDocuments,
   getRelatedReaderDocuments,
 } from "@/lib/corpus/loader";
+import { buildDocumentMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -22,9 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = getCompiledDocumentByRoute(`/eras/${slug}`);
   if (!doc) return { title: "Era Lens Not Found" };
-  return {
-    title: `${doc.title} | Historical Era Lens`,
-  };
+  return buildDocumentMetadata(doc, "Historical Era Lens");
 }
 
 export default async function EraLensDetailPage({

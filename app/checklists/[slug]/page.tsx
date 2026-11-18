@@ -7,6 +7,7 @@ import {
   getCoverageManifest,
   getRelatedReaderDocuments,
 } from "@/lib/corpus/loader";
+import { buildDocumentMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -22,11 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = getCompiledDocumentByRoute(`/checklists/${slug}`);
   if (!doc) return { title: "Checklist Not Found" };
-  return {
-    title: doc.veteranOverlay
-      ? `${doc.veteranOverlay.plain_english_title} | Checklists`
-      : `${doc.title} | Checklists`,
-  };
+  return buildDocumentMetadata(doc, "Pre-Filing Checklists");
 }
 
 export default async function ChecklistDetailPage({

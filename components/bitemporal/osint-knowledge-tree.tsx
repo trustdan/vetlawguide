@@ -647,16 +647,29 @@ export function OsintKnowledgeTree({
                       >
                         <span className="flex min-w-0 items-center gap-3">
                           {branch.illustrationSrc ? (
-                            <span className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface sm:block">
-                              <Image
-                                src={branch.illustrationSrc}
-                                alt=""
-                                width={52}
-                                height={52}
-                                unoptimized
-                                className="h-13 w-13 object-cover"
-                              />
-                            </span>
+                            <>
+                              <span className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface sm:block">
+                                <Image
+                                  src={branch.illustrationSrc}
+                                  alt=""
+                                  width={48}
+                                  height={48}
+                                  unoptimized
+                                  className="h-12 w-12 object-cover"
+                                />
+                              </span>
+                              {isExpanded ? (
+                                <FolderOpen
+                                  className="h-5 w-5 shrink-0 text-primary sm:hidden"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                <Folder
+                                  className="h-5 w-5 shrink-0 text-primary sm:hidden"
+                                  aria-hidden="true"
+                                />
+                              )}
+                            </>
                           ) : isExpanded ? (
                             <FolderOpen
                               className="h-5 w-5 shrink-0 text-primary"
@@ -692,7 +705,12 @@ export function OsintKnowledgeTree({
                       </button>
                     </h2>
 
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground sm:pl-8">
+                    <p
+                      className={cn(
+                        "mt-1.5 pl-8 text-sm leading-relaxed text-muted-foreground",
+                        branch.illustrationSrc ? "sm:pl-15" : "sm:pl-8",
+                      )}
+                    >
                       <LexiconText text={branch.description} />
                     </p>
                   </div>

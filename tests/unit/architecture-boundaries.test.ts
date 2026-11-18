@@ -148,6 +148,8 @@ describe("Repository Architecture, Lifecycle Hooks & Live Corpus Integrity", () 
     const pureDomainDirs = [
       resolve(REPO_ROOT, "lib", "corpus"),
       resolve(REPO_ROOT, "lib", "screener"),
+      resolve(REPO_ROOT, "lib", "chat"),
+      resolve(REPO_ROOT, "lib", "seo"),
     ];
     const uiCouplingRe =
       /\bfrom\s+["'](?:react|react-dom|next(?:\/[^"']*)?|@\/components\/[^"']+|@\/app\/[^"']+)["']/;

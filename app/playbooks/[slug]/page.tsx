@@ -7,6 +7,7 @@ import {
   getPlaybookDocuments,
   getRelatedReaderDocuments,
 } from "@/lib/corpus/loader";
+import { buildDocumentMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -22,11 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = getCompiledDocumentByRoute(`/playbooks/${slug}`);
   if (!doc) return { title: "Playbook Not Found" };
-  return {
-    title: doc.veteranOverlay
-      ? `${doc.veteranOverlay.plain_english_title} | Playbooks`
-      : `${doc.title} | Playbooks`,
-  };
+  return buildDocumentMetadata(doc, "Investigation Guides");
 }
 
 export default async function PlaybookDetailPage({

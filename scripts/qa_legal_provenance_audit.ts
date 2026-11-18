@@ -101,6 +101,12 @@ function main(): void {
           );
         }
       }
+
+      if (/rescinded\s+Interim\s+Final\s+Rules?\s*\([^)]*90\s+FR\s+46542/i.test(content)) {
+        errors.push(
+          `${rel}: Transposes 90 FR 46542 (proposed rule) as a rescinded Interim Final Rule (91 FR 7118 is the rescinded IFR).`,
+        );
+      }
     }
   }
 

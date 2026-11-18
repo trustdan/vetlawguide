@@ -71,16 +71,16 @@
 - [x] **`E7-S2`:** Era-Reactive `/cases` Authority Directory Synchronized to Top Sticky Era Bar, Reverse Module Links, `CAVC Rule 30(a)` Guardrails & `"Checked as of"` Dates
 - [x] **`E7-S3`:** Concurrent Claude + Codex + Antigravity Tri-Harness Milestone Audit (`docs/audit/AUDIT_TRACKER.md` — Including Nav, Mobile Header & Progressive Disclosure)
 
-## Phase 8 (`EPIC 8`): Grounded Corpus Research Chat (`gpt-5-nano` + `WK-private-demo` Widget + Supabase Analytics, `ADR-0003`)
-- [ ] **`E8-S1`:** `$0.00` Build-Time Citation/DC/Form + BM25 Hybrid Retriever (`lib/chat/retrieve.ts`) & `WK-private-demo`-Style Prompt-Cached System Spine (`lib/chat/system-prompt.ts`)
-- [ ] **`E8-S2`:** Streaming `/api/chat` Route (`gpt-5-nano` Zero-Training Tier), `botid` + IP Rate Limit & Server `redactPii()` Scrubber
-- [ ] **`E8-S3`:** `WK-private-demo`-Style Floating `<ChatWidget />` Pill, `Maximize2`/`Minimize2` Streaming Reader, `<OpenChatLink />` & Client PII Blocker
-- [ ] **`E8-S4`:** Supabase `chat_conversations` Analytics Store (`lib/chat/log-conversation.ts` + RLS Migration), `after()` Upsert & Consent-Gated Session/MP Attribution
-- [ ] **`E8-S5`:** Grounding, PII-Redaction, `/investigate` Zero-Leakage Isolation & `WCAG 2.2 AA+` / `400%` Zoom Chat E2E Suite
+## Phase 8 (`EPIC 8` — Completed): Grounded Corpus Research Chat (`gpt-5-nano` + `WK-private-demo` Widget + Supabase Analytics, `ADR-0003`)
+- [x] **`E8-S1`:** `$0.00` Build-Time Citation/DC/Form + BM25 Hybrid Retriever (`lib/chat/retrieve.ts`) & `WK-private-demo`-Style Prompt-Cached System Spine (`lib/chat/system-prompt.ts`)
+- [x] **`E8-S2`:** Streaming `/api/chat` Route (`gpt-5-nano` Zero-Training Tier), `botid` + IP Rate Limit & Server `redactPii()` Scrubber
+- [x] **`E8-S3`:** `WK-private-demo`-Style Floating `<ChatWidget />` Pill, `Maximize2`/`Minimize2` Streaming Reader, `<OpenChatLink />` & Client PII Blocker
+- [x] **`E8-S4`:** Supabase `chat_conversations` Analytics Store (`lib/chat/log-conversation.ts` + RLS Migration), `after()` Upsert & Consent-Gated Session/MP Attribution
+- [x] **`E8-S5`:** Grounding, PII-Redaction, `/investigate` Zero-Leakage Isolation & `WCAG 2.2 AA+` / `400%` Zoom Chat E2E Suite
 
-## Phase 9 (`EPIC 9` — Final Pre-Launch Epic): Technical, Legal-Citation & Entity SEO + Consent-Gated Google Analytics
-- [ ] **`E9-S1`:** `metadataBase`, Canonical URL Consolidation (`alternates.canonical`), `app/robots.ts` & Provenance-Stamped `app/sitemap.ts`
-- [ ] **`E9-S2`:** Dual-Intent `generateMetadata()` (`DC`, `38 C.F.R.`, `U.S.C.`, `VAOPGCPREC` & Plain-English Queries) + Cut-Paper Archival `next/og` Citation Cards
-- [ ] **`E9-S3`:** Schema.org Legal JSON-LD Graph (`Legislation`, `Article`, `DefinedTermSet`, `BreadcrumbList`)
-- [ ] **`E9-S4`:** `<=2`-Click `DC` / `38 C.F.R.` Crawl Jump-Directories Unified Under `Browse`, `/llms.txt` Citation Manifest & Automated `pnpm qa:seo` Gate
-- [ ] **`E9-S5`:** `WK-private-demo`-Style `<ConsentProvider />`, Consent-Gated GA4 (`gtag.js` + Measurement Protocol), Hard `/investigate` Telemetry Blackout & `/privacy` Page
+## Phase 9 (`EPIC 9` — Completed): Technical, Legal-Citation & Entity SEO + Consent-Gated Google Analytics
+- [x] **`E9-S1`:** `metadataBase`, Canonical URL Consolidation (`alternates.canonical`), `app/robots.ts` & Provenance-Stamped `app/sitemap.ts`
+- [x] **`E9-S2`:** Dual-Intent `generateMetadata()` (`DC`, `38 C.F.R.`, `U.S.C.`, `VAOPGCPREC` & Plain-English Queries) + Cut-Paper Archival `next/og` Citation Cards
+- [x] **`E9-S3`:** Schema.org Legal JSON-LD Graph (`Legislation`, `Article`, `DefinedTermSet`, `BreadcrumbList`)
+- [x] **`E9-S4`:** `<=2`-Click `DC` / `38 C.F.R.` Crawl Jump-Directories Unified Under `Browse`, `/llms.txt` Citation Manifest & Automated `pnpm qa:seo` Gate
+- [x] **`E9-S5`:** `WK-private-demo`-Style `<ConsentProvider />`, Consent-Gated GA4 (`gtag.js` + Measurement Protocol), Hard `/investigate` Telemetry Blackout & `/privacy` Page

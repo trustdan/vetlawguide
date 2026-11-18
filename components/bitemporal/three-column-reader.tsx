@@ -25,6 +25,11 @@ import { LexiconText } from "./lexicon-text";
 import { PlannedModulePlaceholder } from "./planned-module-placeholder";
 import { SourceProvenancePanel } from "./source-provenance-panel";
 import { VeteranOverlayCard } from "./veteran-overlay-card";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import {
+  buildArticleJsonLd,
+  buildBreadcrumbJsonLd,
+} from "@/lib/seo/json-ld";
 
 function renderAstBlock(block: MarkdownBlock, idx: number, docId: string) {
   switch (block.kind) {
@@ -262,6 +267,14 @@ export function ThreeColumnReader({
 
   return (
     <main className="mx-auto max-w-6xl min-w-0 overflow-x-clip space-y-6 px-4 py-8">
+      <JsonLdScript data={buildArticleJsonLd(doc, checkedAsOf)} />
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: hubLabel, path: hubHref },
+          { name: doc.title, path: doc.route },
+        ])}
+      />
       {/* Top Breadcrumb & Header */}
       <header className="min-w-0 space-y-3 border-b border-border pb-5 break-words">
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs">

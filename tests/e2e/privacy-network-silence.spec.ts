@@ -32,12 +32,23 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     );
 
     await page.goto("/");
+    // Prior to explicit opt-in, zero third-party Google Tag scripts are injected
+    await expect(page.locator("script#vlg-gtm-script")).toHaveCount(0);
+
+    // Opting into analytics injects Google Tag (GTM-W9T68MCQ) with zero unexpected third-party hosts
+    await page.getByTestId("consent-accept-all").click();
     await expect(page.locator("script#vlg-gtm-script")).toHaveAttribute(
       "src",
       /googletagmanager\.com\/gtm\.js\?id=GTM-W9T68MCQ/,
     );
     expect(unexpectedExternalRequests).toEqual([]);
     expect(new URL(page.url()).search).toBe("");
+
+    // Navigating via link from an opted-in public page into /investigate purges GTM via clean document load
+    await page.getByRole("link", { name: "Investigate", exact: true }).click();
+    await expect(page).toHaveURL(/\/investigate$/, { timeout: 15000 });
+    await page.waitForLoadState("domcontentloaded");
+    await expect(page.locator("script#vlg-gtm-script")).toHaveCount(0);
   });
 
   test("full /investigate screening & packet export session fires zero network/XHR/beacon calls, zero URL leaks, and zero storage leaks", async ({
@@ -173,5 +184,75 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     for (const key of storageKeys.localKeys) {
       expect(["vlg_audience_mode", "theme", "vlg-theme"]).toContain(key);
     }
+  });
+
+  test("ChatWidget fires zero network calls prior to submit, blocks SSNs client-side, and never leaks /investigate browser-memory answers", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/investigate", { waitUntil: "networkidle" });
+
+    // Enter private screening answers in /investigate browser memory
+    await page.getByTestId("preset-preset-blank-not-sure").click();
+    await page.locator("#investigate-decision-date").fill("1974-08-12");
+    await page.getByTestId("gate-bva-subsumed-yes").click();
+
+    const postOpenRequests: string[] = [];
+    page.on("request", (req) => {
+      const raw = req.url();
+      if (raw.startsWith("blob:") || raw.startsWith("data:")) return;
+      postOpenRequests.push(`${req.method()} ${new URL(raw).pathname}`);
+    });
+
+    // 1. Opening ChatWidget, clicking an example prompt, and expanding fires ZERO network calls
+    await page.getByTestId("chat-widget-launcher").click();
+    await expect(page.getByTestId("chat-widget-panel")).toBeVisible();
+    await expect(page.getByTestId("chat-investigate-isolation-note")).toBeVisible();
+    await page.getByRole("button", { name: /38 C\.F\.R\. § 3\.156\(c\)/i }).click();
+    await page.getByRole("button", { name: "Expand chat window" }).click();
+    await page.getByRole("button", { name: "Shrink chat window" }).click();
+    expect(postOpenRequests).toEqual([]);
+
+    // 2. Client-side PII firewall blocks SSN before fetch("/api/chat") ever fires
+    const syntheticSsn = ["123", "45", "6789"].join("-");
+    await page.locator("#vlg-chat-input").fill(`My SSN is ${syntheticSsn}`);
+    await page.getByRole("button", { name: "Send message" }).click();
+    await expect(page.getByTestId("chat-pii-warning")).toContainText(
+      /Social Security Numbers/i,
+    );
+    expect(postOpenRequests).toEqual([]);
+
+    // 3. Submitting a clean question streams grounded Markdown links AND sends zero /investigate state
+    let capturedChatPayload: Record<string, unknown> | null = null;
+    await page.route("**/api/chat", async (route) => {
+      capturedChatPayload = route.request().postDataJSON() as Record<string, unknown>;
+      await route.fulfill({
+        status: 200,
+        contentType: "text/plain; charset=utf-8",
+        body: "Under [38 C.F.R. § 3.156(c)](/cfr/38-cfr-3.156c), VA reconsiders a claim when official service department records are associated.",
+      });
+    });
+
+    await page
+      .locator("#vlg-chat-input")
+      .fill("How does 38 C.F.R. § 3.156(c) handle missing service records?");
+    await page.getByRole("button", { name: "Send message" }).click();
+
+    const streamedLink = page
+      .getByTestId("chat-widget-panel")
+      .locator('a[href="/cfr/38-cfr-3.156c"]');
+    await expect(streamedLink).toBeVisible();
+
+    expect(capturedChatPayload).not.toBeNull();
+    expect(Object.keys(capturedChatPayload!).sort()).toEqual([
+      "audienceMode",
+      "conversationId",
+      "decisionDate",
+      "messages",
+    ]);
+    // Verify /investigate's private 1974-08-12 date & gate answers were NEVER injected into chat
+    expect(capturedChatPayload!.decisionDate).toBeNull();
+    expect(JSON.stringify(capturedChatPayload)).not.toContain("1974-08-12");
+    expect(JSON.stringify(capturedChatPayload)).not.toContain("bva");
   });
 });

@@ -1,8 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
 import { HomeSearchLauncher } from "@/components/chrome/home-search-launcher";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import { buildWebSiteJsonLd } from "@/lib/seo/json-ld";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "VetLawGuide — Find the VA Law in Force on Your Decision Date",
+  description:
+    "Connect VA rating and Board decisions, historical and current 38 C.F.R. / Title 38 authorities, VASRD diagnostic codes (DC 5000–9918), and concrete records to locate.",
+  canonicalPath: "/",
+  ogEyebrow: "Point-in-Time Veterans Law Reference Desk",
+  ogCite: "38 U.S.C. · 38 C.F.R. · DC 5000–9918",
+});
 
 interface GatewayCardSpec {
   id: string;
@@ -81,6 +94,7 @@ const DIRECT_STARTING_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-5xl space-y-6 px-4 py-6 sm:space-y-8 sm:py-8">
+      <JsonLdScript data={buildWebSiteJsonLd()} />
       {/* 1. Headline, One-Sentence Dual-Mode Lead & 2. Prominent Search */}
       <section className="space-y-3.5">
         <div className="space-y-2">

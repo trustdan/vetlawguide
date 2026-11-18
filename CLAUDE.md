@@ -36,6 +36,6 @@ pnpm corpus:sync        # Pull & SHA-256 lock VA-law-planning snapshot
 pnpm corpus:compile     # Compile entity graph, CFR permalinks & coverage-manifest.json
 pnpm typecheck          # tsc --noEmit (mandatory)
 pnpm test               # Vitest unit & bitemporal compiler/screener tests
-pnpm qa:all             # Legal, UPL, Translation Drift, Security & Historian gates
+pnpm qa:all             # Legal, UPL, Translation Drift, Security, Historian & SEO gates
 pnpm build              # Full static-first Next.js 16 production build
 ```

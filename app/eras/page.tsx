@@ -6,12 +6,16 @@ import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { ErasGuideClient } from "@/components/bitemporal/eras-guide-client";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
 import { getCoverageManifest, getEraDocuments } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Veterans Law Era Definitions, Forms & Chronology Guide (1945–Present)",
   description:
     "Comprehensive guide defining all five historical eras of Veterans Law (1945–1961, 1962–1988, 1988–2000, 2000–2018, and 2019–Present), watershed effective dates, legacy forms, and bitemporal CUE rules.",
-};
+  canonicalPath: "/eras",
+  ogEyebrow: "Five Historical Veterans Law Eras",
+  ogCite: "1945–Present",
+});
 
 export default function ErasIndexPage() {
   const manifest = getCoverageManifest();

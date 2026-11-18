@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Layers } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { getCoverageManifest } from "@/lib/corpus/loader";
+import { buildBreadcrumbJsonLd } from "@/lib/seo/json-ld";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "VASRD 15-System Disability Rating Schedule Hub (38 C.F.R. Part 4)",
   description:
     "Explore all 15 VASRD body systems (DC 5000–9918) and Part 4 Subpart A general rating policy with point-in-time 38 C.F.R. snapshots, historical overhauls, and record clues.",
-};
+  canonicalPath: "/vasrd",
+  ogEyebrow: "38 C.F.R. Part 4 · Rating Schedule",
+  ogCite: "DC 5000–9918",
+});
 
 export default function VasrdHubPage() {
   const manifest = getCoverageManifest();
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Ratings (VASRD)", path: "/vasrd" },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-xs">
         <Link
           href="/cfr"
@@ -26,36 +39,48 @@ export default function VasrdHubPage() {
         </Link>
       </nav>
 
-      <header className="space-y-2 border-b border-border pb-6">
-        <h1
-          data-persona="veteran-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          VA Disability Rating Schedule by Body System (Diagnostic Codes 5000–9918)
-        </h1>
-        <h1
-          data-persona="practitioner-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          38 C.F.R. Part 4 VASRD Hub — Subpart A Policy &amp; All 15 Body Systems
-        </h1>
-        <p
-          data-persona="veteran-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          <LexiconText text="Choose a body system or Diagnostic Code range below to compare how VA rating percentages changed over the decades, spot common rating code-sheet clues, and prepare questions for an accredited representative." />
-        </p>
-        <p
-          data-persona="practitioner-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Complete index across <code className="font-mono text-xs">38 C.F.R. §§ 4.1–4.31</code>{" "}
-          general rating canons and all 15 organ-system schedules (
-          <code className="font-mono text-xs">DC 5000–9918</code>), uniting verbatim
-          multi-era <code className="font-mono text-xs">Part 4</code> snapshots, Federal
-          Register effective-date matrices, anti-pyramiding rules, and issue-spotting
-          playbooks.
-        </p>
+      <header className="flex items-start gap-4 border-b border-border pb-6">
+        <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
+          <Image
+            src="/illustrations/disability-ratings.webp"
+            alt=""
+            width={72}
+            height={72}
+            unoptimized
+            className="h-18 w-18 object-cover"
+          />
+        </div>
+        <div className="min-w-0 space-y-2">
+          <h1
+            data-persona="veteran-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            VA Disability Rating Schedule by Body System (Diagnostic Codes 5000–9918)
+          </h1>
+          <h1
+            data-persona="practitioner-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            38 C.F.R. Part 4 VASRD Hub — Subpart A Policy &amp; All 15 Body Systems
+          </h1>
+          <p
+            data-persona="veteran-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            <LexiconText text="Choose a body system or Diagnostic Code range below to compare how VA rating percentages changed over the decades, spot common rating code-sheet clues, and prepare questions for an accredited representative." />
+          </p>
+          <p
+            data-persona="practitioner-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Complete index across <code className="font-mono text-xs">38 C.F.R. §§ 4.1–4.31</code>{" "}
+            general rating canons and all 15 organ-system schedules (
+            <code className="font-mono text-xs">DC 5000–9918</code>), uniting verbatim
+            multi-era <code className="font-mono text-xs">Part 4</code> snapshots, Federal
+            Register effective-date matrices, anti-pyramiding rules, and issue-spotting
+            playbooks.
+          </p>
+        </div>
       </header>
 
       <CoverageBanner

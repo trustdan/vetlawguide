@@ -9,6 +9,12 @@ import {
   getCompiledCfrSections,
   getCoverageManifest,
 } from "@/lib/corpus/loader";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import {
+  buildBreadcrumbJsonLd,
+  buildCfrLegislationJsonLd,
+} from "@/lib/seo/json-ld";
+import { buildCfrSnapshotMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -43,14 +49,7 @@ export async function generateMetadata({
   if (!compiled || !ver) {
     return { title: "38 C.F.R. Snapshot Not Found" };
   }
-  const isQuarantined =
-    ver.regulatory_status === "proposed-nonbinding" ||
-    ver.regulatory_status === "interim-final-rescinded";
-  return {
-    title: isQuarantined
-      ? `${ver.cfr_section} (Quarantined / Not Enacted Notice ${ver.publication_date ?? ver.effective_from}) — ${ver.heading ?? compiled.title}`
-      : `${ver.cfr_section} (Effective ${ver.effective_from}) — ${ver.heading ?? compiled.title}`,
-  };
+  return buildCfrSnapshotMetadata(compiled, ver);
 }
 
 export default async function CfrVersionPermalinkPage({
@@ -87,6 +86,21 @@ export default async function CfrVersionPermalinkPage({
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "38 C.F.R. Index", path: "/cfr" },
+          { name: compiled.cfrSection, path: `/cfr/${compiled.sectionSlug}` },
+          { name: `Effective ${effectiveFrom}`, path: pinnedVersion.permalink },
+        ])}
+      />
+      <JsonLdScript
+        data={buildCfrLegislationJsonLd(
+          compiled,
+          pinnedVersion,
+          manifest.checkedAsOf,
+        )}
+      />
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
           <Link

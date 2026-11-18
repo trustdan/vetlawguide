@@ -3,6 +3,7 @@
 .claude/
 .codex/
 docs/
+supabase/
 tests/
 vision.md
 chatgpt-vision.md

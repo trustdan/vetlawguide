@@ -11,12 +11,16 @@ import {
   getCoverageManifest,
   getVeteranOverlaysById,
 } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Piercing-Finality Decision Flowchart & 6-Gate Audit Sequence",
   description:
     "Interactive 6-gate visual decision flowchart and synchronized 1:1 Accessible Outline auditing void rating reductions (§ 3.344), newly associated service records (§ 3.156(c)), open/pending claims, Nehmer (§ 3.816), RO CUE (§ 3.105(a)), and Board CUE (§ 7111 / § 20.1409(c)).",
-};
+  canonicalPath: "/explore/piercing-finality",
+  ogEyebrow: "Visual Legal Tool · 6-Gate Audit Sequence",
+  ogCite: "38 C.F.R. §§ 3.156(c) · 3.105(a) · 20.1409(c)",
+});
 
 export default function PiercingFinalityFlowchartPage() {
   const manifest = getCoverageManifest();

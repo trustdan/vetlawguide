@@ -4,10 +4,15 @@ import { ArrowRight } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
 import { getCoverageManifest, getDoctrineDocuments } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Legal Doctrine References & Plain-English Companions",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Legal Doctrine Treatises & Plain-English Companions",
+  description:
+    "Substantive and procedural Veterans Law treatises covering finality, statutory crosswalks, VAOPGCPREC authority, and bitemporal adjudication rules.",
+  canonicalPath: "/docs",
+  ogEyebrow: "Legal Doctrine Treatises",
+});
 
 export default function DocsIndexPage() {
   const manifest = getCoverageManifest();

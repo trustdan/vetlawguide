@@ -9,6 +9,12 @@ import {
   getCompiledCfrSections,
   getCoverageManifest,
 } from "@/lib/corpus/loader";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import {
+  buildBreadcrumbJsonLd,
+  buildCfrLegislationJsonLd,
+} from "@/lib/seo/json-ld";
+import { buildCfrSectionMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -28,9 +34,7 @@ export async function generateMetadata({
   if (!compiled) {
     return { title: "38 C.F.R. Section Not Found" };
   }
-  return {
-    title: `${compiled.cfrSection} — ${compiled.title}`,
-  };
+  return buildCfrSectionMetadata(compiled);
 }
 
 export default async function CfrSectionPage({
@@ -45,9 +49,29 @@ export default async function CfrSectionPage({
   }
 
   const manifest = getCoverageManifest();
+  const leadSnapshot =
+    compiled.versions[compiled.versions.length - 1] ??
+    compiled.quarantinedWatchlist[0] ??
+    null;
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "38 C.F.R. Index", path: "/cfr" },
+          { name: compiled.cfrSection, path: `/cfr/${compiled.sectionSlug}` },
+        ])}
+      />
+      {leadSnapshot && (
+        <JsonLdScript
+          data={buildCfrLegislationJsonLd(
+            compiled,
+            leadSnapshot,
+            manifest.checkedAsOf,
+          )}
+        />
+      )}
       <nav aria-label="Breadcrumb" className="text-xs">
         <Link
           href="/cfr"

@@ -11,10 +11,21 @@ import {
   getStatutoryCrosswalk,
   getVeteranOverlaysById,
 } from "@/lib/corpus/loader";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import {
+  buildBreadcrumbJsonLd,
+  buildDefinedTermSetJsonLd,
+} from "@/lib/seo/json-ld";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Three-Era Title 38 Statutory Crosswalk (1933 ↔ 1958 ↔ 1991)",
-};
+  description:
+    "Translate historical Veterans Regulation No. 1(a) and 1958 Title 38 citations (§ 211(a), § 310, § 355, § 3010, § 4004) into modern 38 U.S.C. section numbers.",
+  canonicalPath: "/crosswalk",
+  ogEyebrow: "Title 38 Statutory Crosswalk",
+  ogCite: "1933 ↔ 1958 ↔ 1991",
+});
 
 export default function CrosswalkPage() {
   const manifest = getCoverageManifest();
@@ -22,8 +33,27 @@ export default function CrosswalkPage() {
   const overlaysById = getVeteranOverlaysById();
   const crosswalkOverlay = overlaysById["doctrine-title-38-statutory-crosswalk"];
 
+  const termSetJsonLd = buildDefinedTermSetJsonLd({
+    name: "Three-Era Title 38 U.S.C. Statutory Crosswalk (1933 ↔ 1958 ↔ 1991)",
+    description:
+      "Mappings across pre-1958 Veterans Regulations, Pub. L. 85-857 (1958), and Pub. L. 102-40 / 102-83 (1991) Title 38 section renumbering.",
+    canonicalPath: "/crosswalk",
+    terms: crosswalk.map((row) => ({
+      termCode: row.eraBSection,
+      name: `${row.eraBSection} ↔ ${row.eraCSection}`,
+      description: `${row.subject} (Era A: ${row.eraAAuthority})`,
+    })),
+  });
+
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Statutory Crosswalk", path: "/crosswalk" },
+        ])}
+      />
+      <JsonLdScript data={termSetJsonLd} />
       <header className="flex items-start gap-4 border-b border-border pb-6">
         <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
           <Image

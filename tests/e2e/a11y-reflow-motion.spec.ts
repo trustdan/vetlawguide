@@ -789,4 +789,55 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     });
     expect(tlOverflow).toBe(false);
   });
+
+  test("Epic 8 ChatWidget & /privacy pass WCAG 2.2 AA in light/dark modes, support Escape focus return, and reflow cleanly at 400% zoom", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/privacy");
+
+    await expect(
+      page.getByRole("heading", {
+        name: /Privacy, Cookie Choices & On-Device Isolation/i,
+      }),
+    ).toBeVisible();
+
+    const privacyLightScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(privacyLightScan.violations).toEqual([]);
+
+    // Open ChatWidget via footer OpenChatLink ("Research chat") custom event
+    await page.getByRole("button", { name: "Research chat", exact: true }).click();
+    const chatPanel = page.getByTestId("chat-widget-panel");
+    await expect(chatPanel).toBeVisible();
+
+    const chatLightScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(chatLightScan.violations).toEqual([]);
+
+    // Toggle dark mode + expanded view and scan WCAG 2.2 AA
+    await page.getByRole("button", { name: "Toggle color theme" }).click();
+    await page.getByRole("button", { name: "Expand chat window" }).click();
+    const chatDarkScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(chatDarkScan.violations).toEqual([]);
+
+    // Escape closes panel and restores focus to launcher button
+    await page.keyboard.press("Escape");
+    await expect(chatPanel).toHaveCount(0);
+    await expect(page.getByTestId("chat-widget-launcher")).toBeFocused();
+
+    // Verify 400% zoom (320×640) reflow with ChatWidget open
+    await page.setViewportSize({ width: 320, height: 640 });
+    await page.getByTestId("chat-widget-launcher").click();
+    await expect(chatPanel).toBeVisible();
+    const zoomOverflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+    });
+    expect(zoomOverflow).toBe(false);
+  });
 });

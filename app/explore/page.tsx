@@ -6,12 +6,15 @@ import { LexiconText } from "@/components/bitemporal/lexicon-text";
 import { OsintKnowledgeTree } from "@/components/bitemporal/osint-knowledge-tree";
 import { extractBrowseCatalog } from "@/lib/corpus/knowledge-tree";
 import { getCoverageManifest } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Browse Topics, Rating Schedules, Review Options & Survivor Guides",
   description:
     "Browse VA disability ratings, older decisions and review options, survivor and family benefits, forms and code-sheet decoders, and point-in-time Title 38 law.",
-};
+  canonicalPath: "/explore",
+  ogEyebrow: "Browse by Visitor Need",
+});
 
 export default function ExplorePage() {
   const manifest = getCoverageManifest();
@@ -77,6 +80,20 @@ export default function ExplorePage() {
           Dedicated lookup tools:
         </span>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <Link
+            href="/explore/diagnostic-codes"
+            className="inline-flex items-center gap-1 font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            <span>Diagnostic Code Jump Directory (DC 5000–9918)</span>
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/explore/cfr-directory"
+            className="inline-flex items-center gap-1 font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            <span>38 C.F.R. Permalink Directory</span>
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
           <Link
             href="/crosswalk"
             className="inline-flex items-center gap-1 font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-primary"

@@ -7,6 +7,7 @@ import {
   getCoverageManifest,
   getRelatedReaderDocuments,
 } from "@/lib/corpus/loader";
+import { buildDocumentMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -22,11 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = getCompiledDocumentByRoute(`/cfr/modules/${slug}`);
   if (!doc) return { title: "Regulatory Module Not Found" };
-  return {
-    title: doc.veteranOverlay
-      ? `${doc.veteranOverlay.plain_english_title} | 38 C.F.R.`
-      : `${doc.title} | 38 C.F.R.`,
-  };
+  return buildDocumentMetadata(doc, "38 C.F.R. Snapshot & Redline");
 }
 
 export default async function CfrModuleDetailPage({

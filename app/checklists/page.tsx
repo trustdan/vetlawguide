@@ -4,10 +4,15 @@ import { ArrowRight, CheckSquare } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
 import { getChecklistDocuments, getCoverageManifest } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Pre-Filing Verification Checklists & Representative Guides",
-};
+  description:
+    "Interactive browser-memory verification checklists for Board CUE gates (38 C.F.R. § 20.1409(c)), C-file record audits, and accredited representative consultations.",
+  canonicalPath: "/checklists",
+  ogEyebrow: "Pre-Filing Verification Checklists",
+});
 
 export default function ChecklistsIndexPage() {
   const manifest = getCoverageManifest();

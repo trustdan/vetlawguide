@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Bookmark, FileDiff, FileSearch } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
@@ -12,10 +13,16 @@ import {
   getCoverageManifest,
 } from "@/lib/corpus/loader";
 import type { CompiledCfrSection } from "@/lib/corpus/types";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Point-in-Time 38 C.F.R. Reader & Redline Index",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Point-in-Time 38 C.F.R. Reader, Effective-Date Snapshots & Redline Index",
+  description:
+    "Read VA regulations (38 C.F.R. Parts 1, 3, 4, 14, 17, 19, 20, 21 & 71) as written on your decision date, compare Federal Register redlines, and verify quarantined rules.",
+  canonicalPath: "/cfr",
+  ogEyebrow: "Point-in-Time 38 C.F.R. Library",
+  ogCite: "Title 38 C.F.R.",
+});
 
 const FLAGSHIP_RESOLVER_SLUGS = new Set([
   "38-cfr-4.56",
@@ -77,36 +84,48 @@ export default function CfrIndexPage() {
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
-      <header className="space-y-2 border-b border-border pb-6">
-        <h1
-          data-persona="veteran-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Plain-English VA Regulation Guides &amp; Historical Rule Comparisons
-        </h1>
-        <h1
-          data-persona="practitioner-only"
-          className="font-serif text-3xl font-bold tracking-tight"
-        >
-          Point-in-Time 38 C.F.R. Reader, Redline Diffs &amp; Two-Pane View
-        </h1>
-        <p
-          data-persona="veteran-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          See how VA rating rules for wounds, scars, joints, heart conditions, mental
-          health, character of discharge, and missing military records read on the date
-          of an older decision—with everyday explanations and record clues.
-        </p>
-        <p
-          data-persona="practitioner-only"
-          className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
-        >
-          Permanent per-version regulatory snapshots strictly separating Federal Register{" "}
-          <strong>Publication Date</strong> from <strong>Effective Date</strong>, paired
-          with word-level deterministic redlines, Two-Pane historical-vs-modern
-          collateral analysis, and quarantined proposed/rescinded rule alerts.
-        </p>
+      <header className="flex items-start gap-4 border-b border-border pb-6">
+        <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
+          <Image
+            src="/illustrations/law-and-cases.webp"
+            alt=""
+            width={72}
+            height={72}
+            unoptimized
+            className="h-18 w-18 object-cover"
+          />
+        </div>
+        <div className="min-w-0 space-y-2">
+          <h1
+            data-persona="veteran-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Plain-English VA Regulation Guides &amp; Historical Rule Comparisons
+          </h1>
+          <h1
+            data-persona="practitioner-only"
+            className="font-serif text-3xl font-bold tracking-tight"
+          >
+            Point-in-Time 38 C.F.R. Reader, Redline Diffs &amp; Two-Pane View
+          </h1>
+          <p
+            data-persona="veteran-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            See how VA rating rules for wounds, scars, joints, heart conditions, mental
+            health, character of discharge, and missing military records read on the date
+            of an older decision—with everyday explanations and record clues.
+          </p>
+          <p
+            data-persona="practitioner-only"
+            className="max-w-3xl text-sm leading-relaxed text-muted-foreground"
+          >
+            Permanent per-version regulatory snapshots strictly separating Federal Register{" "}
+            <strong>Publication Date</strong> from <strong>Effective Date</strong>, paired
+            with word-level deterministic redlines, Two-Pane historical-vs-modern
+            collateral analysis, and quarantined proposed/rescinded rule alerts.
+          </p>
+        </div>
       </header>
 
       <CoverageBanner

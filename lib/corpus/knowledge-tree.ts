@@ -382,6 +382,7 @@ export function buildKnowledgeTree(
     anchorId: "disability-ratings",
     label: "Disability ratings",
     shortLabel: "Disability ratings",
+    illustrationSrc: "/illustrations/disability-ratings.webp",
     badge: `${catalog.vasrdSystems.length} Schedules`,
     nodeStatus: "live",
     description: isVet
@@ -705,6 +706,7 @@ export function buildKnowledgeTree(
     anchorId: "older-decisions",
     label: "Older decisions and review options",
     shortLabel: "Older decisions",
+    illustrationSrc: "/illustrations/investigate-decision.webp",
     badge: `${olderReviewModules.length + 8} Resources`,
     nodeStatus: "live",
     description: isVet
@@ -882,6 +884,7 @@ export function buildKnowledgeTree(
     anchorId: "records-and-forms",
     label: "Records, forms, and unfamiliar terms",
     shortLabel: "Records and forms",
+    illustrationSrc: "/illustrations/forms-decoder.webp",
     badge: `${recordAndServiceModules.length + decoderTreatises.length + 2} Resources`,
     nodeStatus: "live",
     description: isVet
@@ -969,6 +972,7 @@ export function buildKnowledgeTree(
     anchorId: "law-and-cases",
     label: "Law, cases, and historical changes",
     shortLabel: "Law and cases",
+    illustrationSrc: "/illustrations/law-and-cases.webp",
     badge: `${catalog.totals.cfrSectionsIndexed} Regs · ${catalog.totals.precedentsIndexed} Cases`,
     nodeStatus: "live",
     description: isVet

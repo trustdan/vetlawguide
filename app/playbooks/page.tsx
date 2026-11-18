@@ -9,10 +9,15 @@ import {
   getDoctrineDocuments,
   getPlaybookDocuments,
 } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Guides, Legal Treatises & Pre-Filing Checklists",
-};
+  description:
+    "Practical Veterans Law guides, substantive Title 38 treatises, and pre-filing verification checklists with plain-English companions and primary-source citations.",
+  canonicalPath: "/playbooks",
+  ogEyebrow: "Guides · Treatises · Checklists",
+});
 
 export default function PlaybooksIndexPage() {
   const manifest = getCoverageManifest();

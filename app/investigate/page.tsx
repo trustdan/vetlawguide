@@ -7,12 +7,16 @@ import {
   getCompiledCfrVersions,
   getCoverageManifest,
 } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Historical Decision Investigation Workspace",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Historical Decision Investigation Workspace (On-Device Only)",
   description:
     "Private, browser-memory-only Yes / No / I'm Not Sure VA decision investigation desk with missing-records checklists, point-in-time 38 C.F.R. snapshots, and printable discussion packets.",
-};
+  canonicalPath: "/investigate",
+  ogEyebrow: "Private On-Device Investigation Desk",
+  ogCite: "Zero Network · Browser Memory Only",
+});
 
 const SCREENED_CFR_SECTION_ORDER: ReadonlyArray<string> = [
   "38-cfr-3.156c",

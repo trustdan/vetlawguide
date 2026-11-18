@@ -11,10 +11,21 @@ import {
   getCoverageManifest,
   getVeteranOverlaysById,
 } from "@/lib/corpus/loader";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import {
+  buildBreadcrumbJsonLd,
+  buildDefinedTermSetJsonLd,
+} from "@/lib/seo/json-ld";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Legacy VA Forms, Military Records & Rating Code-Sheet Decoder",
-};
+  description:
+    "Decode historical VA and military forms (8-526, 10-7131, DD 1380, 21-4138), VA acronyms, and xx99-xxxx analogous diagnostic codes (38 C.F.R. § 4.20).",
+  canonicalPath: "/reference/forms-and-codes",
+  ogEyebrow: "Forms · Acronyms · Analogous Codes",
+  ogCite: "8-526 · 10-7131 · xx99-xxxx",
+});
 
 export default function FormsAndCodesPage() {
   const manifest = getCoverageManifest();
@@ -22,8 +33,27 @@ export default function FormsAndCodesPage() {
   const overlaysById = getVeteranOverlaysById();
   const formsOverlay = overlaysById["doctrine-forms-and-codesheet-lexicon"];
 
+  const termSetJsonLd = buildDefinedTermSetJsonLd({
+    name: "Veterans Benefits Forms, Acronyms & Rating Code-Sheet Lexicon",
+    description:
+      "Plain-English and practitioner definitions for historical VA forms, military clinical records, and rating code-sheet abbreviations.",
+    canonicalPath: "/reference/forms-and-codes",
+    terms: lexicon.map((entry) => ({
+      termCode: entry.key,
+      name: entry.label,
+      description: entry.plainEnglish,
+    })),
+  });
+
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Forms & Codes Decoder", path: "/reference/forms-and-codes" },
+        ])}
+      />
+      <JsonLdScript data={termSetJsonLd} />
       <header className="flex items-start gap-4 border-b border-border pb-6">
         <div className="hidden shrink-0 overflow-hidden rounded-lg border border-border/80 bg-surface shadow-2xs sm:block">
           <Image

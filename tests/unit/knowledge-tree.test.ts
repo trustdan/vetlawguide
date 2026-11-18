@@ -70,6 +70,18 @@ describe("Visitor-Need 5-Branch Browse Directory & Map Model (lib/corpus/knowled
       pracTree.children?.map((b) => ({ id: b.id, label: b.label, anchorId: b.anchorId })),
     ).toEqual(expectedTopBranches);
 
+    // All 5 top-level sibling Browse branches carry matching cut-paper illustrations,
+    // while nested sub-folders omit illustrationSrc so Lucide folder icons stay uniform
+    for (const topBranch of vetTree.children ?? []) {
+      expect(
+        topBranch.illustrationSrc,
+        `Top-level Browse branch ${topBranch.id} missing illustrationSrc`,
+      ).toMatch(/^\/illustrations\/[a-z0-9-]+\.webp$/);
+      for (const sub of topBranch.children ?? []) {
+        expect(sub.illustrationSrc).toBeUndefined();
+      }
+    }
+
     // Mode changes wording of descriptions, not tree shape
     expect(vetTree.description).not.toBe(pracTree.description);
 

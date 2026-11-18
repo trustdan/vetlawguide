@@ -7,6 +7,7 @@ import {
   getDoctrineDocuments,
   getRelatedReaderDocuments,
 } from "@/lib/corpus/loader";
+import { buildDocumentMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -22,11 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = getCompiledDocumentByRoute(`/docs/${slug}`);
   if (!doc) return { title: "Doctrine Module Not Found" };
-  return {
-    title: doc.veteranOverlay
-      ? `${doc.veteranOverlay.plain_english_title} | Doctrine`
-      : `${doc.title} | Doctrine`,
-  };
+  return buildDocumentMetadata(doc, "Legal Treatises");
 }
 
 export default async function DoctrineDetailPage({

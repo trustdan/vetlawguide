@@ -2,7 +2,7 @@
 
 > **Calm Research Desk Meets Modern Craft:** Connecting specific VA rating and Board decisions, the exact point-in-time historical and modern law governing them, and the concrete records needed to investigate what happened—backed by inspectable primary sources rather than black-box claims.
 
-`[.............ᗧ··] 82% (47/57 Slices Complete: EPIC 6 & EPIC 7 Tri-Harness Audit Complete; EPIC 8 Grounded Chat Queued Next)`
+`[...............ᗧ] 100% (57/57 Slices Complete: All Epics 0–12 Shipped, Grounded Chat & Pre-Launch SEO/Consent Verified)`
 
 ---
 
@@ -14,6 +14,8 @@
 2. **Deterministic Corpus Compiler (`lib/corpus/`):** Decomposes multi-era and multi-section Markdown modules into permanent per-version `38 C.F.R.` routes (`/cfr/[section]/[effective-from]`), bidirectional `1933 <-> 1958 <-> 1991` statutory crosswalk tables, structured acronym/form tooltips, precedent back-links, and an explicit 4-state `coverage-manifest.json` (`VERBATIM_VERIFIED`, `SUMMARY_ONLY`, `PLAIN_ENGLISH_IN_PROGRESS`, `CORPUS_GAP_OR_QUEUED_WAVE`).
 3. **Hash-Locked Dual-Persona Overlays (`content/overlays/veteran/`):** Binds plain-English Veteran explanations and printable *"Questions & Records for Your Representative"* sheets to upstream legal modules via `upstream_sha256` + `version_id` pointers so legal updates automatically flag dependent summaries in CI.
 4. **Zero-Network `/investigate` Screening Engine (`lib/screener/`):** Pure client-side three-valued (`Yes / No / Unknown`) case-investigation engine where `"I Don't Know"` populates *"Records to Locate & Why"* checklists rather than silently dropping legal pathways, verified for complete network and URL silence by Playwright E2E gates.
+5. **Grounded Corpus Research Chat (`lib/chat/` + `app/api/chat/route.ts`):** `$0.00` build-time hybrid citation/DC/BM25 retriever (`< 2ms`), prompt-cached `gpt-5-nano` zero-training commercial API streaming, client + server `redactPii()` firewall, and RLS-locked Supabase `chat_conversations` logging (`ADR-0003`).
+6. **Legal-Citation SEO & Consent-Gated Analytics (`lib/seo/` + `ConsentProvider`):** Canonical URL consolidation across `388` static routes, Schema.org `Legislation` / `TechArticle` / `DefinedTermSet` JSON-LD, `/llms.txt`, `<= 2`-click HTML jump directories, and opt-in `vlg_consent` analytics with unconditional `/investigate` blackout.
 
 ---
 
@@ -26,9 +28,10 @@ pnpm corpus:compile       # Compile corpus/generated/ entity graph & coverage-ma
 pnpm corpus:bookmark      # Print active Wave ingestion bookmark (Wave 5: 111/111 verified modules live)
 pnpm typecheck            # Strict TypeScript check (tsc --noEmit)
 pnpm lint                 # ESLint check
-pnpm test                 # Run Vitest unit & bitemporal compiler/screener suite
-pnpm qa:all               # Run Legal, UPL/UX, Translation Drift, Historian & Security gates
-pnpm test:e2e             # Run Playwright WCAG 2.2 AA+, zoom, & zero-network /investigate checks
+pnpm test                 # Run Vitest unit & bitemporal compiler/screener/chat/SEO suite
+pnpm qa:seo               # Verify 388 canonical routes, /llms.txt, JSON-LD & <=2-click crawl depth
+pnpm qa:all               # Run Legal, UPL/UX, Translation Drift, Security, Historian & SEO gates
+pnpm test:e2e             # Run Playwright WCAG 2.2 AA+, zoom, SEO/consent & /investigate silence checks
 pnpm dev                  # Start local Next.js 16 dev server
 pnpm build                # Compile corpus + static-first production build
 ```

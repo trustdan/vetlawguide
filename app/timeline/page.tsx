@@ -13,12 +13,16 @@ import {
   getCoverageManifest,
   getVeteranOverlaysById,
 } from "@/lib/corpus/loader";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Multi-Track Veterans Law Timeline & Rulemaking Watchlist (1945–2026)",
   description:
-    "Interactive 4-track Veterans Law chronology (Statutes, Part 3 Adjudication, Part 4 VASRD, Landmark Precedents) with Retroactive Opportunity vs. Temporal Trap split cards and a quarantined watchlist of unfinalized and rescinded Federal Register rules.",
-};
+    "Interactive 4-track Veterans Law chronology (Statutes, Part 3 Adjudication, Part 4 VASRD, Landmark Precedents) with Retroactive Opportunity vs. Temporal Trap cards and quarantined rulemaking watchlist.",
+  canonicalPath: "/timeline",
+  ogEyebrow: "Four-Track Chronology · 1945–2026",
+  ogCite: "Statutes · Part 3 · VASRD · Cases",
+});
 
 export default function TimelinePage() {
   const manifest = getCoverageManifest();

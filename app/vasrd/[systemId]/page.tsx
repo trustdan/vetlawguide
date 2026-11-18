@@ -11,6 +11,9 @@ import {
   getVeteranOverlaysById,
 } from "@/lib/corpus/loader";
 import { CANONICAL_VASRD_SYSTEMS } from "@/lib/corpus/types";
+import { JsonLdScript } from "@/components/seo/json-ld-script";
+import { buildBreadcrumbJsonLd } from "@/lib/seo/json-ld";
+import { buildVasrdSystemMetadata } from "@/lib/seo/metadata";
 
 export const dynamicParams = false;
 
@@ -24,11 +27,10 @@ export async function generateMetadata({
   params: Promise<{ systemId: string }>;
 }): Promise<Metadata> {
   const { systemId } = await params;
-  const sys = CANONICAL_VASRD_SYSTEMS.find((s) => s.systemId === systemId);
+  const manifest = getCoverageManifest();
+  const sys = manifest.vasrdSystems.find((s) => s.systemId === systemId);
   if (!sys) return { title: "VASRD System Not Found" };
-  return {
-    title: `${sys.label} (${sys.diagnosticCodeRange}) | VASRD`,
-  };
+  return buildVasrdSystemMetadata(sys);
 }
 
 export default async function VasrdSystemDetailPage({
@@ -53,6 +55,13 @@ export default async function VasrdSystemDetailPage({
 
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 py-10">
+      <JsonLdScript
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Ratings (VASRD)", path: "/vasrd" },
+          { name: sys.label, path: `/vasrd/${sys.systemId}` },
+        ])}
+      />
       <nav aria-label="Breadcrumb" className="text-xs">
         <Link
           href="/vasrd"
