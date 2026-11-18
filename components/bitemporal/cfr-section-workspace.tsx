@@ -21,6 +21,7 @@ import { VerbatimCfrBlock } from "./verbatim-cfr-block";
 import { TwoPaneTemporalView } from "./two-pane-temporal-view";
 import { CfrRedlineViewer } from "./cfr-redline-viewer";
 import { SourceProvenancePanel } from "./source-provenance-panel";
+import { ReportPageErrorLink } from "./report-page-error-link";
 import { PlannedModulePlaceholder } from "./planned-module-placeholder";
 import { QuarantinedWatchlistCard } from "./quarantined-watchlist-card";
 import { LexiconText } from "./lexicon-text";
@@ -203,6 +204,15 @@ export function CfrSectionWorkspace({
   }
 
   const quickDates = SECTION_QUICK_PROBE_DATES[section.sectionSlug] ?? [];
+  // Static route & citation metadata only — never varies with user Decision Date or audience mode.
+  const staticCanonicalPath = pinnedVersion
+    ? pinnedVersion.permalink
+    : `/cfr/${section.sectionSlug}`;
+  const staticReportAuthority = pinnedVersion
+    ? pinnedVersion.federal_register_citation
+      ? `${pinnedVersion.cfr_section} (${pinnedVersion.federal_register_citation})`
+      : `${pinnedVersion.cfr_section} (Eff. ${pinnedVersion.effective_from})`
+    : section.cfrSection;
 
   return (
     <div className="space-y-8">
@@ -545,7 +555,7 @@ export function CfrSectionWorkspace({
         </div>
 
         <div className="min-w-0 space-y-4">
-          {activeSnapshot && (
+          {activeSnapshot ? (
             <SourceProvenancePanel
               officialCitation={
                 activeSnapshot.federal_register_citation ?? activeSnapshot.cfr_section
@@ -566,7 +576,23 @@ export function CfrSectionWorkspace({
               bookmarkWave={activeBookmarkWave}
               primarySourceUrl={section.officialEcfrUrl}
               limitationsNote={activeSnapshot.applicability_and_transition_notes}
+              canonicalPath={staticCanonicalPath}
+              reportAuthority={staticReportAuthority}
             />
+          ) : (
+            <aside
+              aria-label="Report a citation or date issue"
+              className="rounded-lg border border-border bg-surface p-4 text-xs leading-relaxed"
+            >
+              <p className="mb-2 font-mono text-muted-foreground">
+                Checked as of {checkedAsOf} · {corpusReleaseId}
+              </p>
+              <ReportPageErrorLink
+                canonicalPath={staticCanonicalPath}
+                corpusReleaseId={corpusReleaseId}
+                authority={staticReportAuthority}
+              />
+            </aside>
           )}
 
           {section.cFileTriggers.length > 0 && (

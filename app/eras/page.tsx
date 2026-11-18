@@ -5,6 +5,7 @@ import { ArrowRight, History } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { ErasGuideClient } from "@/components/bitemporal/eras-guide-client";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import { getCoverageManifest, getEraDocuments } from "@/lib/corpus/loader";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -81,6 +82,17 @@ export default function ErasIndexPage() {
       </div>
 
       <ErasGuideClient eraDocs={eras} />
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/eras"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="Five Historical Veterans Law Eras (1945–Present)"
+        />
+      </footer>
     </main>
   );
 }

@@ -84,3 +84,22 @@
 - [x] **`E9-S3`:** Schema.org Legal JSON-LD Graph (`Legislation`, `Article`, `DefinedTermSet`, `BreadcrumbList`)
 - [x] **`E9-S4`:** `<=2`-Click `DC` / `38 C.F.R.` Crawl Jump-Directories Unified Under `Browse`, `/llms.txt` Citation Manifest & Automated `pnpm qa:seo` Gate
 - [x] **`E9-S5`:** `WK-private-demo`-Style `<ConsentProvider />`, Consent-Gated GA4 (`gtag.js` + Measurement Protocol), Hard `/investigate` Telemetry Blackout & `/privacy` Page
+
+## Phase 13 (`EPIC 13` — Completed): Launch Safety Rails, Recovery Pages & CI Browser Gate
+- [x] **`E13-S1`:** `/investigate` Starts With an Empty Decision Date; Explicit Date or *"I Don't Know"* Required (Remove `1974-08-12` Fallback)
+- [x] **`E13-S2`:** Archival `not-found.tsx`, `error.tsx` & `global-error.tsx` With Search, Gateways & CFR Section Fallback
+- [x] **`E13-S3`:** Veterans Crisis Line (988, Press 1) & VA Find-a-Rep Links in Footer, Chat, `/investigate` Results & Exports
+- [x] **`E13-S4`:** Per-Page Zero-PII "Report an Error" Links Prefilling the `citation-or-date-fix` Issue Form
+- [x] **`E13-S5`:** Playwright E2E Suite Runs in `ci-quality-gates.yml` as a Required Check
+
+## Phase 14 (`EPIC 14` — Code Complete; External Ops Check Pending on `E14-S4`): Editorial Accountability, Trust Pages & Chat Operations
+- [x] **`E14-S1`:** "Who Maintains This Site" Editorial Ownership on `/about` + Per-Guide "Last Reviewed" Dates & Truthful `author` JSON-LD
+- [x] **`E14-S2`:** `/terms` (`CC0 / CC BY 4.0 / MIT`) & `/accessibility` (`WCAG 2.2 AA`) Pages, Footer Links & Sitemap
+- [x] **`E14-S3`:** `chat_questions` `180`-Day Retention Window, Scheduled Purge Migration (`0003`) & `/privacy` Disclosure
+- [ ] **`E14-S4`:** Shared `/api/chat` Rate Limit (Vercel Firewall) + OpenAI Spend Cap, Verified in Production *(Runbook & Client `429` Handling Ready)*
+- [x] **`E14-S5`:** Site-Wide `Content-Security-Policy-Report-Only` Baseline CSP With `qa:security` & E2E Assertion
+
+## Phase 15 (`EPIC 15` — Active): Real-User Usability Validation & Chat Answer Evaluation
+- [x] **`E15-S1`:** Reviewed `35`-Question Golden Chat Eval Set (`tests/eval/chat-golden.jsonl`) & Manual `pnpm eval:chat` Scorer
+- [ ] **`E15-S2`:** Moderated Veteran & Practitioner Usability Round 1 (`docs/research/usability-round-1.md`)
+- [x] **`E15-S3`:** Monthly `chat_questions` Content-Gap Review Script (`pnpm chat:gaps`) & Ops Cadence

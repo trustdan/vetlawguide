@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GuidesDirectoryClient } from "@/components/bitemporal/guides-directory-client";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import {
   getChecklistDocuments,
   getCoverageManifest,
@@ -107,6 +108,17 @@ export default function PlaybooksIndexPage() {
         treatises={treatises}
         checklists={checklists}
       />
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/playbooks"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="VetLawGuide Guides, Legal Treatises & Pre-Filing Checklists"
+        />
+      </footer>
     </main>
   );
 }

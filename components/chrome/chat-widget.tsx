@@ -16,6 +16,10 @@ import Markdown from "react-markdown";
 import type { Components } from "react-markdown";
 import { useResearchContext } from "@/components/providers/research-context";
 import { detectBlockingClientPii, type ChatTurnMessage } from "@/lib/chat/pii";
+import {
+  VA_FIND_ACCREDITED_REP_URL,
+  VETERANS_CRISIS_LINE_COPY,
+} from "@/lib/support-links";
 import { cn } from "@/lib/utils";
 import { OPEN_CHAT_EVENT } from "./open-chat-link";
 
@@ -242,8 +246,18 @@ export function ChatWidget() {
       });
 
       if (!response.ok || !response.body) {
+        if (response.status === 429) {
+          throw new Error(
+            "You are sending messages too quickly — please wait a few minutes and try again.",
+          );
+        }
         const message = await response.text().catch(() => "");
-        throw new Error(message || "Something went wrong. Please try again.");
+        const trimmedMessage = message.trim();
+        const safeMessage =
+          trimmedMessage && !trimmedMessage.startsWith("<")
+            ? trimmedMessage
+            : "Something went wrong. Please try again.";
+        throw new Error(safeMessage);
       }
 
       const reader = response.body.getReader();
@@ -445,18 +459,33 @@ export function ChatWidget() {
             )}
           </div>
 
-          <p className="border-t border-border bg-surface px-3.5 pt-2 text-xs leading-snug text-muted-foreground">
-            Questions are scrubbed for SSNs/claim IDs and may be logged to
-            improve guides — never enter private medical or identifying details.{" "}
-            <Link
-              href="/privacy"
-              prefetch={false}
-              className="font-medium text-primary underline underline-offset-2"
-            >
-              Privacy
-            </Link>
-            .
-          </p>
+          <div
+            data-testid="chat-privacy-and-crisis-strip"
+            className="space-y-1 border-t border-border bg-surface px-3.5 pt-2 text-xs leading-snug text-muted-foreground"
+          >
+            <p>
+              Questions are scrubbed for SSNs/claim IDs and may be logged to
+              improve guides — never enter private medical or identifying details.{" "}
+              <Link
+                href="/privacy"
+                prefetch={false}
+                className="font-medium text-primary underline underline-offset-2"
+              >
+                Privacy
+              </Link>{" "}
+              ·{" "}
+              <a
+                href={VA_FIND_ACCREDITED_REP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline underline-offset-2"
+              >
+                Find a VA-accredited representative
+              </a>
+              .
+            </p>
+            <p className="text-foreground">{VETERANS_CRISIS_LINE_COPY}</p>
+          </div>
 
           <form
             onSubmit={sendMessage}

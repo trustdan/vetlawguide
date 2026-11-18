@@ -7,6 +7,16 @@ import type {
   TriValue,
 } from "./types";
 import { SCREENING_QUESTIONS } from "./engine";
+import {
+  VA_FIND_ACCREDITED_REP_URL,
+  VETERANS_CRISIS_LINE_COPY,
+} from "@/lib/support-links";
+
+function formatDecisionDateLabel(decisionDate: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(decisionDate)
+    ? decisionDate
+    : "Unknown (locate decision letter / Rating Code Sheet)";
+}
 
 function formatAgencyHuman(agency: DecisionAgency): string {
   switch (agency) {
@@ -73,14 +83,18 @@ export function buildVeteranDiscussionPacketMarkdown(
 ): string {
   const lines: string[] = [];
 
+  const dateLabel = formatDecisionDateLabel(report.intake.decisionDate);
+
   lines.push(
     "# Representative Discussion & Records Sheet (VetLawGuide)",
     "",
     "> **Educational Reference Only — Not Legal Advice:** Nothing in this sheet constitutes legal or medical advice or creates an attorney-client relationship. Share this educational summary with a VA-accredited Veterans Service Organization (VSO) representative, claims agent, or attorney—and **never paste your Social Security Number or VA file number into public websites or unsecured emails.**",
     "",
-    `- **Target VA Decision Date Reviewed:** \`${report.intake.decisionDate}\``,
+    `- **Target VA Decision Date Reviewed:** \`${dateLabel}\``,
     `- **Decision Office:** ${formatAgencyHuman(report.intake.decisionAgency)}`,
     `- **Topic Area:** ${formatFocusHuman(report.intake.issueFocus)}`,
+    `- **Find a VA-Accredited Representative:** ${VA_FIND_ACCREDITED_REP_URL}`,
+    `- **Support Resource:** ${VETERANS_CRISIS_LINE_COPY}`,
     `- **Corpus Provenance Stamp:** \`${stamp.corpusReleaseId}\` (Checked as of \`${stamp.checkedAsOf}\`, snapshot \`${stamp.upstreamCommitShort}\`)`,
     "",
     "---",
@@ -137,7 +151,7 @@ export function buildVeteranDiscussionPacketMarkdown(
       `- **Current Screening Status:** ${p.dispositionLabelVeteran}`,
       `- **Key Rule Principle:** ${p.doctrinalScopeBadgeVeteran}`,
       `- **Plain-English Summary:** ${p.veteranSummary}`,
-      `- **Date-Specific Rule Note (${report.intake.decisionDate}):** ${p.bitemporalNoteVeteran}`,
+      `- **Date-Specific Rule Note (${dateLabel}):** ${p.bitemporalNoteVeteran}`,
     );
     if (p.pointInTimeLinks.length > 0) {
       for (const link of p.pointInTimeLinks) {
@@ -177,9 +191,11 @@ export function buildVeteranDiscussionPacketMarkdown(
     "",
     "---",
     "",
-    "**Important Procedural Deadlines & Cautions:**",
+    "**Important Procedural Deadlines, Representative Directory & Crisis Support:**",
     "- If challenging a recent Board of Veterans' Appeals decision, strict **120-day** Court of Appeals for Veterans Claims (`38 U.S.C. § 7266(a)`) and **1-year** AMA supplemental-claim deadlines apply.",
     "- Under `38 C.F.R. § 20.1409(c)`, VA allows **only one final merits CUE decision per prior Board decision on an issue** (excluding without-prejudice pleading dismissals under `§ 20.1404`). Always verify non-CUE alternatives (`§ 3.156(c)`) and review the complete C-file with an accredited representative first.",
+    `- **Find a VA-accredited representative (VSO, claims agent, or attorney):** ${VA_FIND_ACCREDITED_REP_URL}`,
+    `- **${VETERANS_CRISIS_LINE_COPY}**`,
     "",
   );
 
@@ -191,6 +207,7 @@ export function buildPractitionerAuditPacketMarkdown(
   stamp: CorpusStampMetadata,
 ): string {
   const lines: string[] = [];
+  const dateLabel = formatDecisionDateLabel(report.intake.decisionDate);
 
   lines.push(
     "# Pre-Filing C-File Audit & Bitemporal Gate Packet (VetLawGuide)",
@@ -199,7 +216,7 @@ export function buildPractitionerAuditPacketMarkdown(
     "",
     "## 1. Case-Screen Hypothesis & Corpus Provenance Stamp",
     "",
-    `- **Challenged Decision Date (T₀):** \`${report.intake.decisionDate}\``,
+    `- **Challenged Decision Date (T₀):** \`${dateLabel}\``,
     `- **Adjudicating Agency:** ${formatAgencyHuman(report.intake.decisionAgency)}`,
     `- **Primary Issue Focus:** ${formatFocusHuman(report.intake.issueFocus)}`,
     `- **BVA Merits Subsumption (§ 20.1104):** ${formatTriValuePractitioner(report.intake.bvaMeritsSubsumed)}`,
@@ -210,10 +227,10 @@ export function buildPractitionerAuditPacketMarkdown(
     "",
     "## 2. Two-Pane Bitemporal Baseline (`T₀` Law Then vs. Analysis Today)",
     "",
-    `- **Statutory Numbering Era on \`${report.intake.decisionDate}\`:** ${report.twoPaneContext.statutoryEraLabel}`,
+    `- **Statutory Numbering Era on \`${dateLabel}\`:** ${report.twoPaneContext.statutoryEraLabel}`,
     `  - ${report.twoPaneContext.statutoryEraDetail}`,
-    `- **Record-Scope Rule on \`${report.intake.decisionDate}\`:** ${report.twoPaneContext.recordScopeRuleThen}`,
-    `- **Informal-Claim / Hospital-Report Rule on \`${report.intake.decisionDate}\`:** ${report.twoPaneContext.informalClaimRuleThen}`,
+    `- **Record-Scope Rule on \`${dateLabel}\`:** ${report.twoPaneContext.recordScopeRuleThen}`,
+    `- **Informal-Claim / Hospital-Report Rule on \`${dateLabel}\`:** ${report.twoPaneContext.informalClaimRuleThen}`,
   );
 
   if (report.twoPaneContext.publicationGapTrapAlert) {
@@ -322,6 +339,12 @@ export function buildPractitionerAuditPacketMarkdown(
     "",
     "### Cross-System Title 10 DoD / DFAS Check",
     `- ${report.retireeCrscAdvisory.practitionerNote}`,
+    "",
+    "---",
+    "",
+    "**Accredited Representation & Crisis Support Resources:**",
+    `- **Find a VA-accredited representative:** ${VA_FIND_ACCREDITED_REP_URL}`,
+    `- **${VETERANS_CRISIS_LINE_COPY}**`,
     "",
   );
 

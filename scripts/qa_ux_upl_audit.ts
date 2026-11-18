@@ -262,6 +262,7 @@ function main(): void {
   const validInternalRoutes = new Set<string>([
     "/",
     "/about",
+    "/accessibility",
     "/cases",
     "/cfr",
     "/checklists",
@@ -276,6 +277,7 @@ function main(): void {
     "/playbooks",
     "/privacy",
     "/reference/forms-and-codes",
+    "/terms",
     "/timeline",
     "/vasrd",
   ]);
@@ -381,6 +383,49 @@ function main(): void {
           `lexicon.json (${entry.key}): Truncated or malformed plainEnglish summary ("${entry.plainEnglish}").`,
         );
       }
+    }
+  }
+
+  // 6. Verify Trust & Governance pages (/terms, /accessibility, /about) carry required licensing and plain-English acronym expansions
+  const termsPagePath = resolve(REPO_ROOT, "app", "terms", "page.tsx");
+  if (!existsSync(termsPagePath)) {
+    errors.push("app/terms/page.tsx is missing.");
+  } else {
+    const termsSource = readFileSync(termsPagePath, "utf8").replace(/\s+/g, " ");
+    for (const token of [
+      "CC0",
+      "CC BY 4.0",
+      "MIT",
+      "Appeals Modernization Act (AMA)",
+      "Clear and Unmistakable Error (CUE)",
+    ]) {
+      if (!termsSource.includes(token)) {
+        errors.push(`app/terms/page.tsx: Missing required licensing or acronym-expansion phrase "${token}".`);
+      }
+    }
+  }
+
+  const aboutPagePath = resolve(REPO_ROOT, "app", "about", "page.tsx");
+  if (existsSync(aboutPagePath)) {
+    const aboutSource = readFileSync(aboutPagePath, "utf8").replace(/\s+/g, " ");
+    for (const token of [
+      "VA General Counsel Precedent",
+      "Regulatory Identifier Number",
+      "Who maintains this site",
+    ]) {
+      if (!aboutSource.includes(token)) {
+        errors.push(`app/about/page.tsx: Missing required accountability or acronym-expansion phrase "${token}".`);
+      }
+    }
+  }
+
+  const accessibilityPagePath = resolve(REPO_ROOT, "app", "accessibility", "page.tsx");
+  if (!existsSync(accessibilityPagePath)) {
+    errors.push("app/accessibility/page.tsx is missing.");
+  } else {
+    const a11ySource = readFileSync(accessibilityPagePath, "utf8");
+    if (!a11ySource.includes("WCAG 2.2")) {
+      errors.push('app/accessibility/page.tsx: Missing "WCAG 2.2" conformance target.');
     }
   }
 

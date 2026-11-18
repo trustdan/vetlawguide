@@ -3,7 +3,15 @@ import Link from "next/link";
 import { ExternalLink, Scale, Shield } from "lucide-react";
 import { OpenChatLink } from "@/components/chrome/open-chat-link";
 import { getCoverageManifest } from "@/lib/corpus/loader";
-import { buildBreadcrumbJsonLd, serializeJsonLd } from "@/lib/seo/json-ld";
+import {
+  CORRECTION_SLA,
+  SITE_MAINTAINER,
+} from "@/lib/editorial-accountability";
+import {
+  buildAboutPageJsonLd,
+  buildBreadcrumbJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo/json-ld";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -20,12 +28,17 @@ export default function AboutPage() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
   ]);
+  const aboutPageJsonLd = buildAboutPageJsonLd(manifest.checkedAsOf);
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 sm:py-14">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(aboutPageJsonLd) }}
       />
 
       <header className="border-b border-border pb-7">
@@ -109,8 +122,8 @@ export default function AboutPage() {
               {manifest.totals.precedentsIndexed}
             </div>
             <div className="mt-0.5 text-xs text-muted-foreground">
-              Judicial precedents &amp;{" "}
-              <code className="font-mono text-xs">VAOPGCPREC</code> opinions
+              Judicial precedents &amp; VA General Counsel Precedent (
+              <code className="font-mono text-xs">VAOPGCPREC</code>) opinions
             </div>
           </div>
           <div className="rounded-lg border border-border bg-surface-elevated p-4">
@@ -118,7 +131,7 @@ export default function AboutPage() {
               {manifest.vasrdSystems.length}
             </div>
             <div className="mt-0.5 text-xs text-muted-foreground">
-              VASRD rating-schedule body-system hubs
+              VASRD (Schedule for Rating Disabilities) body-system hubs
             </div>
           </div>
         </div>
@@ -193,8 +206,8 @@ export default function AboutPage() {
               <strong className="text-foreground">
                 Quarantined proposed &amp; rescinded rulemakings:
               </strong>{" "}
-              Unfinalized Federal Register{" "}
-              <code className="font-mono text-xs">RIN</code> proposals and
+              Unfinalized Federal Register Regulatory Identifier Number (
+              <code className="font-mono text-xs">RIN</code>) proposals and
               rescinded Interim Final Rules are isolated behind caution striping
               on the{" "}
               <Link
@@ -204,8 +217,8 @@ export default function AboutPage() {
                 Law Timeline
               </Link>{" "}
               and section pages so pending proposals are never mistaken for
-              enacted law, and single-judge{" "}
-              <code className="font-mono text-xs">CAVC Rule 30(a)</code>{" "}
+              enacted law, and single-judge U.S. Court of Appeals for Veterans
+              Claims (<code className="font-mono text-xs">CAVC Rule 30(a)</code>)
               memorandum dispositions on{" "}
               <Link
                 href="/cases"
@@ -293,9 +306,129 @@ export default function AboutPage() {
           </ul>
         </section>
 
+        <section
+          aria-labelledby="who-maintains-heading"
+          className="space-y-4 rounded-xl border border-border bg-surface-elevated p-5 sm:p-6"
+        >
+          <h2
+            id="who-maintains-heading"
+            className="font-serif text-2xl font-semibold text-foreground"
+          >
+            4. Who maintains this site
+          </h2>
+
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            VetLawGuide is built and maintained by{" "}
+            <a
+              href={SITE_MAINTAINER.githubProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary underline underline-offset-2"
+            >
+              {SITE_MAINTAINER.publicLabel}
+            </a>{" "}
+            ({SITE_MAINTAINER.role}) as an open-source, public-interest Veterans
+            Law research reference.
+          </p>
+
+          <div className="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-foreground">
+            <strong>Plain review disclosure:</strong> No VA-accredited attorney,
+            claims agent, or Veterans Service Organization (VSO) representative
+            has formally reviewed or endorsed the content on this site yet.
+            Every module is compiled from public primary sources and checked by
+            automated verification scripts—never treat this library as a
+            substitute for case-specific review by an accredited representative.
+          </div>
+
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="font-serif text-lg font-semibold text-foreground">
+              How every module is verified &amp; updated
+            </h3>
+            <ol className="list-decimal space-y-2 pl-5">
+              <li>
+                <strong className="text-foreground">
+                  Official primary source first:
+                </strong>{" "}
+                Verbatim rules and dates are transcribed from official{" "}
+                <code className="font-mono text-xs">GovInfo</code> print/annual{" "}
+                <code className="font-mono text-xs">38 C.F.R.</code> editions,{" "}
+                <code className="font-mono text-xs">eCFR</code>,{" "}
+                <code className="font-mono text-xs">FederalRegister.gov</code>,{" "}
+                <code className="font-mono text-xs">Title 38 U.S.C.</code>,
+                published judicial reporters, and{" "}
+                <code className="font-mono text-xs">VAOPGCPREC</code> opinions.
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Pinned corpus verification:
+                </strong>{" "}
+                Structured source modules are verified upstream in{" "}
+                <code className="font-mono text-xs">VA-law-planning</code> and
+                imported via a read-only{" "}
+                <code className="font-mono text-xs">SHA-256</code> manifest lock
+                (<code className="font-mono text-xs">{manifest.corpusReleaseId}</code>).
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Hash-locked plain-English companions:
+                </strong>{" "}
+                Each Veteran Mode companion records the{" "}
+                <code className="font-mono text-xs">SHA-256</code> hash of the
+                legal module it explains plus a{" "}
+                <code className="font-mono text-xs">Last reviewed</code> date;
+                any upstream legal edit fails CI drift checks until the
+                plain-English companion is re-reviewed.
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Automated QA &amp; Federal Register drift gates:
+                </strong>{" "}
+                Continuous checks enforce publication-vs.-effective date
+                separation, <code className="font-mono text-xs">CAVC Rule 30(a)</code>{" "}
+                and proposed <code className="font-mono text-xs">RIN</code>{" "}
+                quarantines, unauthorized-practice-of-law (UPL) copy boundaries,
+                and twice-weekly Federal Register monitoring.
+              </li>
+            </ol>
+          </div>
+
+          <div className="space-y-1.5 border-t border-border pt-3 text-sm text-muted-foreground">
+            <h3 className="font-serif text-lg font-semibold text-foreground">
+              Corrections triage &amp; target turnaround
+            </h3>
+            <p>
+              Use the <strong>Report an error on this page</strong> link in any
+              guide or regulation footer (pre-filling the zero-PII{" "}
+              <a
+                href={SITE_MAINTAINER.githubIssuesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline underline-offset-2"
+              >
+                GitHub citation-or-date-fix form
+              </a>
+              , never including private case details). Primary-source citation,
+              effective-date, or precedent-treatment discrepancies are triaged
+              within{" "}
+              <strong className="text-foreground">
+                {CORRECTION_SLA.legalOrDateTriageHours} hours
+              </strong>{" "}
+              with a target fix published within{" "}
+              <strong className="text-foreground">
+                {CORRECTION_SLA.legalOrDateFixBusinessDays} business days
+              </strong>{" "}
+              (plain-English clarity or link fixes within{" "}
+              <strong className="text-foreground">
+                {CORRECTION_SLA.copyOrLinkReviewBusinessDays} business days
+              </strong>
+              ).
+            </p>
+          </div>
+        </section>
+
         <section className="space-y-3 rounded-lg border border-border bg-surface p-5">
           <h2 className="font-serif text-xl font-semibold text-foreground">
-            4. Independence, Scope &amp; Accredited Representation
+            5. Independence, Scope &amp; Accredited Representation
           </h2>
           <p className="text-sm text-muted-foreground">
             VetLawGuide is an independent public-interest legal reference

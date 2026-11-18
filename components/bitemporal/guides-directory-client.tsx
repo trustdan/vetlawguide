@@ -194,7 +194,7 @@ export function GuidesDirectoryClient({
                 )}
               </div>
 
-              <div className="mt-4 border-t border-border/70 pt-3 text-xs">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border/70 pt-3 text-xs">
                 <Link
                   href={doc.route}
                   className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
@@ -204,6 +204,11 @@ export function GuidesDirectoryClient({
                   </span>
                   <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
+                {overlay?.reviewed_at && (
+                  <span className="font-mono text-xs text-muted-foreground">
+                    Last reviewed {overlay.reviewed_at}
+                  </span>
+                )}
               </div>
             </article>
           );

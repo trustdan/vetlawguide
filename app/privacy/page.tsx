@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CookieSettingsButton } from "@/components/providers/consent-provider";
 import { getCoverageManifest } from "@/lib/corpus/loader";
+import {
+  CHAT_QUESTIONS_RETENTION_DAYS,
+  SITE_MAINTAINER,
+} from "@/lib/editorial-accountability";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -117,6 +121,42 @@ export default function PrivacyPage() {
               Diagnostic Codes, confusing acronyms, and frequent research
               questions. Without analytics consent, chat uses only a temporary
               per-tab identifier rather than a persistent cookie.
+            </li>
+            <li>
+              <strong>
+                {CHAT_QUESTIONS_RETENTION_DAYS}-day retention &amp; automatic
+                purge:
+              </strong>{" "}
+              Logged user questions in{" "}
+              <code className="font-mono text-xs">chat_questions</code> are
+              retained for{" "}
+              <strong>{CHAT_QUESTIONS_RETENTION_DAYS} days</strong> and
+              automatically deleted once older than{" "}
+              {CHAT_QUESTIONS_RETENTION_DAYS} days.
+            </li>
+            <li>
+              <strong>How deletion requests work:</strong> Because stored
+              questions are PII-scrubbed and{" "}
+              <strong>
+                never linked to a user account, name, email address, or IP
+                address
+              </strong>
+              , we cannot look up rows by personal identity. If you want an
+              earlier chat question removed before the{" "}
+              {CHAT_QUESTIONS_RETENTION_DAYS}-day automatic purge, submit a
+              request via{" "}
+              <a
+                href={SITE_MAINTAINER.githubIssuesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline underline-offset-2"
+              >
+                our GitHub contact channel
+              </a>{" "}
+              with the approximate UTC date/time window (or browser{" "}
+              <code className="font-mono text-xs">conversationId</code> if
+              known)—and never include SSNs or private claim numbers in your
+              request.
             </li>
           </ul>
         </section>

@@ -2,7 +2,7 @@
 
 > **Calm Research Desk Meets Modern Craft:** Connecting specific VA rating and Board decisions, the exact point-in-time historical and modern law governing them, and the concrete records needed to investigate what happened—backed by inspectable primary sources rather than black-box claims.
 
-`[...............ᗧ] 100% (57/57 Slices Complete: All Epics 0–12 Shipped, Grounded Chat & Pre-Launch SEO/Consent Verified)`
+`[..............ᗧ•] 97% (68/70 Slices Complete: Epics 0–13 Shipped; EPIC 14/15 Code Complete — Live Firewall Check & Usability Sessions Pending)`
 
 ---
 
@@ -15,7 +15,7 @@
 3. **Hash-Locked Dual-Persona Overlays (`content/overlays/veteran/`):** Binds plain-English Veteran explanations and printable *"Questions & Records for Your Representative"* sheets to upstream legal modules via `upstream_sha256` + `version_id` pointers so legal updates automatically flag dependent summaries in CI.
 4. **Zero-Network `/investigate` Screening Engine (`lib/screener/`):** Pure client-side three-valued (`Yes / No / Unknown`) case-investigation engine where `"I Don't Know"` populates *"Records to Locate & Why"* checklists rather than silently dropping legal pathways, verified for complete network and URL silence by Playwright E2E gates.
 5. **Grounded Corpus Research Chat (`lib/chat/` + `app/api/chat/route.ts`):** `$0.00` build-time hybrid citation/DC/BM25 retriever (`< 2ms`), prompt-cached `gpt-5-nano` zero-training commercial API streaming, client + server `redactPii()` firewall, and RLS-locked Supabase `chat_questions` user-question-only logging (`ADR-0003`).
-6. **Legal-Citation SEO & Consent-Gated Analytics (`lib/seo/` + `ConsentProvider`):** Canonical URL consolidation across `388` static routes, Schema.org `Legislation` / `TechArticle` / `DefinedTermSet` JSON-LD, `/llms.txt`, `<= 2`-click HTML jump directories, and opt-in `vlg_consent` analytics with unconditional `/investigate` blackout.
+6. **Legal-Citation SEO & Consent-Gated Analytics (`lib/seo/` + `ConsentProvider`):** Canonical URL consolidation across `391` static routes, Schema.org `Legislation` / `TechArticle` / `DefinedTermSet` JSON-LD, `/llms.txt`, `<= 2`-click HTML jump directories, and opt-in `vlg_consent` analytics with unconditional `/investigate` blackout.
 
 ---
 
@@ -29,8 +29,10 @@ pnpm corpus:bookmark      # Print active Wave ingestion bookmark (Wave 5: 111/11
 pnpm typecheck            # Strict TypeScript check (tsc --noEmit)
 pnpm lint                 # ESLint check
 pnpm test                 # Run Vitest unit & bitemporal compiler/screener/chat/SEO suite
-pnpm qa:seo               # Verify 388 canonical routes, /llms.txt, JSON-LD & <=2-click crawl depth
+pnpm qa:seo               # Verify 391 canonical routes, /llms.txt, JSON-LD & <=2-click crawl depth
 pnpm qa:all               # Run Legal, UPL/UX, Translation Drift, Security, Historian & SEO gates
+pnpm eval:chat            # Manual golden chat evaluation (--retrieval-only for $0 local check)
+pnpm chat:gaps            # Monthly chat_questions corpus-gap digest (JSONL or Supabase)
 pnpm test:e2e             # Run Playwright WCAG 2.2 AA+, zoom, SEO/consent & /investigate silence checks
 pnpm dev                  # Start local Next.js 16 dev server
 pnpm build                # Compile corpus + static-first production build
@@ -53,7 +55,7 @@ Every Markdown document in this repository is indexed below (`scripts/historian_
 - [AGENTS.md](AGENTS.md) — Master Multi-Agent Constitution, 13-agent roster, and Executable Hard-Veto Matrix.
 - [CLAUDE.md](CLAUDE.md) — Claude Code entrypoint and anti-drift verification contract.
 - [GEMINI.md](GEMINI.md) — Google Antigravity & Gemini CLI host profile (`PYTHONNOUSERSITE=1`, `pnpm`).
-- [BACKLOG.md](BACKLOG.md) — Pragmatic 3-Horizon Rolling-Wave Epic & Slice Backlog (`Epics 0–12`).
+- [BACKLOG.md](BACKLOG.md) — Pragmatic 3-Horizon Rolling-Wave Epic & Slice Backlog (`Epics 0–15`).
 - [PLAN.md](PLAN.md) — High-level Epic & Slice milestone checklist locked 1:1 with `BACKLOG.md`.
 - [.codex/README.md](.codex/README.md) — OpenAI Codex harness notes and concurrent-audit launcher.
 

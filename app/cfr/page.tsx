@@ -6,6 +6,7 @@ import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { QuarantinedWatchlistCard } from "@/components/bitemporal/quarantined-watchlist-card";
 import { CfrIndexLiveResolver } from "@/components/bitemporal/cfr-index-live-resolver";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import {
   DOCUMENT_CATEGORY_LABELS,
   getCfrModuleDocuments,
@@ -427,6 +428,17 @@ export default function CfrIndexPage() {
           ))}
         </div>
       </section>
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/cfr"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="38 C.F.R. Point-in-Time Index"
+        />
+      </footer>
     </main>
   );
 }

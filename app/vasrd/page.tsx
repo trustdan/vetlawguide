@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Layers } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
 import { getCoverageManifest } from "@/lib/corpus/loader";
 import { buildBreadcrumbJsonLd } from "@/lib/seo/json-ld";
@@ -143,6 +144,17 @@ export default function VasrdHubPage() {
           ))}
         </div>
       </section>
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/vasrd"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="38 C.F.R. Part 4 VASRD Schedule (DC 5000–9918)"
+        />
+      </footer>
     </main>
   );
 }

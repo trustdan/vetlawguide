@@ -3,6 +3,10 @@ import type {
   CompiledCfrSnapshot,
   CompiledDocument,
 } from "@/lib/corpus/types";
+import {
+  HAS_ACCREDITED_EXTERNAL_REVIEW,
+  SITE_MAINTAINER,
+} from "@/lib/editorial-accountability";
 import { SITE_NAME, SITE_URL } from "./metadata";
 
 /**
@@ -97,16 +101,25 @@ export function buildArticleJsonLd(
   doc: CompiledDocument,
   checkedAsOf: string,
 ) {
-  return {
+  const lastReviewed = doc.veteranOverlay?.reviewed_at ?? checkedAsOf;
+  const payload: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     headline: doc.title,
-    alternativeHeadline: doc.veteranOverlay?.plain_english_title ?? undefined,
+    ...(doc.veteranOverlay?.plain_english_title
+      ? { alternativeHeadline: doc.veteranOverlay.plain_english_title }
+      : {}),
     description: doc.veteranOverlay?.what_this_means ?? doc.title,
     url: `${SITE_URL}${doc.route}`,
-    dateModified: checkedAsOf,
+    dateModified: lastReviewed,
     inLanguage: "en-US",
     isAccessibleForFree: true,
+    author: {
+      "@type": "Person",
+      name: SITE_MAINTAINER.publicLabel,
+      jobTitle: SITE_MAINTAINER.role,
+      url: SITE_MAINTAINER.githubProfileUrl,
+    },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -117,6 +130,38 @@ export function buildArticleJsonLd(
       ...doc.statutes.slice(0, 3),
       ...doc.diagnosticCodes.slice(0, 3).map((dc) => `Diagnostic Code ${dc}`),
     ],
+  };
+
+  // Never emit `reviewedBy` unless an accredited reviewer has actually reviewed content (E14-S1).
+  if (HAS_ACCREDITED_EXTERNAL_REVIEW) {
+    payload.reviewedBy = {
+      "@type": "Organization",
+      name: SITE_NAME,
+    };
+  }
+
+  return payload;
+}
+
+export function buildAboutPageJsonLd(checkedAsOf: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: `About ${SITE_NAME}`,
+    url: `${SITE_URL}/about`,
+    dateModified: checkedAsOf,
+    inLanguage: "en-US",
+    mainEntity: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      founder: {
+        "@type": "Person",
+        name: SITE_MAINTAINER.publicLabel,
+        jobTitle: SITE_MAINTAINER.role,
+        url: SITE_MAINTAINER.githubProfileUrl,
+      },
+    },
   };
 }
 

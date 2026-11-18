@@ -45,6 +45,7 @@ export function listAllCanonicalPaths(): string[] {
   const paths = new Set<string>([
     "/",
     "/about",
+    "/accessibility",
     "/explore",
     "/explore/piercing-finality",
     "/explore/diagnostic-codes",
@@ -61,6 +62,7 @@ export function listAllCanonicalPaths(): string[] {
     "/reference/forms-and-codes",
     "/investigate",
     "/privacy",
+    "/terms",
   ]);
 
   for (const sys of manifest.vasrdSystems) {
@@ -158,6 +160,7 @@ export function runStaticSeoAudit(
   // Global header + footer links rendered in static HTML on `/` (Click 1 from `/`)
   const click1FromRoot = [
     "/about",
+    "/accessibility",
     "/explore",
     "/explore/diagnostic-codes",
     "/explore/cfr-directory",
@@ -174,6 +177,7 @@ export function runStaticSeoAudit(
     "/reference/forms-and-codes",
     "/investigate",
     "/privacy",
+    "/terms",
   ];
   // Verify `/` + layout footer actually expose the crawl jump-directories within 1 click!
   const layoutSrc = readFileSync(resolve(repoRoot, "app", "layout.tsx"), "utf8");
@@ -186,12 +190,14 @@ export function runStaticSeoAudit(
 
   for (const hub of [
     "/about",
+    "/accessibility",
     "/explore",
     "/vasrd",
     "/cfr",
     "/playbooks",
     "/investigate",
     "/privacy",
+    "/terms",
     "/explore/diagnostic-codes",
     "/explore/cfr-directory",
   ]) {

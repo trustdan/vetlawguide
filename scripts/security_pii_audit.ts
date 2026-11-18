@@ -79,6 +79,20 @@ function main(): void {
     if (/ignoreDuringBuilds\s*:\s*true/.test(nextCfg)) {
       errors.push("next.config.ts sets ignoreDuringBuilds: true (prohibited by Rule 05).");
     }
+    if (!/key:\s*["']Content-Security-Policy["']/.test(nextCfg) || !/connect-src 'self'/.test(nextCfg)) {
+      errors.push(
+        "next.config.ts is missing the strict enforced /investigate Content-Security-Policy (connect-src 'self').",
+      );
+    }
+    if (
+      !/key:\s*["']Content-Security-Policy(?:-Report-Only)?["'][\s\S]*googletagmanager\.com|googletagmanager\.com[\s\S]*key:\s*["']Content-Security-Policy(?:-Report-Only)?["']/.test(
+        nextCfg,
+      )
+    ) {
+      errors.push(
+        "next.config.ts is missing the site-wide baseline Content-Security-Policy(-Report-Only) header.",
+      );
+    }
   }
 
   // 3. Verify Zero-PII warnings in .github/ISSUE_TEMPLATE/*.yml

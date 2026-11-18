@@ -8,9 +8,10 @@ playwright-report/
 test-results/
 
 # Vercel & local environment
+.vercel
 .vercel/
-.env
-.env*.local
+.env*
+!.env.example
 
 # OS & editor metadata
 .DS_Store

@@ -2,7 +2,7 @@
 
 > **North Star ([vision.md](vision.md)):** Help Veterans, Survivors, and VA Law Practitioners connect **a specific VA decision**, **the exact historical and modern law governing it**, and **the concrete records needed to investigate what happened**—backed by inspectable primary sources rather than black-box claims.
 
-`[...............ᗧ] 100% (57/57 Slices Complete: All Epics 0–12 Shipped, Grounded Chat & Pre-Launch SEO/Consent Verified)`
+`[..............ᗧ•] 97% (68/70 Slices Complete: Epics 0–13 Shipped; EPIC 14/15 Code Complete — Live Firewall Check & Usability Sessions Pending)`
 
 ---
 

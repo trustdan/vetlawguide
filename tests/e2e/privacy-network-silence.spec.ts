@@ -81,10 +81,28 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
       postLoadRuntimeRequests.push(`${req.resourceType()}:${req.method()} ${raw}`);
     });
 
-    // 1. Default session starts cleanly at Stage 1; jump to Stage 4 Summary and verify all 3 summary blocks & priority records
+    // 1. Fresh session starts with an EMPTY Decision Date (never 1974-08-12) and locks Stage 2..4 until a date or "I don't know the exact date" is chosen
+    await expect(page.locator("#investigate-decision-date")).toHaveValue("");
+    await expect(page.getByTestId("stage-next-btn")).toBeDisabled();
+    await expect(page.getByTestId("stage-skip-summary-btn")).toBeDisabled();
+    await expect(page.getByTestId("stage-tab-4")).toBeDisabled();
+    await expect(page.getByTestId("report-page-error-link")).toHaveCount(0);
+
+    // Explicitly selecting "I don't know the exact date" unlocks Stage 4, keeps the date Unknown, and elevates "Find the decision letter"
+    await page.getByTestId("decision-date-unknown-btn").click();
+    await expect(page.getByTestId("stage-tab-4")).toBeEnabled();
     await page.getByTestId("stage-tab-4").click();
     await expect(page.getByTestId("summary-what-you-know")).toContainText(
       /What you know/i,
+    );
+    await expect(page.getByTestId("summary-what-you-know")).toContainText(
+      /Unknown \(locate decision letter\)/i,
+    );
+    await expect(page.getByTestId("summary-what-you-know")).not.toContainText(
+      "1974-08-12",
+    );
+    await expect(page.getByTestId("records-to-locate-section")).toContainText(
+      /Find the decision letter/i,
     );
     await expect(page.getByTestId("records-to-locate-section")).toContainText(
       /NPRC Inpatient Clinical/i,
@@ -92,6 +110,12 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     await expect(page.getByTestId("summary-questions-to-discuss")).toContainText(
       /Questions to discuss/i,
     );
+    await expect(
+      page.getByTestId("investigate-rep-and-crisis-links"),
+    ).toContainText(/Find a VA-accredited representative/i);
+    await expect(
+      page.getByTestId("investigate-rep-and-crisis-links"),
+    ).toContainText(/988/);
     expect(new URL(page.url()).search).toBe("");
     expect(new URL(page.url()).hash).toBe("");
 
@@ -116,12 +140,13 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     expect(new URL(page.url()).search).toBe("");
     expect(new URL(page.url()).hash).toBe("");
 
-    // 3. Reset to blank ("I'm Not Sure") at Stage 1, verify clearing #investigate-decision-date does not crash or wipe answers (AUD-CX-001), answer gates + Stage 2 service-record questions, and advance to Stage 4 Summary
+    // 3. Reset to blank ("I'm Not Sure") at Stage 1, verify empty date re-locks Stage 1 without wiping answers, then enter 1974-08-12 and advance to Stage 4 Summary
     await page.getByTestId("preset-preset-blank-not-sure").click();
+    await expect(page.locator("#investigate-decision-date")).toHaveValue("");
+    await expect(page.getByTestId("stage-next-btn")).toBeDisabled();
     await page.getByTestId("gate-bva-subsumed-yes").click();
-    await page.locator("#investigate-decision-date").fill("");
     await expect(
-      page.getByText(/Enter a complete YYYY-MM-DD date/i),
+      page.getByText(/Enter a YYYY-MM-DD date/i),
     ).toBeVisible();
     await page.locator("#investigate-decision-date").fill("1974-08-12");
     await page.getByTestId("gate-prior-bva-cue-yes").click();
@@ -154,6 +179,12 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     );
     await expect(page.getByTestId("packet-markdown-preview")).toContainText(
       /corpus-w[1-5]-/i,
+    );
+    await expect(page.getByTestId("packet-markdown-preview")).toContainText(
+      "https://www.va.gov/get-help-from-accredited-representative/find-rep/",
+    );
+    await expect(page.getByTestId("packet-markdown-preview")).toContainText(
+      /988/,
     );
 
     const downloadPromise = page.waitForEvent("download");
@@ -208,6 +239,12 @@ test.describe("Zero-Telemetry & On-Device /investigate Privacy Guardrail", () =>
     await page.getByTestId("chat-widget-launcher").click();
     await expect(page.getByTestId("chat-widget-panel")).toBeVisible();
     await expect(page.getByTestId("chat-investigate-isolation-note")).toBeVisible();
+    await expect(page.getByTestId("chat-privacy-and-crisis-strip")).toContainText(
+      /Veterans Crisis Line: dial 988 then press 1, or text 838255/i,
+    );
+    await expect(page.getByTestId("chat-privacy-and-crisis-strip")).toContainText(
+      /Find a VA-accredited representative/i,
+    );
     await page.getByRole("button", { name: /38 C\.F\.R\. § 3\.156\(c\)/i }).click();
     await page.getByRole("button", { name: "Expand chat window" }).click();
     await page.getByRole("button", { name: "Shrink chat window" }).click();

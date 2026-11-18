@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CasesDirectoryClient } from "@/components/bitemporal/cases-directory-client";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import { getCompiledPrecedents, getCoverageManifest } from "@/lib/corpus/loader";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -80,6 +81,18 @@ export default function CasesDirectoryPage() {
         checkedAsOf={manifest.checkedAsOf}
         totalModules={manifest.totals.upstreamModules}
       />
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Treatment checked as of {manifest.checkedAsOf} ·{" "}
+          {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/cases"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="Judicial Precedent & VAOPGCPREC Authority Directory"
+        />
+      </footer>
     </main>
   );
 }

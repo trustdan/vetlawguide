@@ -1,4 +1,5 @@
 import { ExternalLink, FileCheck2 } from "lucide-react";
+import { ReportPageErrorLink } from "./report-page-error-link";
 
 export interface SourceProvenanceProps {
   officialCitation: string;
@@ -15,6 +16,8 @@ export interface SourceProvenanceProps {
   bookmarkWave?: string;
   primarySourceUrl: string;
   limitationsNote?: string;
+  canonicalPath?: string;
+  reportAuthority?: string;
 }
 
 export function SourceProvenancePanel({
@@ -28,6 +31,8 @@ export function SourceProvenancePanel({
   corpusReleaseId,
   primarySourceUrl,
   limitationsNote,
+  canonicalPath,
+  reportAuthority,
 }: SourceProvenanceProps) {
   return (
     <aside
@@ -93,7 +98,7 @@ export function SourceProvenancePanel({
         )}
       </dl>
 
-      <div className="mt-3 border-t border-border pt-2.5">
+      <div className="mt-3 flex flex-col gap-2 border-t border-border pt-2.5">
         <a
           href={primarySourceUrl}
           target="_blank"
@@ -103,6 +108,13 @@ export function SourceProvenancePanel({
           <span>Verify Against Official GovInfo / eCFR Source</span>
           <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
+        {canonicalPath && (
+          <ReportPageErrorLink
+            canonicalPath={canonicalPath}
+            corpusReleaseId={corpusReleaseId}
+            authority={reportAuthority ?? officialCitation}
+          />
+        )}
       </div>
     </aside>
   );

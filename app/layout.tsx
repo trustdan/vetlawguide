@@ -17,6 +17,10 @@ import { ResearchProvider } from "@/components/providers/research-context";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { getCoverageManifest, getSearchEngineCatalog } from "@/lib/corpus/loader";
 import { SITE_NAME, SITE_URL } from "@/lib/seo/metadata";
+import {
+  VA_FIND_ACCREDITED_REP_URL,
+  VETERANS_CRISIS_LINE_URL,
+} from "@/lib/support-links";
 
 const newsreader = localFont({
   src: [
@@ -131,11 +135,53 @@ export default function RootLayout({
                       Privacy
                     </Link>
                     <span aria-hidden="true">·</span>
+                    <Link
+                      href="/terms"
+                      prefetch={false}
+                      className="underline underline-offset-2 hover:text-foreground"
+                    >
+                      Terms
+                    </Link>
+                    <span aria-hidden="true">·</span>
+                    <Link
+                      href="/accessibility"
+                      prefetch={false}
+                      className="underline underline-offset-2 hover:text-foreground"
+                    >
+                      Accessibility
+                    </Link>
+                    <span aria-hidden="true">·</span>
                     <CookieSettingsButton />
                     <span aria-hidden="true">·</span>
                     <OpenChatLink className="underline underline-offset-2 hover:text-foreground">
                       Research chat
                     </OpenChatLink>
+                  </div>
+                  <div
+                    data-testid="footer-support-links"
+                    className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 border-t border-border/60 pt-2.5 text-xs"
+                  >
+                    <div>
+                      <a
+                        href={VETERANS_CRISIS_LINE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
+                      >
+                        Veterans Crisis Line
+                      </a>
+                      : dial <strong className="font-semibold text-foreground">988</strong>{" "}
+                      then press <strong className="font-semibold text-foreground">1</strong>, or
+                      text <strong className="font-semibold text-foreground">838255</strong>.
+                    </div>
+                    <a
+                      href={VA_FIND_ACCREDITED_REP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
+                    >
+                      Find a VA-accredited representative
+                    </a>
                   </div>
                 </div>
               </footer>

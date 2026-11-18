@@ -23,7 +23,9 @@
     "qa:historian": "tsx scripts/historian_audit.ts",
     "qa:seo": "tsx scripts/qa_seo_audit.ts",
     "qa:all": "pnpm qa:legal && pnpm qa:upl && pnpm qa:drift && pnpm qa:security && pnpm qa:historian && pnpm qa:seo",
-    "fr:watch": "tsx scripts/check_federal_register_drift.ts"
+    "fr:watch": "tsx scripts/check_federal_register_drift.ts",
+    "eval:chat": "tsx scripts/eval_chat.ts",
+    "chat:gaps": "tsx scripts/review_chat_gaps.ts"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",

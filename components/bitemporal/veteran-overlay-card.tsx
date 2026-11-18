@@ -19,7 +19,7 @@ export function VeteranOverlayCard({ overlay }: { overlay: VeteranOverlay }) {
           </h2>
         </div>
         <span className="font-mono text-xs text-muted-foreground">
-          Reviewed {overlay.reviewed_at}
+          Last reviewed {overlay.reviewed_at}
         </span>
       </div>
 

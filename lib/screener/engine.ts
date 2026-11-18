@@ -17,10 +17,15 @@
 import {
   assignCanonicalSectionSlugs,
   buildBitemporalTwoPaneContext,
+  buildOfficialFallbackUrls,
   normalizeCfrSlug,
   resolveCfrAtDate,
 } from "@/lib/corpus/temporal";
-import type { CfrVersionRecord, CompiledCfrVersion } from "@/lib/corpus/types";
+import type {
+  BitemporalTwoPaneContext,
+  CfrVersionRecord,
+  CompiledCfrVersion,
+} from "@/lib/corpus/types";
 import type {
   CrossSystemRetireeAdvisory,
   EvaluatedInvestigationPathway,
@@ -127,6 +132,19 @@ export function evaluatePathway(
 // ---------------------------------------------------------------------------
 // Canonical Evidentiary Record Definitions (Deduplicated by `recordId`)
 // ---------------------------------------------------------------------------
+
+const RECORD_PRIOR_DECISION_LETTER_AND_DATE: MissingRecordDefinition = {
+  recordId: "prior-va-decision-letter-and-date",
+  documentName:
+    "Find the decision letter — Prior VA Rating Decision, Notification Letter, or BVA Decision Date",
+  whyItMatters:
+    "Without the exact VA decision date, point-in-time 38 C.F.R. wording, historical Title 38 section numbers, and the July 21, 1992 Bell record-scope cutoff cannot be pinned down.",
+  howToRequest:
+    "Check VA.gov decision letters, saved VA envelopes, or file VA Form 20-10206 (FOIA / Privacy Act Request) for your complete Claims File (C-File) and Rating Code Sheets to confirm the exact decision date.",
+  practitionerAuditNote:
+    "Confirm exact Rating Decision code-sheet promulgation date and notification mailing date (or BVA decision date) in VBMS before resolving T₀ 38 C.F.R. snapshots or pleading CUE.",
+  priorityOrder: 0,
+};
 
 const RECORD_NPRC_INPATIENT_SURGICAL: MissingRecordDefinition = {
   recordId: "nprc-inpatient-surgical-packet",
@@ -562,7 +580,7 @@ function createAllNoAnswers(overrides: Record<string, TriValue>): Record<string,
 }
 
 export function createDefaultInvestigationState(
-  decisionDate = "1974-08-12",
+  decisionDate = "",
 ): InvestigationIntakeState {
   const answers: Record<string, TriValue> = {};
   for (const q of SCREENING_QUESTIONS) {
@@ -587,7 +605,7 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
       practitionerLabel: "Blank Intake (All Unknown — Record Discovery Mode)",
       shortDescription:
         "Demonstrates three-valued preservation: zero pathways dropped when C-file facts are still unknown.",
-      state: createDefaultInvestigationState("1974-08-12"),
+      state: createDefaultInvestigationState(""),
     },
     {
       presetId: "preset-1974-vietnam-gsw-scar",
@@ -745,6 +763,24 @@ export const INVESTIGATION_SCENARIO_PRESETS: ReadonlyArray<InvestigationScenario
 // Point-in-Time T₀ CFR Link Resolver Helper
 // ---------------------------------------------------------------------------
 
+function buildUnknownDateTwoPaneContext(): BitemporalTwoPaneContext {
+  const baselineModernContext = buildBitemporalTwoPaneContext("2026-01-01", []);
+  return {
+    decisionDate: "unknown",
+    statutoryEraLabel:
+      "Decision Date Unknown — Confirm Exact Date on Decision Letter or Rating Code Sheet",
+    statutoryEraDetail:
+      "Historical Title 38 numbering (pre-1959 Veterans' Regulations, 1959–1991 former 38 U.S.C. sections, or post-Aug. 6, 1991 modern Title 38 U.S.C.) cannot be pinned down until the decision date is confirmed.",
+    recordScopeRuleThen:
+      "Decision Date Unknown: Decisions before July 21, 1992 require physical presence in the C-file for CUE (Damrel), while decisions on or after July 21, 1992 include pre-existing VA medical records constructively (Bell v. Derwinski).",
+    informalClaimRuleThen:
+      "Decision Date Unknown: Decisions before March 24, 2015 fall under former 38 C.F.R. §§ 3.155(a) & 3.157(b) informal/hospital-report claim rules; decisions on or after March 24, 2015 follow standardized claim forms (79 FR 57660).",
+    publicationGapTrapAlert: null,
+    vehiclesToday: baselineModernContext.vehiclesToday,
+    collateralLimitsToday: baselineModernContext.collateralLimitsToday,
+  };
+}
+
 function resolvePointInTimeLink(
   versions: CfrVersionRecord[],
   sectionSlug: string,
@@ -752,13 +788,48 @@ function resolvePointInTimeLink(
   decisionDate: string,
   canonicalSlugById?: ReadonlyMap<string, string>,
 ): PointInTimeAuthorityLink {
-  const resolved = resolveCfrAtDate(versions, sectionSlug, decisionDate);
   const matchingSectionVersions = versions.filter(
     (v) =>
       (v as Partial<CompiledCfrVersion>).sectionSlug === sectionSlug ||
       canonicalSlugById?.get(v.version_id) === sectionSlug ||
       normalizeCfrSlug(v.cfr_section) === sectionSlug,
   );
+
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(decisionDate)) {
+    const quarantinedForSection = matchingSectionVersions.filter(
+      (v) =>
+        v.regulatory_status === "proposed-nonbinding" ||
+        v.regulatory_status === "interim-final-rescinded",
+    );
+    const quarantinedNote =
+      quarantinedForSection.length > 0
+        ? quarantinedForSection
+            .map(
+              (q) =>
+                `${q.cfr_section} (${q.federal_register_citation ?? q.version_id}): Proposed / unfinalized or rescinded — NOT enacted law; never cite as binding regulation.`,
+            )
+            .join(" ")
+        : null;
+    const fallbackUrls = buildOfficialFallbackUrls(sectionSlug, cfrLabel);
+    return {
+      sectionSlug,
+      cfrSection: cfrLabel,
+      coverageState: "CORPUS_GAP_OR_QUEUED_WAVE",
+      doNotRely: true,
+      permalink: null,
+      effectiveIntervalLabel:
+        "Decision date unknown — locate decision letter to resolve exact snapshot",
+      publicationDateLabel: "Confirm decision date first",
+      publicationGapTrapAlert: null,
+      quarantinedProposalsNote: quarantinedNote,
+      explanation:
+        "Exact 38 C.F.R. snapshot cannot be resolved until the VA decision date is confirmed.",
+      officialEcfrUrl: fallbackUrls.ecfrUrl,
+      officialGovinfoUrl: fallbackUrls.govinfoUrl,
+    };
+  }
+
+  const resolved = resolveCfrAtDate(versions, sectionSlug, decisionDate);
   const twoPaneForSec = buildBitemporalTwoPaneContext(
     decisionDate,
     matchingSectionVersions,
@@ -841,9 +912,8 @@ export function evaluateInvestigationSession(
   intake: InvestigationIntakeState,
   cfrVersions: CfrVersionRecord[],
 ): InvestigationEvaluationReport {
-  const safeDate = /^\d{4}-\d{2}-\d{2}$/.test(intake.decisionDate)
-    ? intake.decisionDate
-    : "1974-08-12";
+  const hasExactDate = /^\d{4}-\d{2}-\d{2}$/.test(intake.decisionDate);
+  const safeDate = hasExactDate ? intake.decisionDate : "unknown";
 
   const canonicalSlugById = assignCanonicalSectionSlugs(cfrVersions);
   const ans = (factId: string): TriValue => intake.answers[factId] ?? "unknown";
@@ -948,10 +1018,12 @@ export function evaluateInvestigationSession(
       normalizeCfrSlug(v.cfr_section);
     return contextSlugs.has(slug);
   });
-  const twoPaneContext = buildBitemporalTwoPaneContext(
-    safeDate,
-    scopedContextVersions.length > 0 ? scopedContextVersions : cfrVersions,
-  );
+  const twoPaneContext = hasExactDate
+    ? buildBitemporalTwoPaneContext(
+        safeDate,
+        scopedContextVersions.length > 0 ? scopedContextVersions : cfrVersions,
+      )
+    : buildUnknownDateTwoPaneContext();
 
   const link3156c = resolvePointInTimeLink(
     cfrVersions,
@@ -1098,9 +1170,9 @@ export function evaluateInvestigationSession(
     SCREENING_QUESTIONS.map((q) => [q.factId, q]),
   );
 
-  const isPre1992Bell = safeDate < "1992-07-21";
-  const isPre2015Informal = safeDate < "2015-03-24";
-  const isAmaDecision = safeDate >= "2019-02-19";
+  const isPre1992Bell = hasExactDate && safeDate < "1992-07-21";
+  const isPre2015Informal = hasExactDate && safeDate < "2015-03-24";
+  const isAmaDecision = hasExactDate && safeDate >= "2019-02-19";
 
   const pathways: EvaluatedInvestigationPathway[] = [];
 
@@ -1194,12 +1266,16 @@ export function evaluateInvestigationSession(
         "Blubaugh v. McDonald, 773 F.3d 1310 (Fed. Cir. 2014)",
         "Kisor v. Wilkie, 969 F.3d 1333 (Fed. Cir. 2020)",
       ],
-      bitemporalNoteVeteran: link3156c.doNotRely
-        ? `Note: ${safeDate} is earlier than our 1962-01-01 historical snapshot of § 3.156(c), though modern § 3.156(c) reconsideration still applies today whenever missing official military records are newly added to your C-file.`
-        : `Modern § 3.156(c) reconsideration applies today when missing military records enter your C-file, and you can also inspect § 3.156(c) as it stood on ${safeDate}.`,
-      bitemporalNotePractitioner: link3156c.doNotRely
-        ? `T₀ Gap Alert: ${safeDate} precedes indexed 1962-01-01 § 3.156(c) baseline (Do Not Rely on unindexed T₀ text for CUE); however, contemporary § 3.156(c)(1),(3) governs current reconsideration requests upon newly associated official service records (Vigil; Emerson).`
-        : `T₀ snapshot resolved (${link3156c.effectiveIntervalLabel}); contemporary § 3.156(c)(1),(3),(4) governs open reconsideration today upon newly associated service department records, including post-liberalizing-grant effective-date audits (Emerson).`,
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Modern § 3.156(c) reconsideration applies today whenever missing official military or surgical records enter your C-file; locate your decision letter to inspect the historical wording of § 3.156(c)."
+        : link3156c.doNotRely
+          ? `Note: ${safeDate} is earlier than our 1962-01-01 historical snapshot of § 3.156(c), though modern § 3.156(c) reconsideration still applies today whenever missing official military records are newly added to your C-file.`
+          : `Modern § 3.156(c) reconsideration applies today when missing military records enter your C-file, and you can also inspect § 3.156(c) as it stood on ${safeDate}.`,
+      bitemporalNotePractitioner: !hasExactDate
+        ? "Decision Date Unknown: Contemporary § 3.156(c)(1),(3),(4) governs open reconsideration today upon newly associated service department records (Vigil; Emerson); confirm exact T₀ decision date before citing historical § 3.156(c) snapshots."
+        : link3156c.doNotRely
+          ? `T₀ Gap Alert: ${safeDate} precedes indexed 1962-01-01 § 3.156(c) baseline (Do Not Rely on unindexed T₀ text for CUE); however, contemporary § 3.156(c)(1),(3) governs current reconsideration requests upon newly associated official service records (Vigil; Emerson).`
+          : `T₀ snapshot resolved (${link3156c.effectiveIntervalLabel}); contemporary § 3.156(c)(1),(3),(4) governs open reconsideration today upon newly associated service department records, including post-liberalizing-grant effective-date audits (Emerson).`,
       pointInTimeLinks: [link3156c],
       relatedSiteRoutes: [
         { label: "38 C.F.R. § 3.156(c) Point-in-Time Reader", href: "/cfr/38-cfr-3.156c" },
@@ -1283,8 +1359,8 @@ export function evaluateInvestigationSession(
     const reductionLinks = [
       link3344,
       link3951,
-      ...(safeDate >= "1962-01-01" ? [link3957] : []),
-      ...(safeDate >= "1992-01-21" ? [link3105ei] : []),
+      ...(!hasExactDate || safeDate >= "1962-01-01" ? [link3957] : []),
+      ...(!hasExactDate || safeDate >= "1992-01-21" ? [link3105ei] : []),
     ];
 
     pathways.push({
@@ -1321,11 +1397,14 @@ export function evaluateInvestigationSession(
         "Kitchens v. Brown, 7 Vet. App. 320 (1995)",
         "Stern v. McDonough, 34 Vet. App. 51 (2021)",
       ],
-      bitemporalNoteVeteran:
-        safeDate < "1992-01-21"
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Locate the reduction decision letter and prior Rating Code Sheets to check how many years your higher rating was in effect (5, 10, or 20 years) and whether VA gave 60-day advance notice (§ 3.105(e))."
+        : safeDate < "1992-01-21"
           ? `On ${safeDate}, 5-year stabilized rating rules (§ 3.344), 10-year severance rules (§ 3.957, eff. 1962/1968), and 20-year protection (§ 3.951(b)) governed running awards; VA added § 3.105(i) 30-day predetermination hearing rights effective January 21, 1992.`
           : `On ${safeDate}, both substantive stabilization protections (§§ 3.344, 3.951, 3.957) and procedural 60-day notice + 30-day predetermination hearing protections (§ 3.105(e) & (i)) governed running awards.`,
-      bitemporalNotePractitioner: `Measure duration from the original rating effective date to the effective date of the reduced evaluation (§ 3.105(e) 60-day post-final-notice buffer counts toward 5-year § 3.344(c), 10-year § 3.957, and 20-year § 3.951(b) thresholds). ${safeDate < "1993-10-18" ? "Note: pre-Oct. 18, 1993 § 3.344 is Summary Only—verify 26 FR 1586 print text if needed." : "Verbatim post-Oct. 18, 1993 § 3.344 text resolved."}`,
+      bitemporalNotePractitioner: !hasExactDate
+        ? "Decision Date Unknown: Confirm both the original grant effective date and the reduction decision/effective dates to measure 5-year § 3.344(c), 10-year § 3.957, and 20-year § 3.951(b) thresholds and post-Jan. 21, 1992 § 3.105(i) hearing rights."
+        : `Measure duration from the original rating effective date to the effective date of the reduced evaluation (§ 3.105(e) 60-day post-final-notice buffer counts toward 5-year § 3.344(c), 10-year § 3.957, and 20-year § 3.951(b) thresholds). ${safeDate < "1993-10-18" ? "Note: pre-Oct. 18, 1993 § 3.344 is Summary Only—verify 26 FR 1586 print text if needed." : "Verbatim post-Oct. 18, 1993 § 3.344 text resolved."}`,
       pointInTimeLinks: reductionLinks,
       relatedSiteRoutes: [
         {
@@ -1416,19 +1495,23 @@ export function evaluateInvestigationSession(
           : "supported-to-investigate";
     const labels = dispositionLabels(disp);
 
-    const temporalVet = isAmaDecision
-      ? `Because ${safeDate} is on or after February 19, 2019 (the AMA era), VA cannot deny a claimed or reasonably raised issue by staying silent—any skipped issue remains legally open.`
-      : isPre2015Informal
-        ? `Because ${safeDate} is before March 24, 2015, informal written requests (21-4138, 10-7131) and VAMC or military hospital reports showing worsening of an already service-connected condition (former 38 C.F.R. § 3.157(b)) could start an open claim automatically.`
-        : `For decisions between March 24, 2015 and February 18, 2019, standardized claim forms applied to new filings, but an unanswered Legacy NOD (missing an SOC), VAMC treatment notes within 1 year (§ 3.156(b)), or wrong-address mailing still kept finality from attaching.`;
-
-    const temporalPrac = isAmaDecision
-      ? `AMA Explicit-Notice Era (${safeDate} >= 2019-02-19): Under Hamill v. Collins, 166 F.4th 1030 (Fed. Cir. 2026) and 38 U.S.C. § 5104(b), the judge-made implicit-denial doctrine is abolished for AMA decisions—omitted claimed/reasonably raised issues remain pending (note: within 1 year of a silent AMA decision, pursue HLR/Board appeal rather than mandamus per Hamill fn. 6).`
-      : isPre1992Bell
-        ? `Pre-Bell & Informal-Claim Era (${safeDate} < 1992-07-21): Audit former 38 C.F.R. §§ 3.155(a) & 3.157(b) (VA Form 10-7131 / 21-4138 & automatic hospital-report increase claims on 0%+ SC conditions; Shea v. Wilkie), Tablazon unissued SOCs, actual 1-year § 3.156(b) submissions (Beraud; note Lang constructive VAMC receipt applies post-July 21, 1992), and Ashley/Mindenhall mailing defects.`
+    const temporalVet = !hasExactDate
+      ? "Decision Date Unknown: Once you find your decision letter, check whether the decision was issued before March 24, 2015 (informal claims and VAMC hospital reports under former § 3.157(b)), between 2015 and February 18, 2019 (Legacy NOD/SOC and § 3.156(b) 1-year VAMC records), or on/after February 19, 2019 (AMA explicit notice under § 5104(b))."
+      : isAmaDecision
+        ? `Because ${safeDate} is on or after February 19, 2019 (the AMA era), VA cannot deny a claimed or reasonably raised issue by staying silent—any skipped issue remains legally open.`
         : isPre2015Informal
-          ? `Post-Bell & Pre-2015 Informal Era (1992-07-21 <= ${safeDate} < 2015-03-24): Audit former 38 C.F.R. §§ 3.155(a) & 3.157(b) (10-7131 / 21-4138 & automatic VAMC/military hospital-report increase claims on 0%+ SC conditions), Tablazon unissued SOCs, Beraud/Lang § 3.156(b) 1-year VAMC records, and Woods/Romero mailing defects.`
-          : `Late-Legacy Standardized Form Era (2015-03-24 <= ${safeDate} < 2019-02-19): Audit Tablazon unissued SOCs, Beraud/Lang § 3.156(b) VAMC records generated within 1 year after the RO decision, Freund VACOLS closures, and defective mailing notice.`;
+          ? `Because ${safeDate} is before March 24, 2015, informal written requests (21-4138, 10-7131) and VAMC or military hospital reports showing worsening of an already service-connected condition (former 38 C.F.R. § 3.157(b)) could start an open claim automatically.`
+          : `For decisions between March 24, 2015 and February 18, 2019, standardized claim forms applied to new filings, but an unanswered Legacy NOD (missing an SOC), VAMC treatment notes within 1 year (§ 3.156(b)), or wrong-address mailing still kept finality from attaching.`;
+
+    const temporalPrac = !hasExactDate
+      ? "Decision Date Unknown: Confirm exact decision date to distinguish pre-March 24, 2015 former §§ 3.155(a)/3.157(b) informal/hospital claims, pre- vs. post-July 21, 1992 § 3.156(b) Beraud/Lang constructive receipt, Tablazon unissued SOCs, and post-Feb. 19, 2019 AMA § 5104(b) explicit-notice rules (Hamill)."
+      : isAmaDecision
+        ? `AMA Explicit-Notice Era (${safeDate} >= 2019-02-19): Under Hamill v. Collins, 166 F.4th 1030 (Fed. Cir. 2026) and 38 U.S.C. § 5104(b), the judge-made implicit-denial doctrine is abolished for AMA decisions—omitted claimed/reasonably raised issues remain pending (note: within 1 year of a silent AMA decision, pursue HLR/Board appeal rather than mandamus per Hamill fn. 6).`
+        : isPre1992Bell
+          ? `Pre-Bell & Informal-Claim Era (${safeDate} < 1992-07-21): Audit former 38 C.F.R. §§ 3.155(a) & 3.157(b) (VA Form 10-7131 / 21-4138 & automatic hospital-report increase claims on 0%+ SC conditions; Shea v. Wilkie), Tablazon unissued SOCs, actual 1-year § 3.156(b) submissions (Beraud; note Lang constructive VAMC receipt applies post-July 21, 1992), and Ashley/Mindenhall mailing defects.`
+          : isPre2015Informal
+            ? `Post-Bell & Pre-2015 Informal Era (1992-07-21 <= ${safeDate} < 2015-03-24): Audit former 38 C.F.R. §§ 3.155(a) & 3.157(b) (10-7131 / 21-4138 & automatic VAMC/military hospital-report increase claims on 0%+ SC conditions), Tablazon unissued SOCs, Beraud/Lang § 3.156(b) 1-year VAMC records, and Woods/Romero mailing defects.`
+            : `Late-Legacy Standardized Form Era (2015-03-24 <= ${safeDate} < 2019-02-19): Audit Tablazon unissued SOCs, Beraud/Lang § 3.156(b) VAMC records generated within 1 year after the RO decision, Freund VACOLS closures, and defective mailing notice.`;
 
     pathways.push({
       pathwayId: "pending-claim-nod-notice-informal",
@@ -1585,11 +1668,12 @@ export function evaluateInvestigationSession(
       ],
       bitemporalNoteVeteran:
         "Even if the earlier denial happened in the 1980s or 1990s before § 3.816 was printed in 2003, modern Nehmer rules reach back to claims filed or pending on or after September 25, 1985—and since December 2, 2021, prior payments to another relative no longer block newly identified eligible family members or estates.",
-      bitemporalNotePractitioner:
-        safeDate >= "2003-09-24"
+      bitemporalNotePractitioner: !hasExactDate
+        ? "Decision Date Unknown: Confirm exact prior claim and Rating Code Sheet dates—contemporary Nehmer rules reach claims filed on/after Sept. 25, 1985 (or pending May 3, 1989) alongside post-December 2, 2021 (86 FR 68409) uncapped § 3.816(f) estate rules."
+        : safeDate >= "2003-09-24"
           ? `T₀ § 3.816 snapshot resolved (${link3816.effectiveIntervalLabel}); apply current post-December 2, 2021 § 3.816(f) uncapped payee rule (86 FR 68409) and audit Footnote 1 diagnostic-code mentions on all post-Sept. 25, 1985 Code Sheets.`
           : `Although ${safeDate} precedes the Sept. 24, 2003 codification of 38 C.F.R. § 3.816, Nehmer operates today as a binding retroactive vehicle reaching claims filed on/after Sept. 25, 1985 (or pending May 3, 1989) alongside post-December 2, 2021 (86 FR 68409) uncapped § 3.816(f) estate rules.`,
-      pointInTimeLinks: safeDate >= "2003-09-24" ? [link3816] : [],
+      pointInTimeLinks: !hasExactDate || safeDate >= "2003-09-24" ? [link3816] : [],
       relatedSiteRoutes: [
         {
           label: "Playbook 06: Nehmer Herbicide Presumptions & CRSC",
@@ -1671,7 +1755,7 @@ export function evaluateInvestigationSession(
     const tdiuSmcLinks = [
       link416,
       link3350f,
-      ...(safeDate >= "2018-06-07" ? [link3350j] : []),
+      ...(!hasExactDate || safeDate >= "2018-06-07" ? [link3350j] : []),
     ];
 
     pathways.push({
@@ -1709,9 +1793,11 @@ export function evaluateInvestigationSession(
         "Barry v. McDonough, 101 F.4th 1348 (Fed. Cir. 2024)",
         "Laska v. McDonough, 37 Vet. App. 460 (2024)",
       ],
-      bitemporalNoteVeteran: link416.publicationGapTrapAlert
-        ? `Important Date Alert (${safeDate}): VA's 1990 TDIU poverty-threshold update (55 FR 31579) was published August 3, 1990 but did not take effect until September 4, 1990—so the earlier 1975 edition of § 4.16 governed on ${safeDate}. Also note TBI SMC(t) took effect October 1, 2011.`
-        : `On ${safeDate}, check whether unemployability was raised before VA's March 24, 2015 standardized-form rule (VA Form 21-8940) and whether later SMC rulings like Barry (2024) or Laska (2024) require an open claim or Supplemental Claim rather than CUE.`,
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Locate your decision letter to check whether unemployability was raised before VA's March 24, 2015 standardized-form rule (VA Form 21-8940) and whether later SMC rulings like Barry (2024) or Laska (2024) call for an open claim or Supplemental Claim."
+        : link416.publicationGapTrapAlert
+          ? `Important Date Alert (${safeDate}): VA's 1990 TDIU poverty-threshold update (55 FR 31579) was published August 3, 1990 but did not take effect until September 4, 1990—so the earlier 1975 edition of § 4.16 governed on ${safeDate}. Also note TBI SMC(t) took effect October 1, 2011.`
+          : `On ${safeDate}, check whether unemployability was raised before VA's March 24, 2015 standardized-form rule (VA Form 21-8940) and whether later SMC rulings like Barry (2024) or Laska (2024) require an open claim or Supplemental Claim rather than CUE.`,
       bitemporalNotePractitioner: `${link416.publicationGapTrapAlert ? `${link416.publicationGapTrapAlert} ` : ""}Audit pre-March 24, 2015 informal/inferred TDIU (VA Form 21-8940 standardized eff. Mar. 24, 2015 at 79 FR 57660; former § 4.16(c) 70% mental rule in force Mar. 1, 1989 – Nov. 6, 1996) and SMC statutory floors (SMC(t) floor Oct. 1, 2011 under Pub. L. 111-275; breast SMC(k) Nov. 1, 2000 / Dec. 6, 2002).`,
       pointInTimeLinks: tdiuSmcLinks,
       relatedSiteRoutes: [
@@ -1801,9 +1887,9 @@ export function evaluateInvestigationSession(
 
     const survivorLinks = [
       link3312,
-      ...(safeDate >= "1978-10-01" ? [link322] : []),
+      ...(!hasExactDate || safeDate >= "1978-10-01" ? [link322] : []),
       link31000,
-      ...(safeDate >= "2014-10-06" ? [link31010] : []),
+      ...(!hasExactDate || safeDate >= "2014-10-06" ? [link31010] : []),
     ];
 
     pathways.push({
@@ -1965,11 +2051,13 @@ export function evaluateInvestigationSession(
         "Gardner v. Shinseki, 22 Vet. App. 415 (2009)",
         "VAOPGCPREC 10-96 & VAOPGCPREC 20-97",
       ],
-      bitemporalNoteVeteran: link312.publicationGapTrapAlert
-        ? `Important Date Alert (${safeDate}): VA published its updated Character of Discharge rule on April 26, 2024 (89 FR 32361), but it did not take effect until June 25, 2024—so the pre-June 25, 2024 text governed on ${safeDate}, while you can file a Supplemental Claim (20-0995) under the June 25, 2024 rule today.`
-        : safeDate < "2024-06-25"
-          ? `While the expanded § 3.12(e) compelling-circumstances rule cannot pay benefits earlier than June 25, 2024, both the earlier-enlistment rule (§ 3.13(c)) and VA's mental-health insanity exception (§ 3.354(b)) already existed on ${safeDate}.`
-          : `On ${safeDate}, the overhauled post-June 25, 2024 edition of 38 C.F.R. § 3.12(d)(2) & (e) governed alongside § 3.13(c) and § 3.354(b).`,
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Locate your decision letter to check which Character of Discharge edition applied—while the expanded § 3.12(e) compelling-circumstances rule took effect June 25, 2024, both the earlier-enlistment rule (§ 3.13(c)) and VA's mental-health insanity exception (§ 3.354(b)) apply across older eras."
+        : link312.publicationGapTrapAlert
+          ? `Important Date Alert (${safeDate}): VA published its updated Character of Discharge rule on April 26, 2024 (89 FR 32361), but it did not take effect until June 25, 2024—so the pre-June 25, 2024 text governed on ${safeDate}, while you can file a Supplemental Claim (20-0995) under the June 25, 2024 rule today.`
+          : safeDate < "2024-06-25"
+            ? `While the expanded § 3.12(e) compelling-circumstances rule cannot pay benefits earlier than June 25, 2024, both the earlier-enlistment rule (§ 3.13(c)) and VA's mental-health insanity exception (§ 3.354(b)) already existed on ${safeDate}.`
+            : `On ${safeDate}, the overhauled post-June 25, 2024 edition of 38 C.F.R. § 3.12(d)(2) & (e) governed alongside § 3.13(c) and § 3.354(b).`,
       bitemporalNotePractitioner: `${link312.publicationGapTrapAlert ? `${link312.publicationGapTrapAlert} ` : ""}Explicit 89 FR 32361 Applicability Gate: Revised § 3.12(d)–(e) applies to claims pending on or received on/after June 25, 2024 with a § 3.114(a) effective-date floor of June 25, 2024 (never cite 2024 § 3.12 to plead CUE on pre-June 25, 2024 final denials—use § 3.13(c), § 3.354(b), or § 3.156(c) OMPF records for pre-2024 retroactivity).`,
       pointInTimeLinks: codLinks,
       relatedSiteRoutes: [
@@ -2055,8 +2143,8 @@ export function evaluateInvestigationSession(
     const labels = dispositionLabels(disp);
 
     const trap456 = link456.publicationGapTrapAlert;
-    const isPre1946Vasrd = link456.doNotRely;
-    const isPre1997Muscle = safeDate < "1997-07-03";
+    const isPre1946Vasrd = hasExactDate && link456.doNotRely;
+    const isPre1997Muscle = hasExactDate && safeDate < "1997-07-03";
     const scarsSummaryOnlyCaution =
       link4118.coverageState === "SUMMARY_ONLY"
         ? " Note: Post-Oct. 23, 2008 § 4.118 scar criteria are Summary Only—pull the official print 38 C.F.R. § 4.118 edition before pleading scar CUE."
@@ -2095,20 +2183,24 @@ export function evaluateInvestigationSession(
         "Tropf v. Nicholson, 20 Vet. App. 317 (2006)",
         "Lyles v. Shulkin, 29 Vet. App. 107 (2017)",
       ],
-      bitemporalNoteVeteran: isPre1946Vasrd
-        ? `Coverage Gap Alert (${safeDate}): ${safeDate} is earlier than the April 1, 1946 VASRD baseline indexed on VetLawGuide—do not rely on post-1946 § 4.56 or § 4.118 snapshots; ask an accredited representative to check the earlier 1933 Rating Schedule / Veterans' Regulation rules.`
-        : trap456
-          ? `Important Date Alert (${safeDate}): VA's 1997 muscle-rating update was published June 3, 1997 but did not take effect until July 3, 1997—so the earlier 1946–1997 wording of § 4.56 still applied on ${safeDate}. (Also note VA's Sept. 2025 90 FR 46542 scar proposal is proposed/unfinalized, not enacted law.)`
-          : isPre1997Muscle
-            ? `On ${safeDate}, the pre-July 3, 1997 edition of 38 C.F.R. § 4.56 governed muscle injuries alongside the historical edition of § 4.118 for scars. (Note: VA's Sept. 2025 90 FR 46542 scar proposal remains proposed/unfinalized, not enacted law.)`
-            : `On ${safeDate}, the post-July 3, 1997 edition of 38 C.F.R. § 4.56 applied—including § 4.56(b)'s rule that a T&T injury with muscle damage is evaluated as no less than moderate for each muscle group damaged.${link4118.coverageState === "SUMMARY_ONLY" ? " For post-Oct. 23, 2008 scar rules (§ 4.118), have your representative verify the official print 38 C.F.R. text." : ""} (Note: 90 FR 46542 on DC 7804 scars remains proposed/unfinalized.)`,
-      bitemporalNotePractitioner: isPre1946Vasrd
-        ? `T₀ Pre-Baseline Gap (${safeDate} < 1946-04-01): Do Not Rely on 1946 VASRD snapshots (/cfr/38-cfr-4.56/1946-04-01 did not take effect until April 1, 1946; 29 FR 6718). Pull the contemporaneous 1933 Schedule for Rating Disabilities / Veterans' Regulation No. 1(a) print edition before pleading CUE.`
-        : trap456
-          ? `${trap456} Always cite pre-amendment § 4.56 (/cfr/38-cfr-4.56/1946-04-01) for ${safeDate} CUE pleadings, and quarantine proposed/unfinalized 90 FR 46542 on DC 7804.`
-          : isPre1997Muscle
-            ? `T₀ = ${safeDate} (1946-04-01 <= T₀ < 1997-07-03): Quote pre-1997 § 4.56(b)–(d) verbatim (/cfr/38-cfr-4.56/1946-04-01)—never quote the post-July 3, 1997 § 4.56(b) T&T floor sentence retroactively in a CUE motion. Verify exact § 4.118 scar era (${link4118.effectiveIntervalLabel}) and quarantine proposed/unfinalized 90 FR 46542.`
-            : `T₀ = ${safeDate} (>= 1997-07-03): Post-62 FR 30235 § 4.56(b) T&T moderate floor and § 4.56(d) cardinal signs govern (/cfr/38-cfr-4.56/1997-07-03), paired with ${link4118.cfrSection} (${link4118.effectiveIntervalLabel}; 90 FR 46542 remains proposed/unfinalized).${scarsSummaryOnlyCaution}`,
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Locate your decision letter to check whether the pre-July 3, 1997 or post-July 3, 1997 edition of 38 C.F.R. § 4.56 and historical § 4.118 scar criteria applied. (Note: VA's Sept. 2025 90 FR 46542 scar proposal remains proposed/unfinalized, not enacted law.)"
+        : isPre1946Vasrd
+          ? `Coverage Gap Alert (${safeDate}): ${safeDate} is earlier than the April 1, 1946 VASRD baseline indexed on VetLawGuide—do not rely on post-1946 § 4.56 or § 4.118 snapshots; ask an accredited representative to check the earlier 1933 Rating Schedule / Veterans' Regulation rules.`
+          : trap456
+            ? `Important Date Alert (${safeDate}): VA's 1997 muscle-rating update was published June 3, 1997 but did not take effect until July 3, 1997—so the earlier 1946–1997 wording of § 4.56 still applied on ${safeDate}. (Also note VA's Sept. 2025 90 FR 46542 scar proposal is proposed/unfinalized, not enacted law.)`
+            : isPre1997Muscle
+              ? `On ${safeDate}, the pre-July 3, 1997 edition of 38 C.F.R. § 4.56 governed muscle injuries alongside the historical edition of § 4.118 for scars. (Note: VA's Sept. 2025 90 FR 46542 scar proposal remains proposed/unfinalized, not enacted law.)`
+              : `On ${safeDate}, the post-July 3, 1997 edition of 38 C.F.R. § 4.56 applied—including § 4.56(b)'s rule that a T&T injury with muscle damage is evaluated as no less than moderate for each muscle group damaged.${link4118.coverageState === "SUMMARY_ONLY" ? " For post-Oct. 23, 2008 scar rules (§ 4.118), have your representative verify the official print 38 C.F.R. text." : ""} (Note: 90 FR 46542 on DC 7804 scars remains proposed/unfinalized.)`,
+      bitemporalNotePractitioner: !hasExactDate
+        ? "Decision Date Unknown: Confirm exact T₀ decision date to resolve pre- vs. post-July 3, 1997 § 4.56(b)–(d) (62 FR 30235) and exact § 4.118 scar era before pleading CUE, and quarantine proposed/unfinalized 90 FR 46542."
+        : isPre1946Vasrd
+          ? `T₀ Pre-Baseline Gap (${safeDate} < 1946-04-01): Do Not Rely on 1946 VASRD snapshots (/cfr/38-cfr-4.56/1946-04-01 did not take effect until April 1, 1946; 29 FR 6718). Pull the contemporaneous 1933 Schedule for Rating Disabilities / Veterans' Regulation No. 1(a) print edition before pleading CUE.`
+          : trap456
+            ? `${trap456} Always cite pre-amendment § 4.56 (/cfr/38-cfr-4.56/1946-04-01) for ${safeDate} CUE pleadings, and quarantine proposed/unfinalized 90 FR 46542 on DC 7804.`
+            : isPre1997Muscle
+              ? `T₀ = ${safeDate} (1946-04-01 <= T₀ < 1997-07-03): Quote pre-1997 § 4.56(b)–(d) verbatim (/cfr/38-cfr-4.56/1946-04-01)—never quote the post-July 3, 1997 § 4.56(b) T&T floor sentence retroactively in a CUE motion. Verify exact § 4.118 scar era (${link4118.effectiveIntervalLabel}) and quarantine proposed/unfinalized 90 FR 46542.`
+              : `T₀ = ${safeDate} (>= 1997-07-03): Post-62 FR 30235 § 4.56(b) T&T moderate floor and § 4.56(d) cardinal signs govern (/cfr/38-cfr-4.56/1997-07-03), paired with ${link4118.cfrSection} (${link4118.effectiveIntervalLabel}; 90 FR 46542 remains proposed/unfinalized).${scarsSummaryOnlyCaution}`,
       pointInTimeLinks: [link456, link4118],
       relatedSiteRoutes: [
         {
@@ -2223,14 +2315,15 @@ export function evaluateInvestigationSession(
         "Pub. L. 104-201, § 653 (110 Stat. 2583)",
         "38 C.F.R. § 3.700(a)(2), (3) & (5) (67 FR 60868; 74 FR 26956)",
       ],
-      bitemporalNoteVeteran:
-        safeDate >= "2008-01-28"
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Check both your military separation date (DD-214) and VA withholding letters—combat-zone / combat-operations severance non-recoupment (10 U.S.C. § 1212(d)(2)) applies to Chapter 61 separations on/after January 28, 2008, and after-tax net recoupment applies to severance payments after September 30, 1996."
+        : safeDate >= "2008-01-28"
           ? `On ${safeDate}, Congress's January 28, 2008 combat-zone / combat-operations severance non-recoupment law (10 U.S.C. § 1212(d)(2)) was in effect—even before VA updated its printed regulation on June 5, 2009.`
           : safeDate >= "1996-10-01"
             ? `On ${safeDate}, post-September 30, 1996 after-tax net recoupment and monthly severance-disability caps applied (note that 10 U.S.C. § 1212(d)(2) full combat non-recoupment requires a Chapter 61 separation on or after January 28, 2008).`
             : `For pre-October 1, 1996 payments, pre-tax gross recoupment applied, though § 3.700(a)(3) still barred withholding monthly compensation payable for separate non-severance disabilities.`,
       bitemporalNotePractitioner:
-        safeDate >= "2008-01-28" && safeDate < "2009-06-05"
+        hasExactDate && safeDate >= "2008-01-28" && safeDate < "2009-06-05"
           ? `Statutory Lag Window Active (${safeDate}): Pub. L. 110-181, § 1646 (10 U.S.C. § 1212(d)(2)) barred combat-zone / combat-operations severance recoupment for Chapter 61 separations on/after January 28, 2008, superseding the lagging CFR text prior to 74 FR 26956 (June 5, 2009).`
           : `Verify Chapter 61 separation date (not VA rating date) against the Jan. 28, 2008 floor of 10 U.S.C. § 1212(d)(2), Oct. 1, 1996 after-tax net recoupment floor (Pub. L. 104-201, § 653), and § 3.700(a)(3) independent-disability monthly withholding cap.`,
       pointInTimeLinks: [link3700],
@@ -2278,16 +2371,16 @@ export function evaluateInvestigationSession(
         return [
           link3344,
           link3951,
-          ...(safeDate >= "1962-01-01" ? [link3957] : []),
+          ...(!hasExactDate || safeDate >= "1962-01-01" ? [link3957] : []),
         ];
       case "tdiu-or-smc":
         return [link416, link3350f];
       case "nehmer-herbicide":
-        return safeDate >= "2003-09-24" ? [link3816] : [];
+        return !hasExactDate || safeDate >= "2003-09-24" ? [link3816] : [];
       case "survivor-dic-accrued":
         return [
           link3312,
-          ...(safeDate >= "1978-10-01" ? [link322] : []),
+          ...(!hasExactDate || safeDate >= "1978-10-01" ? [link322] : []),
           link31000,
         ];
       case "cod-or-insanity":
@@ -2388,6 +2481,10 @@ export function evaluateInvestigationSession(
       );
     }
 
+    if (!hasExactDate && blockingPrac.length === 0) {
+      missing.unshift(RECORD_PRIOR_DECISION_LETTER_AND_DATE);
+    }
+
     const disp: PathwayDisposition =
       blockingPrac.length > 0
         ? "barred-or-inapplicable"
@@ -2408,7 +2505,7 @@ export function evaluateInvestigationSession(
       practitionerTitle:
         "Regional Office / AOJ Clear and Unmistakable Error (38 U.S.C. § 5109A; 38 C.F.R. § 3.105(a))",
       veteranSummary:
-        "If the RO had all the key facts right in front of it on the decision date, clearly misapplied the regulation in effect back then, and BVA never decided that issue on appeal, an accredited representative can evaluate an RO CUE revision request.",
+        "If the RO had all the key facts right in front of it on the decision date, clearly misapplied the regulation in force back then, and BVA never decided that issue on appeal, an accredited representative can evaluate an RO CUE revision request.",
       practitionerSummary:
         "Three-prong collateral revision under Russell v. Principi, 3 Vet. App. 310 (1992) (en banc) and Fugo v. Brown, 6 Vet. App. 40 (1993). Unlike Subpart O Board CUE, § 3.105(a) does not impose § 20.1409(c)'s single-motion bar across distinct theories, but still enforces strict extant-law, Bell record-scope, and § 4.25 manifest-outcome rules.",
       disposition: disp,
@@ -2431,9 +2528,11 @@ export function evaluateInvestigationSession(
         "Cook v. Principi, 318 F.3d 1334 (Fed. Cir. 2002) (en banc)",
         "George v. McDonough, 596 U.S. 740 (2022)",
       ],
-      bitemporalNoteVeteran: isPre1992Bell
-        ? `Record Rule on ${safeDate} (Before July 21, 1992): For pre-July 21, 1992 decisions, RO CUE generally looks only at papers physically inside your C-file on that date—so check § 3.156(c) first if military hospital charts arrived later.`
-        : `Record Rule on ${safeDate} (On or After July 21, 1992): VAMC treatment records that already existed on ${safeDate} count as part of the record VA had to check.`,
+      bitemporalNoteVeteran: !hasExactDate
+        ? "Decision Date Unknown: Find your decision letter first—RO CUE requires checking the exact regulation in force on that date and whether the decision came before or after July 21, 1992 (Bell record rule)."
+        : isPre1992Bell
+          ? `Record Rule on ${safeDate} (Before July 21, 1992): For pre-July 21, 1992 decisions, RO CUE generally looks only at papers physically inside your C-file on that date—so check § 3.156(c) first if military hospital charts arrived later.`
+          : `Record Rule on ${safeDate} (On or After July 21, 1992): VAMC treatment records that already existed on ${safeDate} count as part of the record VA had to check.`,
       bitemporalNotePractitioner: `${twoPaneContext.statutoryEraLabel}. ${twoPaneContext.recordScopeRuleThen}`,
       pointInTimeLinks: cueSubstantiveLinks,
       relatedSiteRoutes: [
@@ -2547,6 +2646,10 @@ export function evaluateInvestigationSession(
       );
     }
 
+    if (!hasExactDate && blockingPrac.length === 0) {
+      missing.unshift(RECORD_PRIOR_DECISION_LETTER_AND_DATE);
+    }
+
     const disp: PathwayDisposition =
       blockingPrac.length > 0
         ? "barred-or-inapplicable"
@@ -2591,9 +2694,11 @@ export function evaluateInvestigationSession(
       ],
       bitemporalNoteVeteran:
         "Before anyone files a BVA CUE motion, confirm (1) whether missing military records allow § 3.156(c) reconsideration instead, (2) the exact official print regulation wording in force on the day BVA signed its decision, and (3) that no prior BVA CUE motion was already decided on the merits on that issue.",
-      bitemporalNotePractitioner: `Complete all 5 gates in /checklists/board-cue-pre-filing-gate: pull verbatim T₀ print CFR text for ${safeDate}, verify ${isPre1992Bell ? "pre-July 21, 1992 physical C-file presence (Damrel)" : "post-July 21, 1992 Bell constructive possession"}, confirm zero § 20.1400(b)(1) CAVC merits affirmance, and audit § 4.25 math.`,
+      bitemporalNotePractitioner: !hasExactDate
+        ? "Decision Date Unknown: Locate the exact BVA decision date before completing /checklists/board-cue-pre-filing-gate—Subpart O Board CUE requires verbatim T₀ print CFR text, pre- vs. post-July 21, 1992 Bell record scope, zero § 20.1400(b)(1) CAVC merits affirmance, and § 4.25 math."
+        : `Complete all 5 gates in /checklists/board-cue-pre-filing-gate: pull verbatim T₀ print CFR text for ${safeDate}, verify ${isPre1992Bell ? "pre-July 21, 1992 physical C-file presence (Damrel)" : "post-July 21, 1992 Bell constructive possession"}, confirm zero § 20.1400(b)(1) CAVC merits affirmance, and audit § 4.25 math.`,
       pointInTimeLinks: [
-        ...(safeDate >= "1999-02-12" ? [linkSubpartO] : []),
+        ...(!hasExactDate || safeDate >= "1999-02-12" ? [linkSubpartO] : []),
         ...cueSubstantiveLinks,
       ],
       relatedSiteRoutes: [
@@ -2699,6 +2804,18 @@ export function evaluateInvestigationSession(
   // -------------------------------------------------------------------------
   const recordMap = new Map<string, MissingRecordChecklistItem>();
 
+  if (!hasExactDate) {
+    const activeNonBarred = pathways.filter(
+      (p) => p.disposition !== "barred-or-inapplicable",
+    );
+    recordMap.set(RECORD_PRIOR_DECISION_LETTER_AND_DATE.recordId, {
+      ...RECORD_PRIOR_DECISION_LETTER_AND_DATE,
+      triggeredByFactIds: ["decision_date_unknown"],
+      unlocksPathwayTitles: activeNonBarred.map((p) => p.practitionerTitle),
+      unlocksPathwayTitlesVeteran: activeNonBarred.map((p) => p.veteranTitle),
+    });
+  }
+
   for (const p of pathways) {
     if (p.disposition === "barred-or-inapplicable") continue;
     for (const rec of p.recordsToLocate) {
@@ -2787,10 +2904,16 @@ export function evaluateInvestigationSession(
   );
 
   const gate1NeedsAction =
-    pubGapAlerts.length > 0 || gapLinks.length > 0 || summaryOnlyLinks.length > 0;
+    !hasExactDate ||
+    pubGapAlerts.length > 0 ||
+    gapLinks.length > 0 ||
+    summaryOnlyLinks.length > 0;
 
   let gate1Detail: string;
-  if (pubGapAlerts.length > 0) {
+  if (!hasExactDate) {
+    gate1Detail =
+      "Target Decision Date (T₀) Unknown: Locate the challenged VA Rating Decision, notification letter, or BVA decision date before resolving contemporaneous 38 C.F.R. text or pleading CUE.";
+  } else if (pubGapAlerts.length > 0) {
     gate1Detail = pubGapAlerts.join(" ");
   } else if (gapLinks.length > 0) {
     gate1Detail = `Pre-Baseline Coverage Gap on ${safeDate} (${gapLinks.map((g) => g.cfrSection).join(", ")}): Do Not Rely on unindexed snapshots—pull the contemporaneous official print 38 C.F.R. / Rating Schedule edition on GovInfo before pleading CUE.`;
@@ -2844,8 +2967,11 @@ export function evaluateInvestigationSession(
     {
       gateId: "gate-bell-george-and-4-25-math",
       title: "4. Bell (1992-07-21) Record Scope, George (§ 20.1403(e)) & § 4.25 Payment Math",
-      detail: `${isPre1992Bell ? "Pre-July 21, 1992 decision: document must have been physically in the C-file at T₀ (Damrel)." : "Post-July 21, 1992 decision: Bell constructive possession applies to pre-existing VA medical records."} Confirm no reliance on later judicial reinterpretation (George) and verify manifest monthly payment change under 38 C.F.R. § 4.25.`,
+      detail: !hasExactDate
+        ? "Decision Date Unknown: Confirm exact decision date to determine whether pre-July 21, 1992 physical C-file presence (Damrel) or post-July 21, 1992 Bell constructive possession governs, confirm no reliance on later judicial reinterpretation (George), and verify manifest monthly payment change under 38 C.F.R. § 4.25."
+        : `${isPre1992Bell ? "Pre-July 21, 1992 decision: document must have been physically in the C-file at T₀ (Damrel)." : "Post-July 21, 1992 decision: Bell constructive possession applies to pre-existing VA medical records."} Confirm no reliance on later judicial reinterpretation (George) and verify manifest monthly payment change under 38 C.F.R. § 4.25.`,
       status:
+        hasExactDate &&
         ans("undebatable_extant_error_in_record_then") === "yes" &&
         ans("manifestly_changed_combined_payment_4_25") === "yes"
           ? "verified"

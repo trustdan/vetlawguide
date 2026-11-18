@@ -23,6 +23,7 @@ import { InlineLegalText } from "./inline-legal-text";
 import { InteractiveChecklistBlock } from "./interactive-checklist-block";
 import { LexiconText } from "./lexicon-text";
 import { PlannedModulePlaceholder } from "./planned-module-placeholder";
+import { ReportPageErrorLink } from "./report-page-error-link";
 import { SourceProvenancePanel } from "./source-provenance-panel";
 import { VeteranOverlayCard } from "./veteran-overlay-card";
 import { JsonLdScript } from "@/components/seo/json-ld-script";
@@ -285,9 +286,14 @@ export function ThreeColumnReader({
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
             <span>{hubLabel}</span>
           </Link>
-          <span className="rounded border border-border bg-surface px-2.5 py-0.5 font-mono text-xs font-medium text-muted-foreground">
-            {categoryLabel}
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="font-mono text-xs text-muted-foreground">
+              Last reviewed {doc.veteranOverlay?.reviewed_at ?? checkedAsOf}
+            </span>
+            <span className="rounded border border-border bg-surface px-2.5 py-0.5 font-mono text-xs font-medium text-muted-foreground">
+              {categoryLabel}
+            </span>
+          </div>
         </div>
 
         <h1
@@ -487,6 +493,14 @@ export function ThreeColumnReader({
               >
                 Forms decoder →
               </Link>
+              <ReportPageErrorLink
+                canonicalPath={doc.route}
+                corpusReleaseId={corpusReleaseId}
+                authority={
+                  doc.cfrCitations[0] ?? doc.statutes[0] ?? doc.title
+                }
+                className="font-medium"
+              />
             </div>
           </footer>
         </div>
@@ -558,6 +572,10 @@ export function ThreeColumnReader({
             bookmarkWave={activeBookmarkWave}
             primarySourceUrl={doc.officialFallbackUrl}
             limitationsNote="Educational legal research and pre-filing verification aid; always verify pinpoint print editions before pleading CUE."
+            canonicalPath={doc.route}
+            reportAuthority={
+              doc.cfrCitations[0] ?? doc.statutes[0] ?? doc.title
+            }
           />
 
           {doc.killSwitches.length > 0 && (

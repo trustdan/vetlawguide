@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 1.0
         : isPrimaryHub
           ? 0.9
-          : path === "/privacy"
+          : path === "/privacy" || path === "/terms" || path === "/accessibility"
             ? 0.5
             : path === "/about"
               ? 0.7

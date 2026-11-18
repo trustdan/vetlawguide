@@ -18,6 +18,19 @@ test.describe("EPIC 9 — Canonical SEO, Schema.org Legal JSON-LD, Crawl Directo
     expect(sitemapXml).toContain("https://vetlawguide.com/cfr/38-cfr-4.56/1946-04-01");
     expect(sitemapXml).toContain("https://vetlawguide.com/explore/diagnostic-codes");
     expect(sitemapXml).toContain("https://vetlawguide.com/explore/cfr-directory");
+    expect(sitemapXml).toContain("https://vetlawguide.com/terms");
+    expect(sitemapXml).toContain("https://vetlawguide.com/accessibility");
+
+    // Verify site-wide Content-Security-Policy-Report-Only on public pages while /investigate keeps strict enforced CSP
+    const homeRes = await request.get("/");
+    expect(homeRes.status()).toBe(200);
+    expect(homeRes.headers()["content-security-policy-report-only"]).toContain(
+      "https://www.googletagmanager.com",
+    );
+    const invHeadRes = await request.get("/investigate");
+    expect(invHeadRes.headers()["content-security-policy"]).toContain(
+      "connect-src 'self'",
+    );
 
     const llmsRes = await request.get("/llms.txt");
     expect(llmsRes.status()).toBe(200);
@@ -155,5 +168,56 @@ test.describe("EPIC 9 — Canonical SEO, Schema.org Legal JSON-LD, Crawl Directo
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
     );
     expect(overflow).toBe(false);
+  });
+
+  test("EPIC 14 /about maintainer disclosure, per-guide Last reviewed dates, /terms, /accessibility, and /privacy 180-day retention pass WCAG 2.2 AA", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+
+    // 1. /about "Who maintains this site" + plain non-attorney review disclosure + truthful JSON-LD
+    await page.goto("/about");
+    await expect(
+      page.getByRole("heading", { name: /Who maintains this site/i }),
+    ).toBeVisible();
+    await expect(page.getByText(/Dan \(trustdan\)/i)).toBeVisible();
+    await expect(
+      page.getByText(
+        /No VA-accredited attorney, claims agent, or Veterans Service Organization \(VSO\) representative has formally reviewed/i,
+      ),
+    ).toBeVisible();
+    const aboutLdRaw = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents();
+    expect(aboutLdRaw.join("\n")).not.toContain("reviewedBy");
+
+    // 2. Guide page shows "Last reviewed YYYY-MM-DD" and truthful TechArticle author JSON-LD
+    await page.goto("/playbooks/01-penetrating-wounds-scars-vs-muscles");
+    await expect(
+      page.getByText(/Last reviewed \d{4}-\d{2}-\d{2}/i).first(),
+    ).toBeVisible();
+    const guideLdRaw = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents();
+    const guideNodes = guideLdRaw.map(
+      (raw) => JSON.parse(raw) as Record<string, unknown>,
+    );
+    const articleNode = guideNodes.find((n) => n["@type"] === "TechArticle");
+    expect(articleNode).toBeDefined();
+    expect(articleNode?.author).toBeTruthy();
+    expect(articleNode?.reviewedBy).toBeUndefined();
+
+    // 3. /terms, /accessibility, and /privacy (180-day retention) pass axe WCAG 2.2 AA
+    for (const route of ["/terms", "/accessibility", "/privacy"]) {
+      await page.goto(route);
+      if (route === "/privacy") {
+        await expect(page.getByText(/180-day retention/i)).toBeVisible();
+        await expect(page.getByText(/conversationId/i)).toBeVisible();
+      }
+      const scan = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .analyze();
+      expect(scan.violations, `Axe violations on ${route}`).toEqual([]);
+    }
   });
 });

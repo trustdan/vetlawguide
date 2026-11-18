@@ -29,10 +29,13 @@ export function PacketExportPanel({
 
   const activeMarkdown =
     audienceMode === "practitioner" ? practitionerMarkdown : veteranMarkdown;
+  const fileDateSuffix = /^\d{4}-\d{2}-\d{2}$/.test(report.intake.decisionDate)
+    ? report.intake.decisionDate
+    : "unknown-date";
   const activeFilename =
     audienceMode === "practitioner"
-      ? `vetlawguide-prefiling-audit-${report.intake.decisionDate}.md`
-      : `vetlawguide-representative-discussion-${report.intake.decisionDate}.md`;
+      ? `vetlawguide-prefiling-audit-${fileDateSuffix}.md`
+      : `vetlawguide-representative-discussion-${fileDateSuffix}.md`;
 
   async function handleCopy() {
     try {

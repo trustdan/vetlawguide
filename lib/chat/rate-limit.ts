@@ -1,3 +1,12 @@
+/**
+ * Per-instance serverless in-memory rate-limit backstop (`10` msgs / `5` min per IP).
+ *
+ * Production architecture:
+ * 1. Primary shared edge throttle: Vercel Firewall custom `rate_limit` rule on
+ *    `POST /api/chat` (`$0` WAF layer, documented in `POST_CODE_LAUNCH_AND_OPS_GUIDE.md`).
+ * 2. Secondary per-instance backstop: This process-local `Map` caps bursts inside
+ *    any warm Node.js function instance and during local/preview testing.
+ */
 const WINDOW_MS = 5 * 60 * 1000;
 const MAX_REQUESTS = 10;
 const MAX_TRACKED_KEYS = 2000;

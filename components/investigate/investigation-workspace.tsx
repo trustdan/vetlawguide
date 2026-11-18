@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckSquare,
+  ExternalLink,
   FileSearch,
   Layers,
   MessageSquare,
@@ -36,6 +37,10 @@ import type {
   RetireeProfile,
   TriValue,
 } from "@/lib/screener/types";
+import {
+  VA_FIND_ACCREDITED_REP_URL,
+  VETERANS_CRISIS_LINE_COPY,
+} from "@/lib/support-links";
 import { cn } from "@/lib/utils";
 import { PacketExportPanel } from "./packet-export-panel";
 import { PathwayRankCard } from "./pathway-rank-card";
@@ -321,15 +326,20 @@ export function InvestigationWorkspace({
 
   const [activeStage, setActiveStage] = useState<InvestigationStage>(1);
   const [intake, setIntake] = useState<InvestigationIntakeState>(() =>
-    createDefaultInvestigationState(globalDecisionDate ?? "1974-08-12"),
+    createDefaultInvestigationState(globalDecisionDate ?? ""),
   );
   const [draftDecisionDate, setDraftDecisionDate] = useState<string>(
-    () => globalDecisionDate ?? "1974-08-12",
+    () => globalDecisionDate ?? "",
   );
   const [activePresetId, setActivePresetId] = useState<string>("preset-blank-not-sure");
   const [checkedRecords, setCheckedRecords] = useState<Record<string, boolean>>({});
   const [pathwayFilter, setPathwayFilter] = useState<"all" | "active-only">("all");
   const [selectedTwoPaneSlug, setSelectedTwoPaneSlug] = useState<string>("38-cfr-4.56");
+
+  const hasExactDecisionDate = /^\d{4}-\d{2}-\d{2}$/.test(intake.decisionDate);
+  const isDecisionDateExplicitUnknown = intake.decisionDate === "unknown";
+  const canAdvanceFromStage1 =
+    hasExactDecisionDate || isDecisionDateExplicitUnknown;
 
   const report = useMemo(
     () => evaluateInvestigationSession(intake, cfrVersions),
@@ -347,7 +357,9 @@ export function InvestigationWorkspace({
   const activeProvenanceTranscriptionLevel = useMemo<
     "Verbatim Primary Source" | "Structured Summary Only"
   >(() => {
-    if (!activeTwoPaneSection) return "Verbatim Primary Source";
+    if (!activeTwoPaneSection || !hasExactDecisionDate) {
+      return "Structured Summary Only";
+    }
     const resolved = resolveCfrAtDate(
       [...activeTwoPaneSection.versions, ...activeTwoPaneSection.quarantinedWatchlist],
       activeTwoPaneSection.sectionSlug,
@@ -356,7 +368,7 @@ export function InvestigationWorkspace({
     return resolved.doNotRely || resolved.coverageState === "SUMMARY_ONLY"
       ? "Structured Summary Only"
       : "Verbatim Primary Source";
-  }, [activeTwoPaneSection, report.intake.decisionDate]);
+  }, [activeTwoPaneSection, hasExactDecisionDate, report.intake.decisionDate]);
 
   const activePathways = useMemo(
     () => report.pathways.filter((p) => p.disposition !== "barred-or-inapplicable"),
@@ -405,10 +417,11 @@ export function InvestigationWorkspace({
       ...found.state,
       answers: { ...found.state.answers },
     });
-    setDraftDecisionDate(found.state.decisionDate);
+    const nextDate = found.state.decisionDate;
+    setDraftDecisionDate(/^\d{4}-\d{2}-\d{2}$/.test(nextDate) ? nextDate : "");
     setCheckedRecords({});
     setSelectedTwoPaneSlug(defaultTwoPaneSlugForFocus(found.state.issueFocus));
-    setGlobalDecisionDate(found.state.decisionDate);
+    setGlobalDecisionDate(/^\d{4}-\d{2}-\d{2}$/.test(nextDate) ? nextDate : null);
     // Blank reset returns to Stage 1; named scenario presets open Stage 4 Summary directly
     setActiveStage(presetId === "preset-blank-not-sure" ? 1 : 4);
   }
@@ -419,7 +432,17 @@ export function InvestigationWorkspace({
     if (/^\d{4}-\d{2}-\d{2}$/.test(nextIso)) {
       setIntake((prev) => ({ ...prev, decisionDate: nextIso }));
       setGlobalDecisionDate(nextIso);
+    } else {
+      setIntake((prev) => ({ ...prev, decisionDate: "" }));
+      setGlobalDecisionDate(null);
     }
+  }
+
+  function handleSelectDecisionDateUnknown() {
+    setActivePresetId("custom");
+    setDraftDecisionDate("");
+    setIntake((prev) => ({ ...prev, decisionDate: "unknown" }));
+    setGlobalDecisionDate(null);
   }
 
   function handleAnswerChange(factId: string, val: TriValue) {
@@ -575,15 +598,19 @@ export function InvestigationWorkspace({
         <ol className="grid gap-2 sm:grid-cols-4">
           {STAGES.map((item) => {
             const isCurrent = activeStage === item.stage;
+            const isLocked = item.stage > 1 && !canAdvanceFromStage1;
             return (
               <li key={item.stage} className="min-w-0">
                 <button
                   type="button"
                   data-testid={`stage-tab-${item.stage}`}
+                  disabled={isLocked}
                   aria-current={isCurrent ? "step" : undefined}
-                  onClick={() => setActiveStage(item.stage)}
+                  onClick={() => {
+                    if (!isLocked) setActiveStage(item.stage);
+                  }}
                   className={cn(
-                    "flex min-h-10 w-full items-center justify-between gap-2 rounded-lg border px-3 py-2 text-left text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+                    "flex min-h-10 w-full items-center justify-between gap-2 rounded-lg border px-3 py-2 text-left text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-55",
                     isCurrent
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-surface text-foreground hover:bg-muted",
@@ -654,20 +681,38 @@ export function InvestigationWorkspace({
               <input
                 id="investigate-decision-date"
                 type="date"
+                placeholder="e.g. 1986-11-04"
                 min="1933-03-20"
                 max="2026-12-31"
                 value={draftDecisionDate}
                 onChange={(e) => handleDecisionDateChange(e.target.value)}
                 className="min-h-9 w-full rounded-md border border-border bg-background px-2.5 py-1.5 font-mono text-xs text-foreground focus-visible:outline-2 focus-visible:outline-primary"
               />
-              {!/^\d{4}-\d{2}-\d{2}$/.test(draftDecisionDate) && (
-                <p
-                  role="status"
-                  className="text-xs font-medium text-accent"
-                >
-                  Enter a complete YYYY-MM-DD date (holding {intake.decisionDate} so your answers stay intact).
+              <button
+                type="button"
+                data-testid="decision-date-unknown-btn"
+                aria-pressed={isDecisionDateExplicitUnknown}
+                onClick={handleSelectDecisionDateUnknown}
+                className={cn(
+                  "inline-flex min-h-8 w-full items-center justify-center rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+                  isDecisionDateExplicitUnknown
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-surface text-foreground hover:bg-muted",
+                )}
+              >
+                I don&apos;t know the exact date
+              </button>
+              {isDecisionDateExplicitUnknown ? (
+                <p role="status" className="text-xs font-medium text-primary">
+                  Decision date marked Unknown — &ldquo;Find the decision
+                  letter&rdquo; is elevated in Records to find.
                 </p>
-              )}
+              ) : !hasExactDecisionDate ? (
+                <p role="status" className="text-xs font-medium text-accent">
+                  Enter a YYYY-MM-DD date (for example, 1986-11-04) or select
+                  &ldquo;I don&apos;t know the exact date&rdquo; to continue.
+                </p>
+              ) : null}
               <p className="text-xs text-muted-foreground">
                 Resolves historical 38 C.F.R. text, statutory era, and July 21, 1992{" "}
                 <em>Bell</em> record rules.
@@ -827,16 +872,23 @@ export function InvestigationWorkspace({
           <div className="no-print flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
             <button
               type="button"
-              onClick={() => setActiveStage(4)}
-              className="text-xs font-semibold text-primary underline underline-offset-2 hover:opacity-85"
+              data-testid="stage-skip-summary-btn"
+              disabled={!canAdvanceFromStage1}
+              onClick={() => {
+                if (canAdvanceFromStage1) setActiveStage(4);
+              }}
+              className="text-xs font-semibold text-primary underline underline-offset-2 hover:opacity-85 disabled:cursor-not-allowed disabled:no-underline disabled:opacity-55"
             >
               Skip ahead to Summary ({report.prioritizedRecordsToLocate.length} records flagged)
             </button>
             <button
               type="button"
               data-testid="stage-next-btn"
-              onClick={() => setActiveStage(2)}
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground hover:opacity-90 focus-visible:outline-2 focus-visible:outline-primary"
+              disabled={!canAdvanceFromStage1}
+              onClick={() => {
+                if (canAdvanceFromStage1) setActiveStage(2);
+              }}
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground hover:opacity-90 focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-55"
             >
               <span>Continue to Stage 2: Records &amp; Appeals</span>
               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -1040,7 +1092,9 @@ export function InvestigationWorkspace({
               <div className="rounded-lg border border-border bg-surface-elevated p-3">
                 <div className="text-muted-foreground">Decision Date &amp; Office</div>
                 <div className="mt-1 font-mono text-sm font-bold text-foreground">
-                  {intake.decisionDate}
+                  {hasExactDecisionDate
+                    ? intake.decisionDate
+                    : "Unknown (locate decision letter)"}
                 </div>
                 <div className="mt-0.5 text-muted-foreground">
                   {AGENCY_LABELS[intake.decisionAgency]}
@@ -1222,6 +1276,30 @@ export function InvestigationWorkspace({
               </div>
             </div>
 
+            {/* Dual-Mode Accredited Representative Directory & Crisis Support */}
+            <div
+              data-testid="investigate-rep-and-crisis-links"
+              className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border bg-surface-elevated px-3.5 py-2.5 text-xs leading-relaxed"
+            >
+              <div className="min-w-0">
+                <a
+                  href={VA_FIND_ACCREDITED_REP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-primary underline underline-offset-2 hover:opacity-85"
+                >
+                  <span>Find a VA-accredited representative</span>
+                  <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                </a>
+                <span className="text-muted-foreground">
+                  {" "}
+                  — search VA&apos;s official directory of accredited VSOs, claims
+                  agents, and attorneys.
+                </span>
+              </div>
+              <div className="text-muted-foreground">{VETERANS_CRISIS_LINE_COPY}</div>
+            </div>
+
             {/* Key Questions for Representative (Veteran Mode Lead) */}
             {topDiscussionQuestions.length > 0 && (
               <div
@@ -1342,35 +1420,58 @@ export function InvestigationWorkspace({
           {activeTwoPaneSection && (
             <details className="rounded-xl border border-border bg-surface p-4">
               <summary className="cursor-pointer font-serif text-base font-bold text-foreground focus-visible:outline-2 focus-visible:outline-primary">
-                Compare exact 38 C.F.R. text on {intake.decisionDate} vs. collateral
-                limits today ({activeTwoPaneSection.cfrSection})
+                {hasExactDecisionDate
+                  ? `Compare exact 38 C.F.R. text on ${intake.decisionDate} vs. collateral limits today (${activeTwoPaneSection.cfrSection})`
+                  : `Point-in-time 38 C.F.R. comparison (${activeTwoPaneSection.cfrSection}) — enter a decision date to resolve`}
               </summary>
               <div className="mt-4 space-y-3 border-t border-border pt-3">
-                <div className="no-print flex flex-wrap items-center gap-2">
-                  {cfrSections.map((sec) => {
-                    const active = sec.sectionSlug === activeTwoPaneSection.sectionSlug;
-                    return (
-                      <button
-                        key={sec.sectionSlug}
-                        type="button"
-                        aria-pressed={active}
-                        onClick={() => setSelectedTwoPaneSlug(sec.sectionSlug)}
-                        className={`inline-flex min-h-8 items-center rounded-md border px-3 py-1 text-xs font-semibold ${
-                          active
-                            ? "border-primary bg-primary text-primary-foreground"
-                            : "border-border bg-surface-elevated text-foreground hover:bg-muted"
-                        }`}
-                      >
-                        {sec.cfrSection}
-                      </button>
-                    );
-                  })}
-                </div>
+                {hasExactDecisionDate ? (
+                  <>
+                    <div className="no-print flex flex-wrap items-center gap-2">
+                      {cfrSections.map((sec) => {
+                        const active =
+                          sec.sectionSlug === activeTwoPaneSection.sectionSlug;
+                        return (
+                          <button
+                            key={sec.sectionSlug}
+                            type="button"
+                            aria-pressed={active}
+                            onClick={() => setSelectedTwoPaneSlug(sec.sectionSlug)}
+                            className={`inline-flex min-h-8 items-center rounded-md border px-3 py-1 text-xs font-semibold ${
+                              active
+                                ? "border-primary bg-primary text-primary-foreground"
+                                : "border-border bg-surface-elevated text-foreground hover:bg-muted"
+                            }`}
+                          >
+                            {sec.cfrSection}
+                          </button>
+                        );
+                      })}
+                    </div>
 
-                <TwoPaneTemporalView
-                  section={activeTwoPaneSection}
-                  effectiveDecisionDate={report.intake.decisionDate}
-                />
+                    <TwoPaneTemporalView
+                      section={activeTwoPaneSection}
+                      effectiveDecisionDate={intake.decisionDate}
+                    />
+                  </>
+                ) : (
+                  <p className="rounded-md border border-border bg-surface-elevated p-3.5 text-xs leading-relaxed text-muted-foreground">
+                    Because the decision date is currently marked{" "}
+                    <strong className="text-foreground">Unknown</strong>, no
+                    single historical regulation snapshot is assumed. Once you
+                    locate the decision letter, return to Stage 1 to enter the{" "}
+                    <code className="font-mono text-foreground">YYYY-MM-DD</code>{" "}
+                    date—or{" "}
+                    <Link
+                      href={`/cfr/${activeTwoPaneSection.sectionSlug}`}
+                      prefetch={false}
+                      className="font-semibold text-primary underline underline-offset-2"
+                    >
+                      browse all versions of {activeTwoPaneSection.cfrSection}
+                    </Link>
+                    .
+                  </p>
+                )}
               </div>
             </details>
           )}

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink, Scale } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import {
   DOCUMENT_CATEGORY_LABELS,
   getCompiledCfrSections,
@@ -212,6 +213,17 @@ export default async function VasrdSystemDetailPage({
           </div>
         </section>
       )}
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath={`/vasrd/${sys.systemId}`}
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority={`38 C.F.R. Part 4 (${sys.diagnosticCodeRange}) — ${sys.label}`}
+        />
+      </footer>
     </main>
   );
 }

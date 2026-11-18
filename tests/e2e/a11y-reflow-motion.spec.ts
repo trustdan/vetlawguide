@@ -414,7 +414,9 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
       .analyze();
     expect(vetStage1Scan.violations).toEqual([]);
 
-    // Advance to Stage 4 Summary, verify 3 blocks (What you know, Records to find, Questions to discuss) & Markdown packet preview
+    // Select explicit "I don't know the exact date" in Stage 1, then advance to Stage 4 Summary, verify 3 blocks & Markdown packet preview
+    await expect(page.getByTestId("stage-tab-4")).toBeDisabled();
+    await page.getByTestId("decision-date-unknown-btn").click();
     await page.getByTestId("stage-tab-4").click();
     await expect(page.getByTestId("summary-what-you-know")).toBeVisible();
     await expect(page.getByTestId("records-to-locate-section")).toBeVisible();
@@ -891,5 +893,86 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
     expect(aboutDarkScan.violations).toEqual([]);
+  });
+
+  test("EPIC 13 archival 404 page, CFR section fallback, footer Crisis/Rep links, and zero-PII Report-an-Error links pass WCAG 2.2 AA", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+
+    // 1. Unknown route returns HTTP 404 with plain-English copy, search launcher, 4 gateways, and footer support links
+    const notFoundRes = await page.goto("/unknown-missing-page-probe");
+    expect(notFoundRes).not.toBeNull();
+    expect(notFoundRes!.status()).toBe(404);
+    await expect(
+      page.getByRole("heading", { level: 1, name: /This page isn't here/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /Search codes \(5313, 7804\)/i }),
+    ).toBeVisible();
+    for (const gwLabel of [
+      "Browse topics",
+      "Disability ratings",
+      "Investigate a decision",
+      "Law and cases",
+    ]) {
+      await expect(
+        page.getByRole("link", { name: new RegExp(gwLabel, "i") }).first(),
+      ).toBeVisible();
+    }
+
+    // Footer Crisis Line & Find-a-Rep links visible in both Veterans and Practitioners modes
+    const footerSupport = page.getByTestId("footer-support-links");
+    await expect(footerSupport).toContainText(/Veterans Crisis Line/i);
+    await expect(footerSupport).toContainText(/988/);
+    await expect(footerSupport).toContainText(/838255/);
+    await expect(
+      footerSupport.getByRole("link", {
+        name: /Find a VA-accredited representative/i,
+      }),
+    ).toHaveAttribute(
+      "href",
+      "https://www.va.gov/get-help-from-accredited-representative/find-rep/",
+    );
+
+    const scan404 = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(scan404.violations).toEqual([]);
+
+    // 2. Unmatched /cfr/[section]/[effectiveFrom] date returns 404 with "See all versions of this section" -> /cfr/[section]
+    const unmatchedCfrRes = await page.goto("/cfr/38-cfr-4.56/1999-01-01");
+    expect(unmatchedCfrRes).not.toBeNull();
+    expect(unmatchedCfrRes!.status()).toBe(404);
+    const cfrFallbackLink = page
+      .getByTestId("not-found-cfr-fallback")
+      .getByRole("link", { name: /See all versions of this section/i });
+    await expect(cfrFallbackLink).toHaveAttribute("href", "/cfr/38-cfr-4.56");
+
+    // 3. Per-page "Report an error on this page" link pre-fills static citation/version and never leaks Decision Date or audience mode
+    await page.goto("/cfr/38-cfr-4.56/1946-04-01");
+    await page
+      .getByRole("button", { name: /FR Pub-vs-Eff Trap \(1997-06-20\)/i })
+      .click();
+    await page.getByRole("button", { name: "Practitioners" }).click();
+
+    const reportLink = page.getByTestId("report-page-error-link").first();
+    await expect(reportLink).toBeVisible();
+    const reportHref = await reportLink.getAttribute("href");
+    expect(reportHref).toBeTruthy();
+    const parsedIssueUrl = new URL(reportHref!);
+    expect(parsedIssueUrl.origin + parsedIssueUrl.pathname).toBe(
+      "https://github.com/trustdan/vetlawguide/issues/new",
+    );
+    expect(parsedIssueUrl.searchParams.get("template")).toBe(
+      "citation-or-date-fix.yml",
+    );
+    expect(parsedIssueUrl.searchParams.get("page_or_version")).toContain(
+      "/cfr/38-cfr-4.56/1946-04-01",
+    );
+    expect(parsedIssueUrl.searchParams.get("authority")).toContain("4.56");
+    expect(reportHref).not.toContain("1997-06-20");
+    expect(reportHref).not.toContain("practitioner");
+    expect(parsedIssueUrl.searchParams.get("zero_pii_confirm")).toBeNull();
   });
 });

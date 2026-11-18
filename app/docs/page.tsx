@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CoverageBanner } from "@/components/bitemporal/coverage-banner";
 import { LexiconText } from "@/components/bitemporal/lexicon-text";
+import { ReportPageErrorLink } from "@/components/bitemporal/report-page-error-link";
 import { getCoverageManifest, getDoctrineDocuments } from "@/lib/corpus/loader";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -143,6 +144,17 @@ export default function DocsIndexPage() {
           </div>
         </section>
       )}
+
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
+        <span className="font-mono">
+          Checked as of {manifest.checkedAsOf} · {manifest.corpusReleaseId}
+        </span>
+        <ReportPageErrorLink
+          canonicalPath="/docs"
+          corpusReleaseId={manifest.corpusReleaseId}
+          authority="Legal Doctrine Treatises & Plain-English Companions"
+        />
+      </footer>
     </main>
   );
 }

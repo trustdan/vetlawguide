@@ -11,6 +11,7 @@ import {
   matchesDiagnosticCode,
   normalizeCfrSlug,
   resolveCfrAtDate,
+  resolveWave1CfrHref,
 } from "@/lib/corpus/temporal";
 import type {
   AudienceMode,
@@ -539,6 +540,23 @@ function getInMemoryCorpusIndex(): InMemoryRetrievalIndex {
     );
   }
 
+  passages.push(
+    buildPassageRecord({
+      id: "lex:analogous-xx99-decoder",
+      kind: "lexicon",
+      title: "Hyphenated Analogous Diagnostic Codes (xx99-xxxx, 38 C.F.R. § 4.20)",
+      href: "/reference/forms-and-codes",
+      coverageState: "VERBATIM_VERIFIED",
+      diagnosticCodes: [],
+      cfrCitations: ["38 C.F.R. § 4.20"],
+      statutes: [],
+      veteranText:
+        "Hyphenated VA rating codes ending in 99 (such as 7399-7346 or 5299-5260) indicate an analogous rating under 38 C.F.R. § 4.20: the first 4 digits (xx99) mark an unlisted condition in that body system, and the second 4 digits give the Diagnostic Code whose percentage criteria VA used. Interactive decoder: /reference/forms-and-codes",
+      practitionerText:
+        "38 C.F.R. § 4.20 Analogous Rating Notation (xx99-xxxx): On a VA Rating Code Sheet, a two-part hyphenated code ending in 99 denotes an unlisted disability rated by analogy—the prefix identifies the anatomical/system schedule and the suffix identifies the Diagnostic Code criteria applied (verify functional/anatomical/symptomatic equivalency under Lendenmann v. Principi). Decoder: /reference/forms-and-codes",
+    }),
+  );
+
   const docFreq = new Map<string, number>();
   let totalLen = 0;
   for (const p of passages) {
@@ -613,9 +631,18 @@ export function retrieveGroundedContext(
   const temporalResolutions: TemporalResolutionSummary[] = [];
 
   for (const cite of cfrMentions) {
-    const targetSlug = normalizeCfrSlug(cite);
+    const rawSlug = normalizeCfrSlug(cite);
+    const { href: canonicalCfrHref } = resolveWave1CfrHref(cite);
+    const resolvedFamilySlug =
+      canonicalCfrHref.startsWith("/cfr/") && canonicalCfrHref !== "/cfr"
+        ? canonicalCfrHref.slice("/cfr/".length)
+        : rawSlug;
     if (targetDate) {
-      const resolved = resolveCfrAtDate(index.cfrVersions, cite, targetDate);
+      const resolved = resolveCfrAtDate(
+        index.cfrVersions,
+        resolvedFamilySlug,
+        targetDate,
+      );
       temporalResolutions.push({
         sectionQuery: cite,
         sectionSlug: resolved.sectionSlug,
@@ -647,8 +674,12 @@ export function retrieveGroundedContext(
     } else {
       for (const p of index.passages) {
         if (
-          p.cfrSlug === targetSlug ||
-          p.cfrCitations.some((c) => normalizeCfrSlug(c) === targetSlug)
+          p.cfrSlug === rawSlug ||
+          p.cfrSlug === resolvedFamilySlug ||
+          p.cfrCitations.some((c) => {
+            const cSlug = normalizeCfrSlug(c);
+            return cSlug === rawSlug || cSlug === resolvedFamilySlug;
+          })
         ) {
           addBonus(
             p.id,
@@ -687,12 +718,21 @@ export function retrieveGroundedContext(
     if (secondCode && firstCode.endsWith("99")) {
       for (const p of index.passages) {
         if (
-          p.id.startsWith("lex:") ||
-          p.cfrCitations.some((c) => /\b4\.20\b/.test(c))
+          p.id.startsWith("lex:") &&
+          /analogous|4\.20|99-/i.test(`${p.title} ${p.practitionerText}`)
         ) {
           addBonus(
             p.id,
-            75,
+            105,
+            `Analogous rating code ${firstCode}-${secondCode} (38 C.F.R. § 4.20)`,
+          );
+        } else if (
+          p.cfrCitations.some((c) => /\b4\.20\b/.test(c)) ||
+          p.href === "/docs/forms-and-codesheet-lexicon"
+        ) {
+          addBonus(
+            p.id,
+            95,
             `Analogous rating code ${firstCode}-${secondCode} (38 C.F.R. § 4.20)`,
           );
         }
