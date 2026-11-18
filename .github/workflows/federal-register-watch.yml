@@ -18,10 +18,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
+      - name: Setup pnpm (reads packageManager from package.json)
         uses: pnpm/action-setup@v4
-        with:
-          version: 12
 
       - name: Setup Node.js 22
         uses: actions/setup-node@v4

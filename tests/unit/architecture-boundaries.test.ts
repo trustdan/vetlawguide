@@ -24,12 +24,21 @@ function walkTsFiles(dir: string): string[] {
 }
 
 function invokeHook(scriptRelPath: string, payload: unknown): { decision: string; reason?: string } {
-  const proc = spawnSync("python", ["-s", scriptRelPath], {
+  const pythonBin = process.platform === "win32" ? "python" : "python3";
+  let proc = spawnSync(pythonBin, ["-s", scriptRelPath], {
     cwd: HOOKS_DIR,
     env: { ...process.env, PYTHONNOUSERSITE: "1" },
     input: JSON.stringify(payload),
     encoding: "utf8",
   });
+  if (proc.error && pythonBin !== "python") {
+    proc = spawnSync("python", ["-s", scriptRelPath], {
+      cwd: HOOKS_DIR,
+      env: { ...process.env, PYTHONNOUSERSITE: "1" },
+      input: JSON.stringify(payload),
+      encoding: "utf8",
+    });
+  }
   expect(proc.status).toBe(0);
   return JSON.parse(proc.stdout.trim()) as { decision: string; reason?: string };
 }
