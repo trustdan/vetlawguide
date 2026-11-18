@@ -19,8 +19,6 @@ import { detectBlockingClientPii, type ChatTurnMessage } from "@/lib/chat/pii";
 import { cn } from "@/lib/utils";
 import { OPEN_CHAT_EVENT } from "./open-chat-link";
 
-let botIdInitializedForChat = false;
-
 function ArchivalEmblem() {
   return (
     <svg
@@ -219,12 +217,16 @@ export function ChatWidget() {
 
     const controller = new AbortController();
     abortRef.current = controller;
+    const requestTimeout = window.setTimeout(() => {
+      controller.abort("timeout");
+    }, 30000);
 
     try {
-      if (process.env.NEXT_PUBLIC_VERCEL_ENV && !botIdInitializedForChat) {
+      const win = window as Window & { __vlgBotIdInitialized?: boolean };
+      if (process.env.NEXT_PUBLIC_VERCEL_ENV && !win.__vlgBotIdInitialized) {
+        win.__vlgBotIdInitialized = true;
         const { initBotId } = await import("botid/client/core");
         initBotId({ protect: [{ path: "/api/chat", method: "POST" }] });
-        botIdInitializedForChat = true;
       }
 
       const response = await fetch("/api/chat", {
@@ -258,16 +260,19 @@ export function ChatWidget() {
         ]);
       }
     } catch (err) {
-      if (err instanceof DOMException && err.name === "AbortError") {
+      if (controller.signal.aborted && controller.signal.reason !== "timeout") {
         return;
       }
       setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again.",
+        controller.signal.reason === "timeout"
+          ? "The research assistant timed out. Please try again in a moment."
+          : err instanceof Error
+            ? err.message
+            : "Something went wrong. Please try again.",
       );
       setMessages(nextMessages);
     } finally {
+      window.clearTimeout(requestTimeout);
       abortRef.current = null;
       setSending(false);
     }

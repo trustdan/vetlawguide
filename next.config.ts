@@ -4,6 +4,12 @@ import { withBotId } from "botid/next/config";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  outputFileTracingIncludes: {
+    "/api/chat": [
+      "./corpus/generated/**/*",
+      "./content/overlays/veteran/**/*",
+    ],
+  },
   async headers() {
     return [
       {
