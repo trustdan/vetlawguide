@@ -60,7 +60,7 @@ export function buildStaticSystemSpine(): string {
 - Multi-Track Law Timeline & Quarantined Rulemaking Watchlist: \`/timeline\` · Five Historical Eras: \`/eras\`
 - Curated Judicial & VAOPGCPREC Authority Directory: \`/cases\`
 - 1933 <-> 1958 <-> 1991 Title 38 Statutory Crosswalk: \`/crosswalk\` · Forms & Code-Sheet Decoder: \`/reference/forms-and-codes\`
-- Privacy & Cookie Notice: \`/privacy\`
+- About VetLawGuide & Methodology: \`/about\` · Privacy & Cookie Notice: \`/privacy\` · Keyboard Shortcuts: \`?\` (Quick Guide), \`Ctrl/Cmd+K\` (Search)
 
 ### VASRD Body-System Hubs
 ${vasrdDirectoryLines}

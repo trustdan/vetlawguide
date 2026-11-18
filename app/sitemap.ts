@@ -23,7 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: isRoot ? SITE_URL : `${SITE_URL}${path}`,
       lastModified: manifest.checkedAsOf,
       changeFrequency: isRoot || isPrimaryHub ? "weekly" : "monthly",
-      priority: isRoot ? 1.0 : isPrimaryHub ? 0.9 : path === "/privacy" ? 0.5 : 0.8,
+      priority: isRoot
+        ? 1.0
+        : isPrimaryHub
+          ? 0.9
+          : path === "/privacy"
+            ? 0.5
+            : path === "/about"
+              ? 0.7
+              : 0.8,
     };
   });
 }

@@ -44,6 +44,7 @@ export function listAllCanonicalPaths(): string[] {
 
   const paths = new Set<string>([
     "/",
+    "/about",
     "/explore",
     "/explore/piercing-finality",
     "/explore/diagnostic-codes",
@@ -156,6 +157,7 @@ export function runStaticSeoAudit(
 
   // Global header + footer links rendered in static HTML on `/` (Click 1 from `/`)
   const click1FromRoot = [
+    "/about",
     "/explore",
     "/explore/diagnostic-codes",
     "/explore/cfr-directory",
@@ -183,6 +185,7 @@ export function runStaticSeoAudit(
   const rootCombinedHtmlSource = `${layoutSrc}\n${homeSrc}\n${headerSrc}`;
 
   for (const hub of [
+    "/about",
     "/explore",
     "/vasrd",
     "/cfr",

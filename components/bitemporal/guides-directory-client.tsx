@@ -73,7 +73,7 @@ export function GuidesDirectoryClient({
                 aria-pressed={isSelected}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+                  "rounded-md border px-3 py-1.5 text-xs font-semibold focus-visible:outline-2 focus-visible:outline-primary",
                   isSelected
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border bg-background text-foreground hover:bg-muted",

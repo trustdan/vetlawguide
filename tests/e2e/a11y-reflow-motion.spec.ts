@@ -840,4 +840,56 @@ test.describe("Epic 1 Global Chrome, WCAG 2.2 AA+, ~84px Header Budget & 400% Zo
     });
     expect(zoomOverflow).toBe(false);
   });
+
+  test("Quick Guide (?) button, global '?' keyboard shortcut, input guard, and /about pass WCAG 2.2 AA", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/");
+
+    // 1. Typing '?' on the page opens QuickHelpDialog; Escape closes and returns focus to '?' button
+    await page.keyboard.press("?");
+    const helpDialog = page.getByTestId("quick-help-dialog");
+    await expect(helpDialog).toBeVisible();
+    await expect(helpDialog).toContainText(/Quick Guide & Keyboard Shortcuts/i);
+
+    const modalScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(modalScan.violations).toEqual([]);
+
+    await page.keyboard.press("Escape");
+    await expect(helpDialog).toHaveCount(0);
+    await expect(page.getByTestId("quick-help-trigger")).toBeFocused();
+
+    // 2. Typing '?' inside an active text input does NOT open QuickHelpDialog
+    await page.getByTestId("chat-widget-launcher").click();
+    const chatInput = page.locator("#vlg-chat-input");
+    await chatInput.fill("");
+    await chatInput.pressSequentially("What is TDIU?");
+    await expect(chatInput).toHaveValue("What is TDIU?");
+    await expect(helpDialog).toHaveCount(0);
+    await page.getByRole("button", { name: "Close chat" }).click();
+
+    // 3. Clicking '?' button opens modal and navigates cleanly to /about
+    await page.getByTestId("quick-help-trigger").click();
+    await expect(helpDialog).toBeVisible();
+    await helpDialog.getByRole("link", { name: /About VetLawGuide/i }).click();
+
+    await expect(page).toHaveURL(/\/about$/);
+    await expect(
+      page.getByRole("heading", { name: "About VetLawGuide", level: 1 }),
+    ).toBeVisible();
+
+    const aboutLightScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(aboutLightScan.violations).toEqual([]);
+
+    await page.getByRole("button", { name: "Toggle color theme" }).click();
+    const aboutDarkScan = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(aboutDarkScan.violations).toEqual([]);
+  });
 });

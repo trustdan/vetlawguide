@@ -100,6 +100,14 @@ export default function RootLayout({
                   </div>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-border/60 pt-2.5">
                     <Link
+                      href="/about"
+                      prefetch={false}
+                      className="underline underline-offset-2 hover:text-foreground"
+                    >
+                      About
+                    </Link>
+                    <span aria-hidden="true">·</span>
+                    <Link
                       href="/explore/diagnostic-codes"
                       prefetch={false}
                       className="underline underline-offset-2 hover:text-foreground"

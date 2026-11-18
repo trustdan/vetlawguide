@@ -261,6 +261,7 @@ function main(): void {
   const cfrSectionsPath = resolve(REPO_ROOT, "corpus", "generated", "cfr-sections.json");
   const validInternalRoutes = new Set<string>([
     "/",
+    "/about",
     "/cases",
     "/cfr",
     "/checklists",

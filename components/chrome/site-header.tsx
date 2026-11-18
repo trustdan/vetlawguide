@@ -18,6 +18,7 @@ import { useResearchContext } from "@/components/providers/research-context";
 import { cn } from "@/lib/utils";
 import { ScopeCautionsDialog } from "./scope-cautions-dialog";
 import { CommandSearchDialog } from "./command-search-dialog";
+import { QuickHelpDialog } from "./quick-help-dialog";
 import { StickyEraTimelineBar } from "./sticky-era-timeline-bar";
 import type { SearchEngineCatalog } from "@/lib/corpus/search-engine";
 
@@ -83,6 +84,11 @@ const REFERENCE_MENU_ITEMS: ReadonlyArray<{
     href: "/docs",
     detail: "In-depth substantive and procedural reference chapters",
   },
+  {
+    label: "About VetLawGuide",
+    href: "/about",
+    detail: "Mission, point-in-time methodology, and coverage principles",
+  },
 ];
 
 function FolioWordmarkIcon() {
@@ -114,12 +120,15 @@ export function SiteHeader({
 }) {
   const pathname = usePathname() ?? "/";
   const { resolvedTheme, setTheme } = useTheme();
-  const { audienceMode, setAudienceMode, setSearchOpen } = useResearchContext();
+  const { audienceMode, setAudienceMode, searchOpen, setSearchOpen } =
+    useResearchContext();
 
   const [cautionsOpen, setCautionsOpen] = useState(false);
+  const [quickHelpOpen, setQuickHelpOpen] = useState(false);
   const [referenceOpenPath, setReferenceOpenPath] = useState<string | null>(null);
   const [mobileMenuOpenPath, setMobileMenuOpenPath] = useState<string | null>(null);
   const refMenuContainer = useRef<HTMLDivElement | null>(null);
+  const quickHelpBtnRef = useRef<HTMLButtonElement | null>(null);
 
   const referenceOpen = referenceOpenPath === pathname;
   const mobileMenuOpen = mobileMenuOpenPath === pathname;
@@ -129,7 +138,34 @@ export function SiteHeader({
     pathname.startsWith("/cases") ||
     pathname.startsWith("/eras") ||
     pathname.startsWith("/crosswalk") ||
-    pathname.startsWith("/reference");
+    pathname.startsWith("/reference") ||
+    pathname === "/about";
+
+  useEffect(() => {
+    const onGlobalQuestionMark = (e: KeyboardEvent) => {
+      if (e.key !== "?" || e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.tagName === "SELECT" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      if (searchOpen || cautionsOpen) return;
+      e.preventDefault();
+      setQuickHelpOpen((prev) => {
+        if (prev) {
+          requestAnimationFrame(() => quickHelpBtnRef.current?.focus());
+        }
+        return !prev;
+      });
+    };
+    window.addEventListener("keydown", onGlobalQuestionMark);
+    return () => window.removeEventListener("keydown", onGlobalQuestionMark);
+  }, [searchOpen, cautionsOpen]);
 
   useEffect(() => {
     if (!referenceOpen && !mobileMenuOpen) return;
@@ -209,7 +245,7 @@ export function SiteHeader({
                 aria-pressed={audienceMode === "veteran"}
                 onClick={() => setAudienceMode("veteran")}
                 className={cn(
-                  "inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
+                  "inline-flex items-center gap-1 rounded-md px-1.5 py-1 text-xs font-semibold focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
                   audienceMode === "veteran"
                     ? "bg-primary font-bold text-primary-foreground shadow-sm"
                     : "text-foreground hover:bg-surface",
@@ -226,7 +262,7 @@ export function SiteHeader({
                 aria-pressed={audienceMode === "practitioner"}
                 onClick={() => setAudienceMode("practitioner")}
                 className={cn(
-                  "inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
+                  "inline-flex items-center gap-1 rounded-md px-1.5 py-1 text-xs font-semibold focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary sm:gap-1.5 sm:px-3.5 sm:py-1.5 sm:text-sm",
                   audienceMode === "practitioner"
                     ? "bg-primary font-bold text-primary-foreground shadow-sm"
                     : "text-foreground hover:bg-surface",
@@ -301,6 +337,7 @@ export function SiteHeader({
                         <Link
                           key={refItem.href}
                           href={refItem.href}
+                          prefetch={false}
                           onClick={() => setReferenceOpenPath(null)}
                           className="block rounded-md px-3 py-2 text-xs transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-primary"
                         >
@@ -330,6 +367,26 @@ export function SiteHeader({
                   ⌘K
                 </kbd>
               </button>
+
+              {/* Quick Guide & Keyboard Shortcuts (?) Trigger + Hover/Focus Tooltip */}
+              <div className="group relative hidden sm:inline-flex">
+                <button
+                  ref={quickHelpBtnRef}
+                  type="button"
+                  data-testid="quick-help-trigger"
+                  onClick={() => setQuickHelpOpen(true)}
+                  aria-label="Quick guide and keyboard shortcuts (?)"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-border bg-surface font-mono text-xs font-bold text-muted-foreground hover:border-primary/40 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary"
+                >
+                  ?
+                </button>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none invisible absolute top-full right-0 z-50 mt-1.5 hidden rounded-md border border-border bg-surface-elevated px-2.5 py-1 text-xs font-medium whitespace-nowrap text-foreground opacity-0 shadow-md transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 lg:block"
+                >
+                  Quick guide &amp; shortcuts (?)
+                </span>
+              </div>
 
               {/* Desktop Theme Toggle */}
               <button
@@ -425,8 +482,20 @@ export function SiteHeader({
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t border-border/80 pt-2">
-                <span className="text-xs text-muted-foreground">Appearance</span>
+              <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/80 pt-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpenPath(null);
+                    setQuickHelpOpen(true);
+                  }}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-xs font-medium text-foreground"
+                >
+                  <span className="font-mono font-bold" aria-hidden="true">
+                    ?
+                  </span>
+                  <span>Quick guide &amp; shortcuts</span>
+                </button>
                 <button
                   type="button"
                   onClick={() =>
@@ -450,6 +519,13 @@ export function SiteHeader({
       <ScopeCautionsDialog
         open={cautionsOpen}
         onClose={() => setCautionsOpen(false)}
+      />
+      <QuickHelpDialog
+        open={quickHelpOpen}
+        onClose={() => {
+          setQuickHelpOpen(false);
+          requestAnimationFrame(() => quickHelpBtnRef.current?.focus());
+        }}
       />
       <CommandSearchDialog catalog={searchCatalog} />
     </>

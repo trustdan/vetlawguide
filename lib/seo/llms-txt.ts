@@ -54,6 +54,7 @@ export function buildLlmsTxt(): string {
 ## Primary Hubs & Crawl Directories
 
 - [Home](${SITE_URL}/)
+- [About VetLawGuide](${SITE_URL}/about)
 - [Browse Topics & Situations](${SITE_URL}/explore)
 - [Diagnostic Code Jump Directory (DC 5000–9918)](${SITE_URL}/explore/diagnostic-codes)
 - [Complete 38 C.F.R. Point-in-Time Permalink Directory](${SITE_URL}/explore/cfr-directory)
