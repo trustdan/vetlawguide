@@ -75,7 +75,7 @@
 - [x] **`E8-S1`:** `$0.00` Build-Time Citation/DC/Form + BM25 Hybrid Retriever (`lib/chat/retrieve.ts`) & `WK-private-demo`-Style Prompt-Cached System Spine (`lib/chat/system-prompt.ts`)
 - [x] **`E8-S2`:** Streaming `/api/chat` Route (`gpt-5-nano` Zero-Training Tier), `botid` + IP Rate Limit & Server `redactPii()` Scrubber
 - [x] **`E8-S3`:** `WK-private-demo`-Style Floating `<ChatWidget />` Pill, `Maximize2`/`Minimize2` Streaming Reader, `<OpenChatLink />` & Client PII Blocker
-- [x] **`E8-S4`:** Supabase `chat_conversations` Analytics Store (`lib/chat/log-conversation.ts` + RLS Migration), `after()` Upsert & Consent-Gated Session/MP Attribution
+- [x] **`E8-S4`:** Supabase `chat_questions` Flat User-Question Analytics Store (`lib/chat/log-conversation.ts` + RLS Migration), `after()` Insert & Consent-Gated Session/MP Attribution
 - [x] **`E8-S5`:** Grounding, PII-Redaction, `/investigate` Zero-Leakage Isolation & `WCAG 2.2 AA+` / `400%` Zoom Chat E2E Suite
 
 ## Phase 9 (`EPIC 9` — Completed): Technical, Legal-Citation & Entity SEO + Consent-Gated Google Analytics

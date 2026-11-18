@@ -106,16 +106,17 @@ export default function PrivacyPage() {
               does not train models on API inputs or outputs.
             </li>
             <li>
-              <strong>Aggregate conversation logging:</strong> PII-scrubbed chat
-              transcripts, together with your active{" "}
+              <strong>User-question-only aggregate logging:</strong> Only
+              PII-scrubbed user questions (AI assistant responses are never
+              stored), together with your active{" "}
               <code className="font-mono text-xs">Veterans | Practitioners</code>{" "}
-              display mode and optional{" "}
+              display mode, optional{" "}
               <code className="font-mono text-xs">YYYY-MM-DD</code> law date,
-              may be stored in a Row-Level-Security-locked database table so we
-              can spot missing Diagnostic Codes, confusing acronyms, and
-              frequent research questions. Without analytics consent, chat uses
-              only a temporary per-tab identifier rather than a persistent
-              cookie.
+              and top matched guide route, may be stored in a
+              Row-Level-Security-locked database table so we can spot missing
+              Diagnostic Codes, confusing acronyms, and frequent research
+              questions. Without analytics consent, chat uses only a temporary
+              per-tab identifier rather than a persistent cookie.
             </li>
           </ul>
         </section>

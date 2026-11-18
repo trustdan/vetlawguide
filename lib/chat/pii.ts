@@ -39,7 +39,7 @@ export function detectBlockingClientPii(text: string): string | null {
 
 /**
  * Deterministic server-side PII scrubber applied before LLM invocation
- * and before any `chat_conversations` persistence (ADR-0003).
+ * and before any `chat_questions` persistence (ADR-0003).
  */
 export function redactPii(text: string): string {
   return text

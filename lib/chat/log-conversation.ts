@@ -1,16 +1,41 @@
 import { createClient } from "@supabase/supabase-js";
 import type { AudienceMode } from "@/lib/corpus/types";
-import { redactMessagesPii, type ChatTurnMessage } from "./pii";
+import { redactPii } from "./pii";
 
-export interface LogConversationParams {
+export interface LogChatQuestionParams {
   sessionId: string;
   conversationId: string;
+  turnIndex: number;
   audienceMode: AudienceMode;
   activeDecisionDate: string | null;
-  messages: readonly ChatTurnMessage[];
+  question: string;
+  topRoute?: string | null;
+  retrievedCount?: number;
+  hasCorpusGap?: boolean;
 }
 
-function getSupabaseServiceClient() {
+export interface ChatQuestionCoreInsertRow {
+  conversation_id: string;
+  session_id: string;
+  turn_index: number;
+  audience_mode: AudienceMode;
+  active_decision_date: string | null;
+  question: string;
+}
+
+export interface ChatQuestionInsertRow extends ChatQuestionCoreInsertRow {
+  top_route?: string | null;
+  retrieved_count?: number;
+  has_corpus_gap?: boolean;
+}
+
+export interface ChatQuestionsTableWriter {
+  insert(
+    row: ChatQuestionInsertRow,
+  ): PromiseLike<{ error: { code?: string; message: string } | null }>;
+}
+
+function getSupabaseQuestionsWriter(): ChatQuestionsTableWriter | null {
   const rawUrl = process.env.SUPABASE_URL?.trim();
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (!rawUrl || !key) {
@@ -19,37 +44,72 @@ function getSupabaseServiceClient() {
   const normalizedUrl = rawUrl
     .replace(/\/rest\/v1\/?$/i, "")
     .replace(/\/+$/, "");
-  return createClient(normalizedUrl, key, { auth: { persistSession: false } });
+  const client = createClient(normalizedUrl, key, {
+    auth: { persistSession: false },
+  });
+  return client.from("chat_questions");
+}
+
+function isMissingOptionalColumnError(error: {
+  code?: string;
+  message: string;
+}): boolean {
+  return (
+    error.code === "PGRST204" ||
+    error.code === "42703" ||
+    /top_route|retrieved_count|has_corpus_gap|schema cache|column/i.test(
+      error.message,
+    )
+  );
 }
 
 /**
- * Persists PII-scrubbed chat transcripts to Supabase (`public.chat_conversations`)
- * keyed on `conversation_id` so multi-turn chats update in place without overwriting
- * prior tabs/sessions (adapted from `WK-private-demo/lib/chat/log-conversation.ts`, ADR-0003).
+ * Appends a single PII-scrubbed user question row to Supabase (`public.chat_questions`).
+ * Assistant responses are intentionally never persisted (ADR-0003).
  *
- * Gracefully no-ops when `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` are unset.
+ * Automatically falls back to the 6 core columns if optional retrieval columns
+ * (`top_route`, `retrieved_count`, `has_corpus_gap`) have not been added yet,
+ * and gracefully no-ops when `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` are unset.
  */
-export async function logConversation(
-  params: LogConversationParams,
+export async function logChatQuestion(
+  params: LogChatQuestionParams,
+  writerOverride?: ChatQuestionsTableWriter | null,
 ): Promise<void> {
-  const client = getSupabaseServiceClient();
-  if (!client) return;
+  const writer =
+    writerOverride !== undefined ? writerOverride : getSupabaseQuestionsWriter();
+  if (!writer) return;
 
-  const scrubbedMessages = redactMessagesPii(params.messages);
+  const scrubbedQuestion = redactPii(params.question).trim();
+  if (!scrubbedQuestion) return;
 
-  const { error } = await client.from("chat_conversations").upsert(
-    {
-      conversation_id: params.conversationId,
-      session_id: params.sessionId,
-      audience_mode: params.audienceMode,
-      active_decision_date: params.activeDecisionDate,
-      messages: scrubbedMessages,
-      updated_at: new Date().toISOString(),
-    },
-    { onConflict: "conversation_id" },
-  );
+  const turnIndex = Math.max(1, Math.trunc(params.turnIndex || 1));
+  const retrievedCount = Math.max(0, Math.trunc(params.retrievedCount ?? 0));
 
-  if (error) {
-    console.error("logConversation failed:", error.message);
+  const coreRow: ChatQuestionCoreInsertRow = {
+    conversation_id: params.conversationId,
+    session_id: params.sessionId,
+    turn_index: turnIndex,
+    audience_mode: params.audienceMode,
+    active_decision_date: params.activeDecisionDate,
+    question: scrubbedQuestion,
+  };
+
+  const fullRow: ChatQuestionInsertRow = {
+    ...coreRow,
+    top_route: params.topRoute ?? null,
+    retrieved_count: retrievedCount,
+    has_corpus_gap: Boolean(params.hasCorpusGap),
+  };
+
+  const { error } = await writer.insert(fullRow);
+  if (!error) return;
+
+  if (isMissingOptionalColumnError(error)) {
+    const retry = await writer.insert(coreRow);
+    if (!retry.error) return;
+    console.error("logChatQuestion fallback insert failed:", retry.error.message);
+    return;
   }
+
+  console.error("logChatQuestion failed:", error.message);
 }

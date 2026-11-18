@@ -24,7 +24,10 @@ import {
   buildSystemPrompt,
   buildTurnGroundingPrompt,
 } from "@/lib/chat/system-prompt";
-import { logConversation } from "@/lib/chat/log-conversation";
+import {
+  logChatQuestion,
+  type ChatQuestionInsertRow,
+} from "@/lib/chat/log-conversation";
 
 describe("EPIC 8 — Grounded Corpus Research Chat, Hybrid Retriever & PII Firewall", () => {
   afterEach(() => {
@@ -233,17 +236,98 @@ describe("EPIC 8 — Grounded Corpus Research Chat, Hybrid Retriever & PII Firew
     delete process.env.SUPABASE_SERVICE_ROLE_KEY;
     try {
       await expect(
-        logConversation({
+        logChatQuestion({
           sessionId: "sess-1",
           conversationId: "00000000-0000-4000-8000-000000000001",
+          turnIndex: 1,
           audienceMode: "veteran",
           activeDecisionDate: "1997-06-20",
-          messages: [{ role: "user", content: "What is DC 5313?" }],
+          question: "What is DC 5313?",
+          topRoute: "/cfr/38-cfr-4.56/1946-04-01",
+          retrievedCount: 4,
+          hasCorpusGap: false,
         }),
       ).resolves.toBeUndefined();
     } finally {
       if (prevUrl !== undefined) process.env.SUPABASE_URL = prevUrl;
       if (prevKey !== undefined) process.env.SUPABASE_SERVICE_ROLE_KEY = prevKey;
     }
+
+    // Persists ONLY a flat PII-scrubbed user question row (zero AI response fields)
+    const insertedRows: ChatQuestionInsertRow[] = [];
+    const syntheticSsn = ["123", "45", "6789"].join("-");
+    await logChatQuestion(
+      {
+        sessionId: "sess-2",
+        conversationId: "00000000-0000-4000-8000-000000000002",
+        turnIndex: 2,
+        audienceMode: "practitioner",
+        activeDecisionDate: "1997-06-20",
+        question: `How does TDIU under 38 C.F.R. § 4.16 work? SSN ${syntheticSsn}`,
+        topRoute: "/cfr/38-cfr-4.16",
+        retrievedCount: 5,
+        hasCorpusGap: false,
+      },
+      {
+        async insert(row) {
+          insertedRows.push(row);
+          return { error: null };
+        },
+      },
+    );
+
+    expect(insertedRows).toHaveLength(1);
+    expect(insertedRows[0]).toEqual({
+      conversation_id: "00000000-0000-4000-8000-000000000002",
+      session_id: "sess-2",
+      turn_index: 2,
+      audience_mode: "practitioner",
+      active_decision_date: "1997-06-20",
+      question: "How does TDIU under 38 C.F.R. § 4.16 work? [REDACTED-SSN]",
+      top_route: "/cfr/38-cfr-4.16",
+      retrieved_count: 5,
+      has_corpus_gap: false,
+    });
+    expect(Object.keys(insertedRows[0]!)).not.toContain("messages");
+
+    // Automatically falls back to the 6 core columns if optional retrieval columns aren't in Supabase yet
+    const fallbackAttempts: ChatQuestionInsertRow[] = [];
+    await logChatQuestion(
+      {
+        sessionId: "sess-3",
+        conversationId: "00000000-0000-4000-8000-000000000003",
+        turnIndex: 1,
+        audienceMode: "veteran",
+        activeDecisionDate: null,
+        question: "What is 38 C.F.R. § 3.156(c)?",
+        topRoute: "/cfr/38-cfr-3.156c",
+        retrievedCount: 3,
+        hasCorpusGap: false,
+      },
+      {
+        async insert(row) {
+          fallbackAttempts.push(row);
+          if ("top_route" in row) {
+            return {
+              error: {
+                code: "PGRST204",
+                message:
+                  "Could not find the 'has_corpus_gap' column of 'chat_questions' in the schema cache",
+              },
+            };
+          }
+          return { error: null };
+        },
+      },
+    );
+    expect(fallbackAttempts).toHaveLength(2);
+    expect(fallbackAttempts[1]).toEqual({
+      conversation_id: "00000000-0000-4000-8000-000000000003",
+      session_id: "sess-3",
+      turn_index: 1,
+      audience_mode: "veteran",
+      active_decision_date: null,
+      question: "What is 38 C.F.R. § 3.156(c)?",
+    });
   });
 });

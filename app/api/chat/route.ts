@@ -5,16 +5,12 @@ import {
   resolveClientId,
   sendMeasurementProtocolEvent,
 } from "@/lib/analytics/measurement-protocol";
-import { logConversation } from "@/lib/chat/log-conversation";
-import {
-  redactMessagesPii,
-  redactPii,
-  type ChatTurnMessage,
-} from "@/lib/chat/pii";
+import { logChatQuestion } from "@/lib/chat/log-conversation";
+import { redactMessagesPii, type ChatTurnMessage } from "@/lib/chat/pii";
 import { getClientIp, isRateLimited } from "@/lib/chat/rate-limit";
 import {
   buildStaticSystemSpine,
-  buildTurnGroundingPrompt,
+  buildTurnGroundingBundle,
 } from "@/lib/chat/system-prompt";
 import {
   CHAT_SESSION_COOKIE_NAME,
@@ -141,8 +137,28 @@ export async function POST(request: NextRequest) {
     ? existingSessionCookie ?? crypto.randomUUID()
     : conversationId;
 
-  const lastUserMessage =
-    [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+  const userMessages = messages.filter((m) => m.role === "user");
+  const lastUserMessage = userMessages[userMessages.length - 1]?.content ?? "";
+  const turnIndex = Math.max(1, userMessages.length);
+  const grounding = buildTurnGroundingBundle({
+    query: lastUserMessage,
+    audienceMode,
+    activeDecisionDate,
+  });
+  const topChunk = grounding.retrieved.chunks[0];
+  const topTemporal = grounding.retrieved.temporalResolutions[0];
+  const topRoute = topChunk?.href ?? topTemporal?.governingPermalink ?? null;
+  const retrievedCount = grounding.retrieved.chunks.length;
+  const hasCorpusGap =
+    retrievedCount === 0 ||
+    grounding.retrieved.temporalResolutions.some(
+      (r) =>
+        r.doNotRely ||
+        r.coverageState === "CORPUS_GAP_OR_QUEUED_WAVE" ||
+        r.coverageState === "SUMMARY_ONLY",
+    ) ||
+    topChunk?.coverageState === "CORPUS_GAP_OR_QUEUED_WAVE" ||
+    topChunk?.coverageState === "SUMMARY_ONLY";
 
   // Pinned to OpenAI `gpt-5-nano` (paid zero-training API tier, ADR-0003);
   // never selectable by client input, only overridable via server `CHAT_MODEL` env var.
@@ -170,11 +186,7 @@ export async function POST(request: NextRequest) {
           },
           {
             role: "system",
-            content: buildTurnGroundingPrompt({
-              query: lastUserMessage,
-              audienceMode,
-              activeDecisionDate,
-            }),
+            content: grounding.prompt,
           },
           ...messages,
         ],
@@ -189,8 +201,37 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Persist ONLY the PII-scrubbed user question (never the AI response) via Next.js after()
+  // so Supabase/GA writes never delay streaming or vanish when serverless freezes (ADR-0003).
+  after(() =>
+    logChatQuestion({
+      sessionId,
+      conversationId,
+      turnIndex,
+      audienceMode,
+      activeDecisionDate,
+      question: lastUserMessage,
+      topRoute,
+      retrievedCount,
+      hasCorpusGap,
+    }).catch(() => {}),
+  );
+
+  if (performanceConsent) {
+    const clientId = resolveClientId(request.cookies.get("_ga")?.value);
+    after(() =>
+      sendMeasurementProtocolEvent(clientId, {
+        name: "chat_message",
+        params: {
+          conversation_id: conversationId,
+          turn_index: turnIndex,
+          audience_mode: audienceMode,
+        },
+      }).catch(() => {}),
+    );
+  }
+
   const encoder = new TextEncoder();
-  let assistantReply = "";
 
   const streamBody = new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -198,43 +239,10 @@ export async function POST(request: NextRequest) {
         for await (const chunk of completionStream) {
           const delta = chunk.choices[0]?.delta?.content;
           if (delta) {
-            assistantReply += delta;
             controller.enqueue(encoder.encode(delta));
           }
         }
         controller.close();
-
-        const scrubbedAssistantReply = redactPii(assistantReply);
-        const finalMessages: ChatTurnMessage[] = [
-          ...messages,
-          { role: "assistant", content: scrubbedAssistantReply },
-        ];
-
-        // Scheduled via Next.js after() so Supabase/GA writes never delay streaming
-        // or vanish when the serverless invocation freezes (ADR-0003).
-        after(() =>
-          logConversation({
-            sessionId,
-            conversationId,
-            audienceMode,
-            activeDecisionDate,
-            messages: finalMessages,
-          }).catch(() => {}),
-        );
-
-        if (performanceConsent) {
-          const clientId = resolveClientId(request.cookies.get("_ga")?.value);
-          after(() =>
-            sendMeasurementProtocolEvent(clientId, {
-              name: "chat_message",
-              params: {
-                conversation_id: conversationId,
-                message_count: finalMessages.length,
-                audience_mode: audienceMode,
-              },
-            }).catch(() => {}),
-          );
-        }
       } catch (error) {
         controller.error(error);
       }
